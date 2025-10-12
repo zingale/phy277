@@ -20,11 +20,9 @@
 import os
 import re
 import sys
-import shlex
-import subprocess
+from pathlib import Path
 
-sys.path.insert(0, os.path.abspath('../../'))
-
+sys.path.insert(0, str(Path.cwd().parents[1]))
 
 
 # -- General configuration ------------------------------------------------
@@ -38,7 +36,6 @@ sys.path.insert(0, os.path.abspath('../../'))
 # ones.
 extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.mathjax',
-              'sphinx_math_dollar',
               'sphinx.ext.ifconfig',
               'sphinx.ext.viewcode',
               'sphinxcontrib.bibtex',
