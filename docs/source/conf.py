@@ -138,6 +138,19 @@ html_theme = 'sphinx_book_theme'
 # documentation.
 #
 # html_theme_options = {}
+html_theme_options = {
+    "repository_url": "https://github.com/zingale/phy277",
+    "use_repository_button": True,
+    "use_issues_button": True,
+    "use_edit_page_button": True,
+    "use_source_button": True,
+    "repository_branch": "main",
+    "path_to_docs": "docs/source",
+    "logo": {
+        "text": "PHY 277",
+    }
+}
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -145,17 +158,4 @@ html_theme = 'sphinx_book_theme'
 html_static_path = ['_static']
 
 html_css_files = ["myfile.css"]
-
-# Custom sidebar templates, must be a dictionary that maps document names
-# to template names.
-#
-# This is required for the alabaster theme
-# refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
-html_sidebars = {
-    '**': [
-        'relations.html',  # needs 'show_related': True theme option to display
-        'searchbox.html',
-    ]
-}
-
 
