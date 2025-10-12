@@ -1,0 +1,8 @@
+*~
+\#*
+
+docs/build
+
+*.o
+
+grades/

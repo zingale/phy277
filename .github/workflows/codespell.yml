@@ -1,0 +1,33 @@
+name: codespell
+
+on:
+  push:
+    branches:
+      - development
+      - main
+  pull_request:
+    branches:
+      - development
+
+jobs:
+  codespell:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r ./requirements.txt
+
+      - name: Run codespell
+        run: |
+          codespell docs/
+

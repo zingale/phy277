@@ -1,0 +1,14 @@
+Sphinx
+sphinx_rtd_theme
+sphinxcontrib_bibtex
+numpydoc
+numpy
+IPython>=3
+nbconvert
+pandoc
+jupyter
+sphinx-copybutton
+sphinx-prompt
+sphinx-design
+codespell
+sphinx-math-dollar
