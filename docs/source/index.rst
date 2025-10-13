@@ -25,4 +25,7 @@ Course description
    :caption: Intro & Logistics
    :hidden:
 
-   getting_started
+   getting_started/getting_started
+   getting_started/topics
+   getting_started/computing
+   getting_started/hello_world
