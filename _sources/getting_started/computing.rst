@@ -47,7 +47,7 @@ exceptions to most of what I write here):
     Examples include: C, C++, and Fortran
 
   * An interpreted language is processed a runtime, by running the
-    program through an `interpreter <https://en.wikipedia.org/wiki/Interpreter_(computing)#Compilers_versus_interpreters>`_.
+    program through an `interpreter <https://en.wikipedia.org/wiki/Interpreter_(computing)>`_.
 
     Examples include: python, ruby, mathlab
 
