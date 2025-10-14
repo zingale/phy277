@@ -10,8 +10,9 @@ Computers essentially do 2 things:
 
 Computers are very good at repeating the same task over and over again.
 
-Our code is to learn how to write programs to automate operations on files (via the Unix shell)
-and manage data / do numerical calculations (via C++).
+Our goal is to learn how to write programs to automate operations on
+files (via the Unix shell) and manage data / do numerical calculations
+(via C++).
 
 Limitations
 ===========
@@ -26,8 +27,9 @@ numbers are stored---we will learn about this format shortly.
 Languages
 =========
 
-In physics and astronomy, a wide range of programming languages are commonly used.
-You can implement any algorithm in any of these languages, but some make it easier than others.
+In physics and astronomy, a wide range of programming languages are
+commonly used.  You can implement any algorithm in any of these
+languages, but some make it easier than others.
 
 High-level languages have extensive libraries that implement
 commonly-used features that you can rely on when writing your code,
@@ -84,7 +86,7 @@ C++ is:
 * updated with new features frequently (currently a 3-year cycle)
 
 * used extensively in physics (in particular in high-energy physics
-  and increasingly in high-performance computing)
+  and in high-performance computing)
 
 * versatile
 
