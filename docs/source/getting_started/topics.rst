@@ -8,8 +8,26 @@ Our goal is to cover:
 
 * Editors
 
-* Version control with git
-
 * C++ programming
 
+  * Datatypes
+
+  * the Standard Library and containers
+
+  * Functions and Classes
+
 * Software engineering concepts
+
+  * Version control with git
+
+  * Testing
+
+  * Build systems
+
+* Some other useful skills
+
+  * Creating webpages
+
+  * LaTeX
+
+  * Plotting
