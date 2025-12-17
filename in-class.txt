@@ -1,0 +1,3 @@
+* random numbers + timing:
+
+  compare the performance of `sqrt(sqrt(x))` to `pow(x, 0.25)`
