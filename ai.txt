@@ -1,0 +1,10 @@
+what about AI?
+
+we still need to understand code to be able to review it to see if it is
+really doing what we intended, doesn't have nasty side effects, and is
+maintainable.  
+
+See: https://www.theregister.com/2025/12/17/ai_code_bugs
+
+
+
