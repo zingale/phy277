@@ -38,7 +38,7 @@ Which shell?
 
 There are a wide variety of shells that are used today.  The default
 on many systems is `BASH <https://www.gnu.org/software/bash/>`_.  Others
-that you might commonly encounter are `zsh <https://www.zsh.org/>`_ and
+that you might commonly encounter are `zsh <https://en.wikipedia.org/wiki/Z_shell>`_ and
 `fish <https://fishshell.com/>`_.
 
 We'll focus on BASH, and most of what we learn here will apply
