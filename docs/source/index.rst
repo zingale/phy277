@@ -29,3 +29,21 @@ Course description
    getting_started/topics
    getting_started/computing
    getting_started/hello_world
+
+.. toctree::
+   :maxdepth: 1
+   :caption: The UNIX Shell
+
+   why_command_line
+   shell
+   shell-2
+   shell-3
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Shell Scripting
+
+   shell-looping
+   shell-scripts
+   permissions
+   finding
