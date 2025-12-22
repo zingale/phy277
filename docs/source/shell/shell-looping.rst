@@ -15,8 +15,7 @@ If-Tests
 
 That lesson does not cover *if-tests*, so we will supplement that
 here.  Some information can be found on the Linux Documentation Project
-`Conditional Statements
-<https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html>`_
+`Conditional Statements <https://tldp.org/LDP/Bash-Beginners-Guide/html/chap_07.html>`_
 section.
 
 
