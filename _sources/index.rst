@@ -50,3 +50,16 @@ Course description
    shell/shell-scripts
    shell/permissions
    shell/finding
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Introduction to Programming
+   :hidden:
+
+   programming/hardware
+   programming/development-tools
+   programming/structure
+   programming/tools
+   programming/compiling
+   programming/editors
+   programming/first_project
