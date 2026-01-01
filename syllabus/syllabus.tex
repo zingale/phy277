@@ -1,0 +1,285 @@
+%\DocumentMetadata{testphase={phase-III,math}}
+\documentclass[10pt]{article}
+
+\usepackage[tagged]{accessibility}
+
+
+%\usepackage[cm]{fullpage}
+\usepackage[lmargin=0.5in,rmargin=0.5in,
+            tmargin=0.4in,bmargin=0.75in]{geometry}
+
+\usepackage[parfill]{parskip}
+
+\usepackage{hyperref}
+%\usepackage{footnote}
+\usepackage{palatino}
+
+% URLs (special font for monospace)
+%\usepackage{inconsolata}
+
+\usepackage[defaultsans]{cantarell} % helvet} %
+\usepackage[T1]{fontenc}
+
+%\usepackage[small,compact]{titlesec}
+%\titlespacing{\subsection}{0pt}{*1}{-0.125\parskip}
+%\titleformat*{\subsection}{\sffamily\bfseries}
+
+\usepackage{tcolorbox}
+
+%\usepackage{fancyhdr}
+
+%\pagestyle{fancy}
+
+
+\usepackage{colortbl}
+
+% multicolumn row coloring: http://www.latex-community.org/viewtopic.php?f=5&t=2565
+\newcommand{\SetRowColor}[1]{\noalign{\gdef\RowColorName{#1}}\rowcolor{\RowColorName}}
+\newcommand{\mymulticolumn}[3]{\multicolumn{#1}{>{\columncolor{\RowColorName}}#2}{#3}}
+\definecolor{myGray}{rgb}{0.95,0.95,0.95}
+\definecolor{examGray}{rgb}{0.90,0.90,0.90}
+\definecolor{snowGray}{rgb}{0.95,0.95,0.95}
+
+% color pairs of rows.  See http://tex.stackexchange.com/questions/59250/alternating-row-color-two-at-a-time-in-tables
+%\usepackage[table]{xcolor}
+
+%% \rowcolors{0}{myGray}{white}
+%% \newcount\xrownum
+%% \makeatletter
+%%  \def\@rowc@lors{\noalign{%
+%%   \global\advance\xrownum\@ne
+%%   \ifodd\xrownum
+%%   \global\advance\rownum\@ne
+%%   \fi
+%%   }\@rowcolors}
+
+
+
+\newenvironment{itemsquish}
+  { \begin{itemize}
+    % set spacing between items
+    \addtolength{\itemsep}{-0.25\baselineskip}
+    % set spacing between lines
+    \addtolength{\baselineskip}{-0.25\baselineskip} }
+  { \end{itemize} }
+
+
+% some commands to allow a large table to co-exist on a page with text
+% see http://www.eng.cam.ac.uk/help/tpl/textprocessing/squeeze.html
+% ``Squeezing Space in LaTeX''
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+\hypersetup{
+  pdftitle={PHY 277 Syllabus (Spring 2026)},
+  pdflang={en-US}
+}
+
+
+\begin{document}
+
+\begin{center}
+{\large \sffamily \bfseries PHY 277: Computation for Physics and Astronomy / Spring 2026} {\footnotesize (rev.\ 1.01; 2026-01-01)}\\[1.5mm]
+{\em Instructor:} Prof.\ Michael Zingale, ESS 452, michael.zingale@stonybrook.edu \\
+{\em Class Meeting Time/\/Place:} Mon., Wed., Fri. 8:30~am to 9:20~am, location: Physics S-235 \\
+\end{center}
+
+
+\begin{tcolorbox}
+\subsection*{Learning Outcomes}
+An introduction to computing on UNIX/Linux computers. Fundamentals of
+using UNIX/Linux to write computer programs for numerical algorithms
+to solve computational physics and astronomy problems. Assignments are
+carried out in a high-level compiled programming language such as
+modern Fortran or C++ and require extensive use of SINC site computers
+outside the classroom.
+\end{tcolorbox}
+
+\subsection*{Prerequisite}
+PHY 125--127 or PHY 131--2 or PHY 141--2 (and the associated labs for
+your sequence); AMS 151 or MAT 126 or MAT 131 or MAT 141
+
+
+\subsection*{Course Website / Syllabus}
+
+All course material will be available at:\newline
+\url{https://zingale.github.io/phy277/}
+
+
+\subsection*{Office Hours}
+
+Office hours will follow immediately after class on Monday and
+Wednesday.  It is not possible to pick office hours that can
+accommodate the schedule of all students in this class.  You are
+encouraged to contact the instructor to make an appointment outside of
+these times.
+
+
+\subsection*{Homework}
+
+There will be 8--10
+homework assignments throughout the course.  Students will typically
+have 1 week to complete an assignment.  While it is recognized that
+students sometimes work together and discuss the homeworks as part of
+the learning process, {\em what you turn in must be your own work.}
+{\em Copying will not be tolerated.}
+
+For assignments where you are writing code, you must provide the
+machine-readable source code (uploaded to Brightspace).  The code
+must compile without error on the class machines (GCC 15).  Points
+will be deducted if the code does not compile.
+
+Homeworks are due at the time/date listed on the assignment.  {\bf No
+  late homeworks will be accepted}.  Homework grades will be posted to
+the Brightspace gradebook approximately 1 week after the due date,
+with grading comments available in the Brightspace gradebook.
+Students should report any errors/missing grades promptly.
+
+{\bf AI/LLM/ChatGPT policy}: you may {\em not} use ChatGPT or similar
+AI / large-language models for the homeworks.  This will be treated
+as an academic integrity violation.
+
+
+
+
+
+\subsection*{Exams}
+
+There will be 2 midterms and one final exam.  For each of the exams,
+students are responsible for knowing the material presented in the
+lectures, recitations, assigned as homework, and in the assigned
+chapters of the text.  Exams will take place in-class---{\bf we will
+  not use the common exam period scheduled by the registrar for the
+  midterms}.
+
+{\em Students should not expect that they will be allowed to make up
+  an exam without advanced notice.}  Reasons for wanting to make-up an
+exam will be judged on a case-by-case basis.  Students wanting to make
+up an exam must have a {\em valid} excuse (e.g.\ athlete in
+University-related sporting event, jury duty, medical emergency) and
+notify the instructor {\em before} the scheduled exam (or as soon as
+is safely possible afterwards).  {\em No make-ups will be allowed more
+  than one week after the original exam date.}  
+
+
+\subsection*{Final Exam}
+
+The final exam will be given at the time and date scheduled by the
+registrar.
+
+
+
+\subsection*{Course Topics}
+
+This is a preliminary list of topics we will cover in the class.
+Topics and dates will shift as the semester evolves.  The course
+website will always be the authoritative source for what we cover.
+
+\begin{itemize}
+  \item Intro / logistics (week 1)
+  \item Unix shell (weeks 1--3)
+  \item C++ data types (weeks 4--5)
+  \item C++ functions (weeks 6--7)
+  \item Software Engineering (week 8)
+  \item Classes (week 9--10)
+  \item The C++ standard library (week 11--12)
+  \item Numerical algorithms (week 13)
+  \item Crash-course on python (if time) (week 14)
+\end{itemize}
+
+\subsection*{Course Grade}
+
+The final grade will be based on the homeworks, midterm, and final
+exam using the following weighting:
+\begin{itemsquish}
+\item homework: 20\%
+\item class participation: 5\%
+\item midterm 1: 25\%
+\item midterm 2: 25\%
+\item final exam: 25\%
+\end{itemsquish}
+
+Computed this way, the overall course grade will range from 0--100.
+Letter grades will be based on a standard grade scale (i.e.\
+an overall score $> 90/100$ would be an A- or better).  However, if
+necessary, a curve will be applied to the overall course grade,
+considering the overall performance of the class.
+Students who wish to discuss their grades or class performance should
+see the instructor in person.  {\em For privacy reasons, grades will
+  not be discussed via e-mail.}
+
+\subsection*{Student Accessibility Support Center Statement}
+
+If you have a physical, psychological, medical, or learning disability
+that may impact your course work, please contact the Student
+Accessibility Support Center, Stony Brook Union Suite 107, (631)
+632-6748, or at \href{mailto:sasc@stonybrook.edu}{sasc@stonybrook.edu}. They will determine with you what
+accommodations are necessary and appropriate. All information and
+documentation is confidential.
+
+Students who require assistance during emergency evacuation are
+encouraged to discuss their needs with their professors and Student
+Accessibility Support Center. For procedures and information go to the
+following website:
+\url{https://ehs.stonybrook.edu/programs/fire-safety/emergency-evacuation/evacuation-guide-disabilities}
+and search {\em Fire Safety and Evacuation and Disabilities}.
+
+\subsection*{Academic Integrity}
+
+Each student must pursue his or her academic goals honestly
+and be personally accountable for all submitted work. Representing
+another person's work as your own is always wrong. Faculty are
+required to report any suspected instances of academic dishonesty to
+the Academic Judiciary. Faculty in the Health Sciences Center (School
+of Health Technology \& Management, Nursing, Social Welfare, Dental
+Medicine) and School of Medicine are required to follow their
+school-specific procedures. For more comprehensive information on
+academic integrity, including categories of academic dishonesty,
+please refer to the academic judiciary website at
+\url{http://www.stonybrook.edu/commcms/academic\_integrity/}
+
+\subsection*{Critical Incident Management}
+
+Stony Brook University expects students to respect the rights,
+privileges, and property of other people. Faculty are required to
+report to the Office of Judicial Affairs any disruptive behavior that
+interrupts their ability to teach, compromises the safety of the
+learning environment, or inhibits students' ability to learn.  Faculty
+in the HSC Schools and the School of Medicine are required to follow
+their school-specific procedures.  Further information about most
+academic matters can be found in the Undergraduate Bulletin, the
+Undergraduate Class Schedule, and the Faculty-Employee Handbook.
+
+
+\subsection*{Electronic Communication}
+
+Email to your University email account is an important way
+of communicating with you for this course.  For most students the
+email address is `{\tt firstname.lastname@stonybrook.edu}'.
+%, and the account can be accessed here.
+{\em It is your responsibility to read your email received at this
+  account.}  For instructions about how to verify your University
+email address see this: \\[0.25em]
+{\small \url{http://it.stonybrook.edu/help/kb/checking-or-changing-your-mail-forwarding-address-in-the-epo}}\\
+If you choose to forward your University email to another account, we
+are not responsible for undeliverable messages.
+
+\subsection*{Religious Observances}
+
+See the policy statement regarding religious holidays at\hfill\\
+{\small \url{http://www.stonybrook.edu/commcms/provost/faculty/handbook/employment/religious_holidays_policy.php}} \linebreak
+%
+
+Students are expected to notify the course professors by email of
+their intention to take time out for religious observance.  This
+should be done as soon as possible but definitely before the end of
+the `add/drop' period.  At that time they can discuss with the
+instructor(s) how they will be able to make up the work covered.
+
+
+\end{document}
