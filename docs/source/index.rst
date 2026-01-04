@@ -71,3 +71,21 @@ Course description
 
    editors/editors
 
+.. toctree::
+   :maxdepth: 1
+   :caption: C++ Basics
+   :hidden:
+
+   cxx-basics/cxx-datatypes
+   cxx-basics/cxx-vectors
+   cxx-basics/cxx-more-vectors
+   cxx-basics/cxx-matrix-example
+   cxx-basics/cxx-strings
+   cxx-basics/cxx-auto-decltype
+   cxx-basics/cxx-structs
+   cxx-basics/cxx-arrays
+   cxx-basics/cxx-references
+   cxx-basics/cxx-pointers
+   cxx-basics/cxx-statements
+   cxx-basics/cxx-io
+
