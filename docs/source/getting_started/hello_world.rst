@@ -39,6 +39,11 @@ Now we can simply type our C++ code in the window.  Enter the following:
       return 0;
    }
 
+.. tip::
+
+   If you hover your mouse over the code, a "copy to clipboard" icon will appear in the upper
+   right of the code box.  Click this and then you can paste into your editor window.
+
 Now save it by doing ``^O``, where ``^`` here means you hold down the *control* key on the keyword.
 
 It will ask for a name, so we'll use ``hello.cpp``.

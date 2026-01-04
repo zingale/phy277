@@ -10,7 +10,13 @@ of the `Software Carpentry Unix shell notes
 
 * Scientific computing often involves automating workflows and repetitive tasks.
 
-* Supercomputing facilities are access via remote connections
+* Supercomputing facilities are access via remote connections and
+  almost exclusively use some type of Linux OS.
+
+  .. tip::
+
+     Take a look at the `Top 500 list of fastest computers
+     <https://top500.org/lists/top500/2025/11/>`_
 
 * Much of the analysis software we use is written as a command line
   tool that is meant to be incorporated into a script, or chained

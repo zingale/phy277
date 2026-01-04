@@ -6,15 +6,29 @@ When we write C++ code, there are a few concepts we need to understand:
 
 * *source code* : this is the C++ instructions we directly write.  We
   will use our text editor and create a file with the extension
-  ``.cpp``, like ``hello.cpp``.
+  ``.cpp``, like our ``hello.cpp`` we saw previously:
+
+  .. literalinclude:: ../../../examples/hello/hello.cpp
+     :language: c++
 
   This is readable to us, but it does not contain the instructions
   that the processor can interpret directly.
 
 * *compiler* : a compiler is a program that takes the source code file
   (e.g. ``hello.cpp``) and translates it into machine code
-  instructions specific to the processor in our computer.  We will use
-  the compiler ``g++``.
+  instructions specific to the processor in our computer.
+
+  .. note::
+
+     On our machines, there are 2 different C++ compilers installed:
+
+     * ``g++`` : this is part of the `GNU Compiler Collection <https://gcc.gnu.org/>`_
+
+     * ``clang++`` : this is part of the `LLVM Project <https://www.llvm.org/>`_
+
+     Both give roughly the same performance and offer the same features.
+
+  We will use the compiler ``g++`` unless otherwise specified.
 
 * *executable* : this is the name of the program output by the
   compiler that is able to be run by the operating system.
