@@ -77,9 +77,13 @@ We will also want to take input.  For this we need to use ``std::cin``.  Let's l
 Notice that we initialize ``P`` to ``0.0`` just to be safe (we'll see
 a more compact way of initializing later).
 
-Now we will look at the complete code.  We shouldn't be expected to be
-able to write something like this yet, but this will show us some of
-the C++ constructs that we will learn in the next weeks.
+Now we will look at the complete code.
+
+.. note::
+
+   We shouldn't be expected to be able to write something like this
+   yet, but this will show us some of the C++ constructs that we will
+   learn in the next weeks.
 
 .. literalinclude:: ../../../examples/kepler/kepler.cpp
    :language: c++

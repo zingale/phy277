@@ -25,8 +25,9 @@ Course description
    :caption: Intro & Logistics
    :hidden:
 
-   getting_started/getting_started
    getting_started/topics
+   getting_started/getting_started
+   getting_started/using_your_computer
    getting_started/computing
    getting_started/hello_world
    getting_started/ai
@@ -61,5 +62,12 @@ Course description
    programming/structure
    programming/tools
    programming/compiling
-   programming/editors
    programming/first_project
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Editors
+   :hidden:
+
+   editors/editors
+

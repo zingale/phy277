@@ -5,7 +5,9 @@ We hear a lot today about `artificial intelligence
 <https://en.wikipedia.org/wiki/Artificial_intelligence>`_ (AI).  This
 is a big topic, and there are many aspect of AI that are useful in
 physics and astronomy, for instance, in classifying data and finding
-patterns.  Most of you have been exposed to ChatGPT and similar
+patterns.
+
+Most of you have been exposed to ChatGPT and similar
 tools---these fall into the category of `large language models
 <https://en.wikipedia.org/wiki/Large_language_model>`_ (LLMs).  These are
 tools that are trained on vast datasets that then predict output past on a query.

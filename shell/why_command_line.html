@@ -156,8 +156,9 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro &amp; Logistics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/topics.html">Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/using_your_computer.html">Using your own computer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/computing.html">Computation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/hello_world.html">Hello, World</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/ai.html">What About AI?</a></li>
@@ -183,8 +184,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../programming/structure.html">Structure of a C++ Program</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/tools.html">Helpful C++ Tools / Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/compiling.html">Compiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../programming/editors.html">Editors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/first_project.html">A First C++ Project</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Editors</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../editors/editors.html">Editors</a></li>
 </ul>
 
     </div>
@@ -421,9 +425,15 @@ document.write(`
 <p>We are all used to the point-and-click graphical user interfaces of modern computers.  So why use the command line?</p>
 <p>There are a few reasons (and see the excellent discussion that is part
 of the <a class="reference external" href="https://swcarpentry.github.io/shell-novice/instructor/instructor-notes">Software Carpentry Unix shell notes</a>):</p>
-<ul class="simple">
+<ul>
 <li><p>Scientific computing often involves automating workflows and repetitive tasks.</p></li>
-<li><p>Supercomputing facilities are access via remote connections</p></li>
+<li><p>Supercomputing facilities are access via remote connections and
+almost exclusively use some type of Linux OS.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Take a look at the <a class="reference external" href="https://top500.org/lists/top500/2025/11/">Top 500 list of fastest computers</a></p>
+</div>
+</li>
 <li><p>Much of the analysis software we use is written as a command line
 tool that is meant to be incorporated into a script, or chained
 together with other tools.</p></li>

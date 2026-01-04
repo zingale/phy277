@@ -49,7 +49,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'programming/compiling';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Editors" href="editors.html" />
+    <link rel="next" title="A First C++ Project" href="first_project.html" />
     <link rel="prev" title="Helpful C++ Tools / Resources" href="tools.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -156,8 +156,9 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro &amp; Logistics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/topics.html">Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/using_your_computer.html">Using your own computer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/computing.html">Computation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/hello_world.html">Hello, World</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/ai.html">What About AI?</a></li>
@@ -183,8 +184,11 @@
 <li class="toctree-l1"><a class="reference internal" href="structure.html">Structure of a C++ Program</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Helpful C++ Tools / Resources</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Compiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editors.html">Editors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="first_project.html">A First C++ Project</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Editors</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../editors/editors.html">Editors</a></li>
 </ul>
 
     </div>
@@ -433,14 +437,34 @@ document.write(`
 <ul>
 <li><p><em>source code</em> : this is the C++ instructions we directly write.  We
 will use our text editor and create a file with the extension
-<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>, like <code class="docutils literal notranslate"><span class="pre">hello.cpp</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>, like our <code class="docutils literal notranslate"><span class="pre">hello.cpp</span></code> we saw previously:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="c1">// our Hello, World program</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>This is readable to us, but it does not contain the instructions
 that the processor can interpret directly.</p>
 </li>
 <li><p><em>compiler</em> : a compiler is a program that takes the source code file
 (e.g. <code class="docutils literal notranslate"><span class="pre">hello.cpp</span></code>) and translates it into machine code
-instructions specific to the processor in our computer.  We will use
-the compiler <code class="docutils literal notranslate"><span class="pre">g++</span></code>.</p></li>
+instructions specific to the processor in our computer.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On our machines, there are 2 different C++ compilers installed:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">g++</span></code> : this is part of the <a class="reference external" href="https://gcc.gnu.org/">GNU Compiler Collection</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clang++</span></code> : this is part of the <a class="reference external" href="https://www.llvm.org/">LLVM Project</a></p></li>
+</ul>
+<p>Both give roughly the same performance and offer the same features.</p>
+</div>
+<p>We will use the compiler <code class="docutils literal notranslate"><span class="pre">g++</span></code> unless otherwise specified.</p>
+</li>
 <li><p><em>executable</em> : this is the name of the program output by the
 compiler that is able to be run by the operating system.</p>
 <p>Traditionally it will not have an extension on Unix (so
@@ -500,11 +524,11 @@ using a recent C++ standard to build the code we will discuss in this class.</p>
       </div>
     </a>
     <a class="right-next"
-       href="editors.html"
+       href="first_project.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Editors</p>
+        <p class="prev-next-title">A First C++ Project</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -6,70 +6,25 @@ For this class, we will be working with Linux systems and learning to
 use the bash command line, C++ programming, and some basic software
 engineering techniques.
 
-You may use either your own computer or the computers in the MathLab.
-
-
 MathLab
 =======
 
-The MathLab computers are running an older version of Ubuntu Linux,
-and they are not ideal platforms for the coursework in this class.
-For this reason, we will connect to two servers ``portal`` and
-``portal2`` to work remotely.
+The computers in the MathLab (S-235) have all of the software we
+need.  In-class, you will learn how to work on these computers
+as we learn about Unix and programming.
 
+Outside of class, there are two machines that are setup for remote
+access.  These are:
 
-Using your own computer
-=======================
+* ``portal.mathlab.stonybrook.edu``
+* ``portal2.mathlab.stonybrook.edu``
 
-If you want to use your own laptop, then you have a few options:
+We will learn how to remotely connect to these machines in week 1 of the class.
 
-* Use your laptop as a terminal to connect to the remove machines
-  setup for this class (``portal`` and ``portal2``).
+The Terminal
+============
 
-* Install the Bash shell and compilers on your laptop and develop on
-  your machine directly.
+Our standard interface to the computer is the command line, accessible
+via the terminal app.
 
-  .. note::
-
-     Due to the large variations in personal machines, we cannot support
-     software on your personal machine.
-
-* Install a Linux virtual machine on your computer.
-
-
-Using the remote servers
-------------------------
-
-You need to install an ssh client and a X Window client
-
-* Windows:
-
-  putty
-
-* MacOS:
-
-  XQuartz
-
-Using your personal machine directly
-------------------------------------
-
-You need to install the Unix shell and compilers
-
-* Windows:
-
-  Use the Windows Subsystem for Linux
-
-  Use Git for Windows (follow Software Carpentry)
-
-* MacOS:
-
-  You should have most of what you need, but other software can be installed via Brew
-
-* Linux:
-
-  You likely have everything you need already for the class
-
-
-Using a Linux virtual machine
------------------------------
-
+.. TODO -- add screenshots
