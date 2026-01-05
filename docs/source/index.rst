@@ -73,19 +73,32 @@ Course description
 
 .. toctree::
    :maxdepth: 1
-   :caption: C++ Basics
+   :caption: C++ Basic Datatypes
    :hidden:
 
    cxx-basics/cxx-datatypes
+   cxx-basics/floating-point
+   cxx-basics/cxx-strings
+
+.. toctree::
+   :maxdepth: 1
+   :caption: C++ Basics
+   :hidden:
+
    cxx-basics/cxx-vectors
    cxx-basics/cxx-more-vectors
    cxx-basics/cxx-matrix-example
-   cxx-basics/cxx-strings
    cxx-basics/cxx-auto-decltype
    cxx-basics/cxx-structs
    cxx-basics/cxx-arrays
    cxx-basics/cxx-references
    cxx-basics/cxx-pointers
+
+.. toctree::
+   :maxdepth: 1
+   :caption: C++ Flow Control
+   :hidden:
+
    cxx-basics/cxx-statements
    cxx-basics/cxx-io
 
