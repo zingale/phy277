@@ -1,12 +1,14 @@
-*************
-C++ Datatypes
-*************
+*************************
+C++ Fundamental Datatypes
+*************************
 
 .. admonition:: reading
 
    `Fundamental types <https://en.cppreference.com/w/cpp/language/types>`_ from cppreference.com
 
-Data is stored in computer memory.  We'll refer to the data in memory as an `object <https://en.wikipedia.org/wiki/Object_(computer_science)>`_.
+Data is stored in computer memory.  We'll refer to the data in memory
+as an `object
+<https://en.wikipedia.org/wiki/Object_(computer_science)>`_.
 
 We can access this data:
 
@@ -16,9 +18,11 @@ We can access this data:
 
 Data stored in the object can be:
 
-* *mutable* : we can change it---these are `variables <https://en.wikipedia.org/wiki/Variable_(computer_science)>`_
+* *mutable* : we can change it---these are `variables
+  <https://en.wikipedia.org/wiki/Variable_(computer_science)>`_
 
-* *immutable* : it cannot be changed---these are `constants <https://en.wikipedia.org/wiki/Constant_(computer_programming)>`_
+* *immutable* : it cannot be changed---these are `constants
+  <https://en.wikipedia.org/wiki/Constant_(computer_programming)>`_
 
 There are several basic types of data:
 

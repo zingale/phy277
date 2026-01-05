@@ -49,8 +49,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-strings';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="auto and decltype" href="cxx-auto-decltype.html" />
-    <link rel="prev" title="Example: Matrix" href="cxx-matrix-example.html" />
+    <link rel="next" title="Vectors" href="cxx-vectors.html" />
+    <link rel="prev" title="Floating Point" href="floating-point.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,18 +190,25 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../editors/editors.html">Editors</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basics</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basic Datatypes</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-datatypes.html">C++ Datatypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="floating-point.html">Floating Point</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Strings</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basics</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-vectors.html">Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-more-vectors.html">More Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-matrix-example.html">Example: Matrix</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-auto-decltype.html"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-arrays.html">Arrays</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-pointers.html">Pointers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Loops and If-Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
 </ul>
@@ -452,11 +459,8 @@ document.write(`
 <p class="admonition-title">reading</p>
 <p><a class="reference external" href="https://cplusplus.com/reference/string/string/">std::string</a> on cplusplus.com</p>
 </div>
-<p>A C++ <code class="docutils literal notranslate"><span class="pre">std::string</span></code> has many similarities to a vector (in
-particular, you could imagine doing <code class="docutils literal notranslate"><span class="pre">std::vector&lt;char&gt;</span></code>.  But it is
-specific to strings, and as such, has many useful functions that
-operate on strings.</p>
-<p>When working with strings, we include the <code class="docutils literal notranslate"><span class="pre">&lt;string&gt;</span></code> header.</p>
+<p>A C++ <code class="docutils literal notranslate"><span class="pre">std::string</span></code> holds a sequence of characters.  When working
+with strings, we include the <code class="docutils literal notranslate"><span class="pre">&lt;string&gt;</span></code> header.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In C++, single characters (<code class="docutils literal notranslate"><span class="pre">char</span></code>) are enclosed in single-quotes, e.g., <code class="docutils literal notranslate"><span class="pre">'A'</span></code>,
@@ -475,7 +479,7 @@ not careful, and we will avoid them as much as possible.</p>
 <p>Here’s a first example.  We’ll create a string and we’ll concatenate
 another string onto it using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 12 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string_example.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 9 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string_example.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
@@ -522,7 +526,7 @@ extension.</p>
 <p>There are a lot of different ways we can do a replace:
 <a class="reference external" href="https://www.cplusplus.com/reference/string/string/replace/">std::string::replace calls</a> .</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 13 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string_replace.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 10 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string_replace.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
@@ -593,20 +597,20 @@ See for instance: <a class="reference external" href="https://www.cplusplus.com/
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-matrix-example.html"
+       href="floating-point.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Example: Matrix</p>
+        <p class="prev-next-title">Floating Point</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-auto-decltype.html"
+       href="cxx-vectors.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></p>
+        <p class="prev-next-title">Vectors</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

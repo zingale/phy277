@@ -6,12 +6,8 @@ Strings
 
    `std::string <https://cplusplus.com/reference/string/string/>`__ on cplusplus.com
 
-A C++ ``std::string`` has many similarities to a vector (in
-particular, you could imagine doing ``std::vector<char>``.  But it is
-specific to strings, and as such, has many useful functions that
-operate on strings.
-
-When working with strings, we include the ``<string>`` header.
+A C++ ``std::string`` holds a sequence of characters.  When working
+with strings, we include the ``<string>`` header.
 
 .. note::
 
