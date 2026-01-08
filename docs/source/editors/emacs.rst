@@ -32,7 +32,7 @@ each time:
 
   emacs() { command emacs -nw "$@"; }
 
-You can add this at the very end of the file (on its own line).  
+You can add this at the very end of the file (on its own line).
 
 .. important::
 
@@ -79,6 +79,3 @@ for C++.  To enable this do the following:
     flycheck
 
 * exit emacs (``C-x C-c``)
-
-
-
