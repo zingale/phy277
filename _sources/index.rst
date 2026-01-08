@@ -59,6 +59,7 @@ Course description
 
    programming/hardware
    programming/development-tools
+   programming/preparing-our-system
    programming/structure
    programming/tools
    programming/compiling

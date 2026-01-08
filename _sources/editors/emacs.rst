@@ -78,7 +78,7 @@ for C++.  To enable this do the following:
 
     flycheck
 
-* exit emacs (``C-x C-x``)
+* exit emacs (``C-x C-c``)
 
 
 
