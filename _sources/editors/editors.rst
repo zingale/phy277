@@ -1,6 +1,6 @@
-*******
-Editors
-*******
+*****************
+Different Editors
+*****************
 
 We already looked at ``nano`` to edit files.  An editor not only allows us to write our source
 code, but it can also help us by:
@@ -11,7 +11,7 @@ code, but it can also help us by:
 
 * Show mismatched ``)`` and ``}`` in our code
 
-* Autocompleting variable and function names
+* Highlight syntax errors
 
 and more.
 

@@ -70,6 +70,7 @@ Course description
    :hidden:
 
    editors/editors
+   editors/emacs
 
 .. toctree::
    :maxdepth: 1
