@@ -1,15 +1,23 @@
 ;; .emacs
 
-(load-theme 'tango-dark)
-
 
 (custom-set-variables
- ;; uncomment to always end a file with a newline
- ;'(require-final-newline t)
- ;; uncomment to disable loading of "default.el" at startup
- ;'(inhibit-default-init t)
- ;; default to unified diffs
- '(diff-switches "-u"))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(diff-switches "-u")
+ '(package-selected-packages '(flycheck)))
+
+
+(require 'package)
+
+(add-to-list 'package-archives
+             '("MELPA Stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
+
+
+(load-theme 'tango-dark)
 
 ;;; uncomment for CJK utf-8 support for non-Asian users
 ;; (require 'un-define)
@@ -33,6 +41,18 @@
 (add-hook 'c++-mode-hook #'endless/c-hook)
 
 
+;; C+
+(add-hook 'c++-mode-hook 'flycheck-mode)
+;(add-hook 'c++-mode-hook (lambda () (setq flycheck-gcc-language-standard "c++23")))
+;(add-hook 'c++-mode-hook (lambda () (setq flycheck-cppcheck-language-standard "c++23")))
+(with-eval-after-load 'flycheck
+  ;; Use C++23 for GCC
+  (setq-default flycheck-gcc-language-standard "c++23")
+
+  ;; Use C++23 for Clang
+  (setq-default flycheck-clang-language-standard "c++23"))
+
+
 ; wind move -- use shift + arrows to change windows
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
@@ -50,3 +70,9 @@
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

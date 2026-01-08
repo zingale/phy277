@@ -5,11 +5,11 @@ emacs
 I'll use the emacs editor for most of the class.  You are welcome to
 continue to use nano if you prefer.
 
-..tip::
+.. tip::
 
-  The best way to learn an editor is by using it.  So we'll go over
-  some key commands in emacs and I'll introduce more as the semester
-  goes on.
+   The best way to learn an editor is by using it.  So we'll go over
+   some key commands in emacs and I'll introduce more as the semester
+   goes on.
 
 
 Quick tour
@@ -68,15 +68,15 @@ for C++.  To enable this do the following:
 
 * In emacs, enter the command:
 
-  ```
-  M-x package-install
-  ```
+  ::
+
+    M-x package-install
 
   press the "enter" key, and then type:
 
-  ```
-  flycheck
-  ```
+  ::
+
+    flycheck
 
 * exit emacs (``C-x C-x``)
 
