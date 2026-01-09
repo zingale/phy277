@@ -72,6 +72,7 @@ Course description
 
    editors/editors
    editors/emacs
+   editors/configuring-emacs
 
 .. toctree::
    :maxdepth: 1
@@ -84,7 +85,7 @@ Course description
 
 .. toctree::
    :maxdepth: 1
-   :caption: C++ Basics
+   :caption: C++ Advanced Types
    :hidden:
 
    cxx-basics/cxx-vectors
