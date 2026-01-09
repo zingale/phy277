@@ -40,7 +40,7 @@ to setup some C++ support:
 
       wget <paste-link-here>
 
-   where you paste the link you copied, as indicated.  
+   where you paste the link you copied, as indicated.
 
 you can check that the file is in the right place by doing:
 
