@@ -181,6 +181,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../programming/hardware.html">Computer Hardware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/development-tools.html">Software Development Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/preparing-our-system.html">Preparing <code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/structure.html">Structure of a C++ Program</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/tools.html">Helpful C++ Tools / Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/compiling.html">Compiling</a></li>
@@ -493,12 +494,19 @@ each time:</p>
 <p>On <code class="docutils literal notranslate"><span class="pre">portal</span></code> or <code class="docutils literal notranslate"><span class="pre">portal2</span></code>, you can add the following <code class="docutils literal notranslate"><span class="pre">.emacs</span></code> file to your home directory
 to setup some C++ support:</p>
 <p><a class="reference download internal" download="" href="../_downloads/455332d79ee03501b4e1dfe795451a95/.emacs"><code class="xref download docutils literal notranslate"><span class="pre">.emacs</span></code></a></p>
-<p>you can check that the file is in the right place by doing:</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>An easy way to put this on the remote server is to right-click the link and
+select “copy link”, and then on the remote machine, do:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
 }
-</style><span class="prompt1">ls<span class="w"> </span>-l<span class="w"> </span>~/.emacs</span>
+</style><span class="prompt1">wget<span class="w"> </span>&lt;paste-link-here&gt;</span>
+</pre></div></div><p>where you paste the link you copied, as indicated.</p>
+</div>
+<p>you can check that the file is in the right place by doing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ls<span class="w"> </span>-l<span class="w"> </span>~/.emacs</span>
 </pre></div></div><p>if it says <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">such</span> <span class="pre">file</span> <span class="pre">or</span> <span class="pre">directory</span></code> that it is not installed properly.</p>
 <p>This will allow us to use the <a class="reference external" href="https://www.flycheck.org/en/latest/user/installation.html">flycheck package</a>
 for C++.  To enable this do the following:</p>

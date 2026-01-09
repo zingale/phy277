@@ -49,6 +49,17 @@ to setup some C++ support:
 
 :download:`.emacs <./.emacs>`
 
+.. tip::
+
+   An easy way to put this on the remote server is to right-click the link and
+   select "copy link", and then on the remote machine, do:
+
+   .. prompt:: bash
+
+      wget <paste-link-here>
+
+   where you paste the link you copied, as indicated.  
+
 you can check that the file is in the right place by doing:
 
 .. prompt:: bash

@@ -68,7 +68,7 @@ If you are running Linux on your personal machine, you should already have an SS
 Using your personal machine directly
 ====================================
 
-You need to install the Unix shell and compilers
+You need to install the Unix shell and compilers directly on your machine.
 
 Windows
 -------
@@ -85,6 +85,7 @@ MacOS
 -----
 
 You should have most of what you need, but other software can be installed via ``brew``.
+See the `homebrew instructions <https://brew.sh/>`_.
 
 .. note::
 
@@ -105,7 +106,8 @@ You should have most of what you need, but other software can be installed via `
 Linux
 -----
 
-You likely have everything you need already for the class.
+You likely have everything you need already for the class.  You can access a terminal from your
+software launcher.
 
 
 Using a Linux Live Distribution

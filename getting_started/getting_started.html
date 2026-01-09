@@ -181,6 +181,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../programming/hardware.html">Computer Hardware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/development-tools.html">Software Development Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/preparing-our-system.html">Preparing <code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/structure.html">Structure of a C++ Program</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/tools.html">Helpful C++ Tools / Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/compiling.html">Compiling</a></li>
@@ -442,7 +443,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathlab">MathLab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terminal">The Terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terminal">The Terminal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-remote-servers">Accessing the remote servers</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -461,21 +465,59 @@ use the bash command line, C++ programming, and some basic software
 engineering techniques.</p>
 <section id="mathlab">
 <h2>MathLab<a class="headerlink" href="#mathlab" title="Link to this heading">#</a></h2>
-<p>The computers in the MathLab (S-235) have all of the software we
-need.  In-class, you will learn how to work on these computers
-as we learn about Unix and programming.</p>
-<p>Outside of class, there are two machines that are setup for remote
-access.  These are:</p>
+<p>The computers in the MathLab (S-235) have are a bit out-dated, so we
+will mostly use them as terminals to access remote servers that
+are more up-to-date.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This actually mimics how we often work in the real world, especially
+using research computing resources.</p>
+</div>
+<p>The remote machines are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">portal.mathlab.stonybrook.edu</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">portal2.mathlab.stonybrook.edu</span></code></p></li>
 </ul>
-<p>We will learn how to remotely connect to these machines in week 1 of the class.</p>
+<p>You may use either or both machines, but note that they are not
+mirrored.  So any files you put on one will not be reflected
+on the other.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>After 3 unsuccessful login attempts, you will be locked out
+of the machine for an hour.</p>
+</div>
 </section>
 <section id="the-terminal">
 <h2>The Terminal<a class="headerlink" href="#the-terminal" title="Link to this heading">#</a></h2>
 <p>Our standard interface to the computer is the command line, accessible
 via the terminal app.</p>
+<p>The terminal is our window to the computer.  It runs an interactive
+shell called <a class="reference external" href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a>
+that operates as a <a class="reference external" href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a>:</p>
+<ul class="simple">
+<li><p>Read: Bash will read a command that you enter at the promot</p></li>
+<li><p>Execute: Bash will execute the command</p></li>
+<li><p>Print: the output from the command will be printed to the terminal</p></li>
+<li><p>Loop: the process repeats, with the prompt waiting to read your next
+command.</p></li>
+</ul>
+<section id="accessing-the-remote-servers">
+<h3>Accessing the remote servers<a class="headerlink" href="#accessing-the-remote-servers" title="Link to this heading">#</a></h3>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Secure_Shell">ssh</a> command allows for a secure
+connection to a remote machine.  At the terminal prompt we can do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">ssh<span class="w"> </span>-l<span class="w"> </span>&lt;username&gt;<span class="w"> </span>portal.mathlab.stonybrook.edu</span>
+</pre></div></div><p>where you replace <code class="docutils literal notranslate"><span class="pre">&lt;username&gt;</span></code> with your NetId.  You will then be prompted for
+your password (the one associated with your NetId).</p>
+<p>If the connection is successful, then you will should see a prompt like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[mzingale@portal ~]$
+</pre></div>
+</div>
+<p>in the terminal.  This shows (the <code class="docutils literal notranslate"><span class="pre">&#64;portal</span></code>) that you are connected to portal.</p>
+</section>
 </section>
 </section>
 
@@ -525,7 +567,10 @@ via the terminal app.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathlab">MathLab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terminal">The Terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terminal">The Terminal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-remote-servers">Accessing the remote servers</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

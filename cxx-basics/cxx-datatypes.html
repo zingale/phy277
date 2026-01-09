@@ -183,6 +183,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../programming/hardware.html">Computer Hardware</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/development-tools.html">Software Development Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/preparing-our-system.html">Preparing <code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/structure.html">Structure of a C++ Program</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/tools.html">Helpful C++ Tools / Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programming/compiling.html">Compiling</a></li>
@@ -443,9 +444,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialization">Initialization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-and-initialization">Defining and Initialization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#const"><code class="docutils literal notranslate"><span class="pre">const</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-types">Mixing types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizes">Sizes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizes">Sizes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overflow-and-underflow">Overflow and underflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-precision">Floating point precision</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -498,14 +506,16 @@ More on this later…</p>
 </div>
 <p>There are also modifiers that can be used with many of these like: <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">unsigned</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>.</p>
 <p>A table of C++ datatypes is provided in the <a class="reference external" href="https://www.cplusplus.com/doc/tutorial/variables/">CPlusPlus tutorial variables section</a></p>
-<section id="initialization">
-<h2>Initialization<a class="headerlink" href="#initialization" title="Link to this heading">#</a></h2>
-<p>We can initialize a define a variable as:</p>
+<section id="defining-and-initialization">
+<h2>Defining and Initialization<a class="headerlink" href="#defining-and-initialization" title="Link to this heading">#</a></h2>
+<p>We can define a variable as:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
 <span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 <span class="kt">double</span><span class="w"> </span><span class="n">slope</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>This tells the computer how much memory it needs to reserve for each of these
+objects.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>C++ variable names are case-sensitive, so <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">X</span></code> are distinct.</p>
@@ -531,11 +541,40 @@ remembering to initialize it.</p>
 <p>Both of these will initialize the variable to <code class="docutils literal notranslate"><span class="pre">0</span></code>.  The <code class="docutils literal notranslate"><span class="pre">{}</span></code>
 notation is more flexible, since it will work with more complicated
 objects that we will encounter later.</p>
-<p>We’ll see a third way to initialize objects when we look at classes (and constructors).</p>
-<p>Objects defined with <code class="docutils literal notranslate"><span class="pre">const</span></code> cannot be changed, so you are required to initialize the immediately:</p>
+<p>We’ll see a third way to initialize objects when we look at classes
+(and constructors).</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Consider the following code:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here we are using <code class="docutils literal notranslate"><span class="pre">x</span></code> without initializing it.  This behavior is
+undefined, and can lead to errors that can be hard to track down.</p>
+</div>
+<section id="const">
+<h3><code class="docutils literal notranslate"><span class="pre">const</span></code><a class="headerlink" href="#const" title="Link to this heading">#</a></h3>
+<p>Objects defined with <code class="docutils literal notranslate"><span class="pre">const</span></code> cannot be changed, so you are required
+to initialize the immediately:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">G</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.67e-8</span><span class="p">;</span>
 </pre></div>
 </div>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">Try it…</p>
+<p>Let’s write an example using a <code class="docutils literal notranslate"><span class="pre">const</span></code> variable and try to modify it.</p>
+<p>What happens?</p>
+</div>
+</section>
 </section>
 <section id="mixing-types">
 <h2>Mixing types<a class="headerlink" href="#mixing-types" title="Link to this heading">#</a></h2>
@@ -543,7 +582,9 @@ objects that we will encounter later.</p>
 implicitly <em>cast</em> objects to the more general type, sometimes with
 unexpected consequences.  Later we’ll see how to explicitly cast data
 if needed.</p>
-<p>Try the following (you’ll need to put this in a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function and compile it).</p>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">Try it…</p>
+<p>Try the following (you’ll need to put this in a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function and compile it):</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// convert from Fahrenheit to Celsius</span>
 
 <span class="kt">double</span><span class="w"> </span><span class="n">T_F</span><span class="w"> </span><span class="p">{</span><span class="mf">100.0</span><span class="p">};</span>
@@ -553,17 +594,19 @@ if needed.</p>
 </pre></div>
 </div>
 <p>Why doesn’t this work as expected?</p>
+</div>
 </section>
 <section id="sizes">
 <h2>Sizes<a class="headerlink" href="#sizes" title="Link to this heading">#</a></h2>
-<p>The link above as well as your text tells you how the standard defines
+<p>The link at the top of the page tells you how the standard defines
 the sizes of the different data types.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>C++ guarantees a minimum size of the different types, but different
 compilers or processors may have different defaults.</p>
 </div>
-<p>But we can explicitly determine this with a C++ program using <code class="docutils literal notranslate"><span class="pre">sizeof()</span></code>—that returns the number of <em>bytes</em></p>
+<p>We can explicitly determine this with a C++ program using
+<code class="docutils literal notranslate"><span class="pre">sizeof()</span></code>—that returns the number of <em>bytes</em></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -599,8 +642,13 @@ require a fixed width, like <code class="docutils literal notranslate"><span cla
 </pre></div>
 </div>
 </div>
-<p>Notice that there is a new pattern here, the use of <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>—this is
-used in template functions, a topic we will talk a lot about later.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a new pattern here, the use of <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>—this is used in
+template functions, a topic we will talk more about later.</p>
+</div>
+<section id="overflow-and-underflow">
+<h3>Overflow and underflow<a class="headerlink" href="#overflow-and-underflow" title="Link to this heading">#</a></h3>
 <p>What happens if we exceed the limits of a data type?
 For floating point, we don’t abruptly transition to <code class="docutils literal notranslate"><span class="pre">0.</span></code> (for underflow)
 but instead start losing digits of precision as <a class="reference external" href="https://en.wikipedia.org/wiki/Subnormal_number">subnormal numbers</a>.</p>
@@ -612,10 +660,13 @@ but instead start losing digits of precision as <a class="reference external" hr
 </figcaption>
 </figure>
 <div class="admonition-try-it admonition">
-<p class="admonition-title">try it…</p>
+<p class="admonition-title">Try it…</p>
 <p>Create a program that initializes a <code class="docutils literal notranslate"><span class="pre">short</span></code> integer and through
 addition triggers an overflow.</p>
 </div>
+</section>
+<section id="floating-point-precision">
+<h3>Floating point precision<a class="headerlink" href="#floating-point-precision" title="Link to this heading">#</a></h3>
 <p>Precision is also important with floating point.  Consider the following: what do you expect?</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
 <span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">-1.0</span><span class="p">;</span>
@@ -626,6 +677,7 @@ addition triggers an overflow.</p>
 </pre></div>
 </div>
 <p>With floating point, the associate property of addition does not hold.</p>
+</section>
 </section>
 </section>
 
@@ -674,9 +726,16 @@ addition triggers an overflow.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initialization">Initialization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-and-initialization">Defining and Initialization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#const"><code class="docutils literal notranslate"><span class="pre">const</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-types">Mixing types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizes">Sizes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizes">Sizes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overflow-and-underflow">Overflow and underflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-precision">Floating point precision</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
