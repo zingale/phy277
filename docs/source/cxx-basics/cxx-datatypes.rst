@@ -56,16 +56,19 @@ There are also modifiers that can be used with many of these like: ``short``, ``
 
 A table of C++ datatypes is provided in the `CPlusPlus tutorial variables section <https://www.cplusplus.com/doc/tutorial/variables/>`_
 
-Initialization
-==============
+Defining and Initialization
+===========================
 
-We can initialize a define a variable as:
+We can define a variable as:
 
 .. code:: c++
 
    int i;
    float x;
    double slope;
+
+This tells the computer how much memory it needs to reserve for each of these
+objects.
 
 .. tip::
 
@@ -95,14 +98,46 @@ Both of these will initialize the variable to ``0``.  The ``{}``
 notation is more flexible, since it will work with more complicated
 objects that we will encounter later.
 
-We'll see a third way to initialize objects when we look at classes (and constructors).
+We'll see a third way to initialize objects when we look at classes
+(and constructors).
 
-Objects defined with ``const`` cannot be changed, so you are required to initialize the immediately:
+.. caution::
+
+   Consider the following code:
+
+   .. code:: c++
+
+      #include <iostream>
+
+      int main() {
+
+          double x;
+
+          double y = 10;
+
+          std::cout << x + y << std::endl;
+
+      }
+
+   Here we are using ``x`` without initializing it.  This behavior is
+   undefined, and can lead to errors that can be hard to track down.
+
+
+``const``
+---------
+
+Objects defined with ``const`` cannot be changed, so you are required
+to initialize the immediately:
 
 .. code:: c++
 
    const double G = 6.67e-8;
 
+.. admonition:: Try it...
+
+   Let's write an example using a ``const`` variable and try to modify it.
+
+   What happens?
 
 Mixing types
 ============
@@ -112,25 +147,27 @@ implicitly *cast* objects to the more general type, sometimes with
 unexpected consequences.  Later we'll see how to explicitly cast data
 if needed.
 
-Try the following (you'll need to put this in a ``main()`` function and compile it).
+.. admonition:: Try it...
 
-.. code:: c++
+   Try the following (you'll need to put this in a ``main()`` function and compile it):
 
-   // convert from Fahrenheit to Celsius
+   .. code:: c++
 
-   double T_F {100.0};
-   double T_C =  (T_F - 32) * (5 / 9);
+      // convert from Fahrenheit to Celsius
 
-   std::cout << "T_C = " << T_C << std::endl;
+      double T_F {100.0};
+      double T_C =  (T_F - 32) * (5 / 9);
+
+      std::cout << "T_C = " << T_C << std::endl;
 
 
-Why doesn't this work as expected?
+   Why doesn't this work as expected?
 
 
 Sizes
 =====
 
-The link above as well as your text tells you how the standard defines
+The link at the top of the page tells you how the standard defines
 the sizes of the different data types.
 
 .. important::
@@ -138,7 +175,8 @@ the sizes of the different data types.
    C++ guarantees a minimum size of the different types, but different
    compilers or processors may have different defaults.
 
-But we can explicitly determine this with a C++ program using ``sizeof()``---that returns the number of *bytes*
+We can explicitly determine this with a C++ program using
+``sizeof()``---that returns the number of *bytes*
 
 .. code:: c++
 
@@ -162,10 +200,14 @@ We can find out a lot about the range and precision of numbers that can be store
    :language: c++
    :caption: ``limits_test.cpp``
 
-Notice that there is a new pattern here, the use of ``<>``---this is
-used in template functions, a topic we will talk a lot about later.
+.. note::
+
+   There is a new pattern here, the use of ``<>``---this is used in
+   template functions, a topic we will talk more about later.
 
 
+Overflow and underflow
+----------------------
 
 What happens if we exceed the limits of a data type?
 For floating point, we don't abruptly transition to ``0.`` (for underflow)
@@ -178,10 +220,13 @@ For integers, it is more fun:
 
    (`xkcd <https://imgs.xkcd.com/comics/cant_sleep.png>`_)
 
-.. admonition:: try it...
+.. admonition:: Try it...
 
    Create a program that initializes a ``short`` integer and through
    addition triggers an overflow.
+
+Floating point precision
+------------------------
 
 Precision is also important with floating point.  Consider the following: what do you expect?
 

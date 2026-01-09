@@ -31,9 +31,12 @@ To the end of our ``.bashrc``.  Then we can just type:
 
 To setup the compilers (we need to do this each time we log into the machines).
 
-You can check which version of the compilers are active by doing:
 
-.. prompt:: bash
+.. tip::
 
-   g++ --version
+   You can check which version of the compilers are active by doing:
+
+   .. prompt:: bash
+
+      g++ --version
 
