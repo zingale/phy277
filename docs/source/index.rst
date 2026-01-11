@@ -52,6 +52,7 @@ Course description
    shell/shell-looping
    shell/shell-scripts
    shell/permissions
+   shell/path
    shell/finding
 
 .. toctree::
