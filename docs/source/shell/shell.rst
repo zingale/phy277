@@ -60,4 +60,15 @@ A basic "cheat sheet" is available here: `Unix/Linux Command Reference <https://
 Configuring Bash
 ================
 
+Everytime we open a terminal, the shell reads a special file called
+``.bashrc``.  This file contains commands that customize our shell
+in various ways.
 
+As the semester goes on, we'll add to this file to make our lives
+easier.
+
+We can look at the current contents of our ``.bashrc`` file by doing:
+
+.. prompt:: bash
+
+   cat ~/.bashrc
