@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Redirection and Pipes &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Search Path &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -46,11 +46,11 @@
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'shell/shell-3';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'shell/path';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Looping on the Command Line" href="shell-looping.html" />
-    <link rel="prev" title="Create Files and Directories" href="shell-2.html" />
+    <link rel="next" title="Find and Grep" href="finding.html" />
+    <link rel="prev" title="File Permissions" href="permissions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -164,20 +164,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/ai.html">What About AI?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The UNIX Shell</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="why_command_line.html">Why Use the Command Line?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell.html">The Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sample-data.html">Some Sample Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="filesystem.html">Navigating the Filesystem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell-2.html">Create Files and Directories</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Redirection and Pipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-3.html">Redirection and Pipes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Shell Scripting</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="shell-looping.html">Looping on the Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell-scripts.html">Shell Scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="permissions.html">File Permissions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="path.html">Search Path</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Search Path</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finding.html">Find and Grep</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Programming</span></p>
@@ -288,7 +288,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/shell/shell-3.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/shell/path.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -305,7 +305,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/shell/shell-3.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/shell/path.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -322,7 +322,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fshell/shell-3.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fshell/path.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -352,7 +352,7 @@
       
       
       
-      <li><a href="../_sources/shell/shell-3.rst" target="_blank"
+      <li><a href="../_sources/shell/path.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -423,9 +423,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -436,19 +434,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Redirection and Pipes</h1>
+    <h1>Search Path</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -458,33 +448,25 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="redirection-and-pipes">
-<h1>Redirection and Pipes<a class="headerlink" href="#redirection-and-pipes" title="Link to this heading">#</a></h1>
-<div class="admonition-reading admonition">
-<p class="admonition-title">reading</p>
-<p>We will loosely follow the Software Carpentry <a class="reference external" href="https://swcarpentry.github.io/shell-novice/04-pipefilter.html">Pipes and Filters</a>
-lesson from <a class="reference external" href="https://swcarpentry.github.io/shell-novice/">The Unix Shell</a></p>
+  <section id="search-path">
+<h1>Search Path<a class="headerlink" href="#search-path" title="Link to this heading">#</a></h1>
+<p>When you enter a command at the command-line prompt, the shell needs to be able to find the command on the filesystem.
+This is handled by the shell’s <a class="reference external" href="https://en.wikipedia.org/wiki/PATH_(variable)">search path</a>.</p>
+<p>We can see the current path by doing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span></span>
+</pre></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, the current directory, <code class="docutils literal notranslate"><span class="pre">.</span></code>, is not included in the search path.</p>
 </div>
-<p>Let’s work through that lesson together…</p>
-<section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
-<p>We learned the following commands:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">wc</span></code> : count the number of lines, words, and characters in a file</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cat</span></code> : print the contents of a file to the terminal</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">less</span></code> : a <em>pager</em> that outputs the contents of a file one screen-full at a time</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sort</span></code> : sort the input data</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">head</span></code> : output the first 10 (or specified number of) lines of a file</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tail</span></code> : output the last 10 (or specified number of) lines of a file</p></li>
-</ul>
-<p>We also learned:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> redirect the output to a file</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> append the output to a file</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">|</span></code> pass the output of one command to the input of the next</p></li>
-</ul>
-</section>
-</section>
+<p>If a command is not found in the search path, then you need to give the full absolute or relative path to the command.
+For a command in your current directory, like <code class="docutils literal notranslate"><span class="pre">myscript.sh</span></code>, we can do this by prepending <code class="docutils literal notranslate"><span class="pre">./</span></code>, which means
+“look in the current directory, <code class="docutils literal notranslate"><span class="pre">.</span></code>”, e.g.,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">./myscript.sh</span>
+</pre></div></div></section>
 
 
                 </article>
@@ -498,20 +480,20 @@ lesson from <a class="reference external" href="https://swcarpentry.github.io/sh
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="shell-2.html"
+       href="permissions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Create Files and Directories</p>
+        <p class="prev-next-title">File Permissions</p>
       </div>
     </a>
     <a class="right-next"
-       href="shell-looping.html"
+       href="finding.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Looping on the Command Line</p>
+        <p class="prev-next-title">Find and Grep</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -521,21 +503,6 @@ lesson from <a class="reference external" href="https://swcarpentry.github.io/sh
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
