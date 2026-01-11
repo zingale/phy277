@@ -11,6 +11,10 @@ We can see the current path by doing:
 
    echo $PATH
 
+.. note::
+
+   By default, the current directory, ``.``, is not included in the search path.
+
 If a command is not found in the search path, then you need to give the full absolute or relative path to the command.
 For a command in your current directory, like ``myscript.sh``, we can do this by prepending ``./``, which means
 "look in the current directory, ``.``", e.g.,
