@@ -39,6 +39,8 @@ Course description
 
    shell/why_command_line
    shell/shell
+   shell/sample-data
+   shell/filesystem
    shell/shell-2
    shell/shell-3
 

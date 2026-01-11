@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Navigating the Filesystem &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>The Shell &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -49,7 +49,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'shell/shell';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Create Files and Directories" href="shell-2.html" />
+    <link rel="next" title="Some Sample Data" href="sample-data.html" />
     <link rel="prev" title="Why Use the Command Line?" href="why_command_line.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -166,7 +166,9 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The UNIX Shell</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="why_command_line.html">Why Use the Command Line?</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Navigating the Filesystem</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample-data.html">Some Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filesystem.html">Navigating the Filesystem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell-2.html">Create Files and Directories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell-3.html">Redirection and Pipes</a></li>
 </ul>
@@ -433,7 +435,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Navigating the Filesystem</h1>
+    <h1>The Shell</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -443,12 +445,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shell">The shell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The shell</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-shell">Which shell?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting up</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-walkthrough">First walkthrough</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem-terminology">Filesystem terminology</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-bash">Configuring Bash</a></li>
 </ul>
             </nav>
         </div>
@@ -460,15 +459,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="navigating-the-filesystem">
-<h1>Navigating the Filesystem<a class="headerlink" href="#navigating-the-filesystem" title="Link to this heading">#</a></h1>
+  <section id="the-shell">
+<h1>The Shell<a class="headerlink" href="#the-shell" title="Link to this heading">#</a></h1>
 <div class="admonition-reading admonition">
 <p class="admonition-title">reading</p>
 <p>We will loosely follow the Software Carpentry lesson on <a class="reference external" href="https://swcarpentry.github.io/shell-novice/">The Unix Shell</a></p>
 </div>
-<section id="the-shell">
-<h2>The shell<a class="headerlink" href="#the-shell" title="Link to this heading">#</a></h2>
-<p>The <em>shell</em> is your interface to the operator system.  It implements a <em>REPL</em> interface:
+<section id="id1">
+<h2>The shell<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Unix_shell">shell</a> is your
+interface to the operator system.  It implements a <a class="reference external" href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL interface</a>:
 Read, Execute, Print, Loop.  This means it:</p>
 <ul class="simple">
 <li><p>Reads the input (commands) you type</p></li>
@@ -479,9 +479,11 @@ Read, Execute, Print, Loop.  This means it:</p>
 <p>The power of the shell is that we can easily combine different tools
 together to create powerful commands to manipulate files on the
 computer.</p>
-<p>To access the shell, we need to open a terminal on the computer.</p>
-<p>Here’s a quick demonstration: the <code class="docutils literal notranslate"><span class="pre">echo</span></code> command simply prints anything following
-it to the terminal:</p>
+<p>To access the shell, we need to open a terminal on the computer.  This
+will present us with the <a class="reference external" href="https://en.wikipedia.org/wiki/Command-line_interface#Command_prompt">command prompt</a>,
+which typically is a <code class="docutils literal notranslate"><span class="pre">$</span></code> (although it can be customized)`.</p>
+<p>Here’s a quick demonstration: the <code class="docutils literal notranslate"><span class="pre">echo</span></code> command simply prints
+anything following it to the terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
@@ -503,66 +505,8 @@ directly to the other shells.</p>
 </ul>
 <p>A basic “cheat sheet” is available here: <a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/7/79/Unix_command_cheatsheet.pdf">Unix/Linux Command Reference</a>.</p>
 </section>
-<section id="setting-up">
-<h2>Setting up<a class="headerlink" href="#setting-up" title="Link to this heading">#</a></h2>
-<p>To help us understand some basic shell operations, we will all work
-with a collection of files and directories.  Type the following
-commands (we’ll explain their meaning later) to get the files we
-need</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">curl<span class="w"> </span>https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip<span class="w"> </span>--output<span class="w"> </span>shell-lesson-data.zip</span>
-<span class="prompt1">unzip<span class="w"> </span>shell-lesson-data.zip</span>
-</pre></div></div><p>This data set comes from the Software Carpentry project.</p>
-<p>This creates a directory on the filesystem named <code class="docutils literal notranslate"><span class="pre">shell-lesson-data/</span></code>.  To begin, we want to
-“change directory” into that directory, using the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>shell-lesson-data</span>
-</pre></div></div></section>
-<section id="first-walkthrough">
-<h2>First walkthrough<a class="headerlink" href="#first-walkthrough" title="Link to this heading">#</a></h2>
-<p>Let’s walkthrough the <a class="reference external" href="https://swcarpentry.github.io/shell-novice/02-filedir.html">Navigating Files and Directories</a>
-lesson together.  You are also encouraged to work through it on your
-own outside of class.</p>
-</section>
-<section id="filesystem-terminology">
-<h2>Filesystem terminology<a class="headerlink" href="#filesystem-terminology" title="Link to this heading">#</a></h2>
-<p>We’ll use the following terms throughout here:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">file</span> <span class="pre">system</span></code> : the collection (and organization) of all of the files stored on your computer</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">file</span></code> : a single unit containing a collection of data</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">directory</span></code> :  (also known as a folder) a collection of files and directories</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">home</span> <span class="pre">directory</span></code> : your default directory.  When you first open a shell on your computer,
-this is where you are.</p></li>
-</ul>
-</section>
-<section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
-<p>We learned the following commands:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code> : print working directory (where you currently are in the file system)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code> : list the contents of a directory</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code> : change directory</p></li>
-</ul>
-<p>There are a few special directories that always exist the help us navigate:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">.</span></code> : the current directory</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">..</span></code> : one directory above us</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">~</span></code> : our home directory</p></li>
-</ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">/</span></code> character has 2 roles:</p>
-<ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">/</span></code> directory is the <em>root</em> of the filesystem</p></li>
-<li><p>A path uses <code class="docutils literal notranslate"><span class="pre">/</span></code> to separate directory names</p></li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>The Unix shell uses tab-completion to make it easier to type.
-Start typing a path (or command) and then press the <em>Tab</em> key and
-it will either complete it (if there is a unique file / command) or
-display the possible completions.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You can navigate through your history of commands using the up and down arrows.</p>
-</div>
+<section id="configuring-bash">
+<h2>Configuring Bash<a class="headerlink" href="#configuring-bash" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -587,11 +531,11 @@ display the possible completions.</p>
       </div>
     </a>
     <a class="right-next"
-       href="shell-2.html"
+       href="sample-data.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Create Files and Directories</p>
+        <p class="prev-next-title">Some Sample Data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -611,12 +555,9 @@ display the possible completions.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-shell">The shell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The shell</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-shell">Which shell?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting up</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-walkthrough">First walkthrough</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem-terminology">Filesystem terminology</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-bash">Configuring Bash</a></li>
 </ul>
   </nav></div>
 

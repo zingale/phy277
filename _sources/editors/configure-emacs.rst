@@ -75,5 +75,5 @@ for C++.  To enable this do the following:
 
 .. admonition:: Try it...
 
-   Let's write a "hello word", but leave off a `;` and see how
+   Let's write a "hello word", but leave off a ``;`` and see how
    flycheck catches this.
