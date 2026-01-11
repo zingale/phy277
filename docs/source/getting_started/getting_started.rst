@@ -52,6 +52,15 @@ that operates as a `REPL
 * Loop: the process repeats, with the prompt waiting to read your next
   command.
 
+.. admonition:: Try it...
+
+   A simple Unix command is ``echo``.  It simply repeats whatever you
+   type:
+
+   .. prompt:: bash
+
+      echo Hello, World!
+
 Accessing the remote servers
 ----------------------------
 
@@ -64,6 +73,14 @@ connection to a remote machine.  At the terminal prompt we can do:
 
 where you replace ``<username>`` with your NetId.  You will then be prompted for
 your password (the one associated with your NetId).
+
+.. note::
+
+   Here we see that ``ssh`` takes options that after the command that modify the
+   default behavior (sometimes we call these *switches*).  These typically start
+   with a ``-`` or ``--``.
+
+   We'll see that most Unix commands have options that we can use.
 
 If the connection is successful, then you will should see a prompt like:
 

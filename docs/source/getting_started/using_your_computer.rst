@@ -110,6 +110,18 @@ You likely have everything you need already for the class.  You can access a ter
 software launcher.
 
 
+ChromeOS
+--------
+
+ChromeOS has the option of using a Linux virtual machine called crustini.  To enable
+this, follow these `instructions on setting up crustini <https://chromeos.dev/en/linux/setup>`_.
+
+Once setup, you can install the necessary compilers via the package manager:
+
+.. prompt::
+
+   apt install g++
+
 Using a Linux Live Distribution
 ===============================
 

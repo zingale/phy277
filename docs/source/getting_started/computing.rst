@@ -27,16 +27,23 @@ numbers are stored---we will learn about this format shortly.
 Languages
 =========
 
-In physics and astronomy, a wide range of programming languages are
-commonly used.  You can implement any algorithm in any of these
-languages, but some make it easier than others.
+In physics and astronomy, a wide range of `programming languages
+<https://en.wikipedia.org/wiki/Programming_language>`_ are commonly
+used.  The job of a programming language is to bridge how humans think
+and how computers think.  We write a program in a human-friendly way
+(plain text with English keywords expressing logic) and then a tool
+called a `compiler <https://en.wikipedia.org/wiki/Compiler>`_
+translates this into instructions that the computer understands.
+
 
 High-level languages have extensive libraries that implement
 commonly-used features that you can rely on when writing your code,
 saving you time.
 
-There are many ways we can categorize languages (and there are
-exceptions to most of what I write here):
+There are many ways we can `categorize programming languages
+<https://en.wikipedia.org/wiki/List_of_programming_languages_by_type>`_
+(and there are exceptions to most of what I write here).  Some
+examples:
 
 * Compiled vs. interpreted
 
@@ -66,10 +73,18 @@ interpreted language can be easier to program in.
 
     This can give a lot of flexibility to codes.
 
+    python is an example.
+
+
   * Statically typed languages require you to specify up front what
     type of data will be stored in a variable.
 
     This can allow the compiler to optimize the code.
+
+.. note::
+
+   You can implement any algorithm in any of these languages, but some
+   make it easier than others.
 
 Why C++?
 ========
@@ -77,7 +92,7 @@ Why C++?
 This course aims to teach a compiled language, and traditionally,
 Fortran and/or C++ are taught.
 
-We will focus only on C++
+We will focus only on `C++ <https://en.wikipedia.org/wiki/C%2B%2B>`_.
 
 C++ is:
 
@@ -86,11 +101,13 @@ C++ is:
 * updated with new features frequently (currently a 3-year cycle)
 
 * used extensively in physics (in particular in high-energy physics
-  and in high-performance computing)
+  and in high-performance computing in astrophysics)
 
 * versatile
 
 * widely used outside of academic research environments---this means
   that you can take your C++ skills to industry jobs if desired
 
+.. important::
 
+   We will focus on the `C++20 standard <https://en.wikipedia.org/wiki/C%2B%2B20>`_.
