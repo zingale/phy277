@@ -191,6 +191,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../editors/editors.html">Different Editors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../editors/emacs.html">emacs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/configure-emacs.html">Configuring emacs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basic Datatypes</span></p>
 <ul class="nav bd-sidenav">
@@ -501,17 +502,30 @@ that operates as a <a class="reference external" href="https://en.wikipedia.org/
 <li><p>Loop: the process repeats, with the prompt waiting to read your next
 command.</p></li>
 </ul>
-<section id="accessing-the-remote-servers">
-<h3>Accessing the remote servers<a class="headerlink" href="#accessing-the-remote-servers" title="Link to this heading">#</a></h3>
-<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Secure_Shell">ssh</a> command allows for a secure
-connection to a remote machine.  At the terminal prompt we can do:</p>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">Try it…</p>
+<p>A simple Unix command is <code class="docutils literal notranslate"><span class="pre">echo</span></code>.  It simply repeats whatever you
+type:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
 }
-</style><span class="prompt1">ssh<span class="w"> </span>-l<span class="w"> </span>&lt;username&gt;<span class="w"> </span>portal.mathlab.stonybrook.edu</span>
+</style><span class="prompt1"><span class="nb">echo</span><span class="w"> </span>Hello,<span class="w"> </span>World!</span>
+</pre></div></div></div>
+<section id="accessing-the-remote-servers">
+<h3>Accessing the remote servers<a class="headerlink" href="#accessing-the-remote-servers" title="Link to this heading">#</a></h3>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Secure_Shell">ssh</a> command allows for a secure
+connection to a remote machine.  At the terminal prompt we can do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-l<span class="w"> </span>&lt;username&gt;<span class="w"> </span>portal.mathlab.stonybrook.edu</span>
 </pre></div></div><p>where you replace <code class="docutils literal notranslate"><span class="pre">&lt;username&gt;</span></code> with your NetId.  You will then be prompted for
 your password (the one associated with your NetId).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here we see that <code class="docutils literal notranslate"><span class="pre">ssh</span></code> takes options that after the command that modify the
+default behavior (sometimes we call these <em>switches</em>).  These typically start
+with a <code class="docutils literal notranslate"><span class="pre">-</span></code> or <code class="docutils literal notranslate"><span class="pre">--</span></code>.</p>
+<p>We’ll see that most Unix commands have options that we can use.</p>
+</div>
 <p>If the connection is successful, then you will should see a prompt like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[mzingale@portal ~]$
 </pre></div>

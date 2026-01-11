@@ -72,7 +72,7 @@ Course description
 
    editors/editors
    editors/emacs
-   editors/configuring-emacs
+   editors/configure-emacs
 
 .. toctree::
    :maxdepth: 1
