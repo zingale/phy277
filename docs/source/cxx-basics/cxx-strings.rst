@@ -51,7 +51,7 @@ We can use a constructor to create an initial
 string filled with a character repeated many times.  For instance,
 here's an 80-character line:
 
-.. literalinclude:: ../../../examples/string-repeat.cpp
+.. literalinclude:: ../../../examples/strings/string-repeat.cpp
    :language: c++
    :caption: string-repeat.cpp
 

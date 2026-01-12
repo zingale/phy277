@@ -2,6 +2,8 @@
 Working with Strings
 ********************
 
+We can use the same ideas we say with vectors on strings.
+
 Find and Replace
 ================
 

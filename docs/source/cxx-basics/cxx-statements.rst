@@ -1,13 +1,6 @@
-******************
-Loops and If-Tests
-******************
-
-We've been using ``if`` tests and ``for`` loops already, but now it's
-time to understand some of the nuances of these statements.
-
-
+****************
 Statement Blocks
-================
+****************
 
 We use curly braces, ``{}`` to denote blocks of code.  These are used
 in a number of contexts:
