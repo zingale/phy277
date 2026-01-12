@@ -86,7 +86,14 @@ Course description
    cxx-basics/floating-point
    cxx-basics/numbers
    cxx-basics/cmath
+
+.. toctree::
+   :maxdepth: 1
+   :caption: C++ strings and I/O
+   :hidden:
+
    cxx-basics/cxx-strings
+   cxx-basics/cxx-strings-functions
 
 .. toctree::
    :maxdepth: 1

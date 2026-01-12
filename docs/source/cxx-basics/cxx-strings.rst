@@ -6,6 +6,9 @@ Strings
 
    `std::string <https://cplusplus.com/reference/string/string/>`__ on cplusplus.com
 
+``std::string``
+===============
+
 A C++ ``std::string`` holds a sequence of characters.  When working
 with strings, we include the ``<string>`` header.
 
@@ -44,13 +47,14 @@ work with them.
    to create a newline.  ``\n`` is slightly different than
    ``std::endl``---the latter also flushes the output buffer.
 
-Just like with vectors, we can use a constructor to create an initial
+We can use a constructor to create an initial
 string filled with a character repeated many times.  For instance,
 here's an 80-character line:
 
-.. code:: c++
+.. literalinclude:: ../../../examples/string-repeat.cpp
+   :language: c++
+   :caption: string-repeat.cpp
 
-   std::string line(80, '-');
 
 Here, ``'-'`` is a ``char`` and not a string.
 
@@ -59,36 +63,16 @@ Here, ``'-'`` is a ``char`` and not a string.
    A nice overview of working with C++ strings is provided by "hacking C++":
    `std::string <https://hackingcpp.com/cpp/std/string.png>`_
 
-Find and Replace
-================
 
-``string`` has find and replace member functions.  Here's an example of
-extracting the basename of a file from a path and then replacing the
-extension.
+String math
+===========
 
-There are a lot of different ways we can do a replace:
-`std::string::replace calls
-<https://www.cplusplus.com/reference/string/string/replace/>`_ .
+There are a lot of operators and functions that can work on strings.  See
+https://en.cppreference.com/w/cpp/string/basic_string.html
 
-.. literalinclude:: ../../../examples/strings/string_replace.cpp
+We can concatenate strings using the ``+`` operator:
+
+.. literalinclude:: ../../../examples/strings/string-cat.cpp
    :language: c++
-   :caption: ``string_replace.cpp``
+   :caption: string-cat.cpp
 
-.. tip::
-
-   C++17 introduced the ``filesystem`` library that includes a `stem
-   function <https://en.cppreference.com/w/cpp/filesystem/path/stem>`_
-   that can do this as well.  We'll look at the filesystem library
-   later.
-
-Other Functions
-===============
-
-There are a large number of member functions that work on strings.
-See for instance: https://www.cplusplus.com/reference/string/string/
-
-
-.. admonition:: try it...
-
-   Let's try to use ``std::string::find_first_of``, following this:
-   https://www.cplusplus.com/reference/string/string/find_first_of/
