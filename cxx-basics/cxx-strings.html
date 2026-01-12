@@ -50,7 +50,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Vectors" href="cxx-vectors.html" />
-    <link rel="prev" title="Floating Point" href="floating-point.html" />
+    <link rel="prev" title="Numerical Library" href="cmath.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -200,6 +200,8 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="floating-point.html">Floating Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmath.html">Numerical Library</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Strings</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
@@ -485,7 +487,7 @@ not careful, and we will avoid them as much as possible.</p>
 <p>Here’s a first example.  We’ll create a string and we’ll concatenate
 another string onto it using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 9 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string_example.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 11 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string_example.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
@@ -532,7 +534,7 @@ extension.</p>
 <p>There are a lot of different ways we can do a replace:
 <a class="reference external" href="https://www.cplusplus.com/reference/string/string/replace/">std::string::replace calls</a> .</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 10 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string_replace.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 12 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string_replace.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
@@ -603,12 +605,12 @@ See for instance: <a class="reference external" href="https://www.cplusplus.com/
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="floating-point.html"
+       href="cmath.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Floating Point</p>
+        <p class="prev-next-title">Numerical Library</p>
       </div>
     </a>
     <a class="right-next"

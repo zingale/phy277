@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Software Development Tools &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>std::numbers &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -46,11 +46,13 @@
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'programming/development-tools';</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/numbers';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Preparing portal / portal2" href="preparing-our-system.html" />
-    <link rel="prev" title="Computer Hardware" href="hardware.html" />
+    <link rel="next" title="Numerical Library" href="cmath.html" />
+    <link rel="prev" title="Floating Point" href="floating-point.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,14 +183,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../shell/finding.html">Find and Grep</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Programming</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="hardware.html">Computer Hardware</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Software Development Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="preparing-our-system.html">Preparing <code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="structure.html">Structure of a C++ Program</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html">Helpful C++ Tools / Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compiling.html">Compiling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="first_project.html">A First C++ Project</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../programming/hardware.html">Computer Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/development-tools.html">Software Development Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/preparing-our-system.html">Preparing <code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/structure.html">Structure of a C++ Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/tools.html">Helpful C++ Tools / Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/compiling.html">Compiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/first_project.html">A First C++ Project</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Editors</span></p>
 <ul class="nav bd-sidenav">
@@ -197,28 +199,28 @@
 <li class="toctree-l1"><a class="reference internal" href="../editors/configure-emacs.html">Configuring emacs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basic Datatypes</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point.html">Floating Point</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cmath.html">Numerical Library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings.html">Strings</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="floating-point.html">Floating Point</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmath.html">Numerical Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors.html">Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-more-vectors.html">More Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-matrix-example.html">Example: Matrix</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-auto-decltype.html"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-structs.html">Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-arrays.html">Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-references.html">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-vectors.html">Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-more-vectors.html">More Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-matrix-example.html">Example: Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-auto-decltype.html"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-arrays.html">Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-pointers.html">Pointers</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-statements.html">Loops and If-Tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Loops and If-Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
 </ul>
 
     </div>
@@ -290,7 +292,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/programming/development-tools.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/numbers.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -307,7 +309,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/programming/development-tools.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/numbers.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -324,7 +326,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fprogramming/development-tools.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/numbers.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -354,7 +356,7 @@
       
       
       
-      <li><a href="../_sources/programming/development-tools.rst" target="_blank"
+      <li><a href="../_sources/cxx-basics/numbers.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -436,7 +438,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Software Development Tools</h1>
+    <h1>std::numbers</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -450,79 +452,31 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="software-development-tools">
-<h1>Software Development Tools<a class="headerlink" href="#software-development-tools" title="Link to this heading">#</a></h1>
-<div class="admonition-reading admonition">
-<p class="admonition-title">reading</p>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Programming_tool">Wikipedia: Programming tool</a></p>
+  <section id="std-numbers">
+<h1><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code><a class="headerlink" href="#std-numbers" title="Link to this heading">#</a></h1>
+<p>C++20 introduced <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/constants.html">mathematical constants</a> via the
+<code class="docutils literal notranslate"><span class="pre">&lt;numbers&gt;</span></code> header.</p>
+<p>For example, we can compute the area of a circle, using the value of <span class="math notranslate nohighlight">\(\pi\)</span> from
+this library:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 9 </span><span class="caption-text">circle.cpp</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numbers&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">{</span><span class="mf">2.0</span><span class="p">};</span>
+
+<span class="w">    </span><span class="c1">// we&#39;ll compute r**2 as r * r</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;area = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
 </div>
-<p>There are a number of tools / concepts that we will use in the software development process:</p>
-<ul>
-<li><p>Editors / integrated development environments</p>
-<p>Beyond just letting us type in text, these can check syntax,
-highlight code, autocomplete function / variable names, etc. making
-it easier to write our code.</p>
-</li>
-<li><p>Version control</p>
-<p>We already had an introduction to git.  Good version control is a
-critical part of the software development process.  We will put all of
-our projects under git control.</p>
-</li>
-<li><p>Compiler</p>
-<p>The job of the compiler is to turn the source code in a file into
-machine instructions for the computer we are using.</p>
-<p>We will use the <a class="reference external" href="https://gcc.gnu.org/">GNU Compiler Collection</a>
-for most of this class.  The name of the C++ compiler in GCC is <code class="docutils literal notranslate"><span class="pre">g++</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">g++</span></code> supports different language standards depending on what
-version of the compiler we use.  Here is a list of <a class="reference external" href="https://gcc.gnu.org/projects/cxx-status.html">C++ standard
-support in GCC</a></p>
-</li>
-<li><p>Linker</p>
-<p>When working with multiple source files or calling function in libraries
-we need to link all of the compiled code together.  <code class="docutils literal notranslate"><span class="pre">g++</span></code> will act as the
-frontend to the linker.</p>
-<p>Sometimes we will be able to compile and link with one command, but
-these are distinct steps in the process of building a program.</p>
-</li>
-<li><p>Testing</p>
-<p>To ensure that our code gets the correct answer, there are a number
-of different testing methods we can employ.  A simple type of
-testing is called <em>unit testing</em>, where we write tests for each
-function (or program unit) to separately test that they work as
-intended.  We’ll look at unit testing toward the end of the
-semester.</p>
-<p>Once we have some tests, we’d ideally like to automate them.  Github
-allows us to do this via <em>continuous integration</em>, where the tests
-are run before each change is merged into the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of our
-code repo.</p>
-</li>
-<li><p>Debuggers</p>
-<p>When our code is not giving us the expected result, a <a class="reference external" href="https://en.wikipedia.org/wiki/Debugger">debugger</a> (like <code class="docutils literal notranslate"><span class="pre">gdb</span></code>) allows us
-to step through the execution of the code bit-by-bit and inspect the
-variables to understand where it is going wrong.</p>
-</li>
-<li><p>Profiler</p>
-<p>One our code is working, we can think about performance.  A
-<a class="reference external" href="https://en.wikipedia.org/wiki/Profiling_(computer_programming)">profiler</a>
-(like <code class="docutils literal notranslate"><span class="pre">gprof</span></code>) will give use a report of which functions or even
-lines in our code are taking the most time.  This helps us identify
-where to spend our time optimizing the code to perform better.</p>
-</li>
-<li><p>Static analysis tools</p>
-<p>A static analysis tool looks through your code and identifies
-problematic expressions (things like buffer overflows, using memory
-that has been freed, …).  They can also sometimes tell you how to
-write code more efficiently, to use modern C++ constructs, etc.</p>
-<p>There are a <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis">large number of static code analysis tools</a>.
-We’ll mostly look at <a class="reference external" href="https://clang.llvm.org/extra/clang-tidy/">clang-tidy</a>.</p>
-</li>
-<li><p>Documentation</p>
-<p>Ultimately, when we make our code available, we would like to have
-documentation explaining how to use our code <em>and</em> how to contribute
-to its development.  We’ll look at some standard documentation tools
-and how to host a website.</p>
-</li>
-</ul>
+</div>
 </section>
 
 
@@ -537,20 +491,20 @@ and how to host a website.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="hardware.html"
+       href="floating-point.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Computer Hardware</p>
+        <p class="prev-next-title">Floating Point</p>
       </div>
     </a>
     <a class="right-next"
-       href="preparing-our-system.html"
+       href="cmath.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Preparing <code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></p>
+        <p class="prev-next-title">Numerical Library</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
