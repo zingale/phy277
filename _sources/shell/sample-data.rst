@@ -26,4 +26,3 @@ This creates a directory on the filesystem named ``shell-lesson-data/``.  To beg
 .. prompt:: bash
 
   cd shell-lesson-data
-

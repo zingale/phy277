@@ -446,8 +446,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-walkthrough">First walkthrough</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem-terminology">Filesystem terminology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem-terminology">Filesystem terminology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-listing">Directory listing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organization-of-unix-filesystem">Organization of Unix filesystem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-vs-absolute-paths">Relative vs. absolute paths</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
             </nav>
@@ -464,24 +468,75 @@ document.write(`
 <h1>Navigating the Filesystem<a class="headerlink" href="#navigating-the-filesystem" title="Link to this heading">#</a></h1>
 <div class="admonition-reading admonition">
 <p class="admonition-title">reading</p>
-<p>We will loosely follow the Software Carpentry lesson on <a class="reference external" href="https://swcarpentry.github.io/shell-novice/02-filedir.html">Navigating Files and Directories</a></p>
+<p>We will loosely follow the Software Carpentry lesson on <a class="reference external" href="https://swcarpentry.github.io/shell-novice/02-filedir.html">Navigating
+Files and Directories</a></p>
+<p>You are also encouraged to work through it on your own outside of
+class.</p>
 </div>
-<section id="first-walkthrough">
-<h2>First walkthrough<a class="headerlink" href="#first-walkthrough" title="Link to this heading">#</a></h2>
-<p>Let’s walkthrough the <a class="reference external" href="https://swcarpentry.github.io/shell-novice/02-filedir.html">Navigating Files and Directories</a>
-lesson together.  You are also encouraged to work through it on your
-own outside of class.</p>
-</section>
 <section id="filesystem-terminology">
 <h2>Filesystem terminology<a class="headerlink" href="#filesystem-terminology" title="Link to this heading">#</a></h2>
 <p>We’ll use the following terms throughout here:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">file</span> <span class="pre">system</span></code> : the collection (and organization) of all of the files stored on your computer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file</span> <span class="pre">system</span></code> : the collection (and organization) of all of the
+files stored on your computer.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">file</span></code> : a single unit containing a collection of data</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">directory</span></code> :  (also known as a folder) a collection of files and directories</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">home</span> <span class="pre">directory</span></code> : your default directory.  When you first open a shell on your computer,
 this is where you are.</p></li>
 </ul>
+<section id="directory-listing">
+<h3>Directory listing<a class="headerlink" href="#directory-listing" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">ls</span></code> command lists the contents of a directory</p>
+<p>We use directories to help organize our files.  For our project data, we can see
+this organization using the <code class="docutils literal notranslate"><span class="pre">tree</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">tree<span class="w"> </span>exercise-data</span>
+</pre></div></div><p>This gives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>exercise-data/
+├── alkanes
+│   ├── cubane.pdb
+│   ├── ethane.pdb
+│   ├── methane.pdb
+│   ├── octane.pdb
+│   ├── pentane.pdb
+│   └── propane.pdb
+├── animal-counts
+│   └── animals.csv
+├── creatures
+│   ├── basilisk.dat
+│   ├── minotaur.dat
+│   └── unicorn.dat
+├── numbers.txt
+└── writing
+    ├── haiku.txt
+    └── LittleWomen.txt
+</pre></div>
+</div>
+</section>
+<section id="organization-of-unix-filesystem">
+<h3>Organization of Unix filesystem<a class="headerlink" href="#organization-of-unix-filesystem" title="Link to this heading">#</a></h3>
+<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">standard file system layout</a> is
+used on Unix-like systems.  The important top-level directories are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> : the root directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/boot</span></code> : the kernel and files needed to boot the system</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/home</span></code> : the directories where user data is stored.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/usr</span></code> : the location of the a lot of the commands we use</p></li>
+</ul>
+<p>We can go to our <em>home directory</em> by simply doing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span></span>
+</pre></div></div><p>(with no arguments).  If we look at this directory with <code class="docutils literal notranslate"><span class="pre">pwd</span></code> we would see something
+like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mzingale</span>
+</pre></div>
+</div>
+</section>
+<section id="relative-vs-absolute-paths">
+<h3>Relative vs. absolute paths<a class="headerlink" href="#relative-vs-absolute-paths" title="Link to this heading">#</a></h3>
+</section>
 </section>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
@@ -561,8 +616,12 @@ display the possible completions.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-walkthrough">First walkthrough</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem-terminology">Filesystem terminology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem-terminology">Filesystem terminology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-listing">Directory listing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organization-of-unix-filesystem">Organization of Unix filesystem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-vs-absolute-paths">Relative vs. absolute paths</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
   </nav></div>
