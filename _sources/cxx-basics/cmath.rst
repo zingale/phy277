@@ -72,6 +72,10 @@ Absolute value
 
    This can be especially dangerous with ``std:abs()``.
 
+.. literalinclude:: ../../../examples/floating_point/absolute.cpp
+   :language: c++
+   :caption: absolute.cpp
+
 
 
 
