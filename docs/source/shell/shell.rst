@@ -60,7 +60,7 @@ A basic "cheat sheet" is available here: `Unix/Linux Command Reference <https://
 Configuring Bash
 ================
 
-Everytime we open a terminal, the shell reads a special file called
+Every time we open a terminal, the shell reads a special file called
 ``.bashrc``.  This file contains commands that customize our shell
 in various ways.
 
