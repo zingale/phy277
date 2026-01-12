@@ -85,6 +85,7 @@ Course description
    cxx-basics/cxx-datatypes
    cxx-basics/floating-point
    cxx-basics/numbers
+   cxx-basics/cmath
    cxx-basics/cxx-strings
 
 .. toctree::

@@ -6,7 +6,8 @@ int main() {
 
     double r{2.0};
 
-    double area = std::numbers::pi * std::pow(r, 2.0);
+    // we'll compute r**2 as r * r
+    double area = std::numbers::pi * r * r;
 
     std::cout << "area = " << area << std::endl;
 
