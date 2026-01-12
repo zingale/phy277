@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Statement Blocks &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Loops &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -46,11 +46,11 @@
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-statements';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-loops';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Conditional Statements" href="cxx-conditional.html" />
-    <link rel="prev" title="Pointers" href="cxx-pointers.html" />
+    <link rel="next" title="continue and break" href="cxx-continue-break.html" />
+    <link rel="prev" title="Conditional Statements" href="cxx-conditional.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -226,9 +226,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Statement Blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html">Conditional Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-loops.html">Loops</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
 </ul>
@@ -302,7 +302,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/cxx-statements.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/cxx-loops.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +319,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/cxx-statements.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/cxx-loops.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +336,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/cxx-statements.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/cxx-loops.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -366,7 +366,7 @@
       
       
       
-      <li><a href="../_sources/cxx-basics/cxx-statements.rst" target="_blank"
+      <li><a href="../_sources/cxx-basics/cxx-loops.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -450,7 +450,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Statement Blocks</h1>
+    <h1>Loops</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -460,14 +460,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shadowing">Shadowing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional Statements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-test"><code class="docutils literal notranslate"><span class="pre">if</span></code>-test</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-statement"><code class="docutils literal notranslate"><span class="pre">switch</span></code> statement</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops"><code class="docutils literal notranslate"><span class="pre">for</span></code> loops</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-and-do-while-loops"><code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> loops</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops"><code class="docutils literal notranslate"><span class="pre">for</span></code> loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-and-do-while-loops"><code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continue-and-break"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 </ul>
             </nav>
@@ -480,208 +474,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="statement-blocks">
-<h1>Statement Blocks<a class="headerlink" href="#statement-blocks" title="Link to this heading">#</a></h1>
-<p>We use curly braces, <code class="docutils literal notranslate"><span class="pre">{}</span></code> to denote blocks of code.  These are used
-in a number of contexts:</p>
-<ul class="simple">
-<li><p>to define the body of a function (so far we’ve only seen <code class="docutils literal notranslate"><span class="pre">main()</span></code>,
-but this applies to any function).</p></li>
-<li><p>to define the members of a <code class="docutils literal notranslate"><span class="pre">struct</span></code>, or as we’ll soon
-see, a <code class="docutils literal notranslate"><span class="pre">namespace</span></code>, <code class="docutils literal notranslate"><span class="pre">enum</span></code>, or <code class="docutils literal notranslate"><span class="pre">class</span></code>.</p></li>
-<li><p>to group statements that are part of another statement, as with an
-<code class="docutils literal notranslate"><span class="pre">if</span></code> or <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p></li>
-</ul>
-<p>One thing to keep in mind with these blocks is <em>scope</em>—this means
-whether we have access to the value held by an object.</p>
-<p>A general rule is that we can access objects that are defined outside
-of our current scope.</p>
-<p>Let’s look at a Fibonacci example:</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 34 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">fibonacci.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="c1">// note that the limits of int are 2147483647, so we are going to overflow</span>
-<span class="w">    </span><span class="c1">// after ~50 terms</span>
-
-<span class="w">    </span><span class="c1">// we could instead use long here</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fib</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span>
-
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;how many terms should we compute?&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">f_new</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="mi">-2</span><span class="p">];</span>
-<span class="w">        </span><span class="n">fib</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">f_new</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">fib</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<p>Inside of the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function, we create a <code class="docutils literal notranslate"><span class="pre">vector</span></code> called
-<code class="docutils literal notranslate"><span class="pre">fib</span></code> and an integer <code class="docutils literal notranslate"><span class="pre">n</span></code>.  Both of these are in scope inside of
-<code class="docutils literal notranslate"><span class="pre">main</span></code>—that means that we can use them and access them as needed.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>One of the nice things about the standard types like <code class="docutils literal notranslate"><span class="pre">vector</span></code> is
-that C++ automatically cleans up their memory when they go out of
-scope.  This occurs at the last <code class="docutils literal notranslate"><span class="pre">}</span></code> of <code class="docutils literal notranslate"><span class="pre">main()</span></code>.  At that
-point, <code class="docutils literal notranslate"><span class="pre">fib</span></code> is destroyed and its memory is freed.  The same
-happens with <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
-<p>This behavior is called an <a class="reference external" href="https://en.wikipedia.org/wiki/Automatic_variable">automatic variable</a>.</p>
-</div>
-<p>Automatic variables are allocated in a special part of memory called
-the <a class="reference external" href="https://en.wikipedia.org/wiki/Stack-based_memory_allocation">stack</a>.  When you enter a function, all of the automatic
-variables are <em>pushed down</em> onto the stack and are available as long
-as they stay in scope.  When you exit the function, the variables are
-<em>popped</em> off the stack and the memory is automatically freed.</p>
-<p>In our example above, there are a few stacks.  The outermost static is
-defined by the <code class="docutils literal notranslate"><span class="pre">{}</span></code> for <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Stack space is limited and you can run out, resulting in a <em>stack overflow</em>.</p>
-<p>Later we’ll see that we can manually manage memory for variables
-that we place in the <em>heap</em> which is generally much larger.</p>
-<p>(But also note that a <code class="docutils literal notranslate"><span class="pre">vector</span></code> keeps the storage for its elements
-separately from the vector object itself, and those can be on the
-heap and automatically managed for us.)</p>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop defines a new scope, and when we enter the <code class="docutils literal notranslate"><span class="pre">{}</span></code>
-delineating the loop block, a new stack is created, where the
-variables local to that block are managed.  When we exit the loop,
-that stack is destroyed, freeing up all of the memory those local
-variables needed.</p>
-<section id="shadowing">
-<h2>Shadowing<a class="headerlink" href="#shadowing" title="Link to this heading">#</a></h2>
-<p>Consider the following:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">test</span><span class="p">{</span><span class="nb">true</span><span class="p">};</span>
-<span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">0.0</span><span class="p">};</span>
-
-<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span>
-
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">test</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Here we’ve defined a new variable <code class="docutils literal notranslate"><span class="pre">x</span></code> inside the <code class="docutils literal notranslate"><span class="pre">if</span></code> block.
-Since it has the same name as the object <code class="docutils literal notranslate"><span class="pre">x</span></code> in the main code, we
-say that we are <em>shadowing</em> the value from outside our block.  In
-general, this should be avoided.  These two <code class="docutils literal notranslate"><span class="pre">x</span></code> objects are
-completely separate in memory and once we left the <code class="docutils literal notranslate"><span class="pre">if</span></code> block, the
-inner <code class="docutils literal notranslate"><span class="pre">x</span></code> is destroyed and its contents are not available to us.
-However, someone reading the code might not realize this.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>g++ can warn you about shadowing if you include the <code class="docutils literal notranslate"><span class="pre">-Wshadow</span></code>
-option to the compiler.</p>
-</div>
-</section>
-<section id="conditional-statements">
-<h2>Conditional Statements<a class="headerlink" href="#conditional-statements" title="Link to this heading">#</a></h2>
-<section id="if-test">
-<h3><code class="docutils literal notranslate"><span class="pre">if</span></code>-test<a class="headerlink" href="#if-test" title="Link to this heading">#</a></h3>
-<p>We’ve already been using if-tests quite a bit.  So let’s look a little more at their syntax:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="c1">// do things if condition1 is true</span>
-
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="c1">// do things if condition1 is false but condition 2 is true</span>
-
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="c1">// do things only if both condition1 and condition2 are false</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>There is a form of an if-statement that does not use brackets if
-there is only a single statement to execute:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
-<span class="w">    </span><span class="n">statement</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>This is potentially dangerous—if someone later edits the code
-and decides that they want to add another statement to that
-condition, they might do:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
-<span class="w">    </span><span class="n">statement</span><span class="p">;</span>
-<span class="w">    </span><span class="n">another_statement</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>But since there are no braces, only <code class="docutils literal notranslate"><span class="pre">statement</span></code> is
-conditionally-executed.  <code class="docutils literal notranslate"><span class="pre">another_statement</span></code> is not part of the
-if-test and will always be executed.</p>
-<p>For this reason, it is always best to use brackets.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>C++17 also allows for a form with an initializer before the
-conditional (e.g., to open a file).  We will not explore this here.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>There is also a simple <a class="reference external" href="https://en.wikipedia.org/wiki/%3F:">ternary operator</a> in C++ of the form:</p>
-<blockquote>
-<div><p><em>condition</em> <code class="docutils literal notranslate"><span class="pre">?</span></code> <em>true-result</em> <code class="docutils literal notranslate"><span class="pre">:</span></code> <em>false result</em></p>
-</div></blockquote>
-<p>Where <em>true-result</em> is the value used if <em>condition</em> is <code class="docutils literal notranslate"><span class="pre">true</span></code>
-and <em>false-result</em> otherwise.</p>
-<p>For instance:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">{</span><span class="mi">10</span><span class="p">};</span>
-
-<span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="switch-statement">
-<h3><code class="docutils literal notranslate"><span class="pre">switch</span></code> statement<a class="headerlink" href="#switch-statement" title="Link to this heading">#</a></h3>
-<p>A switch statement takes action on a single expression, and has many different
-cases that can take different actions.  For example:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">{</span><span class="mi">2</span><span class="p">};</span>
-<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">text</span><span class="p">{};</span>
-
-<span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
-<span class="w">       </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;zero&quot;</span><span class="p">;</span>
-<span class="w">       </span><span class="k">break</span><span class="p">;</span>
-
-<span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
-<span class="w">       </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;one&quot;</span><span class="p">;</span>
-<span class="w">       </span><span class="k">break</span><span class="p">;</span>
-
-<span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
-<span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span>
-<span class="w">   </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span>
-<span class="w">       </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2 &lt;= i &lt;= 4&quot;</span><span class="p">;</span>
-<span class="w">       </span><span class="k">break</span><span class="p">;</span>
-
-<span class="w">   </span><span class="k">default</span><span class="o">:</span>
-<span class="w">       </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;i &gt; 4&quot;</span><span class="p">;</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Notice that each <code class="docutils literal notranslate"><span class="pre">case</span></code> region ends with <code class="docutils literal notranslate"><span class="pre">break</span></code>.  If you omit the
-<code class="docutils literal notranslate"><span class="pre">break</span></code>, then the flow “falls through” to the next options.</p>
-</section>
+  <section id="loops">
+<h1>Loops<a class="headerlink" href="#loops" title="Link to this heading">#</a></h1>
 <section id="for-loops">
-<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h3>
+<h2><code class="docutils literal notranslate"><span class="pre">for</span></code> loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h2>
 <p>We’ve already seen the basic structure of a for loop:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">initializer</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">iterator</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">     </span><span class="c1">// do stuff</span>
@@ -718,7 +514,7 @@ avoided.</p>
 </div>
 </section>
 <section id="while-and-do-while-loops">
-<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> loops<a class="headerlink" href="#while-and-do-while-loops" title="Link to this heading">#</a></h3>
+<h2><code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> loops<a class="headerlink" href="#while-and-do-while-loops" title="Link to this heading">#</a></h2>
 <p>There are two types of <code class="docutils literal notranslate"><span class="pre">while</span></code> loops in C++.  The first takes the form:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// do stuff</span>
@@ -746,8 +542,8 @@ other form puts the <code class="docutils literal notranslate"><span class="pre"
 <p>The <code class="docutils literal notranslate"><span class="pre">do</span> <span class="pre">{}</span> <span class="pre">while</span> <span class="pre">(condition)</span></code> form <a class="reference external" href="https://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines/avoid-do-while.html">is discouraged</a>.</p>
 </div>
 <p>Finally, you can loop over a range simply by using an initialization list:</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 35 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">list_loop.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 38 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">list_loop.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -760,7 +556,6 @@ other form puts the <code class="docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 </div>
-</section>
 </section>
 <section id="continue-and-break">
 <h2><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#continue-and-break" title="Link to this heading">#</a></h2>
@@ -782,8 +577,8 @@ loop block if some conditions is met.  This is where <code class="docutils liter
 <p>In this case, we will want a way to bail out.  Here’s an (silly)
 example of asking for a word from a user and telling them how many
 letters it contains.  But if they enter “0”, we exit:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 36 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">infinite_loop.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 39 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">infinite_loop.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
@@ -810,8 +605,8 @@ letters it contains.  But if they enter “0”, we exit:</p>
 <p><code class="docutils literal notranslate"><span class="pre">continue</span></code> is used to skip to the next iteration.  Here’s an example
 that loops over elements of a vector but only operates on them if they
 are even numbers, in which case, it negates them.</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 37 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">continue_example.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 40 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">continue_example.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 
@@ -849,20 +644,20 @@ are even numbers, in which case, it negates them.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-pointers.html"
+       href="cxx-conditional.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Pointers</p>
+        <p class="prev-next-title">Conditional Statements</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-conditional.html"
+       href="cxx-continue-break.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Conditional Statements</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -882,14 +677,8 @@ are even numbers, in which case, it negates them.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shadowing">Shadowing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional Statements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-test"><code class="docutils literal notranslate"><span class="pre">if</span></code>-test</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-statement"><code class="docutils literal notranslate"><span class="pre">switch</span></code> statement</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops"><code class="docutils literal notranslate"><span class="pre">for</span></code> loops</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-and-do-while-loops"><code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> loops</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops"><code class="docutils literal notranslate"><span class="pre">for</span></code> loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-and-do-while-loops"><code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continue-and-break"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 </ul>
   </nav></div>

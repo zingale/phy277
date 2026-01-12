@@ -86,8 +86,18 @@ Course description
    cxx-basics/floating-point
    cxx-basics/numbers
    cxx-basics/cmath
-   cxx-basics/cxx-strings
 
+.. toctree::
+   :maxdepth: 1
+   :caption: C++ Strings and I/O
+   :hidden:
+
+   cxx-basics/cxx-strings
+   cxx-basics/cxx-strings-indexing
+   cxx-basics/cxx-formatting-output
+   cxx-basics/cxx-reading
+   cxx-basics/cxx-format-library
+ 
 .. toctree::
    :maxdepth: 1
    :caption: C++ Advanced Types
@@ -95,6 +105,8 @@ Course description
 
    cxx-basics/cxx-vectors
    cxx-basics/cxx-more-vectors
+   cxx-basics/cxx-vectors-algorithms
+   cxx-basics/cxx-strings-functions
    cxx-basics/cxx-matrix-example
    cxx-basics/cxx-auto-decltype
    cxx-basics/cxx-structs
@@ -108,5 +120,8 @@ Course description
    :hidden:
 
    cxx-basics/cxx-statements
+   cxx-basics/cxx-conditional
+   cxx-basics/cxx-loops
+   cxx-basics/cxx-continue-break
    cxx-basics/cxx-io
 

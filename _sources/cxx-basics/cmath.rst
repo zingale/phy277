@@ -20,8 +20,8 @@ which have an operator for exponentiation, like ``x**y``.
 
 
 
-Sin of angle in degrees
-=======================
+Sine of angle in degrees
+========================
 
 Here's an example of:
 

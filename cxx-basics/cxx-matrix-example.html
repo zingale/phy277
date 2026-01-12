@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="auto and decltype" href="cxx-auto-decltype.html" />
-    <link rel="prev" title="More Vectors" href="cxx-more-vectors.html" />
+    <link rel="prev" title="Working with Strings" href="cxx-strings-functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -204,12 +204,21 @@
 <li class="toctree-l1"><a class="reference internal" href="floating-point.html">Floating Point</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cmath.html">Numerical Library</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-formatting-output.html">Formatting output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html">Format Library</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-vectors.html">Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-more-vectors.html">More Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-vectors-algorithms.html">Vector Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-functions.html">Working with Strings</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Example: Matrix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-auto-decltype.html"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
@@ -219,7 +228,10 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Loops and If-Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html">Conditional Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
 </ul>
 
@@ -483,7 +495,7 @@ individual element, we need to index the first vector to get the row and then
 index the row to get the column in that row, which will look like: <code class="docutils literal notranslate"><span class="pre">a[irow][jcol]</span></code>.</p>
 <p>We’ll write our own version of what the text does.</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 24 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_matrix.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 27 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_matrix.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 
@@ -593,12 +605,12 @@ We’ll discuss this more shortly.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-more-vectors.html"
+       href="cxx-strings-functions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">More Vectors</p>
+        <p class="prev-next-title">Working with Strings</p>
       </div>
     </a>
     <a class="right-next"

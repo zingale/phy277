@@ -49,7 +49,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-strings';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Vectors" href="cxx-vectors.html" />
+    <link rel="next" title="Indexing Strings" href="cxx-strings-indexing.html" />
     <link rel="prev" title="Numerical Library" href="cmath.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -197,17 +197,26 @@
 <li class="toctree-l1"><a class="reference internal" href="../editors/configure-emacs.html">Configuring emacs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basic Datatypes</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="floating-point.html">Floating Point</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cmath.html">Numerical Library</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-formatting-output.html">Formatting output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html">Format Library</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-vectors.html">Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-more-vectors.html">More Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-vectors-algorithms.html">Vector Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-functions.html">Working with Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-matrix-example.html">Example: Matrix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-auto-decltype.html"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
@@ -217,7 +226,10 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Loops and If-Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html">Conditional Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
 </ul>
 
@@ -448,8 +460,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-and-replace">Find and Replace</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-functions">Other Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-string"><code class="docutils literal notranslate"><span class="pre">std::string</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-math">String math</a></li>
 </ul>
             </nav>
         </div>
@@ -467,6 +479,8 @@ document.write(`
 <p class="admonition-title">reading</p>
 <p><a class="reference external" href="https://cplusplus.com/reference/string/string/">std::string</a> on cplusplus.com</p>
 </div>
+<section id="std-string">
+<h2><code class="docutils literal notranslate"><span class="pre">std::string</span></code><a class="headerlink" href="#std-string" title="Link to this heading">#</a></h2>
 <p>A C++ <code class="docutils literal notranslate"><span class="pre">std::string</span></code> holds a sequence of characters.  When working
 with strings, we include the <code class="docutils literal notranslate"><span class="pre">&lt;string&gt;</span></code> header.</p>
 <div class="admonition note">
@@ -486,8 +500,8 @@ not careful, and we will avoid them as much as possible.</p>
 </div>
 <p>Here’s a first example.  We’ll create a string and we’ll concatenate
 another string onto it using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator:</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 14 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string_example.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 14 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string_example.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
@@ -514,11 +528,23 @@ work with them.</p>
 to create a newline.  <code class="docutils literal notranslate"><span class="pre">\n</span></code> is slightly different than
 <code class="docutils literal notranslate"><span class="pre">std::endl</span></code>—the latter also flushes the output buffer.</p>
 </div>
-<p>Just like with vectors, we can use a constructor to create an initial
+<p>We can use a constructor to create an initial
 string filled with a character repeated many times.  For instance,
 here’s an 80-character line:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">line</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;-&#39;</span><span class="p">);</span>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 15 </span><span class="caption-text">string-repeat.cpp</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">line</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;-&#39;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="p">}</span>
 </pre></div>
+</div>
 </div>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">'-'</span></code> is a <code class="docutils literal notranslate"><span class="pre">char</span></code> and not a string.</p>
 <div class="admonition note">
@@ -526,69 +552,27 @@ here’s an 80-character line:</p>
 <p>A nice overview of working with C++ strings is provided by “hacking C++”:
 <a class="reference external" href="https://hackingcpp.com/cpp/std/string.png">std::string</a></p>
 </div>
-<section id="find-and-replace">
-<h2>Find and Replace<a class="headerlink" href="#find-and-replace" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">string</span></code> has find and replace member functions.  Here’s an example of
-extracting the basename of a file from a path and then replacing the
-extension.</p>
-<p>There are a lot of different ways we can do a replace:
-<a class="reference external" href="https://www.cplusplus.com/reference/string/string/replace/">std::string::replace calls</a> .</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 15 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string_replace.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+</section>
+<section id="string-math">
+<h2>String math<a class="headerlink" href="#string-math" title="Link to this heading">#</a></h2>
+<p>There are a lot of operators and functions that can work on strings.  See
+<a class="reference external" href="https://en.cppreference.com/w/cpp/string/basic_string.html">https://en.cppreference.com/w/cpp/string/basic_string.html</a></p>
+<p>We can concatenate strings using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator:</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-number">Listing 16 </span><span class="caption-text">string-cat.cpp</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">filename</span><span class="p">{</span><span class="s">&quot;~/classes/test.cpp&quot;</span><span class="p">};</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;filename: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">filename</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="s">&quot;this is a test&quot;</span><span class="p">};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">b</span><span class="p">{</span><span class="s">&quot;of concatenation&quot;</span><span class="p">};</span>
 
-<span class="w">    </span><span class="c1">// let&#39;s find just the base file name -- reverse find for &#39;/&#39;</span>
-
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">ipos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">filename</span><span class="p">.</span><span class="n">rfind</span><span class="p">(</span><span class="sc">&#39;/&#39;</span><span class="p">);</span>
-
-<span class="w">    </span><span class="c1">// create a substring containing just the base name</span>
-<span class="w">    </span><span class="c1">// if we don&#39;t provide a length, substr goes to the end</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">basename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">filename</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">ipos</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;basename = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">basename</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="c1">// now let&#39;s change the extension from .cpp to .txt</span>
-
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">ipos_ext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">basename</span><span class="p">.</span><span class="n">rfind</span><span class="p">(</span><span class="sc">&#39;.&#39;</span><span class="p">);</span>
-
-<span class="w">    </span><span class="c1">// there are many forms of replace -- here&#39;s well use iterators</span>
-<span class="w">    </span><span class="c1">// that mark the start and end of the original string and those of</span>
-<span class="w">    </span><span class="c1">// the string we want to substitute</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">new_ext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;.txt&quot;</span><span class="p">;</span>
-
-<span class="w">    </span><span class="n">basename</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="n">basename</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">ipos_ext</span><span class="p">,</span><span class="w"> </span><span class="n">basename</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
-<span class="w">                     </span><span class="n">new_ext</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">new_ext</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;basename = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">basename</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>C++17 introduced the <code class="docutils literal notranslate"><span class="pre">filesystem</span></code> library that includes a <a class="reference external" href="https://en.cppreference.com/w/cpp/filesystem/path/stem">stem
-function</a>
-that can do this as well.  We’ll look at the filesystem library
-later.</p>
-</div>
-</section>
-<section id="other-functions">
-<h2>Other Functions<a class="headerlink" href="#other-functions" title="Link to this heading">#</a></h2>
-<p>There are a large number of member functions that work on strings.
-See for instance: <a class="reference external" href="https://www.cplusplus.com/reference/string/string/">https://www.cplusplus.com/reference/string/string/</a></p>
-<div class="admonition-try-it admonition">
-<p class="admonition-title">try it…</p>
-<p>Let’s try to use <code class="docutils literal notranslate"><span class="pre">std::string::find_first_of</span></code>, following this:
-<a class="reference external" href="https://www.cplusplus.com/reference/string/string/find_first_of/">https://www.cplusplus.com/reference/string/string/find_first_of/</a></p>
 </div>
 </section>
 </section>
@@ -614,11 +598,11 @@ See for instance: <a class="reference external" href="https://www.cplusplus.com/
       </div>
     </a>
     <a class="right-next"
-       href="cxx-vectors.html"
+       href="cxx-strings-indexing.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Vectors</p>
+        <p class="prev-next-title">Indexing Strings</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -638,8 +622,8 @@ See for instance: <a class="reference external" href="https://www.cplusplus.com/
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-and-replace">Find and Replace</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-functions">Other Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-string"><code class="docutils literal notranslate"><span class="pre">std::string</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-math">String math</a></li>
 </ul>
   </nav></div>
 
