@@ -125,3 +125,14 @@ Course description
    cxx-basics/cxx-continue-break
    cxx-basics/cxx-io
 
+.. toctree::
+   :maxdepth: 1
+   :caption: C++ Functions
+   :hidden:
+
+   cxx-functions/cxx-functions
+   cxx-functions/cxx-functions-example
+   cxx-functions/cxx-orbit-example
+   cxx-functions/cxx-orbit-rk2-example
+   cxx-functions/cxx-lambdas
+   cxx-functions/cxx-functions-planets
