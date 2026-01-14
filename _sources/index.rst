@@ -131,6 +131,8 @@ Course description
    :hidden:
 
    cxx-functions/cxx-functions
+   cxx-functions/cxx-value-reference
+   cxx-functions/cxx-stdlib
    cxx-functions/cxx-functions-example
    cxx-functions/cxx-orbit-example
    cxx-functions/cxx-orbit-rk2-example

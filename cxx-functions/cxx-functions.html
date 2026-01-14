@@ -49,7 +49,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-functions/cxx-functions';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="More Functions" href="cxx-functions-example.html" />
+    <link rel="next" title="Passing by Value vs. Reference" href="cxx-value-reference.html" />
     <link rel="prev" title="File I/O" href="../cxx-basics/cxx-io.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -235,6 +235,8 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-value-reference.html">Passing by Value vs. Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-stdlib.html">SL Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-functions-example.html">More Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-orbit-example.html">Example: Planetary Orbit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">In Class: 2nd Order Runge-Kutta Orbit</a></li>
@@ -471,8 +473,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-example">Basic Example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#void">Void</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passing-by-value-vs-reference">Passing by Value vs. Reference</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sl-algorithms">SL Algorithms</a></li>
 </ul>
             </nav>
         </div>
@@ -588,150 +588,6 @@ an example:</p>
 </pre></div>
 </div>
 </section>
-<section id="passing-by-value-vs-reference">
-<h2>Passing by Value vs. Reference<a class="headerlink" href="#passing-by-value-vs-reference" title="Link to this heading">#</a></h2>
-<p>When we write a function like:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// do stuff -- the caller won&#39;t see any changes to x</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>and then call it as:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
-<span class="n">f</span><span class="p">(</span><span class="n">z</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>The value of <code class="docutils literal notranslate"><span class="pre">z</span></code> in our caller is copied into the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> in
-the function <code class="docutils literal notranslate"><span class="pre">f()</span></code>.  This is a <em>pass-by-value</em> argument (sometimes
-called <em>value semantics</em>).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>C++ uses pass-by-value by default <em>except</em> for C-style arrays, which are
-passed as a pointer to the first element.  This is another reason why you
-should use <code class="docutils literal notranslate"><span class="pre">std::array</span></code> for arrays, since it will be clearer in function.</p>
-</div>
-<p>Inside of <code class="docutils literal notranslate"><span class="pre">f()</span></code> any changes we do to <code class="docutils literal notranslate"><span class="pre">x</span></code> will not be reflected
-back to the caller, so <code class="docutils literal notranslate"><span class="pre">z</span></code> will be unmodified by anything that
-happens in the function.</p>
-<p>Many times this is what we want.  But not always.  What if we want to
-allow the function to modify its argument and for those modifications
-to be reflected to the caller?  In this case, we use a reference
-argument:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// anything we do to x will be reflected back to the caller</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Sometimes, if the object we are passing is big (like a
-<code class="docutils literal notranslate"><span class="pre">std::vector</span></code>), then the copy incurred by passing by value is
-expensive.  If we use a reference, then there is no copy, and
-passing the object is faster.</p>
-<p>If we know that we only want the function we are calling to read
-from the object and not write to it, we can mark the reference as
-const, like:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">h</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// x is passed as a reference, but we cannot modify it</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<p>Here’s an example of different ways to pass data into a function:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 44 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">function_value_reference.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">f1</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">f2</span><span class="p">(</span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">f3</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">f1</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">f2</span><span class="p">(</span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">f3</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">//x *= 2;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mi">1</span><span class="p">};</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;initial a = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="n">f1</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;after f1(a) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="n">f2</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;after f2(a) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="sl-algorithms">
-<h2>SL Algorithms<a class="headerlink" href="#sl-algorithms" title="Link to this heading">#</a></h2>
-<p>We looked at some of the <a class="reference external" href="https://en.cppreference.com/w/cpp/algorithm">algorithms that work on standard C++
-containers</a> (like
-vectors) previously.  Now we can look at some more.</p>
-<p>Consider <code class="docutils literal notranslate"><span class="pre">std::sort()</span></code>—you can provide a function to <code class="docutils literal notranslate"><span class="pre">sort</span></code>
-that tells it how to do the comparison.</p>
-<p>Here’s an example that sorts some strings using the default comparison
-(alphabetically) and then again with a custom comparison function that
-sorts by string length:</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 45 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">algorithms_functions.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
-
-<span class="kt">bool</span><span class="w"> </span><span class="nf">size_compare</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">titles</span><span class="p">{</span><span class="s">&quot;a new hope&quot;</span><span class="p">,</span>
-<span class="w">                                    </span><span class="s">&quot;the empire strikes back&quot;</span><span class="p">,</span>
-<span class="w">                                    </span><span class="s">&quot;return of the jedi&quot;</span><span class="p">,</span>
-<span class="w">                                    </span><span class="s">&quot;the phantom menace&quot;</span><span class="p">,</span>
-<span class="w">                                    </span><span class="s">&quot;attack of the clones&quot;</span><span class="p">,</span>
-<span class="w">                                    </span><span class="s">&quot;revenge of the sith&quot;</span><span class="p">,</span>
-<span class="w">                                    </span><span class="s">&quot;the force awakens&quot;</span><span class="p">,</span>
-<span class="w">                                    </span><span class="s">&quot;the last jedi&quot;</span><span class="p">,</span>
-<span class="w">                                    </span><span class="s">&quot;the rise of skywalker&quot;</span><span class="p">};</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">titles</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">titles</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">titles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="c1">// now sort by string length</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">titles</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">titles</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">size_compare</span><span class="p">);</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">titles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="p">}</span>
-
-<span class="kt">bool</span><span class="w"> </span><span class="nf">size_compare</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<p>We’ll revisit this yet again when we learn about <em>lambda functions</em>.</p>
-</section>
 </section>
 
 
@@ -755,11 +611,11 @@ sorts by string length:</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-functions-example.html"
+       href="cxx-value-reference.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">More Functions</p>
+        <p class="prev-next-title">Passing by Value vs. Reference</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -781,8 +637,6 @@ sorts by string length:</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-example">Basic Example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#void">Void</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passing-by-value-vs-reference">Passing by Value vs. Reference</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sl-algorithms">SL Algorithms</a></li>
 </ul>
   </nav></div>
 

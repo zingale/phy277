@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Pointers &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Passing by Value vs. Reference &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -46,11 +46,11 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-pointers';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-functions/cxx-value-reference';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Statement Blocks" href="cxx-statements.html" />
-    <link rel="prev" title="References" href="cxx-references.html" />
+    <link rel="next" title="SL Algorithms" href="cxx-stdlib.html" />
+    <link rel="prev" title="Functions" href="cxx-functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -198,50 +198,50 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basic Datatypes</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="floating-point.html">Floating Point</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmath.html">Numerical Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point.html">Floating Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cmath.html">Numerical Library</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-formatting-output.html">Formatting output</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html">Format Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-indexing.html">Indexing Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-formatting-output.html">Formatting output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-reading.html">Reading Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-format-library.html">Format Library</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-vectors.html">Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-more-vectors.html">More Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vectors-algorithms.html">Vector Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings-functions.html">Working with Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-matrix-example.html">Example: Matrix</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-auto-decltype.html"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-arrays.html">Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-references.html">References</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pointers</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors.html">Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-more-vectors.html">More Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors-algorithms.html">Vector Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-functions.html">Working with Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-matrix-example.html">Example: Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-auto-decltype.html"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-structs.html">Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-arrays.html">Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html">Conditional Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-loops.html">Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-statements.html">Statement Blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-conditional.html">Conditional Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-value-reference.html">Passing by Value vs. Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-stdlib.html">SL Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions-example.html">More Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-orbit-example.html">Example: Planetary Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-orbit-rk2-example.html">In Class: 2nd Order Runge-Kutta Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-lambdas.html">Lambda Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions-planets.html">Example: Sorting Planets</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cxx-functions.html">Functions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Passing by Value vs. Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-stdlib.html">SL Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-functions-example.html">More Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-example.html">Example: Planetary Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">In Class: 2nd Order Runge-Kutta Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-lambdas.html">Lambda Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-functions-planets.html">Example: Sorting Planets</a></li>
 </ul>
 
     </div>
@@ -313,7 +313,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/cxx-pointers.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-functions/cxx-value-reference.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -330,7 +330,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/cxx-pointers.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-functions/cxx-value-reference.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,7 +347,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/cxx-pointers.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-functions/cxx-value-reference.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -377,7 +377,7 @@
       
       
       
-      <li><a href="../_sources/cxx-basics/cxx-pointers.rst" target="_blank"
+      <li><a href="../_sources/cxx-functions/cxx-value-reference.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -459,7 +459,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pointers</h1>
+    <h1>Passing by Value vs. Reference</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -473,108 +473,91 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="pointers">
-<h1>Pointers<a class="headerlink" href="#pointers" title="Link to this heading">#</a></h1>
-<div class="admonition-reading admonition">
-<p class="admonition-title">reading</p>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Pointer_(computer_programming)">pointers</a> from Wikipedia</p>
-</div>
-<p>Pointers are similar to references in that they provide indirect access to an object’s data.
-However, in C++, references are much more widely used than pointers.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>References and pointers can provide similar functionality.  In
-general, pointers are more general but also more error-prone.
-Here’s a summary of the <a class="reference external" href="https://en.wikipedia.org/wiki/Reference_(C%2B%2B)#Relationship_to_pointers">differences between references and
-pointers</a></p>
-</div>
-<p>Here’s a simple example:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
-
-<span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>This has the pointer <code class="docutils literal notranslate"><span class="pre">a</span></code> point to the memory location of <code class="docutils literal notranslate"><span class="pre">b</span></code> (we
-use the <em>address operator</em> <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> here).  Visually, this appears as:</p>
-<figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="../_images/692px-Pointers.svg.png"><img alt="../_images/692px-Pointers.svg.png" src="../_images/692px-Pointers.svg.png" style="width: 70%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">A pointer, <code class="docutils literal notranslate"><span class="pre">a</span></code> that points to the memory location of variable <code class="docutils literal notranslate"><span class="pre">b</span></code>.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
-<div class="legend">
-<p>(Wikipedia/Sven)</p>
-</div>
-</figcaption>
-</figure>
-<p>We can access the data pointed to by the pointer by using the <em>dereference operator</em>, <code class="docutils literal notranslate"><span class="pre">*</span></code>.
-Here’s an example:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 33 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pointers_example.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">2.0</span><span class="p">};</span>
-
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">x_ptr</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x_ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="c1">// we can access x through the reference x_ref</span>
-
-<span class="w">    </span><span class="n">x_ref</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x_ref = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x_ref</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="c1">// now let&#39;s associate x_ptr with x</span>
-
-<span class="w">    </span><span class="n">x_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
-
-<span class="w">    </span><span class="c1">// to access the data pointed to by x_ptr, we need to</span>
-<span class="w">    </span><span class="c1">// dereference it</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x_ptr = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x_ptr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;*x_ptr = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">x_ptr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="c1">// likewise, to modify its value</span>
-
-<span class="w">    </span><span class="o">*</span><span class="n">x_ptr</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x_ref = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x_ref</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
+  <section id="passing-by-value-vs-reference">
+<h1>Passing by Value vs. Reference<a class="headerlink" href="#passing-by-value-vs-reference" title="Link to this heading">#</a></h1>
+<p>When we write a function like:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// do stuff -- the caller won&#39;t see any changes to x</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>and then call it as:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="n">f</span><span class="p">(</span><span class="n">z</span><span class="p">);</span>
+</pre></div>
 </div>
+<p>The value of <code class="docutils literal notranslate"><span class="pre">z</span></code> in our caller is copied into the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> in
+the function <code class="docutils literal notranslate"><span class="pre">f()</span></code>.  This is a <em>pass-by-value</em> argument (sometimes
+called <em>value semantics</em>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We will not use pointers directly much in this class, but they are
-useful for managing memory.  Later (if there is time) we’ll see
-that there are <em>smart pointers</em> in C++ that handle a lot of the
-memory management for us.</p>
+<p>C++ uses pass-by-value by default <em>except</em> for C-style arrays, which are
+passed as a pointer to the first element.  This is another reason why you
+should use <code class="docutils literal notranslate"><span class="pre">std::array</span></code> for arrays, since it will be clearer in function.</p>
+</div>
+<p>Inside of <code class="docutils literal notranslate"><span class="pre">f()</span></code> any changes we do to <code class="docutils literal notranslate"><span class="pre">x</span></code> will not be reflected
+back to the caller, so <code class="docutils literal notranslate"><span class="pre">z</span></code> will be unmodified by anything that
+happens in the function.</p>
+<p>Many times this is what we want.  But not always.  What if we want to
+allow the function to modify its argument and for those modifications
+to be reflected to the caller?  In this case, we use a reference
+argument:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// anything we do to x will be reflected back to the caller</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>It is a good idea to initialize all pointers (just like we do for
-all other object types).  C++ provides <code class="docutils literal notranslate"><span class="pre">nullptr</span></code> for this reason:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>This then allows us to use the pointer in a conditional, like:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// do stuff</span>
+<p>Sometimes, if the object we are passing is big (like a
+<code class="docutils literal notranslate"><span class="pre">std::vector</span></code>), then the copy incurred by passing by value is
+expensive.  If we use a reference, then there is no copy, and
+passing the object is faster.</p>
+<p>If we know that we only want the function we are calling to read
+from the object and not write to it, we can mark the reference as
+const, like:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">h</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// x is passed as a reference, but we cannot modify it</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<div class="admonition-try-it admonition">
-<p class="admonition-title">try it…</p>
-<p>What happens if we compare two pointers with <code class="docutils literal notranslate"><span class="pre">==</span></code>?</p>
+<p>Here’s an example of different ways to pass data into a function:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 44 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">function_value_reference.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">f1</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">f2</span><span class="p">(</span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">f3</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">f1</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">f2</span><span class="p">(</span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">f3</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//x *= 2;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mi">1</span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;initial a = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">f1</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;after f1(a) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">f2</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;after f2(a) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 </section>
 
@@ -590,20 +573,20 @@ all other object types).  C++ provides <code class="docutils literal notranslate
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-references.html"
+       href="cxx-functions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">References</p>
+        <p class="prev-next-title">Functions</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-statements.html"
+       href="cxx-stdlib.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Statement Blocks</p>
+        <p class="prev-next-title">SL Algorithms</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
