@@ -29,8 +29,16 @@ on the other.
 
 .. important::
 
+   You username and password for logging in are your NetID.
+
+.. warning::
+
    After 3 unsuccessful login attempts, you will be locked out
    of the machine for an hour.
+
+   Being locked out of ``portal`` or ``portal2`` is not an
+   excuse for turning in homework late.  Plan ahead! and don't
+   wait until the last minute.
 
 The Terminal
 ============
