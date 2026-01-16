@@ -1,0 +1,3 @@
+Get list of netids from the Brightspace CSV:
+
+awk -F',' '{sub(/^#/, ""); print $1}' phy277.csv  | wc
