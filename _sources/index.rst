@@ -97,7 +97,7 @@ Course description
    cxx-basics/cxx-formatting-output
    cxx-basics/cxx-reading
    cxx-basics/cxx-format-library
- 
+
 .. toctree::
    :maxdepth: 1
    :caption: C++ Advanced Types
