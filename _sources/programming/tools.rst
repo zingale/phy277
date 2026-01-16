@@ -32,9 +32,10 @@ Tutorials / Cheat Sheets
   This has a wonderful collection of "cheat sheets" showing how a lot
   of the different parts of the C++ standard library work.
 
-* codeguru: https://www.codeguru.com/cplusplus/
+* w3schools: https://www.w3schools.com/CPP/default.asp
 
-  This has some nice tutorials on specific C++ features
+  This has a lot of lessons and tracks your progress as you complete
+  them.
 
 Tools
 =====
