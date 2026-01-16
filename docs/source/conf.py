@@ -169,5 +169,6 @@ html_css_files = ["myfile.css"]
 linkcheck_retries = 3
 linkcheck_timeout = 100
 linkcheck_allow_unauthorized = True
-linkcheck_ignore = [r"https://dl.acm.org/doi/10.1145/103162.103163"]
+linkcheck_ignore = [r"https://dl.acm.org/doi/10.1145/103162.103163",
+                    r"https://www.gnu.org/*"]
 
