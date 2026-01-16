@@ -15,4 +15,9 @@ continue to use nano if you prefer.
 Quick tour
 ==========
 
+.. tip::
+
+   A quick reference card summarizing the basic commands is available
+   here: :download:`emacs reference card <https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf>`
+
 
