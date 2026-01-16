@@ -4,7 +4,7 @@ PHY 277: Computation for Physics and Astronomy
 
 Spring 2026
 
-Instructor: Michael Zingale
+Instructor: `Michael Zingale <https://zingale.github.io/>`_
 
 
 Course description
