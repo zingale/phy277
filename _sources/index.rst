@@ -18,8 +18,6 @@ Course description
   outside the classroom.
 
 
-
-
 .. toctree::
    :maxdepth: 1
    :caption: Intro & Logistics
@@ -43,6 +41,7 @@ Course description
    shell/filesystem
    shell/shell-2
    shell/shell-3
+   getting_started/scp
 
 .. toctree::
    :maxdepth: 1

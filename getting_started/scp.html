@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Passing by Value vs. Reference &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>scp and Transferring Files &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -46,11 +46,11 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-functions/cxx-value-reference';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/scp';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SL Algorithms" href="cxx-stdlib.html" />
-    <link rel="prev" title="Functions" href="cxx-functions.html" />
+    <link rel="next" title="Looping on the Command Line" href="../shell/shell-looping.html" />
+    <link rel="prev" title="Redirection and Pipes" href="../shell/shell-3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -156,22 +156,22 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro &amp; Logistics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/topics.html">Topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/using_your_computer.html">Using your own computer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/computing.html">Computation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/hello_world.html">Hello, World</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/ai.html">What About AI?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topics.html">Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_your_computer.html">Using your own computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="computing.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hello_world.html">Hello, World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ai.html">What About AI?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The UNIX Shell</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../shell/why_command_line.html">Why Use the Command Line?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/shell.html">The Shell</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/sample-data.html">Some Sample Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/filesystem.html">Navigating the Filesystem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/shell-2.html">Create Files and Directories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/shell-3.html">Redirection and Pipes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started/scp.html"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Shell Scripting</span></p>
 <ul class="nav bd-sidenav">
@@ -234,15 +234,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-functions.html">Functions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Passing by Value vs. Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-stdlib.html">SL Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-functions-example.html">More Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-example.html">Example: Planetary Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">In Class: 2nd Order Runge-Kutta Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-lambdas.html">Lambda Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-functions-planets.html">Example: Sorting Planets</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-value-reference.html">Passing by Value vs. Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-stdlib.html">SL Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions-example.html">More Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-orbit-example.html">Example: Planetary Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-orbit-rk2-example.html">In Class: 2nd Order Runge-Kutta Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-lambdas.html">Lambda Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions-planets.html">Example: Sorting Planets</a></li>
 </ul>
 
     </div>
@@ -314,7 +314,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-functions/cxx-value-reference.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/getting_started/scp.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -331,7 +331,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-functions/cxx-value-reference.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/getting_started/scp.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -348,7 +348,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-functions/cxx-value-reference.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fgetting_started/scp.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,7 +378,7 @@
       
       
       
-      <li><a href="../_sources/cxx-functions/cxx-value-reference.rst" target="_blank"
+      <li><a href="../_sources/getting_started/scp.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -460,7 +460,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Passing by Value vs. Reference</h1>
+    <h1>scp and Transferring Files</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -474,91 +474,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="passing-by-value-vs-reference">
-<h1>Passing by Value vs. Reference<a class="headerlink" href="#passing-by-value-vs-reference" title="Link to this heading">#</a></h1>
-<p>When we write a function like:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// do stuff -- the caller won&#39;t see any changes to x</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>and then call it as:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
-<span class="n">f</span><span class="p">(</span><span class="n">z</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>The value of <code class="docutils literal notranslate"><span class="pre">z</span></code> in our caller is copied into the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> in
-the function <code class="docutils literal notranslate"><span class="pre">f()</span></code>.  This is a <em>pass-by-value</em> argument (sometimes
-called <em>value semantics</em>).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>C++ uses pass-by-value by default <em>except</em> for C-style arrays, which are
-passed as a pointer to the first element.  This is another reason why you
-should use <code class="docutils literal notranslate"><span class="pre">std::array</span></code> for arrays, since it will be clearer in function.</p>
-</div>
-<p>Inside of <code class="docutils literal notranslate"><span class="pre">f()</span></code> any changes we do to <code class="docutils literal notranslate"><span class="pre">x</span></code> will not be reflected
-back to the caller, so <code class="docutils literal notranslate"><span class="pre">z</span></code> will be unmodified by anything that
-happens in the function.</p>
-<p>Many times this is what we want.  But not always.  What if we want to
-allow the function to modify its argument and for those modifications
-to be reflected to the caller?  In this case, we use a reference
-argument:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// anything we do to x will be reflected back to the caller</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+  <section id="scp-and-transferring-files">
+<h1><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files<a class="headerlink" href="#scp-and-transferring-files" title="Link to this heading">#</a></h1>
+<p>When working on a remote machine, we often want to transfer files from
+the remote machine to our local computer.  The tool for this is
+<code class="docutils literal notranslate"><span class="pre">scp</span></code>, the <a class="reference external" href="https://en.wikipedia.org/wiki/Secure_copy_protocol">secure copy protocol</a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Sometimes, if the object we are passing is big (like a
-<code class="docutils literal notranslate"><span class="pre">std::vector</span></code>), then the copy incurred by passing by value is
-expensive.  If we use a reference, then there is no copy, and
-passing the object is faster.</p>
-<p>If we know that we only want the function we are calling to read
-from the object and not write to it, we can mark the reference as
-const, like:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">h</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// x is passed as a reference, but we cannot modify it</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<p>Here’s an example of different ways to pass data into a function:</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 44 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">function_value_reference.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">f1</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">f2</span><span class="p">(</span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">f3</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">f1</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">f2</span><span class="p">(</span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">f3</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">//x *= 2;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mi">1</span><span class="p">};</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;initial a = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="n">f1</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;after f1(a) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="n">f2</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;after f2(a) = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
+<p>If you are using Windows and using PuTTY, then the <code class="docutils literal notranslate"><span class="pre">pscp</span></code> command can be
+used as described here.</p>
 </div>
 </section>
 
@@ -574,20 +498,20 @@ const, like:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-functions.html"
+       href="../shell/shell-3.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Functions</p>
+        <p class="prev-next-title">Redirection and Pipes</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-stdlib.html"
+       href="../shell/shell-looping.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SL Algorithms</p>
+        <p class="prev-next-title">Looping on the Command Line</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
