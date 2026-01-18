@@ -43,13 +43,6 @@ Course description
    shell/shell-2
    shell/shell-3
    getting_started/scp
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Shell Scripting
-   :hidden:
-
-   shell/shell-looping
    shell/permissions
    shell/path
    shell/finding
