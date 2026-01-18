@@ -15,6 +15,10 @@ of the `Software Carpentry Unix shell notes
 * Scientific computing often involves automating workflows and
   repetitive tasks.
 
+  We want to eliminate the potential for a person to make mistakes
+  as much as possible, to ensure reproducibility.  Writing scripts
+  for our workflows promotes this.
+
 * Supercomputing facilities are access via remote connections and
   almost exclusively use some type of Linux OS.
 
@@ -22,6 +26,8 @@ of the `Software Carpentry Unix shell notes
 
      Take a look at the `Top 500 list of fastest computers
      <https://top500.org/lists/top500/2025/11/>`_
+
+  Even a research group's server is likely accessed remotely.
 
 * Much of the analysis software we use is written as a command line
   tool that is meant to be incorporated into a script, or chained

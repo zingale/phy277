@@ -158,6 +158,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/topics.html">Topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/remote_servers.html"><code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/using_your_computer.html">Using your own computer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/computing.html">Computation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/hello_world.html">Hello, World</a></li>
@@ -472,12 +473,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem-terminology">Filesystem terminology</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-listing">Directory listing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organization-of-unix-filesystem">Organization of Unix filesystem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-vs-absolute-paths">Relative vs. absolute paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem-terminology">Filesystem terminology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure">Directory structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#going-home">Going home</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-to-your-home-directory">Changing to your home directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-vs-relative-path">Absolute vs. relative path</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-directory-contents">Listing directory contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-options">More options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#and"><code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">..</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-through-the-hierarchy">Moving through the hierarchy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#last-directory">Last directory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
             </nav>
@@ -503,66 +512,217 @@ class.</p>
 <h2>Filesystem terminology<a class="headerlink" href="#filesystem-terminology" title="Link to this heading">#</a></h2>
 <p>We’ll use the following terms throughout here:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">file</span> <span class="pre">system</span></code> : the collection (and organization) of all of the
+<li><p><code class="docutils literal notranslate"><span class="pre">filesystem</span></code> : the collection (and organization) of all of the
 files stored on your computer.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">file</span></code> : a single unit containing a collection of data</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">directory</span></code> :  (also known as a folder) a collection of files and directories</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">home</span> <span class="pre">directory</span></code> : your default directory.  When you first open a shell on your computer,
 this is where you are.</p></li>
 </ul>
-<section id="directory-listing">
-<h3>Directory listing<a class="headerlink" href="#directory-listing" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">ls</span></code> command lists the contents of a directory</p>
-<p>We use directories to help organize our files.  For our project data, we can see
-this organization using the <code class="docutils literal notranslate"><span class="pre">tree</span></code> command:</p>
+</section>
+<section id="directory-structure">
+<h2>Directory structure<a class="headerlink" href="#directory-structure" title="Link to this heading">#</a></h2>
+<p>First, let’s figure out where we are.  The “print working directory” command does this for us:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
 }
-</style><span class="prompt1">tree<span class="w"> </span>exercise-data</span>
-</pre></div></div><p>This gives:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>exercise-data/
-├── alkanes
-│   ├── cubane.pdb
-│   ├── ethane.pdb
-│   ├── methane.pdb
-│   ├── octane.pdb
-│   ├── pentane.pdb
-│   └── propane.pdb
-├── animal-counts
-│   └── animals.csv
-├── creatures
-│   ├── basilisk.dat
-│   ├── minotaur.dat
-│   └── unicorn.dat
-├── numbers.txt
-└── writing
-    ├── haiku.txt
-    └── LittleWomen.txt
+</style><span class="prompt1"><span class="nb">pwd</span></span>
+</pre></div></div><p>You’ll see something like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/mzingale/shell-lesson-data
 </pre></div>
 </div>
-</section>
-<section id="organization-of-unix-filesystem">
-<h3>Organization of Unix filesystem<a class="headerlink" href="#organization-of-unix-filesystem" title="Link to this heading">#</a></h3>
-<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">standard file system layout</a> is
-used on Unix-like systems.  The important top-level directories are:</p>
+<p>We call this full string the <em>path</em>.  Notice a few things:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> : the root directory</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/boot</span></code> : the kernel and files needed to boot the system</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/home</span></code> : the directories where user data is stored.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/usr</span></code> : the location of the a lot of the commands we use</p></li>
+<li><p>Forward slashes, <code class="docutils literal notranslate"><span class="pre">/</span></code>, are used to separate the path into parts.</p></li>
+<li><p>The path begins with a <code class="docutils literal notranslate"><span class="pre">/</span></code>—we call this the <em>root directory</em> of the filesystem.</p></li>
+<li><p>Your username is in the path.</p></li>
 </ul>
-<p>We can go to our <em>home directory</em> by simply doing:</p>
+</section>
+<section id="going-home">
+<h2>Going home<a class="headerlink" href="#going-home" title="Link to this heading">#</a></h2>
+<p>Each of us has a <a class="reference external" href="https://en.wikipedia.org/wiki/Home_directory">home directory</a>.  This is the
+location in the filesystem where you have permission to read, write,
+and modify files.  It is also the location in the filesystem that you
+start in when you first log in or open a shell.</p>
+<section id="changing-to-your-home-directory">
+<h3>Changing to your home directory<a class="headerlink" href="#changing-to-your-home-directory" title="Link to this heading">#</a></h3>
+<p>If we use the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command without any arguments, it will take us home:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span></span>
-</pre></div></div><p>(with no arguments).  If we look at this directory with <code class="docutils literal notranslate"><span class="pre">pwd</span></code> we would see something
-like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mzingale</span>
+<span class="prompt1"><span class="nb">pwd</span></span>
+</pre></div></div><p>This gives:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/mzingale
 </pre></div>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Your home directory is special that we have a shortcut for it, <code class="docutils literal notranslate"><span class="pre">~</span></code>,
+so we can also do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>~</span>
+</pre></div></div></div>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">~</span></code> as the starting point for changing directories.  E.g.,
+each of these will put us in the <code class="docutils literal notranslate"><span class="pre">shell-lesson-data/</span></code> directory from
+wherever we are on the filesystem:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span></span>
+<span class="prompt1"><span class="nb">cd</span><span class="w"> </span>shell-lesson-data</span>
+</pre></div></div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>~/shell-lesson-data</span>
+</pre></div></div></section>
+<section id="absolute-vs-relative-path">
+<h3>Absolute vs. relative path<a class="headerlink" href="#absolute-vs-relative-path" title="Link to this heading">#</a></h3>
+<p>Notice that the path to (my copy of) <code class="docutils literal notranslate"><span class="pre">shell-lesson-data</span></code> may be written either as:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/home/mzingale/shell-lesson-data/</span></code> (absolute path)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~/shell-lesson-data/</span></code> (relative path)</p></li>
+</ul>
+<p>Each of these specifies the same location, one as an <em>absolute path</em> (this will always begin at the root of the filesystem, <code class="docutils literal notranslate"><span class="pre">/</span></code>,
+and the other a <em>relative path</em>.</p>
 </section>
-<section id="relative-vs-absolute-paths">
-<h3>Relative vs. absolute paths<a class="headerlink" href="#relative-vs-absolute-paths" title="Link to this heading">#</a></h3>
 </section>
+<section id="listing-directory-contents">
+<h2>Listing directory contents<a class="headerlink" href="#listing-directory-contents" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">ls</span></code> command lists the contents of a directory.  Starting in <code class="docutils literal notranslate"><span class="pre">shell-lesson-data/</span></code>, if we do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ls</span>
+</pre></div></div><p>we will see:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>exercise-data<span class="w">  </span>north-pacific-gyre
+</pre></div>
+</div>
+<p>These are 2 sub-directories (directories beneath <code class="docutils literal notranslate"><span class="pre">shell-less-data/</span></code>.  We can make this a little more
+clear by adding the <code class="docutils literal notranslate"><span class="pre">-F</span></code> flag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ls<span class="w"> </span>-F</span>
+</pre></div></div><p>Then we see:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>exercise-data/<span class="w">  </span>north-pacific-gyre/
+</pre></div>
+</div>
+<p>This now adds a <code class="docutils literal notranslate"><span class="pre">/</span></code> to the end of any directories in the listing.</p>
+<p>We use sub-directories to help organize our files.  Our complete project
+has the structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>shell-lesson-data
+├── exercise-data
+│   ├── alkanes
+│   │   ├── cubane.pdb
+│   │   ├── ethane.pdb
+│   │   ├── methane.pdb
+│   │   ├── octane.pdb
+│   │   ├── pentane.pdb
+│   │   └── propane.pdb
+│   ├── animal-counts
+│   │   └── animals.csv
+│   ├── creatures
+│   │   ├── basilisk.dat
+│   │   ├── minotaur.dat
+│   │   └── unicorn.dat
+│   ├── numbers.txt
+│   └── writing
+│       ├── haiku.txt
+│       └── LittleWomen.txt
+└── north-pacific-gyre
+    ├── goodiff.sh
+    ├── goostats.sh
+    ├── NENE01729A.txt
+    ├── NENE01729B.txt
+    ├── NENE01736A.txt
+    ├── NENE01751A.txt
+    ├── NENE01751B.txt
+    ├── NENE01812A.txt
+    ├── NENE01843A.txt
+    ├── NENE01843B.txt
+    ├── NENE01971Z.txt
+    ├── NENE01978A.txt
+    ├── NENE01978B.txt
+    ├── NENE02018B.txt
+    ├── NENE02040A.txt
+    ├── NENE02040B.txt
+    ├── NENE02040Z.txt
+    ├── NENE02043A.txt
+    └── NENE02043B.txt
+</pre></div>
+</div>
+<section id="more-options">
+<h3>More options<a class="headerlink" href="#more-options" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> has a lot of options.  We can see the <em>manual page</em> for <code class="docutils literal notranslate"><span class="pre">ls</span></code> by doing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">man<span class="w"> </span>ls</span>
+</pre></div></div><p>The options include some that sort the listing, others that show different sets of information, and more.</p>
+<p>A helpful option is <code class="docutils literal notranslate"><span class="pre">-a</span></code>, which shows <em>all</em> the files in a directory.  Let’s look.  Doing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ls<span class="w"> </span>-a</span>
+</pre></div></div><p>Shows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.<span class="w">  </span>..<span class="w">  </span>.DS_Store<span class="w">  </span>exercise-data<span class="w">  </span>north-pacific-gyre
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">ls</span></code> shows that we can do either <code class="docutils literal notranslate"><span class="pre">-a</span></code> or <code class="docutils literal notranslate"><span class="pre">--all</span></code>, i.e., a short option or a long option.
+When typing commands on the commandline, we usually use the short options, to save keystrokes.  But
+these are equivalent.</p>
+</div>
+<p>We can combine the short option <code class="docutils literal notranslate"><span class="pre">-a</span></code> with the <code class="docutils literal notranslate"><span class="pre">-F</span></code> option we saw previously:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ls<span class="w"> </span>-aF</span>
+</pre></div></div><p>gives:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./<span class="w">  </span>../<span class="w">  </span>.DS_Store<span class="w">  </span>exercise-data/<span class="w">  </span>north-pacific-gyre/
+</pre></div>
+</div>
+<p>Now we see the “hidden files”—those that begin with a <code class="docutils literal notranslate"><span class="pre">.</span></code>, and we
+see two special “files”, <code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">..</span></code>—these are helpful for
+navigation.</p>
+</section>
+</section>
+<section id="and">
+<h2><code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">..</span></code><a class="headerlink" href="#and" title="Link to this heading">#</a></h2>
+<p>Every directory contains the special directories <code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">..</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.</span></code> refers to the current directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span></code> refers to the directory immediately above the one you are in.</p></li>
+</ul>
+<p>For instance, starting in <code class="docutils literal notranslate"><span class="pre">~/shell-lesson-data</span></code>, if we do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt2:before {
+  content: " ";
+}
+</style><span class="prompt2">pwd</span>
+<span class="prompt2">ls -aF .</span>
+<span class="prompt2">ls -aF ..</span>
+</pre></div></div><p>Then the output would look like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>mzingale@portal<span class="w"> </span>shell-lesson-data<span class="o">]</span>$<span class="w"> </span><span class="nb">pwd</span>
+/home/mzingale/shell-lesson-data
+<span class="o">[</span>mzingale@portal<span class="w"> </span>shell-lesson-data<span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span>-aF<span class="w"> </span>.
+./<span class="w">  </span>../<span class="w">  </span>.DS_Store<span class="w">  </span>exercise-data/<span class="w">  </span>north-pacific-gyre/
+<span class="o">[</span>mzingale@portal<span class="w"> </span>shell-lesson-data<span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span>-aF<span class="w"> </span>..
+./<span class="w">             </span>.bashrc<span class="w">   </span>.emacs.d/<span class="w">         </span>__MACOSX/<span class="w">              </span>.Xauthority
+../<span class="w">            </span>.cache/<span class="w">   </span>.gnuplot_history<span class="w">  </span>.mozilla/<span class="w">              </span>.zshrc
+.bash_history<span class="w">  </span>.config/<span class="w">  </span>hello*<span class="w">            </span>shell-lesson-data/
+.bash_logout<span class="w">   </span>.emacs<span class="w">    </span>hello.cpp<span class="w">         </span>shell-lesson-data.zip
+.bash_profile<span class="w">  </span>.emacs~<span class="w">   </span>.lesshst<span class="w">          </span>.ssh/
+</pre></div>
+</div>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">Try it…</p>
+<p>Let’s use <code class="docutils literal notranslate"><span class="pre">cd</span></code> to move up and down through our project’s directory structure.</p>
+</div>
+</section>
+<section id="moving-through-the-hierarchy">
+<h2>Moving through the hierarchy<a class="headerlink" href="#moving-through-the-hierarchy" title="Link to this heading">#</a></h2>
+<p>Let’s start at our home directory and navigate to <code class="docutils literal notranslate"><span class="pre">~/shell-lesson-data/exercise-data/alkanes/</span></code>.
+We can do this one directory at a time:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>shell-lesson-data</span>
+<span class="prompt1"><span class="nb">cd</span><span class="w"> </span>exercise-data</span>
+<span class="prompt1"><span class="nb">cd</span><span class="w"> </span>alkanes</span>
+</pre></div></div><p>or all at once:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>shell-lesson-data/exercise-data/alkanes/</span>
+</pre></div></div><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use the “tab” key to autocomplete directory and file names once you
+type enough to be unique.</p>
+<p>Try doing: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">shel</span></code> and hitting “tab”</p>
+</div>
+</section>
+<section id="last-directory">
+<h2>Last directory<a class="headerlink" href="#last-directory" title="Link to this heading">#</a></h2>
+<p>A final shortcut for navigating directories is doing <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">-</span></code>.  This switches
+to the previous directory we were in.  So for instance, doing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span></span>
+<span class="prompt1"><span class="nb">cd</span><span class="w"> </span>shell-lesson-data/exercise-data/alkanes/</span>
+<span class="prompt1"><span class="nb">cd</span></span>
+<span class="prompt1"><span class="nb">cd</span><span class="w"> </span>-</span>
+</pre></div></div><p>would bring us back to <code class="docutils literal notranslate"><span class="pre">shell-lesson-data/exercise-data/alkanes/</span></code>.</p>
 </section>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
@@ -642,12 +802,20 @@ display the possible completions.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem-terminology">Filesystem terminology</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-listing">Directory listing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organization-of-unix-filesystem">Organization of Unix filesystem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-vs-absolute-paths">Relative vs. absolute paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filesystem-terminology">Filesystem terminology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure">Directory structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#going-home">Going home</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-to-your-home-directory">Changing to your home directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-vs-relative-path">Absolute vs. relative path</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listing-directory-contents">Listing directory contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-options">More options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#and"><code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">..</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-through-the-hierarchy">Moving through the hierarchy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#last-directory">Last directory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
   </nav></div>

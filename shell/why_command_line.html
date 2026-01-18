@@ -158,6 +158,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/topics.html">Topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/remote_servers.html"><code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/using_your_computer.html">Using your own computer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/computing.html">Computation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/hello_world.html">Hello, World</a></li>
@@ -483,13 +484,18 @@ computers.  So why use the command line?</p>
 of the <a class="reference external" href="https://swcarpentry.github.io/shell-novice/instructor/instructor-notes">Software Carpentry Unix shell notes</a>):</p>
 <ul>
 <li><p>Scientific computing often involves automating workflows and
-repetitive tasks.</p></li>
+repetitive tasks.</p>
+<p>We want to eliminate the potential for a person to make mistakes
+as much as possible, to ensure reproducibility.  Writing scripts
+for our workflows promotes this.</p>
+</li>
 <li><p>Supercomputing facilities are access via remote connections and
 almost exclusively use some type of Linux OS.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Take a look at the <a class="reference external" href="https://top500.org/lists/top500/2025/11/">Top 500 list of fastest computers</a></p>
 </div>
+<p>Even a research group’s server is likely accessed remotely.</p>
 </li>
 <li><p>Much of the analysis software we use is written as a command line
 tool that is meant to be incorporated into a script, or chained

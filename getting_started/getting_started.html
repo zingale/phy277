@@ -49,7 +49,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/getting_started';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Using your own computer" href="using_your_computer.html" />
+    <link rel="next" title="portal / portal2" href="remote_servers.html" />
     <link rel="prev" title="Topics" href="topics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -158,6 +158,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="topics.html">Topics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="remote_servers.html"><code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_your_computer.html">Using your own computer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="computing.html">Computation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hello_world.html">Hello, World</a></li>
@@ -472,11 +473,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathlab">MathLab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terminal">The Terminal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-remote-servers">Accessing the remote servers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathlab">MathLab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-into-the-desktops">Logging into the desktops</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terminal">The Terminal</a></li>
 </ul>
             </nav>
         </div>
@@ -495,34 +496,21 @@ use the bash command line, C++ programming, and some basic software
 engineering techniques.</p>
 <section id="mathlab">
 <h2>MathLab<a class="headerlink" href="#mathlab" title="Link to this heading">#</a></h2>
-<p>The computers in the MathLab (S-235) have are a bit out-dated, so we
-will mostly use them as terminals to access remote servers that
+<p>The computers in the MathLab (S-235) run an older version of
+the <a class="reference external" href="https://ubuntu.com/">Ubuntu Linux</a> distribution of the <a class="reference external" href="https://en.wikipedia.org/wiki/Linux">Linux</a> operating system.  We will
+mostly use them as terminals to access remote servers that
 are more up-to-date.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This actually mimics how we often work in the real world, especially
 using research computing resources.</p>
 </div>
-<p>The remote machines are:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">portal.mathlab.stonybrook.edu</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">portal2.mathlab.stonybrook.edu</span></code></p></li>
-</ul>
-<p>You may use either or both machines, but note that they are not
-mirrored.  So any files you put on one will not be reflected
-on the other.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>You username and password for logging in are your NetID.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>After 3 unsuccessful login attempts, you will be locked out
-of the machine for an hour.</p>
-<p>Being locked out of <code class="docutils literal notranslate"><span class="pre">portal</span></code> or <code class="docutils literal notranslate"><span class="pre">portal2</span></code> is not an
-excuse for turning in homework late.  Plan ahead! and don’t
-wait until the last minute.</p>
-</div>
+<section id="logging-into-the-desktops">
+<h3>Logging into the desktops<a class="headerlink" href="#logging-into-the-desktops" title="Link to this heading">#</a></h3>
+<p>You username and password for logging into the desktop machines are
+those of your NetID.</p>
+<p>Once logged in you will want to access the terminal.</p>
+</section>
 </section>
 <section id="the-terminal">
 <h2>The Terminal<a class="headerlink" href="#the-terminal" title="Link to this heading">#</a></h2>
@@ -530,14 +518,7 @@ wait until the last minute.</p>
 via the terminal app.</p>
 <p>The terminal is our window to the computer.  It runs an interactive
 shell called <a class="reference external" href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a>
-that operates as a <a class="reference external" href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a>:</p>
-<ul class="simple">
-<li><p>Read: Bash will read a command that you enter at the promot</p></li>
-<li><p>Execute: Bash will execute the command</p></li>
-<li><p>Print: the output from the command will be printed to the terminal</p></li>
-<li><p>Loop: the process repeats, with the prompt waiting to read your next
-command.</p></li>
-</ul>
+that we enter commands into.</p>
 <div class="admonition-try-it admonition">
 <p class="admonition-title">Try it…</p>
 <p>A simple Unix command is <code class="docutils literal notranslate"><span class="pre">echo</span></code>.  It simply repeats whatever you
@@ -548,26 +529,6 @@ span.prompt1:before {
 }
 </style><span class="prompt1"><span class="nb">echo</span><span class="w"> </span>Hello,<span class="w"> </span>World!</span>
 </pre></div></div></div>
-<section id="accessing-the-remote-servers">
-<h3>Accessing the remote servers<a class="headerlink" href="#accessing-the-remote-servers" title="Link to this heading">#</a></h3>
-<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Secure_Shell">ssh</a> command allows for a secure
-connection to a remote machine.  At the terminal prompt we can do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-l<span class="w"> </span>&lt;username&gt;<span class="w"> </span>portal.mathlab.stonybrook.edu</span>
-</pre></div></div><p>where you replace <code class="docutils literal notranslate"><span class="pre">&lt;username&gt;</span></code> with your NetId.  You will then be prompted for
-your password (the one associated with your NetId).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here we see that <code class="docutils literal notranslate"><span class="pre">ssh</span></code> takes options that after the command that modify the
-default behavior (sometimes we call these <em>switches</em>).  These typically start
-with a <code class="docutils literal notranslate"><span class="pre">-</span></code> or <code class="docutils literal notranslate"><span class="pre">--</span></code>.</p>
-<p>We’ll see that most Unix commands have options that we can use.</p>
-</div>
-<p>If the connection is successful, then you will should see a prompt like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[mzingale@portal ~]$
-</pre></div>
-</div>
-<p>in the terminal.  This shows (the <code class="docutils literal notranslate"><span class="pre">&#64;portal</span></code>) that you are connected to portal.</p>
-</section>
 </section>
 </section>
 
@@ -592,11 +553,11 @@ with a <code class="docutils literal notranslate"><span class="pre">-</span></co
       </div>
     </a>
     <a class="right-next"
-       href="using_your_computer.html"
+       href="remote_servers.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Using your own computer</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -616,11 +577,11 @@ with a <code class="docutils literal notranslate"><span class="pre">-</span></co
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathlab">MathLab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terminal">The Terminal</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-remote-servers">Accessing the remote servers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathlab">MathLab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-into-the-desktops">Logging into the desktops</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terminal">The Terminal</a></li>
 </ul>
   </nav></div>
 

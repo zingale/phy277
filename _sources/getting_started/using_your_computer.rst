@@ -41,7 +41,7 @@ Once it is installed, you can *ssh* into
 Windows
 -------
 
-The standard SSH client for Windows is `putty
+The standard SSH client for Windows is `PuTTY
 <https://www.ssh.com/academy/ssh/putty/download>`_.  This is freely
 downloadable and can be installed following the instructions at that
 link.

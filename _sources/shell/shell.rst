@@ -14,27 +14,34 @@ The `shell <https://en.wikipedia.org/wiki/Unix_shell>`_ is your
 interface to the operator system.  It implements a `REPL interface <https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop>`_:
 Read, Execute, Print, Loop.  This means it:
 
-* Reads the input (commands) you type
-* Executes the command
-* Prints the result of the command
-* Loops back to the start, waiting to read a new command
+* Reads: Bash will read a command that you enter at the promot
+
+* Executes: Bash will execute the command
+
+* Prints: the output from the command will be printed to the terminal
+
+* Loops: the process repeats, with the prompt waiting to read your next
+  command.
 
 The power of the shell is that we can easily combine different tools
 together to create powerful commands to manipulate files on the
 computer.
+
+Accessing the shell
+===================
 
 To access the shell, we need to open a terminal on the computer.  This
 will present us with the `command prompt
 <https://en.wikipedia.org/wiki/Command-line_interface#Command_prompt>`_,
 which typically is a ``$`` (although it can be customized)`.
 
-Here's a quick demonstration: the ``echo`` command simply prints
-anything following it to the terminal:
+We already saw the ``echo`` command:
 
 .. prompt:: bash
 
    echo Hello, World
 
+But there are many more commands that we will learn shortly.
 
 
 Which shell?
