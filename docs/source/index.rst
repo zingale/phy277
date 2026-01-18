@@ -25,6 +25,7 @@ Course description
 
    getting_started/topics
    getting_started/getting_started
+   getting_started/remote_servers
    getting_started/using_your_computer
    getting_started/computing
    getting_started/hello_world
