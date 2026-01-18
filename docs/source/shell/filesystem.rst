@@ -287,10 +287,10 @@ or all at once:
 
 .. tip::
 
-   You can use the "tab" key to autocomplete directory and file names once you
+   You can use the "Tab" key to autocomplete directory and file names once you
    type enough to be unique.
 
-   Try doing: ``cd shel`` and hitting "tab"
+   Try doing: ``cd shel`` and hitting "Tab"
 
 Last directory
 ==============
@@ -334,12 +334,6 @@ The ``/`` character has 2 roles:
 
 * A path uses ``/`` to separate directory names
 
-.. tip::
-
-   The Unix shell uses tab-completion to make it easier to type.
-   Start typing a path (or command) and then press the *Tab* key and
-   it will either complete it (if there is a unique file / command) or
-   display the possible completions.
 
 .. tip::
 
