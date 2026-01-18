@@ -104,7 +104,7 @@ Here's an example where we change the name of the extension of the file from `.d
    When we do ``${creature}`` above, we are treating asking Bash to
    substitute the value of the variable ``creature``.  There are actually
    a lot of handy operations we can do on shell variables, as you can
-   see here: http://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+   see here: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
 
 
 Summary
