@@ -77,6 +77,33 @@ Here we are using a *relative path* for the destination.
 Deleting files
 ==============
 
+To delete files, we use the ``rm`` command (short for *remove*).
+
+Let's remove the empty file ``topics.txt``:
+
+.. prompt:: bash
+
+   rm topics.txt
+
+.. admonition:: Try it...
+
+   We also put a copy of ``thesis-backup.txt`` in our home directory.  Remove that file.
+
+To remove a directory, we need to first remove all the files in the directory, and then we can remove the directory using ``rmdir``.
+Let's remove the ``backup/`` directory.  First go back to your ``thesis/`` sub-directory.  Then:
+
+.. prompt:: bash
+
+   rm backup/thesis-backup.txt
+   rmdir backup
+
+.. tip::
+
+   We can do a recursive ``rm`` to remove all the contents of a directory and the directory itself, by doing:
+
+   .. prompt:: bash
+
+      rm -r backup
 
 .. caution::
 
@@ -107,4 +134,8 @@ We learned the following commands:
 * ``cp`` : copy a file or directory
 
 * ``rm`` : remove a file (and/or directory if done recursively)
+
+
+Exercises
+=========
 
