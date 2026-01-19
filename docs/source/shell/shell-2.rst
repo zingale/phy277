@@ -60,10 +60,77 @@ using the *nano* editor.  Let's create a new file now, called
 
 The editor will open with an empty file.  Write a few sentences, like the screenshot below
 
+.. figure:: thesis-nano.png
+   :align: center
+   :width: 90%
+   :alt: nano in our terminal with some text for our thesis.
+
+   The nano editor with our ``thesis.txt``
 
 Now save it using
 the combination :kbd:`Ctrl-O` to write, and the exit with :kbd:`Ctrl-X`.
 
+.. admonition:: Try it...
+
+   Sometimes we need a file to exist, but we don't care if there is anything
+   in it.  We can use the ``touch`` command for this---if a file with the
+   name does not exist, it will create it as an empty file.
+
+   .. prompt:: bash
+
+      touch topics.txt
+
+   We can see the file sizes by using the ``-l`` flag to ``ls``:
+
+   .. prompt:: bash
+
+      ls -l
+
+   This will show something like:
+
+   .. code:: bash
+
+      total 4
+      -rw-r-----. 1 mzingale mzingale 75 Jan 19 13:08 thesis.txt
+      -rw-r-----. 1 mzingale mzingale  0 Jan 19 13:16 topics.txt
+
+   There are a lot of columns here, but the 5th column gives the size
+   in bytes for our file.
+
+
+Looking at our file
+===================
+
+If we do ``ls``, then we'll see our file.
+
+If we want to see the contents of the file from the command line, we can use
+the ``cat`` command:
+
+.. prompt:: bash
+
+   cat thesis.txt
+
+.. tip::
+
+   For very long files, the output will scroll past our screen without stopping.
+   Instead we can use the ``more`` command, which acts as a *pager*.  We'll
+   see this more in a bit.
+
+
+Moving files
+============
+
+
+Copying files
+=============
+
+
+Deleting files
+==============
+
+
+Wildcards
+=========
 
 Summary
 =======
@@ -75,6 +142,8 @@ We learned the following commands:
 * ``nano`` : a basic text editor
 
 * ``touch`` : update a file's timestamp (and create an empty file if it does not exist)
+
+* ``cat`` : display the contents of a file (it has other uses which we'll explore later)
 
 * ``mv`` : move a file or directory
 
