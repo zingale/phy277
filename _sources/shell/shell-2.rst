@@ -117,16 +117,55 @@ the ``cat`` command:
    see this more in a bit.
 
 
-Moving files
-============
-
-
 Copying files
 =============
 
+Let's say we want to make a copy (backup) of our thesis.  We use the ``cp`` command for this.
+This has the syntax :samp:`cp {origin} {destination}`.
+
+Let's start by just making a copy in our own directory.  We can do this as:
+
+.. prompt:: bash
+
+   cp thesis.txt thesis-backup.txt
+
+If we do ``ls -l`` we should see both the original and copy present.
+
+We could put the copy in a different location, like our home directory, by including
+the path in the destination, like:
+
+.. prompt:: bash
+
+   cp thesis.txt ~/thesis-backup.txt
+
+
+
+Moving files
+============
+
+Maybe we want to put the backup in a separate directory.
 
 Deleting files
 ==============
+
+
+.. caution::
+
+   Linux does not have an "undelete" function.  When you remove a file
+   on the command line it is gone for good.  Therefore you should
+   always double check the ``rm`` command you typed before hitting :kbd:`Enter`.
+
+   Another good practice is to use ``rm`` in *interactive mode*, where
+   it will prompt you before removing a file (and ``cp`` and ``mv``
+   can be used this way too).
+
+   To make this the default, add the following lines to your ``.bashrc``:
+
+   .. code:: bash
+
+      alias rm='rm -i'
+      alias cp='cp -i'
+      alias mv='mv -i'
 
 
 Wildcards
