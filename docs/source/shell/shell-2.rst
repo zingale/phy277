@@ -11,7 +11,58 @@ Create Files and Directories
    <https://swcarpentry.github.io/shell-novice/>`_
 
 
-Let's work through that lesson together...
+Let's start in ``~/shell-lesson-data/exercise-data/writing``:
+
+.. prompt:: bash
+
+   cd ~/shell-lesson-data/exercise-data/writing
+
+Making a new directory
+======================
+
+We want to put a new document here (our thesis) and we will organize it in its own sub-directory.
+The command to make a new directory is ``mkdir`` (for *make directory*).  We can do:
+
+.. prompt:: bash
+
+   mkdir thesis
+
+and then change directory into it and print the current directory:
+
+.. prompt:: bash
+
+   cd thesis
+   pwd
+
+This should show something like:
+
+.. code:: bash
+
+   /home/mzingale/shell-lesson-data/exercise-data/writing/thesis
+
+.. tip::
+
+   Don't use spaces in directory or file names.  This makes navigation difficult.
+
+   Likewise, don't start a directory or filename with a ``-``, since most commandline tools
+   will interpret this as an option / flag.
+
+Creating a new file
+===================
+
+We already did a quick example of creating a ``hello.cpp`` earlier,
+using the *nano* editor.  Let's create a new file now, called
+``thesis.txt``:
+
+.. prompt:: bash
+
+   nano thesis.txt
+
+The editor will open with an empty file.  Write a few sentences, like the screenshot below
+
+
+Now save it using
+the combination :kbd:`Ctrl-O` to write, and the exit with :kbd:`Ctrl-X`.
 
 
 Summary
@@ -40,7 +91,7 @@ We also learned about wildcards:
 Exercises
 =========
 
-.. admonition:: try it...
+.. admonition:: Try it...
 
    From your home directory, create a directory / file structure that looks like::
 

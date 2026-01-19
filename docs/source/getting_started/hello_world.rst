@@ -44,11 +44,11 @@ Now we can simply type our C++ code in the window.  Enter the following:
    If you hover your mouse over the code, a "copy to clipboard" icon will appear in the upper
    right of the code box.  Click this and then you can paste into your editor window.
 
-Now save it by doing ``^O``, where ``^`` here means you hold down the *control* key on the keyword.
+Now save it by doing :kbd:`Ctrl-O`, where :kbd:`Ctrl` here means you hold down the *control* key on the keyword.
 
 It will ask for a name, so we'll use ``hello.cpp``.
 
-Now we can exit via ``^X``.
+Now we can exit via :kbd:`Ctrl-X`.
 
 We just created the source code for our first program.  We now need to
 compile it into instructions the computer understands.  The C++
