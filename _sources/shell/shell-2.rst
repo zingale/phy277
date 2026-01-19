@@ -168,9 +168,6 @@ Deleting files
       alias mv='mv -i'
 
 
-Wildcards
-=========
-
 Summary
 =======
 
@@ -190,11 +187,6 @@ We learned the following commands:
 
 * ``rm`` : remove a file (and/or directory if done recursively)
 
-We also learned about wildcards:
-
-* ``*`` matches multiple (or 0) characters
-
-* ``?`` matches a single character
 
 Exercises
 =========
