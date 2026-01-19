@@ -18,8 +18,8 @@ You can add this at the very end of the file (on its own line).
 
 .. important::
 
-   Be sure the end your ``.bashrc`` with a newline (i.e., pressing the
-   "enter" key after adding the above line).
+   Be sure the end your ``.bashrc`` with a newline (i.e., pressing :kbd:`Enter`
+   after adding the above line).
 
 
 ``.emacs`` configuration file
@@ -65,7 +65,7 @@ for C++.  To enable this do the following:
 
     M-x package-install
 
-  press the "enter" key, and then type:
+  press :kbd:`Enter`, and then type:
 
   ::
 
