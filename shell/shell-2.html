@@ -40,8 +40,8 @@
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=e6052340"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
@@ -468,6 +468,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-new-directory">Making a new directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-file">Creating a new file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
@@ -489,7 +491,41 @@ document.write(`
 and Directories</a>
 lesson from <a class="reference external" href="https://swcarpentry.github.io/shell-novice/">The Unix Shell</a></p>
 </div>
-<p>Let’s work through that lesson together…</p>
+<p>Let’s start in <code class="docutils literal notranslate"><span class="pre">~/shell-lesson-data/exercise-data/writing</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>~/shell-lesson-data/exercise-data/writing</span>
+</pre></div></div><section id="making-a-new-directory">
+<h2>Making a new directory<a class="headerlink" href="#making-a-new-directory" title="Link to this heading">#</a></h2>
+<p>We want to put a new document here (our thesis) and we will organize it in its own sub-directory.
+The command to make a new directory is <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> (for <em>make directory</em>).  We can do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">mkdir<span class="w"> </span>thesis</span>
+</pre></div></div><p>and then change directory into it and print the current directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>thesis</span>
+<span class="prompt1"><span class="nb">pwd</span></span>
+</pre></div></div><p>This should show something like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/mzingale/shell-lesson-data/exercise-data/writing/thesis
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Don’t use spaces in directory or file names.  This makes navigation difficult.</p>
+<p>Likewise, don’t start a directory or filename with a <code class="docutils literal notranslate"><span class="pre">-</span></code>, since most commandline tools
+will interpret this as an option / flag.</p>
+</div>
+</section>
+<section id="creating-a-new-file">
+<h2>Creating a new file<a class="headerlink" href="#creating-a-new-file" title="Link to this heading">#</a></h2>
+<p>We already did a quick example of creating a <code class="docutils literal notranslate"><span class="pre">hello.cpp</span></code> earlier,
+using the <em>nano</em> editor.  Let’s create a new file now, called
+<code class="docutils literal notranslate"><span class="pre">thesis.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">nano<span class="w"> </span>thesis.txt</span>
+</pre></div></div><p>The editor will open with an empty file.  Write a few sentences, like the screenshot below</p>
+<p>Now save it using
+the combination <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">O</kbd> to write, and the exit with <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">X</kbd>.</p>
+</section>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>We learned the following commands:</p>
@@ -510,7 +546,7 @@ lesson from <a class="reference external" href="https://swcarpentry.github.io/sh
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="admonition-try-it admonition">
-<p class="admonition-title">try it…</p>
+<p class="admonition-title">Try it…</p>
 <p>From your home directory, create a directory / file structure that looks like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>project
 ├── code
@@ -570,6 +606,8 @@ lesson from <a class="reference external" href="https://swcarpentry.github.io/sh
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-new-directory">Making a new directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-file">Creating a new file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
