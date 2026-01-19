@@ -474,6 +474,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-files">Moving files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-files">Deleting files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
             </nav>
         </div>
@@ -533,6 +534,22 @@ do:</p>
 </section>
 <section id="deleting-files">
 <h2>Deleting files<a class="headerlink" href="#deleting-files" title="Link to this heading">#</a></h2>
+<p>To delete files, we use the <code class="docutils literal notranslate"><span class="pre">rm</span></code> command (short for <em>remove</em>).</p>
+<p>Let’s remove the empty file <code class="docutils literal notranslate"><span class="pre">topics.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">rm<span class="w"> </span>topics.txt</span>
+</pre></div></div><div class="admonition-try-it admonition">
+<p class="admonition-title">Try it…</p>
+<p>We also put a copy of <code class="docutils literal notranslate"><span class="pre">thesis-backup.txt</span></code> in our home directory.  Remove that file.</p>
+</div>
+<p>To remove a directory, we need to first remove all the files in the directory, and then we can remove the directory using <code class="docutils literal notranslate"><span class="pre">rmdir</span></code>.
+Let’s remove the <code class="docutils literal notranslate"><span class="pre">backup/</span></code> directory.  First go back to your <code class="docutils literal notranslate"><span class="pre">thesis/</span></code> sub-directory.  Then:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">rm<span class="w"> </span>backup/thesis-backup.txt</span>
+<span class="prompt1">rmdir<span class="w"> </span>backup</span>
+</pre></div></div><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We can do a recursive <code class="docutils literal notranslate"><span class="pre">rm</span></code> to remove all the contents of a directory and the directory itself, by doing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">rm<span class="w"> </span>-r<span class="w"> </span>backup</span>
+</pre></div></div></div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Linux does not have an “undelete” function.  When you remove a file
@@ -557,6 +574,9 @@ can be used this way too).</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">cp</span></code> : copy a file or directory</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">rm</span></code> : remove a file (and/or directory if done recursively)</p></li>
 </ul>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -609,6 +629,7 @@ can be used this way too).</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-files">Moving files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-files">Deleting files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
   </nav></div>
 
