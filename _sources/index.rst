@@ -41,6 +41,7 @@ Course description
    shell/sample-data
    shell/filesystem
    shell/shell-2
+   shell/shell-copy-move.rst
    shell/shell-wildcards
    shell/shell-3
    getting_started/scp

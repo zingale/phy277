@@ -49,7 +49,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'shell/shell-2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Wildcards" href="shell-wildcards.html" />
+    <link rel="next" title="Copying, Moving, and Deleting" href="shell-copy-move.html" />
     <link rel="prev" title="Navigating the Filesystem" href="filesystem.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -171,6 +171,7 @@
 <li class="toctree-l1"><a class="reference internal" href="sample-data.html">Some Sample Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="filesystem.html">Navigating the Filesystem</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Create Files and Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shell-copy-move.html">Copying, Moving, and Deleting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell-wildcards.html">Wildcards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell-3.html">Redirection and Pipes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/scp.html"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</a></li>
@@ -472,9 +473,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-new-directory">Making a new directory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-file">Creating a new file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-at-our-file">Looking at our file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-files">Copying files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-files">Moving files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-files">Deleting files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
@@ -568,39 +566,6 @@ Instead we can use the <code class="docutils literal notranslate"><span class="p
 see this more in a bit.</p>
 </div>
 </section>
-<section id="copying-files">
-<h2>Copying files<a class="headerlink" href="#copying-files" title="Link to this heading">#</a></h2>
-<p>Let’s say we want to make a copy (backup) of our thesis.  We use the <code class="docutils literal notranslate"><span class="pre">cp</span></code> command for this.
-This has the syntax <code class="samp docutils literal notranslate"><span class="pre">cp</span> <em><span class="pre">origin</span></em> <em><span class="pre">destination</span></em></code>.</p>
-<p>Let’s start by just making a copy in our own directory.  We can do this as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">cp<span class="w"> </span>thesis.txt<span class="w"> </span>thesis-backup.txt</span>
-</pre></div></div><p>If we do <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code> we should see both the original and copy present.</p>
-<p>We could put the copy in a different location, like our home directory, by including
-the path in the destination, like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">cp<span class="w"> </span>thesis.txt<span class="w"> </span>~/thesis-backup.txt</span>
-</pre></div></div></section>
-<section id="moving-files">
-<h2>Moving files<a class="headerlink" href="#moving-files" title="Link to this heading">#</a></h2>
-<p>Maybe we want to put the backup in a separate directory.</p>
-</section>
-<section id="deleting-files">
-<h2>Deleting files<a class="headerlink" href="#deleting-files" title="Link to this heading">#</a></h2>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>Linux does not have an “undelete” function.  When you remove a file
-on the command line it is gone for good.  Therefore you should
-always double check the <code class="docutils literal notranslate"><span class="pre">rm</span></code> command you typed before hitting <kbd class="kbd docutils literal notranslate">Enter</kbd>.</p>
-<p>Another good practice is to use <code class="docutils literal notranslate"><span class="pre">rm</span></code> in <em>interactive mode</em>, where
-it will prompt you before removing a file (and <code class="docutils literal notranslate"><span class="pre">cp</span></code> and <code class="docutils literal notranslate"><span class="pre">mv</span></code>
-can be used this way too).</p>
-<p>To make this the default, add the following lines to your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span><span class="w"> </span><span class="nv">rm</span><span class="o">=</span><span class="s1">&#39;rm -i&#39;</span>
-<span class="nb">alias</span><span class="w"> </span><span class="nv">cp</span><span class="o">=</span><span class="s1">&#39;cp -i&#39;</span>
-<span class="nb">alias</span><span class="w"> </span><span class="nv">mv</span><span class="o">=</span><span class="s1">&#39;mv -i&#39;</span>
-</pre></div>
-</div>
-</div>
-</section>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>We learned the following commands:</p>
@@ -609,9 +574,6 @@ can be used this way too).</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">nano</span></code> : a basic text editor</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">touch</span></code> : update a file’s timestamp (and create an empty file if it does not exist)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cat</span></code> : display the contents of a file (it has other uses which we’ll explore later)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mv</span></code> : move a file or directory</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cp</span></code> : copy a file or directory</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rm</span></code> : remove a file (and/or directory if done recursively)</p></li>
 </ul>
 </section>
 <section id="exercises">
@@ -653,11 +615,11 @@ can be used this way too).</p>
       </div>
     </a>
     <a class="right-next"
-       href="shell-wildcards.html"
+       href="shell-copy-move.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Wildcards</p>
+        <p class="prev-next-title">Copying, Moving, and Deleting</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -680,9 +642,6 @@ can be used this way too).</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-new-directory">Making a new directory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-file">Creating a new file</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-at-our-file">Looking at our file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-files">Copying files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-files">Moving files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-files">Deleting files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
