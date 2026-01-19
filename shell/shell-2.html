@@ -470,6 +470,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-new-directory">Making a new directory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-file">Creating a new file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-at-our-file">Looking at our file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-files">Moving files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-files">Copying files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-files">Deleting files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcards">Wildcards</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
@@ -523,8 +528,57 @@ using the <em>nano</em> editor.  Let’s create a new file now, called
 <code class="docutils literal notranslate"><span class="pre">thesis.txt</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">nano<span class="w"> </span>thesis.txt</span>
 </pre></div></div><p>The editor will open with an empty file.  Write a few sentences, like the screenshot below</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/thesis-nano.png"><img alt="nano in our terminal with some text for our thesis." src="../_images/thesis-nano.png" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The nano editor with our <code class="docutils literal notranslate"><span class="pre">thesis.txt</span></code></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Now save it using
 the combination <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">O</kbd> to write, and the exit with <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">X</kbd>.</p>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">Try it…</p>
+<p>Sometimes we need a file to exist, but we don’t care if there is anything
+in it.  We can use the <code class="docutils literal notranslate"><span class="pre">touch</span></code> command for this—if a file with the
+name does not exist, it will create it as an empty file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">touch<span class="w"> </span>topics.txt</span>
+</pre></div></div><p>We can see the file sizes by using the <code class="docutils literal notranslate"><span class="pre">-l</span></code> flag to <code class="docutils literal notranslate"><span class="pre">ls</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ls<span class="w"> </span>-l</span>
+</pre></div></div><p>This will show something like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>total<span class="w"> </span><span class="m">4</span>
+-rw-r-----.<span class="w"> </span><span class="m">1</span><span class="w"> </span>mzingale<span class="w"> </span>mzingale<span class="w"> </span><span class="m">75</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="m">13</span>:08<span class="w"> </span>thesis.txt
+-rw-r-----.<span class="w"> </span><span class="m">1</span><span class="w"> </span>mzingale<span class="w"> </span>mzingale<span class="w">  </span><span class="m">0</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="m">13</span>:16<span class="w"> </span>topics.txt
+</pre></div>
+</div>
+<p>There are a lot of columns here, but the 5th column gives the size
+in bytes for our file.</p>
+</div>
+</section>
+<section id="looking-at-our-file">
+<h2>Looking at our file<a class="headerlink" href="#looking-at-our-file" title="Link to this heading">#</a></h2>
+<p>If we do <code class="docutils literal notranslate"><span class="pre">ls</span></code>, then we’ll see our file.</p>
+<p>If we want to see the contents of the file from the command line, we can use
+the <code class="docutils literal notranslate"><span class="pre">cat</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">cat<span class="w"> </span>thesis.txt</span>
+</pre></div></div><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For very long files, the output will scroll past our screen without stopping.
+Instead we can use the <code class="docutils literal notranslate"><span class="pre">more</span></code> command, which acts as a <em>pager</em>.  We’ll
+see this more in a bit.</p>
+</div>
+</section>
+<section id="moving-files">
+<h2>Moving files<a class="headerlink" href="#moving-files" title="Link to this heading">#</a></h2>
+</section>
+<section id="copying-files">
+<h2>Copying files<a class="headerlink" href="#copying-files" title="Link to this heading">#</a></h2>
+</section>
+<section id="deleting-files">
+<h2>Deleting files<a class="headerlink" href="#deleting-files" title="Link to this heading">#</a></h2>
+</section>
+<section id="wildcards">
+<h2>Wildcards<a class="headerlink" href="#wildcards" title="Link to this heading">#</a></h2>
 </section>
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
@@ -533,6 +587,7 @@ the combination <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd cl
 <li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> : make a directory</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nano</span></code> : a basic text editor</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">touch</span></code> : update a file’s timestamp (and create an empty file if it does not exist)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cat</span></code> : display the contents of a file (it has other uses which we’ll explore later)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mv</span></code> : move a file or directory</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cp</span></code> : copy a file or directory</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">rm</span></code> : remove a file (and/or directory if done recursively)</p></li>
@@ -608,6 +663,11 @@ the combination <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd cl
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-new-directory">Making a new directory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-new-file">Creating a new file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-at-our-file">Looking at our file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-files">Moving files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-files">Copying files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-files">Deleting files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcards">Wildcards</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
