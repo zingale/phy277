@@ -502,7 +502,14 @@ span.prompt1:before {
 <p>We could put the copy in a different location, like our home directory, by including
 the path in the destination, like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">cp<span class="w"> </span>thesis.txt<span class="w"> </span>~/thesis-backup.txt</span>
-</pre></div></div></section>
+</pre></div></div><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <em>source</em> can be anywhere on the filesystem and the <em>destination</em> can be the
+directory you are in by using <code class="docutils literal notranslate"><span class="pre">.</span></code> as the destination.  E.g., to copy your
+<code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file into your current directory, you can do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">cp<span class="w"> </span>~/.bashrc<span class="w"> </span>.</span>
+</pre></div></div></div>
+</section>
 <section id="moving-files">
 <h2>Moving files<a class="headerlink" href="#moving-files" title="Link to this heading">#</a></h2>
 <p>Maybe we want to put the backup in a separate directory.</p>

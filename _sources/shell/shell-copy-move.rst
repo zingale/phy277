@@ -24,6 +24,16 @@ the path in the destination, like:
    cp thesis.txt ~/thesis-backup.txt
 
 
+.. tip::
+
+   The *source* can be anywhere on the filesystem and the *destination* can be the
+   directory you are in by using ``.`` as the destination.  E.g., to copy your
+   ``~/.bashrc`` file into your current directory, you can do:
+
+   .. prompt:: bash
+
+      cp ~/.bashrc .
+
 
 Moving files
 ============
