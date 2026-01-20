@@ -52,19 +52,17 @@ This is useful for remote connections.
 
 Some basic commands with emacs:
 
-* ``C-x C-c`` : exit without saving
+* :kbd:`Ctrl-x` :kbd:`Ctrl-c` : exit without saving
 
-* ``C-x C-s`` : save the file
+* :kbd:`Ctrl-x` :kbd:`Ctrl-s` : save the file
 
-* ``C-g`` : break out of whatever command you may be in the middle of
+* :kbd:`Ctrl-g` : break out of whatever command you may be in the middle of
 
-* ``C-space`` : set a mark (starting point) for selecting text
+* :kbd:`Ctrl-Space` : set a mark (starting point) for selecting text
 
-* ``C-w`` : cut the text (into the "kill ring")
+* :kbd:`Ctrl-w` : cut the text (into the "kill ring")
 
-* ``C-y`` : paste the text from the kill ring (y is for yank)
-
-Here ``C-`` means use the control key.
+* :kbd:`Ctrl-y` : paste the text from the kill ring (``y`` is for yank)
 
 Here's my `emacs config file <https://github.com/zingale/mysystem/blob/master/.emacs>`_ file.
 
@@ -84,9 +82,9 @@ You can open a file for editing by:
 
 by default you are in command mode.
 
-* To get into insert type ``i``
+* To get into insert mode, press :kbd:`i`
 
-* To return to command mode hit the *ESC* key
+* To return to command mode press the :kbd:`ESC` key
 
 Documentation is available here: https://www.vim.org/docs.php
 

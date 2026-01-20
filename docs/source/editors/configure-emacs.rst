@@ -71,7 +71,7 @@ for C++.  To enable this do the following:
 
     flycheck
 
-* exit emacs (``C-x C-c``)
+* exit emacs (:kbd:`Ctrl-x` :kbd:`Ctrl-c`)
 
 .. admonition:: Try it...
 
