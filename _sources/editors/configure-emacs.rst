@@ -48,7 +48,7 @@ you can check that the file is in the right place by doing:
 
    ls -l ~/.emacs
 
-if it says ``No such file or directory`` that it is not installed properly.
+if it says "``No such file or directory``", then it is not installed properly.
 
 This will allow us to use the `flycheck package <https://www.flycheck.org/en/latest/user/installation.html>`_
 for C++.  To enable this do the following:
