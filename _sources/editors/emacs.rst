@@ -21,3 +21,9 @@ Quick tour
    here: :download:`emacs reference card <https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf>`
 
 
+
+.. tip::
+
+   Since :kbd:`Ctrl-v` is mapped as "page down", to paste something into your emacs
+   buffer that you copied from a different application (like the web browser), use
+   :kbd:`Ctri-Shift-v`.
