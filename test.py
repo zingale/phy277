@@ -20,7 +20,7 @@ def main():
 
         else:
             print(f"working on {pdir/file}")
-            subprocess.run(f"g++ -Wall -Wextra -Wshadow -Werror -std=c++20 -c {file}",
+            subprocess.run(f"g++ -Wall -Wextra -Wshadow -Werror -Wpedantic -std=c++20 -c {file}",
                            capture_output=False, shell=True, cwd=pdir, check=True)
 
 
