@@ -32,8 +32,8 @@ int main() {
         I.push_back(row);
     }
 
-    for (int r = 0; r < I.size(); ++r) {
-        for (int c = 0; c < I[r].size(); ++c) {
+    for (int r = 0; r < static_cast<int>(I.size()); ++r) {
+        for (int c = 0; c < static_cast<int>(I[r].size()); ++c) {
             std::cout << std::setw(4) << I[r][c] << " ";
         }
         std::cout << std::endl;

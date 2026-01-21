@@ -6,3 +6,4 @@ int main() {
     int &x_ref = x;
 
     x_ref++;
+}

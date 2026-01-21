@@ -12,7 +12,7 @@ void f2(double& x) {
     x *= 2;
 }
 
-void f3(const double& x) {
+void f3([[maybe_unused]] const double& x) {
     //x *= 2;
 }
 
