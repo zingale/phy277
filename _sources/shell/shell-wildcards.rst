@@ -3,7 +3,7 @@ Wildcards
 
 .. admonition:: reading
 
-   `Wildcards <https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm>`_ from the 
+   `Wildcards <https://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm>`_ from the
    Linux Documentation Project.
 
 
@@ -53,7 +53,3 @@ Now, the ``?`` matches exactly one character.  By using 3 of them in a row, we a
 
    These wildcards, ``?`` and ``*``, are *expanded* by the shell first and then passed
    to the command we are using.  This means that we can use them with any Unix commands.
-
-
-
-
