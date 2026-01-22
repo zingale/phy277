@@ -51,7 +51,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-datatypes';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Floating Point" href="floating-point.html" />
+    <link rel="next" title="Operators" href="cxx-operators.html" />
     <link rel="prev" title="Configuring emacs" href="../editors/configure-emacs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -200,6 +200,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basic Datatypes</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">C++ Fundamental Datatypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-operators.html">Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="floating-point.html">Floating Point</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cmath.html">Numerical Library</a></li>
@@ -480,7 +481,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#const"><code class="docutils literal notranslate"><span class="pre">const</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-types">Mixing types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizes">Sizes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-limits">Reporting limits</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overflow-and-underflow">Overflow and underflow</a></li>
@@ -609,26 +609,6 @@ to initialize the immediately:</p>
 </div>
 </section>
 </section>
-<section id="mixing-types">
-<h2>Mixing types<a class="headerlink" href="#mixing-types" title="Link to this heading">#</a></h2>
-<p>You need to be careful when mixing different data types.  C++ will
-implicitly <em>cast</em> objects to the more general type, sometimes with
-unexpected consequences.  Later we’ll see how to explicitly cast data
-if needed.</p>
-<div class="admonition-try-it admonition">
-<p class="admonition-title">Try it…</p>
-<p>Try the following (you’ll need to put this in a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function and compile it):</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// convert from Fahrenheit to Celsius</span>
-
-<span class="kt">double</span><span class="w"> </span><span class="n">T_F</span><span class="w"> </span><span class="p">{</span><span class="mf">100.0</span><span class="p">};</span>
-<span class="kt">double</span><span class="w"> </span><span class="n">T_C</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="p">(</span><span class="n">T_F</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">32</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">9</span><span class="p">);</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;T_C = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">T_C</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Why doesn’t this work as expected?</p>
-</div>
-</section>
 <section id="sizes">
 <h2>Sizes<a class="headerlink" href="#sizes" title="Link to this heading">#</a></h2>
 <p>The link at the top of the page tells you how the standard defines
@@ -739,11 +719,11 @@ does not hold.</p>
       </div>
     </a>
     <a class="right-next"
-       href="floating-point.html"
+       href="cxx-operators.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Floating Point</p>
+        <p class="prev-next-title">Operators</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -767,7 +747,6 @@ does not hold.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#const"><code class="docutils literal notranslate"><span class="pre">const</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-types">Mixing types</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizes">Sizes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-limits">Reporting limits</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overflow-and-underflow">Overflow and underflow</a></li>
