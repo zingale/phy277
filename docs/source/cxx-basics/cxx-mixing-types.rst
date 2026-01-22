@@ -23,3 +23,22 @@ if needed.
 
    Why doesn't this work as expected?
 
+
+Casting
+=======
+
+We can use `static_cast <https://en.cppreference.com/w/cpp/language/static_cast.html>`_ to explicitly
+convert one type to another.  For example:
+
+.. code:: c++
+
+   int a{5};
+   double x = static_cast<double>(a);
+
+will convert the integer ``a`` to a double-precision floating point object ``x``.
+
+There are other types of casts in C++, but this is the one we will use the most.
+
+.. admonition:: Try it...
+
+   Let's explicitly cast the integers in the program above to see if it fixes our problem.
