@@ -517,10 +517,18 @@ convert one type to another.  For example:</p>
 </pre></div>
 </div>
 <p>will convert the integer <code class="docutils literal notranslate"><span class="pre">a</span></code> to a double-precision floating point object <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a new pattern here, the use of <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>—this is used in
+<em>template functions</em>, a topic we will talk more about later.</p>
+<p>In this case, by putting <code class="docutils literal notranslate"><span class="pre">&lt;double&gt;</span></code> we are telling the compiler to use
+a version of <code class="docutils literal notranslate"><span class="pre">static_cast</span></code> that operates on a <code class="docutils literal notranslate"><span class="pre">double</span></code> object.</p>
+</div>
 <p>There are other types of casts in C++, but this is the one we will use the most.</p>
 <div class="admonition-try-it admonition">
 <p class="admonition-title">Try it…</p>
-<p>Let’s explicitly cast the integers in the program above to see if it fixes our problem.</p>
+<p>Let’s explicitly cast the integers in the program above to see if
+it fixes our problem.</p>
 </div>
 </section>
 </section>

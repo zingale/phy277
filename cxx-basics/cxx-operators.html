@@ -454,7 +454,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -470,6 +472,19 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operators">Mathematical operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relational-operators">Relational operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-operators">Assignment operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precedence">Precedence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prefix-and-postfix-operators">Prefix and postfix operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#associativity">Associativity</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -481,6 +496,111 @@ document.write(`
                   
   <section id="operators">
 <h1>Operators<a class="headerlink" href="#operators" title="Link to this heading">#</a></h1>
+<p>C++ defines <a class="reference external" href="https://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B">a lot of operators</a> that can be used on objects.  We’ll
+discuss them here in the context of math with numeric types, but these
+operators can be extended to work with other types as well.</p>
+<section id="mathematical-operators">
+<h2>Mathematical operators<a class="headerlink" href="#mathematical-operators" title="Link to this heading">#</a></h2>
+<p>The standard mathematics operators are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> : addition</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> : subtraction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> : multiplication</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> : division</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> : modulus</p></li>
+</ul>
+<p>In addition, <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code> can be used as <em>unary operators</em>, e.g., to negate
+a quantity:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="relational-operators">
+<h2>Relational operators<a class="headerlink" href="#relational-operators" title="Link to this heading">#</a></h2>
+</section>
+<section id="assignment-operators">
+<h2>Assignment operators<a class="headerlink" href="#assignment-operators" title="Link to this heading">#</a></h2>
+</section>
+<section id="precedence">
+<h2>Precedence<a class="headerlink" href="#precedence" title="Link to this heading">#</a></h2>
+<p>What happens when we have an expression like:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The language defines the order that operators are considered, called
+<em>operator precedence</em>.</p>
+<p>This table: <a class="reference external" href="https://en.cppreference.com/w/cpp/language/operator_precedence">C++ Operator Precedence</a>
+lists the order in which operators are evaluated.</p>
+<p>In the example above, multiplication has higher precedence, so it is
+evaluated first, and then the addition is done.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We can use parentheses to force a group to be evaluated first, e.g.,
+<code class="docutils literal notranslate"><span class="pre">(a</span> <span class="pre">+</span> <span class="pre">b)</span> <span class="pre">*</span> <span class="pre">c</span></code></p>
+</div>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">Try it…</p>
+<p>Play around with some expressions to explore the precedence of operators.</p>
+</div>
+</section>
+<section id="prefix-and-postfix-operators">
+<h2>Prefix and postfix operators<a class="headerlink" href="#prefix-and-postfix-operators" title="Link to this heading">#</a></h2>
+<p>We haven’t yet discussed the difference between <code class="docutils literal notranslate"><span class="pre">++a</span></code> and <code class="docutils literal notranslate"><span class="pre">a++</span></code>.  These are the prefix
+and postfix increment operators.  Let’s do that now.</p>
+<p>The prefix operator is:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="n">b</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">a</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The prefix increment operator first increments the value of the object
+and then returns a reference to the result.
+So in the above example, the result would be <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">1</span></code>.</p>
+<p>Now consider the postfix operator:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">{</span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="n">d</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="o">++</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Here, a copy of <code class="docutils literal notranslate"><span class="pre">c</span></code> is made, then <code class="docutils literal notranslate"><span class="pre">c</span></code> is incremented, and finally the copy is returned.
+So in the above example, the result would be <code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">0</span></code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The behavior of the prefix and postfix operator is essentially the same when it is
+on its own line.  Also in the <code class="docutils literal notranslate"><span class="pre">for</span></code> construction:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+</pre></div>
+</div>
+<p>it doesn’t matter much which version you use—although you will
+commonly see the prefix version used since it does not make a copy,
+and therefore can be faster.</p>
+</div>
+</section>
+<section id="associativity">
+<h2>Associativity<a class="headerlink" href="#associativity" title="Link to this heading">#</a></h2>
+<p>When an expression has two operators at the same precedence, <a class="reference external" href="https://en.wikipedia.org/wiki/Operator_associativity">operator
+associativity rules</a> come into
+play.  Most operators in C++ are <em>left associative</em>—that is, they
+are grouped from the left, but some are right associative (like the
+unary operators and assignment) meaning that they are grouped from the
+right.</p>
+<p>Consider assignment:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span>
+</pre></div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">=</span></code> has right associativity, we interpret this as <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">(b</span> <span class="pre">=</span> <span class="pre">c)</span></code>, which can further
+be thought of as <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">c;</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">c</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In C++, assignment evaluates to the left value.</p>
+</div>
+<p>In the expression:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c</span>
+</pre></div>
+</div>
+<p>Both <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code> have the same precedence, and these are
+left-associative, so first <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> is evaluated and then <code class="docutils literal notranslate"><span class="pre">c</span></code> is
+subtracted from that result.</p>
+</section>
 </section>
 
 
@@ -518,6 +638,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-operators">Mathematical operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relational-operators">Relational operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-operators">Assignment operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precedence">Precedence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prefix-and-postfix-operators">Prefix and postfix operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#associativity">Associativity</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

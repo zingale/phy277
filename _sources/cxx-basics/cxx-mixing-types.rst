@@ -37,8 +37,17 @@ convert one type to another.  For example:
 
 will convert the integer ``a`` to a double-precision floating point object ``x``.
 
+.. note::
+
+   There is a new pattern here, the use of ``<>``---this is used in
+   *template functions*, a topic we will talk more about later.
+
+   In this case, by putting ``<double>`` we are telling the compiler to use
+   a version of ``static_cast`` that operates on a ``double`` object.
+
 There are other types of casts in C++, but this is the one we will use the most.
 
 .. admonition:: Try it...
 
-   Let's explicitly cast the integers in the program above to see if it fixes our problem.
+   Let's explicitly cast the integers in the program above to see if
+   it fixes our problem.
