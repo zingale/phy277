@@ -79,6 +79,7 @@ Course description
    cxx-basics/cxx-datatypes
    cxx-basics/cxx-operators
    cxx-basics/cxx-mixing-types
+   cxx-basics/cxx-sizes-limits
    cxx-basics/floating-point
    cxx-basics/numbers
    cxx-basics/cmath
