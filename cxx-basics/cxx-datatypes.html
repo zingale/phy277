@@ -244,6 +244,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-lambdas.html">Lambda Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions-planets.html">Example: Sorting Planets</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/truncation.html">Roundoff vs. truncation error</a></li>
+</ul>
 
     </div>
 </nav></div>
@@ -477,7 +481,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-types">Mixing types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizes">Sizes</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizes">Sizes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-limits">Reporting limits</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overflow-and-underflow">Overflow and underflow</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-precision">Floating point precision</a></li>
 </ul>
@@ -647,6 +652,9 @@ compilers or processors may have different defaults.</p>
 <p>If you want to guarantee a size for an <code class="docutils literal notranslate"><span class="pre">int</span></code>, there are datatypes that explicitly
 require a fixed width, like <code class="docutils literal notranslate"><span class="pre">int32_t</span></code>: <a class="reference external" href="https://en.cppreference.com/w/cpp/types/integer">https://en.cppreference.com/w/cpp/types/integer</a></p>
 </div>
+</section>
+<section id="reporting-limits">
+<h2>Reporting limits<a class="headerlink" href="#reporting-limits" title="Link to this heading">#</a></h2>
 <p>We can find out a lot about the range and precision of numbers that can be stored with a given type by using
 <a class="reference external" href="https://en.cppreference.com/w/cpp/types/numeric_limits">std::numeric_limits</a>:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
@@ -704,7 +712,8 @@ addition triggers an overflow.</p>
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>With floating point, the associate property of addition does not hold.</p>
+<p>With floating point, the <a class="reference external" href="https://en.wikipedia.org/wiki/Associative_property">associate property</a> of addition
+does not hold.</p>
 </section>
 </section>
 </section>
@@ -759,7 +768,8 @@ addition triggers an overflow.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixing-types">Mixing types</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizes">Sizes</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sizes">Sizes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-limits">Reporting limits</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overflow-and-underflow">Overflow and underflow</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-precision">Floating point precision</a></li>
 </ul>
