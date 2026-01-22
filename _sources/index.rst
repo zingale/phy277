@@ -131,8 +131,6 @@ Course description
    cxx-functions/cxx-value-reference
    cxx-functions/cxx-stdlib
    cxx-functions/cxx-functions-example
-   cxx-functions/cxx-orbit-example
-   cxx-functions/cxx-orbit-rk2-example
    cxx-functions/cxx-lambdas
    cxx-functions/cxx-functions-planets
 
@@ -142,3 +140,7 @@ Course description
    :hidden:
 
    algorithms/truncation
+   algorithms/cxx-orbit-example
+   algorithms/cxx-orbit-rk2-example
+   algorithms/roots
+   algorithms/monte-carlo

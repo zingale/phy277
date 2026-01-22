@@ -50,7 +50,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Example: Sorting Planets" href="cxx-functions-planets.html" />
-    <link rel="prev" title="In Class: 2nd Order Runge-Kutta Orbit" href="cxx-orbit-rk2-example.html" />
+    <link rel="prev" title="More Functions" href="cxx-functions-example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -240,14 +240,16 @@
 <li class="toctree-l1"><a class="reference internal" href="cxx-value-reference.html">Passing by Value vs. Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-stdlib.html">SL Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-functions-example.html">More Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-example.html">Example: Planetary Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">In Class: 2nd Order Runge-Kutta Orbit</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Lambda Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-functions-planets.html">Example: Sorting Planets</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/truncation.html">Roundoff vs. truncation error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-example.html">Example: Planetary Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/roots.html">Root Finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/monte-carlo.html">Monte Carlo Methods</a></li>
 </ul>
 
     </div>
@@ -516,7 +518,7 @@ surrounding scope:</p>
 data by value and others by reference</p>
 <p>Here’s a simple example:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 48 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">lambda_examples.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 46 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">lambda_examples.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -543,7 +545,7 @@ data by value and others by reference</p>
 to other functions (like we did with <code class="docutils literal notranslate"><span class="pre">std::sort()</span></code> previously).
 Here’s an implementation of that using a lambda function:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 49 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">algorithms_functions_lambda.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 47 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">algorithms_functions_lambda.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
@@ -605,12 +607,12 @@ by doing:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-orbit-rk2-example.html"
+       href="cxx-functions-example.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">In Class: 2nd Order Runge-Kutta Orbit</p>
+        <p class="prev-next-title">More Functions</p>
       </div>
     </a>
     <a class="right-next"

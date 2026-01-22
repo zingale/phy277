@@ -51,6 +51,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'algorithms/truncation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example: Planetary Orbit" href="cxx-orbit-example.html" />
     <link rel="prev" title="Example: Sorting Planets" href="../cxx-functions/cxx-functions-planets.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -241,14 +242,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-value-reference.html">Passing by Value vs. Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-stdlib.html">SL Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions-example.html">More Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-orbit-example.html">Example: Planetary Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-orbit-rk2-example.html">In Class: 2nd Order Runge-Kutta Orbit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-lambdas.html">Lambda Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions-planets.html">Example: Sorting Planets</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Roundoff vs. truncation error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-example.html">Example: Planetary Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roots.html">Root Finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monte-carlo.html">Monte Carlo Methods</a></li>
 </ul>
 
     </div>
@@ -493,7 +496,7 @@ document.write(`
 <p>We can see the relative size of roundoff and truncation error by using this approximation
 to compute a derivative for different values of <span class="math notranslate nohighlight">\(\Delta x\)</span>:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 51 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">truncation_vs_roundoff.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 49 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">truncation_vs_roundoff.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
@@ -585,6 +588,15 @@ machine epsilon.</p></li>
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Example: Sorting Planets</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="cxx-orbit-example.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Example: Planetary Orbit</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
