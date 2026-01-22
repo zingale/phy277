@@ -454,7 +454,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -470,6 +472,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casting">Casting</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -498,6 +508,21 @@ if needed.</p>
 </div>
 <p>Why doesn’t this work as expected?</p>
 </div>
+<section id="casting">
+<h2>Casting<a class="headerlink" href="#casting" title="Link to this heading">#</a></h2>
+<p>We can use <a class="reference external" href="https://en.cppreference.com/w/cpp/language/static_cast.html">static_cast</a> to explicitly
+convert one type to another.  For example:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mi">5</span><span class="p">};</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>will convert the integer <code class="docutils literal notranslate"><span class="pre">a</span></code> to a double-precision floating point object <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>There are other types of casts in C++, but this is the one we will use the most.</p>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">Try it…</p>
+<p>Let’s explicitly cast the integers in the program above to see if it fixes our problem.</p>
+</div>
+</section>
 </section>
 
 
@@ -535,6 +560,21 @@ if needed.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casting">Casting</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
