@@ -1,6 +1,6 @@
-*************************************
-In Class: 2nd Order Runge-Kutta Orbit
-*************************************
+***************************
+2nd Order Runge-Kutta Orbit
+***************************
 
 The main utility of functions is that we can reuse them in a code.
 Let's look at this by extending our Euler integration of an orbit
