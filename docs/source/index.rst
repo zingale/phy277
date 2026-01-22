@@ -132,3 +132,10 @@ Course description
    cxx-functions/cxx-orbit-rk2-example
    cxx-functions/cxx-lambdas
    cxx-functions/cxx-functions-planets
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Some Numerical Algorithms
+   :hidden:
+
+   algorithms/truncation

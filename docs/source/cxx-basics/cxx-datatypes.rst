@@ -193,6 +193,9 @@ The following is guaranteed:
    If you want to guarantee a size for an ``int``, there are datatypes that explicitly
    require a fixed width, like ``int32_t``: https://en.cppreference.com/w/cpp/types/integer
 
+Reporting limits
+================
+
 We can find out a lot about the range and precision of numbers that can be stored with a given type by using
 `std::numeric_limits <https://en.cppreference.com/w/cpp/types/numeric_limits>`_:
 
@@ -239,7 +242,9 @@ Precision is also important with floating point.  Consider the following: what d
    std::cout << (a + b) + c << std::endl;
    std::cout << a + (b + c) << std::endl;
 
-With floating point, the associate property of addition does not hold.
+With floating point, the `associate property
+<https://en.wikipedia.org/wiki/Associative_property>`_ of addition
+does not hold.
 
 
 
