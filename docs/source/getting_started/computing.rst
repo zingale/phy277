@@ -2,7 +2,7 @@
 Computation
 ***********
 
-Computers essentially do 2 things:
+`Computers <https://en.wikipedia.org/wiki/Computer>`_ essentially do 2 things:
 
 * Store information
 
@@ -10,9 +10,9 @@ Computers essentially do 2 things:
 
 Computers are very good at repeating the same task over and over again.
 
-Our goal is to learn how to write programs to automate operations on
-files (via the Unix shell) and manage data / do numerical calculations
-(via C++).
+Our goal is to learn how to write instructions (programs) to automate
+operations on files (via the Unix shell) and manage data / do
+numerical calculations (via C++).
 
 Limitations
 ===========
