@@ -80,6 +80,10 @@ and gives you (essentially) an entire Linux environment.  To install
 this, follow the instructions from Microsoft:
 https://learn.microsoft.com/en-us/windows/wsl/install
 
+This is also discussed in the `Software Carpentry instructions for
+setting your Unix environment
+<https://carpentries.github.io/workshop-template/install_instructions/#shell>`_
+
 
 MacOS
 -----

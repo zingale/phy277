@@ -18,6 +18,25 @@ Course description
   outside the classroom.
 
 
+Course syllabus
+===============
+
+:download:`syllabus.pdf`
+
+
+Course notes
+============
+
+This website will serve as the notes for the class.  Embedded in these
+pages is a lot of example code that we will discuss in class.  You
+are also *strongly encouraged* to look at the suggested readings at
+the top of many pages.
+
+.. note::
+
+   These course notes will be continuously updated throughout the semester.
+
+
 .. toctree::
    :maxdepth: 1
    :caption: Intro & Logistics
