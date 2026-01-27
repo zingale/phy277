@@ -59,6 +59,7 @@ the top of many pages.
    shell/shell
    shell/sample-data
    shell/filesystem
+   shell/shell-history
    shell/shell-file-create
    shell/shell-copy-move
    shell/shell-wildcards

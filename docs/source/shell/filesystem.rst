@@ -334,7 +334,3 @@ The ``/`` character has 2 roles:
 
 * A path uses ``/`` to separate directory names
 
-
-.. tip::
-
-   You can navigate through your history of commands using the up and down arrows.
