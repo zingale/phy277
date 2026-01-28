@@ -39,13 +39,19 @@ the top of many pages.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Intro & Logistics
+   :caption: Logistics
    :hidden:
 
    getting_started/topics
    getting_started/getting_started
    getting_started/remote_servers
    getting_started/using_your_computer
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Introduction
+   :hidden:
+
    getting_started/computing
    getting_started/hello_world
    getting_started/ai
