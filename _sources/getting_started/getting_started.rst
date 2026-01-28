@@ -25,9 +25,22 @@ Logging into the desktops
 You username and password for logging into the desktop machines are
 those of your NetID.
 
-Once logged in you will want to access the terminal.
+.. tip::
 
-.. TODO: terminal screenshot
+   If the machines seems non-responsive, you can wake it up by typing:
+
+   :kbd:`CTRL-ALT-F2` followed by :kbd:`CTRL-ALT-F1`.
+
+   Then you should see the login screen.
+
+Once logged in you will want to access the terminal.  On the Ubuntu systems,
+access the "Activities" menu in the upper-left and then scroll through the
+applications, looking for "Konsole" or "Terminal"
+
+.. important::
+
+   At the end of class, log out.  You can do this by accessing the menu in
+   the upper-right of the screen.
 
 The Terminal
 ============
@@ -47,4 +60,6 @@ that we enter commands into.
    .. prompt:: bash
 
       echo Hello, World!
+
+   Type this in, and then press :kbd:`Enter`.
 
