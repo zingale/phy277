@@ -530,6 +530,16 @@ span.prompt1:before {
 </style><span class="prompt1">ssh<span class="w"> </span>-l<span class="w"> </span>&lt;username&gt;<span class="w"> </span>portal.mathlab.stonybrook.edu</span>
 </pre></div></div><p>where you replace <code class="docutils literal notranslate"><span class="pre">&lt;username&gt;</span></code> with your NetId.  You will then be prompted for
 your password (the one associated with your NetId).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently the MathLab machines are misconfigured, so we need to use the
+<a class="reference external" href="https://en.wikipedia.org/wiki/IP_address">IP address</a> directly instead
+of the <a class="reference external" href="https://en.wikipedia.org/wiki/Hostname">hostname</a>.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">portal</span></code> we would do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-l<span class="w"> </span>&lt;username&gt;<span class="w"> </span><span class="m">129</span>.49.76.141</span>
+</pre></div></div><p>and for <code class="docutils literal notranslate"><span class="pre">portal2</span></code> we would do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-l<span class="w"> </span>&lt;username&gt;<span class="w"> </span><span class="m">129</span>.49.76.142</span>
+</pre></div></div></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Here we see that <code class="docutils literal notranslate"><span class="pre">ssh</span></code> takes options that after the command that modify the
