@@ -36,8 +36,21 @@ of the `Software Carpentry Unix shell notes
 * It helps us understand how the computer thinks about our files and
   data.
 
+* Unix/Linux is a multi-user operating system.  We often will be
+  using shared-resources in a research group.  This means we will
+  not be sitting directly in front of the computer.
+
 The MathLab machines run `Linux
 <https://en.wikipedia.org/wiki/Linux>`_ which is an open-source
 `Unix-like operating system
 <https://en.wikipedia.org/wiki/Unix-like>`_.  Linux powers much of the
 internet and high-performance computing systems.
+
+.. note::
+
+   You may already be using a Unix-like operating system.
+
+   * ChromeOS / chromebooks are running Linux
+   * Android phones are running Linux
+   * MacOS is a Unix-like operating system (it just hides it by default)
+   * many embedded systems run Linux (routers, TVs, car entertainment systems, ...)
