@@ -41,6 +41,24 @@ connection to a remote machine.  At the terminal prompt we can do:
 where you replace ``<username>`` with your NetId.  You will then be prompted for
 your password (the one associated with your NetId).
 
+.. note::
+
+   Currently the MathLab machines are misconfigured, so we need to use the
+   `IP address <https://en.wikipedia.org/wiki/IP_address>`_ directly instead
+   of the `hostname <https://en.wikipedia.org/wiki/Hostname>`_.
+
+   For ``portal`` we would do:
+
+   .. prompt:: bash
+
+      ssh -l <username> 129.49.76.141
+
+   and for ``portal2`` we would do:
+
+   .. prompt:: bash
+
+      ssh -l <username> 129.49.76.142
+
 .. tip::
 
    Here we see that ``ssh`` takes options that after the command that modify the
