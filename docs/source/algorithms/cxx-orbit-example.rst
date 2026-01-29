@@ -72,6 +72,7 @@ Graphically, Euler's method looks like:
 .. figure:: rk2_Euler.png
    :align: center
    :width: 90%
+   :alt:  A plot of an exponential function with a point marked as the starting point for integration (labelled y^n).  A straight line follows the initial slope to the new time, giving the point y^{n+1} which is well below the analytic value of the function at that time.
 
    Euler's method: we evaluate the slope at the start of the timestep and then follow
    this through to the new time.
@@ -171,6 +172,7 @@ To make our code flexible, we'll write the following functions:
    .. figure:: orbit.png
      :align: center
      :width: 80%
+     :alt: the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it only completes about 90% of the circumference and the radius drifts slightly outward in the orbit.
 
    You can save the plot as:
 
