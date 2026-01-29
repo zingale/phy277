@@ -3,7 +3,14 @@
     "collect": {
       "staticDistDir": "docs/build/html",
       "url": [
-        "index.html"
+        "index.html",
+        "algorithms/cxx-orbit-example.html",
+        "cxx-basics/cxx-loops.html",
+        "cxx-functions/cxx-stdlib.html",
+        "editors/configure-emacs.htm;",
+        "getting_started/using_your_computer.html",
+        "programming/first_project.html",
+        "shell/shell-copy-move.html"
       ]
     },
     "assert": {
