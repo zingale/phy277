@@ -152,7 +152,8 @@ html_theme_options = {
     "path_to_docs": "docs/source",
     "logo": {
         "text": "PHY 277",
-    }
+    },
+    "use_download_button": False
 }
 
 
