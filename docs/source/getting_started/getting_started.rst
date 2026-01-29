@@ -29,7 +29,7 @@ those of your NetID.
 
    If the machines seems non-responsive, you can wake it up by typing:
 
-   :kbd:`CTRL-ALT-F2` followed by :kbd:`CTRL-ALT-F1`.
+   :kbd:`Ctrl-Alt-F2` followed by :kbd:`Ctrl-Alt-F1`.
 
    Then you should see the login screen.
 
