@@ -172,6 +172,7 @@ To make our code flexible, we'll write the following functions:
    .. figure:: orbit.png
      :align: center
      :width: 80%
+     :alt: the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it only completes about 90% of the circumference and the radius drifts slightly outward in the orbit.
 
    You can save the plot as:
 
