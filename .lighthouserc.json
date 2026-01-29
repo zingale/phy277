@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": "docs/_build/html",
+      "staticDistDir": "docs/build/html",
       "url": [
         "index.html"
       ]
