@@ -36,9 +36,10 @@ each problem.
    * Now make a subdirectory under that called ``tests/``
      and change directory into ``tests/``.
 
-   * From within ``tests/`` copy the files ``cubane.pdb``
-     ``ethane.pdb``, and ``octane.pdb`` into your current
-     directory.  You should use a single command for it.
+   * From *within* ``tests/`` copy the files ``cubane.pdb``
+     ``ethane.pdb``, and ``octane.pdb`` from the directory above you
+     into your current directory.  You should use a single command for
+     it.
 
 
 
