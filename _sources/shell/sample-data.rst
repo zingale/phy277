@@ -1,3 +1,5 @@
+.. _sec:shell-sample-data:
+
 ****************
 Some Sample Data
 ****************
