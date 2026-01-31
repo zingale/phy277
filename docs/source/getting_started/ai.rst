@@ -22,7 +22,11 @@ burden onto verifying that the code is correct and writing tests.
 Some research shows that `using AI leads to longer code reviews and
 more mistakes <https://www.theregister.com/2025/12/17/ai_code_bugs>`_.
 
+Over-reliance on AI also may `prevent you from building necessary
+technical skills <https://arxiv.org/abs/2601.20245>`_.
+
 .. important::
 
    In this class we will not use LLMs for writing code.  This extends to
    your homework assignments.
+
