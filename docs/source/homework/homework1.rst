@@ -42,4 +42,26 @@ each problem.
      it.
 
 
+3. Let's consider two ways to do the same task---moving a file
+   to a new location.  We want to move a file ``~/answer.txt``
+   to ``~/homeworks/answer.txt``
+
+   * Method 1: copy + delete
+
+     * In your home directory, create a file called ``answer.txt`` using ``touch``
+
+     * Create a directory called ``homeworks/``
+
+     * *Copy* the file ``answer.txt`` into ``homeworks/``
+
+     * Delete the version of ``answer.txt`` in your home-directory
+       (only the version ``homeworks/answer.txt``) should remain.
+
+   * Method 2: moving
+
+     * Back in your home directory, create a file canned ``answer2.txt`` (again using ``touch``).
+
+     * *Move* this file, using a single command, into the
+       ``homeworks/`` directory you created previously.
+
 
