@@ -170,3 +170,10 @@ the top of many pages.
    algorithms/cxx-orbit-rk2-example
    algorithms/roots
    algorithms/monte-carlo
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Homework
+   :hidden:
+
+   homework/homework1
