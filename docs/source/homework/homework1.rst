@@ -2,11 +2,13 @@
 Homework #1
 ***********
 
-For this assignment, create a *single text file* in a ``nano`` called
+For this assignment, create a *single text file* in ``nano`` called
 ``homework1.txt`` and provide the sequence of commands needed for
 each problem.
 
-.. note::
+.. important::
+
+   All work must be your own.
 
    You may not use generative AI / large-language models for any part
    of this assignment.
@@ -14,7 +16,7 @@ each problem.
 
 1. Starting in your home directory:
 
-   * Create directory structure:
+   * Create the directory structure:
 
      .. code:: bash
 
@@ -59,9 +61,17 @@ each problem.
 
    * Method 2: moving
 
-     * Back in your home directory, create a file canned ``answer2.txt`` (again using ``touch``).
+     * Back in your home directory, create a file named
+       ``answer2.txt`` (again using ``touch``).
 
      * *Move* this file, using a single command, into the
        ``homeworks/`` directory you created previously.
 
+4. Using ``man ls``, find the option/flag that sorts files by size
+   (largest file first).  In addition to this new option, also use
+   the ``-l`` option to get a long listing.
 
+   * Give the ``ls`` command that will do this sorting + long listing
+
+   * In ``~/shell-lesson-data/exercise-data/alkanes/``, show the
+     (long-listing) output when you sort by size
