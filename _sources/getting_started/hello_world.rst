@@ -45,7 +45,7 @@ Now we can simply type our C++ code in the window.  Enter the following:
    right of the code box.  Click this and then you can paste into your editor window.
 
    You may need to use :kbd:`Ctrl-Shift-v` to paste it, instead of just :kbd:`Ctrl-v`.
-
+   You may also be able to *right-click* on your mouse and paste.
 
 Now save it by doing :kbd:`Ctrl-O`, where :kbd:`Ctrl` here means you hold down the *control* key on the keyword.
 
