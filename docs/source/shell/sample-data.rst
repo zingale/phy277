@@ -15,6 +15,11 @@ explain their meaning later):
    curl https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip --output shell-lesson-data.zip
    unzip shell-lesson-data.zip
 
+.. tip::
+
+   Remember you can click on the copy button in the upper right of the text box and then paste into your
+   terminal using :kbd:`Ctrl-Shift-v`.
+
 This data set comes from the `Software Carpentry project <https://software-carpentry.org/>`_.
 
 This creates a directory on the filesystem named

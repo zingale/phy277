@@ -71,7 +71,7 @@ main_doc = 'index'
 
 # General information about the project.
 project = 'PHY 277'
-copyright = '2025, Michael Zingale'
+copyright = '2025-2026, Michael Zingale'
 author = 'Michael Zingale'
 
 #html_logo = "castro_logo_hot_200.png"

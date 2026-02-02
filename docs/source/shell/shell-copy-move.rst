@@ -81,7 +81,7 @@ Here we are using a *relative path* for the destination.
 
     .. prompt:: bash
 
-       mv thesis-backup-txt topics.txt backup
+       mv thesis-backup.txt topics.txt backup
 
 
 Deleting files
