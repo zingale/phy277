@@ -69,7 +69,7 @@ the top of many pages.
    shell/shell-file-create
    shell/shell-copy-move
    shell/shell-wildcards
-   shell/shell-3
+   shell/shell-redirection-pipes
    getting_started/scp
    shell/permissions
    shell/path
