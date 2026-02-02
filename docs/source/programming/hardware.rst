@@ -24,6 +24,7 @@ An example architecture is shown here:
 .. figure:: ABasicComputer.gif
    :align: center
    :width: 70%
+   :alt: An example schematic of a computer.
 
    (`Lambtron / Wikipedia <https://commons.wikimedia.org/wiki/File:ABasicComputer.gif>`_)
 
