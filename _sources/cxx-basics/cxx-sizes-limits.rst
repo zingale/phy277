@@ -54,6 +54,7 @@ For integers, it is more fun:
 
 .. figure:: https://imgs.xkcd.com/comics/cant_sleep.png
    :align: center
+   :alt: An XKCD comic showing counting sheep hitting the maximum integer value and rolling over to a negative value.
 
    (`xkcd <https://imgs.xkcd.com/comics/cant_sleep.png>`_)
 

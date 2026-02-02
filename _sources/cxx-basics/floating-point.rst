@@ -1,6 +1,6 @@
-**************
-Floating Point
-**************
+================
+ Floating Point
+================
 
 .. admonition:: reading
 
@@ -18,13 +18,14 @@ We can think of a floating point number as having the form:
 
 Most computers follow the IEEE 754 standard for floating point, and we commonly work
 with 32-bit and 64-bit floating point numbers (single and double precision).  These bits
-are split between the signifcand and exponent as well as a single bit for the sign.
+are split between the significand and exponent as well as a single bit for the sign.
 
 Here's the breakdown for a ``double`` type:
 
 .. figure:: 1024px-IEEE_754_Double_Floating_Point_Format.svg.png
    :align: center
    :width: 80%
+   :alt: An illustration of allocating 64-bits between the significand and exponent.
 
    (source: wikipedia)
 

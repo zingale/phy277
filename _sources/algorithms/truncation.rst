@@ -30,6 +30,7 @@ It is easier to see the behavior if we make a plot of the output:
 .. figure:: error_plot.png
    :align: center
    :width: 80%
+   :alt: A comparison of truncation error and roundoff error as dx is changed.
 
 Let's discuss the trends:
 

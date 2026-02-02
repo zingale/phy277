@@ -32,6 +32,7 @@ use the *address operator* ``&`` here).  Visually, this appears as:
 .. figure:: 692px-Pointers.svg.png
    :align: center
    :width: 70%
+   :alt: A diagram showing pointers and the memory they point to.
 
    A pointer, ``a`` that points to the memory location of variable ``b``.
 

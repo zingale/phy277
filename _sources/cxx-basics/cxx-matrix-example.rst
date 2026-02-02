@@ -16,6 +16,7 @@ Visually, this will look like:
 .. figure:: vector_of_vectors.png
    :align: center
    :width: 80%
+   :alt: A diagram showing a vector of vectors.
 
    Illustration of a ``vector``-of-``vector``'s for a :math:`4\times
    3` array.

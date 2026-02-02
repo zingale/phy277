@@ -13,6 +13,7 @@ so often we will check that :math:`f(x_l) \cdot f(x_r) < 0`.
 
 .. figure:: newton-basins.png
    :align: center
+   :alt: A function that crosses y=0 three times.
 
 There are a large number of `root finding algorithms <https://en.wikipedia.org/wiki/Root-finding_algorithms>`_.
 
@@ -37,7 +38,7 @@ Here's an animation of bisection finding a root:
 
 .. figure:: bisection.gif
    :align: center
-
+   :alt: An animation of bisection finding the zero of a parabola.
 
 Bisection is slow to converge---it only reduces the error by a factor of 2 each iteration.
 
@@ -78,6 +79,7 @@ Here's an animation showing the method converging:
 
 .. figure:: newton.gif
    :align: center
+   :alt: An animation of Newton's method finding the root of a function.
 
 There are a few things to note here:
 

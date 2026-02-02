@@ -50,12 +50,14 @@ First we take a half step and we evaluate the slope at the midpoint:
 .. figure:: rk2_halfEuler.png
    :align: center
    :width: 90%
+   :alt: An illustration of the first step of integration with 2nd-order Runge-Kutta.  Here we follow the initial slope for a half-step to the midpoint of the interval.
 
    The predictor part of RK2 integration.
 
 .. figure:: rk2_final.png
    :align: center
    :width: 90%
+   :alt: The second step of 2nd-order Runge-Kutta.  This illustrates how we follow the slope evaluated at the midpoint in the first step through the full timestep.
 
    The corrector / final update of RK2 integration.
 
