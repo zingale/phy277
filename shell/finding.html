@@ -416,7 +416,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -432,6 +434,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-chapters">Counting chapters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-character-appearances">Counting character appearances</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -451,6 +462,8 @@ lesson from <a class="reference external" href="https://swcarpentry.github.io/sh
 <p>The final handy Unix command we’ll look at (for now) is <code class="docutils literal notranslate"><span class="pre">grep</span></code>.
 <code class="docutils literal notranslate"><span class="pre">grep</span></code> searches for patterns in files (or input that is piped to it).</p>
 <p>Let’s start in <code class="docutils literal notranslate"><span class="pre">~/shell-lesson-data/exercise-data/writing/</span></code></p>
+<section id="counting-chapters">
+<h2>Counting chapters<a class="headerlink" href="#counting-chapters" title="Link to this heading">#</a></h2>
 <p>The file <code class="docutils literal notranslate"><span class="pre">LittleWomen.txt</span></code> has the entire novel Little Women (along
 with some copyright text indicating it is public domain).</p>
 <p>Let’s figure out how many chapters there are in Little Women.  We imagine
@@ -544,6 +557,16 @@ to indicate that we want to start at the beginning of the line, e.g,:</p>
 </pre></div></div><p>There are many other patterns that we’ll see can be useful, and we’ll introduce those
 as we need them later in the course.</p>
 </section>
+<section id="counting-character-appearances">
+<h2>Counting character appearances<a class="headerlink" href="#counting-character-appearances" title="Link to this heading">#</a></h2>
+<p>One of the main characters is “Jo”.  If we do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">grep<span class="w"> </span>Jo<span class="w"> </span>LittleWomen.txt</span>
+</pre></div></div><p>we see all of her appearances, but we also see a character “John”.</p>
+<p>In this case, we can use the <code class="docutils literal notranslate"><span class="pre">-w</span></code> option to match on words.  If we do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">grep<span class="w"> </span>-w<span class="w"> </span>Jo<span class="w"> </span>LittleWomen.txt</span>
+</pre></div></div><p>then it no longer matches “John”.</p>
+</section>
+</section>
 
 
                 </article>
@@ -580,6 +603,22 @@ as we need them later in the course.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-chapters">Counting chapters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-character-appearances">Counting character appearances</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

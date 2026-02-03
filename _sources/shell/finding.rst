@@ -14,6 +14,9 @@ The final handy Unix command we'll look at (for now) is ``grep``.
 
 Let's start in ``~/shell-lesson-data/exercise-data/writing/``
 
+Counting chapters
+=================
+
 The file ``LittleWomen.txt`` has the entire novel Little Women (along
 with some copyright text indicating it is public domain).
 
@@ -138,3 +141,24 @@ to indicate that we want to start at the beginning of the line, e.g,:
 
 There are many other patterns that we'll see can be useful, and we'll introduce those
 as we need them later in the course.
+
+
+Counting character appearances
+==============================
+
+One of the main characters is "Jo".  If we do:
+
+.. prompt:: bash
+
+   grep Jo LittleWomen.txt
+
+we see all of her appearances, but we also see a character "John".
+
+In this case, we can use the ``-w`` option to match on words.  If we do:
+
+.. prompt:: bash
+
+   grep -w Jo LittleWomen.txt
+
+then it no longer matches "John".
+
