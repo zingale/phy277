@@ -441,6 +441,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-chapters">Counting chapters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-character-appearances">Counting character appearances</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remembering-a-command-from-history">Remembering a command from history</a></li>
 </ul>
             </nav>
         </div>
@@ -566,6 +567,15 @@ as we need them later in the course.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">grep<span class="w"> </span>-w<span class="w"> </span>Jo<span class="w"> </span>LittleWomen.txt</span>
 </pre></div></div><p>then it no longer matches “John”.</p>
 </section>
+<section id="remembering-a-command-from-history">
+<h2>Remembering a command from history<a class="headerlink" href="#remembering-a-command-from-history" title="Link to this heading">#</a></h2>
+<p>Previously we compiled our <code class="docutils literal notranslate"><span class="pre">hello.cpp</span></code> code using <code class="docutils literal notranslate"><span class="pre">g++</span></code>.  If we
+want to find the command we used, we can look at our history, using
+the <code class="docutils literal notranslate"><span class="pre">history</span></code> command as we previously saw.</p>
+<p>But that can be a lot to scroll through.</p>
+<p>Instead, we can pipe the output from <code class="docutils literal notranslate"><span class="pre">history</span></code> into grep, like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">history</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>g++</span>
+</pre></div></div></section>
 </section>
 
 
@@ -615,6 +625,7 @@ as we need them later in the course.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-chapters">Counting chapters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-character-appearances">Counting character appearances</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remembering-a-command-from-history">Remembering a command from history</a></li>
 </ul>
   </nav></div>
 
