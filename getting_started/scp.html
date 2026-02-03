@@ -416,7 +416,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -432,6 +434,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scp-example"><code class="docutils literal notranslate"><span class="pre">scp</span></code> example</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -449,8 +459,57 @@ the remote machine to our local computer.  The tool for this is
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you are using Windows and using PuTTY, then the <code class="docutils literal notranslate"><span class="pre">pscp</span></code> command can be
-used as described here.</p>
+used.  See <a class="reference external" href="https://tonyteaches.tech/putty-pscp-tutorial/">this pscp tutorial</a> for
+an example.</p>
 </div>
+<section id="scp-example">
+<h2><code class="docutils literal notranslate"><span class="pre">scp</span></code> example<a class="headerlink" href="#scp-example" title="Link to this heading">#</a></h2>
+<p>Let’s recreate our <code class="docutils literal notranslate"><span class="pre">hello.cpp</span></code> on our local machine (the computer
+you are sitting in front of).</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">hello.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="c1">// our Hello, World program</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Now, we want to transfer this to <code class="docutils literal notranslate"><span class="pre">portal.mathlab.stonybrook.edu</span></code>.  We can do this as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">scp<span class="w"> </span>hello.cpp<span class="w"> </span>username@portal.mathlab.sunysb.edu:~/</span>
+</pre></div></div><p>Just like with <code class="docutils literal notranslate"><span class="pre">cp</span></code>, this takes the form of <code class="samp docutils literal notranslate"><span class="pre">scp</span> <em><span class="pre">source</span></em> <em><span class="pre">destination</span></em></code></p>
+<p>Here, for destination, we have 3 parts plus some separators:</p>
+<ul class="simple">
+<li><p>your username on the remote machine (written as <code class="samp docutils literal notranslate"><em><span class="pre">username</span></em></code> here)</p></li>
+<li><p>the machine name (<code class="docutils literal notranslate"><span class="pre">portal.mathlab.sunysb.edu</span></code> here)</p></li>
+<li><p>the path on the destination machine (<code class="docutils literal notranslate"><span class="pre">~/</span></code> here)</p></li>
+</ul>
+<p>These are separated with a <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> and a <code class="docutils literal notranslate"><span class="pre">:</span></code>, in the form: <code class="samp docutils literal notranslate"><em><span class="pre">username</span></em><span class="pre">&#64;</span><em><span class="pre">machine</span></em><span class="pre">:</span><em><span class="pre">path</span></em></code>.</p>
+<p>In this example, we are pushing the file from our local machine to <code class="docutils literal notranslate"><span class="pre">portal</span></code>.  We could
+also pull a file from <code class="docutils literal notranslate"><span class="pre">portal</span></code> to our local machine.</p>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">try it…</p>
+<p>Create a file <code class="docutils literal notranslate"><span class="pre">test.txt</span></code> on <code class="docutils literal notranslate"><span class="pre">portal</span></code> with some simple text and transfer it
+to your local machine using <code class="docutils literal notranslate"><span class="pre">scp</span></code>.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>In order to be able to <code class="docutils literal notranslate"><span class="pre">ssh</span></code> into a machine or <code class="docutils literal notranslate"><span class="pre">scp</span></code> a file to a remote machine,
+that remote machine needs to be setup to run an SSH server.  This is often not
+the case by default.</p>
+<p>This means that for this class, you should push to <code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code> and pull
+from there, instead of initiating the <code class="docutils literal notranslate"><span class="pre">scp</span></code> on <code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code> and trying
+to push to your laptop.</p>
+</div>
+</section>
 </section>
 
 
@@ -488,6 +547,21 @@ used as described here.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scp-example"><code class="docutils literal notranslate"><span class="pre">scp</span></code> example</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
