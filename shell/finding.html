@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Find and Grep &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Grep &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -178,7 +178,7 @@
 <li class="toctree-l1"><a class="reference internal" href="shell-copy-move.html">Copying, Moving, and Deleting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell-wildcards.html">Wildcards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="shell-redirection-pipes.html">Redirection and Pipes</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Find and Grep</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Grep</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/scp.html"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="permissions.html">File Permissions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="path.html">Search Path</a></li>
@@ -427,7 +427,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Find and Grep</h1>
+    <h1>Grep</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -441,13 +441,108 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="find-and-grep">
-<h1>Find and Grep<a class="headerlink" href="#find-and-grep" title="Link to this heading">#</a></h1>
+  <section id="grep">
+<h1>Grep<a class="headerlink" href="#grep" title="Link to this heading">#</a></h1>
 <div class="admonition-reading admonition">
 <p class="admonition-title">reading</p>
 <p>We will loosely follow the Software Carpentry <a class="reference external" href="https://swcarpentry.github.io/shell-novice/07-find.html">Finding Things</a>
 lesson from <a class="reference external" href="https://swcarpentry.github.io/shell-novice/">The Unix Shell</a></p>
 </div>
+<p>The final handy Unix command we’ll look at (for now) is <code class="docutils literal notranslate"><span class="pre">grep</span></code>.
+<code class="docutils literal notranslate"><span class="pre">grep</span></code> searches for patterns in files (or input that is piped to it).</p>
+<p>Let’s start in <code class="docutils literal notranslate"><span class="pre">~/shell-lesson-data/exercise-data/writing/</span></code></p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">LittleWomen.txt</span></code> has the entire novel Little Women (along
+with some copyright text indicating it is public domain).</p>
+<p>Let’s figure out how many chapters there are in Little Women.  We imagine
+that the word <code class="docutils literal notranslate"><span class="pre">Chapter</span></code> should appear.  So let’s do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">grep<span class="w"> </span>Chapter<span class="w"> </span>LittleWomen.txt</span>
+</pre></div></div><p>This returns nothing.</p>
+<p>If we do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">man<span class="w"> </span>grep</span>
+</pre></div></div><p>we see that if we use the <code class="docutils literal notranslate"><span class="pre">-i</span></code> flag, then it will do the search as case-insensitive.  So
+maybe that’s the problem.  Let’s try again, now as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">grep<span class="w"> </span>-i<span class="w"> </span>Chapter<span class="w"> </span>LittleWomen.txt</span>
+</pre></div></div><p>Now we see a lot of output.  Some of it looks like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CHAPTER</span> <span class="n">ONE</span>
+<span class="n">CHAPTER</span> <span class="n">TWO</span>
+<span class="n">CHAPTER</span> <span class="n">THREE</span>
+<span class="n">CHAPTER</span> <span class="n">FOUR</span>
+</pre></div>
+</div>
+<p>These are clearly what we were looking for.  But other instance look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">the</span> <span class="n">chapter</span><span class="p">,</span> <span class="ow">and</span> <span class="n">don</span><span class="s1">&#39;t be impertinent, miss&#39;</span><span class="o">.</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>This is a case where the characters in the book were talking about chapters.  That’s
+not what we want.</p>
+<p>In this case, we can recognize that the actual book chapters are all upper case, so
+we can do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">grep<span class="w"> </span>CHAPTER<span class="w"> </span>LittleWomen.txt</span>
+</pre></div></div><p>And we get:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CHAPTER</span> <span class="n">ONE</span>
+<span class="n">CHAPTER</span> <span class="n">TWO</span>
+<span class="n">CHAPTER</span> <span class="n">THREE</span>
+<span class="n">CHAPTER</span> <span class="n">FOUR</span>
+<span class="n">CHAPTER</span> <span class="n">FIVE</span>
+<span class="n">CHAPTER</span> <span class="n">SIX</span>
+<span class="n">CHAPTER</span> <span class="n">SEVEN</span>
+<span class="n">CHAPTER</span> <span class="n">EIGHT</span>
+<span class="n">CHAPTER</span> <span class="n">NINE</span>
+<span class="n">CHAPTER</span> <span class="n">TEN</span>
+<span class="n">CHAPTER</span> <span class="n">ELEVEN</span>
+<span class="n">CHAPTER</span> <span class="n">TWELVE</span>
+<span class="n">CHAPTER</span> <span class="n">THIRTEEN</span>
+<span class="n">CHAPTER</span> <span class="n">FOURTEEN</span>
+<span class="n">CHAPTER</span> <span class="n">FIFTEEN</span>
+<span class="n">CHAPTER</span> <span class="n">SIXTEEN</span>
+<span class="n">CHAPTER</span> <span class="n">SEVENTEEN</span>
+<span class="n">CHAPTER</span> <span class="n">EIGHTEEN</span>
+<span class="n">CHAPTER</span> <span class="n">NINETEEN</span>
+<span class="n">CHAPTER</span> <span class="n">TWENTY</span>
+<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">ONE</span>
+<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">TWO</span>
+<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">THREE</span>
+<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">FOUR</span>
+<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">FIVE</span>
+<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">SIX</span>
+<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">SEVEN</span>
+<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">EIGHT</span>
+<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">NINE</span>
+<span class="n">CHAPTER</span> <span class="n">THIRTY</span>
+<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">ONE</span>
+<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">TWO</span>
+<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">THREE</span>
+<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">FOUR</span>
+<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">FIVE</span>
+<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">SIX</span>
+<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">SEVEN</span>
+<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">EIGHT</span>
+<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">NINE</span>
+<span class="n">CHAPTER</span> <span class="n">FORTY</span>
+<span class="n">CHAPTER</span> <span class="n">FORTY</span><span class="o">-</span><span class="n">ONE</span>
+<span class="n">CHAPTER</span> <span class="n">FORTY</span><span class="o">-</span><span class="n">TWO</span>
+<span class="n">CHAPTER</span> <span class="n">FORTY</span><span class="o">-</span><span class="n">THREE</span>
+<span class="n">CHAPTER</span> <span class="n">FORTY</span><span class="o">-</span><span class="n">FOUR</span>
+<span class="n">CHAPTER</span> <span class="n">FORTY</span><span class="o">-</span><span class="n">FIVE</span>
+<span class="n">CHAPTER</span> <span class="n">FORTY</span><span class="o">-</span><span class="n">SIX</span>
+<span class="n">CHAPTER</span> <span class="n">FORTY</span><span class="o">-</span><span class="n">SEVEN</span>
+</pre></div>
+</div>
+<p>and we can just read off from this that there are 47 chapters.</p>
+<p>Of course, we could also do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">grep<span class="w"> </span>CHAPTER<span class="w"> </span>LittleWomen.txt<span class="w">  </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l</span>
+</pre></div></div><p>What if we weren’t so lucky and the word “chapter” wasn’t distinguishable from
+its use in the text?</p>
+<p>In this case, we could recognize that the “chapter” we are interested in always
+appears at the very start of the line.  We can use the <code class="docutils literal notranslate"><span class="pre">^</span></code> character in our search
+to indicate that we want to start at the beginning of the line, e.g,:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;^Chapter&quot;</span><span class="w"> </span>LittleWomen.txt</span>
+</pre></div></div><p>There are many other patterns that we’ll see can be useful, and we’ll introduce those
+as we need them later in the course.</p>
 </section>
 
 
