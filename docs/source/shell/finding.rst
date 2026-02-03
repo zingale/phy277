@@ -162,3 +162,18 @@ In this case, we can use the ``-w`` option to match on words.  If we do:
 
 then it no longer matches "John".
 
+Remembering a command from history
+==================================
+
+Previously we compiled our ``hello.cpp`` code using ``g++``.  If we
+want to find the command we used, we can look at our history, using
+the ``history`` command as we previously saw.
+
+But that can be a lot to scroll through.
+
+Instead, we can pipe the output from ``history`` into grep, like:
+
+.. prompt:: bash
+
+   history | grep g++
+
