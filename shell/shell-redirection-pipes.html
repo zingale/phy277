@@ -441,6 +441,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-lines-and-words">Counting lines and words</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redirection">Redirection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipes">Pipes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#head-and-tail"><code class="docutils literal notranslate"><span class="pre">head</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
             </nav>
@@ -496,6 +498,51 @@ to a file using the <code class="docutils literal notranslate"><span class="pre"
 <p>For very long files, <code class="docutils literal notranslate"><span class="pre">cat</span></code> will overfill the screen (and maybe the buffer
 for the terminal).  In this case, we can use the <code class="docutils literal notranslate"><span class="pre">less</span></code> command, which
 implements a <code class="docutils literal notranslate"><span class="pre">pager</span></code></p>
+</div>
+</section>
+<section id="pipes">
+<h2>Pipes<a class="headerlink" href="#pipes" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">sort</span></code> command will sort lines / output.  By default, it sorts alphabetically,
+but we can change it to sort numerically using the <code class="docutils literal notranslate"><span class="pre">-n</span></code> option</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Do</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">man<span class="w"> </span>sort</span>
+</pre></div></div><p>to see all the available options.</p>
+</div>
+<p>To sort out <code class="docutils literal notranslate"><span class="pre">lines.txt</span></code> we can do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt2:before {
+  content: " ";
+}
+</style><span class="prompt2">sort -n lines.txt</span>
+</pre></div></div><p>But what if we didn’t want to create the intermediate file <code class="docutils literal notranslate"><span class="pre">lines.txt</span></code>, but instead sort
+the output from <code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span></code> directly?  This can be accomplished using a <a class="reference external" href="https://en.wikipedia.org/wiki/Pipeline_(Unix)#Pipelines_in_command_line_interfaces">pipe</a>, <code class="docutils literal notranslate"><span class="pre">|</span></code>.</p>
+<p>By doing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">wc<span class="w"> </span>-l<span class="w"> </span>*.pdb<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n</span>
+</pre></div></div><p>we are <em>piping</em> the output from <code class="docutils literal notranslate"><span class="pre">wc</span></code> into <code class="docutils literal notranslate"><span class="pre">sort</span></code>, where it is taken as the input.
+And we get the same result without having to create an intermediate file.</p>
+</section>
+<section id="head-and-tail">
+<h2><code class="docutils literal notranslate"><span class="pre">head</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code><a class="headerlink" href="#head-and-tail" title="Link to this heading">#</a></h2>
+<p>The commands <code class="docutils literal notranslate"><span class="pre">head</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code> show just the beginning or end (respectively) of a
+file (or piped input).  By default 10 lines are shown, but this can be controlled via
+the <code class="docutils literal notranslate"><span class="pre">-n</span></code> flag.</p>
+<p>For instance, to see the shortest file in our <code class="docutils literal notranslate"><span class="pre">alkanes</span></code> directory, we could do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">wc<span class="w"> </span>-l<span class="w"> </span>*.pdb<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span></span>
+</pre></div></div><p>For the longest file, we need to get right of the last line, which represents the total.
+There are several ways we can do this.</p>
+<p>One way (and maybe a bit awkward) is to do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">wc<span class="w"> </span>-l<span class="w"> </span>*.pdb<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span></span>
+</pre></div></div><p>Here we get the last 2 lines of the file, understanding that, out of those 2 lines, we want
+the first line (as it is not the total).</p>
+<p>Alternately, using <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">wc</span></code>, we can learn that adding the option
+<code class="docutils literal notranslate"><span class="pre">--total=never</span></code> suppresses the printing of the total, so we could
+instead do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">wc<span class="w"> </span>-l<span class="w"> </span>--total<span class="o">=</span>never<span class="w"> </span>*.pdb<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span></span>
+</pre></div></div><p>which gives:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">30</span><span class="w"> </span>octane.pdb
+</pre></div>
 </div>
 </section>
 <section id="summary">
@@ -565,6 +612,8 @@ implements a <code class="docutils literal notranslate"><span class="pre">pager<
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-lines-and-words">Counting lines and words</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redirection">Redirection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipes">Pipes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#head-and-tail"><code class="docutils literal notranslate"><span class="pre">head</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
   </nav></div>
