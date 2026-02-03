@@ -70,10 +70,10 @@ the top of many pages.
    shell/shell-copy-move
    shell/shell-wildcards
    shell/shell-redirection-pipes
+   shell/finding
    getting_started/scp
    shell/permissions
    shell/path
-   shell/finding
 
 .. toctree::
    :maxdepth: 1
