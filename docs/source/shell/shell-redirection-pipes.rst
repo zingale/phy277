@@ -63,6 +63,82 @@ We can then use ``cat lines.txt`` to see the output.
    implements a ``pager``
 
 
+Pipes
+=====
+
+The ``sort`` command will sort lines / output.  By default, it sorts alphabetically,
+but we can change it to sort numerically using the ``-n`` option 
+
+.. tip::
+
+   Do
+
+   .. prompt:: bash
+
+      man sort
+
+   to see all the available options.
+
+To sort out ``lines.txt`` we can do:
+
+.. prompt::
+
+   sort -n lines.txt
+
+But what if we didn't want to create the intermediate file ``lines.txt``, but instead sort
+the output from ``wc -l`` directly?  This can be accomplished using a `pipe <https://en.wikipedia.org/wiki/Pipeline_(Unix)#Pipelines_in_command_line_interfaces>`_, ``|``.
+
+By doing:
+
+.. prompt:: bash
+
+   wc -l *.pdb | sort -n
+
+we are *piping* the output from ``wc`` into ``sort``, where it is taken as the input.
+And we get the same result without having to create an intermediate file.
+
+``head`` and ``tail``
+=====================
+
+The commands ``head`` and ``tail`` show just the beginning or end (respectively) of a
+file (or piped input).  By default 10 lines are shown, but this can be controlled via
+the ``-n`` flag.
+
+For instance, to see the shortest file in our ``alkanes`` directory, we could do:
+
+.. prompt:: bash
+
+   wc -l *.pdb | sort -n | head -n 1
+
+For the longest file, we need to get right of the last line, which represents the total.
+There are several ways we can do this.
+
+One way (and maybe a bit awkward) is to do:
+
+.. prompt:: bash
+
+   wc -l *.pdb | sort -n | tail -n 2 | head -n 1
+
+Here we get the last 2 lines of the file, understanding that, out of those 2 lines, we want
+the first line (as it is not the total).
+
+Alternately, using ``man wc``, we can learn that adding the option
+``--total=never`` suppresses the printing of the total, so we could
+instead do:
+
+.. prompt:: bash
+
+   wc -l --total=never *.pdb | sort -n | tail -n 1
+
+which gives:
+
+.. code:: bash
+
+   30 octane.pdb
+
+
+
+
 Summary
 =======
 
