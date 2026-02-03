@@ -62,12 +62,22 @@ We can then use ``cat lines.txt`` to see the output.
    for the terminal).  In this case, we can use the ``less`` command, which
    implements a ``pager``
 
+.. note::
+
+   If we use ``>>`` then we append to a file, instead of creating it from scratch.
+
+   Try:
+
+   .. prompt:: bash
+
+      wc -l *.pdb >> lines.tx
+
 
 Pipes
 =====
 
 The ``sort`` command will sort lines / output.  By default, it sorts alphabetically,
-but we can change it to sort numerically using the ``-n`` option 
+but we can change it to sort numerically using the ``-n`` option
 
 .. tip::
 
@@ -163,5 +173,3 @@ We also learned:
 * ``>>`` append the output to a file
 
 * ``|`` pass the output of one command to the input of the next
-
-
