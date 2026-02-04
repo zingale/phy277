@@ -542,6 +542,8 @@ There are several ways we can do this.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">wc<span class="w"> </span>-l<span class="w"> </span>*.pdb<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span></span>
 </pre></div></div><p>Here we get the last 2 lines of the file, understanding that, out of those 2 lines, we want
 the first line (as it is not the total).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>Alternately, using <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">wc</span></code>, we can learn that adding the option
 <code class="docutils literal notranslate"><span class="pre">--total=never</span></code> suppresses the printing of the total, so we could
 instead do:</p>
@@ -549,6 +551,13 @@ instead do:</p>
 </pre></div></div><p>which gives:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">30</span><span class="w"> </span>octane.pdb
 </pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This requires a recent version of the <code class="docutils literal notranslate"><span class="pre">wc</span></code> command (which comes
+in via <a class="reference external" href="https://www.gnu.org/software/coreutils/">GNU coreutils</a>).
+The version on <code class="docutils literal notranslate"><span class="pre">portal</span></code>/<code class="docutils literal notranslate"><span class="pre">portal2</span></code> is too old.</p>
+</div>
 </div>
 </section>
 <section id="summary">
