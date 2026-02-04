@@ -12,3 +12,4 @@ sphinx-prompt
 sphinx-design
 codespell
 sphinx-math-dollar
+git+https://github.com/pydata/pydata-sphinx-theme.git

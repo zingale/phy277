@@ -144,10 +144,10 @@ html_theme = 'sphinx_book_theme'
 # html_theme_options = {}
 html_theme_options = {
     "repository_url": "https://github.com/zingale/phy277",
-    "use_repository_button": True,
-    "use_issues_button": True,
-    "use_edit_page_button": True,
-    "use_source_button": True,
+    "use_repository_button": False,
+    "use_issues_button": False,
+    "use_edit_page_button": False,
+    "use_source_button": False,
     "repository_branch": "main",
     "path_to_docs": "docs/source",
     "logo": {
