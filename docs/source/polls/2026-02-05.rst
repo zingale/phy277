@@ -2,9 +2,54 @@
 Feb 05 In-Class
 ***************
 
+.. note::
+
+   There are no wrong answers.  This is for participation credit, and
+   is intended to let me know how well we understand the material at
+   this point.
+
 Access the form: https://forms.gle/JMeL3caCqu8TWhkQ8
 
 Question 1
 ==========
 
+You created a text file in your current directory with your analysis, and named it
+(incorrectly / misspelled) as ``analyis.txt``.
+
+What command could you use to give the file the correct spelling (``analysis.txt``)?
+
+
+
+Question 2
+==========
+
+The ``cat`` command can concatenate files.  That is, if you have files
+``begin.txt`` and ``end.txt`` representing two halves of a dataset, you
+can concatenate them (display one after another) by doing:
+
+.. prompt:: bash
+
+   cat begin.txt end.txt
+
+Suppose you wanted to create a file called ``whole.txt`` that has the
+two halves together in the single file.  How do you think you could
+use ``cat`` to create this ``while.txt`` file?
+
+
+Question 3
+==========
+
+Imagine you have the following files:
+
+::
+
+   hello
+   hello.cpp
+   hello.H
+   main
+   main.cpp
+
+
+Using the wildcards we learned, what pattern would match just
+the files ``hello.cpp`` and ``hello.H``?
 
