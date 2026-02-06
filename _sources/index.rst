@@ -173,6 +173,13 @@ the top of many pages.
 
 .. toctree::
    :maxdepth: 1
+   :caption: In-class Activities
+   :hidden:
+
+   polls/polls
+
+.. toctree::
+   :maxdepth: 1
    :caption: Homework
    :hidden:
 
