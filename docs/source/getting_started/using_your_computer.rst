@@ -84,6 +84,15 @@ This is also discussed in the `Software Carpentry instructions for
 setting your Unix environment
 <https://carpentries.github.io/workshop-template/install_instructions/#shell>`_
 
+.. note::
+
+   When you create files in WSL, if you want to move them back to the
+   Windows partition on your computer, you can access your Windows directories
+   via the path ``/mnt/c``.
+
+   So you can just use the ``cp`` command (that we'll learn shortly) to copy
+   the file to ``/mnt/c/`` and then you will have it in Windows.
+
 
 MacOS
 -----
