@@ -12,16 +12,9 @@ Let's look at a simple "Hello, World" program:
 
    Every C++ program needs to have a ``main()`` function
 
-.. code:: c++
+.. literalinclude:: ../../../examples/hello/hello.cpp
+   :language: c++
 
-   #include <iostream>
-
-   // our Hello, World program
-
-   int main()
-   {
-      std::cout << "Hello World!" << std::endl;
-   }
 
 A nice breakdown of a "Hello, World" program is shown here: https://www.cplusplus.com/doc/tutorial/program_structure/ ---let's walk through that.
 
