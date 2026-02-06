@@ -33,7 +33,7 @@ can concatenate them (display one after another) by doing:
 
 Suppose you wanted to create a file called ``whole.txt`` that has the
 two halves together in the single file.  How do you think you could
-use ``cat`` to create this ``while.txt`` file?
+use ``cat`` to create this ``whole.txt`` file?
 
 
 Question 3

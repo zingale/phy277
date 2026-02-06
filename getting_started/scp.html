@@ -454,6 +454,13 @@ the remote machine to our local computer.  The tool for this is
 <p>If you are using Windows and using PuTTY, then the <code class="docutils literal notranslate"><span class="pre">pscp</span></code> command can be
 used.  See <a class="reference external" href="https://tonyteaches.tech/putty-pscp-tutorial/">this pscp tutorial</a> for
 an example.</p>
+<p>The basic process (after installing <code class="docutils literal notranslate"><span class="pre">pscp</span></code>) is:</p>
+<ul class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">cmd</span></code> in Windows (you can just use the program search bar)</p></li>
+<li><p>Do <code class="samp docutils literal notranslate"><span class="pre">pscp</span> <em><span class="pre">username</span></em><span class="pre">&#64;portal.mathlab.stonybrook.edu:/home/</span><em><span class="pre">username</span></em><span class="pre">/file.txt</span> <span class="pre">.</span></code></p></li>
+</ul>
+<p>Notice that we write the absolute path to the file on <code class="docutils literal notranslate"><span class="pre">portal</span></code> and do not use
+<code class="docutils literal notranslate"><span class="pre">~</span></code> to reference the home directory, since that doesn’t seem to work with <code class="docutils literal notranslate"><span class="pre">pscp</span></code>.</p>
 </div>
 <section id="scp-example">
 <h2><code class="docutils literal notranslate"><span class="pre">scp</span></code> example<a class="headerlink" href="#scp-example" title="Link to this heading">#</a></h2>
