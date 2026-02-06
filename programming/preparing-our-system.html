@@ -429,6 +429,10 @@
                   
   <section id="preparing-portal-portal2">
 <h1>Preparing <code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code><a class="headerlink" href="#preparing-portal-portal2" title="Link to this heading">#</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Review how to access our remote servers <a class="reference internal" href="../getting_started/remote_servers.html#sec-remote-servers"><span class="std std-ref">portal / portal2</span></a>.</p>
+</div>
 <p>The default compilers on <code class="docutils literal notranslate"><span class="pre">portal</span></code> and <code class="docutils literal notranslate"><span class="pre">portal2</span></code> are GCC 11.  These
 are quite old, and don’t support all of the language features we need.
 The GCC 15 compilers are available however, so we can use those
@@ -441,15 +445,17 @@ span.prompt1:before {
 </pre></div></div><p>This will create a new Bash shell with the environment variables set to
 point to this version of the compilers.</p>
 <p>It is not recommended to add this command directly to our <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code>, but
-we can instead create a shortcut, by adding:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gcc15<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">   </span>scl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>gcc-toolset-15<span class="w"> </span>bash
-<span class="o">}</span>
+we can instead <code class="docutils literal notranslate"><span class="pre">source</span></code> a script that accomplishes the same setup by adding:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/opt/rh/gcc-toolset-15/enable
 </pre></div>
 </div>
-<p>To the end of our <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code>.  Then we can just type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">gcc15</span>
-</pre></div></div><p>To setup the compilers (we need to do this each time we log into the machines).</p>
+<p>to the end of our <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code>.</p>
+<p>You’ll need to log in again for this to take effect.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You need to modify <code class="docutils literal notranslate"><span class="pre">portal</span></code> and <code class="docutils literal notranslate"><span class="pre">portal2</span></code> separately.  Files are not
+shared between the machines.</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can check which version of the compilers are active by doing:</p>
