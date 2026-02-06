@@ -132,21 +132,27 @@ One way (and maybe a bit awkward) is to do:
 Here we get the last 2 lines of the file, understanding that, out of those 2 lines, we want
 the first line (as it is not the total).
 
-Alternately, using ``man wc``, we can learn that adding the option
-``--total=never`` suppresses the printing of the total, so we could
-instead do:
+.. tip::
 
-.. prompt:: bash
+   Alternately, using ``man wc``, we can learn that adding the option
+   ``--total=never`` suppresses the printing of the total, so we could
+   instead do:
 
-   wc -l --total=never *.pdb | sort -n | tail -n 1
+   .. prompt:: bash
 
-which gives:
+      wc -l --total=never *.pdb | sort -n | tail -n 1
 
-.. code:: bash
+   which gives:
 
-   30 octane.pdb
+   .. code:: bash
 
+      30 octane.pdb
 
+   .. important::
+
+      This requires a recent version of the ``wc`` command (which comes
+      in via `GNU coreutils <https://www.gnu.org/software/coreutils/>`_).
+      The version on ``portal``/``portal2`` is too old.
 
 
 Summary
