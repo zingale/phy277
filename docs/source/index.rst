@@ -184,3 +184,4 @@ the top of many pages.
    :hidden:
 
    homework/homework1
+   homework/homework2
