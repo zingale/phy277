@@ -2,9 +2,11 @@
 Homework #1
 ***********
 
-For this assignment, create a *single text file* in ``nano`` called
-``homework1.txt`` and provide the sequence of commands needed for
-each problem.
+.. admonition:: Completing this assignment
+
+   For this assignment, create a *single text file* in ``nano`` called
+   ``homework1.txt`` and provide the sequence of commands needed for
+   each problem.
 
 .. important::
 
