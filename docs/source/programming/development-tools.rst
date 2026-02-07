@@ -17,9 +17,9 @@ There are a number of tools / concepts that we will use in the software developm
 
 * Version control
 
-  We already had an introduction to git.  Good version control is a
-  critical part of the software development process.  We will put all of
-  our projects under git control.
+  Version control keeps track of changes to files.  Good version control is a
+  critical part of the software development process.  We will learn the basics
+  of the Git version control system.
 
 * Compiler
 

@@ -12,6 +12,15 @@ the remote machine to our local computer.  The tool for this is
    used.  See `this pscp tutorial <https://tonyteaches.tech/putty-pscp-tutorial/>`_ for
    an example.
 
+   The basic process (after installing ``pscp``) is:
+
+   * Open ``cmd`` in Windows (you can just use the program search bar)
+   * Do :samp:`pscp {username}@portal.mathlab.stonybrook.edu:/home/{username}/file.txt .`
+
+   Notice that we write the absolute path to the file on ``portal`` and do not use
+   ``~`` to reference the home directory, since that doesn't seem to work with ``pscp``.
+
+
 
 ``scp`` example
 ===============
