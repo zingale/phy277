@@ -91,5 +91,11 @@ for the assignment.
    with no duplicates.
 
 
-3. a script
+3. *a script*
+
+
+   * Finally, give the command that changes the permissions giving you
+     (and only you---not group or other users) the ability to execute
+     your script simply as ``./myscript.sh``
+
 
