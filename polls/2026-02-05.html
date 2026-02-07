@@ -460,21 +460,31 @@ this point.</p>
 <p>You created a text file in your current directory with your analysis, and named it
 (incorrectly / misspelled) as <code class="docutils literal notranslate"><span class="pre">analyis.txt</span></code>.</p>
 <p>What command could you use to give the file the correct spelling (<code class="docutils literal notranslate"><span class="pre">analysis.txt</span></code>)?</p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">mv<span class="w"> </span>analyis.txt<span class="w"> </span>analysis.txt</span>
+</pre></div></div></div>
+</details></section>
 <section id="question-2">
 <h2>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">cat</span></code> command can concatenate files.  That is, if you have files
 <code class="docutils literal notranslate"><span class="pre">begin.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">end.txt</span></code> representing two halves of a dataset, you
 can concatenate them (display one after another) by doing:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">cat<span class="w"> </span>begin.txt<span class="w"> </span>end.txt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">cat<span class="w"> </span>begin.txt<span class="w"> </span>end.txt</span>
 </pre></div></div><p>Suppose you wanted to create a file called <code class="docutils literal notranslate"><span class="pre">whole.txt</span></code> that has the
 two halves together in the single file.  How do you think you could
 use <code class="docutils literal notranslate"><span class="pre">cat</span></code> to create this <code class="docutils literal notranslate"><span class="pre">whole.txt</span></code> file?</p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">cat<span class="w"> </span>begin.txt<span class="w"> </span>end.txt<span class="w"> </span>&gt;<span class="w"> </span>whole.txt</span>
+</pre></div></div></div>
+</details></section>
 <section id="question-3">
 <h2>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h2>
 <p>Imagine you have the following files:</p>
@@ -487,7 +497,14 @@ use <code class="docutils literal notranslate"><span class="pre">cat</span></cod
 </div>
 <p>Using the wildcards we learned, what pattern would match just
 the files <code class="docutils literal notranslate"><span class="pre">hello.cpp</span></code> and <code class="docutils literal notranslate"><span class="pre">hello.H</span></code>?</p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hello.*
+</pre></div>
+</div>
+</div>
+</details></section>
 </section>
 
 

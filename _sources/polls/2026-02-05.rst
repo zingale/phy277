@@ -18,6 +18,11 @@ You created a text file in your current directory with your analysis, and named 
 
 What command could you use to give the file the correct spelling (``analysis.txt``)?
 
+.. dropdown:: solution
+
+   .. prompt:: bash
+
+      mv analyis.txt analysis.txt
 
 
 Question 2
@@ -35,6 +40,11 @@ Suppose you wanted to create a file called ``whole.txt`` that has the
 two halves together in the single file.  How do you think you could
 use ``cat`` to create this ``whole.txt`` file?
 
+.. dropdown:: solution
+
+   .. prompt:: bash
+
+      cat begin.txt end.txt > whole.txt
 
 Question 3
 ==========
@@ -53,3 +63,8 @@ Imagine you have the following files:
 Using the wildcards we learned, what pattern would match just
 the files ``hello.cpp`` and ``hello.H``?
 
+.. dropdown:: solution
+
+   .. code:: bash
+
+      hello.*
