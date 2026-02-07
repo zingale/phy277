@@ -35,9 +35,15 @@ Homework #2
      instance, the transfer speed, percentage complex, etc.) and put it
      in your ``homework2.txt`` file that you will submit for this assignment.
 
+   * Finally, ``ssh`` into ``portal`` and do an ``ls -l`` on the directory
+     you copied the file to.  What are the permissions on your file, and
+     who (user, group members, and others) has access to read and write it?
+
    .. important::
 
       This directory only exists on ``portal`` and not ``portal2``.
+
+
 
 2. *pipes*
 
