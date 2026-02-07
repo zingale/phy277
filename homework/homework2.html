@@ -53,6 +53,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'homework/homework2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Homework #1" href="homework1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -103,8 +104,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -253,8 +252,9 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="homework1.html">Homework #1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework #2</a></li>
 </ul>
 
     </div>
@@ -463,8 +463,56 @@ transfer when you did it on the command line (this will show, for
 instance, the transfer speed, percentage complex, etc.) and put it
 in your <code class="docutils literal notranslate"><span class="pre">homework2.txt</span></code> file that you will submit for this assignment.</p></li>
 </ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This directory only exists on <code class="docutils literal notranslate"><span class="pre">portal</span></code> and not <code class="docutils literal notranslate"><span class="pre">portal2</span></code>.</p>
+</div>
 </li>
-<li><p>pipes</p></li>
+<li><p><em>pipes</em></p>
+<p>In class, we learned the <code class="docutils literal notranslate"><span class="pre">sort</span></code> and <code class="docutils literal notranslate"><span class="pre">wc</span></code> commands, and how they
+work with pipes (<code class="docutils literal notranslate"><span class="pre">|</span></code>).  Now for two new commands:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">uniq</span></code> : remove repeated lines from the input</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cut</span></code> : this will extract just a portion of a line from input</p></li>
+</ul>
+<p>Here’s an example.  Go to <code class="docutils literal notranslate"><span class="pre">~/shell-lesson-data/exercise-data/animal-counts</span></code></p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">animals.csv</span></code> is a <a class="reference external" href="https://en.wikipedia.org/wiki/Comma-separated_values">command-separate values file</a>.  If we
+look at the file (just use <code class="docutils literal notranslate"><span class="pre">cat</span></code>) we see that the first column is
+the date, the second column is an animal, and the third column is a
+count (number of times the animal was seen).  These columns are separated
+by a comma, <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
+<p>If we do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">cut<span class="w"> </span>-d<span class="w"> </span>,<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span>animals.csv</span>
+</pre></div></div><p>Then we get just the middle column.  Here the <code class="docutils literal notranslate"><span class="pre">-d</span></code> flag specifies
+the <em>delimiter</em> separating the columns, and the <code class="docutils literal notranslate"><span class="pre">-f</span></code> flag
+specifies which field we want (the second).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Remember, you can do <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">cut</span></code> to learn these options.</p>
+</div>
+<p>The output of this is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">deer</span>
+<span class="n">rabbit</span>
+<span class="n">raccoon</span>
+<span class="n">rabbit</span>
+<span class="n">deer</span>
+<span class="n">fox</span>
+<span class="n">rabbit</span>
+<span class="n">bear</span>
+</pre></div>
+</div>
+<p>We want to get just the types of animals that were seen, so any duplicates should
+be removed.</p>
+<p>If you just pipe the output to <code class="docutils literal notranslate"><span class="pre">uniq</span></code> it doesn’t work, since <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only looks
+at the previous line.  So you need to sort the output first.</p>
+<p><em>your task:</em> Give the bash one-line sequence (several commands connected
+with pipes) that will give you just the list of animals observed,
+with no duplicates.</p>
+</li>
 <li><p>a script</p></li>
 </ol>
 </section>
@@ -480,6 +528,15 @@ in your <code class="docutils literal notranslate"><span class="pre">homework2.t
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="homework1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Homework #1</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
