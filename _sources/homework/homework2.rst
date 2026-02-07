@@ -2,10 +2,14 @@
 Homework #2
 ***********
 
-Some of the problems for this assignment ask you to record commands /
-output.  Create a *single text file* in ``nano`` called
-``homework2.txt`` with this information and upload it to Brightspace
-for the assignment.
+.. admonition:: Completing this assignment
+
+   For the problems below, create a *single text file* in ``nano`` called
+   ``homework2.txt`` and record the commands that you need to do to
+   accomplish the goal of each problem.  If the problem asks for your
+   to capture the output of a command, copy-paste it into this same text file.
+
+   Upload your ``homework2.txt`` to Brightspace.
 
 .. important::
 
