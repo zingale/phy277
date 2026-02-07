@@ -140,8 +140,7 @@ html_theme = 'sphinx_book_theme'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#
-# html_theme_options = {}
+
 html_theme_options = {
     "repository_url": "https://github.com/zingale/phy277",
     "use_repository_button": True,
@@ -162,7 +161,7 @@ html_theme_options = {
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_css_files = ["myfile.css"]
+html_css_files = ["myfile.css", "no-search.css"]
 
 
 # -- Options for linkcheck
