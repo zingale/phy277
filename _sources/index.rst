@@ -166,6 +166,7 @@ the top of many pages.
    :hidden:
 
    algorithms/truncation
+   alforithms/optimization
    algorithms/cxx-orbit-example
    algorithms/cxx-orbit-rk2-example
    algorithms/roots
