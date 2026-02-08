@@ -53,7 +53,7 @@ Here's a first example.  We'll create a string and output it to the screen:
    :caption: ``string_example.cpp``
 
 
-We can use a constructor to create an initial
+We can use a *constructor* to create an initial
 string filled with a character repeated many times.  For instance,
 here's an 80-character line:
 
@@ -61,6 +61,7 @@ here's an 80-character line:
    :language: c++
    :caption: ``string-repeat.cpp``
 
+We'll learn more about constructors when we discuss classes in C++.
 
 Here, ``'-'`` is a ``char`` and not a string.
 
@@ -69,15 +70,26 @@ Here, ``'-'`` is a ``char`` and not a string.
    A nice overview of working with C++ strings is provided by "hacking C++":
    `std::string <https://hackingcpp.com/cpp/std/string.png>`_
 
-Escape characters
-=================
+Escape sequences
+================
+
+There are some important special characters that we don't type directly,
+but instead we precede with a ``\``.  For instance, to add a new line
+to a string, we can use ``\n``.
+
 
 .. note::
 
-   We used an `escape sequence
-   <https://en.cppreference.com/w/cpp/language/escape>`_ here, ``\n``,
-   to create a newline.  ``\n`` is slightly different than
+   ``\n`` is slightly different than
    ``std::endl``---the latter also flushes the output buffer.
+
+Here's a `list of escape sequences
+   <https://en.cppreference.com/w/cpp/language/escape>`_.
+
+.. admonition:: try it...
+
+   Let's try the "bell", ``\a``, to see if it has an effect on our
+   terminal.
 
 
 String math
