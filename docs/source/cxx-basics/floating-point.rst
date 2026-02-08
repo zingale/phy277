@@ -205,6 +205,17 @@ IEEE 754 defines a few special quantities:
 * ``-0`` is a valid number and the standard says that ``-0`` is equivalent to ``0``
 
 
+We can test on these values using `std::isnan
+<https://en.cppreference.com/w/cpp/numeric/math/isnan>`_ and
+`std::isinf
+<https://en.cppreference.com/w/cpp/numeric/math/isinf.html>`_.  For
+instance, here we generate a NaN:
+
+.. literalinclude:: ../../../examples/floating_point/nan.cpp
+   :language: c++
+   :caption: ``nan.cpp``
+
+
 ----
 
 .. [#f1] this example is based on Yakowitz & Szidarovszky
