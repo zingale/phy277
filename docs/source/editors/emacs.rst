@@ -26,4 +26,4 @@ Quick tour
 
    Since :kbd:`Ctrl-v` is mapped as "page down", to paste something into your emacs
    buffer that you copied from a different application (like the web browser), use
-   :kbd:`Ctri-Shift-v`.
+   :kbd:`Ctrl-Shift-v`.
