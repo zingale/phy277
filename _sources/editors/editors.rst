@@ -40,7 +40,7 @@ editor.  However you are encouraged to explore alternatives.
 emacs
 =====
 
-Emacs is a powerful editor that has a large number of extensions.
+`Emacs <https://www.gnu.org/software/emacs/>`_ is a powerful editor that has a large number of extensions.
 
 You can run emacs in a terminal (instead of a separate window), by doing:
 
@@ -70,9 +70,10 @@ Here's my `emacs config file <https://github.com/zingale/mysystem/blob/master/.e
 vim/vi
 ======
 
-vi or vim has two modes: *command mode* where you enter commands like save,
-delete, cut / paste, etc. and *insert mode* where you enter text into
-the editor.
+`vim <https://www.vim.org/>`_ (or vi) has a large user base, like emacs, but
+has a very different interface.  vi has two modes: *normal mode* (or command mode)
+where you enter commands like save, delete, cut / paste, etc. and
+*insert mode* where you enter text into the editor.
 
 You can open a file for editing by:
 
@@ -88,16 +89,21 @@ by default you are in command mode.
 
 Documentation is available here: https://www.vim.org/docs.php
 
-To save the file and exit you enter command mode and type ``:wq``
+To save the file and exit you enter command mode (:kbd:`ESC`) and type ``:wq``
+
+An interactive tutorial is available via `OpenVIM <https://openvim.com/>`_.
 
 
 VS Code
 =======
 
-VS Code is a graphical editor that is extremely popular today.  It has
-a large number of extensions.  One of the most popular extensions is
-the "remote - ssh" extension that allows you to run VS Code on your
-local machine and edit files on a remote machine (connecting via SSH).
+`VS Code <https://code.visualstudio.com/>`_ is a graphical editor that
+is extremely popular today.  It has a large number of extensions.
+
+One of the most popular extensions is the `Remote - SSH
+<https://code.visualstudio.com/docs/remote/ssh>`_ extension that
+allows you to run VS Code on your local machine and edit files on a
+remote machine (connecting via SSH).
 
 There are extensive introductory videos here: https://code.visualstudio.com/docs/introvideos/basics
 

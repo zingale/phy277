@@ -22,8 +22,10 @@ Homework #3
 
 
 
-1. Write a program to compute 0.3 / 0.1 - 3.  Output with enough
-   precision to see if you get the expected result.
+1. Write a program to compute 0.3 / 0.1 - 3, once with ``float``
+   datatypes and a second time with ``double`` datatypes.  Output with
+   enough precision to see if you get the expected result.
+   
 
 2. Quadratic formula options
 
