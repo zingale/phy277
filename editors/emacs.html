@@ -434,7 +434,17 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-tour">Quick tour</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-tour">Quick tour</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files">Working with files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-around-the-file">Moving around the file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abort-undo">Abort / undo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching">Searching</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#marking">Marking</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#killing-deleting">Killing / deleting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">Formatting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exiting">Exiting</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -450,25 +460,112 @@
 <h1>emacs<a class="headerlink" href="#emacs" title="Link to this heading">#</a></h1>
 <p>I’ll use the emacs editor for most of the class.  You are welcome to
 continue to use nano if you prefer.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
 <p>The best way to learn an editor is by using it.  So we’ll go over
 some key commands in emacs and I’ll introduce more as the semester
 goes on.</p>
-</div>
-<section id="quick-tour">
-<h2>Quick tour<a class="headerlink" href="#quick-tour" title="Link to this heading">#</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>A quick reference card summarizing the basic commands is available
 here: <a class="reference download external" download="" href="https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf"><code class="xref download docutils literal notranslate"><span class="pre">emacs</span> <span class="pre">reference</span> <span class="pre">card</span></code></a></p>
 </div>
+<section id="quick-tour">
+<h2>Quick tour<a class="headerlink" href="#quick-tour" title="Link to this heading">#</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The official emacs website has a <a class="reference external" href="https://www.gnu.org/software/emacs/tour/">helpful guided tour to introduce emacs</a>.</p>
+</div>
+<p>Most commands in emacs start use either the <kbd class="kbd docutils literal notranslate">Ctrl</kbd> key or
+something that emacs calls the “Meta” key, and a single character.
+E.g. <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">a</kbd> will go to the start of the line.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the “Meta” key, you have two options:</p>
+<ul class="simple">
+<li><p>Hold down <kbd class="kbd docutils literal notranslate">Alt</kbd> and the other letter in the command.</p></li>
+<li><p>Press (and release) <kbd class="kbd docutils literal notranslate">ESC</kbd> and then press the other letter in the command.</p></li>
+</ul>
+<p>I’ll use <kbd class="kbd docutils literal notranslate">M</kbd>-<kbd class="kbd docutils literal notranslate">x</kbd> to indicate when the meta key is used (in this case, in combination with <kbd class="kbd docutils literal notranslate">x</kbd>).</p>
+</div>
+<p>Let’s open emacs while we try these commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">emacs<span class="w"> </span>-nw</span>
+</pre></div></div><section id="working-with-files">
+<h3>Working with files<a class="headerlink" href="#working-with-files" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">x</kbd> <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">f</kbd> : read a file into emacs</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">x</kbd> <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">s</kbd> : save a file to the filesystem</p></li>
+</ul>
+</section>
+<section id="moving-around-the-file">
+<h3>Moving around the file<a class="headerlink" href="#moving-around-the-file" title="Link to this heading">#</a></h3>
+<p>To move the cursor, you can just use the arrow keys.  Other
+options include:</p>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">a</kbd> : go to the beginning of the line</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">e</kbd> : go to the end of the line</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">v</kbd> : page down</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">M</kbd>-<kbd class="kbd docutils literal notranslate">v</kbd> : page up</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">M</kbd>-<kbd class="kbd docutils literal notranslate">&lt;</kbd> : go to the beginning of the file</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">M</kbd>-<kbd class="kbd docutils literal notranslate">&gt;</kbd> : go to the end of the file</p></li>
+</ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Since <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">v</kbd> is mapped as “page down”, to paste something into your emacs
 buffer that you copied from a different application (like the web browser), use
 <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">v</kbd>.</p>
 </div>
+</section>
+<section id="abort-undo">
+<h3>Abort / undo<a class="headerlink" href="#abort-undo" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">g</kbd> : stop the current command (partially typed or
+running)</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">x</kbd> <kbd class="kbd docutils literal notranslate">u</kbd> : undo</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">l</kbd> : redraw the screen</p></li>
+</ul>
+</section>
+<section id="searching">
+<h3>Searching<a class="headerlink" href="#searching" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">s</kbd> : search forward</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">r</kbd> : search backward</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">M</kbd>-<kbd class="kbd docutils literal notranslate">%</kbd> : query-replace text</p></li>
+</ul>
+</section>
+<section id="marking">
+<h3>Marking<a class="headerlink" href="#marking" title="Link to this heading">#</a></h3>
+<p>In emacs, for a lot of commands, we define a region by first <em>marking</em> the start
+and then going to the end and executing the command.</p>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Space</kbd> : set a mark</p></li>
+</ul>
+</section>
+<section id="killing-deleting">
+<h3>Killing / deleting<a class="headerlink" href="#killing-deleting" title="Link to this heading">#</a></h3>
+<p>In emacs, <em>killing</em> is used to mean cut.  The removed text is put into a
+buffer where it can be <em>yanked</em> back.</p>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">k</kbd> : kill from cursor to the end of the line</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">w</kbd> : kill the region (from the mark to the cursor position)</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">y</kbd> : yank back killed text</p></li>
+</ul>
+</section>
+<section id="formatting">
+<h3>Formatting<a class="headerlink" href="#formatting" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">TAB</kbd> : auto-indent the line (really nice for source code)</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">M</kbd>-<kbd class="kbd docutils literal notranslate">q</kbd> : word wrap a paragraph</p></li>
+</ul>
+</section>
+<section id="exiting">
+<h3>Exiting<a class="headerlink" href="#exiting" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">x</kbd> <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">c</kbd> : exit emacs completely</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -519,7 +616,17 @@ buffer that you copied from a different application (like the web browser), use
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-tour">Quick tour</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-tour">Quick tour</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files">Working with files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-around-the-file">Moving around the file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abort-undo">Abort / undo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching">Searching</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#marking">Marking</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#killing-deleting">Killing / deleting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">Formatting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exiting">Exiting</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

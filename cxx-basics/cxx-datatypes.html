@@ -437,9 +437,10 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-and-initialization">Defining and Initialization</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#const"><code class="docutils literal notranslate"><span class="pre">const</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing">Initializing</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#const"><code class="docutils literal notranslate"><span class="pre">const</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -512,13 +513,8 @@ objects.</p>
 begin with a number.  Additionally, there are some reserved
 keywords (like <code class="docutils literal notranslate"><span class="pre">int</span></code>) that cannot be used as variable names.</p>
 </div>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>It is always a good idea to initialize a variable with a starting
-value.  Otherwise, most compilers will leave it undefined and you
-can run into problems if you try to use it without first
-remembering to initialize it.</p>
-</div>
+<section id="initializing">
+<h3>Initializing<a class="headerlink" href="#initializing" title="Link to this heading">#</a></h3>
 <p>There are a few ways to initialize.  Here are the two we’ll see the most:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{};</span>
@@ -527,6 +523,13 @@ remembering to initialize it.</p>
 <p>Both of these will initialize the variable to <code class="docutils literal notranslate"><span class="pre">0</span></code>.  The <code class="docutils literal notranslate"><span class="pre">{}</span></code>
 notation is more flexible, since it will work with more complicated
 objects that we will encounter later.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>It is always a good idea to initialize a variable with a starting
+value.  Otherwise, most compilers will leave it undefined and you
+can run into problems if you try to use it without first
+remembering to initialize it.</p>
+</div>
 <p>We’ll see a third way to initialize objects when we look at classes
 (and constructors).</p>
 <div class="admonition caution">
@@ -548,8 +551,10 @@ objects that we will encounter later.</p>
 <p>Here we are using <code class="docutils literal notranslate"><span class="pre">x</span></code> without initializing it.  This behavior is
 undefined, and can lead to errors that can be hard to track down.</p>
 </div>
+</section>
+</section>
 <section id="const">
-<h3><code class="docutils literal notranslate"><span class="pre">const</span></code><a class="headerlink" href="#const" title="Link to this heading">#</a></h3>
+<h2><code class="docutils literal notranslate"><span class="pre">const</span></code><a class="headerlink" href="#const" title="Link to this heading">#</a></h2>
 <p>Objects defined with <code class="docutils literal notranslate"><span class="pre">const</span></code> cannot be changed, so you are required
 to initialize the immediately:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">G</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.67e-8</span><span class="p">;</span>
@@ -560,7 +565,6 @@ to initialize the immediately:</p>
 <p>Let’s write an example using a <code class="docutils literal notranslate"><span class="pre">const</span></code> variable and try to modify it.</p>
 <p>What happens?</p>
 </div>
-</section>
 </section>
 </section>
 
@@ -612,9 +616,10 @@ to initialize the immediately:</p>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-and-initialization">Defining and Initialization</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#const"><code class="docutils literal notranslate"><span class="pre">const</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing">Initializing</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#const"><code class="docutils literal notranslate"><span class="pre">const</span></code></a></li>
 </ul>
   </nav></div>
 

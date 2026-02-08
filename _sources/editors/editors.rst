@@ -106,4 +106,3 @@ allows you to run VS Code on your local machine and edit files on a
 remote machine (connecting via SSH).
 
 There are extensive introductory videos here: https://code.visualstudio.com/docs/introvideos/basics
-

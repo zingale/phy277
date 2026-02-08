@@ -80,12 +80,8 @@ objects.
    begin with a number.  Additionally, there are some reserved
    keywords (like ``int``) that cannot be used as variable names.
 
-.. danger::
-
-   It is always a good idea to initialize a variable with a starting
-   value.  Otherwise, most compilers will leave it undefined and you
-   can run into problems if you try to use it without first
-   remembering to initialize it.
+Initializing
+------------
 
 There are a few ways to initialize.  Here are the two we'll see the most:
 
@@ -97,6 +93,13 @@ There are a few ways to initialize.  Here are the two we'll see the most:
 Both of these will initialize the variable to ``0``.  The ``{}``
 notation is more flexible, since it will work with more complicated
 objects that we will encounter later.
+
+.. important::
+
+   It is always a good idea to initialize a variable with a starting
+   value.  Otherwise, most compilers will leave it undefined and you
+   can run into problems if you try to use it without first
+   remembering to initialize it.
 
 We'll see a third way to initialize objects when we look at classes
 (and constructors).
@@ -124,7 +127,7 @@ We'll see a third way to initialize objects when we look at classes
 
 
 ``const``
----------
+=========
 
 Objects defined with ``const`` cannot be changed, so you are required
 to initialize the immediately:
@@ -138,5 +141,4 @@ to initialize the immediately:
    Let's write an example using a ``const`` variable and try to modify it.
 
    What happens?
-
 
