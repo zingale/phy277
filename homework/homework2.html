@@ -443,7 +443,8 @@
 <code class="docutils literal notranslate"><span class="pre">homework2.txt</span></code> and record the commands that you need to do to
 accomplish the goal of each problem.  If the problem asks for your
 to capture the output of a command, copy-paste it into this same text file.</p>
-<p>Upload your <code class="docutils literal notranslate"><span class="pre">homework2.txt</span></code> to Brightspace.</p>
+<p>Upload your <code class="docutils literal notranslate"><span class="pre">homework2.txt</span></code> to Brightspace <em>as well as</em> the script
+that you write in the last problem.</p>
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -516,16 +517,45 @@ specifies which field we want (the second).</p>
 be removed.</p>
 <p>If you just pipe the output to <code class="docutils literal notranslate"><span class="pre">uniq</span></code> it doesn’t work, since <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only looks
 at the previous line.  So you need to sort the output first.</p>
-<p><em>your task:</em> Give the bash one-line sequence (several commands connected
+<p><em>Your task:</em> Give the bash one-line sequence (several commands connected
 with pipes) that will give you just the list of animals observed,
 with no duplicates.</p>
 </li>
 <li><p><em>a script</em></p>
-<ul class="simple">
-<li><p>Finally, give the command that changes the permissions giving you
+<p>In <code class="docutils literal notranslate"><span class="pre">~/shell-lesson-data/exercise-data/alkanes</span></code>, you’ll find a
+collection of files that describe different alkane molecules.
+Your task here is to write a simple shell script that takes
+the name of a file and outputs how many atoms is has.</p>
+<p>You can find the lines containing an atom in the file by using <code class="docutils literal notranslate"><span class="pre">grep</span></code>
+to look for <code class="docutils literal notranslate"><span class="pre">ATOM</span></code>.</p>
+<p>For our script, we want to run it like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">./myscript<span class="w"> </span>cubane.pdb</span>
+</pre></div></div><p>In the script, we can reference the filename that follows our
+script using the variable <code class="docutils literal notranslate"><span class="pre">$1</span></code>.  For instance, a script that had this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span>
+</pre></div>
+</div>
+<p>would just echo whatever the first argument to your script was.</p>
+<p><em>Your task:</em></p>
+<ul>
+<li><p>Create a file called <code class="docutils literal notranslate"><span class="pre">myscript.sh</span></code> in <code class="docutils literal notranslate"><span class="pre">nano</span></code>.  It should start
+with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+</pre></div>
+</div>
+<p>as we discussed in <a class="reference internal" href="../shell/permissions.html#sec-executable-scripts"><span class="std std-ref">Executable scripts</span></a>.</p>
+</li>
+<li><p>Add the sequence of commands that <code class="docutils literal notranslate"><span class="pre">grep</span></code> the input file (<code class="docutils literal notranslate"><span class="pre">$1</span></code>) and
+count the number of lines that have an atom.</p></li>
+<li><p>Finally, modify the file permissions, giving you
 (and only you—not group or other users) the ability to execute
 your script simply as <code class="docutils literal notranslate"><span class="pre">./myscript.sh</span></code></p></li>
 </ul>
+<p>For this problem, in your <code class="docutils literal notranslate"><span class="pre">homework2.txt</span></code> file, share the command you used
+in the last step for the permissions.  Also upload your script separately
+to Brightspace.</p>
 </li>
 </ol>
 </section>
