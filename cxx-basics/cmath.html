@@ -462,9 +462,10 @@ the <code class="docutils literal notranslate"><span class="pre">&lt;cmath&gt;</
 <p>Trigonometric functions like <span class="math notranslate nohighlight">\(\sin(x)\)</span> expect their arguments to be
 in radians.</p>
 </div>
-<p>For raising numbers to a power, e.g., <span class="math notranslate nohighlight">\(x**y\)</span>, we use the
+<p>For raising numbers to a power, e.g., <span class="math notranslate nohighlight">\(x^y\)</span>, we use the
 <code class="docutils literal notranslate"><span class="pre">std::pow()</span></code> function.  This differs a bit from some languages
 which have an operator for exponentiation, like <code class="docutils literal notranslate"><span class="pre">x**y</span></code>.</p>
+<p>Let’s look at some examples.</p>
 <section id="sine-of-angle-in-degrees">
 <h2>Sine of angle in degrees<a class="headerlink" href="#sine-of-angle-in-degrees" title="Link to this heading">#</a></h2>
 <p>Here’s an example of:</p>
@@ -494,6 +495,9 @@ which have an operator for exponentiation, like <code class="docutils literal no
 </section>
 <section id="powers">
 <h2>Powers<a class="headerlink" href="#powers" title="Link to this heading">#</a></h2>
+<p>In addition to <code class="docutils literal notranslate"><span class="pre">std::pow()</span></code>, there are some functions for common powers,
+like <code class="docutils literal notranslate"><span class="pre">std::sqrt()</span></code> for <span class="math notranslate nohighlight">\(x^{1/2}\)</span>, and <code class="docutils literal notranslate"><span class="pre">std::cbrt()</span></code> for <span class="math notranslate nohighlight">\(x^{1/3}\)</span>.
+These tend to be faster than using <code class="docutils literal notranslate"><span class="pre">std::pow()</span></code>.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-number">Listing 12 </span><span class="caption-text">power.cpp</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
@@ -524,6 +528,7 @@ which have an operator for exponentiation, like <code class="docutils literal no
 </section>
 <section id="exponential-and-logs">
 <h2>Exponential and logs<a class="headerlink" href="#exponential-and-logs" title="Link to this heading">#</a></h2>
+<p>Let’s look at some examples of exponentiation and logarithms.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p><code class="docutils literal notranslate"><span class="pre">std::log()</span></code> is the natural logarithm.  For common

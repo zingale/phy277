@@ -435,7 +435,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#character-vs-string">Character vs string</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-string"><code class="docutils literal notranslate"><span class="pre">std::string</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escape-characters">Escape characters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-math">String math</a></li>
 </ul>
             </nav>
@@ -454,27 +456,41 @@
 <p class="admonition-title">reading</p>
 <p><a class="reference external" href="https://cplusplus.com/reference/string/string/">std::string</a> on cplusplus.com</p>
 </div>
-<section id="std-string">
-<h2><code class="docutils literal notranslate"><span class="pre">std::string</span></code><a class="headerlink" href="#std-string" title="Link to this heading">#</a></h2>
-<p>A C++ <code class="docutils literal notranslate"><span class="pre">std::string</span></code> holds a sequence of characters.  When working
-with strings, we include the <code class="docutils literal notranslate"><span class="pre">&lt;string&gt;</span></code> header.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In C++, single characters (<code class="docutils literal notranslate"><span class="pre">char</span></code>) are enclosed in single-quotes, e.g., <code class="docutils literal notranslate"><span class="pre">'A'</span></code>,
-while strings are enclosed in double quotes, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;string&quot;</span></code>.</p>
+<section id="character-vs-string">
+<h2>Character vs string<a class="headerlink" href="#character-vs-string" title="Link to this heading">#</a></h2>
+<p>In C++, there is a distinction between a single character and a string.</p>
+<ul>
+<li><p>Single quotes, <code class="docutils literal notranslate"><span class="pre">'x'</span></code> are used to hold a single character.  This will have the
+datatype <code class="docutils literal notranslate"><span class="pre">char</span></code>,  e.g.,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;x&#39;</span><span class="p">;</span>
+</pre></div>
 </div>
+</li>
+<li><p>Double quotes, <code class="docutils literal notranslate"><span class="pre">&quot;This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">string&quot;</span></code> hold a collection of characters—what we
+call a string.  This uses the datatype <code class="docutils literal notranslate"><span class="pre">std::string</span></code>, e.g.,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;This is a string&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>C++ can also use older C-style strings, which are essentially a
 <a class="reference external" href="https://en.wikipedia.org/wiki/Null-terminated_string">null-terminated</a> array of characters, e.g.,</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="n">c_string</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;this is my string&quot;</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="n">c_string</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;This is my string&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>These are quite inflexible and can lead to coding errors if you are
 not careful, and we will avoid them as much as possible.</p>
 </div>
-<p>Here’s a first example.  We’ll create a string and we’ll concatenate
-another string onto it using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator:</p>
+</section>
+<section id="std-string">
+<h2><code class="docutils literal notranslate"><span class="pre">std::string</span></code><a class="headerlink" href="#std-string" title="Link to this heading">#</a></h2>
+<p>A C++ <code class="docutils literal notranslate"><span class="pre">std::string</span></code> holds a sequence of characters.  When working
+with strings, we include the <code class="docutils literal notranslate"><span class="pre">&lt;string&gt;</span></code> header.</p>
+<p>Here’s a first example.  We’ll create a string and output it to the screen:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-number">Listing 15 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string_example.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -483,31 +499,17 @@ another string onto it using the <code class="docutils literal notranslate"><spa
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">example</span><span class="p">{</span><span class="s">&quot;This is PHY 504&quot;</span><span class="p">};</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;original string: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="n">example</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;:</span><span class="se">\n</span><span class="s"> Computational Methods in Physics and Astrophysics I</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">example</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;Spring 2022&quot;</span><span class="p">;</span>
 
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">example</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<p>In this example, the strings that we add to our initial
-string are actually C-style strings, but <code class="docutils literal notranslate"><span class="pre">std::string</span></code> knows how to
-work with them.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We used an <a class="reference external" href="https://en.cppreference.com/w/cpp/language/escape">escape sequence</a> here, <code class="docutils literal notranslate"><span class="pre">\n</span></code>,
-to create a newline.  <code class="docutils literal notranslate"><span class="pre">\n</span></code> is slightly different than
-<code class="docutils literal notranslate"><span class="pre">std::endl</span></code>—the latter also flushes the output buffer.</p>
-</div>
 <p>We can use a constructor to create an initial
 string filled with a character repeated many times.  For instance,
 here’s an 80-character line:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 16 </span><span class="caption-text">string-repeat.cpp</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 16 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string-repeat.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
@@ -528,13 +530,22 @@ here’s an 80-character line:</p>
 <a class="reference external" href="https://hackingcpp.com/cpp/std/string.png">std::string</a></p>
 </div>
 </section>
+<section id="escape-characters">
+<h2>Escape characters<a class="headerlink" href="#escape-characters" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We used an <a class="reference external" href="https://en.cppreference.com/w/cpp/language/escape">escape sequence</a> here, <code class="docutils literal notranslate"><span class="pre">\n</span></code>,
+to create a newline.  <code class="docutils literal notranslate"><span class="pre">\n</span></code> is slightly different than
+<code class="docutils literal notranslate"><span class="pre">std::endl</span></code>—the latter also flushes the output buffer.</p>
+</div>
+</section>
 <section id="string-math">
 <h2>String math<a class="headerlink" href="#string-math" title="Link to this heading">#</a></h2>
 <p>There are a lot of operators and functions that can work on strings.  See
 <a class="reference external" href="https://en.cppreference.com/w/cpp/string/basic_string.html">https://en.cppreference.com/w/cpp/string/basic_string.html</a></p>
 <p>We can concatenate strings using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator:</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 17 </span><span class="caption-text">string-cat.cpp</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 17 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string-cat.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
@@ -599,7 +610,9 @@ here’s an 80-character line:</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#character-vs-string">Character vs string</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-string"><code class="docutils literal notranslate"><span class="pre">std::string</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escape-characters">Escape characters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-math">String math</a></li>
 </ul>
   </nav></div>
