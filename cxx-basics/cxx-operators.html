@@ -50,6 +50,8 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-operators';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -472,12 +474,39 @@ a quantity:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="p">;</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unlike in some languages, there is no operator for exponentiation, e.g., <span class="math notranslate nohighlight">\(x^y\)</span>.
+We’ll see how to call a function to this shortly.</p>
+</div>
 </section>
 <section id="relational-operators">
 <h2>Relational operators<a class="headerlink" href="#relational-operators" title="Link to this heading">#</a></h2>
+<p>Relational operators compare objects.  The main operators are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> : equal to</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code> : not equal to</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> : greater than</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> : less than</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> : greater than or equal to</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> : less than or equal to</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>C++20 introduces a three-way comparison, <code class="docutils literal notranslate"><span class="pre">&lt;=&gt;</span></code>, which we will not consider.</p>
+</div>
 </section>
 <section id="assignment-operators">
 <h2>Assignment operators<a class="headerlink" href="#assignment-operators" title="Link to this heading">#</a></h2>
+<p>Assignment modifies the value of the object to the left of the operator.  The assignment
+operators include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b</span></code>  : set the value of a to that of b</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">b</span></code> : equivalent to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-=</span> <span class="pre">b</span></code> : equivalent to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">-</span> <span class="pre">b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*=</span> <span class="pre">b</span></code> : equivalent to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">/=</span> <span class="pre">b</span></code> : equivalent to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">/</span> <span class="pre">b</span></code></p></li>
+</ul>
 </section>
 <section id="precedence">
 <h2>Precedence<a class="headerlink" href="#precedence" title="Link to this heading">#</a></h2>
@@ -503,8 +532,13 @@ evaluated first, and then the addition is done.</p>
 </section>
 <section id="prefix-and-postfix-operators">
 <h2>Prefix and postfix operators<a class="headerlink" href="#prefix-and-postfix-operators" title="Link to this heading">#</a></h2>
-<p>We haven’t yet discussed the difference between <code class="docutils literal notranslate"><span class="pre">++a</span></code> and <code class="docutils literal notranslate"><span class="pre">a++</span></code>.  These are the prefix
-and postfix increment operators.  Let’s do that now.</p>
+<p>C++ also has the increment and decrement operators.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a++</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a--</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">-</span> <span class="pre">1</span></code></p></li>
+</ul>
+<p>There are postfix versions of these, e.g., <code class="docutils literal notranslate"><span class="pre">++a</span></code>.  The
+difference between them is subtle.</p>
 <p>The prefix operator is:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mi">0</span><span class="p">},</span><span class="w"> </span><span class="n">b</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
 <span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">a</span><span class="p">;</span>

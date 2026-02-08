@@ -28,13 +28,48 @@ a quantity:
 
    double x = -y;
 
+.. note::
+
+   Unlike in some languages, there is no operator for exponentiation, e.g., $x^y$.
+   We'll see how to call a function to this shortly.
+
 Relational operators
 ====================
+
+Relational operators compare objects.  The main operators are:
+
+* ``==`` : equal to
+
+* ``!=`` : not equal to
+
+* ``>`` : greater than
+
+* ``<`` : less than
+
+* ``>=`` : greater than or equal to
+
+* ``<=`` : less than or equal to
+
+.. note::
+
+   C++20 introduces a three-way comparison, ``<=>``, which we will not consider.
 
 
 Assignment operators
 ====================
 
+Assignment modifies the value of the object to the left of the operator.  The assignment
+operators include:
+
+* ``a = b``  : set the value of a to that of b
+
+* ``a += b`` : equivalent to ``a = a + b``
+
+* ``a -= b`` : equivalent to ``a = a - b``
+
+* ``a *= b`` : equivalent to ``a = a * b``
+
+* ``a /= b`` : equivalent to ``a = a / b``
 
 Precedence
 ==========
@@ -68,8 +103,14 @@ evaluated first, and then the addition is done.
 Prefix and postfix operators
 ============================
 
-We haven't yet discussed the difference between ``++a`` and ``a++``.  These are the prefix
-and postfix increment operators.  Let's do that now.
+C++ also has the increment and decrement operators.
+
+* ``a++`` is equivalent to ``a = a + 1``
+
+* ``a--`` is equivalent to ``a = a - 1``
+
+There are postfix versions of these, e.g., ``++a``.  The
+difference between them is subtle.
 
 The prefix operator is:
 
