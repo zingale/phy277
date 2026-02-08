@@ -6,16 +6,26 @@ Strings
 
    `std::string <https://cplusplus.com/reference/string/string/>`__ on cplusplus.com
 
-``std::string``
-===============
+Character vs string
+===================
 
-A C++ ``std::string`` holds a sequence of characters.  When working
-with strings, we include the ``<string>`` header.
+In C++, there is a distinction between a single character and a string.
 
-.. note::
+* Single quotes, ``'x'`` are used to hold a single character.  This will have the
+  datatype ``char``,  e.g.,
 
-   In C++, single characters (``char``) are enclosed in single-quotes, e.g., ``'A'``,
-   while strings are enclosed in double quotes, e.g. ``"string"``.
+  .. code:: c++
+
+     char c = 'x';
+
+* Double quotes, ``"This is a string"`` hold a collection of characters---what we
+  call a string.  This uses the datatype ``std::string``, e.g.,
+
+  .. code:: c++
+
+     #include <string>
+
+     std::string s = "This is a string";
 
 .. warning::
 
@@ -24,28 +34,24 @@ with strings, we include the ``<string>`` header.
 
    .. code:: c++
 
-      char c_string[] = "this is my string";
+      char c_string[] = "This is my string";
 
    These are quite inflexible and can lead to coding errors if you are
    not careful, and we will avoid them as much as possible.
 
-Here's a first example.  We'll create a string and we'll concatenate
-another string onto it using the ``+`` operator:
+
+``std::string``
+===============
+
+A C++ ``std::string`` holds a sequence of characters.  When working
+with strings, we include the ``<string>`` header.
+
+Here's a first example.  We'll create a string and output it to the screen:
 
 .. literalinclude:: ../../../examples/strings/string_example.cpp
    :language: c++
    :caption: ``string_example.cpp``
 
-In this example, the strings that we add to our initial
-string are actually C-style strings, but ``std::string`` knows how to
-work with them.
-
-.. note::
-
-   We used an `escape sequence
-   <https://en.cppreference.com/w/cpp/language/escape>`_ here, ``\n``,
-   to create a newline.  ``\n`` is slightly different than
-   ``std::endl``---the latter also flushes the output buffer.
 
 We can use a constructor to create an initial
 string filled with a character repeated many times.  For instance,
@@ -53,7 +59,7 @@ here's an 80-character line:
 
 .. literalinclude:: ../../../examples/strings/string-repeat.cpp
    :language: c++
-   :caption: string-repeat.cpp
+   :caption: ``string-repeat.cpp``
 
 
 Here, ``'-'`` is a ``char`` and not a string.
@@ -62,6 +68,16 @@ Here, ``'-'`` is a ``char`` and not a string.
 
    A nice overview of working with C++ strings is provided by "hacking C++":
    `std::string <https://hackingcpp.com/cpp/std/string.png>`_
+
+Escape characters
+=================
+
+.. note::
+
+   We used an `escape sequence
+   <https://en.cppreference.com/w/cpp/language/escape>`_ here, ``\n``,
+   to create a newline.  ``\n`` is slightly different than
+   ``std::endl``---the latter also flushes the output buffer.
 
 
 String math
@@ -74,5 +90,5 @@ We can concatenate strings using the ``+`` operator:
 
 .. literalinclude:: ../../../examples/strings/string-cat.cpp
    :language: c++
-   :caption: string-cat.cpp
+   :caption: ``string-cat.cpp``
 
