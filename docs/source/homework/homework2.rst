@@ -9,7 +9,8 @@ Homework #2
    accomplish the goal of each problem.  If the problem asks for your
    to capture the output of a command, copy-paste it into this same text file.
 
-   Upload your ``homework2.txt`` to Brightspace.
+   Upload your ``homework2.txt`` to Brightspace *as well as* the script
+   that you write in the last problem.
 
 .. important::
 
@@ -96,16 +97,57 @@ Homework #2
    If you just pipe the output to ``uniq`` it doesn't work, since ``uniq`` only looks
    at the previous line.  So you need to sort the output first.
 
-   *your task:* Give the bash one-line sequence (several commands connected
+   *Your task:* Give the bash one-line sequence (several commands connected
    with pipes) that will give you just the list of animals observed,
    with no duplicates.
 
 
 3. *a script*
 
+   In ``~/shell-lesson-data/exercise-data/alkanes``, you'll find a
+   collection of files that describe different alkane molecules.
+   Your task here is to write a simple shell script that takes
+   the name of a file and outputs how many atoms is has.
 
-   * Finally, give the command that changes the permissions giving you
+   You can find the lines containing an atom in the file by using ``grep``
+   to look for ``ATOM``.
+
+   For our script, we want to run it like:
+
+   .. prompt:: bash
+
+      ./myscript cubane.pdb
+
+   In the script, we can reference the filename that follows our
+   script using the variable ``$1``.  For instance, a script that had this:
+
+   .. code:: bash
+
+      #!/bin/bash
+
+      echo $1
+
+   would just echo whatever the first argument to your script was.
+
+   *Your task:*
+
+   * Create a file called ``myscript.sh`` in ``nano``.  It should start
+     with
+
+     .. code:: bash
+
+        #!/bin/bash
+
+     as we discussed in :ref:`sec:executable_scripts`.
+
+   * Add the sequence of commands that ``grep`` the input file (``$1``) and
+     count the number of lines that have an atom.
+
+   * Finally, modify the file permissions, giving you
      (and only you---not group or other users) the ability to execute
      your script simply as ``./myscript.sh``
 
+   For this problem, in your ``homework2.txt`` file, share the command you used
+   in the last step for the permissions.  Also upload your script separately
+   to Brightspace.
 

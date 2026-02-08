@@ -101,6 +101,8 @@ permission you are altering, ``r``, ``w`` or ``x``.
       cd creatures
 
 
+.. _sec:executable_scripts:
+
 Executable scripts
 ==================
 
