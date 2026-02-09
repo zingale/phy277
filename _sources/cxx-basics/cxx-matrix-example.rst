@@ -4,8 +4,7 @@ Example: Matrix
 
 .. _sec:cxx_matrix:
 
-Let's look at an example from your text that create a very simple
-matrix container as a vector-of-vectors.  The idea is to do something like:
+Let's look at creating a matrix as a vector-of-vectors.  The idea is to do something like:
 
 .. code:: c++
 
