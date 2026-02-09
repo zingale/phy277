@@ -11,6 +11,6 @@ this library:
 
 .. literalinclude:: ../../../examples/floating_point/circle.cpp
    :language: c++
-   :caption: circle.cpp
+   :caption: ``circle.cpp``
 
 

@@ -31,7 +31,7 @@ Here's an example of:
 
 .. literalinclude:: ../../../examples/floating_point/sine.cpp
    :language: c++
-   :caption: sine.cpp
+   :caption: ``sine.cpp``
 
 
 Powers
@@ -43,7 +43,7 @@ These tend to be faster than using ``std::pow()``.
 
 .. literalinclude:: ../../../examples/floating_point/power.cpp
    :language: c++
-   :caption: power.cpp
+   :caption: ``power.cpp``
 
 Exponential and logs
 ====================
@@ -57,7 +57,7 @@ Let's look at some examples of exponentiation and logarithms.
 
 .. literalinclude:: ../../../examples/floating_point/exp_log.cpp
    :language: c++
-   :caption: exp_log.cpp
+   :caption: ``exp_log.cpp``
 
 Absolute value
 ==============
@@ -80,7 +80,7 @@ Absolute value
 
 .. literalinclude:: ../../../examples/floating_point/absolute.cpp
    :language: c++
-   :caption: absolute.cpp
+   :caption: ``absolute.cpp``
 
 
 
