@@ -39,10 +39,11 @@ From that description, we see that vectors:
 * are very efficient at adding data to the end, but not efficient for
   inserting data in the middle
 
-Your text has an example of creating a vector to store student grades
-and then computing an average.  We'll write our own version.
 
-First lets see how to create a vector and add some data to it.
+Creating a vector
+=================
+
+Lets see how to create a vector and add some data to it.
 
 Here's a simple example:
 
