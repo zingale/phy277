@@ -78,4 +78,14 @@ If the connection is successful, then you will should see a prompt like:
 in the terminal.  This shows (the ``@portal``) that you are connected to portal.
 
 
-.. TODO -- add screenshots
+Logging out
+===========
+
+To close your connection, you can type:
+
+* ``exit``
+
+* :kbd:`Ctrl-d`
+
+or simply close the terminal window.
+
