@@ -8,6 +8,8 @@ Homework #1
    ``homework1.txt`` and provide the sequence of commands needed for
    each problem.
 
+   You will then upload ``homework1.txt`` to Brightspace.
+
 .. important::
 
    All work must be your own.
