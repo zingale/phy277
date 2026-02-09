@@ -2,7 +2,7 @@
 Different Editors
 *****************
 
-We already looked at ``nano`` to edit files.  An editor not only allows us to write our source
+We already looked at `nano <https://www.nano-editor.org/>`_ to edit files.  An editor not only allows us to write our source
 code, but it can also help us by:
 
 * Doing syntax highlighting of the language
