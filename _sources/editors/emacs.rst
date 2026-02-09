@@ -23,7 +23,8 @@ Quick tour
    The official emacs website has a `helpful guided tour to introduce emacs <https://www.gnu.org/software/emacs/tour/>`_.
 
 Most commands in emacs start use either the :kbd:`Ctrl` key or
-something that emacs calls the "Meta" key, and a single character.
+something that emacs calls the `Meta key
+<https://en.wikipedia.org/wiki/Meta_key>`_, and a single character.
 E.g. :kbd:`Ctrl-a` will go to the start of the line.
 
 .. note::

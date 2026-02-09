@@ -7,7 +7,7 @@ Preparing ``portal`` / ``portal2``
    Review how to access our remote servers :ref:`sec:remote_servers`.
 
 
-The default compilers on ``portal`` and ``portal2`` are GCC 11.  These
+The default compilers on ``portal`` and ``portal2`` are `GCC <https://gcc.gnu.org>`_ 11.  These
 are quite old, and don't support all of the language features we need.
 The GCC 15 compilers are available however, so we can use those
 instead.  To activate them, we need to do:
