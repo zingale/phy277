@@ -46,7 +46,7 @@ Homework #1
            mkdir homework/1
            mkdir homework/1/files
 
-        or if you looked a ``man mkdir``
+        or if you looked at ``man mkdir``
 
         .. prompt:: bash
 
