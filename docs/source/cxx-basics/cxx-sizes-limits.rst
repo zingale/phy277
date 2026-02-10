@@ -24,7 +24,10 @@ The following is guaranteed:
 
 .. code:: c++
 
-   sizeof(char) == 1 <= sizeof(short) <= sizeof(int) <= sizeof(long) <= sizeof(long long)
+   sizeof(char) == 1 <= sizeof(short)
+                     <= sizeof(int)
+                     <= sizeof(long)
+                     <= sizeof(long long)
 
 .. tip::
 
