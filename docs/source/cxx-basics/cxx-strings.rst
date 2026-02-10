@@ -83,8 +83,7 @@ to a string, we can use ``\n``.
    ``\n`` is slightly different than
    ``std::endl``---the latter also flushes the output buffer.
 
-Here's a `list of escape sequences
-   <https://en.cppreference.com/w/cpp/language/escape>`_.
+Here's a `list of escape sequences <https://en.cppreference.com/w/cpp/language/escape>`_.
 
 .. admonition:: try it...
 
