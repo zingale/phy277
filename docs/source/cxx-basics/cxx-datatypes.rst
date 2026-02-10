@@ -127,7 +127,7 @@ objects.
 Assignment
 ----------
 
-To assign a value to an object, we need to use the assignmnet operator, ``=``.
+To assign a value to an object, we need to use the assignment operator, ``=``.
 E.g.,
 
 .. code:: c++

@@ -13,6 +13,21 @@ We've already seen the basic structure of a for loop:
         // do stuff
    }
 
+.. tip::
+
+   The behavior of the prefix and postfix operator is essentially the same when it is
+   on its own line.  Also in the ``for`` construction:
+
+   .. code:: c++
+
+      for (int i = 0; i < 10; ++i) {
+          ...
+
+   it doesn't matter much which version you use---although you will
+   commonly see the prefix version used since it does not make a copy,
+   and therefore can be faster.
+
+
 We can do this for just a simple integer counter:
 
 .. code:: c++
