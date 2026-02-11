@@ -7,8 +7,7 @@ C++ Fundamental Datatypes
    `Fundamental types <https://en.cppreference.com/w/cpp/language/types>`_ from cppreference.com
 
 Data is stored in computer memory.  We'll refer to the data in memory
-as an `object
-<https://en.wikipedia.org/wiki/Object_(computer_science)>`_.
+as an `object <https://en.wikipedia.org/wiki/Object_(computer_science)>`_.
 
 We can access this data:
 
