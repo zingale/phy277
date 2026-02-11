@@ -30,7 +30,7 @@ Here we'll see how do declare objects using descriptive names.
 Memory
 ======
 
-The smallest unit of storage is the `bit <https://en.wikipedia.org/wiki/Bit>`, simply a ``1`` or ``0``.
+The smallest unit of storage is the `bit <https://en.wikipedia.org/wiki/Bit>`_, simply a ``1`` or ``0``.
 This is something that can be expressed by the hardware in your computer.
 
 Computer memory is usually thought about in terms of `bytes <https://en.wikipedia.org/wiki/Byte>`_,
