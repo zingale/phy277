@@ -478,8 +478,15 @@ select “copy link”, and then on the remote machine, do:</p>
 span.prompt1:before {
   content: "$ ";
 }
-</style><span class="prompt1">wget<span class="w"> </span>&lt;paste-link-here&gt;</span>
+</style><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>~</span>
+<span class="prompt1">wget<span class="w"> </span>&lt;paste-link-here&gt;</span>
 </pre></div></div><p>where you paste the link you copied, as indicated.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you already have a <code class="docutils literal notranslate"><span class="pre">.emacs</span></code> file, then <code class="docutils literal notranslate"><span class="pre">wget</span></code> will create something like
+<code class="docutils literal notranslate"><span class="pre">.emacs.1</span></code>.  You’ll then need to overwrite your original <code class="docutils literal notranslate"><span class="pre">.emacs</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">mv<span class="w"> </span>.emacs.1<span class="w"> </span>.emacs</span>
+</pre></div></div></div>
 </div>
 <p>you can check that the file is in the right place by doing:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ls<span class="w"> </span>-l<span class="w"> </span>~/.emacs</span>
