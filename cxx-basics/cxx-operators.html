@@ -575,9 +575,17 @@ operators include:</p>
 </pre></div>
 </div>
 <p>The language defines the order that operators are considered, called
-<em>operator precedence</em>.</p>
-<p>This table: <a class="reference external" href="https://en.cppreference.com/w/cpp/language/operator_precedence">C++ Operator Precedence</a>
+<em>operator precedence</em>.
+This table: <a class="reference external" href="https://en.cppreference.com/w/cpp/language/operator_precedence">C++ Operator Precedence</a>
 lists the order in which operators are evaluated.</p>
+<p>For the operators that we’ve seen so far, here is an (abbreviated)
+precedence order:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-a</span></code>, <code class="docutils literal notranslate"><span class="pre">+a</span></code> : unary operators</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">/</span> <span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code> : multiplication / division / remainder</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-</span> <span class="pre">b</span></code> : addition / subtraction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b</span></code> : assignment</p></li>
+</ul>
 <p>In the example above, multiplication has higher precedence, so it is
 evaluated first, and then the addition is done.</p>
 <div class="admonition tip">
