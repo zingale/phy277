@@ -38,9 +38,19 @@ to setup some C++ support:
 
    .. prompt:: bash
 
+      cd ~
       wget <paste-link-here>
 
    where you paste the link you copied, as indicated.
+
+   .. note::
+
+      If you already have a ``.emacs`` file, then ``wget`` will create something like
+      ``.emacs.1``.  You'll then need to overwrite your original ``.emacs``:
+
+      .. prompt:: bash
+
+         mv .emacs.1 .emacs
 
 you can check that the file is in the right place by doing:
 

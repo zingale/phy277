@@ -21,6 +21,12 @@ The standard mathematics operators are:
 
 * ``%`` : modulus
 
+For example, to compute the area and perimeter of a rectangle, we could do:
+
+.. literalinclude:: ../../../examples/basics/rectangle.cpp
+   :language: c++
+   :caption: ``rectangle.cpp``
+
 In addition, ``+`` and ``-`` can be used as *unary operators*, e.g., to negate
 a quantity:
 
@@ -50,6 +56,12 @@ Relational operators compare objects.  The main operators are:
 
 * ``<=`` : less than or equal to
 
+For example:
+
+.. literalinclude:: ../../../examples/basics/relations.cpp
+   :language: c++
+   :caption: ``relations.cpp``
+
 .. note::
 
    C++20 introduces a three-way comparison, ``<=>``, which we will not consider.
@@ -70,6 +82,10 @@ operators include:
 * ``a *= b`` : equivalent to ``a = a * b``
 
 * ``a /= b`` : equivalent to ``a = a / b``
+
+.. literalinclude:: ../../../examples/basics/assignment.cpp
+   :language: c++
+   :caption: ``assignment.cpp``
 
 Precedence
 ==========
@@ -103,13 +119,13 @@ evaluated first, and then the addition is done.
 Prefix and postfix operators
 ============================
 
-C++ also has the increment and decrement operators.
+C++ also has the increment and decrement (postfix) operators.
 
 * ``a++`` is equivalent to ``a = a + 1``
 
 * ``a--`` is equivalent to ``a = a - 1``
 
-There are postfix versions of these, e.g., ``++a``.  The
+There are prefix versions of these, e.g., ``++a``.  The
 difference between them is subtle.
 
 The prefix operator is:
@@ -133,19 +149,6 @@ Now consider the postfix operator:
 Here, a copy of ``c`` is made, then ``c`` is incremented, and finally the copy is returned.
 So in the above example, the result would be ``d = 0``.
 
-.. tip::
-
-   The behavior of the prefix and postfix operator is essentially the same when it is
-   on its own line.  Also in the ``for`` construction:
-
-   .. code:: c++
-
-      for (int i = 0; i < 10; ++i) {
-          ...
-
-   it doesn't matter much which version you use---although you will
-   commonly see the prefix version used since it does not make a copy,
-   and therefore can be faster.
 
 
 Associativity

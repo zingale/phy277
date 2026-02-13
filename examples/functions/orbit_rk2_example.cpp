@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <vector>
 #include <cmath>
+#include <numbers>
 
 struct OrbitState {
     double t;
@@ -16,7 +17,7 @@ OrbitState update_state(const OrbitState& state, const double dt, const OrbitSta
 void write_history(const std::vector<OrbitState>& history);
 std::vector<OrbitState> integrate(const double a, const double tmax, const double dt_in);
 
-const double GM = 4.0 * M_PI * M_PI;   // G * Mass in AU, year, solar mass units
+const double GM = 4.0 * std::numbers::pi * std::numbers::pi;   // G * Mass in AU, year, solar mass units
 
 OrbitState rhs(const OrbitState& state) {
 
