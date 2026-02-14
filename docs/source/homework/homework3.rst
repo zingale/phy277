@@ -8,10 +8,15 @@ Homework #3
    named in the problem :samp:`problem{N}.cpp`, where :samp:`{N}` is the
    problem number.
 
-   **Make sure your code compiles with ``g++``**.
+   .. important::
+
+      Make sure your that ``g++`` can compile your code.  For some of
+      the problems here, you will need to use ``-std=c++20``.
 
    Upload your C++ source files (*not the executables produced by
-   ``g++``) to Brightspace.
+   g++*) to Brightspace.
+
+
 
 .. important::
 
@@ -22,47 +27,45 @@ Homework #3
 
 
 
-1. Write a program to compute 0.3 / 0.1 - 3, once with ``float``
-   datatypes and a second time with ``double`` datatypes.  Output with
-   enough precision to see if you get the expected result.
+1. Write a program to compute "0.3 / 0.1 - 3" with ``double``
+   datatypes.  Output with enough precision to see if you get the
+   expected result.
 
+2. Consider $\sin(x)$.  The Taylor expansion of $\sin(x)$ is:
 
-2. Consider the `quadratic equation <https://en.wikipedia.org/wiki/Quadratic_equation>`_:
-   $x^2 + b x + c = 0$.  The two solutions can be expressed using the standard
-   result we learned in algebra:
+   $$\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} + \ldots$$
 
-   $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+   Let's consider the *small-angle approximation*,
 
-   or alternately using Muller's method:
+   $$\sin(x) \approx x$$
 
-   $$x = \frac{2c}{-b \mp \sqrt{b^2 - 4ac}}$$
+   where $x$ is measured in radians.
 
-   These are analytically equivalent (for non-zero $a$ and $c$), but
-   they will have different roundoff error properties.
+   We want to see how good this approximation is for different values of $x$
 
-   Let's take:
+   *Your task*: write a program that computes $\sin(x)$ and the error,
+   $\epsilon \equiv|\sin(x) - x|$, for $x = 5^\circ, 10^\circ, 20^\circ, \mbox{and}\ 40^\circ$.
 
-   * $a = 0.001$
-   * $b = 1000$
-   * $c = 0.001$
+   .. note::
 
-   *Your task:*
+      You'll need to convert these angles to radians in your code using
+      the value of $\pi$ that C++ provides.
 
-   Write a program that does the following:
+   Have your program output, for each angle, a line with
+   the angle in degrees, the angle in radians, the sine of the angle,
+   and the error in the small-angle approximation (4 columns).
 
-   * Compute the 2 roots using the first expression (the standard
-     method) using ``float`` data types, and output them to the screen.
+3. *Overflow*: A ``short int`` uses only 2 bytes of memory instead of
+   4 bytes for a normal ``int``.  This means that there are only $2^{16}$
+   of $32,768$ possible values.  We want to see overflow in action.
 
-   * Compute the 2 roots again, now using the alternate expression
-     (Muller's method), again using ``float``, and output them to the
-     screen.
+   *Your task*: write a program that does the following:
 
-   * Finally, to assess which is the most accurate when roundoff is involved,
-     compute the 2 roots using the first expression again, but now using
-     ``double`` data types, and output them to the screen.
+   * Initialize a ``short int`` to the largest possible value,
+     following the ideas we saw in class in the :ref:`sec:reporting_limits`
+     discussion.
 
-   What do you observe?
+   * Use the postfix operator (see :ref:`sec:prefix_and_postfix`) to
+     increment the value of your variable.
 
-3. Integrer overflow: short type -- print out maximum value
-   initialize an int to the maximum value and add 1
-   print out result
+   * Output the updated value to the screen.
