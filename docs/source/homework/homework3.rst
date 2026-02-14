@@ -27,15 +27,40 @@ Homework #3
 
 
 
-1. Write a program to compute "0.3 / 0.1 - 3" with ``double``
-   datatypes.  Output with enough precision to see if you get the
-   expected result.
+1. *Roundoff I*: To get a sense of roundoff, write a program to
+   compute ``0.3 / 0.1 - 3`` with ``double`` datatypes.  Output with
+   enough precision to see if you get the expected result.
 
-2. Consider $\sin(x)$.  The Taylor expansion of $\sin(x)$ is:
+2. *Roundoff II*: Now let's see how to mitigate roundoff error.
+
+   Consider the function:
+
+   $$f(x) = \frac{1}{\sqrt{x^3 + 1} - 1}$$
+
+   defined for $x > 0$.  When $x$ is small, roundoff error
+   from the subtraction will dominate the answer.  We want
+   to see if we can get a better result.
+
+   By by multiplying and dividing $f(x)$ by
+   $\sqrt{x^3 + 1} + 1$, you get an analytically
+   equivalent expression without any subtractions.
+   Call this new expression $g(x)$.
+
+   *your task*: Write a program to evaluate $f(x)$ and $g(x)$ for the values of
+   $x$: ``1.e-4``, ``1.e-5``, and ``1.e-6``.
+
+   .. note::
+
+      Don't just multiply $f(x)$ by $\sqrt{x^3 + 1} + 1$ in your code---you
+      need to do this analytically and simplify to define $g(x)$.
+
+   What do you observe?
+
+3. *Trig functions:* Consider $\sin(x)$.  The Taylor expansion of $\sin(x)$ is:
 
    $$\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} + \ldots$$
 
-   Let's consider the *small-angle approximation*,
+   Let's consider the `small-angle approximation <https://en.wikipedia.org/wiki/Small-angle_approximation>`_:
 
    $$\sin(x) \approx x$$
 
@@ -55,7 +80,7 @@ Homework #3
    the angle in degrees, the angle in radians, the sine of the angle,
    and the error in the small-angle approximation (4 columns).
 
-3. *Overflow*: A ``short int`` uses only 2 bytes of memory instead of
+4. *Overflow*: A ``short int`` uses only 2 bytes of memory instead of
    4 bytes for a normal ``int``.  This means that there are only $2^{16}$
    of $32,768$ possible values.  We want to see overflow in action.
 
