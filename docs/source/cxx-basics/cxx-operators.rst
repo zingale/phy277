@@ -98,10 +98,18 @@ What happens when we have an expression like:
 
 The language defines the order that operators are considered, called
 *operator precedence*.
-
 This table: `C++ Operator Precedence
 <https://en.cppreference.com/w/cpp/language/operator_precedence>`_
 lists the order in which operators are evaluated.
+
+For the operators that we've seen so far, here is an (abbreviated)
+precedence order:
+
+* ``-a``, ``+a`` : unary operators
+* ``a * b``, ``a / b``, ``a % b`` : multiplication / division / remainder
+* ``a + b``, ``a - b`` : addition / subtraction
+* ``a = b`` : assignment
+
 
 In the example above, multiplication has higher precedence, so it is
 evaluated first, and then the addition is done.
