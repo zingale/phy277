@@ -461,14 +461,35 @@ g++</em>) to Brightspace.</p>
 of this assignment.</p>
 </div>
 <ol class="arabic">
-<li><p>Write a program to compute “0.3 / 0.1 - 3” with <code class="docutils literal notranslate"><span class="pre">double</span></code>
-datatypes.  Output with enough precision to see if you get the
-expected result.</p></li>
-<li><p>Consider <span class="math notranslate nohighlight">\(\sin(x)\)</span>.  The Taylor expansion of <span class="math notranslate nohighlight">\(\sin(x)\)</span> is:</p>
+<li><p><em>Roundoff I</em>: To get a sense of roundoff, write a program to
+compute <code class="docutils literal notranslate"><span class="pre">0.3</span> <span class="pre">/</span> <span class="pre">0.1</span> <span class="pre">-</span> <span class="pre">3</span></code> with <code class="docutils literal notranslate"><span class="pre">double</span></code> datatypes.  Output with
+enough precision to see if you get the expected result.</p></li>
+<li><p><em>Roundoff II</em>: Now let’s see how to mitigate roundoff error.</p>
+<p>Consider the function:</p>
+<p><div class="math notranslate nohighlight">
+\[f(x) = \frac{1}{\sqrt{x^3 + 1} - 1}\]</div>
+</p>
+<p>defined for <span class="math notranslate nohighlight">\(x &gt; 0\)</span>.  When <span class="math notranslate nohighlight">\(x\)</span> is small, roundoff error
+from the subtraction will dominate the answer.  We want
+to see if we can get a better result.</p>
+<p>By by multiplying and dividing <span class="math notranslate nohighlight">\(f(x)\)</span> by
+<span class="math notranslate nohighlight">\(\sqrt{x^3 + 1} + 1\)</span>, you get an analytically
+equivalent expression without any subtractions.
+Call this new expression <span class="math notranslate nohighlight">\(g(x)\)</span>.</p>
+<p><em>your task</em>: Write a program to evaluate <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(g(x)\)</span> for the values of
+<span class="math notranslate nohighlight">\(x\)</span>: <code class="docutils literal notranslate"><span class="pre">1.e-4</span></code>, <code class="docutils literal notranslate"><span class="pre">1.e-5</span></code>, and <code class="docutils literal notranslate"><span class="pre">1.e-6</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Don’t just multiply <span class="math notranslate nohighlight">\(f(x)\)</span> by <span class="math notranslate nohighlight">\(\sqrt{x^3 + 1} + 1\)</span> in your code—you
+need to do this analytically and simplify to define <span class="math notranslate nohighlight">\(g(x)\)</span>.</p>
+</div>
+<p>What do you observe?</p>
+</li>
+<li><p><em>Trig functions:</em> Consider <span class="math notranslate nohighlight">\(\sin(x)\)</span>.  The Taylor expansion of <span class="math notranslate nohighlight">\(\sin(x)\)</span> is:</p>
 <p><div class="math notranslate nohighlight">
 \[\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} + \ldots\]</div>
 </p>
-<p>Let’s consider the <em>small-angle approximation</em>,</p>
+<p>Let’s consider the <a class="reference external" href="https://en.wikipedia.org/wiki/Small-angle_approximation">small-angle approximation</a>:</p>
 <p><div class="math notranslate nohighlight">
 \[\sin(x) \approx x\]</div>
 </p>
