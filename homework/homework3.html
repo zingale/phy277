@@ -50,9 +50,12 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'homework/homework3';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Homework #2" href="homework2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -103,8 +106,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -254,9 +255,10 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="homework1.html">Homework #1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="homework2.html">Homework #2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework #3</a></li>
 </ul>
 
     </div>
@@ -454,11 +456,42 @@ problem number.</p>
 <p>You may not use generative AI / large-language models for any part
 of this assignment.</p>
 </div>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Write a program to compute 0.3 / 0.1 - 3, once with <code class="docutils literal notranslate"><span class="pre">float</span></code>
 datatypes and a second time with <code class="docutils literal notranslate"><span class="pre">double</span></code> datatypes.  Output with
 enough precision to see if you get the expected result.</p></li>
-<li><p>Quadratic formula options</p></li>
+<li><p>Consider the <a class="reference external" href="https://en.wikipedia.org/wiki/Quadratic_equation">quadratic equation</a>:
+<span class="math notranslate nohighlight">\(x^2 + b x + c = 0\)</span>.  The two solutions can be expressed using the standard
+result we learned in algebra:</p>
+<p><div class="math notranslate nohighlight">
+\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</div>
+</p>
+<p>or alternately using Muller’s method:</p>
+<p><div class="math notranslate nohighlight">
+\[x = \frac{2c}{-b \mp \sqrt{b^2 - 4ac}}\]</div>
+</p>
+<p>These are analytically equivalent (for non-zero <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(c\)</span>), but
+they will have different roundoff error properties.</p>
+<p>Let’s take:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a = 0.001\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b = 1000\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c = 0.001\)</span></p></li>
+</ul>
+<p><em>Your task:</em></p>
+<p>Write a program that does the following:</p>
+<ul class="simple">
+<li><p>Compute the 2 roots using the first expression (the standard
+method) using <code class="docutils literal notranslate"><span class="pre">float</span></code> data types, and output them to the screen.</p></li>
+<li><p>Compute the 2 roots again, now using the alternate expression
+(Muller’s method), again using <code class="docutils literal notranslate"><span class="pre">float</span></code>, and output them to the
+screen.</p></li>
+<li><p>Finally, to assess which is the most accurate when roundoff is involved,
+compute the 2 roots using the first expression again, but now using
+<code class="docutils literal notranslate"><span class="pre">double</span></code> data types, and output them to the screen.</p></li>
+</ul>
+<p>What do you observe?</p>
+</li>
 <li><p>Integrer overflow: short type – print out maximum value
 initialize an int to the maximum value and add 1
 print out result</p></li>
@@ -476,6 +509,15 @@ print out result</p></li>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="homework2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Homework #2</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
