@@ -65,8 +65,8 @@ Notice the following:
 * We can use the ``.size()`` `member function <https://en.wikipedia.org/wiki/C%2B%2B_classes#Member_functions>`_
   to get the number of elements in the vector.
 
-Looping
-=======
+Looping preview
+===============
 
 Often we will want to loop over the elements contained in a vector,
 and C++ provides a `range-based loop
