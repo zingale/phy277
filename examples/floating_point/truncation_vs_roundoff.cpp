@@ -3,6 +3,7 @@
 #include <cmath>
 #include <limits>
 #include <vector>
+#include <format>
 
 double f(double x) {
     return std::sin(x);
@@ -41,7 +42,7 @@ int main() {
 
     std::cout << std::setprecision(8) << std::scientific;
 
-    for (auto p : data) {
-        std::cout << std::setw(10) << p.dx << std::setw(15) << p.err << std::endl;
+    for (const auto p : data) {
+        std::cout << std::format("{:12.6g} {:12.6g}\n", p.dx, p.err);
     }
 }
