@@ -109,6 +109,7 @@ the top of many pages.
    cxx-basics/floating-point
    cxx-basics/numbers
    cxx-basics/cmath
+   cxx-basics/function-preview
 
 .. toctree::
    :maxdepth: 1
