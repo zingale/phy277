@@ -109,6 +109,8 @@ the top of many pages.
    cxx-basics/floating-point
    cxx-basics/numbers
    cxx-basics/cmath
+   cxx-basics/minimizing-roundoff
+   cxx-basics/floating-point-special-numbers
 
 .. toctree::
    :maxdepth: 1
