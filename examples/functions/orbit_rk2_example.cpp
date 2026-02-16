@@ -3,6 +3,7 @@
 #include <vector>
 #include <cmath>
 #include <numbers>
+#include <format>
 
 struct OrbitState {
     double t;
@@ -54,15 +55,10 @@ OrbitState update_state(const OrbitState& state, const double dt, const OrbitSta
 
 void write_history(const std::vector<OrbitState>& history) {
 
-    for (auto o : history) {
-        std::cout << std::setw(14) << o.t
-                  << std::setw(14) << o.x
-                  << std::setw(14) << o.y
-                  << std::setw(14) << o.vx
-                  << std::setw(14) << o.vy << std::endl;
-
+    for (const auto& o : history) {
+        std::cout << std::format("{:11.8f} {:11.8f} {:11.8f} {:11.8f} {:11.8f}\n",
+                                 o.t, o.x, o.y, o.vx, o.vy);
     }
-
 }
 
 std::vector<OrbitState> integrate(const double a, const double tmax, const double dt_in) {

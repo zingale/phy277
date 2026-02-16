@@ -109,6 +109,7 @@ the top of many pages.
    cxx-basics/floating-point
    cxx-basics/numbers
    cxx-basics/cmath
+   cxx-basics/function-preview
    cxx-basics/minimizing-roundoff
    cxx-basics/floating-point-special-numbers
 
@@ -188,3 +189,4 @@ the top of many pages.
 
    homework/homework1
    homework/homework2
+   homework/homework3

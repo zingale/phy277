@@ -124,6 +124,8 @@ evaluated first, and then the addition is done.
    Play around with some expressions to explore the precedence of operators.
 
 
+.. _sec:prefix_and_postfix:
+
 Prefix and postfix operators
 ============================
 
