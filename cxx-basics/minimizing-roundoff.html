@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Structures &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Minimizing Roundoff &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -52,11 +52,11 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-structs';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/minimizing-roundoff';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Arrays" href="cxx-arrays.html" />
-    <link rel="prev" title="auto and decltype" href="cxx-auto-decltype.html" />
+    <link rel="next" title="Special Floating Point Quantities" href="floating-point-special-numbers.html" />
+    <link rel="prev" title="Preview of Functions" href="function-preview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -192,7 +192,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../editors/configure-emacs.html">Configuring emacs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basic Datatypes</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-operators.html">Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-mixing-types.html">Mixing types</a></li>
@@ -201,7 +201,7 @@
 <li class="toctree-l1"><a class="reference internal" href="numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cmath.html">Numerical Library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="function-preview.html">Preview of Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="minimizing-roundoff.html">Minimizing Roundoff</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Minimizing Roundoff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="floating-point-special-numbers.html">Special Floating Point Quantities</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
@@ -213,14 +213,14 @@
 <li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html">Format Library</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-vectors.html">Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-more-vectors.html">More Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vectors-algorithms.html">Vector Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings-functions.html">Working with Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-matrix-example.html">Example: Matrix</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-auto-decltype.html"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-arrays.html">Arrays</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-pointers.html">Pointers</a></li>
@@ -339,7 +339,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/cxx-structs.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/minimizing-roundoff.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -356,7 +356,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/cxx-structs.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/minimizing-roundoff.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -373,7 +373,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/cxx-structs.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/minimizing-roundoff.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -418,7 +418,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -429,11 +431,19 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Structures</h1>
+    <h1>Minimizing Roundoff</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summation-algorithms">Summation algorithms</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -443,101 +453,99 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="structures">
-<h1>Structures<a class="headerlink" href="#structures" title="Link to this heading">#</a></h1>
-<div class="admonition-reading admonition">
-<p class="admonition-title">reading</p>
-<p><a class="reference external" href="https://en.cppreference.com/w/c/language/struct">structures discussion at cppreference.com</a></p>
-</div>
-<p>A structure (or <code class="docutils literal notranslate"><span class="pre">struct</span></code>) is a compound datatype that can hold a mix
-of data.  In C++, a <code class="docutils literal notranslate"><span class="pre">struct</span></code> shares many similarities to a
-<code class="docutils literal notranslate"><span class="pre">class</span></code>—both hold data as well as functions that work on the data
-(called <em>members</em>).</p>
-<p id="sec-structplanet">Consider the following:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">Planet</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">{};</span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">{};</span><span class="w">            </span><span class="c1">// semi-major axis</span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">e</span><span class="p">{};</span><span class="w">            </span><span class="c1">// eccentricity</span>
-<span class="p">};</span>
-</pre></div>
-</div>
-<p>This is a structure that can describe some basic properties of a planet, including its
-name, semi-major axis, and eccentricity of the orbit.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>A common mistake is to forget the <code class="docutils literal notranslate"><span class="pre">;</span></code> after the definition of the <code class="docutils literal notranslate"><span class="pre">struct</span></code>.</p>
-</div>
-<p>We can create a <code class="docutils literal notranslate"><span class="pre">Planet</span></code> object via:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Planet</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Then we can access the different members of the <code class="docutils literal notranslate"><span class="pre">struct</span></code> using the “<code class="docutils literal notranslate"><span class="pre">.</span></code>” operator,
-e.g. <code class="docutils literal notranslate"><span class="pre">p.name</span></code>, <code class="docutils literal notranslate"><span class="pre">p.a</span></code>, and <code class="docutils literal notranslate"><span class="pre">p.e</span></code>.</p>
-<p>Let’s look at a program that stores the basic properties for the
-planets in our solar system and then loops over them and computes
-their orbital period using Kepler’s third law:</p>
+  <section id="minimizing-roundoff">
+<h1>Minimizing Roundoff<a class="headerlink" href="#minimizing-roundoff" title="Link to this heading">#</a></h1>
+<p>Consider subtracting the square of two numbers—taking the difference
+of two very close-in-value numbers is a prime place where roundoff can
+come into play.</p>
+<p>Instead of doing:</p>
 <div class="math notranslate nohighlight">
-\[\left ( \frac{P}{\mathrm{year}} \right )^2 = \left ( \frac{a}{\mathrm{AU}} \right )^3\]</div>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 33 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">struct_example.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+\[x^2 - y^2\]</div>
+<p>we can instead do:</p>
+<div class="math notranslate nohighlight">
+\[(x - y)(x + y)\]</div>
+<p>by factoring this, we are subtracting more reasonably sized numbers, reducing the roundoff.</p>
+<p>We can see this directly by doing this with single precision (<cite>float</cite>) and comparing to an answer computed via double precious (<cite>double</cite>)</p>
+<p>Here’s an example:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 15 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">subtraction.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
-
-<span class="k">struct</span><span class="w"> </span><span class="nc">Planet</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">{};</span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">{};</span><span class="w">            </span><span class="c1">// semi-major axis</span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">e</span><span class="p">{};</span><span class="w">            </span><span class="c1">// eccentricity</span>
-<span class="p">};</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Planet</span><span class="o">&gt;</span><span class="w"> </span><span class="n">planets</span><span class="p">{{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Mercury&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">0.3871</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.2056</span><span class="p">},</span>
-<span class="w">                                      </span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Venus&quot;</span><span class="p">,</span><span class="w">   </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">0.7233</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.0068</span><span class="p">},</span>
-<span class="w">                                      </span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Earth&quot;</span><span class="p">,</span><span class="w">   </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">1.0000</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.0167</span><span class="p">},</span>
-<span class="w">                                      </span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Mars&quot;</span><span class="p">,</span><span class="w">    </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">1.5237</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.0934</span><span class="p">},</span>
-<span class="w">                                      </span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Jupiter&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">5.2029</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.0484</span><span class="p">},</span>
-<span class="w">                                      </span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Saturn&quot;</span><span class="p">,</span><span class="w">  </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">9.5370</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.0539</span><span class="p">},</span>
-<span class="w">                                      </span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Uranus&quot;</span><span class="p">,</span><span class="w">  </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">19.189</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.0473</span><span class="p">},</span>
-<span class="w">                                      </span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Neptune&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">30.070</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.0086</span><span class="p">}};</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">1.00001e15</span><span class="p">};</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">{</span><span class="mf">1.0000e15</span><span class="p">};</span>
 
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">planets</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{} has a period of {:.2f} years</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
-<span class="w">                                 </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pow</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)));</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x^2 - y^2 :      &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;(x - y)(x + y) : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">m</span><span class="p">{</span><span class="mf">1.000001e15</span><span class="p">};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">n</span><span class="p">{</span><span class="mf">1.0000e15</span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;double precision value: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<p>Some notes:</p>
-<ul class="simple">
-<li><p>We put the definition of <code class="docutils literal notranslate"><span class="pre">Planet</span></code> outside of the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function.</p></li>
-<li><p>In the initialization of the <code class="docutils literal notranslate"><span class="pre">planets</span></code> vector, we use
-list-initialization for each of the planets in its own set of
-<code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p></li>
-<li><p>Notice that our vector <code class="docutils literal notranslate"><span class="pre">planets</span></code> is <code class="docutils literal notranslate"><span class="pre">const</span></code>.  This means that we
-cannot add to it (e.g., via <code class="docutils literal notranslate"><span class="pre">.push_back()</span></code>).</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>As mentioned above, a <code class="docutils literal notranslate"><span class="pre">class</span></code> is very similar to a <code class="docutils literal notranslate"><span class="pre">struct</span></code> in
-C++.  The main difference is that in a <code class="docutils literal notranslate"><span class="pre">struct</span></code> all of the
-members are publicly accessible while in a <code class="docutils literal notranslate"><span class="pre">class</span></code>, they are
-private unless we make them public.</p>
+<p>As another example, consider computing <a class="footnote-reference brackets" href="#f1" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>:</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{x + 1} - \sqrt{x}\]</div>
+<p>We can alternately rewrite this to avoid the subtraction of two close numbers:</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{x + 1} - \sqrt{x} = (\sqrt{x + 1} - \sqrt{x})
+     \left ( \frac{\sqrt{x+1} + \sqrt{x}}{\sqrt{x+1} + \sqrt{x}} \right )
+     = \frac{1}{\sqrt{x+1} + \sqrt{x}}\]</div>
+<p>Again we’ll compare a single-precision calculation using each of these methods
+to a double precision “correct answer”.  To ensure that we use the
+single-precision version of the <code class="docutils literal notranslate"><span class="pre">std::sqrt()</span></code> function, we will use single
+precision literal suffix, e.g., <code class="docutils literal notranslate"><span class="pre">1.0f</span></code> tells the compiler that this is a
+single-precision constant.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 16 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">squareroots.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">201010.0f</span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setprecision</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0f</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;r1 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; r2 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">xd</span><span class="p">{</span><span class="mf">201010.0</span><span class="p">};</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">xd</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">xd</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;d = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A common consideration when organizing data that is associated
-together is whether to do a struct-of-arrays or an
-array-of-structs.  See this discussion on <a class="reference external" href="https://en.wikipedia.org/wiki/AoS_and_SoA">AoS and SoA</a>.</p>
-<p>In our planet example above, we created an array of structs.  This
-is a natural organization if we want to loop over planets and
-access their data individually.</p>
 </div>
+<p>Notice that we get several more significant digits correct when we compute it with
+the second formulation compared to the original form.</p>
+<section id="summation-algorithms">
+<h2>Summation algorithms<a class="headerlink" href="#summation-algorithms" title="Link to this heading">#</a></h2>
+<p>Summing a sequence of numbers is a common place where roundoff error
+comes into play, especially if the numbers all vary in magnitude and
+you do not attempt to add them in a sorted fashion.  There are a
+number of different summation algorithms that keep track of the loss
+due to roundoff and compensate the sum, for example <a class="reference external" href="https://en.wikipedia.org/wiki/Kahan_summation_algorithm#See_also">the Kahan summation algorithm</a>.</p>
+<hr class="docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>this example is based on Yakowitz &amp; Szidarovszky</p>
+</aside>
+</aside>
+</section>
 </section>
 
 
@@ -552,20 +560,20 @@ access their data individually.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-auto-decltype.html"
+       href="function-preview.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></p>
+        <p class="prev-next-title">Preview of Functions</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-arrays.html"
+       href="floating-point-special-numbers.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Arrays</p>
+        <p class="prev-next-title">Special Floating Point Quantities</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -575,6 +583,23 @@ access their data individually.</p>
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summation-algorithms">Summation algorithms</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

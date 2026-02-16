@@ -201,6 +201,8 @@
 <li class="toctree-l1"><a class="reference internal" href="numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cmath.html">Numerical Library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="function-preview.html">Preview of Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minimizing-roundoff.html">Minimizing Roundoff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="floating-point-special-numbers.html">Special Floating Point Quantities</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
 <ul class="nav bd-sidenav">
@@ -445,11 +447,6 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-equality">Testing for equality</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimizing-roundoff">Minimizing roundoff</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summation-algorithms">Summation algorithms</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-numbers">Special numbers</a></li>
 </ul>
             </nav>
         </div>
@@ -476,11 +473,11 @@
 with 32-bit and 64-bit floating point numbers (single and double precision).  These bits
 are split between the significand and exponent as well as a single bit for the sign.</p>
 <p>Here’s the breakdown for a <code class="docutils literal notranslate"><span class="pre">double</span></code> type:</p>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/1024px-IEEE_754_Double_Floating_Point_Format.svg.png"><img alt="An illustration of allocating 64-bits between the significand and exponent." src="../_images/1024px-IEEE_754_Double_Floating_Point_Format.svg.png" style="width: 80%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">(source: wikipedia)</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">(source: wikipedia)</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Since the number is stored in binary, we can think about expanding a number in powers of 2:</p>
@@ -492,8 +489,8 @@ are split between the significand and exponent as well as a single bit for the s
           1 \cdot 2^{-4} +
           1 \cdot 2^{-5} + \ldots) \times 2^{-4}\]</div>
 <p>In fact, <code class="docutils literal notranslate"><span class="pre">0.1</span></code> cannot be exactly represented in floating point:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 7 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_roundoff.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 7 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_roundoff.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>
 
@@ -527,8 +524,8 @@ machine epsilon is</p>
 <code class="docutils literal notranslate"><span class="pre">std::numeric_limits</span></code>. We call this number <em>machine epsilon</em>.
 It is the smallest number that, when added to 1.0 gives a number
 distinct from 1.0.  We can use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator to check this.</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 8 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">epsilon.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 8 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">epsilon.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;limits&gt;</span>
 
@@ -578,8 +575,8 @@ but instead ask they they agree within some tolerance, e.g., test equality as:</
 <div class="math notranslate nohighlight">
 \[| x - y | &lt; \epsilon\]</div>
 <p>For example:</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-number">Listing 9 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">comparing.cpp</span></code></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-number">Listing 9 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">comparing.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -612,128 +609,6 @@ but instead ask they they agree within some tolerance, e.g., test equality as:</
 </pre></div>
 </div>
 </div>
-</section>
-<section id="minimizing-roundoff">
-<h2>Minimizing roundoff<a class="headerlink" href="#minimizing-roundoff" title="Link to this heading">#</a></h2>
-<p>Consider subtracting the square of two numbers—taking the difference of two very close-in-value numbers is a prime place where roundoff can come into play.</p>
-<p>Instead of doing:</p>
-<div class="math notranslate nohighlight">
-\[x^2 - y^2\]</div>
-<p>we can instead do:</p>
-<div class="math notranslate nohighlight">
-\[(x - y)(x + y)\]</div>
-<p>by factoring this, we are subtracting more reasonably sized numbers, reducing the roundoff.</p>
-<p>We can see this directly by doing this with single precision (<cite>float</cite>) and comparing to an answer computed via double precious (<cite>double</cite>)</p>
-<p>Here’s an example:</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-number">Listing 10 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">subtraction.cpp</span></code></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">1.00001e15</span><span class="p">};</span>
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">{</span><span class="mf">1.0000e15</span><span class="p">};</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x^2 - y^2 :      &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;(x - y)(x + y) : &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">m</span><span class="p">{</span><span class="mf">1.000001e15</span><span class="p">};</span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">n</span><span class="p">{</span><span class="mf">1.0000e15</span><span class="p">};</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;double precision value: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<p>As another example, consider computing <a class="footnote-reference brackets" href="#f1" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>:</p>
-<div class="math notranslate nohighlight">
-\[\sqrt{x + 1} - \sqrt{x}\]</div>
-<p>We can alternately rewrite this to avoid the subtraction of two close numbers:</p>
-<div class="math notranslate nohighlight">
-\[\sqrt{x + 1} - \sqrt{x} = (\sqrt{x + 1} - \sqrt{x})
-     \left ( \frac{\sqrt{x+1} + \sqrt{x}}{\sqrt{x+1} + \sqrt{x}} \right )
-     = \frac{1}{\sqrt{x+1} + \sqrt{x}}\]</div>
-<p>Again we’ll compare a single-precision calculation using each of these methods
-to a double precision “correct answer”.  To ensure that we use the
-single-precision version of the <code class="docutils literal notranslate"><span class="pre">std::sqrt()</span></code> function, we will use single
-precision literal suffix, e.g., <code class="docutils literal notranslate"><span class="pre">1.0f</span></code> tells the compiler that this is a
-single-precision constant.</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-number">Listing 11 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">squareroots.cpp</span></code></span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>
-
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">201010.0f</span><span class="p">};</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setprecision</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0f</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;r1 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; r2 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">xd</span><span class="p">{</span><span class="mf">201010.0</span><span class="p">};</span>
-
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">xd</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">xd</span><span class="p">);</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;d = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<p>Notice that we get several more significant digits correct when we compute it with
-the second formulation compared to the original form.</p>
-<section id="summation-algorithms">
-<h3>Summation algorithms<a class="headerlink" href="#summation-algorithms" title="Link to this heading">#</a></h3>
-<p>Summing a sequence of numbers is a common place where roundoff error
-comes into play, especially if the numbers all vary in magnitude and
-you do not attempt to add them in a sorted fashion.  There are a
-number of different summation algorithms that keep track of the loss
-due to roundoff and compensate the sum, for example <a class="reference external" href="https://en.wikipedia.org/wiki/Kahan_summation_algorithm#See_also">the Kahan summation algorithm</a>.</p>
-</section>
-</section>
-<section id="special-numbers">
-<h2>Special numbers<a class="headerlink" href="#special-numbers" title="Link to this heading">#</a></h2>
-<p>IEEE 754 defines a few special quantities:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">NaN</span></code> (not a number) is the result of <code class="docutils literal notranslate"><span class="pre">0.0/0.0</span></code> or <code class="docutils literal notranslate"><span class="pre">std::sqrt(-1.0)</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Inf</span></code> (infinity) is the result of <code class="docutils literal notranslate"><span class="pre">1.0/0.0</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-0</span></code> is a valid number and the standard says that <code class="docutils literal notranslate"><span class="pre">-0</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
-</ul>
-<p>We can test on these values using <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/math/isnan">std::isnan</a> and
-<a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/math/isinf.html">std::isinf</a>.  For
-instance, here we generate a NaN:</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-number">Listing 12 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">nan.cpp</span></code></span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">-1.0</span><span class="p">};</span>
-
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">isnan</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<hr class="docutils" />
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="f1" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>this example is based on Yakowitz &amp; Szidarovszky</p>
-</aside>
-</aside>
 </section>
 </section>
 
@@ -790,11 +665,6 @@ instance, here we generate a NaN:</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-equality">Testing for equality</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimizing-roundoff">Minimizing roundoff</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summation-algorithms">Summation algorithms</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-numbers">Special numbers</a></li>
 </ul>
   </nav></div>
 
