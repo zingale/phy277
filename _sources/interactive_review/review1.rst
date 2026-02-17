@@ -51,6 +51,17 @@ Bash shell
       the files there to the ``common/`` directory?  Give a single
       command for this.
 
+   c. Using wildcards, what is a single expression that matches all of
+      the files under ``files/``?
+
+#. You have a file on a group server--how do you make sure that anyone
+   on the machine can read it, but only you can write to it?
+
+#. What do you expect the output of the following command sequence to mean?
+
+   .. prompt:: bash
+
+      grep -i yellow database.txt | wc -l
 
 C++ Basics
 ==========
