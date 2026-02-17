@@ -45,6 +45,33 @@ Homework #2
       This directory only exists on ``portal`` and not ``portal2``.
 
 
+   .. dropdown:: solution
+
+      The ``scp`` command I would use is:
+
+      .. prompt:: bash
+
+         touch mzingale.txt
+         scp mzingale.txt mzingale@portal.mathlab.stonybrook.edu:/home/phy277_spr26
+
+      The output will look like:
+
+      ::
+
+        Authorized uses only. All activity may be monitored and reported.
+        mzingale@portal.mathlab.stonybrook.edu's password: 
+        mzingale.txt                                  100%    0     0.0KB/s 
+
+      When I ssh into portal, I should see:
+
+      ::
+
+        -rw-r-----. 1 mzingale     mzingale       0 Feb 17 11:44 mzingale.txt
+
+      This indicates that I (as the user) can read and write to the
+      file, and group members can read the file.  Anyone else on the
+      computer cannot access the file.
+
 
 2. *pipes*
 
@@ -91,16 +118,20 @@ Homework #2
       rabbit
       bear
 
-   We want to get just the types of animals that were seen, so any duplicates should
-   be removed.
+   We want to get just the types of animals that were seen, so any
+   duplicates should be removed.
 
-   If you just pipe the output to ``uniq`` it doesn't work, since ``uniq`` only looks
-   at the previous line.  So you need to sort the output first.
+   If you just pipe the output to ``uniq`` it doesn't work, since
+   ``uniq`` only looks at the previous line.  So you need to sort the
+   output first.
 
    *Your task:* Give the bash one-line sequence (several commands connected
    with pipes) that will give you just the list of animals observed,
    with no duplicates.
 
+   .. dropdown:: solution
+
+      cut -d , -f 2 animals.csv | sort | uniq
 
 3. *a script*
 
@@ -146,6 +177,23 @@ Homework #2
    * Finally, modify the file permissions, giving you
      (and only you---not group or other users) the ability to execute
      your script simply as ``./myscript.sh``
+
+   .. dropdown:: solution
+
+      Your script will look like:
+
+      .. code:: bash
+
+         #!/bin/bash
+
+         grep ATOM $1 | wc -l
+
+     and you would change the permissions as:
+
+     .. prompt:: bash
+
+        chomd u+x myscript.sh
+
 
    For this problem, in your ``homework2.txt`` file, share the command you used
    in the last step for the permissions.  Also upload your script separately

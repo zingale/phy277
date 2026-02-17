@@ -485,7 +485,31 @@ who (user, group members, and others) has access to read and write it?</p></li>
 <p class="admonition-title">Important</p>
 <p>This directory only exists on <code class="docutils literal notranslate"><span class="pre">portal</span></code> and not <code class="docutils literal notranslate"><span class="pre">portal2</span></code>.</p>
 </div>
-</li>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">scp</span></code> command I would use is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">touch<span class="w"> </span>mzingale.txt</span>
+<span class="prompt1">scp<span class="w"> </span>mzingale.txt<span class="w"> </span>mzingale@portal.mathlab.stonybrook.edu:/home/phy277_spr26</span>
+</pre></div></div><p class="sd-card-text">The output will look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Authorized</span> <span class="n">uses</span> <span class="n">only</span><span class="o">.</span> <span class="n">All</span> <span class="n">activity</span> <span class="n">may</span> <span class="n">be</span> <span class="n">monitored</span> <span class="ow">and</span> <span class="n">reported</span><span class="o">.</span>
+<span class="n">mzingale</span><span class="nd">@portal</span><span class="o">.</span><span class="n">mathlab</span><span class="o">.</span><span class="n">stonybrook</span><span class="o">.</span><span class="n">edu</span><span class="s1">&#39;s password:</span>
+<span class="n">mzingale</span><span class="o">.</span><span class="n">txt</span>                                  <span class="mi">100</span><span class="o">%</span>    <span class="mi">0</span>     <span class="mf">0.0</span><span class="n">KB</span><span class="o">/</span><span class="n">s</span>
+</pre></div>
+</div>
+<p class="sd-card-text">When I ssh into portal, I should see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">-----.</span> <span class="mi">1</span> <span class="n">mzingale</span>     <span class="n">mzingale</span>       <span class="mi">0</span> <span class="n">Feb</span> <span class="mi">17</span> <span class="mi">11</span><span class="p">:</span><span class="mi">44</span> <span class="n">mzingale</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p class="sd-card-text">This indicates that I (as the user) can read and write to the
+file, and group members can read the file.  Anyone else on the
+computer cannot access the file.</p>
+</div>
+</details></li>
 <li><p><em>pipes</em></p>
 <p>In class, we learned the <code class="docutils literal notranslate"><span class="pre">sort</span></code> and <code class="docutils literal notranslate"><span class="pre">wc</span></code> commands, and how they
 work with pipes (<code class="docutils literal notranslate"><span class="pre">|</span></code>).  Now for two new commands:</p>
@@ -500,11 +524,7 @@ the date, the second column is an animal, and the third column is a
 count (number of times the animal was seen).  These columns are separated
 by a comma, <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
 <p>If we do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">cut<span class="w"> </span>-d<span class="w"> </span>,<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span>animals.csv</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">cut<span class="w"> </span>-d<span class="w"> </span>,<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span>animals.csv</span>
 </pre></div></div><p>Then we get just the middle column.  Here the <code class="docutils literal notranslate"><span class="pre">-d</span></code> flag specifies
 the <em>delimiter</em> separating the columns, and the <code class="docutils literal notranslate"><span class="pre">-f</span></code> flag
 specifies which field we want (the second).</p>
@@ -523,14 +543,20 @@ specifies which field we want (the second).</p>
 <span class="n">bear</span>
 </pre></div>
 </div>
-<p>We want to get just the types of animals that were seen, so any duplicates should
-be removed.</p>
-<p>If you just pipe the output to <code class="docutils literal notranslate"><span class="pre">uniq</span></code> it doesn’t work, since <code class="docutils literal notranslate"><span class="pre">uniq</span></code> only looks
-at the previous line.  So you need to sort the output first.</p>
+<p>We want to get just the types of animals that were seen, so any
+duplicates should be removed.</p>
+<p>If you just pipe the output to <code class="docutils literal notranslate"><span class="pre">uniq</span></code> it doesn’t work, since
+<code class="docutils literal notranslate"><span class="pre">uniq</span></code> only looks at the previous line.  So you need to sort the
+output first.</p>
 <p><em>Your task:</em> Give the bash one-line sequence (several commands connected
 with pipes) that will give you just the list of animals observed,
 with no duplicates.</p>
-</li>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">cut -d , -f 2 animals.csv | sort | uniq</p>
+</div>
+</details></li>
 <li><p><em>a script</em></p>
 <p>In <code class="docutils literal notranslate"><span class="pre">~/shell-lesson-data/exercise-data/alkanes</span></code>, you’ll find a
 collection of files that describe different alkane molecules.
@@ -563,7 +589,21 @@ count the number of lines that have an atom.</p></li>
 (and only you—not group or other users) the ability to execute
 your script simply as <code class="docutils literal notranslate"><span class="pre">./myscript.sh</span></code></p></li>
 </ul>
-<p>For this problem, in your <code class="docutils literal notranslate"><span class="pre">homework2.txt</span></code> file, share the command you used
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text">Your script will look like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+grep<span class="w"> </span>ATOM<span class="w"> </span><span class="nv">$1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+</pre></div>
+</div>
+</div></blockquote>
+<p class="sd-card-text">and you would change the permissions as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chomd<span class="w"> </span>u+x<span class="w"> </span>myscript.sh</span>
+</pre></div></div></div>
+</details><p>For this problem, in your <code class="docutils literal notranslate"><span class="pre">homework2.txt</span></code> file, share the command you used
 in the last step for the permissions.  Also upload your script separately
 to Brightspace.</p>
 </li>
