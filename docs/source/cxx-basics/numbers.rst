@@ -13,4 +13,15 @@ this library:
    :language: c++
    :caption: ``circle.cpp``
 
+.. important::
+
+   By default, the compilers we are using assume C++17 as the
+   standard.  For access to the ``<numbers>`` library, we need to tell
+   the compiler to use the C++20 standard.  We do this by adding
+   ``-std=c++20`` to the compile line, e.g.:
+
+   .. prompt:: bash
+
+      g++ -std=c++20 -o circle circle.cpp
+
 
