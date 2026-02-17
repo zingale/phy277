@@ -59,8 +59,8 @@ Homework #2
       ::
 
         Authorized uses only. All activity may be monitored and reported.
-        mzingale@portal.mathlab.stonybrook.edu's password: 
-        mzingale.txt                                  100%    0     0.0KB/s 
+        mzingale@portal.mathlab.stonybrook.edu's password:
+        mzingale.txt                                  100%    0     0.0KB/s
 
       When I ssh into portal, I should see:
 
@@ -198,4 +198,3 @@ Homework #2
    For this problem, in your ``homework2.txt`` file, share the command you used
    in the last step for the permissions.  Also upload your script separately
    to Brightspace.
-
