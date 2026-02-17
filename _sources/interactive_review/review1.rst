@@ -13,8 +13,74 @@ This is a review of some of the concepts we covered up to this point in the seme
 Bash shell
 ==========
 
+#. You log into a computer--how do you find out what directory you
+   are currently in?
 
+
+#. How can you return to your home directory from anywhere on the
+   filesystem?
+
+
+#. What is the full command that will transfer a file from your home
+   directory on ``portal`` to your current directory on the desktop
+   computer you are sitting at in the MathLab?
+
+
+#. Here's an example filesystem on a computer you are using:
+
+   ::
+
+     /
+     ├── etc
+     ├── home
+     │   ├── common
+     │   ├── system-admin
+     │   ├── teacher
+     │   └── user
+     │       └── files
+     │           ├── report1.txt
+     │           ├── report2.txt
+     │           └── report3.txt
+     └── opt
+
+   Your home directory is ``user``
+
+   a. What is the full (absolute) path to the file ``report1.txt``?
+
+   b. If you are in the ``files/`` directory, how do you copy all of
+      the files there to the ``common/`` directory?  Give a single
+      command for this.
 
 
 C++ Basics
 ==========
+
+#. Suppose I wanted to store the number ``0.3`` with the most precision
+   possible--what C++ data type would I use?
+
+#. How can I compute $\sqrt{5.0}$?  Is there a particular header file
+   I would need to include?
+
+#. How do I compile a program called ``power.cpp`` to make an executable
+   named ``power``?
+
+#. Consider this code:
+
+   .. code:: c++
+
+      double x{1.5};
+      double y = 2.0 + x * 5.0;
+
+   what is the value of ``y``?
+
+#. Every C++ problem needs a function with what name?
+
+#. Consider the following code:
+
+   .. code:: c++
+
+      double x{1/3};
+      std::cout << 3 * x << std::endl;
+
+   what value is output to the screen?
+
