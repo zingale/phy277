@@ -54,6 +54,9 @@ Bash shell
    c. Using wildcards, what is a single expression that matches all of
       the files under ``files/``?
 
+   d. You want to delete the directory ``files/`` and everything in
+      it.  How do you do this?
+
 #. You have a file on a group server (``directory.txt``)--how do you
    make sure that anyone on the machine can read it, but only you can
    write to it?
@@ -63,6 +66,19 @@ Bash shell
    .. prompt:: bash
 
       grep -i yellow database.txt | wc -l
+
+#. Suppose you wanted to see the last 10 commands you entered at the Bash
+   prompt--what command sequence could do this?
+
+#. You have an executable in your current directory called ``hello``.  If you
+   just do:
+
+   .. prompt:: bash
+
+      hello
+
+   you get an error ("command not found").  How do you run this.
+
 
 C++ Basics
 ==========
@@ -75,6 +91,8 @@ C++ Basics
 
 #. How do I compile a program called ``power.cpp`` to make an executable
    named ``power``?
+
+#. When I write ``std::cout``, what is the meaning of the ``::``?
 
 #. Consider this code:
 
