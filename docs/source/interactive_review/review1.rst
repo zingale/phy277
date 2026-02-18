@@ -79,6 +79,9 @@ Bash shell
 
    you get an error ("command not found").  How do you run this.
 
+#. What command do I use to search for all instances of a particular
+   word in a file?
+
 
 C++ Basics
 ==========
