@@ -54,8 +54,9 @@ Bash shell
    c. Using wildcards, what is a single expression that matches all of
       the files under ``files/``?
 
-#. You have a file on a group server--how do you make sure that anyone
-   on the machine can read it, but only you can write to it?
+#. You have a file on a group server (``directory.txt``)--how do you
+   make sure that anyone on the machine can read it, but only you can
+   write to it?
 
 #. What do you expect the output of the following command sequence to mean?
 
@@ -81,6 +82,24 @@ C++ Basics
 
       double x{1.5};
       double y = 2.0 + x * 5.0;
+
+   what is the value of ``y``?
+
+#. Consider this code:
+
+   .. code:: c++
+
+      int x{2};
+      int y = 2 * x * x / 3;
+
+   what is the value of ``y``?
+
+#. Consider this code:
+
+   .. code:: c++
+
+      int x{2};
+      int y = 2*-x;
 
    what is the value of ``y``?
 
