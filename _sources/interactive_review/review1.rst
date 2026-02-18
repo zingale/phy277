@@ -135,3 +135,13 @@ C++ Basics
 
    what value is output to the screen?
 
+#. Consider the following code:
+
+   .. code:: c++
+
+      double x{1.0};
+      double eps{1.e-30};
+
+      bool y = (x + eps) != 1.0
+
+   what value would you expect ``y`` to have?

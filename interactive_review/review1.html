@@ -563,6 +563,15 @@ named <code class="docutils literal notranslate"><span class="pre">power</span><
 </div>
 <p>what value is output to the screen?</p>
 </li>
+<li><p>Consider the following code:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">1.0</span><span class="p">};</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">eps</span><span class="p">{</span><span class="mf">1.</span><span class="n">e</span><span class="mi">-30</span><span class="p">};</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">eps</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mf">1.0</span>
+</pre></div>
+</div>
+<p>what value would you expect <code class="docutils literal notranslate"><span class="pre">y</span></code> to have?</p>
+</li>
 </ol>
 </section>
 </section>
