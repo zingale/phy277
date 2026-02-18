@@ -53,7 +53,7 @@ Let's look at some examples of exponentiation and logarithms.
 .. important::
 
    ``std::log()`` is the natural logarithm.  For common
-   logarithm (base-10), use ``std:log10()``.
+   logarithm (base-10), use ``std::log10()``.
 
 .. literalinclude:: ../../../examples/floating_point/exp_log.cpp
    :language: c++
@@ -76,7 +76,7 @@ Absolute value
    This can be dangerous, since you might not get the function
    you intend from the C++ standard library.
 
-   This can be especially dangerous with ``std:abs()``.
+   This can be especially dangerous with ``std::abs()``.
 
 .. literalinclude:: ../../../examples/floating_point/absolute.cpp
    :language: c++
