@@ -1,0 +1,19 @@
+***************
+Feb 20 In-Class
+***************
+
+.. note::
+
+   There are no wrong answers.  This is for participation credit, and
+   is intended to let me know how well we understand the material at
+   this point.
+
+Access the form: https://forms.gle/KfDbUCByT7zqcERB7
+
+Question 1
+==========
+
+We've written a "Hello Word" program a number of times.  Without
+looking back through the notes, write a simple C++ program that
+outputs "Hello, World" to the screen.
+
