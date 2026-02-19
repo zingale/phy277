@@ -46,12 +46,17 @@ Let's look at the file permission block.  It looks something like this:
 
 * The next characters are grouped into 3 sets of 3 characters.  The sets are:
 
-  * *owner* or *user* : this tells you what you are allowed to do with the file
+  * ``u`` (*owner* or *user*) : this tells you what you are allowed to do with the file
 
-  * *group* : this tells you what anyone in the Unix group is allowed to do with the file
+  * ``g`` (*group*) : this tells you what anyone in the Unix group is allowed to do with the file
 
-  * *other* : this tells you what any user on the system that doesn't
+  * ``o`` ( *other*) : this tells you what any user on the system that doesn't
     fall into the first 2 categories can do with the file
+
+.. tip::
+
+   If you want to affect all 3 categories (user, group, and other), you can
+   use the ``a`` character.
 
 Within each set, the meanings are:
 
@@ -80,6 +85,15 @@ Here, ``g`` means "group".  You could also do ``u`` for "user" or
 ``o`` for "other".  The ``-`` means remove the permission (and a ``+``
 would add the permission), then the letters after that are what
 permission you are altering, ``r``, ``w`` or ``x``.
+
+.. tip::
+
+   To give everyone on the system read permissions to ``solar.pdf``,
+   you can do:
+
+   .. prompt:: bash
+
+      chmod a+r solar.pdf
 
 .. note::
 
