@@ -119,6 +119,7 @@ the top of many pages.
    :hidden:
 
    interactive_review/review1
+   interactive_review/more-practice1
 
 .. toctree::
    :maxdepth: 1
