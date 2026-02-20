@@ -235,7 +235,7 @@ Bash shell
 
       We use ``grep``.
 
-C++ Basics
+C++ basics
 ==========
 
 #. Suppose I wanted to store the number ``0.3`` with the most precision
