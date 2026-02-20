@@ -157,8 +157,9 @@ Bash shell
             cd ..
             rmdir files
 
-         This first changes directory into ``files``, then (using a wildcard) removes all the files,
-         then changes directory back up a lever (``..``) and then uses ``rmdir``, which only works
+         This first changes directory into ``files``, then (using a
+         wildcard) removes all the files, then changes directory back
+         up a level (``..``) and then uses ``rmdir``, which only works
          on an empty directory.
 
 #. You have a file on a group server (``directory.txt``)--how do you
@@ -218,7 +219,7 @@ Bash shell
 
    .. dropdown:: solution
 
-      You need to give the patch to the executable.  A relative path works, so you
+      You need to give the path to the executable.  A relative path works, so you
       can just do
 
       .. prompt:: bash
@@ -263,7 +264,7 @@ C++ Basics
 
          std::pow(5.0, 0.5);
 
-      In either case, we need to include the ``cmath`` header. 
+      In either case, we need to include the ``cmath`` header.
 
 #. How do I compile a program called ``power.cpp`` to make an executable
    named ``power``?
@@ -359,9 +360,10 @@ C++ Basics
 
    .. dropdown:: solution
 
-      Compared to ``1.0``, ``1.e-30`` (or $10^{-30}$) is very small, and it is below the roundoff
-      precision, so we would get ``1.0 + 1.e-30 = 1.0``.  (Remember that machine epsilon is ~ 1.e-16).
+      Compared to ``1.0``, the number ``1.e-30`` (or $10^{-30}$) is
+      very small, and it is below the roundoff precision, so we would
+      get ``1.0 + 1.e-30 = 1.0``.  (Remember that machine epsilon is ~
+      ``1.e-16``).
 
       The ``!=`` relation operator is *not equals*, so this is effectively asking if 1.0 is not equal to 1.0,
       and the answer is ``false``, so ``y`` gets set to ``false`` or ``0``.
-

@@ -585,8 +585,9 @@ not setup the <code class="docutils literal notranslate"><span class="pre">alias
 <span class="prompt1">rm<span class="w"> </span>*.txt</span>
 <span class="prompt1"><span class="nb">cd</span><span class="w"> </span>..</span>
 <span class="prompt1">rmdir<span class="w"> </span>files</span>
-</pre></div></div><p class="sd-card-text">This first changes directory into <code class="docutils literal notranslate"><span class="pre">files</span></code>, then (using a wildcard) removes all the files,
-then changes directory back up a lever (<code class="docutils literal notranslate"><span class="pre">..</span></code>) and then uses <code class="docutils literal notranslate"><span class="pre">rmdir</span></code>, which only works
+</pre></div></div><p class="sd-card-text">This first changes directory into <code class="docutils literal notranslate"><span class="pre">files</span></code>, then (using a
+wildcard) removes all the files, then changes directory back
+up a level (<code class="docutils literal notranslate"><span class="pre">..</span></code>) and then uses <code class="docutils literal notranslate"><span class="pre">rmdir</span></code>, which only works
 on an empty directory.</p>
 </div>
 </details></li>
@@ -633,7 +634,7 @@ just do:</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">You need to give the patch to the executable.  A relative path works, so you
+<p class="sd-card-text">You need to give the path to the executable.  A relative path works, so you
 can just do</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">./hello</span>
 </pre></div></div><p class="sd-card-text">Here, the <code class="docutils literal notranslate"><span class="pre">./</span></code> means “in this directory.</p>
@@ -766,8 +767,10 @@ and it has the highest precision here.  So this is equivalent to <code class="do
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Compared to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>, <code class="docutils literal notranslate"><span class="pre">1.e-30</span></code> (or <span class="math notranslate nohighlight">\(10^{-30}\)</span>) is very small, and it is below the roundoff
-precision, so we would get <code class="docutils literal notranslate"><span class="pre">1.0</span> <span class="pre">+</span> <span class="pre">1.e-30</span> <span class="pre">=</span> <span class="pre">1.0</span></code>.  (Remember that machine epsilon is ~ 1.e-16).</p>
+<p class="sd-card-text">Compared to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>, the number <code class="docutils literal notranslate"><span class="pre">1.e-30</span></code> (or <span class="math notranslate nohighlight">\(10^{-30}\)</span>) is
+very small, and it is below the roundoff precision, so we would
+get <code class="docutils literal notranslate"><span class="pre">1.0</span> <span class="pre">+</span> <span class="pre">1.e-30</span> <span class="pre">=</span> <span class="pre">1.0</span></code>.  (Remember that machine epsilon is ~
+<code class="docutils literal notranslate"><span class="pre">1.e-16</span></code>).</p>
 <p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">!=</span></code> relation operator is <em>not equals</em>, so this is effectively asking if 1.0 is not equal to 1.0,
 and the answer is <code class="docutils literal notranslate"><span class="pre">false</span></code>, so <code class="docutils literal notranslate"><span class="pre">y</span></code> gets set to <code class="docutils literal notranslate"><span class="pre">false</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 </div>
