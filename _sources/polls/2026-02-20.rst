@@ -13,7 +13,26 @@ Access the form: https://forms.gle/KfDbUCByT7zqcERB7
 Question 1
 ==========
 
-We've written a "Hello Word" program a number of times.  Without
+We've written a "Hello World" program a number of times.  Without
 looking back through the notes, write a simple C++ program that
 outputs "Hello, World" to the screen.
+
+.. dropdown:: solution
+
+   Our basic "Hello, World" program is:
+
+   .. code:: c++
+
+      #include <iostream>
+
+      int main() {
+          std::cout << "Hello, World" << std::endl;
+      }
+
+   Some comments:
+
+   * Statements end with semicolons
+   * ``<<`` is the output stream operator, ``>>`` would be for input
+   * ``echo`` is a Bash command, not C++
+   * ``main`` has a type ``int``, we must specify that.
 

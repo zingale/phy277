@@ -204,7 +204,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Review</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../interactive_review/review1.html">Review I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactive_review/review1.html">In-Class Review I</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
 <ul class="nav bd-sidenav">
@@ -467,10 +467,29 @@ this point.</p>
 <p>Access the form: <a class="reference external" href="https://forms.gle/KfDbUCByT7zqcERB7">https://forms.gle/KfDbUCByT7zqcERB7</a></p>
 <section id="question-1">
 <h2>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h2>
-<p>We’ve written a “Hello Word” program a number of times.  Without
+<p>We’ve written a “Hello World” program a number of times.  Without
 looking back through the notes, write a simple C++ program that
 outputs “Hello, World” to the screen.</p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Our basic “Hello, World” program is:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello, World&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Some comments:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Statements end with semicolons</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> is the output stream operator, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> would be for input</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">echo</span></code> is a Bash command, not C++</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">main</span></code> has a type <code class="docutils literal notranslate"><span class="pre">int</span></code>, we must specify that.</p></li>
+</ul>
+</div>
+</details></section>
 </section>
 
 

@@ -1,6 +1,6 @@
-********
-Review I
-********
+*****************
+In-Class Review I
+*****************
 
 This is a review of some of the concepts we covered up to this point in the semester.
 
