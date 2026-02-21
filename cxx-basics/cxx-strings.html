@@ -466,18 +466,26 @@
 <p class="admonition-title">reading</p>
 <p><a class="reference external" href="https://cplusplus.com/reference/string/string/">std::string</a> on cplusplus.com</p>
 </div>
+<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/String_(computer_science)">string</a>
+is a sequence of characters and is how we represent text in a computer
+program.</p>
 <section id="character-vs-string">
 <h2>Character vs string<a class="headerlink" href="#character-vs-string" title="Link to this heading">#</a></h2>
 <p>In C++, there is a distinction between a single character and a string.</p>
 <ul>
-<li><p>Single quotes, <code class="docutils literal notranslate"><span class="pre">'x'</span></code> are used to hold a single character.  This will have the
-datatype <code class="docutils literal notranslate"><span class="pre">char</span></code>,  e.g.,</p>
+<li><p>Single quotes, <code class="docutils literal notranslate"><span class="pre">'x'</span></code> are used to hold a single character.  This
+will have the datatype <code class="docutils literal notranslate"><span class="pre">char</span></code>, e.g.,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;x&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>A <code class="docutils literal notranslate"><span class="pre">char</span></code> is typically a single byte, and therefore can represent
+256 values.  Traditionally, the <a class="reference external" href="https://en.wikipedia.org/wiki/ASCII">ASCII encoding</a> was used.</p>
+<p>An alternate encoding, <a class="reference external" href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> can represent &gt; 1 million
+characters, but cannot fit in a single <code class="docutils literal notranslate"><span class="pre">char</span></code>.</p>
 </li>
-<li><p>Double quotes, <code class="docutils literal notranslate"><span class="pre">&quot;This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">string&quot;</span></code> hold a collection of characters—what we
-call a string.  This uses the datatype <code class="docutils literal notranslate"><span class="pre">std::string</span></code>, e.g.,</p>
+<li><p>Double quotes, <code class="docutils literal notranslate"><span class="pre">&quot;This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">string&quot;</span></code> hold a collection of
+characters—what we call a string.  This uses the datatype
+<code class="docutils literal notranslate"><span class="pre">std::string</span></code>, e.g.,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
 <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;This is a string&quot;</span><span class="p">;</span>
@@ -539,6 +547,25 @@ here’s an 80-character line:</p>
 <p class="admonition-title">Note</p>
 <p>A nice overview of working with C++ strings is provided by “hacking C++”:
 <a class="reference external" href="https://hackingcpp.com/cpp/std/string.png">std::string</a></p>
+</div>
+<p>A C++ string is a collection of bytes (<code class="docutils literal notranslate"><span class="pre">char</span></code>) and on many operating
+systems will be Unicode (UTF-8 encoding).  For example, we could do:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">greek</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;αβγδεζηθικλμνξοπρστυφχψω&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>By default, when we create a string, it is initialized to be empty, so
+we don’t need to do:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">a</span><span class="p">{};</span>
+</pre></div>
+</div>
+<p>but instead can just do:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</pre></div>
+</div>
 </div>
 </section>
 <section id="escape-sequences">
