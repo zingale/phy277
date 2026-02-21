@@ -34,6 +34,24 @@ Bash shell
 
          history > session.txt
 
+#. You want to create a file called ``hello.cpp`` on the ``portal`` machine,
+   what is the command for a text editor that you can use?
+
+   .. dropdown:: solution
+
+      .. prompt:: bash
+
+         You can use ``nano`` or ``emacs``---those are the two editors we
+         have used in class.
+
+#. What is the difference between the ``mv`` command and the ``cp`` command?
+
+   .. dropdown:: solution
+
+      ``mv`` moves a file while ``cp`` copies a file.  They both take arguments for the source
+      and destination.  After ``mv`` the file is no longer at the source location.
+
+
 C++ basics
 ==========
 
