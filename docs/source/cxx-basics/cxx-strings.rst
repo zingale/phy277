@@ -6,20 +6,32 @@ Strings
 
    `std::string <https://cplusplus.com/reference/string/string/>`__ on cplusplus.com
 
+A `string <https://en.wikipedia.org/wiki/String_(computer_science)>`_
+is a sequence of characters and is how we represent text in a computer
+program.
+
 Character vs string
 ===================
 
 In C++, there is a distinction between a single character and a string.
 
-* Single quotes, ``'x'`` are used to hold a single character.  This will have the
-  datatype ``char``,  e.g.,
+* Single quotes, ``'x'`` are used to hold a single character.  This
+  will have the datatype ``char``, e.g.,
 
   .. code:: c++
 
      char c = 'x';
 
-* Double quotes, ``"This is a string"`` hold a collection of characters---what we
-  call a string.  This uses the datatype ``std::string``, e.g.,
+  A ``char`` is typically a single byte, and therefore can represent
+  256 values.  Traditionally, the `ASCII encoding <https://en.wikipedia.org/wiki/ASCII>`_ was used.
+
+  An alternate encoding, `Unicode
+  <https://en.wikipedia.org/wiki/Unicode>`_ can represent > 1 million
+  characters, but cannot fit in a single ``char``.
+
+* Double quotes, ``"This is a string"`` hold a collection of
+  characters---what we call a string.  This uses the datatype
+  ``std::string``, e.g.,
 
   .. code:: c++
 
@@ -69,6 +81,31 @@ Here, ``'-'`` is a ``char`` and not a string.
 
    A nice overview of working with C++ strings is provided by "hacking C++":
    `std::string <https://hackingcpp.com/cpp/std/string.png>`_
+
+A C++ string is a collection of bytes (``char``) and on many operating
+systems will be Unicode (UTF-8 encoding).  For example, we could do:
+
+.. code:: c++
+
+   #include <string>
+
+   std::string greek = "αβγδεζηθικλμνξοπρστυφχψω";
+
+.. tip::
+
+   By default, when we create a string, it is initialized to be empty, so
+   we don't need to do:
+
+   .. code:: c++
+
+      std::string a{};
+
+   but instead can just do:
+
+   .. code:: c++
+
+      std::string a;
+
 
 Escape sequences
 ================
