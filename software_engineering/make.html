@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hello, World &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Makefiles &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -50,11 +50,11 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/hello_world';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'software_engineering/make';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="What About AI?" href="ai.html" />
-    <link rel="prev" title="Computation" href="computing.html" />
+    <link rel="next" title="In-Class Example: Splitting Up Our Orbit Code" href="inclass-split-orbit.html" />
+    <link rel="prev" title="Working with Multiple Files" href="multiple-files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -146,16 +146,16 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Logistics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="topics.html">Topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="remote_servers.html"><code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="using_your_computer.html">Using your own computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/topics.html">Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/remote_servers.html"><code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/using_your_computer.html">Using your own computer</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="computing.html">Computation</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hello, World</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ai.html">What About AI?</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/computing.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/hello_world.html">Hello, World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/ai.html">What About AI?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The UNIX Shell</span></p>
 <ul class="nav bd-sidenav">
@@ -169,7 +169,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../shell/shell-wildcards.html">Wildcards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/shell-redirection-pipes.html">Redirection and Pipes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/finding.html"><code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="scp.html"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/scp.html"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/permissions.html">File Permissions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/path.html">Search Path</a></li>
 </ul>
@@ -257,11 +257,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/monte-carlo.html">Monte Carlo Methods</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../software_engineering/compiler-flags.html">Making the Compiler Do the Work</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../software_engineering/multiple-files.html">Working with Multiple Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../software_engineering/make.html">Makefiles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../software_engineering/inclass-split-orbit.html">In-Class Example: Splitting Up Our Orbit Code</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="compiler-flags.html">Making the Compiler Do the Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple-files.html">Working with Multiple Files</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Makefiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inclass-split-orbit.html">In-Class Example: Splitting Up Our Orbit Code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">In-class Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -352,7 +352,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/getting_started/hello_world.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/software_engineering/make.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,7 +369,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/getting_started/hello_world.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/software_engineering/make.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,7 +386,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fgetting_started/hello_world.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fsoftware_engineering/make.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -444,7 +444,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hello, World</h1>
+    <h1>Makefiles</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -454,7 +454,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-gnumakefile">A first <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizing-our-gnumakefile">Generalizing our <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#going-further">Going further</a></li>
 </ul>
             </nav>
         </div>
@@ -466,61 +468,178 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="hello-world">
-<h1>Hello, World<a class="headerlink" href="#hello-world" title="Link to this heading">#</a></h1>
-<p>Just to make sure we have the necessary tools for this course, we’ll
-do a quick <a class="reference external" href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">“Hello, World!”</a> program.</p>
-<p>This will use a few concepts that we will explore in depth shortly.</p>
-<p>To write the code for our program, we need an editor.  We’ll use
-the simple <code class="docutils literal notranslate"><span class="pre">nano</span></code> editor here, but we’ll explore others in a
-bit.</p>
-<p>We start at the Unix command line, indicated by the <code class="docutils literal notranslate"><span class="pre">$</span></code> prompt.</p>
-<p>Open nano on the command line simply by typing <code class="docutils literal notranslate"><span class="pre">nano</span></code>:</p>
+  <section id="makefiles">
+<span id="sec-makefiles"></span><h1>Makefiles<a class="headerlink" href="#makefiles" title="Link to this heading">#</a></h1>
+<p>We’ll look at <a class="reference external" href="https://www.gnu.org/software/make/">GNU Make</a> to
+manage building projects that are split across multiple files.  Make
+allows us to specify rules for how to compile and link the code.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A popular alternative to GNU Make is <a class="reference external" href="https://cmake.org/">CMake</a>.</p>
+</div>
+<p>We’ll use this to manage our <a class="reference internal" href="multiple-files.html#sec-multiplefiles"><span class="std std-ref">planets + multiple files</span></a>
+example.</p>
+<section id="a-first-gnumakefile">
+<h2>A first <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code><a class="headerlink" href="#a-first-gnumakefile" title="Link to this heading">#</a></h2>
+<p>Here’s a basic makefile, which we’ll name <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 70 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="c"># by default, make will try to build the first target it encounters.</span>
+<span class="c"># here we make up a dummy name &quot;ALL&quot; (note: this is not a special make</span>
+<span class="c"># name, it is just commonly used).</span>
+
+<span class="nf">ALL</span><span class="o">:</span><span class="w"> </span><span class="n">planet_sort_split</span>
+
+<span class="c"># explicitly list the rules for making each of the object files</span>
+
+<span class="nf">planet_sort_split.o</span><span class="o">:</span><span class="w"> </span><span class="n">planet_sort_split</span>.<span class="n">cpp</span> <span class="n">planet</span>.<span class="n">H</span>
+<span class="w">	</span>g++<span class="w"> </span>-c<span class="w"> </span>planet_sort_split.cpp
+
+<span class="nf">planet.o</span><span class="o">:</span><span class="w"> </span><span class="n">planet</span>.<span class="n">cpp</span> <span class="n">planet</span>.<span class="n">H</span>
+<span class="w">	</span>g++<span class="w"> </span>-c<span class="w"> </span>planet.cpp
+
+<span class="c"># explicitly write the rule for linking together the executable</span>
+
+<span class="nf">planet_sort_split</span><span class="o">:</span><span class="w"> </span><span class="n">planet_sort_split</span>.<span class="n">o</span> <span class="n">planet</span>.<span class="n">o</span>
+<span class="w">	</span>g++<span class="w"> </span>-o<span class="w"> </span>planet_sort_split<span class="w"> </span>planet_sort_split.o<span class="w"> </span>planet.o
+</pre></div>
+</div>
+</div>
+<p>There are a few different types of lines, but the most important are
+the rules that are of the form:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">target</span><span class="p">:</span>   <span class="n">dependencies</span> <span class="o">...</span>
+          <span class="n">commands</span>
+          <span class="o">...</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>make uses a tab character to indent the commands, not spaces.</p>
+</div>
+<p>For example, the rule:</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">planet_sort_split.o</span><span class="o">:</span><span class="w"> </span><span class="n">planet_sort_split</span>.<span class="n">cpp</span> <span class="n">planet</span>.<span class="n">H</span>
+<span class="w">     </span>g++<span class="w"> </span>-c<span class="w"> </span>planet_sort_split.cpp
+</pre></div>
+</div>
+<p>says that <code class="docutils literal notranslate"><span class="pre">planet_sort_split.o</span></code> depends on the files
+<code class="docutils literal notranslate"><span class="pre">planet_sort_split.cpp</span></code> and <code class="docutils literal notranslate"><span class="pre">planet.H</span></code>.  And the rule to make it
+is <code class="docutils literal notranslate"><span class="pre">g++</span> <span class="pre">-c</span> <span class="pre">planet_sort_split.cpp</span></code>.  By specifying the dependencies,
+<code class="docutils literal notranslate"><span class="pre">make</span></code> knows whether it needs to recompile a file by looking at
+whether its dependencies changed.</p>
+<p>It is common to put a target called <code class="docutils literal notranslate"><span class="pre">ALL</span></code> at the top, since by
+default <code class="docutils literal notranslate"><span class="pre">make</span></code> will try to build the first target it encounters.</p>
+<p>We build the project by doing:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
 }
-</style><span class="prompt1">nano</span>
-</pre></div></div><p>You should have a window that looks something like this:</p>
-<a class="reference internal image-reference" href="../_images/nano.png"><img alt="the nano editor" class="align-center" src="../_images/nano.png" style="width: 90%;" />
-</a>
-<p>Now we can simply type our C++ code in the window.  Enter the following:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</style><span class="prompt1">make</span>
+</pre></div></div><div class="admonition-try-it admonition">
+<p class="admonition-title">try it…</p>
+<p>If you type <code class="docutils literal notranslate"><span class="pre">make</span></code> again, it doesn’t do anything, since none of the source
+files changed, so it does not need to update the build.</p>
+<p>If you modify one file, e.g.,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">touch<span class="w"> </span>planet.cpp</span>
+</pre></div></div><p>and then do make again:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">make</span>
+</pre></div></div><p>Then it will only execute the rules that depend on the file that
+changed.</p>
+</div>
+</section>
+<section id="generalizing-our-gnumakefile">
+<h2>Generalizing our <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code><a class="headerlink" href="#generalizing-our-gnumakefile" title="Link to this heading">#</a></h2>
+<p>Our first makefile required us to write a rule for every <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> file
+explicitly.  Instead, we can use <a class="reference external" href="https://www.gnu.org/software/make/manual/html_node/Pattern-Rules.html">pattern rules</a>
+and <a class="reference external" href="https://www.gnu.org/software/make/manual/html_node/Wildcard-Function.html">wildcards</a>
+to automate a lot of the logic.</p>
+<p>Here’s the improved <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 71 </span><span class="caption-text">new <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="c"># by default, make will try to build the first target it encounters.</span>
+<span class="c"># here we make up a dummy name &quot;ALL&quot; (note: this is not a special make</span>
+<span class="c"># name, it is just commonly used).</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="nf">ALL</span><span class="o">:</span><span class="w"> </span><span class="n">planet_sort_split</span>
+
+<span class="c"># find all of the source files and header files</span>
+
+<span class="nv">SOURCES</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.cpp<span class="k">)</span>
+<span class="nv">HEADERS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.H<span class="k">)</span>
+
+<span class="c"># create a list of object files by replacing .cpp with .o</span>
+
+<span class="nv">OBJECTS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>SOURCES:.cpp<span class="o">=</span>.o<span class="k">)</span>
+
+<span class="c"># a recipe for making an object file from a .cpp file</span>
+<span class="c"># Note: this makes every header file a dependency of every object file,</span>
+<span class="c"># which is not ideal, but it is safe.</span>
+
+<span class="nf">%.o </span><span class="o">:</span><span class="w"> </span>%.<span class="n">cpp</span> ${<span class="n">HEADERS</span>}
+<span class="w">	</span>g++<span class="w"> </span>-c<span class="w"> </span>$&lt;
+
+<span class="c"># explicitly write the rule for linking together the executable</span>
+
+<span class="nf">planet_sort_split</span><span class="o">:</span><span class="w"> </span>${<span class="n">OBJECTS</span>}
+<span class="w">	</span>g++<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span><span class="si">${</span><span class="nv">OBJECTS</span><span class="si">}</span>
 </pre></div>
+</div>
+</div>
+<p>The first thing we do is find all of the sources and headers:</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nv">SOURCES</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.cpp<span class="k">)</span>
+<span class="nv">HEADERS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.H<span class="k">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">:=</span></code> operator evaluates these expressions immediately when
+<code class="docutils literal notranslate"><span class="pre">make</span></code> encounters them and stores the results in the variables
+<code class="docutils literal notranslate"><span class="pre">SOURCES</span></code> and <code class="docutils literal notranslate"><span class="pre">HEADERS</span></code>.  To reference the list of files in
+these variables, we use <code class="docutils literal notranslate"><span class="pre">${}</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">${SOURCES}</span></code>.</p>
+<p>The next trick is that we create a list of object files by automatically
+replacing the <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> extension with a <code class="docutils literal notranslate"><span class="pre">.o</span></code> extension via the <code class="docutils literal notranslate"><span class="pre">make</span></code>
+expression:</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nv">OBJECTS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>SOURCES:.cpp<span class="o">=</span>.o<span class="k">)</span>
+</pre></div>
+</div>
+<p>Finally, we have a generic rule to compile a C++ file:</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">%.o </span><span class="o">:</span><span class="w"> </span>%.<span class="n">cpp</span> ${<span class="n">HEADERS</span>}
+<span class="w">     </span>g++<span class="w"> </span>-c<span class="w"> </span>$&lt;
+</pre></div>
+</div>
+<p>Note that we make every header file a dependency for every object
+file, whether or not it is included in the source file.  This is not
+necessary, but simplifies how we specify the dependencies.</p>
+<p>We use a make <a class="reference external" href="https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html">automatic variable</a>,
+<code class="docutils literal notranslate"><span class="pre">$&lt;</span></code> to indicate the first name in the dependencies.</p>
+<p>We use another automatic variable in the final rule, <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code> to indicate
+the name of the target, to be used as the executable name:</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">planet_sort_split</span><span class="o">:</span><span class="w"> </span>${<span class="n">OBJECTS</span>}
+<span class="w">     </span>g++<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span><span class="si">${</span><span class="nv">OBJECTS</span><span class="si">}</span>
+</pre></div>
+</div>
+</section>
+<section id="going-further">
+<h2>Going further<a class="headerlink" href="#going-further" title="Link to this heading">#</a></h2>
+<p>There are more things we can do to generalize our makefile.</p>
+<ul class="simple">
+<li><p>We can use <a class="reference external" href="https://stackoverflow.com/questions/11855386/using-g-with-mmd-in-makefile-to-automatically-generate-dependencies">g++ to automatically determine dependencies</a>.  Also see the <a class="reference external" href="https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html">GNU make automatic prerequisites</a>.</p></li>
+<li><p>We can have the makefile create code at build time, for instance, writing
+a function that contains the current git hash of the code</p></li>
+<li><p>We can different levels of build: optimized and debug</p></li>
+</ul>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">try it…</p>
+<p>Modify the <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> to add the warning flags we discussed earlier to
+the compilation of each source.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you hover your mouse over the code, a “copy to clipboard” icon will appear in the upper
-right of the code box.  Click this and then you can paste into your editor window.</p>
-<p>You may need to use <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">v</kbd> to paste it, instead of just <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">v</kbd>.
-You may also be able to <em>right-click</em> on your mouse and paste.</p>
+<p>A common target in makefiles is <code class="docutils literal notranslate"><span class="pre">clean</span></code>, which will delete the intermediate
+<code class="docutils literal notranslate"><span class="pre">*.o</span></code> files and the executable.</p>
 </div>
-<p>Now save it by doing <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">O</kbd>, where <kbd class="kbd docutils literal notranslate">Ctrl</kbd> here means you hold down the <em>control</em> key on the keyword.</p>
-<p>It will ask for a name, so we’ll use <code class="docutils literal notranslate"><span class="pre">hello.cpp</span></code>.</p>
-<p>Now we can exit via <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">X</kbd>.</p>
-<p>We just created the source code for our first program.  We now need to
-compile it into instructions the computer understands.  The C++
-compiler we will be using is called <code class="docutils literal notranslate"><span class="pre">g++</span></code> and we compile this simple
-program as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">g++<span class="w"> </span>-o<span class="w"> </span>hello<span class="w"> </span>hello.cpp</span>
-</pre></div></div><p>Then we can run our program as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">./hello</span>
-</pre></div></div><section id="next-steps">
-<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
-<p>There is quite a lot going on here that we need to understand before we dive more deeply into C++:</p>
-<ul class="simple">
-<li><p>We started out with a simple <code class="docutils literal notranslate"><span class="pre">$</span></code> <em>prompt</em> in our terminal.  What else can we do there?</p></li>
-<li><p>How does Unix manage files (like <code class="docutils literal notranslate"><span class="pre">hello.cpp</span></code>) and how can we copy, modify, move, etc. them?</p></li>
-<li><p>What is that compiler command doing? what does the <code class="docutils literal notranslate"><span class="pre">-o</span></code> mean?</p></li>
-<li><p>What is the meaning of the <code class="docutils literal notranslate"><span class="pre">./</span></code> that we put in front of <code class="docutils literal notranslate"><span class="pre">hello</span></code>?</p></li>
-</ul>
-<p>We’ll start by learning more about Unix, the Unix filesystem, and how to work with the command line.</p>
-<p>After that’ we’ll move onto programming.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Here’s a <a class="reference external" href="https://github.com/zingale/phy504/blob/main/examples/vectors/GNUmakefile">GNUmakefile</a>
+I use with some of the in-class examples to build several executables in the same directory.</p>
+</div>
 </section>
 </section>
 
@@ -536,20 +655,20 @@ program as:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="computing.html"
+       href="multiple-files.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Computation</p>
+        <p class="prev-next-title">Working with Multiple Files</p>
       </div>
     </a>
     <a class="right-next"
-       href="ai.html"
+       href="inclass-split-orbit.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">What About AI?</p>
+        <p class="prev-next-title">In-Class Example: Splitting Up Our Orbit Code</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -571,7 +690,9 @@ program as:</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-gnumakefile">A first <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizing-our-gnumakefile">Generalizing our <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#going-further">Going further</a></li>
 </ul>
   </nav></div>
 
