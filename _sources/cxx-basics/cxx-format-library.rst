@@ -96,22 +96,28 @@ this gives:
 
 Let's see what these do:
 
-* for the ``int x{10}``, we use the specifier ``03d``.  This uses 3
-  characters for the width of the field, puts ``0`` s in any empty
-  field, and the ``d`` specifies that it is an integer.
+* for the ``int x{10}``, we use the specifier ``03d``.
 
-* for the ``double y{1.23e-6}``, the specifier ``8.3g`` says to use 8 characters
-  for the width with 3 digits of precision after the decimal, and the ``g``
-  asks it to use scientific notation for large exponents and fixed formatting
-  for small exponents.
+  This uses 3 characters for the width of the field, puts ``0`` s in
+  any empty field, and the ``d`` specifies that it is an integer.
 
-* for the ``double z{10.25}``, the specifier ``4.1f`` says to use 4 characters
-  for the width with 1 digit of precision after the decimal, and the ``f``
-  requires it to use fixed-format (never switch to scientific notation).
+* for the ``double y{1.23e-6}``, we use the specifier ``8.3g``.
 
-* finally, for the ``std::string a{"test"}``, the specifier ``10`` says to
-  use 10 characters for the width.  Since our string is only 4 characters
-  long, we see that it adds spaces to the end.
+  This says to use 8 characters for the width with 3 digits of
+  precision after the decimal, and the ``g`` asks it to use scientific
+  notation for large exponents and fixed formatting for small
+  exponents.
+
+* for the ``double z{10.25}``, we use the specifier ``4.1f``.
+
+  This says to use 4 characters for the width with 1 digit of
+  precision after the decimal, and the ``f`` requires it to use
+  fixed-format (never switch to scientific notation).
+
+* for the ``std::string a{"test"}``, we use the specifier ``10``.
+
+  This says to use 10 characters for the width.  Since our string is
+  only 4 characters long, we see that it adds spaces to the end.
 
 .. tip::
 

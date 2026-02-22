@@ -587,20 +587,26 @@ specifying the width of the output, the precision, and the type.</p>
 </pre></div>
 </div>
 <p>Let’s see what these do:</p>
-<ul class="simple">
-<li><p>for the <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">x{10}</span></code>, we use the specifier <code class="docutils literal notranslate"><span class="pre">03d</span></code>.  This uses 3
-characters for the width of the field, puts <code class="docutils literal notranslate"><span class="pre">0</span></code> s in any empty
-field, and the <code class="docutils literal notranslate"><span class="pre">d</span></code> specifies that it is an integer.</p></li>
-<li><p>for the <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">y{1.23e-6}</span></code>, the specifier <code class="docutils literal notranslate"><span class="pre">8.3g</span></code> says to use 8 characters
-for the width with 3 digits of precision after the decimal, and the <code class="docutils literal notranslate"><span class="pre">g</span></code>
-asks it to use scientific notation for large exponents and fixed formatting
-for small exponents.</p></li>
-<li><p>for the <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">z{10.25}</span></code>, the specifier <code class="docutils literal notranslate"><span class="pre">4.1f</span></code> says to use 4 characters
-for the width with 1 digit of precision after the decimal, and the <code class="docutils literal notranslate"><span class="pre">f</span></code>
-requires it to use fixed-format (never switch to scientific notation).</p></li>
-<li><p>finally, for the <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">a{&quot;test&quot;}</span></code>, the specifier <code class="docutils literal notranslate"><span class="pre">10</span></code> says to
-use 10 characters for the width.  Since our string is only 4 characters
-long, we see that it adds spaces to the end.</p></li>
+<ul>
+<li><p>for the <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">x{10}</span></code>, we use the specifier <code class="docutils literal notranslate"><span class="pre">03d</span></code>.</p>
+<p>This uses 3 characters for the width of the field, puts <code class="docutils literal notranslate"><span class="pre">0</span></code> s in
+any empty field, and the <code class="docutils literal notranslate"><span class="pre">d</span></code> specifies that it is an integer.</p>
+</li>
+<li><p>for the <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">y{1.23e-6}</span></code>, we use the specifier <code class="docutils literal notranslate"><span class="pre">8.3g</span></code>.</p>
+<p>This says to use 8 characters for the width with 3 digits of
+precision after the decimal, and the <code class="docutils literal notranslate"><span class="pre">g</span></code> asks it to use scientific
+notation for large exponents and fixed formatting for small
+exponents.</p>
+</li>
+<li><p>for the <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">z{10.25}</span></code>, we use the specifier <code class="docutils literal notranslate"><span class="pre">4.1f</span></code>.</p>
+<p>This says to use 4 characters for the width with 1 digit of
+precision after the decimal, and the <code class="docutils literal notranslate"><span class="pre">f</span></code> requires it to use
+fixed-format (never switch to scientific notation).</p>
+</li>
+<li><p>for the <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">a{&quot;test&quot;}</span></code>, we use the specifier <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
+<p>This says to use 10 characters for the width.  Since our string is
+only 4 characters long, we see that it adds spaces to the end.</p>
+</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
