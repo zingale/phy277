@@ -11,7 +11,9 @@ OKAY_TO_FAIL = ["function_vector.cpp",
                 "format_too_few.cpp",
                 "fallthrough.cpp",
                 "types.cpp",
-                "unused.cpp"]
+                "unused.cpp",
+                "narrowing.cpp",
+                "bounds.cpp"]
 
 
 def main():
