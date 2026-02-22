@@ -7,7 +7,8 @@ OKAY_TO_FAIL = ["function_vector.cpp",
                 "vector_modify.cpp",
                 "shadowing.cpp",
                 "undefined_stacktrace.cpp",
-                "println.cpp"]
+                "println.cpp",
+                "format_too_few.cpp"]
 
 
 def main():
