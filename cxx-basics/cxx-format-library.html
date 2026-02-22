@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Format Library &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>std::format &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -53,8 +53,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-format-library';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Vectors" href="cxx-vectors.html" />
-    <link rel="prev" title="Reading Input" href="cxx-reading.html" />
+    <link rel="next" title="Reading Input" href="cxx-reading.html" />
+    <link rel="prev" title="Indexing Strings" href="cxx-strings-indexing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -211,9 +211,8 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-formatting-output.html">Formatting output</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Format Library</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
 <ul class="nav bd-sidenav">
@@ -230,10 +229,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html">Conditional Statements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
@@ -422,7 +424,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -433,11 +437,21 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Format Library</h1>
+    <h1>std::format</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-output">Basic output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">Formatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-print"><code class="docutils literal notranslate"><span class="pre">std::print</span></code></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -447,8 +461,96 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="format-library">
-<h1>Format Library<a class="headerlink" href="#format-library" title="Link to this heading">#</a></h1>
+  <section id="std-format">
+<h1><code class="docutils literal notranslate"><span class="pre">std::format</span></code><a class="headerlink" href="#std-format" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We will look at the C++20 way to format output.  An alternate way
+to set precision and how wide an output field is can be found in
+the <a class="reference external" href="https://cplusplus.com/reference/iomanip/">iomanip library</a></p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You need to use C++20 for this method.  This means using GCC &gt;= 13,
+and adding the <code class="docutils literal notranslate"><span class="pre">-std=c++20</span></code> flag when compiling.</p>
+</div>
+<p><a class="reference external" href="https://en.cppreference.com/w/cpp/utility/format/format.html">std::format</a> takes
+a string as the first argument with <code class="docutils literal notranslate"><span class="pre">{}</span></code> embedded as placeholders
+and then inserts the remaining arguments into the string, in order, in
+the <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+<p>We’ll look at its basic usage.</p>
+<section id="basic-output">
+<h2>Basic output<a class="headerlink" href="#basic-output" title="Link to this heading">#</a></h2>
+<p>Here’s a simple example:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 23 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">format_simple.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mi">10</span><span class="p">};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">{</span><span class="mf">1.23e-4</span><span class="p">};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="s">&quot;test&quot;</span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">formatted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;x = {}; y = {}; a = {}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">formatted</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>When run, this outputs <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">10;</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">0.000123;</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">test</span></code> with a new line (since
+we added the <code class="docutils literal notranslate"><span class="pre">\n</span></code>;</p>
+<p>Each variable / object we specify as an argument after the first
+argument is inserted <em>in order</em> into the <code class="docutils literal notranslate"><span class="pre">{}</span></code> in the format string.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to include the <code class="docutils literal notranslate"><span class="pre">&lt;format&gt;</span></code> header to use <code class="docutils literal notranslate"><span class="pre">std::format</span></code>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We don’t need to make an intermediate string, we could just send the
+output of <code class="docutils literal notranslate"><span class="pre">std::format</span></code> to the output stream, <code class="docutils literal notranslate"><span class="pre">std::cout</span></code> directly
+like:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;x = {}; y = {}; a = {}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="formatting">
+<h2>Formatting<a class="headerlink" href="#formatting" title="Link to this heading">#</a></h2>
+</section>
+<section id="std-print">
+<h2><code class="docutils literal notranslate"><span class="pre">std::print</span></code><a class="headerlink" href="#std-print" title="Link to this heading">#</a></h2>
+<p>In C++23, things become even simpler, with the addition of <code class="docutils literal notranslate"><span class="pre">std::print</span></code> and <code class="docutils literal notranslate"><span class="pre">std::println</span></code>.
+For example, we can do:</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 24 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">println.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;print&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Hello, World&quot;</span><span class="p">);</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>and compile this as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">g++<span class="w"> </span>-std<span class="o">=</span>c++23<span class="w"> </span>-o<span class="w"> </span>println<span class="w"> </span>println.cpp</span>
+</pre></div></div><p>The difference between <code class="docutils literal notranslate"><span class="pre">std::print</span></code> and <code class="docutils literal notranslate"><span class="pre">std::println</span></code> is that <code class="docutils literal notranslate"><span class="pre">std::println</span></code> adds
+a newline to the end.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This requires GCC &gt;= 14</p>
+</div>
+</section>
 </section>
 
 
@@ -463,20 +565,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-reading.html"
+       href="cxx-strings-indexing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Reading Input</p>
+        <p class="prev-next-title">Indexing Strings</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-vectors.html"
+       href="cxx-reading.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Vectors</p>
+        <p class="prev-next-title">Reading Input</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -486,6 +588,25 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-output">Basic output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">Formatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-print"><code class="docutils literal notranslate"><span class="pre">std::print</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

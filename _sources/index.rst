@@ -128,9 +128,8 @@ the top of many pages.
 
    cxx-basics/cxx-strings
    cxx-basics/cxx-strings-indexing
-   cxx-basics/cxx-formatting-output
-   cxx-basics/cxx-reading
    cxx-basics/cxx-format-library
+   cxx-basics/cxx-reading
 
 .. toctree::
    :maxdepth: 1
@@ -153,10 +152,16 @@ the top of many pages.
    :caption: C++ Flow Control
    :hidden:
 
-   cxx-basics/cxx-statements
    cxx-basics/cxx-conditional
    cxx-basics/cxx-loops
+   cxx-basics/cxx-statements
    cxx-basics/cxx-continue-break
+
+.. toctree::
+   :maxdepth: 1
+   :caption: File I/O
+   :hidden:
+
    cxx-basics/cxx-io
 
 .. toctree::

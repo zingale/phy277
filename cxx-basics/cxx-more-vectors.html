@@ -211,9 +211,8 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-formatting-output.html">Formatting output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html">Format Library</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
 <ul class="current nav bd-sidenav">
@@ -230,10 +229,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html">Conditional Statements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
@@ -527,7 +529,7 @@ pointing to, then we need to <em>dereference</em> it—this is done with the
 </div>
 <p>Here’s an example of looping over an entire vector using iterators:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 24 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">iterator_loop.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 26 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">iterator_loop.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 
@@ -549,7 +551,7 @@ pointing to, then we need to <em>dereference</em> it—this is done with the
 <p>We can use <code class="docutils literal notranslate"><span class="pre">std::rbegin()</span></code> / <code class="docutils literal notranslate"><span class="pre">std::rend()</span></code> to iterate through a container
 in reverse.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 25 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">vector_reverse.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 27 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">vector_reverse.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 

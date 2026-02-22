@@ -211,9 +211,8 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-formatting-output.html">Formatting output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html">Format Library</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
 <ul class="current nav bd-sidenav">
@@ -230,10 +229,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html">Conditional Statements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
@@ -476,7 +478,7 @@ In contrast, arrays are fixed-size.</p></li>
 </ul>
 <p>Here’s a simple example:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 35 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_array.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 37 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_array.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;array&gt;</span>
 
@@ -513,7 +515,7 @@ again be fixed-size, so we’ll need to specify both the number of rows
 and the number of columns at compile time.</p>
 <p>Here’s an example:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 36 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">multid_array.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 38 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">multid_array.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;array&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>

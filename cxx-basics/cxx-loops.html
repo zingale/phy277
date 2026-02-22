@@ -53,7 +53,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-loops';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="continue and break" href="cxx-continue-break.html" />
+    <link rel="next" title="Statement Blocks" href="cxx-statements.html" />
     <link rel="prev" title="Conditional Statements" href="cxx-conditional.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -211,9 +211,8 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-formatting-output.html">Formatting output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html">Format Library</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
 <ul class="nav bd-sidenav">
@@ -230,10 +229,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html">Conditional Statements</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
@@ -447,7 +449,6 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops"><code class="docutils literal notranslate"><span class="pre">for</span></code> loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-and-do-while-loops"><code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> loops</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continue-and-break"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -540,7 +541,7 @@ other form puts the <code class="docutils literal notranslate"><span class="pre"
 </div>
 <p>Finally, you can loop over a range simply by using an initialization list:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 40 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">list_loop.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 41 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">list_loop.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -549,79 +550,6 @@ other form puts the <code class="docutils literal notranslate"><span class="pre"
 <span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;the year is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">year</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="continue-and-break">
-<h2><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#continue-and-break" title="Link to this heading">#</a></h2>
-<p>Sometimes we want to exit a loop early or skip the remainder of the
-loop block if some conditions is met.  This is where <code class="docutils literal notranslate"><span class="pre">continue</span></code> and
-<code class="docutils literal notranslate"><span class="pre">break</span></code> come into play.</p>
-<p>It is not uncommon to write an infinite loop, like:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(;;)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// do stuff</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>or</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// do stuff</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>In this case, we will want a way to bail out.  Here’s an (silly)
-example of asking for a word from a user and telling them how many
-letters it contains.  But if they enter “0”, we exit:</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 41 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">infinite_loop.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">word</span><span class="p">{};</span>
-
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter a word (0 to exit): &quot;</span><span class="p">;</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">word</span><span class="p">;</span>
-
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">word</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">break</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">word</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; has &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">word</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; characters&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">continue</span></code> is used to skip to the next iteration.  Here’s an example
-that loops over elements of a vector but only operates on them if they
-are even numbers, in which case, it negates them.</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 42 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">continue_example.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">63</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">};</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">continue</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="n">e</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -650,11 +578,11 @@ are even numbers, in which case, it negates them.</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-continue-break.html"
+       href="cxx-statements.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></p>
+        <p class="prev-next-title">Statement Blocks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -678,7 +606,6 @@ are even numbers, in which case, it negates them.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops"><code class="docutils literal notranslate"><span class="pre">for</span></code> loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-and-do-while-loops"><code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">do</span></code>-<code class="docutils literal notranslate"><span class="pre">while</span></code> loops</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continue-and-break"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 </ul>
   </nav></div>
 

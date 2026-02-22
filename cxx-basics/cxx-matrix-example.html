@@ -213,9 +213,8 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-formatting-output.html">Formatting output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html">Format Library</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
 <ul class="current nav bd-sidenav">
@@ -232,10 +231,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html">Conditional Statements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
@@ -479,7 +481,7 @@ individual element, we need to index the first vector to get the row and then
 index the row to get the column in that row, which will look like: <code class="docutils literal notranslate"><span class="pre">a[irow][jcol]</span></code>.</p>
 <p>We’ll write our own version of what the text does.</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 32 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_matrix.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 34 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_matrix.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 
