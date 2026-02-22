@@ -190,6 +190,33 @@ the top of many pages.
 
 .. toctree::
    :maxdepth: 1
+   :caption: Classes
+   :hidden:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Software Engineering
+   :hidden:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: More Classes
+   :hidden:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Templates
+   :hidden:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Python Crash Course
+   :hidden:
+
+
+
+.. toctree::
+   :maxdepth: 1
    :caption: In-class Activities
    :hidden:
 
