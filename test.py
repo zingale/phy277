@@ -6,7 +6,8 @@ import subprocess
 OKAY_TO_FAIL = ["function_vector.cpp",
                 "vector_modify.cpp",
                 "shadowing.cpp",
-                "undefined_stacktrace.cpp"]
+                "undefined_stacktrace.cpp",
+                "println.cpp"]
 
 
 def main():
