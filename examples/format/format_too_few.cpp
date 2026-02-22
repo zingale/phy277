@@ -8,8 +8,6 @@ int main() {
     double y{1.23e-4};
     std::string a{"test"};
 
-    std::string formatted = std::format("x = {}; y = {}; a = {}\n", x, y, a);
-
-    std::cout << formatted;
+    std::cout << std::format("x = {}; y = {}; a = {}\n", x, y);
 
 }

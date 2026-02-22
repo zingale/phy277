@@ -6,10 +6,10 @@ int main() {
 
     int x{10};
     double y{1.23e-4};
+    double z{-10.5};
     std::string a{"test"};
 
-    std::string formatted = std::format("x = {}; y = {}; a = {}\n", x, y, a);
+    std::cout << std::format("x = {}; y = {}; a = {}\n", x, y, a, z);
 
-    std::cout << formatted;
 
 }

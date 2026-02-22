@@ -50,11 +50,57 @@ argument is inserted *in order* into the ``{}`` in the format string.
 
       std::cout << std::format("x = {}; y = {}; a = {}\n", x, y, a);
 
+If we include more arguments after the format string than there are ``{}``, the
+extra arguments are just ignored:
+
+.. literalinclude:: ../../../examples/format/format_too_many.cpp
+   :language: c++
+   :caption: ``format_too_many.cpp``
+
+If we don't provide enough arguments, then the code will not compile.
 
 Formatting
 ==========
 
+Within the ``{}`` we can specify the formatting using `format specifiers <https://en.cppreference.com/w/cpp/utility/format/spec.html>`_.
 
+.. note::
+
+   These specifiers are the same as used in the Python programming
+   language.  A detailed overview is given in the python docs for the
+   `format specification mini-language
+   <https://docs.python.org/3/library/string.html#formatspec>`_
+
+The basic form is ``{:specifier}``, where the specifier has fields giving:
+
+* Filling and alignment
+* sign, 0 padding
+* width
+* precision
+* type
+
+We;ll look at the basic cases that we usually care about---mainly
+specifying the width of the output, the precision, and the type.
+
+Here's an example:
+
+.. literalinclude:: ../../../examples/format/format_specifiers.cpp
+   :language: c++
+   :caption: ``format_specifiers.cpp``
+
+this gives:
+
+::
+
+    (x = 010; y = 1.23e-06; z = 10.2 a = test      )
+
+Let's see what these do:
+
+* for the ``int x{10}``, we use the specifier ``03d``.  This uses 3
+  characters for the width of the field, puts ``0`` s in any empty
+  field, and the ``d`` specifies that it is an integer.
+
+* for the ``double`` 
 
 
 ``std::print``
