@@ -458,6 +458,58 @@
                   
   <section id="reading-input">
 <h1>Reading Input<a class="headerlink" href="#reading-input" title="Link to this heading">#</a></h1>
+<p>We already saw a basic example of reading from the user when we looked at
+our <span class="xref std std-ref">sec:first_project</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">std::cin</span></code> works like <code class="docutils literal notranslate"><span class="pre">std::cout</span></code>, except it reads from input.  An
+we use the input stream operator, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> now.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 27 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_read.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter a number: &quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;You entered &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Notice that we create the object / variable that we want to store the input in,
+and then we read from <code class="docutils literal notranslate"><span class="pre">std::cin</span></code> into that variable.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Nothing in this example checks if a number was actually entered.</p>
+</div>
+<p>We can look at <code class="docutils literal notranslate"><span class="pre">std::cin.fail()</span></code> to see if the read failed (it will
+be <code class="docutils literal notranslate"><span class="pre">1</span></code> if it fails)).</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 28 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">check_read.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter a number: &quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;You entered &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// if std::cin.fail() is 1, then the read failed</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Failed? &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">fail</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Shortly we will see how to test on the value returned by <code class="docutils literal notranslate"><span class="pre">std::cin.fail()</span></code>.</p>
+</div>
 </section>
 
 
