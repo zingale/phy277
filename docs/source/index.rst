@@ -137,7 +137,9 @@ the top of many pages.
    :hidden:
 
    cxx-basics/cxx-vectors
+   cxx-basics/cxx-vectors-loops
    cxx-basics/cxx-more-vectors
+   cxx-basics/cxx-vector-iterators
    cxx-basics/cxx-vectors-algorithms
    cxx-basics/cxx-strings-functions
    cxx-basics/cxx-matrix-example
