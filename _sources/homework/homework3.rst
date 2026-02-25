@@ -31,6 +31,15 @@ Homework #3
    compute ``0.3 / 0.1 - 3`` with ``double`` datatypes.  Output with
    enough precision to see if you get the expected result.
 
+   .. dropdown:: solution
+
+      .. literalinclude:: hw3_p1_roundoff.cpp
+         :language: c++
+         :caption: ``hw3_p1_roundoff.cpp``
+
+   When run, this gives ``-4.44089e-16`` and not zero, demonstrating
+   that there is roundoff error in this expression.
+
 2. *Roundoff II*: Now let's see how to mitigate roundoff error.
 
    Consider the function:
@@ -56,6 +65,27 @@ Homework #3
 
    What do you observe?
 
+   .. dropdown:: solution
+
+      .. literalinclude:: hw3_p2_roundoff.cpp
+         :language: c++
+         :caption: ``hw3_p2_roundoff.cpp``
+
+      when run, we get:
+
+      ::
+
+         0.0001 1.99982e+12 2e+12
+         1e-05 2.2518e+15 2e+15
+         1e-06 inf 2e+18
+
+      Notice that for the smallest value of ``x``, we get an ``inf``
+      from the original expression.  This is because we are doing
+      ``std::pow(1.e-6, 3.0) + 1.0`` which is the same as
+      ``1.e-18 + 1.0``, which because of roundfoff is ``1.0``,
+      so the denominator cancels!.
+
+
 3. *Trig functions:* Consider $\sin(x)$.  The Taylor expansion of $\sin(x)$ is:
 
    $$\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} + \ldots$$
@@ -80,6 +110,23 @@ Homework #3
    the angle in degrees, the angle in radians, the sine of the angle,
    and the error in the small-angle approximation (4 columns).
 
+   .. dropdown:: solution
+
+      .. literalinclude:: hw3_p3_sine.cpp
+         :language: c++
+         :caption: ``hw3_p3_sine.cpp``
+
+      when run, we get:
+
+      ::
+
+         5 0.0872665 0.0871557 0.00011072
+         10 0.174533 0.173648 0.000884748
+         20 0.349066 0.34202 0.00704571
+         40 0.698132 0.642788 0.0553441
+
+      We see that the error is less than 1% even for 20 degrees.
+
 4. *Overflow*: A ``short int`` uses only 2 bytes of memory instead of
    4 bytes for a normal ``int``.  This means that there are only $2^{16}$
    of $32,768$ possible values.  We want to see overflow in action.
@@ -94,3 +141,20 @@ Homework #3
      increment the value of your variable.
 
    * Output the updated value to the screen.
+
+   .. dropdown:: solution
+
+      .. literalinclude:: hw3_p4_overflow.cpp
+         :language: c++
+         :caption: ``hw3_p2_roundoff.cpp``
+
+      when run, we get:
+
+      ::
+
+         x is now: -32768
+
+      Because a ``short int`` is signed, when we overflow by exceeding
+      the maximum integer it can represent we can the smallest (most
+      negative) integer.
+
