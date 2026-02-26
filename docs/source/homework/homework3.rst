@@ -116,6 +116,11 @@ Homework #3
          :language: c++
          :caption: ``hw3_p3_sine.cpp``
 
+      .. tip::
+
+         We will be able to make this code a lot simpler soon, once we
+         learn about loops.
+
       when run, we get:
 
       ::
