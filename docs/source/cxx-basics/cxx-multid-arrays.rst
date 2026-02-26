@@ -22,7 +22,7 @@ size ahead of time.
 
 There are a few features here that we have not yet seen.
 
-* We use ``std::setw()`` to set the width (number of characters) to
+* We use the ``format`` library to set the width (number of characters) to
   use when writing out our numbers.  This makes them line up nicely.
 
 * We access the information in the arrays using a reference (with the

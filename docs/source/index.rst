@@ -159,13 +159,6 @@ the top of many pages.
 
 .. toctree::
    :maxdepth: 1
-   :caption: File I/O
-   :hidden:
-
-   cxx-basics/cxx-io
-
-.. toctree::
-   :maxdepth: 1
    :caption: C++ Functions
    :hidden:
 
@@ -184,6 +177,13 @@ the top of many pages.
    algorithms/cxx-orbit-rk2-example
    algorithms/roots
    algorithms/monte-carlo
+
+.. toctree::
+   :maxdepth: 1
+   :caption: File I/O
+   :hidden:
+
+   cxx-basics/cxx-io
 
 .. toctree::
    :maxdepth: 1
