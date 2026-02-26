@@ -24,6 +24,23 @@ C++ requires that we declare the data type of
 use the ``auto`` keyword to have the compiler automatically deduce the
 data type.
 
+
+Small-angle approximation example
+=================================
+
+In your homework, you looked at the small angle approximation for a variety on angles.
+We can write that code a lot more compactly now with loops:
+
+.. literalinclude:: ../../../examples/vectors/sine_loop.cpp
+   :language: c++
+   :caption: ``sine_loop.cpp``
+
+
+
+In-class example
+================
+
+
 .. admonition:: try it...
 
    Let's add a loop to our code and compute the average of the elements
