@@ -1,4 +1,4 @@
-.. :sec:first_project_
+.. _sec_first_project:
 
 *******************
 A First C++ Project

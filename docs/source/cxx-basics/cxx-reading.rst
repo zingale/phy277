@@ -3,7 +3,7 @@ Reading Input
 *************
 
 We already saw a basic example of reading from the user when we looked at
-our :ref:`sec:first_project`.
+our :ref:`sec_first_project`.
 
 ``std::cin`` works like ``std::cout``, except it reads from input.  An
 we use the input stream operator, ``>>`` now.
