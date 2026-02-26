@@ -221,13 +221,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors.html">Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-more-vectors.html">More Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors-loops.html">Looping Over Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-iterators.html">Vector Iterators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors-algorithms.html">Vector Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-functions.html">Working with Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-matrix-example.html">Example: Matrix</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-auto-decltype.html"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-structs.html">Structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-arrays.html">Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
 </ul>
@@ -246,10 +242,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-value-reference.html">Passing by Value vs. Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-stdlib.html">SL Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions-example.html">More Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-lambdas.html">Lambda Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions-planets.html">Example: Sorting Planets</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
 <ul class="nav bd-sidenav">
@@ -259,6 +252,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roots.html">Root Finding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/monte-carlo.html">Monte Carlo Methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vector-iterators.html">Vector Iterators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vectors-algorithms.html">Vector Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-strings-functions.html">Working with Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-auto-decltype.html"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-stdlib.html">SL Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-lambdas.html">Lambda Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
 <ul class="current nav bd-sidenav">
@@ -502,11 +505,11 @@ resulting in faster performance.</p>
 (the function definitions corresponding to the forward declarations),
 and of course the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function.</p></li>
 </ul>
-<p>Let’s consider our example of <a class="reference internal" href="../cxx-functions/cxx-functions-planets.html#sec-sorting-planets"><span class="std std-ref">sorting planets</span></a>.</p>
+<p>Let’s consider our example of <a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html#sec-sorting-planets"><span class="std std-ref">sorting planets</span></a>.</p>
 <p>We’ll start with a header file defining our <code class="docutils literal notranslate"><span class="pre">struct</span></code> and the operator
 declaration:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 70 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet.H</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 69 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet.H</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef PLANET_H</span>
 <span class="cp">#define PLANET_H</span>
 
@@ -545,7 +548,7 @@ throughout this course.</p>
 </div>
 <p>Now we’ll create a source file that implements the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> operator:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 71 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 70 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>
 
@@ -579,7 +582,7 @@ in the default system locations for the headers.</p>
 </ul>
 <p>Finally, we’ll put the <code class="docutils literal notranslate"><span class="pre">main()</span></code> in a third file:</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 72 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet_sort_split.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 71 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet_sort_split.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>

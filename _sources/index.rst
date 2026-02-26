@@ -141,13 +141,9 @@ the top of many pages.
    cxx-basics/cxx-vectors
    cxx-basics/cxx-more-vectors
    cxx-basics/cxx-vectors-loops
-   cxx-basics/cxx-vector-iterators
-   cxx-basics/cxx-vectors-algorithms
-   cxx-basics/cxx-strings-functions
-   cxx-basics/cxx-matrix-example
-   cxx-basics/cxx-auto-decltype
    cxx-basics/cxx-structs
    cxx-basics/cxx-arrays
+   cxx-basics/cxx-multid-arrays
    cxx-basics/cxx-references
    cxx-basics/cxx-pointers
 
@@ -175,10 +171,7 @@ the top of many pages.
 
    cxx-functions/cxx-functions
    cxx-functions/cxx-value-reference
-   cxx-functions/cxx-stdlib
    cxx-functions/cxx-functions-example
-   cxx-functions/cxx-lambdas
-   cxx-functions/cxx-functions-planets
 
 .. toctree::
    :maxdepth: 1
@@ -191,6 +184,19 @@ the top of many pages.
    algorithms/cxx-orbit-rk2-example
    algorithms/roots
    algorithms/monte-carlo
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Some SL Algorithms
+   :hidden:
+
+   sl-algorithms/cxx-vector-iterators
+   sl-algorithms/cxx-vectors-algorithms
+   sl-algorithms/cxx-strings-functions
+   sl-algorithms/cxx-auto-decltype
+   sl-algorithms/cxx-stdlib
+   sl-algorithms/cxx-lambdas
+   sl-algorithms/cxx-functions-planets
 
 .. toctree::
    :maxdepth: 1

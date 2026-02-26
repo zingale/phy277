@@ -55,7 +55,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'algorithms/monte-carlo';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Making the Compiler Do the Work" href="../software_engineering/compiler-flags.html" />
+    <link rel="next" title="Vector Iterators" href="../sl-algorithms/cxx-vector-iterators.html" />
     <link rel="prev" title="Root Finding" href="roots.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -223,13 +223,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors.html">Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-more-vectors.html">More Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors-loops.html">Looping Over Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-iterators.html">Vector Iterators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors-algorithms.html">Vector Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-functions.html">Working with Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-matrix-example.html">Example: Matrix</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-auto-decltype.html"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-structs.html">Structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-arrays.html">Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
 </ul>
@@ -248,10 +244,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-value-reference.html">Passing by Value vs. Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-stdlib.html">SL Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions-example.html">More Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-lambdas.html">Lambda Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions-planets.html">Example: Sorting Planets</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
 <ul class="current nav bd-sidenav">
@@ -261,6 +254,16 @@
 <li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roots.html">Root Finding</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Monte Carlo Methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vector-iterators.html">Vector Iterators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vectors-algorithms.html">Vector Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-strings-functions.html">Working with Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-auto-decltype.html"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-stdlib.html">SL Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-lambdas.html">Lambda Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
 <ul class="nav bd-sidenav">
@@ -524,7 +527,7 @@ vendors have been “truly horrible”, such as the <a class="reference external
 <h3>Uniform distribution<a class="headerlink" href="#uniform-distribution" title="Link to this heading">#</a></h3>
 <p>Here’s a simple example of a uniform random number distribution:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 64 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">test_random.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 50 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">test_random.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;random&gt;</span>
 
@@ -632,7 +635,7 @@ approximate <span class="math notranslate nohighlight">\(\pi\)</span> as:</p>
 \[\pi \approx 4 \frac{N_\mathrm{circ}}{N}\]</div>
 <p>Here’s an implementation of our computing <span class="math notranslate nohighlight">\(\pi\)</span>:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 65 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pi.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 51 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pi.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;random&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
@@ -694,7 +697,7 @@ doing the trapezoid rule in each dimension.</p>
 <p>Here’s an example of computing the volume of the <span class="math notranslate nohighlight">\(d\)</span>-dimensional hypersphere using
 mean-value Monte Carlo integration:</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 66 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">hypersphere.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 52 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">hypersphere.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// compute the volume of a D-dimensional hypersphere</span>
 <span class="c1">// via mean-value Monte-Carlo integration</span>
 
@@ -811,11 +814,11 @@ mean-value Monte Carlo integration:</p>
       </div>
     </a>
     <a class="right-next"
-       href="../software_engineering/compiler-flags.html"
+       href="../sl-algorithms/cxx-vector-iterators.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Making the Compiler Do the Work</p>
+        <p class="prev-next-title">Vector Iterators</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
