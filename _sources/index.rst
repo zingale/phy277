@@ -237,3 +237,10 @@ the top of many pages.
    homework/homework1
    homework/homework2
    homework/homework3
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Exams
+   :hidden:
+
+   exam-solutions/midterm1
