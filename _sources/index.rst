@@ -127,6 +127,8 @@ the top of many pages.
    :hidden:
 
    cxx-basics/cxx-strings
+   cxx-basics/cxx-strings-escape
+   cxx-basics/cxx-strings-math
    cxx-basics/cxx-strings-indexing
    cxx-basics/cxx-format-library
    cxx-basics/cxx-reading

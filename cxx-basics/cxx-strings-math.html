@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Vector Iterators &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>String Operators &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -50,11 +50,11 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-vector-iterators';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-strings-math';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Vector Algorithms" href="cxx-vectors-algorithms.html" />
-    <link rel="prev" title="Looping Over Vectors" href="cxx-vectors-loops.html" />
+    <link rel="next" title="Indexing Strings" href="cxx-strings-indexing.html" />
+    <link rel="prev" title="Escape Sequences" href="cxx-strings-escape.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -208,20 +208,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../interactive_review/more-practice1.html">More Practice Problems</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings-escape.html">Escape Sequences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings-math.html">String Operators</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">String Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-vectors.html">Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-more-vectors.html">More Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vectors-loops.html">Looping Over Vectors</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Vector Iterators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-vector-iterators.html">Vector Iterators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vectors-algorithms.html">Vector Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings-functions.html">Working with Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-matrix-example.html">Example: Matrix</a></li>
@@ -360,7 +360,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/cxx-vector-iterators.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/cxx-strings-math.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -377,7 +377,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/cxx-vector-iterators.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/cxx-strings-math.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,7 +394,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/cxx-vector-iterators.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/cxx-strings-math.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -439,9 +439,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -452,19 +450,11 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Vector Iterators</h1>
+    <h1>String Operators</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-iterators">Reverse iterators</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -474,74 +464,31 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="vector-iterators">
-<h1>Vector Iterators<a class="headerlink" href="#vector-iterators" title="Link to this heading">#</a></h1>
-<p>There are 2 ways to access the beginning and end of a <code class="docutils literal notranslate"><span class="pre">vector</span></code>:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">.cbegin()</span></code>, <code class="docutils literal notranslate"><span class="pre">.begin()</span></code> : these will give you an <em>iterator</em> that
-points to the first element.  The difference is that accessing with
-<code class="docutils literal notranslate"><span class="pre">.cbegin()</span></code> will not allow you to modify the vector (the <code class="docutils literal notranslate"><span class="pre">c</span></code> is
-for <code class="docutils literal notranslate"><span class="pre">const</span></code>).  You can increment an <em>iterator</em> loop over the
-contents of the vector.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.cend()</span></code>, <code class="docutils literal notranslate"><span class="pre">.end()</span></code> : these will return an iterator that points
-<em>to one past the last element</em>.</p></li>
-</ul>
-<p>An iterator can be thought of as a special type of <em>pointer</em>—a
-topic that we will discuss much more later.  Iterators have
-restrictions on their use, depending on the container—this makes
-them more safe to use.</p>
-<p>If we think about an iterator like:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">cbegin</span><span class="p">();</span>
-</pre></div>
-</div>
-<p>Then we can access the next element in <code class="docutils literal notranslate"><span class="pre">container</span></code> by incrementing the iterator, <code class="docutils literal notranslate"><span class="pre">it++</span></code>.</p>
-<p>If we want to see the value in <code class="docutils literal notranslate"><span class="pre">container</span></code> that the iterator is
-pointing to, then we need to <em>dereference</em> it—this is done with the
-<code class="docutils literal notranslate"><span class="pre">*</span></code> operator:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;cbegin is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>Here’s an example of looping over an entire vector using iterators:</p>
+  <section id="string-operators">
+<h1>String Operators<a class="headerlink" href="#string-operators" title="Link to this heading">#</a></h1>
+<p>There are a lot of operators and functions that can work on strings.  See
+<a class="reference external" href="https://en.cppreference.com/w/cpp/string/basic_string.html">https://en.cppreference.com/w/cpp/string/basic_string.html</a></p>
+<p>We can concatenate strings using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 31 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">iterator_loop.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 21 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string-cat.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">container</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="s">&quot;this is a test&quot;</span><span class="p">};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">b</span><span class="p">{</span><span class="s">&quot;of concatenation&quot;</span><span class="p">};</span>
 
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">cbegin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">cend</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<section id="reverse-iterators">
-<h2>Reverse iterators<a class="headerlink" href="#reverse-iterators" title="Link to this heading">#</a></h2>
-<p>We can use <code class="docutils literal notranslate"><span class="pre">std::rbegin()</span></code> / <code class="docutils literal notranslate"><span class="pre">std::rend()</span></code> to iterate through a container
-in reverse.</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 32 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">vector_reverse.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p">,</span><span class="w"> </span><span class="mf">16.0</span><span class="p">,</span><span class="w"> </span><span class="mf">32.0</span><span class="p">};</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">rbegin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">rend</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="p">}</span>
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is an example of <a class="reference external" href="https://en.wikipedia.org/wiki/Operator_overloading">operator overloading</a>, a core concept of object-oriented languages like C++.</p>
 </div>
-</div>
-</section>
 </section>
 
 
@@ -556,20 +503,20 @@ in reverse.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-vectors-loops.html"
+       href="cxx-strings-escape.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Looping Over Vectors</p>
+        <p class="prev-next-title">Escape Sequences</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-vectors-algorithms.html"
+       href="cxx-strings-indexing.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Vector Algorithms</p>
+        <p class="prev-next-title">Indexing Strings</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -579,23 +526,6 @@ in reverse.</p>
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-iterators">Reverse iterators</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

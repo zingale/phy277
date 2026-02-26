@@ -210,6 +210,8 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-escape.html">Escape Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-math.html">String Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Reading Input</a></li>
@@ -469,7 +471,7 @@ our <a class="reference internal" href="../programming/first_project.html#sec-fi
 <p><code class="docutils literal notranslate"><span class="pre">std::cin</span></code> works like <code class="docutils literal notranslate"><span class="pre">std::cout</span></code>, except it reads from input.  An
 we use the input stream operator, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> now.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 27 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_read.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 28 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_read.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -494,7 +496,7 @@ and then we read from <code class="docutils literal notranslate"><span class="pr
 <p>We can look at <code class="docutils literal notranslate"><span class="pre">std::cin.fail()</span></code> to see if the read failed (it will
 be <code class="docutils literal notranslate"><span class="pre">1</span></code> if it fails)).</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 28 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">check_read.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 29 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">check_read.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>

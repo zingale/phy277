@@ -210,6 +210,8 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-escape.html">Escape Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-math.html">String Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
@@ -496,7 +498,7 @@ the <code class="docutils literal notranslate"><span class="pre">{}</span></code
 <h2>Basic output<a class="headerlink" href="#basic-output" title="Link to this heading">#</a></h2>
 <p>Here’s a simple example:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 23 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">format_simple.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 24 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">format_simple.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
@@ -535,7 +537,7 @@ like:</p>
 <p>If we include more arguments after the format string than there are <code class="docutils literal notranslate"><span class="pre">{}</span></code>, the
 extra arguments are just ignored:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 24 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">format_too_many.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 25 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">format_too_many.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
@@ -577,7 +579,7 @@ language.  A detailed overview is given in the python docs for the
 specifying the width of the output, the precision, and the type.</p>
 <p>Here’s an example:</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 25 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">format_specifiers.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 26 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">format_specifiers.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
@@ -632,7 +634,7 @@ it easy to plot.  We’ll see this later.</p>
 <p>In C++23, things become even simpler, with the addition of <code class="docutils literal notranslate"><span class="pre">std::print</span></code> and <code class="docutils literal notranslate"><span class="pre">std::println</span></code>.
 For example, we can do:</p>
 <div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-number">Listing 26 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">println.cpp</span></code></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 27 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">println.cpp</span></code></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;print&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>

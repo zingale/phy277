@@ -105,38 +105,3 @@ systems will be Unicode (UTF-8 encoding).  For example, we could do:
    .. code:: c++
 
       std::string a;
-
-
-Escape sequences
-================
-
-There are some important special characters that we don't type directly,
-but instead we precede with a ``\``.  For instance, to add a new line
-to a string, we can use ``\n``.
-
-
-.. note::
-
-   ``\n`` is slightly different than
-   ``std::endl``---the latter also flushes the output buffer.
-
-Here's a `list of escape sequences <https://en.cppreference.com/w/cpp/language/escape>`_.
-
-.. admonition:: try it...
-
-   Let's try the "bell", ``\a``, to see if it has an effect on our
-   terminal.
-
-
-String math
-===========
-
-There are a lot of operators and functions that can work on strings.  See
-https://en.cppreference.com/w/cpp/string/basic_string.html
-
-We can concatenate strings using the ``+`` operator:
-
-.. literalinclude:: ../../../examples/strings/string-cat.cpp
-   :language: c++
-   :caption: ``string-cat.cpp``
-

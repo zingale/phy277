@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="std::format" href="cxx-format-library.html" />
-    <link rel="prev" title="Strings" href="cxx-strings.html" />
+    <link rel="prev" title="String Operators" href="cxx-strings-math.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -210,6 +210,8 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-escape.html">Escape Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-math.html">String Operators</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Indexing Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
@@ -477,7 +479,7 @@
 <section id="indexing">
 <h2>Indexing<a class="headerlink" href="#indexing" title="Link to this heading">#</a></h2>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 21 </span><span class="caption-text">string-indexing.cpp</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 22 </span><span class="caption-text">string-indexing.cpp</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
@@ -502,7 +504,7 @@ might be get what you expect.</p>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">.size()</span></code> function on a string to see how many
 bytes it requires.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 22 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">size.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 23 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">size.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
@@ -534,12 +536,12 @@ bytes it requires.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-strings.html"
+       href="cxx-strings-math.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Strings</p>
+        <p class="prev-next-title">String Operators</p>
       </div>
     </a>
     <a class="right-next"

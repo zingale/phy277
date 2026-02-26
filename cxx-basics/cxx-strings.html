@@ -53,7 +53,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-strings';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Indexing Strings" href="cxx-strings-indexing.html" />
+    <link rel="next" title="Escape Sequences" href="cxx-strings-escape.html" />
     <link rel="prev" title="More Practice Problems" href="../interactive_review/more-practice1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -210,6 +210,8 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-escape.html">Escape Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-math.html">String Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
@@ -462,8 +464,6 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#character-vs-string">Character vs string</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-string"><code class="docutils literal notranslate"><span class="pre">std::string</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escape-sequences">Escape sequences</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-math">String math</a></li>
 </ul>
             </nav>
         </div>
@@ -583,45 +583,6 @@ we don’t need to do:</p>
 </div>
 </div>
 </section>
-<section id="escape-sequences">
-<h2>Escape sequences<a class="headerlink" href="#escape-sequences" title="Link to this heading">#</a></h2>
-<p>There are some important special characters that we don’t type directly,
-but instead we precede with a <code class="docutils literal notranslate"><span class="pre">\</span></code>.  For instance, to add a new line
-to a string, we can use <code class="docutils literal notranslate"><span class="pre">\n</span></code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">\n</span></code> is slightly different than
-<code class="docutils literal notranslate"><span class="pre">std::endl</span></code>—the latter also flushes the output buffer.</p>
-</div>
-<p>Here’s a <a class="reference external" href="https://en.cppreference.com/w/cpp/language/escape">list of escape sequences</a>.</p>
-<div class="admonition-try-it admonition">
-<p class="admonition-title">try it…</p>
-<p>Let’s try the “bell”, <code class="docutils literal notranslate"><span class="pre">\a</span></code>, to see if it has an effect on our
-terminal.</p>
-</div>
-</section>
-<section id="string-math">
-<h2>String math<a class="headerlink" href="#string-math" title="Link to this heading">#</a></h2>
-<p>There are a lot of operators and functions that can work on strings.  See
-<a class="reference external" href="https://en.cppreference.com/w/cpp/string/basic_string.html">https://en.cppreference.com/w/cpp/string/basic_string.html</a></p>
-<p>We can concatenate strings using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator:</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 20 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string-cat.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="s">&quot;this is a test&quot;</span><span class="p">};</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">b</span><span class="p">{</span><span class="s">&quot;of concatenation&quot;</span><span class="p">};</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</section>
 </section>
 
 
@@ -645,11 +606,11 @@ terminal.</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-strings-indexing.html"
+       href="cxx-strings-escape.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Indexing Strings</p>
+        <p class="prev-next-title">Escape Sequences</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -673,8 +634,6 @@ terminal.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#character-vs-string">Character vs string</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-string"><code class="docutils literal notranslate"><span class="pre">std::string</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escape-sequences">Escape sequences</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-math">String math</a></li>
 </ul>
   </nav></div>
 
