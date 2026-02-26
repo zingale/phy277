@@ -53,8 +53,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-io';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Functions" href="../cxx-functions/cxx-functions.html" />
-    <link rel="prev" title="continue and break" href="cxx-continue-break.html" />
+    <link rel="next" title="Vector Iterators" href="../sl-algorithms/cxx-vector-iterators.html" />
+    <link rel="prev" title="Monte Carlo Methods" href="../algorithms/monte-carlo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -234,10 +234,6 @@
 <li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">File I/O</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions.html">Functions</a></li>
@@ -252,6 +248,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roots.html">Root Finding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/monte-carlo.html">Monte Carlo Methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
 <ul class="nav bd-sidenav">
@@ -499,7 +499,7 @@ desired.</p>
 that both of these are defined by the <code class="docutils literal notranslate"><span class="pre">fstream</span></code> header.</p>
 <p>Here’s an example of writing our planet information out to a file:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 40 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">output_example.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 50 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">output_example.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span>
@@ -565,7 +565,7 @@ as a stream and read from it.</p>
 fact when it reaches the end of the file, <code class="docutils literal notranslate"><span class="pre">getline()</span></code> will evaluate
 as <code class="docutils literal notranslate"><span class="pre">false</span></code> in a conditional.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 41 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">input_example2.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 51 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">input_example2.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstream&gt;</span>
@@ -641,7 +641,7 @@ just hardcode the file name into the program for now.</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 42 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">wc_example.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 52 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">wc_example.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span>
 
@@ -716,20 +716,20 @@ just hardcode the file name into the program for now.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-continue-break.html"
+       href="../algorithms/monte-carlo.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></p>
+        <p class="prev-next-title">Monte Carlo Methods</p>
       </div>
     </a>
     <a class="right-next"
-       href="../cxx-functions/cxx-functions.html"
+       href="../sl-algorithms/cxx-vector-iterators.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Functions</p>
+        <p class="prev-next-title">Vector Iterators</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -234,10 +234,6 @@
 <li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions.html">Functions</a></li>
@@ -252,6 +248,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/roots.html">Root Finding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/monte-carlo.html">Monte Carlo Methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
 <ul class="nav bd-sidenav">
@@ -510,7 +510,7 @@ of varying length, it is less flexible in that we need to know the
 size ahead of time.</p>
 <p>There are a few features here that we have not yet seen.</p>
 <ul class="simple">
-<li><p>We use <code class="docutils literal notranslate"><span class="pre">std::setw()</span></code> to set the width (number of characters) to
+<li><p>We use the <code class="docutils literal notranslate"><span class="pre">format</span></code> library to set the width (number of characters) to
 use when writing out our numbers.  This makes them line up nicely.</p></li>
 <li><p>We access the information in the arrays using a reference (with the
 <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> operator).  This gives us direct access to the memory without

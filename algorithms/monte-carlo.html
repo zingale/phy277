@@ -55,7 +55,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'algorithms/monte-carlo';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Vector Iterators" href="../sl-algorithms/cxx-vector-iterators.html" />
+    <link rel="next" title="File I/O" href="../cxx-basics/cxx-io.html" />
     <link rel="prev" title="Root Finding" href="roots.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -236,10 +236,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-statements.html">Statement Blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions.html">Functions</a></li>
@@ -254,6 +250,10 @@
 <li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roots.html">Root Finding</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Monte Carlo Methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
 <ul class="nav bd-sidenav">
@@ -527,7 +527,7 @@ vendors have been “truly horrible”, such as the <a class="reference external
 <h3>Uniform distribution<a class="headerlink" href="#uniform-distribution" title="Link to this heading">#</a></h3>
 <p>Here’s a simple example of a uniform random number distribution:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 50 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">test_random.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 47 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">test_random.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;random&gt;</span>
 
@@ -635,7 +635,7 @@ approximate <span class="math notranslate nohighlight">\(\pi\)</span> as:</p>
 \[\pi \approx 4 \frac{N_\mathrm{circ}}{N}\]</div>
 <p>Here’s an implementation of our computing <span class="math notranslate nohighlight">\(\pi\)</span>:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 51 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pi.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 48 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pi.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;random&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
@@ -697,7 +697,7 @@ doing the trapezoid rule in each dimension.</p>
 <p>Here’s an example of computing the volume of the <span class="math notranslate nohighlight">\(d\)</span>-dimensional hypersphere using
 mean-value Monte Carlo integration:</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 52 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">hypersphere.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 49 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">hypersphere.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// compute the volume of a D-dimensional hypersphere</span>
 <span class="c1">// via mean-value Monte-Carlo integration</span>
 
@@ -814,11 +814,11 @@ mean-value Monte Carlo integration:</p>
       </div>
     </a>
     <a class="right-next"
-       href="../sl-algorithms/cxx-vector-iterators.html"
+       href="../cxx-basics/cxx-io.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Vector Iterators</p>
+        <p class="prev-next-title">File I/O</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
