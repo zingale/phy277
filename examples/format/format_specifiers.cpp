@@ -9,6 +9,7 @@ int main() {
     double z{10.25};
     std::string a{"test"};
 
-    std::cout << std::format("(x = {:03d}; y = {:8.3g}; z = {:4.1f} a = {:10})\n", x, y, z, a);
+    std::cout << std::format("(x = {:03d}; y = {:8.3g}; z = {:4.1f} a = {:10})\n",
+                             x, y, z, a);
 
 }
