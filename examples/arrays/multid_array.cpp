@@ -1,6 +1,6 @@
 #include <iostream>
 #include <array>
-#include <iomanip>
+#include <format>
 
 using row_arr_t = std::array<double, 4>;
 using fixed_mat_t = std::array<row_arr_t, 3>;
@@ -18,7 +18,7 @@ int main() {
 
     for (auto r : M) {
         for (auto c : r) {
-            std::cout << std::setw(4) << c << " ";
+            std::cout << std::format("{:4} ", c);
         }
         std::cout << std::endl;
     }
