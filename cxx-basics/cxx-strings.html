@@ -487,6 +487,11 @@
 <p>A <a class="reference external" href="https://en.wikipedia.org/wiki/String_(computer_science)">string</a>
 is a sequence of characters and is how we represent text in a computer
 program.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We’ve already been using strings.  The <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World&quot;</span></code> we’ve been outputting
+is a type of C++ string.</p>
+</div>
 <section id="character-vs-string">
 <h2>Character vs string<a class="headerlink" href="#character-vs-string" title="Link to this heading">#</a></h2>
 <p>In C++, there is a distinction between a single character and a string.</p>
@@ -506,7 +511,7 @@ characters—what we call a string.  This uses the datatype
 <code class="docutils literal notranslate"><span class="pre">std::string</span></code>, e.g.,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;This is a string&quot;</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">{</span><span class="s">&quot;This is a string&quot;</span><span class="p">};</span>
 </pre></div>
 </div>
 </li>

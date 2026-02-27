@@ -10,6 +10,11 @@ A `string <https://en.wikipedia.org/wiki/String_(computer_science)>`_
 is a sequence of characters and is how we represent text in a computer
 program.
 
+.. note::
+
+   We've already been using strings.  The ``"Hello, World"`` we've been outputting
+   is a type of C++ string.
+
 Character vs string
 ===================
 
@@ -37,7 +42,7 @@ In C++, there is a distinction between a single character and a string.
 
      #include <string>
 
-     std::string s = "This is a string";
+     std::string s{"This is a string"};
 
 .. warning::
 
