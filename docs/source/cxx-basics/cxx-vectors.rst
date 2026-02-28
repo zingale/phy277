@@ -12,14 +12,8 @@ size---it can grow as needed to hold more data.
 
 .. note::
 
-   The C++ standard library was inspired by an earlier project called
-   the C++ *standard template library* or STL.  These are distinct,
-   and for modern C++ we refer to the C++ *standard library*.
-
-.. note::
-
-   There are many other types of containers in the C++ SL that have
-   different properties.
+   There are many other `types of containers in the C++ SL <https://en.cppreference.com/w/cpp/container.html>`_ that have
+   different properties.  Vectors are one of the most useful.
 
 Vectors are very useful to store data and loop over it, etc.
 Information on the properties of C++ vectors can be found at the
@@ -42,6 +36,13 @@ From that description, we see that vectors:
 
 Creating a vector
 =================
+
+There are many ways 
+
+
+
+Adding to a vector
+==================
 
 Lets see how to create a vector and add some data to it.
 
