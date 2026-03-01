@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Using your own computer &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Memory: Stack vs. Heap &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -50,11 +50,11 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/using_your_computer';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/memory-stack-heap';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Computation" href="computing.html" />
-    <link rel="prev" title="portal / portal2" href="remote_servers.html" />
+    <link rel="next" title="References" href="cxx-references.html" />
+    <link rel="prev" title="Multidimensional Arrays" href="cxx-multid-arrays.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -145,17 +145,17 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Logistics</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="topics.html">Topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="remote_servers.html"><code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Using your own computer</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/topics.html">Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/remote_servers.html"><code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/using_your_computer.html">Using your own computer</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="computing.html">Computation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hello_world.html">Hello, World</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ai.html">What About AI?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/computing.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/hello_world.html">Hello, World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/ai.html">What About AI?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The UNIX Shell</span></p>
 <ul class="nav bd-sidenav">
@@ -169,7 +169,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../shell/shell-wildcards.html">Wildcards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/shell-redirection-pipes.html">Redirection and Pipes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/finding.html"><code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="scp.html"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/scp.html"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/permissions.html">File Permissions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/path.html">Search Path</a></li>
 </ul>
@@ -191,16 +191,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basic Datatypes</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-operators.html">Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-mixing-types.html">Mixing types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-sizes-limits.html">Datatype Sizes and Limits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point.html">Floating Point</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cmath.html">Numerical Library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/function-preview.html">Preview of Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/minimizing-roundoff.html">Minimizing Roundoff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point-special-numbers.html">Special Floating Point Quantities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-mixing-types.html">Mixing types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-sizes-limits.html">Datatype Sizes and Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="floating-point.html">Floating Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmath.html">Numerical Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function-preview.html">Preview of Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minimizing-roundoff.html">Minimizing Roundoff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="floating-point-special-numbers.html">Special Floating Point Quantities</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Review</span></p>
 <ul class="nav bd-sidenav">
@@ -209,33 +209,33 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings.html">Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-escape.html">Escape Sequences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-math.html">String Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-indexing.html">Indexing Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-reading.html">Reading Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-escape.html">Escape Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-math.html">String Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors.html">Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors-loops.html">Looping Over Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-examples.html">Examples of Using <code class="docutils literal notranslate"><span class="pre">vector</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-structs.html">Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-of-struct.html">Vector of Structs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-arrays.html">Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/memory-stack-heap.html">Memory: Stack vs. Heap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-references.html">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cxx-vectors.html">Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-vectors-loops.html">Looping Over Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-vector-examples.html">Examples of Using <code class="docutils literal notranslate"><span class="pre">vector</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-vector-of-struct.html">Vector of Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-arrays.html">Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-multid-arrays.html">Multidimensional Arrays</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Memory: Stack vs. Heap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-pointers.html">Pointers</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-conditional.html">Conditional Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-loops.html">Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-statements.html">Statement Blocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html">Conditional Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
 <ul class="nav bd-sidenav">
@@ -254,7 +254,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
 <ul class="nav bd-sidenav">
@@ -366,7 +366,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/getting_started/using_your_computer.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/memory-stack-heap.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +383,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/getting_started/using_your_computer.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/memory-stack-heap.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -400,7 +400,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fgetting_started/using_your_computer.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/memory-stack-heap.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -445,9 +445,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -458,32 +456,11 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Using your own computer</h1>
+    <h1>Memory: Stack vs. Heap</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-remote-servers">Using the remote servers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">MacOS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-your-personal-machine-directly">Using your personal machine directly</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Windows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">MacOS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Linux</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chromeos">ChromeOS</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-linux-live-distribution">Using a Linux Live Distribution</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -493,121 +470,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="using-your-own-computer">
-<h1>Using your own computer<a class="headerlink" href="#using-your-own-computer" title="Link to this heading">#</a></h1>
-<p>If you want to use your own laptop, then you have a few options:</p>
-<ul class="simple">
-<li><p>Use your laptop as a terminal to connect to the remove machines
-setup for this class (<code class="docutils literal notranslate"><span class="pre">portal</span></code> and <code class="docutils literal notranslate"><span class="pre">portal2</span></code>).</p></li>
-<li><p>Install the Bash shell and compilers on your laptop and develop on
-your machine directly.</p></li>
-<li><p>Install a Linux virtual machine on your computer.</p></li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>The <a class="reference external" href="https://carpentries.github.io/workshop-template/install_instructions/#shell">Software Carpentry instructions for setting your Unix
-environment</a>
-give an excellent description of how to prepare your personal
-Windows, Mac, or Linux computer.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Due to the large variations in personal machines, we cannot support
-software on your personal machine.</p>
-</div>
-<section id="using-the-remote-servers">
-<h2>Using the remote servers<a class="headerlink" href="#using-the-remote-servers" title="Link to this heading">#</a></h2>
-<p>To access <code class="docutils literal notranslate"><span class="pre">portal</span></code> or <code class="docutils literal notranslate"><span class="pre">portal2</span></code>, you need to install an <a class="reference external" href="https://en.wikipedia.org/wiki/Secure_Shell">SSH
-client</a> (later in the
-semester, it will be helpful to have an <a class="reference external" href="https://en.wikipedia.org/wiki/X_Window_System">X11 / X Window server</a>)</p>
-<p>Once it is installed, you can <em>ssh</em> into
-<code class="docutils literal notranslate"><span class="pre">portal.mathlab.stonybrook.edu</span></code> or
-<code class="docutils literal notranslate"><span class="pre">portal2.mathlab.stonybrook.edu</span></code>.</p>
-<section id="windows">
-<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
-<p>The standard SSH client for Windows is <a class="reference external" href="https://www.ssh.com/academy/ssh/putty/download">PuTTY</a>.  This is freely
-downloadable and can be installed following the instructions at that
-link.</p>
-<p>An X11 server that has been recommended for use with putty is <a class="reference external" href="http://www.straightrunning.com/XmingNotes/">Xming</a>.</p>
-</section>
-<section id="macos">
-<h3>MacOS<a class="headerlink" href="#macos" title="Link to this heading">#</a></h3>
-<p>You can open the <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> app on your Mac to access the Unix shell.  MacOS usually
-has an SSH client installed by default.</p>
-<p>Later in the semester, if you want an X11 server, you can install <a class="reference external" href="https://www.xquartz.org/">XQuartz</a>.
-Some people recommend <a class="reference external" href="https://formulae.brew.sh/cask/xquartz">doing this via Homebrew</a></p>
-</section>
-<section id="linux">
-<h3>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h3>
-<p>If you are running Linux on your personal machine, you should already have an SSH client installed.</p>
-</section>
-</section>
-<section id="using-your-personal-machine-directly">
-<h2>Using your personal machine directly<a class="headerlink" href="#using-your-personal-machine-directly" title="Link to this heading">#</a></h2>
-<p>You need to install the Unix shell and compilers directly on your machine.</p>
-<section id="id1">
-<h3>Windows<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p>Use the <a class="reference external" href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux">Windows Subsystem for Linux</a> (version
-2).  This is a virtual machine that runs from within your Windows OS
-and gives you (essentially) an entire Linux environment.  To install
-this, follow the instructions from Microsoft:
-<a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">https://learn.microsoft.com/en-us/windows/wsl/install</a></p>
-<p>This is also discussed in the <a class="reference external" href="https://carpentries.github.io/workshop-template/install_instructions/#shell">Software Carpentry instructions for
-setting your Unix environment</a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When you create files in WSL, if you want to move them back to the
-Windows partition on your computer, you can access your Windows directories
-via the path <code class="docutils literal notranslate"><span class="pre">/mnt/c</span></code>.</p>
-<p>So you can just use the <code class="docutils literal notranslate"><span class="pre">cp</span></code> command (that we’ll learn shortly) to copy
-the file to <code class="docutils literal notranslate"><span class="pre">/mnt/c/</span></code> and then you will have it in Windows.</p>
-</div>
-</section>
-<section id="id3">
-<h3>MacOS<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
-<p>You should have most of what you need, but other software can be installed via <code class="docutils literal notranslate"><span class="pre">brew</span></code>.
-See the <a class="reference external" href="https://brew.sh/">homebrew instructions</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The shell we will use in this class is <a class="reference external" href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a>.  Your Mac
-might use a different default shell, so some of the more advanced
-topics might differ slightly.</p>
-<p>You can check your shell by doing:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="nv">$SHELL</span></span>
-</pre></div></div><p>If necessary, you can <a class="reference external" href="https://support.apple.com/guide/terminal/change-the-default-shell-trml113/mac">change your default shell</a>.</p>
-</div>
-</section>
-<section id="id4">
-<h3>Linux<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<p>You likely have everything you need already for the class.  You can access a terminal from your
-software launcher.</p>
-</section>
-<section id="chromeos">
-<h3>ChromeOS<a class="headerlink" href="#chromeos" title="Link to this heading">#</a></h3>
-<p>ChromeOS has the option of using a Linux virtual machine called crustini.  To enable
-this, follow these <a class="reference external" href="https://chromeos.dev/en/linux/setup">instructions on setting up crustini</a>.</p>
-<p>Once setup, you can install the necessary compilers via the package manager:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt2:before {
-  content: " ";
-}
-</style><span class="prompt2">apt install g++</span>
-</pre></div></div></section>
-</section>
-<section id="using-a-linux-live-distribution">
-<h2>Using a Linux Live Distribution<a class="headerlink" href="#using-a-linux-live-distribution" title="Link to this heading">#</a></h2>
-<p>A “live” distribution of Linux runs directly from a USB stick, without having to install anything locally.
-It can be a little slow, but should provide all the tools you need.</p>
-<p>One recommendation is the Fedora Linux.  You can find instructions on how to write the image to a USB stick
-and boot into a live Fedora session here:
-<a class="reference external" href="https://docs.fedoraproject.org/en-US/fedora/latest/preparing-boot-media/">https://docs.fedoraproject.org/en-US/fedora/latest/preparing-boot-media/</a></p>
-<p>For C++ programming, you will need to install the compiler <em>each time you start the live session</em> as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">dnf<span class="w"> </span>install<span class="w"> </span>gcc-c++</span>
-</pre></div></div></section>
+  <section id="memory-stack-vs-heap">
+<h1>Memory: Stack vs. Heap<a class="headerlink" href="#memory-stack-vs-heap" title="Link to this heading">#</a></h1>
 </section>
 
 
@@ -622,20 +486,20 @@ and boot into a live Fedora session here:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="remote_servers.html"
+       href="cxx-multid-arrays.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></p>
+        <p class="prev-next-title">Multidimensional Arrays</p>
       </div>
     </a>
     <a class="right-next"
-       href="computing.html"
+       href="cxx-references.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Computation</p>
+        <p class="prev-next-title">References</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -645,36 +509,6 @@ and boot into a live Fedora session here:
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-remote-servers">Using the remote servers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">MacOS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-your-personal-machine-directly">Using your personal machine directly</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Windows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">MacOS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Linux</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chromeos">ChromeOS</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-linux-live-distribution">Using a Linux Live Distribution</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
