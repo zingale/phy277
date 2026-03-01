@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Structures" href="cxx-structs.html" />
-    <link rel="prev" title="More Vectors" href="cxx-more-vectors.html" />
+    <link rel="prev" title="More vector functions" href="cxx-vector-push.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -219,7 +219,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-vectors.html">Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-more-vectors.html">More Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Looping Over Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-arrays.html">Arrays</a></li>
@@ -486,7 +486,7 @@ and C++ provides a <a class="reference external" href="https://en.cppreference.c
 purpose.  For example to loop over all elements and output them to the
 terminal, we could do:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 31 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">vector_loop.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 32 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">vector_loop.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 
@@ -515,7 +515,7 @@ data type.</p>
 <p>If we don’t want to reuse the values that we are looping over, we can do a shortcut
 like:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 32 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">vector_initialization_list.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 33 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">vector_initialization_list.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -538,7 +538,7 @@ directly in the loop, as here, we cannot update or access these values outside o
 <p>In your homework, you looked at the small angle approximation for a variety on angles.
 We can write that code a lot more compactly now with loops:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 33 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">sine_loop.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 34 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">sine_loop.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numbers&gt;</span>
@@ -591,12 +591,12 @@ in the vector.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-more-vectors.html"
+       href="cxx-vector-push.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">More Vectors</p>
+        <p class="prev-next-title">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</p>
       </div>
     </a>
     <a class="right-next"

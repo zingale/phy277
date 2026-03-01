@@ -53,7 +53,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-vectors';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="More Vectors" href="cxx-more-vectors.html" />
+    <link rel="next" title="More vector functions" href="cxx-vector-push.html" />
     <link rel="prev" title="Reading Input" href="cxx-reading.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -219,7 +219,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-more-vectors.html">More Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vectors-loops.html">Looping Over Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-arrays.html">Arrays</a></li>
@@ -465,8 +465,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-vector"><code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-vector">Creating a vector</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-to-a-vector">Adding to a vector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-vectors">Indexing vectors</a></li>
 </ul>
             </nav>
         </div>
@@ -480,6 +481,10 @@
                   
   <section id="vectors">
 <h1>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h1>
+<div class="admonition-reading admonition">
+<p class="admonition-title">reading</p>
+<p><a class="reference external" href="https://cplusplus.com/reference/vector/vector/">std::vector at cpluscplus.com</a></p>
+</div>
 <p>C++ has the <a class="reference external" href="https://en.wikipedia.org/wiki/C%2B%2B_Standard_Library">standard library</a> (C++ SL)
 which adds an immense amount of functionality to the language.  Let’s
 look at <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>.  A <code class="docutils literal notranslate"><span class="pre">vector</span></code> is a container that can hold
@@ -491,6 +496,8 @@ size—it can grow as needed to hold more data.</p>
 <p>There are many other <a class="reference external" href="https://en.cppreference.com/w/cpp/container.html">types of containers in the C++ SL</a> that have
 different properties.  Vectors are one of the most useful.</p>
 </div>
+<section id="std-vector">
+<h2><code class="docutils literal notranslate"><span class="pre">std::vector</span></code><a class="headerlink" href="#std-vector" title="Link to this heading">#</a></h2>
 <p>Vectors are very useful to store data and loop over it, etc.
 Information on the properties of C++ vectors can be found at the
 <a class="reference external" href="https://www.cplusplus.com/reference/vector/vector/">CPlusPlus vector page</a>.
@@ -504,45 +511,47 @@ vector of larger size and copying data into it—a slow operation)</p></li>
 <li><p>are very efficient at adding data to the end, but not efficient for
 inserting data in the middle</p></li>
 </ul>
+</section>
 <section id="creating-a-vector">
 <h2>Creating a vector<a class="headerlink" href="#creating-a-vector" title="Link to this heading">#</a></h2>
-<p>There are many ways</p>
+<p>When we create a vector, we need to specify what type of data it holds.  E.g.,
+a vector that holds <code class="docutils literal notranslate"><span class="pre">double</span></code> precision numbers would be declared as:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>and a vector holding <code class="docutils literal notranslate"><span class="pre">int</span></code> would be declared as:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>These vectors are empty.  We can specify the data at initialization or add it later.</p>
+<p>To initialize a vector with data, we can do:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p">};</span>
+</pre></div>
+</div>
 </section>
-<section id="adding-to-a-vector">
-<h2>Adding to a vector<a class="headerlink" href="#adding-to-a-vector" title="Link to this heading">#</a></h2>
-<p>Lets see how to create a vector and add some data to it.</p>
-<p>Here’s a simple example:</p>
+<section id="indexing-vectors">
+<h2>Indexing vectors<a class="headerlink" href="#indexing-vectors" title="Link to this heading">#</a></h2>
+<p>Just like with strings, we can index a vector to access a single element.
+We use 0-based indexing.</p>
+<p>We can also access the first element using <code class="docutils literal notranslate"><span class="pre">.front()</span></code> and the last
+element using <code class="docutils literal notranslate"><span class="pre">.back()</span></code>.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 30 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_vector.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 30 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">vector_indexing.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">container</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">container</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mf">10.0</span><span class="p">);</span>
-<span class="w">    </span><span class="n">container</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mf">-1.0</span><span class="p">);</span>
-<span class="w">    </span><span class="n">container</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mf">15.3</span><span class="p">);</span>
-<span class="w">    </span><span class="n">container</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mf">3.14159</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">};</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">container</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;the vector has &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; elements&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Element 0 is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Last element is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">back</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<p>Notice the following:</p>
-<ul class="simple">
-<li><p>We specify the data type when creating a vector</p></li>
-<li><p>We use <code class="docutils literal notranslate"><span class="pre">push_back</span></code> to add data to the end of a vector.  Here we
-are using the <code class="docutils literal notranslate"><span class="pre">.</span></code> operator to indicate that we are performing the
-<code class="docutils literal notranslate"><span class="pre">push_back</span></code> on the vector <code class="docutils literal notranslate"><span class="pre">container</span></code> that we created.</p></li>
-<li><p>We access elements of a vector using <code class="docutils literal notranslate"><span class="pre">[]</span></code> with an index, and that
-indices start at 0.</p></li>
-<li><p>We can use the <code class="docutils literal notranslate"><span class="pre">.size()</span></code> <a class="reference external" href="https://en.wikipedia.org/wiki/C%2B%2B_classes#Member_functions">member function</a>
-to get the number of elements in the vector.</p></li>
-</ul>
 </section>
 </section>
 
@@ -567,11 +576,11 @@ to get the number of elements in the vector.</p></li>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-more-vectors.html"
+       href="cxx-vector-push.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">More Vectors</p>
+        <p class="prev-next-title">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -593,8 +602,9 @@ to get the number of elements in the vector.</p></li>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-vector"><code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-vector">Creating a vector</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-to-a-vector">Adding to a vector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-vectors">Indexing vectors</a></li>
 </ul>
   </nav></div>
 

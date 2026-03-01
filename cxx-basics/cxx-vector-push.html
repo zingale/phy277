@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Getting Started &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>More vector functions &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -50,11 +50,11 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/getting_started';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-vector-push';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="portal / portal2" href="remote_servers.html" />
-    <link rel="prev" title="Topics" href="topics.html" />
+    <link rel="next" title="Looping Over Vectors" href="cxx-vectors-loops.html" />
+    <link rel="prev" title="Vectors" href="cxx-vectors.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -145,17 +145,17 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Logistics</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="topics.html">Topics</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="remote_servers.html"><code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="using_your_computer.html">Using your own computer</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/topics.html">Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/remote_servers.html"><code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/using_your_computer.html">Using your own computer</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="computing.html">Computation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hello_world.html">Hello, World</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ai.html">What About AI?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/computing.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/hello_world.html">Hello, World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/ai.html">What About AI?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The UNIX Shell</span></p>
 <ul class="nav bd-sidenav">
@@ -169,7 +169,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../shell/shell-wildcards.html">Wildcards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/shell-redirection-pipes.html">Redirection and Pipes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/finding.html"><code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="scp.html"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/scp.html"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/permissions.html">File Permissions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../shell/path.html">Search Path</a></li>
 </ul>
@@ -191,16 +191,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basic Datatypes</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-operators.html">Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-mixing-types.html">Mixing types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-sizes-limits.html">Datatype Sizes and Limits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point.html">Floating Point</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cmath.html">Numerical Library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/function-preview.html">Preview of Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/minimizing-roundoff.html">Minimizing Roundoff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point-special-numbers.html">Special Floating Point Quantities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-mixing-types.html">Mixing types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-sizes-limits.html">Datatype Sizes and Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="floating-point.html">Floating Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="cmath.html">Numerical Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="function-preview.html">Preview of Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minimizing-roundoff.html">Minimizing Roundoff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="floating-point-special-numbers.html">Special Floating Point Quantities</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Review</span></p>
 <ul class="nav bd-sidenav">
@@ -209,30 +209,30 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings.html">Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-escape.html">Escape Sequences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-math.html">String Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-indexing.html">Indexing Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-reading.html">Reading Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-escape.html">Escape Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-math.html">String Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors.html">Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors-loops.html">Looping Over Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-structs.html">Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-arrays.html">Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-references.html">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cxx-vectors.html">Vectors</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-vectors-loops.html">Looping Over Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-arrays.html">Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-multid-arrays.html">Multidimensional Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-pointers.html">Pointers</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-conditional.html">Conditional Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-loops.html">Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-statements.html">Statement Blocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html">Conditional Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
 <ul class="nav bd-sidenav">
@@ -251,7 +251,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
 <ul class="nav bd-sidenav">
@@ -363,7 +363,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/getting_started/getting_started.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/cxx-vector-push.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -380,7 +380,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/getting_started/getting_started.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/cxx-vector-push.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -397,7 +397,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fgetting_started/getting_started.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/cxx-vector-push.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -455,7 +455,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Getting Started</h1>
+    <h1>More vector functions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -465,11 +465,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathlab">MathLab</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-into-the-desktops">Logging into the desktops</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terminal">The Terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-to-a-vector">Adding to a vector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#size">Size</a></li>
 </ul>
             </nav>
         </div>
@@ -481,59 +478,55 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
-<p>For this class, we will be working with Linux systems and learning to
-use the bash command line, C++ programming, and some basic software
-engineering techniques.</p>
-<section id="mathlab">
-<h2>MathLab<a class="headerlink" href="#mathlab" title="Link to this heading">#</a></h2>
-<p>The computers in the MathLab (S-235) run an older version of
-the <a class="reference external" href="https://ubuntu.com/">Ubuntu Linux</a> distribution of the <a class="reference external" href="https://en.wikipedia.org/wiki/Linux">Linux</a> operating system.  We will
-mostly use them as terminals to access remote servers that
-are more up-to-date.</p>
+  <section id="more-vector-functions">
+<h1>More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions<a class="headerlink" href="#more-vector-functions" title="Link to this heading">#</a></h1>
+<section id="adding-to-a-vector">
+<h2>Adding to a vector<a class="headerlink" href="#adding-to-a-vector" title="Link to this heading">#</a></h2>
+<p>Lets see how to create a vector and add some data to it.</p>
+<p>Here’s a simple example:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 31 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_vector.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">container</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">container</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mf">10.0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">container</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mf">-1.0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">container</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mf">15.3</span><span class="p">);</span>
+<span class="w">    </span><span class="n">container</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mf">3.14159</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">container</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;the vector has &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; elements&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>We use <code class="docutils literal notranslate"><span class="pre">push_back</span></code> to add data to the end of a vector.  Here we
+are using the <code class="docutils literal notranslate"><span class="pre">.</span></code> operator to indicate that we are performing the
+<code class="docutils literal notranslate"><span class="pre">push_back</span></code> on the vector <code class="docutils literal notranslate"><span class="pre">container</span></code> that we created.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This actually mimics how we often work in the real world, especially
-using research computing resources.</p>
-</div>
-<section id="logging-into-the-desktops">
-<h3>Logging into the desktops<a class="headerlink" href="#logging-into-the-desktops" title="Link to this heading">#</a></h3>
-<p>You username and password for logging into the desktop machines are
-those of your NetID.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If the machines seems non-responsive, you can wake it up by typing:</p>
-<p><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">F2</kbd> followed by <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">F1</kbd>.</p>
-<p>Then you should see the login screen.</p>
-</div>
-<p>Once logged in you will want to access the terminal.  On the Ubuntu systems,
-access the “Activities” menu in the upper-left and then scroll through the
-applications, looking for “Konsole” or “Terminal”</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>At the end of class, log out.  You can do this by accessing the menu in
-the upper-right of the screen.</p>
+<p><code class="docutils literal notranslate"><span class="pre">push_back</span></code> is a member function of the <code class="docutils literal notranslate"><span class="pre">vector</span></code> class.  There
+are others that we will see shortly.</p>
 </div>
 </section>
-</section>
-<section id="the-terminal">
-<h2>The Terminal<a class="headerlink" href="#the-terminal" title="Link to this heading">#</a></h2>
-<p>Our standard interface to the computer is the command line, accessible
-via the terminal app.</p>
-<p>The terminal is our window to the computer.  It runs an interactive
-shell called <a class="reference external" href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a>
-that we enter commands into.</p>
-<div class="admonition-try-it admonition">
-<p class="admonition-title">Try it…</p>
-<p>A simple Unix command is <code class="docutils literal notranslate"><span class="pre">echo</span></code>.  It simply repeats whatever you
-type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1"><span class="nb">echo</span><span class="w"> </span>Hello,<span class="w"> </span>World!</span>
-</pre></div></div><p>Type this in, and then press <kbd class="kbd docutils literal notranslate">Enter</kbd>.</p>
+<section id="size">
+<h2>Size<a class="headerlink" href="#size" title="Link to this heading">#</a></h2>
+<p>We can always get the number of elements in a
+vector via the <code class="docutils literal notranslate"><span class="pre">.size()</span></code> function:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">int_vec</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">nlen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">int_vec</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">size()</span></code> technically returns a value of type <code class="docutils literal notranslate"><span class="pre">std::size_t</span></code>, and
+here we implicitly <em>cast</em> it to an <code class="docutils literal notranslate"><span class="pre">int</span></code>.  We learn more about
+casting later.</p>
 </div>
 </section>
 </section>
@@ -550,20 +543,20 @@ span.prompt1:before {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="topics.html"
+       href="cxx-vectors.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Topics</p>
+        <p class="prev-next-title">Vectors</p>
       </div>
     </a>
     <a class="right-next"
-       href="remote_servers.html"
+       href="cxx-vectors-loops.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></p>
+        <p class="prev-next-title">Looping Over Vectors</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -585,11 +578,8 @@ span.prompt1:before {
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathlab">MathLab</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-into-the-desktops">Logging into the desktops</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-terminal">The Terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-to-a-vector">Adding to a vector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#size">Size</a></li>
 </ul>
   </nav></div>
 

@@ -139,7 +139,7 @@ the top of many pages.
    :hidden:
 
    cxx-basics/cxx-vectors
-   cxx-basics/cxx-more-vectors
+   cxx-basics/cxx-vector-push
    cxx-basics/cxx-vectors-loops
    cxx-basics/cxx-structs
    cxx-basics/cxx-arrays

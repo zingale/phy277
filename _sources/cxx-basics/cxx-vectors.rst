@@ -2,6 +2,10 @@
 Vectors
 *******
 
+.. admonition:: reading
+
+   `std::vector at cpluscplus.com <https://cplusplus.com/reference/vector/vector/>`_
+
 C++ has the `standard library
 <https://en.wikipedia.org/wiki/C%2B%2B_Standard_Library>`_ (C++ SL)
 which adds an immense amount of functionality to the language.  Let's
@@ -14,6 +18,9 @@ size---it can grow as needed to hold more data.
 
    There are many other `types of containers in the C++ SL <https://en.cppreference.com/w/cpp/container.html>`_ that have
    different properties.  Vectors are one of the most useful.
+
+``std::vector``
+===============
 
 Vectors are very useful to store data and loop over it, etc.
 Information on the properties of C++ vectors can be found at the
@@ -37,32 +44,40 @@ From that description, we see that vectors:
 Creating a vector
 =================
 
-There are many ways 
+When we create a vector, we need to specify what type of data it holds.  E.g.,
+a vector that holds ``double`` precision numbers would be declared as:
+
+.. code:: c++
+
+   std::vector<double> a;
+
+and a vector holding ``int`` would be declared as:
+
+.. code:: c++
+
+   std::vector<int> a;
+
+These vectors are empty.  We can specify the data at initialization or add it later.
+
+To initialize a vector with data, we can do:
+
+.. code:: c++
+
+   std::vector<double> a{1.0, 2.0, 4.0, 8.0};
 
 
+Indexing vectors
+================
 
-Adding to a vector
-==================
+Just like with strings, we can index a vector to access a single element.
+We use 0-based indexing.
 
-Lets see how to create a vector and add some data to it.
+We can also access the first element using ``.front()`` and the last
+element using ``.back()``.
 
-Here's a simple example:
-
-.. literalinclude:: ../../../examples/vectors/simple_vector.cpp
+.. literalinclude:: ../../../examples/vectors/vector_indexing.cpp
    :language: c++
-   :caption: ``simple_vector.cpp``
+   :caption: ``vector_indexing.cpp``
 
-Notice the following:
 
-* We specify the data type when creating a vector
-
-* We use ``push_back`` to add data to the end of a vector.  Here we
-  are using the ``.`` operator to indicate that we are performing the
-  ``push_back`` on the vector ``container`` that we created.
-
-* We access elements of a vector using ``[]`` with an index, and that
-  indices start at 0.
-
-* We can use the ``.size()`` `member function <https://en.wikipedia.org/wiki/C%2B%2B_classes#Member_functions>`_
-  to get the number of elements in the vector.
 
