@@ -485,7 +485,9 @@
 <h1>More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions<a class="headerlink" href="#more-vector-functions" title="Link to this heading">#</a></h1>
 <section id="adding-to-a-vector">
 <h2>Adding to a vector<a class="headerlink" href="#adding-to-a-vector" title="Link to this heading">#</a></h2>
-<p>Lets see how to create a vector and add some data to it.</p>
+<p>Lets see how to create a vector and add some data to it.  We use the
+member function <code class="docutils literal notranslate"><span class="pre">.push_back()</span></code> to this.  This will add an
+element to the end of the vector.</p>
 <p>Here’s a simple example:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-number">Listing 31 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_vector.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
@@ -508,7 +510,7 @@
 </pre></div>
 </div>
 </div>
-<p>We use <code class="docutils literal notranslate"><span class="pre">push_back</span></code> to add data to the end of a vector.  Here we
+<p>We use <code class="docutils literal notranslate"><span class="pre">push_back</span></code> several times to add data to the end of a vector.  Here we
 are using the <code class="docutils literal notranslate"><span class="pre">.</span></code> operator to indicate that we are performing the
 <code class="docutils literal notranslate"><span class="pre">push_back</span></code> on the vector <code class="docutils literal notranslate"><span class="pre">container</span></code> that we created.</p>
 <div class="admonition note">
@@ -531,6 +533,11 @@ vector via the <code class="docutils literal notranslate"><span class="pre">.siz
 <p><code class="docutils literal notranslate"><span class="pre">size()</span></code> technically returns a value of type <code class="docutils literal notranslate"><span class="pre">std::size_t</span></code>, and
 here we implicitly <em>cast</em> it to an <code class="docutils literal notranslate"><span class="pre">int</span></code>.  We learn more about
 casting later.</p>
+</div>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">try it…</p>
+<p>We can see the size of the vector increase each time we add an element
+using <code class="docutils literal notranslate"><span class="pre">.push_back()</span></code>.</p>
 </div>
 </section>
 </section>
