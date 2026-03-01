@@ -5,7 +5,9 @@ More ``vector`` functions
 Adding to a vector
 ==================
 
-Lets see how to create a vector and add some data to it.
+Lets see how to create a vector and add some data to it.  We use the
+member function ``.push_back()`` to this.  This will add an
+element to the end of the vector.
 
 Here's a simple example:
 
@@ -13,7 +15,7 @@ Here's a simple example:
    :language: c++
    :caption: ``simple_vector.cpp``
 
-We use ``push_back`` to add data to the end of a vector.  Here we
+We use ``push_back`` several times to add data to the end of a vector.  Here we
 are using the ``.`` operator to indicate that we are performing the
 ``push_back`` on the vector ``container`` that we created.
 
@@ -41,3 +43,8 @@ vector via the ``.size()`` function:
    ``size()`` technically returns a value of type ``std::size_t``, and
    here we implicitly *cast* it to an ``int``.  We learn more about
    casting later.
+
+.. admonition:: try it...
+
+   We can see the size of the vector increase each time we add an element
+   using ``.push_back()``.
