@@ -514,7 +514,14 @@ their orbital period using Kepler’s third law:</p>
 </div>
 </div>
 <p>Some notes:</p>
-<ul class="simple">
+<ul>
+<li><p>We will use a vector of our <code class="docutils literal notranslate"><span class="pre">struct</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Planet</span><span class="o">&gt;</span><span class="w"> </span><span class="n">planets</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This is no different than when we made vectors of <code class="docutils literal notranslate"><span class="pre">double</span></code> or other types.
+We still index it the same and the same member functions can be used.</p>
+</li>
 <li><p>We put the definition of <code class="docutils literal notranslate"><span class="pre">Planet</span></code> outside of the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function.</p></li>
 <li><p>In the initialization of the <code class="docutils literal notranslate"><span class="pre">planets</span></code> vector, we use
 list-initialization for each of the planets in its own set of

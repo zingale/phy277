@@ -16,6 +16,15 @@ their orbital period using Kepler's third law:
 
 Some notes:
 
+* We will use a vector of our ``struct``:
+
+  .. code:: c++
+
+     std::vector<Planet> planets;
+
+  This is no different than when we made vectors of ``double`` or other types.
+  We still index it the same and the same member functions can be used.
+
 * We put the definition of ``Planet`` outside of the ``main()`` function.
 
 * In the initialization of the ``planets`` vector, we use

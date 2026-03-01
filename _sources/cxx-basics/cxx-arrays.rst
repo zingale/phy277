@@ -20,6 +20,9 @@ But there are some key differences:
 
 * Arrays do not initialize their elements by default when declared.
 
+.. important::
+
+   Because arrays are fixed-size, you need to specify the size at *compile time*.
 
 Here's a simple example:
 
