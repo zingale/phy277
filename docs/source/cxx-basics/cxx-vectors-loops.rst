@@ -39,25 +39,3 @@ We won't worry about this distinction, but note that when we places the values
 directly in the loop, as here, we cannot update or access these values outside of the loop.
 
 
-
-Small-angle approximation example
-=================================
-
-In your homework, you looked at the small angle approximation for a variety on angles.
-We can write that code a lot more compactly now with loops:
-
-.. literalinclude:: ../../../examples/vectors/sine_loop.cpp
-   :language: c++
-   :caption: ``sine_loop.cpp``
-
-
-
-In-class example
-================
-
-
-.. admonition:: try it...
-
-   Let's add a loop to our code and compute the average of the elements
-   in the vector.
-
