@@ -1,5 +1,5 @@
 *****************************
-Roundoff vs. truncation error
+Roundoff vs. Truncation Error
 *****************************
 
 Consider the Taylor expansion of :math:`f(x)` about some point :math:`x_0`:
