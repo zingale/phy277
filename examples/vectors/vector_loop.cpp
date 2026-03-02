@@ -3,9 +3,9 @@
 
 int main() {
 
-    std::vector<double> a{1.0, 2.0, 3.0, 4.0};
+    std::vector<double> container{1.0, 2.0, 3.0, 4.0};
 
-    for (auto e : a) {
+    for (auto e : container) {
         std::cout << e << std::endl;
     }
 
