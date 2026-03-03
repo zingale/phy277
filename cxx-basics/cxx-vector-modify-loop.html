@@ -483,6 +483,29 @@
                   
   <section id="modifying-vector-elements-in-loops">
 <h1>Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops<a class="headerlink" href="#modifying-vector-elements-in-loops" title="Link to this heading">#</a></h1>
+<p>We’ve been looping over elements of a vector like this:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">};</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// do something with e</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here, in the body of the loop (between the <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>) we have access
+to a <em>copy of the current element</em> of the vector <code class="docutils literal notranslate"><span class="pre">vec</span></code> (through <code class="docutils literal notranslate"><span class="pre">e</span></code>).  We cannot
+modify the contents of <code class="docutils literal notranslate"><span class="pre">vec</span></code> using <code class="docutils literal notranslate"><span class="pre">e</span></code>, because <code class="docutils literal notranslate"><span class="pre">e</span></code> is a copy of the
+current element.</p>
+<p>If we want to modify what is actually stored in <code class="docutils literal notranslate"><span class="pre">vec</span></code>, then we need to
+access a reference to the current element in <code class="docutils literal notranslate"><span class="pre">vec</span></code>.  We can do this as:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">};</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// do something with e</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now <code class="docutils literal notranslate"><span class="pre">e</span></code> is a reference to the element in <code class="docutils literal notranslate"><span class="pre">vec</span></code>, and if we modify <code class="docutils literal notranslate"><span class="pre">e</span></code>, then
+the contents of <code class="docutils literal notranslate"><span class="pre">vec</span></code> reflect that change.</p>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
 <p>Here’s an example showing different ways of accessing elements of a
