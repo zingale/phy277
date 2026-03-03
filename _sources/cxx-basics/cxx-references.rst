@@ -69,30 +69,3 @@ functions and wish to pass objects in a *read-only*.
 A great use of references is to access and modify data in containers
 (like strings, vectors, and arrays) via a ranged-for loop.
 
-.. note::
-
-   Recall in our ``array`` examples, we used references to loop over
-   rows and columns and set the elements.  :ref:`Let's look at that again.<sec:multidimensionalarrays>`
-
-Here's an example showing different ways of accessing elements of a
-vector and whether we can modify them:
-
-.. literalinclude:: ../../../examples/references/vector_modify.cpp
-   :language: c++
-   :caption: ``vector_modify.cpp``
-
-.. admonition:: try it...
-
-   Let's modify :ref:`our example from last class <sec:structplanet>` with the ``Planet`` type
-   to add the period as a member and fill the period automatically via
-   Kepler's law in a loop.
-
-.. admonition:: try it...
-
-   What do you think happens with this code?
-
-   .. code:: c++
-
-      int a{0}, b{1};
-      int& r = a, rr = b;
-
