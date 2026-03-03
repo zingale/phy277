@@ -533,7 +533,7 @@ to give a line for each point of the form:</p>
 </li>
 </ul>
 </li>
-<li><p>Let’s find the maximum element in a vector.  The <code class="docutils literal notranslate"><span class="pre">cmath</span></code>
+<li><p>Let’s find the maximum element in a vector.  The <code class="docutils literal notranslate"><span class="pre">algorithm</span></code>
 library provides <code class="docutils literal notranslate"><span class="pre">std::max(a,</span> <span class="pre">b)</span></code> which will return
 whichever of <code class="docutils literal notranslate"><span class="pre">a</span></code> or <code class="docutils literal notranslate"><span class="pre">b</span></code> is the largest.</p>
 <p>Starting with the vector:</p>
@@ -548,6 +548,14 @@ in class) and <code class="docutils literal notranslate"><span class="pre">std::
 a very small value so the first element you check in the vector
 will become the maximum.  Using <code class="docutils literal notranslate"><span class="pre">std::numeric_limits</span></code> can
 help here.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should add:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
+</pre></div>
+</div>
+<p>to your code to get access to <code class="docutils literal notranslate"><span class="pre">std::max</span></code>.</p>
 </div>
 </li>
 </ol>

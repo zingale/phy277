@@ -68,7 +68,7 @@ Homework #4
 
         Point ( 1.50, -2.30) is  2.746 from the origin.
 
-3. Let's find the maximum element in a vector.  The ``cmath``
+3. Let's find the maximum element in a vector.  The ``algorithm``
    library provides ``std::max(a, b)`` which will return
    whichever of ``a`` or ``b`` is the largest.
 
@@ -88,3 +88,12 @@ Homework #4
       will become the maximum.  Using ``std::numeric_limits`` can
       help here.
 
+   .. note::
+
+      You should add:
+
+      .. code:: c++
+
+         #include <algorithm>
+
+      to your code to get access to ``std::max``.
