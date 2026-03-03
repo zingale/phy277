@@ -78,9 +78,9 @@ Older style arrays
    .. code:: c++
 
       double x[10];
-      int p[10][20];
 
-   The ``std::array`` is a more modern wrapper for these---it has the
-   advantage that it knows the size of the array.
+   The ``std::array`` is a more modern wrapper for this---it has the
+   advantage that it knows the size of the array and works with
+   our loops and the algorithms provided by the C++ standard library.
 
 

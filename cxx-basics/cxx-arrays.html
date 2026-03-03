@@ -53,8 +53,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-arrays';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Memory: Stack vs. Heap" href="memory-stack-heap.html" />
-    <link rel="prev" title="Vector of Structs" href="cxx-vector-of-struct.html" />
+    <link rel="next" title="Structures" href="cxx-structs.html" />
+    <link rel="prev" title="Examples of Using vector" href="cxx-vector-examples.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -222,9 +222,9 @@
 <li class="toctree-l1"><a class="reference internal" href="cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vectors-loops.html">Looping Over Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vector-examples.html">Examples of Using <code class="docutils literal notranslate"><span class="pre">vector</span></code></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Arrays</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vector-of-struct.html">Vector of Structs</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Arrays</a></li>
 <li class="toctree-l1"><a class="reference internal" href="memory-stack-heap.html">Memory: Stack vs. Heap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
@@ -508,7 +508,7 @@ In contrast, arrays are fixed-size.</p></li>
 <h2><code class="docutils literal notranslate"><span class="pre">std::array</span></code><a class="headerlink" href="#std-array" title="Link to this heading">#</a></h2>
 <p>Here’s a simple example:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 38 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_array.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 36 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_array.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;array&gt;</span>
 
@@ -543,7 +543,7 @@ In contrast, arrays are fixed-size.</p></li>
 <p>Looping over the elements of an array works the same as with vectors,
 and likewise we can get the size via the <code class="docutils literal notranslate"><span class="pre">.size()</span></code> member function:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 39 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">array_loop.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 37 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">array_loop.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;array&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
@@ -568,11 +568,11 @@ and likewise we can get the size via the <code class="docutils literal notransla
 <p class="admonition-title">Caution</p>
 <p>In C and older C++, you will see fixed-side arrays declared as:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">p</span><span class="p">[</span><span class="mi">10</span><span class="p">][</span><span class="mi">20</span><span class="p">];</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">std::array</span></code> is a more modern wrapper for these—it has the
-advantage that it knows the size of the array.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">std::array</span></code> is a more modern wrapper for this—it has the
+advantage that it knows the size of the array and works with
+our loops and the algorithms provided by the C++ standard library.</p>
 </div>
 </section>
 </section>
@@ -589,20 +589,20 @@ advantage that it knows the size of the array.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-vector-of-struct.html"
+       href="cxx-vector-examples.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Vector of Structs</p>
+        <p class="prev-next-title">Examples of Using <code class="docutils literal notranslate"><span class="pre">vector</span></code></p>
       </div>
     </a>
     <a class="right-next"
-       href="memory-stack-heap.html"
+       href="cxx-structs.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Memory: Stack vs. Heap</p>
+        <p class="prev-next-title">Structures</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

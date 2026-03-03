@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="References" href="cxx-references.html" />
-    <link rel="prev" title="Arrays" href="cxx-arrays.html" />
+    <link rel="prev" title="Vector of Structs" href="cxx-vector-of-struct.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -222,9 +222,9 @@
 <li class="toctree-l1"><a class="reference internal" href="cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vectors-loops.html">Looping Over Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vector-examples.html">Examples of Using <code class="docutils literal notranslate"><span class="pre">vector</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-arrays.html">Arrays</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vector-of-struct.html">Vector of Structs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-arrays.html">Arrays</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Memory: Stack vs. Heap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
@@ -446,7 +446,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -462,6 +464,15 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack">Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heap">Heap</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -473,6 +484,39 @@
                   
   <section id="memory-stack-vs-heap">
 <h1>Memory: Stack vs. Heap<a class="headerlink" href="#memory-stack-vs-heap" title="Link to this heading">#</a></h1>
+<div class="admonition-reading admonition">
+<p class="admonition-title">reading</p>
+<p><a class="reference external" href="https://www.geeksforgeeks.org/dsa/stack-vs-heap-memory-allocation/">Stack vs. heap memory allocation</a> from geeksforgeeks.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">std::vector</span></code> and <code class="docutils literal notranslate"><span class="pre">std::array</span></code> also use different regions of memory
+in the computer.</p>
+<section id="stack">
+<h2>Stack<a class="headerlink" href="#stack" title="Link to this heading">#</a></h2>
+<p>The stack is where the variables we have been creating like:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">{};</span>
+</pre></div>
+</div>
+<p>live (this is not required by C++, but it is what most systems do).
+These are sometimes called <a class="reference external" href="https://en.wikipedia.org/wiki/Automatic_variable">automatic variables</a>.  When we enter a
+program unit (like <code class="docutils literal notranslate"><span class="pre">main</span></code>) these variables are placed on the <em>stack</em>
+(in the order we encounter them).  And when we leave the program unit,
+they are popped off, automatically freeing up the resources.</p>
+<p>Note that the stack is generally small, and if we try to put too much data on the stack, we can encounter a <a class="reference external" href="https://en.wikipedia.org/wiki/Stack_overflow">stack overflow</a> and the program will crash.</p>
+<p><code class="docutils literal notranslate"><span class="pre">std::array</span></code> (typically) puts its data on the stack.</p>
+</section>
+<section id="heap">
+<h2>Heap<a class="headerlink" href="#heap" title="Link to this heading">#</a></h2>
+<p>The heap is the region of memory where dynamically allocated resources
+typically live—this means that the memory is allocated at runtime.
+We won’t consider manual memory management in this class, but <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>
+will allocate its memory on the heap.</p>
+<p>In older C++, we needed to be careful to manually free the memory on the heap,
+since it is not automatic, as with the stack.  This could lead to memory leaks
+and crashes.  In modern C++, for objects like <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>, when the object
+goes out of scope (e.g., we leave the function where we created it), a special
+function called the destructor is automatically called freeing the resources.</p>
+</section>
 </section>
 
 
@@ -487,12 +531,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-arrays.html"
+       href="cxx-vector-of-struct.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Arrays</p>
+        <p class="prev-next-title">Vector of Structs</p>
       </div>
     </a>
     <a class="right-next"
@@ -510,6 +554,24 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack">Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heap">Heap</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
