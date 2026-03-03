@@ -287,6 +287,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../homework/homework1.html">Homework #1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework #2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/homework3.html">Homework #3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework4.html">Homework #4</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exams</span></p>
 <ul class="nav bd-sidenav">
@@ -524,7 +525,7 @@ with loops:</p>
 widths to give a nice table output.</p>
 </section>
 <section id="averaging">
-<h2>Averaging<a class="headerlink" href="#averaging" title="Link to this heading">#</a></h2>
+<span id="sec-vec-averaging"></span><h2>Averaging<a class="headerlink" href="#averaging" title="Link to this heading">#</a></h2>
 <p>Let’s see how to compute the average of a vector’s elements.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-number">Listing 35 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">average.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
@@ -533,7 +534,7 @@ widths to give a nice table output.</p>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="w"> </span><span class="n">vec</span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.2</span><span class="p">,</span><span class="w"> </span><span class="mf">10.5</span><span class="p">,</span><span class="w"> </span><span class="mf">21.3</span><span class="p">,</span><span class="w"> </span><span class="mf">25.4</span><span class="p">,</span><span class="w"> </span><span class="mf">6.6</span><span class="p">,</span><span class="w"> </span><span class="mf">4.2</span><span class="p">};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.2</span><span class="p">,</span><span class="w"> </span><span class="mf">10.5</span><span class="p">,</span><span class="w"> </span><span class="mf">21.3</span><span class="p">,</span><span class="w"> </span><span class="mf">25.4</span><span class="p">,</span><span class="w"> </span><span class="mf">6.6</span><span class="p">,</span><span class="w"> </span><span class="mf">4.2</span><span class="p">};</span>
 
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="p">{};</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
