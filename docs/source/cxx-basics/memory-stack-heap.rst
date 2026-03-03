@@ -30,7 +30,7 @@ Note that the stack is generally small, and if we try to put too much data on th
 
 ``std::array`` (typically) puts its data on the stack.
 
- 
+
 Heap
 ====
 
@@ -44,4 +44,3 @@ since it is not automatic, as with the stack.  This could lead to memory leaks
 and crashes.  In modern C++, for objects like ``std::vector``, when the object
 goes out of scope (e.g., we leave the function where we created it), a special
 function called the destructor is automatically called freeing the resources.
-
