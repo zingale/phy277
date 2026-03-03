@@ -446,7 +446,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -462,6 +464,15 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-example">Basic example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#const-reference"><code class="docutils literal notranslate"><span class="pre">const</span></code> reference</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -481,12 +492,28 @@
 essentially becomes another name for the object and allows you to
 read and write to its memory directly.</p>
 <p>We use the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> operator to create a reference.</p>
+<p>A great use of references is to access and modify data in containers
+(like strings, vectors, and arrays) via a ranged-for loop.  We’ll see
+this next.</p>
+<section id="basic-example">
+<h2>Basic example<a class="headerlink" href="#basic-example" title="Link to this heading">#</a></h2>
 <p>Here’s a simple example:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mi">10</span><span class="p">};</span>
-<span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x_ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 40 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_reference.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
-<span class="n">x_ref</span><span class="o">++</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mi">10</span><span class="p">};</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x_ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">x_ref</span><span class="o">++</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x is now &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="p">}</span>
 </pre></div>
+</div>
 </div>
 <p>Since <code class="docutils literal notranslate"><span class="pre">x_ref</span></code> is a reference for <code class="docutils literal notranslate"><span class="pre">x</span></code>, modifying its value directly
 modifies <code class="docutils literal notranslate"><span class="pre">x</span></code> ‘s value as well.</p>
@@ -511,21 +538,39 @@ modifies <code class="docutils literal notranslate"><span class="pre">x</span></
 </pre></div>
 </div>
 </div>
+</section>
+<section id="const-reference">
+<h2><code class="docutils literal notranslate"><span class="pre">const</span></code> reference<a class="headerlink" href="#const-reference" title="Link to this heading">#</a></h2>
 <p>We can create a <code class="docutils literal notranslate"><span class="pre">const</span></code> reference that provides only read access to
 an object:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span>
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a_ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Now if we try to update <code class="docutils literal notranslate"><span class="pre">a</span></code> through <code class="docutils literal notranslate"><span class="pre">a_ref</span></code>, we’ll get an error.</p>
+<p>Now if we try to update <code class="docutils literal notranslate"><span class="pre">a</span></code> through <code class="docutils literal notranslate"><span class="pre">a_ref</span></code>, we’ll get a compile-time
+error:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 41 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">const_reference_example.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">{</span><span class="mi">2</span><span class="p">};</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">i_ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">i_ref</span><span class="o">++</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">const</span></code> references will be very useful when we start writing
 functions and wish to pass objects in a <em>read-only</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You cannot make a reference to a reference.</p>
 </div>
-<p>A great use of references is to access and modify data in containers
-(like strings, vectors, and arrays) via a ranged-for loop.</p>
+</section>
 </section>
 
 
@@ -563,6 +608,24 @@ functions and wish to pass objects in a <em>read-only</em>.</p>
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-example">Basic example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#const-reference"><code class="docutils literal notranslate"><span class="pre">const</span></code> reference</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
