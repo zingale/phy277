@@ -3,8 +3,7 @@
 #include <cmath>
 #include <format>
 
-struct Planet
-{
+struct Planet {
     std::string name{};
     double a{};            // semi-major axis
     double e{};            // eccentricity
@@ -21,9 +20,9 @@ int main() {
                                       {.name="Uranus",  .a=19.189, .e=0.0473},
                                       {.name="Neptune", .a=30.070, .e=0.0086}};
 
-    for (const auto& p : planets) {
+    for (auto p : planets) {
         std::cout << std::format("{} has a period of {:.2f} years\n",
-                                 p.name, std::sqrt(std::pow(p.a, 3)));
+                                 p.name, std::sqrt(std::pow(p.a, 3.0)));
     }
 
 }
