@@ -53,8 +53,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-pointers';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Conditional Statements" href="cxx-conditional.html" />
-    <link rel="prev" title="Multidimensional Arrays" href="cxx-multid-arrays.html" />
+    <link rel="next" title="Vector Iterators" href="../sl-algorithms/cxx-vector-iterators.html" />
+    <link rel="prev" title="File I/O" href="cxx-io.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -217,7 +217,7 @@
 <li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-vectors.html">Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vectors-loops.html">Looping Over Vectors</a></li>
@@ -229,7 +229,6 @@
 <li class="toctree-l1"><a class="reference internal" href="cxx-references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-multid-arrays.html">Multidimensional Arrays</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pointers</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
@@ -258,7 +257,8 @@
 <li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pointers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vector-iterators.html">Vector Iterators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vectors-algorithms.html">Vector Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-strings-functions.html">Working with Strings</a></li>
@@ -499,7 +499,7 @@ use the <em>address operator</em> <code class="docutils literal notranslate"><sp
 <a class="reference internal image-reference" href="../_images/692px-Pointers.svg.png"><img alt="A diagram showing pointers and the memory they point to." src="../_images/692px-Pointers.svg.png" style="width: 70%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">A pointer, <code class="docutils literal notranslate"><span class="pre">a</span></code> that points to the memory location of variable <code class="docutils literal notranslate"><span class="pre">b</span></code>.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">A pointer, <code class="docutils literal notranslate"><span class="pre">a</span></code> that points to the memory location of variable <code class="docutils literal notranslate"><span class="pre">b</span></code>.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 <div class="legend">
 <p>(Wikipedia/Sven)</p>
 </div>
@@ -508,7 +508,7 @@ use the <em>address operator</em> <code class="docutils literal notranslate"><sp
 <p>We can access the data pointed to by the pointer by using the <em>dereference operator</em>, <code class="docutils literal notranslate"><span class="pre">*</span></code>.
 Here’s an example:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 44 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pointers_example.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 61 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pointers_example.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -588,20 +588,20 @@ all other object types).  C++ provides <code class="docutils literal notranslate
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-multid-arrays.html"
+       href="cxx-io.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Multidimensional Arrays</p>
+        <p class="prev-next-title">File I/O</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-conditional.html"
+       href="../sl-algorithms/cxx-vector-iterators.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Conditional Statements</p>
+        <p class="prev-next-title">Vector Iterators</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

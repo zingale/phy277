@@ -149,7 +149,6 @@ the top of many pages.
    cxx-basics/cxx-references
    cxx-basics/cxx-vector-modify-loop
    cxx-basics/cxx-multid-arrays
-   cxx-basics/cxx-pointers
 
 .. toctree::
    :maxdepth: 1
@@ -194,6 +193,7 @@ the top of many pages.
    :caption: Some SL Algorithms
    :hidden:
 
+   cxx-basics/cxx-pointers
    sl-algorithms/cxx-vector-iterators
    sl-algorithms/cxx-vectors-algorithms
    sl-algorithms/cxx-strings-functions

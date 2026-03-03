@@ -29,7 +29,6 @@ There are a few features here that we have not yet seen.
   ``&`` operator).  This gives us direct access to the memory without
   needing to make a copy.
 
-We'll cover references next.
 
 .. note::
 
