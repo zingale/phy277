@@ -16,6 +16,8 @@ with loops:
 Notice that we also use ``std::format`` here and set the column
 widths to give a nice table output.
 
+.. _sec:vec-averaging:
+
 Averaging
 =========
 

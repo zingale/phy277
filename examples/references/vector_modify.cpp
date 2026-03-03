@@ -34,18 +34,4 @@ int main() {
     }
     std::cout << std::endl;
 
-    // this is access via iterators that we saw previously.  An
-    // iterator can be thought of as a pointer to the element, and we
-    // need to dereference it to access its value.
-
-    for (auto it = container.begin(); it < container.end(); ++it) {
-        *it = 3.0;
-    }
-
-    std::cout << "current vector: ";
-    for (auto e : container) {
-        std::cout << e << " ";
-    }
-    std::cout << std::endl;
-
 }

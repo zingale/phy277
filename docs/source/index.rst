@@ -142,13 +142,13 @@ the top of many pages.
    cxx-basics/cxx-vector-push
    cxx-basics/cxx-vectors-loops
    cxx-basics/cxx-vector-examples.rst
+   cxx-basics/cxx-arrays
    cxx-basics/cxx-structs
    cxx-basics/cxx-vector-of-struct
-   cxx-basics/cxx-arrays
-   cxx-basics/cxx-multid-arrays
    cxx-basics/memory-stack-heap
    cxx-basics/cxx-references
-   cxx-basics/cxx-pointers
+   cxx-basics/cxx-vector-modify-loop
+   cxx-basics/cxx-multid-arrays
 
 .. toctree::
    :maxdepth: 1
@@ -193,6 +193,7 @@ the top of many pages.
    :caption: Some SL Algorithms
    :hidden:
 
+   cxx-basics/cxx-pointers
    sl-algorithms/cxx-vector-iterators
    sl-algorithms/cxx-vectors-algorithms
    sl-algorithms/cxx-strings-functions
@@ -248,6 +249,7 @@ the top of many pages.
    homework/homework1
    homework/homework2
    homework/homework3
+   homework/homework4
 
 .. toctree::
    :maxdepth: 1
