@@ -13,7 +13,8 @@ OKAY_TO_FAIL = ["function_vector.cpp",
                 "types.cpp",
                 "unused.cpp",
                 "narrowing.cpp",
-                "bounds.cpp"]
+                "bounds.cpp",
+                "const_reference_example.cpp"]
 
 
 def main():
