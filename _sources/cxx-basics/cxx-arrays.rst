@@ -24,6 +24,9 @@ But there are some key differences:
 
    Because arrays are fixed-size, you need to specify the size at *compile time*.
 
+``std::array``
+==============
+
 Here's a simple example:
 
 .. literalinclude:: ../../../examples/arrays/simple_array.cpp
@@ -50,8 +53,23 @@ If you don't give all the values, the remainder are initialized to 0:
 
       std::array<int, 10> int_arr{1, 2};
 
-We can use the same set of algorithms we saw with vectors on arrays, like ``sort``, ``find``, etc.
 
+Looping over array elements
+===========================
+
+Looping over the elements of an array works the same as with vectors,
+and likewise we can get the size via the ``.size()`` member function:
+
+.. literalinclude:: ../../../examples/arrays/array_loop.cpp
+   :language: c++
+   :caption: ``array_loop.cpp``
+
+
+
+
+
+Older style arrays
+==================
 
 .. caution::
 
