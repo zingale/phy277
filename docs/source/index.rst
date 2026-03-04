@@ -151,6 +151,13 @@ the top of many pages.
 
 .. toctree::
    :maxdepth: 1
+   :caption: Practice
+   :hidden:
+
+   interactive_review/review-vecs
+
+.. toctree::
+   :maxdepth: 1
    :caption: C++ Flow Control
    :hidden:
 
