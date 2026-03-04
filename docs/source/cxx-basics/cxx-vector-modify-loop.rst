@@ -44,10 +44,3 @@ vector and whether we can modify them:
    :language: c++
    :caption: ``vector_modify.cpp``
 
-.. admonition:: try it...
-
-   Let's modify :ref:`our struct Planet example <sec:structplanet>`
-   to add the period as a member and fill the period automatically via
-   Kepler's law in a loop.
-
-
