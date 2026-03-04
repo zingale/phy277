@@ -19,7 +19,7 @@ int main() {
 
     // add to the sequence
 
-    while (fib.size() < N) {
+    while (static_cast<int>(fib.size()) < N) {
         auto s = fib.size();
         fib.push_back(fib[s-1] + fib[s-2]);
     }
