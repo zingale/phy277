@@ -39,6 +39,8 @@ a quantity:
    Unlike in some languages, there is no operator for exponentiation, e.g., $x^y$.
    We'll see how to call a function to this shortly.
 
+.. _sec:relational_ops
+
 Relational operators
 ====================
 
