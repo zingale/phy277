@@ -165,6 +165,7 @@ the top of many pages.
    cxx-basics/cxx-loops
    cxx-basics/cxx-statements
    cxx-basics/cxx-continue-break
+   cxx-basics/conditional-loop-examples
 
 .. toctree::
    :maxdepth: 1
