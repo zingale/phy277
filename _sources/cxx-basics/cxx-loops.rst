@@ -2,16 +2,39 @@
 Loops
 *****
 
+
 ``for`` loops
 =============
 
-We've already seen the basic structure of a for loop:
+We already saw how to loop over the elements of a vector:
+
+.. code:: c++
+
+   for (auto e : vec) {
+       // work on e
+   }
+
+Now we'll look at another type of ``for`` loop.  This takes the form:
 
 .. code:: c++
 
    for (initializer ; condition ; iterator) {
         // do stuff
    }
+
+For example, to iterate from ``i = 0`` to ``i = 9``, we could do:
+
+.. code:: c++
+
+   for (int i = 0; i < 10; ++i) {
+       // work with i
+   }
+
+We can use this to index a vector as well.  For example:
+
+.. literalinclude:: ../../../examples/loops/vector_loop_manual.cpp
+   :language: c++
+   :caption: ``vector_loop_manual.cpp``
 
 .. tip::
 
@@ -27,47 +50,18 @@ We've already seen the basic structure of a for loop:
    commonly see the prefix version used since it does not make a copy,
    and therefore can be faster.
 
-
-We can do this for just a simple integer counter:
-
-.. code:: c++
-
-   for (int i = 0; i < 10; i += 2) {
-        // we'll see i = 0, 2, 4, 6, 8
-   }
-
-or with an iterator, like:
-
-.. code:: c++
-
-   std::string my_string{"this is my string"};
-
-   for (auto it = my_string.begin(); it < my_string.end(); ++it) {
-        // work on the string character by character
-   }
-
 .. note::
 
    Just like with ``if``, there is a single-statement form of ``for``
    that doesn't use brackets for the loop body---this should be
    avoided.
 
-We also saw the range-for loop that works with a variety of containers.  For example:
-
-.. code:: c++
-
-   std::vector<double> x{0.0, 1.0, 2.0, 3.0};
-
-   for (auto e : x) {
-       // work on the current element in x
-   }
 
 
+``while`` loops
+===============
 
-``while`` and ``do``-``while`` loops
-====================================
-
-There are two types of ``while`` loops in C++.  The first takes the form:
+The other type of loop in C++ is a ``while`` loops.  This takes the form:
 
 .. code:: c++
 
@@ -85,26 +79,19 @@ where the body is executed so long as ``condition`` is true.  For example:
       i = 2*i;
    }
 
-The loop body is only ever executed if the condition is true.  The
-other form puts the ``while`` at the end:
+The loop body is only ever executed if the condition is true.
 
-.. code:: c++
+.. warning::
 
-   do {
-       // do stuff
-   } while (condition);
+   There is another form of the ``while`` loop that has the form:
 
-In this case, all of the statements in the loop body are executed at least once.
+   .. code:: c++
 
-.. note::
+      do {
+          // do stuff
+      } while (condition);
+
+   In this case, all of the statements in the loop body are executed at least once.
 
    The ``do {} while (condition)`` form `is discouraged <https://clang.llvm.org/extra/clang-tidy/checks/cppcoreguidelines/avoid-do-while.html>`_.
-
-
-Finally, you can loop over a range simply by using an initialization list:
-
-.. literalinclude:: ../../../examples/statements/list_loop.cpp
-   :language: c++
-   :caption: ``list_loop.cpp``
-
 
