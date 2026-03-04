@@ -79,7 +79,7 @@ it is not available to us outside of the block.
 
 If we want to set a variable inside of an ``if`` condition, then we
 need to declare the variable outside.  This is an issue of *scope*.
-Most variables in C++ have lifetimes limited to the bloc (``{ }``) in
+Most variables in C++ have lifetimes limited to the block (``{ }``) in
 which they are defined.
 
 
