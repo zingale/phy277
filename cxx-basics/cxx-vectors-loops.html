@@ -228,7 +228,6 @@
 <li class="toctree-l1"><a class="reference internal" href="memory-stack-heap.html">Memory: Stack vs. Heap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
@@ -245,7 +244,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/truncation.html">Roundoff vs. Truncation Error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/truncation.html">Derivatives and Truncation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/optimization.html">Compiler Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-example.html">Example: Planetary Orbit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
@@ -266,6 +265,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-stdlib.html">SL Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-lambdas.html">Lambda Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
 <ul class="nav bd-sidenav">
@@ -495,9 +495,9 @@ terminal, we could do:</p>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">container</span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">};</span>
 
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">container</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 

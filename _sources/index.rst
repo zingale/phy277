@@ -148,7 +148,6 @@ the top of many pages.
    cxx-basics/memory-stack-heap
    cxx-basics/cxx-references
    cxx-basics/cxx-vector-modify-loop
-   cxx-basics/cxx-multid-arrays
 
 .. toctree::
    :maxdepth: 1
@@ -201,6 +200,7 @@ the top of many pages.
    sl-algorithms/cxx-stdlib
    sl-algorithms/cxx-lambdas
    sl-algorithms/cxx-functions-planets
+   cxx-basics/cxx-multid-arrays
 
 .. toctree::
    :maxdepth: 1

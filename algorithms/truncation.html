@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Roundoff vs. Truncation Error &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Derivatives and Truncation &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -230,7 +230,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/memory-stack-heap.html">Memory: Stack vs. Heap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
@@ -247,7 +246,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Roundoff vs. Truncation Error</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Derivatives and Truncation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimization.html">Compiler Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-orbit-example.html">Example: Planetary Orbit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
@@ -268,6 +267,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-stdlib.html">SL Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-lambdas.html">Lambda Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
 <ul class="nav bd-sidenav">
@@ -449,7 +449,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -460,11 +462,21 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Roundoff vs. Truncation Error</h1>
+    <h1>Derivatives and Truncation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-approximation-to-first-derivative">Difference approximation to first derivative</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roundoff-vs-truncation">Roundoff vs. truncation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#higher-order-approximations">Higher-order approximations</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -474,8 +486,10 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="roundoff-vs-truncation-error">
-<h1>Roundoff vs. Truncation Error<a class="headerlink" href="#roundoff-vs-truncation-error" title="Link to this heading">#</a></h1>
+  <section id="derivatives-and-truncation">
+<h1>Derivatives and Truncation<a class="headerlink" href="#derivatives-and-truncation" title="Link to this heading">#</a></h1>
+<section id="difference-approximation-to-first-derivative">
+<h2>Difference approximation to first derivative<a class="headerlink" href="#difference-approximation-to-first-derivative" title="Link to this heading">#</a></h2>
 <p>Consider the Taylor expansion of <span class="math notranslate nohighlight">\(f(x)\)</span> about some point <span class="math notranslate nohighlight">\(x_0\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[f(x) = f(x_0 + \Delta x) = f(x_0) + \left . \frac{df}{dx} \right |_{x_0} \Delta x + \mathcal{O}(\Delta x^2)\]</div>
@@ -483,11 +497,17 @@
 <p>We can solve for the derivative to find an approximation for the first derivative:</p>
 <div class="math notranslate nohighlight">
 \[\left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} + \mathcal{O}(\Delta x)\]</div>
-<p>This shows that this approximation for the derivative is first-order accurate in <span class="math notranslate nohighlight">\(\Delta x\)</span>—that is the truncation error of the approximation.</p>
-<p>We can see the relative size of roundoff and truncation error by using this approximation
-to compute a derivative for different values of <span class="math notranslate nohighlight">\(\Delta x\)</span>:</p>
+<p>This shows that this approximation for the derivative is first-order
+accurate in <span class="math notranslate nohighlight">\(\Delta x\)</span>—that is the <a class="reference external" href="https://en.wikipedia.org/wiki/Truncation_error_(numerical_integration)">truncation error</a> of the
+approximation.</p>
+</section>
+<section id="roundoff-vs-truncation">
+<h2>Roundoff vs. truncation<a class="headerlink" href="#roundoff-vs-truncation" title="Link to this heading">#</a></h2>
+<p>We can see the relative size of roundoff and truncation error by using
+this approximation to compute a derivative for different values of
+<span class="math notranslate nohighlight">\(\Delta x\)</span>:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 51 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">truncation_vs_roundoff.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 50 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">truncation_vs_roundoff.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
@@ -560,6 +580,27 @@ to dominate.  In effect, we are seeing that:</p>
 machine epsilon.</p></li>
 </ul>
 </section>
+<section id="higher-order-approximations">
+<h2>Higher-order approximations<a class="headerlink" href="#higher-order-approximations" title="Link to this heading">#</a></h2>
+<p>Let’s look back at our difference approximation, but now consider Taylor expanding
+<span class="math notranslate nohighlight">\(f(x_0 + \Delta x)\)</span> and <span class="math notranslate nohighlight">\(f(x_0 - \Delta x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[f(x_0 + \Delta x) = f(x_0) + \left . \frac{df}{dx} \right |_{x_0} \Delta x +
+                             \frac{1}{2} \left . \frac{d^2f}{dx^2} \right |_{x_0} \Delta x^2 +
+                             \mathcal{O}(\Delta x^3)\]</div>
+<div class="math notranslate nohighlight">
+\[f(x_0 + \Delta x) = f(x_0) - \left . \frac{df}{dx} \right |_{x_0} \Delta x +
+                             \frac{1}{2} \left . \frac{d^2f}{dx^2} \right |_{x_0} \Delta x^2 -
+                             \mathcal{O}(\Delta x^3)\]</div>
+<p>Now, if we subtract these, we get:</p>
+<div class="math notranslate nohighlight">
+\[f(x_0 + \Delta x) - f(x_0 - \Delta x) = 2 \left . \frac{df}{dx} \right |_{x_0} \Delta x + \mathcal{O}(\Delta x^3)\]</div>
+<p>Notice that the <span class="math notranslate nohighlight">\(\Delta x^2\)</span> term cancels out.  Now solving for the first derivative, we have:</p>
+<div class="math notranslate nohighlight">
+\[\left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0 - \Delta x)}{2  \Delta x}  + \mathcal{O}(\Delta x^2)\]</div>
+<p>We see that this is second-order accurate.  This is sometimes called a <em>centered-difference</em>.</p>
+</section>
+</section>
 
 
                 </article>
@@ -596,6 +637,25 @@ machine epsilon.</p></li>
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-approximation-to-first-derivative">Difference approximation to first derivative</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roundoff-vs-truncation">Roundoff vs. truncation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#higher-order-approximations">Higher-order approximations</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

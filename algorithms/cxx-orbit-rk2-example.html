@@ -230,7 +230,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/memory-stack-heap.html">Memory: Stack vs. Heap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
@@ -247,7 +246,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="truncation.html">Roundoff vs. Truncation Error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="truncation.html">Derivatives and Truncation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimization.html">Compiler Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-orbit-example.html">Example: Planetary Orbit</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2nd Order Runge-Kutta Orbit</a></li>
@@ -268,6 +267,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-stdlib.html">SL Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-lambdas.html">Lambda Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
 <ul class="nav bd-sidenav">
@@ -561,7 +561,7 @@ the state based on the derivatives, like:</p>
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 53 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">orbit_rk2_example.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 52 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">orbit_rk2_example.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>

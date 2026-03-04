@@ -228,7 +228,6 @@
 <li class="toctree-l1"><a class="reference internal" href="memory-stack-heap.html">Memory: Stack vs. Heap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-references.html">References</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
@@ -245,7 +244,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/truncation.html">Roundoff vs. Truncation Error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/truncation.html">Derivatives and Truncation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/optimization.html">Compiler Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-example.html">Example: Planetary Orbit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
@@ -266,6 +265,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-stdlib.html">SL Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-lambdas.html">Lambda Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
 <ul class="nav bd-sidenav">
@@ -470,8 +470,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-to-a-vector">Adding to a vector</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#size">Size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-to-a-vector">Adding to a vector</a></li>
 </ul>
             </nav>
         </div>
@@ -485,6 +485,22 @@
                   
   <section id="more-vector-functions">
 <h1>More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions<a class="headerlink" href="#more-vector-functions" title="Link to this heading">#</a></h1>
+<section id="size">
+<h2>Size<a class="headerlink" href="#size" title="Link to this heading">#</a></h2>
+<p>We can always get the number of elements in a
+vector via the <code class="docutils literal notranslate"><span class="pre">.size()</span></code> function:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">int_vec</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">nlen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">int_vec</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">size()</span></code> technically returns a value of type <code class="docutils literal notranslate"><span class="pre">std::size_t</span></code>, and
+here we implicitly <em>cast</em> it to an <code class="docutils literal notranslate"><span class="pre">int</span></code>.  We learn more about
+casting later.</p>
+</div>
+</section>
 <section id="adding-to-a-vector">
 <h2>Adding to a vector<a class="headerlink" href="#adding-to-a-vector" title="Link to this heading">#</a></h2>
 <p>Lets see how to create a vector and add some data to it.  We use the
@@ -519,22 +535,6 @@ are using the <code class="docutils literal notranslate"><span class="pre">.</sp
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">push_back</span></code> is a member function of the <code class="docutils literal notranslate"><span class="pre">vector</span></code> class.  There
 are others that we will see shortly.</p>
-</div>
-</section>
-<section id="size">
-<h2>Size<a class="headerlink" href="#size" title="Link to this heading">#</a></h2>
-<p>We can always get the number of elements in a
-vector via the <code class="docutils literal notranslate"><span class="pre">.size()</span></code> function:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">int_vec</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="n">nlen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">int_vec</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">size()</span></code> technically returns a value of type <code class="docutils literal notranslate"><span class="pre">std::size_t</span></code>, and
-here we implicitly <em>cast</em> it to an <code class="docutils literal notranslate"><span class="pre">int</span></code>.  We learn more about
-casting later.</p>
 </div>
 <div class="admonition-try-it admonition">
 <p class="admonition-title">try it…</p>
@@ -591,8 +591,8 @@ using <code class="docutils literal notranslate"><span class="pre">.push_back()<
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-to-a-vector">Adding to a vector</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#size">Size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-to-a-vector">Adding to a vector</a></li>
 </ul>
   </nav></div>
 
