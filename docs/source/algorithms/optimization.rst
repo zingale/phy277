@@ -2,8 +2,13 @@
 Compiler Optimization
 *********************
 
-When writing numerical codes, we often want the fastest performance we can get.
-Compilers can make `optimizations to our code <https://en.wikipedia.org/wiki/Optimizing_compiler>`_ to get better performance.  This can include eliminating common subexpressions, unrolling loops to get better cache performance, inlining functions to reduce the overhead of a call, and utilizing special hardware instructions. 
+When writing numerical codes, we often want the fastest performance we
+can get.  Compilers can make `optimizations to our code
+<https://en.wikipedia.org/wiki/Optimizing_compiler>`_ to get better
+performance.  This can include eliminating common subexpressions,
+unrolling loops to get better cache performance, inlining functions to
+reduce the overhead of a call, and utilizing special hardware
+instructions.
 
 Optimization often requires multiple passes from the compiler, which
 makes the compilation take longer, but the resulting code can be much
