@@ -5,7 +5,8 @@ Conditional Statements
 ``if``-test
 ===========
 
-We've already been using if-tests quite a bit.  So let's look a little more at their syntax:
+So far, we have not been making decisions based on the values our variables hold.  Let's see how to do this.
+The ``if`` statement allows us to test on values and take actions.
 
 .. code:: c++
 
@@ -20,8 +21,12 @@ We've already been using if-tests quite a bit.  So let's look a little more at t
 
    }
 
+Here ``condition`` is something that will evaluate to ``true`` or
+``false``, and this is a place where we will use the
+:ref:`sec:relational_ops` we've seen previously.
 
-.. tip::
+
+.. caution::
 
    There is a form of an if-statement that does not use brackets if
    there is only a single statement to execute:

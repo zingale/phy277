@@ -491,7 +491,8 @@
 <h1>Conditional Statements<a class="headerlink" href="#conditional-statements" title="Link to this heading">#</a></h1>
 <section id="if-test">
 <h2><code class="docutils literal notranslate"><span class="pre">if</span></code>-test<a class="headerlink" href="#if-test" title="Link to this heading">#</a></h2>
-<p>We’ve already been using if-tests quite a bit.  So let’s look a little more at their syntax:</p>
+<p>So far, we have not been making decisions based on the values our variables hold.  Let’s see how to do this.
+The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement allows us to test on values and take actions.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="c1">// do things if condition1 is true</span>
 
@@ -504,8 +505,11 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<p>Here <code class="docutils literal notranslate"><span class="pre">condition</span></code> is something that will evaluate to <code class="docutils literal notranslate"><span class="pre">true</span></code> or
+<code class="docutils literal notranslate"><span class="pre">false</span></code>, and this is a place where we will use the
+<span class="xref std std-ref">sec:relational_ops</span> we’ve seen previously.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
 <p>There is a form of an if-statement that does not use brackets if
 there is only a single statement to execute:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
