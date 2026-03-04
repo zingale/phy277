@@ -2,16 +2,39 @@
 Loops
 *****
 
+
 ``for`` loops
 =============
 
-We've already seen the basic structure of a for loop:
+We already saw how to loop over the elements of a vector:
+
+.. code:: c++
+
+   for (auto e : vec) {
+       // work on e
+   }
+
+Now we'll look at another type of ``for`` loop.  This takes the form:
 
 .. code:: c++
 
    for (initializer ; condition ; iterator) {
         // do stuff
    }
+
+For example, to iterate from ``i = 0`` to ``i = 9``, we could do:
+
+.. code:: c++
+
+   for (int i = 0; i < 10; ++i) {
+       // work with i
+   }
+
+We can use this to index a vector as well.  For example:
+
+.. literalinclude:: ../../../examples/loops/vector_loop_manual.cpp
+   :language: c++
+   :caption: ``vector_loop_manual.cpp``
 
 .. tip::
 
