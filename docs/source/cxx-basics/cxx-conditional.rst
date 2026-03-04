@@ -57,9 +57,30 @@ of the conditional.
 Simple example
 ==============
 
+Here's an example that reads an integer from the user and then outputs
+whether it is positive, negative, or zero:
+
+.. literalinclude:: ../../../examples/conditionals/if-example.cpp
+   :language: c++
+   :caption: ``if-example.cpp``
+
 
 Scope
 =====
+
+Consider the following example:
+
+.. literalinclude:: ../../../examples/conditionals/if-scope.cpp
+   :language: c++
+   :caption: ``if-scope.cpp``
+
+Since we declare the variable ``rem`` inside of an ``if`` block (i.e., inside the ``{ }``),
+it is not available to us outside of the block.
+
+If we want to set a variable inside of an ``if`` condition, then we
+need to declare the variable outside.  This is an issue of *scope*.
+Most variables in C++ have lifetimes limited to the bloc (``{ }``) in
+which they are defined.
 
 
 Ternary operator
