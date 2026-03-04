@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Strings &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>if + Looping Examples &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -50,11 +50,13 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-strings';</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/conditional-loop-examples';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Escape Sequences" href="cxx-strings-escape.html" />
-    <link rel="prev" title="More Practice Problems" href="../interactive_review/more-practice1.html" />
+    <link rel="next" title="Functions" href="../cxx-functions/cxx-functions.html" />
+    <link rel="prev" title="continue and break" href="cxx-continue-break.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -208,8 +210,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../interactive_review/more-practice1.html">More Practice Problems</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Strings</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings-escape.html">Escape Sequences</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings-math.html">String Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
@@ -234,12 +236,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../interactive_review/review-vecs.html">Practice Problems</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-loops.html">Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="conditional-loop-examples.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> + Looping Examples</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">if</span></code> + Looping Examples</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
 <ul class="nav bd-sidenav">
@@ -373,7 +375,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/cxx-strings.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/conditional-loop-examples.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,7 +392,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/cxx-strings.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/conditional-loop-examples.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -407,7 +409,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/cxx-strings.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/conditional-loop-examples.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -465,7 +467,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Strings</h1>
+    <h1>if + Looping Examples</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -475,8 +477,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#character-vs-string">Character vs string</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-string"><code class="docutils literal notranslate"><span class="pre">std::string</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prime-numbers">Prime numbers</a></li>
 </ul>
             </nav>
         </div>
@@ -488,115 +489,42 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="strings">
-<h1>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h1>
-<div class="admonition-reading admonition">
-<p class="admonition-title">reading</p>
-<p><a class="reference external" href="https://cplusplus.com/reference/string/string/">std::string</a> on cplusplus.com</p>
-</div>
-<p>A <a class="reference external" href="https://en.wikipedia.org/wiki/String_(computer_science)">string</a>
-is a sequence of characters and is how we represent text in a computer
-program.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We’ve already been using strings.  The <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World&quot;</span></code> we’ve been outputting
-is a type of C++ string.</p>
-</div>
-<section id="character-vs-string">
-<h2>Character vs string<a class="headerlink" href="#character-vs-string" title="Link to this heading">#</a></h2>
-<p>In C++, there is a distinction between a single character and a string.</p>
-<ul>
-<li><p>Single quotes, <code class="docutils literal notranslate"><span class="pre">'x'</span></code> are used to hold a single character.  This
-will have the datatype <code class="docutils literal notranslate"><span class="pre">char</span></code>, e.g.,</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;x&#39;</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>A <code class="docutils literal notranslate"><span class="pre">char</span></code> is typically a single byte, and therefore can represent
-256 values.  Traditionally, the <a class="reference external" href="https://en.wikipedia.org/wiki/ASCII">ASCII encoding</a> was used.</p>
-<p>An alternate encoding, <a class="reference external" href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> can represent &gt; 1 million
-characters, but cannot fit in a single <code class="docutils literal notranslate"><span class="pre">char</span></code>.</p>
-</li>
-<li><p>Double quotes, <code class="docutils literal notranslate"><span class="pre">&quot;This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">string&quot;</span></code> hold a collection of
-characters—what we call a string.  This uses the datatype
-<code class="docutils literal notranslate"><span class="pre">std::string</span></code>, e.g.,</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">{</span><span class="s">&quot;This is a string&quot;</span><span class="p">};</span>
-</pre></div>
-</div>
-</li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>C++ can also use older C-style strings, which are essentially a
-<a class="reference external" href="https://en.wikipedia.org/wiki/Null-terminated_string">null-terminated</a> array of characters, e.g.,</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="w"> </span><span class="n">c_string</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;This is my string&quot;</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>These are quite inflexible and can lead to coding errors if you are
-not careful, and we will avoid them as much as possible.</p>
-</div>
-</section>
-<section id="std-string">
-<h2><code class="docutils literal notranslate"><span class="pre">std::string</span></code><a class="headerlink" href="#std-string" title="Link to this heading">#</a></h2>
-<p>A C++ <code class="docutils literal notranslate"><span class="pre">std::string</span></code> holds a sequence of characters.  When working
-with strings, we include the <code class="docutils literal notranslate"><span class="pre">&lt;string&gt;</span></code> header.</p>
-<p>Here’s a first example.  We’ll create a string and output it to the screen:</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 18 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string_example.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+  <section id="if-looping-examples">
+<h1><code class="docutils literal notranslate"><span class="pre">if</span></code> + Looping Examples<a class="headerlink" href="#if-looping-examples" title="Link to this heading">#</a></h1>
+<section id="prime-numbers">
+<h2>Prime numbers<a class="headerlink" href="#prime-numbers" title="Link to this heading">#</a></h2>
+<p>One way to check if a number <span class="math notranslate nohighlight">\(N\)</span> is prime is to check if it is evenly divisible
+by all integers up to <span class="math notranslate nohighlight">\(\sqrt{N}\)</span>.  Let’s look at a code that can do this, up
+to an arbitrary maximum integer.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 47 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">primes.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">example</span><span class="p">{</span><span class="s">&quot;This is PHY 504&quot;</span><span class="p">};</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">example</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n_max</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_prime</span><span class="p">{</span><span class="nb">true</span><span class="p">};</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">max_factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">max_factor</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">is_prime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">is_prime</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; is prime!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">    </span><span class="p">}</span>
+
 <span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<p>We can use a <em>constructor</em> to create an initial
-string filled with a character repeated many times.  For instance,
-here’s an 80-character line:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 19 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">string-repeat.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">line</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;-&#39;</span><span class="p">);</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<p>We’ll learn more about constructors when we discuss classes in C++.</p>
-<p>Here, <code class="docutils literal notranslate"><span class="pre">'-'</span></code> is a <code class="docutils literal notranslate"><span class="pre">char</span></code> and not a string.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A nice overview of working with C++ strings is provided by “hacking C++”:
-<a class="reference external" href="https://hackingcpp.com/cpp/std/string.png">std::string</a></p>
-</div>
-<p>A C++ string is a collection of bytes (<code class="docutils literal notranslate"><span class="pre">char</span></code>) and on many operating
-systems will be Unicode (UTF-8 encoding).  For example, we could do:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">greek</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;αβγδεζηθικλμνξοπρστυφχψω&quot;</span><span class="p">;</span>
-</pre></div>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>By default, when we create a string, it is initialized to be empty, so
-we don’t need to do:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">a</span><span class="p">{};</span>
-</pre></div>
-</div>
-<p>but instead can just do:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -615,20 +543,20 @@ we don’t need to do:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../interactive_review/more-practice1.html"
+       href="cxx-continue-break.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">More Practice Problems</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-strings-escape.html"
+       href="../cxx-functions/cxx-functions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Escape Sequences</p>
+        <p class="prev-next-title">Functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -650,8 +578,7 @@ we don’t need to do:</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#character-vs-string">Character vs string</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-string"><code class="docutils literal notranslate"><span class="pre">std::string</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prime-numbers">Prime numbers</a></li>
 </ul>
   </nav></div>
 
