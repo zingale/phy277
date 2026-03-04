@@ -2,9 +2,10 @@
 #include <vector>
 #include <cmath>
 #include <format>
+#include <string>
 
 struct Planet {
-    std::string name{};
+    std::string name;
     double a{};            // semi-major axis
     double e{};            // eccentricity
 };
