@@ -29,9 +29,10 @@ Let's look at some practice problems on ``std::vector``, ``structs``, and refere
 
    Finally loop over the vector again and output the names.
 
-#. Create a vector containing the numbers 0 through 9.  Now loop over
-   the vector, and modify each element to be the sum of itself and the
-   all the previous elements.
+#. Create a vector containing the numbers 0 through 9.
+
+   Now loop over the vector, and modify each element to be the sum of
+   itself and the all the previous elements.
 
    There are several ways to do this.  For this example, we will create
    a variable called ``previous`` that will be updated in the loop body
