@@ -1,12 +1,12 @@
-**********************
-Conditional Statements
-**********************
+*****************
+``if`` Statements
+*****************
 
-``if``-test
-===========
+So far, we have not been making decisions based on the values our
+variables hold.  Let's see how to do this.  The ``if`` statement
+allows us to test on values and take actions.
 
-So far, we have not been making decisions based on the values our variables hold.  Let's see how to do this.
-The ``if`` statement allows us to test on values and take actions.
+The basic form is:
 
 .. code:: c++
 
@@ -25,6 +25,8 @@ Here ``condition`` is something that will evaluate to ``true`` or
 ``false``, and this is a place where we will use the
 :ref:`sec:relational_ops` we've seen previously.
 
+Again we use ``{ }`` to group the statements into blocks for each part
+of the conditional.
 
 .. caution::
 
@@ -52,66 +54,40 @@ Here ``condition`` is something that will evaluate to ``true`` or
 
    For this reason, it is always best to use brackets.
 
-.. note::
-
-   C++17 also allows for a form with an initializer before the
-   conditional (e.g., to open a file).  We will not explore this here.
+Simple example
+==============
 
 
-.. tip::
+Scope
+=====
 
-   There is also a simple `ternary operator
-   <https://en.wikipedia.org/wiki/%3F:>`_ in C++ of the form:
+
+Ternary operator
+================
+
+There is also a simple `ternary operator
+<https://en.wikipedia.org/wiki/%3F:>`_ in C++ of the form:
 
        *condition* ``?`` *true-result* ``:`` *false result*
 
-   Where *true-result* is the value used if *condition* is ``true``
-   and *false-result* otherwise.
+Where *true-result* is the value used if *condition* is ``true``
+and *false-result* otherwise.
 
-   For instance:
+For instance:
 
-   .. code:: c++
+.. code:: c++
 
-      int i{10};
+   int i{10};
 
-      double x = (i > 5) ? 1.0 : 0.0;
+   double x = (i > 5) ? 1.0 : 0.0;
+
+This tends not to be very readable, but there are some rare instances where it is needed.
 
 
 ``switch`` statement
 ====================
 
-A switch statement takes action on a single expression, and has many different
-cases that can take different actions.  For example:
-
-.. code:: c++
-
-   int i{2};
-   std::string text{};
-
-   switch (i) {
-
-      case 0:
-          text = "zero";
-          break;
-
-      case 1:
-          text = "one";
-          break;
-
-      case 2:
-      case 3:
-      case 4:
-          text = "2 <= i <= 4";
-          break;
-
-      default:
-          text = "i > 4";
-
-   }
-
-
-.. warning::
-
-   Notice that each ``case`` region ends with ``break``.  If you omit the
-   ``break``, then the flow "falls through" to the next options.
-
+C++ also has a `switch statement
+<https://en.cppreference.com/w/cpp/language/switch.html>`_, which we
+will not consider.  We can accomplish any logic needed with the
+``if`` - ``else`` constructs.
