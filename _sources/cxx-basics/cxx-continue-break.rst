@@ -10,14 +10,6 @@ It is not uncommon to write an infinite loop, like:
 
 .. code:: c++
 
-   for (;;) {
-       // do stuff
-   }
-
-or
-
-.. code:: c++
-
    while (true) {
        // do stuff
    }
