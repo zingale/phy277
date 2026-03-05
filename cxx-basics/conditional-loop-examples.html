@@ -529,6 +529,22 @@ to an arbitrary maximum integer.</p>
 </pre></div>
 </div>
 </div>
+<p>Some notes:</p>
+<ul>
+<li><p>We have nested loops here.  The outer loop using loop variable <code class="docutils literal notranslate"><span class="pre">n</span></code>
+and the inner loop uses loop variable <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p></li>
+<li><p>In the inner loop, once we find a factor, we don’t have to check any
+more—we already know it is not prime.  So we <code class="docutils literal notranslate"><span class="pre">break</span></code>.  This
+jumps us out of the inner loop (the <code class="docutils literal notranslate"><span class="pre">q</span></code> loop), but <em>not</em> the outer
+loop.</p>
+<p>We don’t have to do the <code class="docutils literal notranslate"><span class="pre">break</span></code> here, but it saves on
+computation—there is no point in checking more, so the code will
+run faster.</p>
+</li>
+<li><p>Our final <code class="docutils literal notranslate"><span class="pre">if</span></code>-test is just <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(is_prime)</span></code>.  Since <code class="docutils literal notranslate"><span class="pre">is_prime</span></code> is
+a <code class="docutils literal notranslate"><span class="pre">bool</span></code>, this is already a valid condition, and we don’t need to do
+something like <code class="docutils literal notranslate"><span class="pre">is_prime</span> <span class="pre">==</span> <span class="pre">true</span></code>.</p></li>
+</ul>
 </section>
 <section id="fibonacci-sequence">
 <h2>Fibonacci sequence<a class="headerlink" href="#fibonacci-sequence" title="Link to this heading">#</a></h2>

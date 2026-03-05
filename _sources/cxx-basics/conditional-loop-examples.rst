@@ -13,6 +13,24 @@ to an arbitrary maximum integer.
    :language: c++
    :caption: ``primes.cpp``
 
+Some notes:
+
+* We have nested loops here.  The outer loop using loop variable ``n``
+  and the inner loop uses loop variable ``q``.
+
+* In the inner loop, once we find a factor, we don't have to check any
+  more---we already know it is not prime.  So we ``break``.  This
+  jumps us out of the inner loop (the ``q`` loop), but *not* the outer
+  loop.
+
+  We don't have to do the ``break`` here, but it saves on
+  computation---there is no point in checking more, so the code will
+  run faster.
+
+* Our final ``if``-test is just ``if (is_prime)``.  Since ``is_prime`` is
+  a ``bool``, this is already a valid condition, and we don't need to do
+  something like ``is_prime == true``.
+
 
 Fibonacci sequence
 ==================
