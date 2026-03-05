@@ -1,3 +1,5 @@
+.. _sec:vec-of-struct:
+
 *****************
 Vector of Structs
 *****************
