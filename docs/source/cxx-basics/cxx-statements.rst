@@ -20,15 +20,16 @@ whether we have access to the value held by an object.
 A general rule is that we can access objects that are defined outside
 of our current scope.
 
-Let's look at a Fibonacci example:
+Let's back at our sine example:
 
-.. literalinclude:: ../../../examples/statements/fibonacci.cpp
+.. literalinclude:: ../../../examples/vectors/sine_loop.cpp
    :language: c++
-   :caption: ``fibonacci.cpp``
+   :caption: ``sine_loop.cpp``
 
 Inside of the ``main()`` function, we create a ``vector`` called
-``fib`` and an integer ``n``.  Both of these are in scope inside of
-``main``---that means that we can use them and access them as needed.
+``angles_deg`` and an double precision number ``pi``.  Both of these
+are in scope inside of ``main``---that means that we can use them and
+access them as needed.
 
 .. note::
 
@@ -41,11 +42,23 @@ Inside of the ``main()`` function, we create a ``vector`` called
    This behavior is called an `automatic variable
    <https://en.wikipedia.org/wiki/Automatic_variable>`_.
 
+The other variables only have scope inside of the ``for`` loop: ``a``,
+``angle_rad``, ``sine``, and ``err``.  We cannot access these outside
+of the loop.  We can access variables from the outside scope however,
+like ``pi``.
+
+Stack revisited
+===============
+
+In :ref:`sec:memory-stack`, we discussed the memory region called the stack.
+
 Automatic variables are allocated in a special part of memory called
-the `stack <https://en.wikipedia.org/wiki/Stack-based_memory_allocation>`_.  When you enter a function, all of the automatic
-variables are *pushed down* onto the stack and are available as long
-as they stay in scope.  When you exit the function, the variables are
-*popped* off the stack and the memory is automatically freed.
+the `stack
+<https://en.wikipedia.org/wiki/Stack-based_memory_allocation>`_.  When
+you enter a function, all of the automatic variables are *pushed down*
+onto the stack and are available as long as they stay in scope.  When
+you exit the function, the variables are *popped* off the stack and
+the memory is automatically freed.
 
 In our example above, there are a few stacks.  The outermost static is
 defined by the ``{}`` for ``main()``.

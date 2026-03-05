@@ -64,6 +64,11 @@ whether it is positive, negative, or zero:
    :language: c++
    :caption: ``if-example.cpp``
 
+.. note::
+
+   We read input from the user using ``std::cin`` as discussed in
+   :ref:`sec:reading-input`.
+
 
 Scope
 =====

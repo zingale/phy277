@@ -38,7 +38,23 @@ Some notes:
   We could get a little further (~ 1 more element) by using an
   ``unsigned long``.
 
+* In our ``while`` loop, we are testing on the size of the vector.
+  ``fib.size()`` will return a datatype of ``std::size_t``.  To be
+  To be absolutely correct, we cast it to an ``int`` here, the
+  same datatype as ``N``.  We probably don't have to, but this is
+  safest.
+
 * We check to make sure the user asks for at least 3 elements, since
   we already start with ``{0, 1}``.  And we exit using `std::exit
   <https://en.cppreference.com/w/cpp/utility/program/exit.html>`_ if
-  they ask for too few.
+  they ask for too few.  This requires the ``cstdlib`` header.
+
+  .. tip::
+
+     It is tradition in Unix to exit with a non-zero code if a problem
+     was encountered.  This can then be checked in a Bash script
+     or the command line via the ``$?`` shell variable.
+
+     See `Understanding exit status codes
+     <https://www.howtouselinux.com/post/returning-exit-status-codes-in-bash-a-comprehensive-guide>`_
+     for more details.
