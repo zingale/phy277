@@ -17,8 +17,10 @@ in a number of contexts:
 One thing to keep in mind with these blocks is *scope*---this means
 whether we have access to the value held by an object.
 
-A general rule is that we can access objects that are defined outside
-of our current scope.
+.. tip::
+
+   A general rule is that we can access objects that are defined
+   outside of our current scope.
 
 Let's back at our sine example:
 
