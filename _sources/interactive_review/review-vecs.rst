@@ -5,7 +5,7 @@ Practice Problems
 Let's look at some practice problems on ``std::vector``, ``structs``, and references.
 
 
-#. Let's modify :ref:`our struct Planet example <sec:structplanet>` to
+#. Let's modify :ref:`our struct Planet example <sec:vec-of-struct>` to
    add the period as a member and fill the period automatically via
    Kepler's law in a loop.
 

@@ -182,6 +182,7 @@ the top of many pages.
    :hidden:
 
    algorithms/truncation
+   algorithms/integration
    algorithms/optimization
    algorithms/cxx-orbit-example
    algorithms/cxx-orbit-rk2-example

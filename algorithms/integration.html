@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Vectors &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Integration &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -50,11 +50,13 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-vectors';</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'algorithms/integration';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="More vector functions" href="cxx-vector-push.html" />
-    <link rel="prev" title="Reading Input" href="cxx-reading.html" />
+    <link rel="next" title="Compiler Optimization" href="optimization.html" />
+    <link rel="prev" title="Derivatives and Truncation" href="truncation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -191,16 +193,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basic Datatypes</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-operators.html">Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-mixing-types.html">Mixing types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-sizes-limits.html">Datatype Sizes and Limits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="floating-point.html">Floating Point</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmath.html">Numerical Library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="function-preview.html">Preview of Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="minimizing-roundoff.html">Minimizing Roundoff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="floating-point-special-numbers.html">Special Floating Point Quantities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-mixing-types.html">Mixing types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-sizes-limits.html">Datatype Sizes and Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point.html">Floating Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cmath.html">Numerical Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/function-preview.html">Preview of Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/minimizing-roundoff.html">Minimizing Roundoff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point-special-numbers.html">Special Floating Point Quantities</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Review</span></p>
 <ul class="nav bd-sidenav">
@@ -209,25 +211,25 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings-escape.html">Escape Sequences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings-math.html">String Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-escape.html">Escape Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-math.html">String Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-indexing.html">Indexing Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-reading.html">Reading Input</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vectors-loops.html">Looping Over Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-examples.html">Examples of Using <code class="docutils literal notranslate"><span class="pre">vector</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-arrays.html">Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-of-struct.html">Vector of Structs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="memory-stack-heap.html">Memory: Stack vs. Heap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-references.html">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors.html">Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors-loops.html">Looping Over Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-examples.html">Examples of Using <code class="docutils literal notranslate"><span class="pre">vector</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-arrays.html">Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-structs.html">Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-of-struct.html">Vector of Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/memory-stack-heap.html">Memory: Stack vs. Heap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice</span></p>
 <ul class="nav bd-sidenav">
@@ -235,11 +237,11 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-loops.html">Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="conditional-loop-examples.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> + Looping Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-conditional.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-statements.html">Statement Blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/conditional-loop-examples.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> + Looping Examples</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
 <ul class="nav bd-sidenav">
@@ -248,22 +250,22 @@
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions-example.html">More Functions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/truncation.html">Derivatives and Truncation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/integration.html">Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/optimization.html">Compiler Optimization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-example.html">Example: Planetary Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/roots.html">Root Finding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/monte-carlo.html">Monte Carlo Methods</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="truncation.html">Derivatives and Truncation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Compiler Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-example.html">Example: Planetary Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roots.html">Root Finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monte-carlo.html">Monte Carlo Methods</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-pointers.html">Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vector-iterators.html">Vector Iterators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vectors-algorithms.html">Vector Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-strings-functions.html">Working with Strings</a></li>
@@ -271,7 +273,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-stdlib.html">SL Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-lambdas.html">Lambda Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-multid-arrays.html">Multidimensional Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
 <ul class="nav bd-sidenav">
@@ -374,7 +376,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/cxx-vectors.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/algorithms/integration.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -391,7 +393,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/cxx-vectors.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/algorithms/integration.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -408,7 +410,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/cxx-vectors.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Falgorithms/integration.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -466,7 +468,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Vectors</h1>
+    <h1>Integration</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -476,9 +478,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-vector"><code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-vector">Creating a vector</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-vectors">Indexing vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rectangle-rule">Rectangle rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapezoid-rule">Trapezoid rule</a></li>
 </ul>
             </nav>
         </div>
@@ -490,79 +491,46 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="vectors">
-<h1>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h1>
-<div class="admonition-reading admonition">
-<p class="admonition-title">reading</p>
-<p><a class="reference external" href="https://cplusplus.com/reference/vector/vector/">std::vector at cpluscplus.com</a></p>
-</div>
-<p>C++ has the <a class="reference external" href="https://en.wikipedia.org/wiki/C%2B%2B_Standard_Library">standard library</a> (C++ SL)
-which adds an immense amount of functionality to the language.  Let’s
-look at <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>.  A <code class="docutils literal notranslate"><span class="pre">vector</span></code> is a container that can hold
-data of the same type (e.g., <code class="docutils literal notranslate"><span class="pre">double</span></code>).  It differs from an array
-that you might have used in other languages in that it is not a fixed
-size—it can grow as needed to hold more data.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>There are many other <a class="reference external" href="https://en.cppreference.com/w/cpp/container.html">types of containers in the C++ SL</a> that have
-different properties.  Vectors are one of the most useful.</p>
-</div>
-<section id="std-vector">
-<h2><code class="docutils literal notranslate"><span class="pre">std::vector</span></code><a class="headerlink" href="#std-vector" title="Link to this heading">#</a></h2>
-<p>Vectors are very useful to store data and loop over it, etc.
-Information on the properties of C++ vectors can be found at the
-<a class="reference external" href="https://www.cplusplus.com/reference/vector/vector/">CPlusPlus vector page</a>.
-From that description, we see that vectors:</p>
-<ul class="simple">
-<li><p>store the data contiguously in memory</p></li>
-<li><p>can grow as needed (but occasionally, this means creating a new
-vector of larger size and copying data into it—a slow operation)</p></li>
-<li><p>have a lot of functions that can work on them</p></li>
-<li><p>can access any location directly</p></li>
-<li><p>are very efficient at adding data to the end, but not efficient for
-inserting data in the middle</p></li>
-</ul>
+  <section id="integration">
+<h1>Integration<a class="headerlink" href="#integration" title="Link to this heading">#</a></h1>
+<p>In calculus, you saw a definition of a definite integral that looked
+something like:</p>
+<p><div class="math notranslate nohighlight">
+\[I \equiv \int_a^b f(x) dx = \lim_{\Delta x \rightarrow 0} \sum_{i = 1}^N f(x_i) \Delta x\]</div>
+</p>
+<p>where the number of intervals you divide <span class="math notranslate nohighlight">\([a, b]\)</span> into, <span class="math notranslate nohighlight">\(N\)</span>, is
+defined such that <span class="math notranslate nohighlight">\(N = (b -a) / \Delta x\)</span>.</p>
+<p>Also recall that this definition is directly related to the
+interpretation of an <em>integral representing the area under a curve</em>.</p>
+<section id="rectangle-rule">
+<h2>Rectangle rule<a class="headerlink" href="#rectangle-rule" title="Link to this heading">#</a></h2>
+<p>The simplest way to compute the integral is to treat each interval as a rectangle:</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/rectangle_N6.png"><img alt="dividing the area under a curve into 6 intervals, each represented as a rectangle" src="../_images/rectangle_N6.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">The rectangle rule—we divide the area under the curve into intervals (<span class="math notranslate nohighlight">\(N = 6\)</span> shown here)
+and represent each as a rectangle.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Adding up the area of each rectangle, we have an approximation to the integral:</p>
+<p><div class="math notranslate nohighlight">
+\[\int_a^b f(x) dx = {\Delta x} \sum_{i=0}^{N-1} f_i + \mathcal{O}(\Delta x)\]</div>
+</p>
 </section>
-<section id="creating-a-vector">
-<h2>Creating a vector<a class="headerlink" href="#creating-a-vector" title="Link to this heading">#</a></h2>
-<p>When we create a vector, we need to specify what type of data it holds.  E.g.,
-a vector that holds <code class="docutils literal notranslate"><span class="pre">double</span></code> precision numbers would be declared as:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>and a vector holding <code class="docutils literal notranslate"><span class="pre">int</span></code> would be declared as:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>These vectors are empty.  We can specify the data at initialization or add it later.</p>
-<p>To initialize a vector with data, we can do:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p">};</span>
-</pre></div>
-</div>
-</section>
-<section id="indexing-vectors">
-<h2>Indexing vectors<a class="headerlink" href="#indexing-vectors" title="Link to this heading">#</a></h2>
-<p>Just like with strings, we can index a vector to access a single element.
-We use 0-based indexing.</p>
-<p>We can also access the first element using <code class="docutils literal notranslate"><span class="pre">.front()</span></code> and the last
-element using <code class="docutils literal notranslate"><span class="pre">.back()</span></code>.</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 30 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">vector_indexing.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">};</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Element 0 is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Last element is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">back</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
+<section id="trapezoid-rule">
+<h2>Trapezoid rule<a class="headerlink" href="#trapezoid-rule" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/trapezoid_N6.png"><img alt="dividing the area under a curve into 6 intervals, with the left and right function values connected by a line, making each interval a trapezoid." src="../_images/trapezoid_N6.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">The trapezoid rule—again using <span class="math notranslate nohighlight">\(N = 6\)</span>, we connect the left and right function values for each interval,
+making trapezoids.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><div class="math notranslate nohighlight">
+\[\int_a^b f(x) dx = \frac{\Delta x}{2} \sum_{i=0}^{N-1} (f_i + f_{i+1}) + \mathcal{O}(\Delta x^2)\]</div>
+</p>
 </section>
 </section>
 
@@ -578,20 +546,20 @@ element using <code class="docutils literal notranslate"><span class="pre">.back
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-reading.html"
+       href="truncation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Reading Input</p>
+        <p class="prev-next-title">Derivatives and Truncation</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-vector-push.html"
+       href="optimization.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</p>
+        <p class="prev-next-title">Compiler Optimization</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -613,9 +581,8 @@ element using <code class="docutils literal notranslate"><span class="pre">.back
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-vector"><code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-vector">Creating a vector</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-vectors">Indexing vectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rectangle-rule">Rectangle rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trapezoid-rule">Trapezoid rule</a></li>
 </ul>
   </nav></div>
 
