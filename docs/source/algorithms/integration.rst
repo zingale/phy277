@@ -37,11 +37,12 @@ $\mathcal{O}(\Delta x)$---making the method first-order accurate.
 Trapezoid rule
 ==============
 
-The trapezoid rule is an improvement on the rectangle rule.  Now we
-use the function values on the left and right edges of each interval
-($f_l$ and $f_r$ respectively) and connect them with a line.  This
-makes the area in each interval a trapezoid, with an area of
-$\frac{1}{2}\Delta x (f_l + f_r)$.
+The `trapezoid rule <https://en.wikipedia.org/wiki/Trapezoidal_rule>`_
+is an improvement on the rectangle rule.  Now we use the function
+values on the left and right edges of each interval ($f_l$ and $f_r$
+respectively) and connect them with a line.  This makes the area in
+each interval a trapezoid, with an area of $\frac{1}{2}\Delta x (f_l +
+f_r)$.
 
 Visually this appears as:
 
