@@ -475,6 +475,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack-revisited">Stack revisited</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shadowing">Shadowing</a></li>
 </ul>
             </nav>
@@ -503,43 +504,42 @@ see, a <code class="docutils literal notranslate"><span class="pre">namespace</s
 whether we have access to the value held by an object.</p>
 <p>A general rule is that we can access objects that are defined outside
 of our current scope.</p>
-<p>Let’s look at a Fibonacci example:</p>
+<p>Let’s back at our sine example:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 46 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">fibonacci.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 46 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">sine_loop.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numbers&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="c1">// note that the limits of int are 2147483647, so we are going to overflow</span>
-<span class="w">    </span><span class="c1">// after ~50 terms</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="p">;</span>
 
-<span class="w">    </span><span class="c1">// we could instead use long here</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">angles_deg</span><span class="p">{</span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="mf">20.0</span><span class="p">,</span><span class="w"> </span><span class="mf">40.0</span><span class="p">};</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fib</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:10} : {:10} {:10} {:10}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">                             </span><span class="s">&quot;angle (d)&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;angle (r)&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sine&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;err&quot;</span><span class="p">);</span>
 
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">angles_deg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;how many terms should we compute?&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">angle_rad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">180</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">sine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sin</span><span class="p">(</span><span class="n">angle_rad</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">abs</span><span class="p">(</span><span class="n">sine</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">angle_rad</span><span class="p">);</span>
 
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">f_new</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fib</span><span class="p">[</span><span class="n">i</span><span class="mi">-2</span><span class="p">];</span>
-<span class="w">        </span><span class="n">fib</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">f_new</span><span class="p">);</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:10.2f} : {:10.3f} {:10.5f} {:10.5g}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">                                 </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">angle_rad</span><span class="p">,</span><span class="w"> </span><span class="n">sine</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">);</span>
+
 <span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">fib</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <p>Inside of the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function, we create a <code class="docutils literal notranslate"><span class="pre">vector</span></code> called
-<code class="docutils literal notranslate"><span class="pre">fib</span></code> and an integer <code class="docutils literal notranslate"><span class="pre">n</span></code>.  Both of these are in scope inside of
-<code class="docutils literal notranslate"><span class="pre">main</span></code>—that means that we can use them and access them as needed.</p>
+<code class="docutils literal notranslate"><span class="pre">angles_deg</span></code> and an double precision number <code class="docutils literal notranslate"><span class="pre">pi</span></code>.  Both of these
+are in scope inside of <code class="docutils literal notranslate"><span class="pre">main</span></code>—that means that we can use them and
+access them as needed.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>One of the nice things about the standard types like <code class="docutils literal notranslate"><span class="pre">vector</span></code> is
@@ -549,11 +549,19 @@ point, <code class="docutils literal notranslate"><span class="pre">fib</span></
 happens with <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
 <p>This behavior is called an <a class="reference external" href="https://en.wikipedia.org/wiki/Automatic_variable">automatic variable</a>.</p>
 </div>
+<p>The other variables only have scope inside of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop: <code class="docutils literal notranslate"><span class="pre">a</span></code>,
+<code class="docutils literal notranslate"><span class="pre">angle_rad</span></code>, <code class="docutils literal notranslate"><span class="pre">sine</span></code>, and <code class="docutils literal notranslate"><span class="pre">err</span></code>.  We cannot access these outside
+of the loop.  We can access variables from the outside scope however,
+like <code class="docutils literal notranslate"><span class="pre">pi</span></code>.</p>
+<section id="stack-revisited">
+<h2>Stack revisited<a class="headerlink" href="#stack-revisited" title="Link to this heading">#</a></h2>
+<p>In <a class="reference internal" href="memory-stack-heap.html#sec-memory-stack"><span class="std std-ref">Stack</span></a>, we discussed the memory region called the stack.</p>
 <p>Automatic variables are allocated in a special part of memory called
-the <a class="reference external" href="https://en.wikipedia.org/wiki/Stack-based_memory_allocation">stack</a>.  When you enter a function, all of the automatic
-variables are <em>pushed down</em> onto the stack and are available as long
-as they stay in scope.  When you exit the function, the variables are
-<em>popped</em> off the stack and the memory is automatically freed.</p>
+the <a class="reference external" href="https://en.wikipedia.org/wiki/Stack-based_memory_allocation">stack</a>.  When
+you enter a function, all of the automatic variables are <em>pushed down</em>
+onto the stack and are available as long as they stay in scope.  When
+you exit the function, the variables are <em>popped</em> off the stack and
+the memory is automatically freed.</p>
 <p>In our example above, there are a few stacks.  The outermost static is
 defined by the <code class="docutils literal notranslate"><span class="pre">{}</span></code> for <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p>
 <div class="admonition note">
@@ -570,6 +578,7 @@ delineating the loop block, a new stack is created, where the
 variables local to that block are managed.  When we exit the loop,
 that stack is destroyed, freeing up all of the memory those local
 variables needed.</p>
+</section>
 <section id="shadowing">
 <h2>Shadowing<a class="headerlink" href="#shadowing" title="Link to this heading">#</a></h2>
 <p>Consider the following:</p>
@@ -645,6 +654,7 @@ option to the compiler.</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack-revisited">Stack revisited</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shadowing">Shadowing</a></li>
 </ul>
   </nav></div>

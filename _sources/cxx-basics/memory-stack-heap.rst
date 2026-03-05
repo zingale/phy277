@@ -9,6 +9,8 @@ Memory: Stack vs. Heap
 ``std::vector`` and ``std::array`` also use different regions of memory
 in the computer.
 
+.. _sec:memory-stack:
+
 Stack
 =====
 

@@ -585,9 +585,23 @@ terms.</p>
 <p>We could get a little further (~ 1 more element) by using an
 <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">long</span></code>.</p>
 </li>
+<li><p>In our <code class="docutils literal notranslate"><span class="pre">while</span></code> loop, we are testing on the size of the vector.
+<code class="docutils literal notranslate"><span class="pre">fib.size()</span></code> will return a datatype of <code class="docutils literal notranslate"><span class="pre">std::size_t</span></code>.  To be
+To be absolutely correct, we cast it to an <code class="docutils literal notranslate"><span class="pre">int</span></code> here, the
+same datatype as <code class="docutils literal notranslate"><span class="pre">N</span></code>.  We probably don’t have to, but this is
+safest.</p></li>
 <li><p>We check to make sure the user asks for at least 3 elements, since
 we already start with <code class="docutils literal notranslate"><span class="pre">{0,</span> <span class="pre">1}</span></code>.  And we exit using <a class="reference external" href="https://en.cppreference.com/w/cpp/utility/program/exit.html">std::exit</a> if
-they ask for too few.</p></li>
+they ask for too few.  This requires the <code class="docutils literal notranslate"><span class="pre">cstdlib</span></code> header.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It is tradition in Unix to exit with a non-zero code if a problem
+was encountered.  This can then be checked in a Bash script
+or the command line via the <code class="docutils literal notranslate"><span class="pre">$?</span></code> shell variable.</p>
+<p>See <a class="reference external" href="https://www.howtouselinux.com/post/returning-exit-status-codes-in-bash-a-comprehensive-guide">Understanding exit status codes</a>
+for more details.</p>
+</div>
+</li>
 </ul>
 </section>
 </section>
