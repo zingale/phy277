@@ -198,6 +198,16 @@ the top of many pages.
 
 .. toctree::
    :maxdepth: 1
+   :caption: Software Engineering
+   :hidden:
+
+   software_engineering/compiler-flags
+   software_engineering/multiple-files
+   software_engineering/make
+   software_engineering/inclass-split-orbit
+
+.. toctree::
+   :maxdepth: 1
    :caption: Some SL Algorithms
    :hidden:
 
@@ -210,16 +220,6 @@ the top of many pages.
    sl-algorithms/cxx-lambdas
    sl-algorithms/cxx-functions-planets
    cxx-basics/cxx-multid-arrays
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Software Engineering
-   :hidden:
-
-   software_engineering/compiler-flags
-   software_engineering/multiple-files
-   software_engineering/make
-   software_engineering/inclass-split-orbit
 
 .. toctree::
    :maxdepth: 1

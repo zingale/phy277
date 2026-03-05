@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Working with Multiple Files" href="multiple-files.html" />
-    <link rel="prev" title="Multidimensional Arrays" href="../cxx-basics/cxx-multid-arrays.html" />
+    <link rel="prev" title="File I/O" href="../cxx-basics/cxx-io.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -261,6 +261,13 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Making the Compiler Do the Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple-files.html">Working with Multiple Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make.html">Makefiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inclass-split-orbit.html">In-Class Example: Splitting Up Our Orbit Code</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
@@ -273,18 +280,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Making the Compiler Do the Work</a></li>
-<li class="toctree-l1"><a class="reference internal" href="multiple-files.html">Working with Multiple Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="make.html">Makefiles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inclass-split-orbit.html">In-Class Example: Splitting Up Our Orbit Code</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">In-class Activities</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../polls/polls.html">In-class Participation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../polls/2026-02-05.html">Feb 05 In-Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../polls/2026-02-20.html">Feb 20 In-Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polls/2026-03-06.html">Mar 06 In-Class</a></li>
 </ul>
 </details></li>
 </ul>
@@ -499,7 +500,7 @@ on any extensions that the compiler might support.</p></li>
 </ul>
 <p>Here’s an example of a case of using the wrong type in a loop that can be caught with these flags:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 80 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">types.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 65 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">types.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;array&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -516,7 +517,7 @@ on any extensions that the compiler might support.</p></li>
 </div>
 <p>Here’s an example of catching unused variables:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 81 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">unused.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 66 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">unused.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">;</span>
@@ -530,7 +531,7 @@ on any extensions that the compiler might support.</p></li>
 </div>
 <p>Here’s an example of catching a fallthrough in a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 82 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">fallthrough.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 67 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">fallthrough.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
 
@@ -574,12 +575,12 @@ on any extensions that the compiler might support.</p></li>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../cxx-basics/cxx-multid-arrays.html"
+       href="../cxx-basics/cxx-io.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Multidimensional Arrays</p>
+        <p class="prev-next-title">File I/O</p>
       </div>
     </a>
     <a class="right-next"

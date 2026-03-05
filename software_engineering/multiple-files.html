@@ -261,6 +261,13 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="compiler-flags.html">Making the Compiler Do the Work</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Working with Multiple Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make.html">Makefiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inclass-split-orbit.html">In-Class Example: Splitting Up Our Orbit Code</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
@@ -273,18 +280,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="compiler-flags.html">Making the Compiler Do the Work</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Working with Multiple Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="make.html">Makefiles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inclass-split-orbit.html">In-Class Example: Splitting Up Our Orbit Code</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">In-class Activities</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../polls/polls.html">In-class Participation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../polls/2026-02-05.html">Feb 05 In-Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../polls/2026-02-20.html">Feb 20 In-Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polls/2026-03-06.html">Mar 06 In-Class</a></li>
 </ul>
 </details></li>
 </ul>
@@ -520,7 +521,7 @@ and of course the <code class="docutils literal notranslate"><span class="pre">m
 <p>We’ll start with a header file defining our <code class="docutils literal notranslate"><span class="pre">struct</span></code> and the operator
 declaration:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 83 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet.H</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 68 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet.H</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef PLANET_H</span>
 <span class="cp">#define PLANET_H</span>
 
@@ -559,7 +560,7 @@ throughout this course.</p>
 </div>
 <p>Now we’ll create a source file that implements the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> operator:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 84 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 69 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>
 
@@ -593,7 +594,7 @@ in the default system locations for the headers.</p>
 </ul>
 <p>Finally, we’ll put the <code class="docutils literal notranslate"><span class="pre">main()</span></code> in a third file:</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 85 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet_sort_split.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 70 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet_sort_split.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>

@@ -1,0 +1,46 @@
+***************
+Mar 06 In-Class
+***************
+
+.. note::
+
+   There are no wrong answers.  This is for participation credit, and
+   is intended to let me know how well we understand the material at
+   this point.
+
+Access the form: 
+
+Question 1
+==========
+
+Consider the following code:
+
+.. code:: c++
+
+   std::vector<int> vec{1, 2, 3, 4, 5};
+
+   for (auto e : vec) {
+       // do something with e
+   }
+
+As written, in the loop we cannot modify the value of ``e``.  How do
+we change this to let us modify ``e``?
+
+
+Question 2
+==========
+
+Consider the following ``struct`` representing a 3D Cartesian
+mathematical vector (with $x$, $y$, and $z$ components):
+
+.. code:: c++
+
+   struct MathVector {
+       double x{};
+       double y{};
+       double z{};
+   };
+
+How do you create a ``MathVector`` called ``v`` and initialize it with
+$(x, y, z) = (1, 2, 3)$?
+

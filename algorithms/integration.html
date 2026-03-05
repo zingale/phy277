@@ -263,6 +263,13 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../software_engineering/compiler-flags.html">Making the Compiler Do the Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software_engineering/multiple-files.html">Working with Multiple Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software_engineering/make.html">Makefiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software_engineering/inclass-split-orbit.html">In-Class Example: Splitting Up Our Orbit Code</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
@@ -275,18 +282,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../software_engineering/compiler-flags.html">Making the Compiler Do the Work</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../software_engineering/multiple-files.html">Working with Multiple Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../software_engineering/make.html">Makefiles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../software_engineering/inclass-split-orbit.html">In-Class Example: Splitting Up Our Orbit Code</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">In-class Activities</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../polls/polls.html">In-class Participation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../polls/2026-02-05.html">Feb 05 In-Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../polls/2026-02-20.html">Feb 20 In-Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polls/2026-03-06.html">Mar 06 In-Class</a></li>
 </ul>
 </details></li>
 </ul>
@@ -508,12 +509,12 @@ interpretation of an <em>integral representing the area under a curve</em>.</p>
 <section id="rectangle-rule">
 <h2>Rectangle rule<a class="headerlink" href="#rectangle-rule" title="Link to this heading">#</a></h2>
 <p>The simplest way to compute the integral is to treat each interval as a rectangle:</p>
-<figure class="align-center" id="id1">
+<figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/rectangle_N6.png"><img alt="dividing the area under a curve into 6 intervals, each represented as a rectangle" src="../_images/rectangle_N6.png" style="width: 80%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Fig. 6 </span><span class="caption-text">The rectangle rule—we divide the area under the curve into intervals (<span class="math notranslate nohighlight">\(N = 6\)</span> shown here)
-and represent each as a rectangle.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+and represent each as a rectangle.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Adding up the area of each rectangle, we have an approximation to the integral:</p>
@@ -525,18 +526,19 @@ and represent each as a rectangle.</span><a class="headerlink" href="#id1" title
 </section>
 <section id="trapezoid-rule">
 <h2>Trapezoid rule<a class="headerlink" href="#trapezoid-rule" title="Link to this heading">#</a></h2>
-<p>The trapezoid rule is an improvement on the rectangle rule.  Now we
-use the function values on the left and right edges of each interval
-(<span class="math notranslate nohighlight">\(f_l\)</span> and <span class="math notranslate nohighlight">\(f_r\)</span> respectively) and connect them with a line.  This
-makes the area in each interval a trapezoid, with an area of
-<span class="math notranslate nohighlight">\(\frac{1}{2}\Delta x (f_l + f_r)\)</span>.</p>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Trapezoidal_rule">trapezoid rule</a>
+is an improvement on the rectangle rule.  Now we use the function
+values on the left and right edges of each interval (<span class="math notranslate nohighlight">\(f_l\)</span> and <span class="math notranslate nohighlight">\(f_r\)</span>
+respectively) and connect them with a line.  This makes the area in
+each interval a trapezoid, with an area of <span class="math notranslate nohighlight">\(\frac{1}{2}\Delta x (f_l +
+f_r)\)</span>.</p>
 <p>Visually this appears as:</p>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../_images/trapezoid_N6.png"><img alt="dividing the area under a curve into 6 intervals, with the left and right function values connected by a line, making each interval a trapezoid." src="../_images/trapezoid_N6.png" style="width: 80%;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Fig. 7 </span><span class="caption-text">The trapezoid rule—again using <span class="math notranslate nohighlight">\(N = 6\)</span>, we connect the left and
-right function values for each interval, making trapezoids.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+right function values for each interval, making trapezoids.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Summing the areas over all the intervals, we get an approximation for the
@@ -557,8 +559,8 @@ integral:</p>
 \[I = 1 - \frac{1}{2\pi^2} \approx 0.949\]</div>
 </p>
 <p>Here’s an implementation that tries several different values of <span class="math notranslate nohighlight">\(N\)</span>:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 55 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">trapezoid.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-number">Listing 55 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">trapezoid.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;functional&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numbers&gt;</span>
