@@ -500,8 +500,8 @@
 <li><p><a class="reference external" href="https://cplusplus.com/doc/tutorial/functions/">Functions</a> from cplusplus.com</p></li>
 </ul>
 </div>
-<p>As we write increasingly complex code, it becomes helpful to split it apart into functions.  This has
-several advantages:</p>
+<p>As we write increasingly complex code, it becomes helpful to split it
+apart into functions.  This has several advantages:</p>
 <ul class="simple">
 <li><p>We can reuse the functionality provided by a function easily</p></li>
 <li><p>It becomes easier to test the code—we can test each function
@@ -521,8 +521,6 @@ now we’ll work all within a single file.</p>
 <div class="code-block-caption"><span class="caption-number">Listing 55 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_function.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
-<span class="kt">double</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
-
 <span class="kt">double</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
 <span class="p">}</span>
@@ -539,7 +537,27 @@ now we’ll work all within a single file.</p>
 </div>
 <p>Some things to note here:</p>
 <ul>
-<li><p>We include a <a class="reference external" href="https://en.wikipedia.org/wiki/Forward_declaration">forward declaration</a> of the
+<li><p>Our function is:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We see that the form is <code class="docutils literal notranslate"><span class="pre">return-type</span> <span class="pre">name(arguments)</span> <span class="pre">{</span> <span class="pre">body</span> <span class="pre">}</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is an newer, alternate way to declare a function with a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Trailing_return_type">trailing return type</a>.
+We won’t use that here.</p>
+</div>
+</li>
+<li><p>We put our function first, before <code class="docutils literal notranslate"><span class="pre">main</span></code>.  In general, C++
+needs to see the function (or at least enough about it) to understand
+how it will be used when called.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We could put our function after <code class="docutils literal notranslate"><span class="pre">main</span></code> if we opt to include a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Forward_declaration">forward declaration</a> of the
 function.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
 </pre></div>
@@ -552,16 +570,6 @@ use <code class="docutils literal notranslate"><span class="pre">sum()</span></c
 <code class="docutils literal notranslate"><span class="pre">double</span></code>.</p>
 <p>Often, we would put the forward declaration in a header file and the
 <code class="docutils literal notranslate"><span class="pre">#include</span></code> it just like we do with the standard C++ headers.</p>
-<p>Note that this code will compile even without the forward
-declaration because we have the actual function definition before it
-is used.  But this is not always possible.</p>
-</li>
-<li><p>The function definition provides the actual implementation of the function.
-For our <code class="docutils literal notranslate"><span class="pre">add</span></code> function, it is:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
 </div>
 </li>
 <li><p>The function has its own scope—inside of the function, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are
@@ -572,14 +580,15 @@ function itself could have multiple returns that are executed
 depending on conditions inside the function itself.</p>
 </li>
 </ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Every function, except <code class="docutils literal notranslate"><span class="pre">main</span></code> should have an explicit <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.
+(You can add a return to <code class="docutils literal notranslate"><span class="pre">main</span></code> as well, but the standard will assume a return
+if it is not provided.)</p>
+</div>
 <div class="admonition-try-it admonition">
 <p class="admonition-title">try it…</p>
-<ol class="arabic simple">
-<li><p>Move the function definition to be after <code class="docutils literal notranslate"><span class="pre">main</span></code> and remove the
-forward declaration—does the code still compile?</p></li>
-<li><p>Now instead leave in the forward declaration, but remove the
-function definition—what happens when you compile now?</p></li>
-</ol>
+<p>Move the function definition to be after <code class="docutils literal notranslate"><span class="pre">main</span></code>.  Does it still compile?</p>
 </div>
 </section>
 <section id="void">
@@ -588,9 +597,7 @@ function definition—what happens when you compile now?</p></li>
 that case we mark it as <code class="docutils literal notranslate"><span class="pre">void</span></code>.</p>
 <p>Also, we can have a function that doesn’t take any arguments.  Here’s
 an example:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">hello</span><span class="p">();</span>
-
-<span class="kt">void</span><span class="w"> </span><span class="nf">hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">     </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
