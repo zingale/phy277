@@ -162,6 +162,7 @@ the top of many pages.
    :hidden:
 
    cxx-basics/cxx-conditional
+   cxx-basics/cxx-conditional-combine
    cxx-basics/cxx-loops
    cxx-basics/cxx-statements
    cxx-basics/cxx-continue-break
