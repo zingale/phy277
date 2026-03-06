@@ -61,9 +61,8 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: pa11y-report
-          path: |
-            pa11y-report.txt
-            pa11y-report.json
+          path: pa11y-report.txt
+          archive: false
 
       - name: Fail job if pa11y found issues
         run: |
