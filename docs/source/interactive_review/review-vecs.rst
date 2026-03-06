@@ -9,6 +9,11 @@ Let's look at some practice problems on ``std::vector``, ``structs``, and refere
    add the period as a member and fill the period automatically via
    Kepler's law in a loop.
 
+   .. dropdown:: solution
+
+      .. literalinclude:: ../../../examples/in-class/period.cpp
+         :language: c++
+         :caption: ``period.cpp``
 
 #. Create a vector with this list of names:
 
@@ -29,6 +34,12 @@ Let's look at some practice problems on ``std::vector``, ``structs``, and refere
 
    Finally loop over the vector again and output the names.
 
+   .. dropdown:: solution
+
+      .. literalinclude:: ../../../examples/in-class/names.cpp
+         :language: c++
+         :caption: ``names.cpp``
+
 #. Create a vector containing the numbers 0 through 9.
 
    Now loop over the vector, and modify each element to be the sum of
@@ -39,3 +50,9 @@ Let's look at some practice problems on ``std::vector``, ``structs``, and refere
    to always hold the previous sum.
 
    Upon completion, output the new values to the screen.
+
+   .. dropdown:: solution
+
+      .. literalinclude:: ../../../examples/in-class/sum.cpp
+         :language: c++
+         :caption: ``sum.cpp``
