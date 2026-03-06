@@ -11,3 +11,10 @@ we use the logical operators:
 
 * ``! a`` : the *not* operator.  It turns ``true`` if ``a`` is ``false``.
 
+Here's an example.  Let's ask the user for an integer and then test if it is divisible by
+*both* 2 and 3:
+
+.. literalinclude:: ../../../examples/conditionals/divisible.cpp
+   :language: c++
+   :caption: ``divisible.cpp``
+
