@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <format>
 
 int main() {
 
@@ -14,7 +15,7 @@ int main() {
             break;
         }
 
-        std::cout << word << " has " << word.size() << " characters" << std::endl;
+        std::cout << std::format("{} has {} characters\n", word, word.size());
     }
 
 }

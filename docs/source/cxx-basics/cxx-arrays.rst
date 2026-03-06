@@ -20,6 +20,12 @@ But there are some key differences:
 
 * Arrays do not initialize their elements by default when declared.
 
+.. important::
+
+   Because arrays are fixed-size, you need to specify the size at *compile time*.
+
+``std::array``
+==============
 
 Here's a simple example:
 
@@ -47,51 +53,34 @@ If you don't give all the values, the remainder are initialized to 0:
 
       std::array<int, 10> int_arr{1, 2};
 
-We can use the same set of algorithms we saw with vectors on arrays, like ``sort``, ``find``, etc.
 
+Looping over array elements
+===========================
 
-Multidimensional Arrays
-=======================
+Looping over the elements of an array works the same as with vectors,
+and likewise we can get the size via the ``.size()`` member function:
 
-.. _sec:multidimensionalarrays:
-
-Just like with vectors, we can have an array of arrays.  This would
-again be fixed-size, so we'll need to specify both the number of rows
-and the number of columns at compile time.
-
-Here's an example:
-
-.. literalinclude:: ../../../examples/arrays/multid_array.cpp
+.. literalinclude:: ../../../examples/arrays/array_loop.cpp
    :language: c++
-   :caption: ``multid_array.cpp``
+   :caption: ``array_loop.cpp``
 
-Notice that we need to explicitly set the size of both the
-``row_arr_t`` and the ``fixed_mat_t``.  While this solves the issue we had
-with our ``std::vector<std::vector<double>>`` where we could have rows
-of varying length, it is less flexible in that we need to know the
-size ahead of time.
 
-There are a few features here that we have not yet seen.
 
-* We use ``std::setw()`` to set the width (number of characters) to
-  use when writing out our numbers.  This makes them line up nicely.
 
-* We access the information in the arrays using a reference (with the
-  ``&`` operator).  This gives us direct access to the memory without
-  needing to make a copy.
 
-We'll cover references next.
+Older style arrays
+==================
 
-.. note::
+.. caution::
 
    In C and older C++, you will see fixed-side arrays declared as:
 
    .. code:: c++
 
       double x[10];
-      int p[10][20];
 
-   The ``std::array`` is a more modern wrapper for these---it has the
-   advantage that it knows the size of the array.
+   The ``std::array`` is a more modern wrapper for this---it has the
+   advantage that it knows the size of the array and works with
+   our loops and the algorithms provided by the C++ standard library.
 
 

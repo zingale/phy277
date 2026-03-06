@@ -51,3 +51,8 @@ There are other types of casts in C++, but this is the one we will use the most.
 
    Let's explicitly cast the integers in the program above to see if
    it fixes our problem.
+
+.. important::
+
+   Every time you modify your source code file (``*.cpp``), you need to
+   recompile it (using ``g++``)  to produce an updated executable.

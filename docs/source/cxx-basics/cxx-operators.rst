@@ -21,6 +21,12 @@ The standard mathematics operators are:
 
 * ``%`` : modulus
 
+For example, to compute the area and perimeter of a rectangle, we could do:
+
+.. literalinclude:: ../../../examples/basics/rectangle.cpp
+   :language: c++
+   :caption: ``rectangle.cpp``
+
 In addition, ``+`` and ``-`` can be used as *unary operators*, e.g., to negate
 a quantity:
 
@@ -28,13 +34,60 @@ a quantity:
 
    double x = -y;
 
+.. note::
+
+   Unlike in some languages, there is no operator for exponentiation, e.g., $x^y$.
+   We'll see how to call a function to this shortly.
+
+.. _sec:relational_ops:
+
 Relational operators
 ====================
+
+Relational operators compare objects.  The main operators are:
+
+* ``==`` : equal to
+
+* ``!=`` : not equal to
+
+* ``>`` : greater than
+
+* ``<`` : less than
+
+* ``>=`` : greater than or equal to
+
+* ``<=`` : less than or equal to
+
+For example:
+
+.. literalinclude:: ../../../examples/basics/relations.cpp
+   :language: c++
+   :caption: ``relations.cpp``
+
+.. note::
+
+   C++20 introduces a three-way comparison, ``<=>``, which we will not consider.
 
 
 Assignment operators
 ====================
 
+Assignment modifies the value of the object to the left of the operator.  The assignment
+operators include:
+
+* ``a = b``  : set the value of a to that of b
+
+* ``a += b`` : equivalent to ``a = a + b``
+
+* ``a -= b`` : equivalent to ``a = a - b``
+
+* ``a *= b`` : equivalent to ``a = a * b``
+
+* ``a /= b`` : equivalent to ``a = a / b``
+
+.. literalinclude:: ../../../examples/basics/assignment.cpp
+   :language: c++
+   :caption: ``assignment.cpp``
 
 Precedence
 ==========
@@ -47,10 +100,18 @@ What happens when we have an expression like:
 
 The language defines the order that operators are considered, called
 *operator precedence*.
-
 This table: `C++ Operator Precedence
 <https://en.cppreference.com/w/cpp/language/operator_precedence>`_
 lists the order in which operators are evaluated.
+
+For the operators that we've seen so far, here is an (abbreviated)
+precedence order:
+
+* ``-a``, ``+a`` : unary operators
+* ``a * b``, ``a / b``, ``a % b`` : multiplication / division / remainder
+* ``a + b``, ``a - b`` : addition / subtraction
+* ``a = b`` : assignment
+
 
 In the example above, multiplication has higher precedence, so it is
 evaluated first, and then the addition is done.
@@ -65,11 +126,19 @@ evaluated first, and then the addition is done.
    Play around with some expressions to explore the precedence of operators.
 
 
+.. _sec:prefix_and_postfix:
+
 Prefix and postfix operators
 ============================
 
-We haven't yet discussed the difference between ``++a`` and ``a++``.  These are the prefix
-and postfix increment operators.  Let's do that now.
+C++ also has the increment and decrement (postfix) operators.
+
+* ``a++`` is equivalent to ``a = a + 1``
+
+* ``a--`` is equivalent to ``a = a - 1``
+
+There are prefix versions of these, e.g., ``++a``.  The
+difference between them is subtle.
 
 The prefix operator is:
 
@@ -92,19 +161,6 @@ Now consider the postfix operator:
 Here, a copy of ``c`` is made, then ``c`` is incremented, and finally the copy is returned.
 So in the above example, the result would be ``d = 0``.
 
-.. tip::
-
-   The behavior of the prefix and postfix operator is essentially the same when it is
-   on its own line.  Also in the ``for`` construction:
-
-   .. code:: c++
-
-      for (int i = 0; i < 10; ++i) {
-          ...
-
-   it doesn't matter much which version you use---although you will
-   commonly see the prefix version used since it does not make a copy,
-   and therefore can be faster.
 
 
 Associativity

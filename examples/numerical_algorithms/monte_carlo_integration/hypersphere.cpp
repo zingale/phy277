@@ -6,6 +6,7 @@
 #include <random>
 #include <cmath>
 #include <numbers>
+#include <format>
 
 constexpr int N_MAX{1000000};
 
@@ -58,9 +59,7 @@ int main() {
 
         V *= std::pow(2.0, D);
 
-        std::cout << "samples: " << std::setw(7) << N << ";  "
-                  << "volume: " << V / N << std::endl;
-
+        std::cout << std::format("samples: {:7}; volume: {}\n", N, V / N);
         N *= 10;
 
     }

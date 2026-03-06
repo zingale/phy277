@@ -24,12 +24,17 @@ The following is guaranteed:
 
 .. code:: c++
 
-   sizeof(char) == 1 <= sizeof(short) <= sizeof(int) <= sizeof(long) <= sizeof(long long)
+   sizeof(char) == 1 <= sizeof(short)
+                     <= sizeof(int)
+                     <= sizeof(long)
+                     <= sizeof(long long)
 
 .. tip::
 
    If you want to guarantee a size for an ``int``, there are datatypes that explicitly
    require a fixed width, like ``int32_t``: https://en.cppreference.com/w/cpp/types/integer
+
+.. _sec:reporting_limits:
 
 Reporting limits
 ================
@@ -41,7 +46,10 @@ We can find out a lot about the range and precision of numbers that can be store
    :language: c++
    :caption: ``limits_test.cpp``
 
+.. note::
 
+   We are again using the ``<>`` notation here to indicate the datatype
+   we are interested in.  We first saw this with ``static_cast``.
 
 Overflow and underflow
 ----------------------

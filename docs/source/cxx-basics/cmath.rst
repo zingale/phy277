@@ -13,11 +13,11 @@ This provides math functions like $\sin(x)$
    Trigonometric functions like $\sin(x)$ expect their arguments to be
    in radians.
 
-For raising numbers to a power, e.g., $x**y$, we use the
+For raising numbers to a power, e.g., $x^y$, we use the
 ``std::pow()`` function.  This differs a bit from some languages
 which have an operator for exponentiation, like ``x**y``.
 
-
+Let's look at some examples.
 
 
 Sine of angle in degrees
@@ -31,27 +31,33 @@ Here's an example of:
 
 .. literalinclude:: ../../../examples/floating_point/sine.cpp
    :language: c++
-   :caption: sine.cpp
+   :caption: ``sine.cpp``
 
 
 Powers
 ======
 
+In addition to ``std::pow()``, there are some functions for common powers,
+like ``std::sqrt()`` for $x^{1/2}$, and ``std::cbrt()`` for $x^{1/3}$.
+These tend to be faster than using ``std::pow()``.
+
 .. literalinclude:: ../../../examples/floating_point/power.cpp
    :language: c++
-   :caption: power.cpp
+   :caption: ``power.cpp``
 
 Exponential and logs
 ====================
 
+Let's look at some examples of exponentiation and logarithms.
+
 .. important::
 
    ``std::log()`` is the natural logarithm.  For common
-   logarithm (base-10), use ``std:log10()``.
+   logarithm (base-10), use ``std::log10()``.
 
 .. literalinclude:: ../../../examples/floating_point/exp_log.cpp
    :language: c++
-   :caption: exp_log.cpp
+   :caption: ``exp_log.cpp``
 
 Absolute value
 ==============
@@ -70,11 +76,11 @@ Absolute value
    This can be dangerous, since you might not get the function
    you intend from the C++ standard library.
 
-   This can be especially dangerous with ``std:abs()``.
+   This can be especially dangerous with ``std::abs()``.
 
 .. literalinclude:: ../../../examples/floating_point/absolute.cpp
    :language: c++
-   :caption: absolute.cpp
+   :caption: ``absolute.cpp``
 
 
 

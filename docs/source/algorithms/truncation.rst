@@ -1,6 +1,9 @@
-*****************************
-Roundoff vs. truncation error
-*****************************
+**************************
+Derivatives and Truncation
+**************************
+
+Difference approximation to first derivative
+============================================
 
 Consider the Taylor expansion of :math:`f(x)` about some point :math:`x_0`:
 
@@ -16,10 +19,16 @@ We can solve for the derivative to find an approximation for the first derivativ
 
    \left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} + \mathcal{O}(\Delta x)
 
-This shows that this approximation for the derivative is first-order accurate in :math:`\Delta x`---that is the truncation error of the approximation.
+This shows that this approximation for the derivative is first-order
+accurate in :math:`\Delta x`---that is the `truncation error <https://en.wikipedia.org/wiki/Truncation_error_(numerical_integration)>`_ of the
+approximation.
 
-We can see the relative size of roundoff and truncation error by using this approximation
-to compute a derivative for different values of :math:`\Delta x`:
+Roundoff vs. truncation
+=======================
+
+We can see the relative size of roundoff and truncation error by using
+this approximation to compute a derivative for different values of
+:math:`\Delta x`:
 
 .. literalinclude:: ../../../examples/floating_point/truncation_vs_roundoff.cpp
    :language: c++
@@ -51,3 +60,35 @@ Let's discuss the trends:
 * The minimum error here is around :math:`\sqrt{\epsilon}`, where :math:`\epsilon` is
   machine epsilon.
 
+
+Higher-order approximations
+===========================
+
+Let's look back at our difference approximation, but now consider Taylor expanding
+$f(x_0 + \Delta x)$ and $f(x_0 - \Delta x)$:
+
+.. math::
+
+   f(x_0 + \Delta x) = f(x_0) + \left . \frac{df}{dx} \right |_{x_0} \Delta x +
+                                \frac{1}{2} \left . \frac{d^2f}{dx^2} \right |_{x_0} \Delta x^2 +
+                                \mathcal{O}(\Delta x^3)
+
+.. math::
+
+   f(x_0 + \Delta x) = f(x_0) - \left . \frac{df}{dx} \right |_{x_0} \Delta x +
+                                \frac{1}{2} \left . \frac{d^2f}{dx^2} \right |_{x_0} \Delta x^2 -
+                                \mathcal{O}(\Delta x^3)
+
+Now, if we subtract these, we get:
+
+.. math::
+
+   f(x_0 + \Delta x) - f(x_0 - \Delta x) = 2 \left . \frac{df}{dx} \right |_{x_0} \Delta x + \mathcal{O}(\Delta x^3)
+
+Notice that the $\Delta x^2$ term cancels out.  Now solving for the first derivative, we have:
+
+.. math::
+
+   \left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0 - \Delta x)}{2  \Delta x}  + \mathcal{O}(\Delta x^2)
+
+We see that this is second-order accurate.  This is sometimes called a *centered-difference*.

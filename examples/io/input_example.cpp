@@ -37,7 +37,7 @@ int main() {
 
     data_file.close();
 
-    for (auto p : planets) {
+    for (const auto& p : planets) {
         std::cout << std::setw(12) << p.name << std::setw(12) << p.a << std::setw(12) << p.e << std::endl;
     }
 

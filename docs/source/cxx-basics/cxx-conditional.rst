@@ -1,11 +1,12 @@
-**********************
-Conditional Statements
-**********************
+*****************
+``if`` Statements
+*****************
 
-``if``-test
-===========
+So far, we have not been making decisions based on the values our
+variables hold.  Let's see how to do this.  The ``if`` statement
+allows us to test on values and take actions.
 
-We've already been using if-tests quite a bit.  So let's look a little more at their syntax:
+The basic form is:
 
 .. code:: c++
 
@@ -20,8 +21,14 @@ We've already been using if-tests quite a bit.  So let's look a little more at t
 
    }
 
+Here ``condition`` is something that will evaluate to ``true`` or
+``false``, and this is a place where we will use the
+:ref:`sec:relational_ops` we've seen previously.
 
-.. tip::
+Again we use ``{ }`` to group the statements into blocks for each part
+of the conditional.
+
+.. caution::
 
    There is a form of an if-statement that does not use brackets if
    there is only a single statement to execute:
@@ -47,66 +54,66 @@ We've already been using if-tests quite a bit.  So let's look a little more at t
 
    For this reason, it is always best to use brackets.
 
+Simple example
+==============
+
+Here's an example that reads an integer from the user and then outputs
+whether it is positive, negative, or zero:
+
+.. literalinclude:: ../../../examples/conditionals/if-example.cpp
+   :language: c++
+   :caption: ``if-example.cpp``
+
 .. note::
 
-   C++17 also allows for a form with an initializer before the
-   conditional (e.g., to open a file).  We will not explore this here.
+   We read input from the user using ``std::cin`` as discussed in
+   :ref:`sec:reading-input`.
 
 
-.. tip::
+Scope
+=====
 
-   There is also a simple `ternary operator
-   <https://en.wikipedia.org/wiki/%3F:>`_ in C++ of the form:
+Consider the following example:
+
+.. literalinclude:: ../../../examples/conditionals/if-scope.cpp
+   :language: c++
+   :caption: ``if-scope.cpp``
+
+Since we declare the variable ``rem`` inside of an ``if`` block (i.e., inside the ``{ }``),
+it is not available to us outside of the block.
+
+If we want to set a variable inside of an ``if`` condition, then we
+need to declare the variable outside.  This is an issue of *scope*.
+Most variables in C++ have lifetimes limited to the block (``{ }``) in
+which they are defined.
+
+
+Ternary operator
+================
+
+There is also a simple `ternary operator
+<https://en.wikipedia.org/wiki/%3F:>`_ in C++ of the form:
 
        *condition* ``?`` *true-result* ``:`` *false result*
 
-   Where *true-result* is the value used if *condition* is ``true``
-   and *false-result* otherwise.
+Where *true-result* is the value used if *condition* is ``true``
+and *false-result* otherwise.
 
-   For instance:
+For instance:
 
-   .. code:: c++
+.. code:: c++
 
-      int i{10};
+   int i{10};
 
-      double x = (i > 5) ? 1.0 : 0.0;
+   double x = (i > 5) ? 1.0 : 0.0;
+
+This tends not to be very readable, but there are some rare instances where it is needed.
 
 
 ``switch`` statement
 ====================
 
-A switch statement takes action on a single expression, and has many different
-cases that can take different actions.  For example:
-
-.. code:: c++
-
-   int i{2};
-   std::string text{};
-
-   switch (i) {
-
-      case 0:
-          text = "zero";
-          break;
-
-      case 1:
-          text = "one";
-          break;
-
-      case 2:
-      case 3:
-      case 4:
-          text = "2 <= i <= 4";
-          break;
-
-      default:
-          text = "i > 4";
-
-   }
-
-
-.. warning::
-
-   Notice that each ``case`` region ends with ``break``.  If you omit the
-   ``break``, then the flow "falls through" to the next options.
-
+C++ also has a `switch statement
+<https://en.cppreference.com/w/cpp/language/switch.html>`_, which we
+will not consider.  We can accomplish any logic needed with the
+``if`` - ``else`` constructs.

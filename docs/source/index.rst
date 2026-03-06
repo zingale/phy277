@@ -109,6 +109,17 @@ the top of many pages.
    cxx-basics/floating-point
    cxx-basics/numbers
    cxx-basics/cmath
+   cxx-basics/function-preview
+   cxx-basics/minimizing-roundoff
+   cxx-basics/floating-point-special-numbers
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Review
+   :hidden:
+
+   interactive_review/review1
+   interactive_review/more-practice1
 
 .. toctree::
    :maxdepth: 1
@@ -116,10 +127,11 @@ the top of many pages.
    :hidden:
 
    cxx-basics/cxx-strings
+   cxx-basics/cxx-strings-escape
+   cxx-basics/cxx-strings-math
    cxx-basics/cxx-strings-indexing
-   cxx-basics/cxx-formatting-output
-   cxx-basics/cxx-reading
    cxx-basics/cxx-format-library
+   cxx-basics/cxx-reading
 
 .. toctree::
    :maxdepth: 1
@@ -127,26 +139,33 @@ the top of many pages.
    :hidden:
 
    cxx-basics/cxx-vectors
-   cxx-basics/cxx-more-vectors
-   cxx-basics/cxx-vectors-algorithms
-   cxx-basics/cxx-strings-functions
-   cxx-basics/cxx-matrix-example
-   cxx-basics/cxx-auto-decltype
-   cxx-basics/cxx-structs
+   cxx-basics/cxx-vector-push
+   cxx-basics/cxx-vectors-loops
+   cxx-basics/cxx-vector-examples.rst
    cxx-basics/cxx-arrays
+   cxx-basics/cxx-structs
+   cxx-basics/cxx-vector-of-struct
+   cxx-basics/memory-stack-heap
    cxx-basics/cxx-references
-   cxx-basics/cxx-pointers
+   cxx-basics/cxx-vector-modify-loop
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Practice
+   :hidden:
+
+   interactive_review/review-vecs
 
 .. toctree::
    :maxdepth: 1
    :caption: C++ Flow Control
    :hidden:
 
-   cxx-basics/cxx-statements
    cxx-basics/cxx-conditional
    cxx-basics/cxx-loops
+   cxx-basics/cxx-statements
    cxx-basics/cxx-continue-break
-   cxx-basics/cxx-io
+   cxx-basics/conditional-loop-examples
 
 .. toctree::
    :maxdepth: 1
@@ -155,10 +174,7 @@ the top of many pages.
 
    cxx-functions/cxx-functions
    cxx-functions/cxx-value-reference
-   cxx-functions/cxx-stdlib
    cxx-functions/cxx-functions-example
-   cxx-functions/cxx-lambdas
-   cxx-functions/cxx-functions-planets
 
 .. toctree::
    :maxdepth: 1
@@ -166,6 +182,8 @@ the top of many pages.
    :hidden:
 
    algorithms/truncation
+   algorithms/integration
+   algorithms/optimization
    algorithms/cxx-orbit-example
    algorithms/cxx-orbit-rk2-example
    algorithms/roots
@@ -173,7 +191,78 @@ the top of many pages.
 
 .. toctree::
    :maxdepth: 1
+   :caption: File I/O
+   :hidden:
+
+   cxx-basics/cxx-io
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Software Engineering
+   :hidden:
+
+   software_engineering/compiler-flags
+   software_engineering/multiple-files
+   software_engineering/make
+   software_engineering/inclass-split-orbit
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Some SL Algorithms
+   :hidden:
+
+   cxx-basics/cxx-pointers
+   sl-algorithms/cxx-vector-iterators
+   sl-algorithms/cxx-vectors-algorithms
+   sl-algorithms/cxx-strings-functions
+   sl-algorithms/cxx-auto-decltype
+   sl-algorithms/cxx-stdlib
+   sl-algorithms/cxx-lambdas
+   sl-algorithms/cxx-functions-planets
+   cxx-basics/cxx-multid-arrays
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Classes
+   :hidden:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: More Classes
+   :hidden:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Templates
+   :hidden:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Python Crash Course
+   :hidden:
+
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: In-class Activities
+   :hidden:
+
+   polls/polls
+
+.. toctree::
+   :maxdepth: 1
    :caption: Homework
    :hidden:
 
    homework/homework1
+   homework/homework2
+   homework/homework3
+   homework/homework4
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Exams
+   :hidden:
+
+   exam-solutions/midterm1

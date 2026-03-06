@@ -10,6 +10,7 @@ int main() {
     container.push_back(3.14159);
 
     std::cout << container[3] << std::endl;
-    std::cout << "the vector has " << container.size() << " elements" << std::endl;
+    std::cout << "the vector has " << container.size()
+              << " elements" << std::endl;
 
 }

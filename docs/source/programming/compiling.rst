@@ -81,3 +81,16 @@ We can then run our program as:
    You can add the option ``-std=c++20`` to the compilation line to ensure it uses C++ 20.
 
 
+Exercises
+=========
+
+* What happens if instead of calling the function ``main()``, you call it ``start()`` or
+  something else?
+
+* What happens if you leave off the ``;`` at the end of the ``"Hello World!"`` line?
+
+* What happens if you put the entire function on a single line? like:
+
+  .. code:: c++
+
+     int main() { std::cout << "Hello World!" << std::endl; }

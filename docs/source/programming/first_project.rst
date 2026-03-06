@@ -1,3 +1,5 @@
+.. _sec_first_project:
+
 *******************
 A First C++ Project
 *******************
