@@ -485,7 +485,50 @@
 <ol class="arabic">
 <li><p>Let’s modify <a class="reference internal" href="../cxx-basics/cxx-vector-of-struct.html#sec-vec-of-struct"><span class="std std-ref">our struct Planet example</span></a> to
 add the period as a member and fill the period automatically via
-Kepler’s law in a loop.</p></li>
+Kepler’s law in a loop.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 43 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">period.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Planet</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">{};</span><span class="w">            </span><span class="c1">// semi-major axis</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">e</span><span class="p">{};</span><span class="w">            </span><span class="c1">// eccentricity</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">P</span><span class="p">{};</span>
+<span class="p">};</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Planet</span><span class="o">&gt;</span><span class="w"> </span><span class="n">planets</span><span class="p">{{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Mercury&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">0.3871</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.2056</span><span class="p">},</span>
+<span class="w">                                </span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Venus&quot;</span><span class="p">,</span><span class="w">   </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">0.7233</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.0068</span><span class="p">},</span>
+<span class="w">                                </span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Earth&quot;</span><span class="p">,</span><span class="w">   </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">1.0000</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.0167</span><span class="p">},</span>
+<span class="w">                                </span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Mars&quot;</span><span class="p">,</span><span class="w">    </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">1.5237</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.0934</span><span class="p">},</span>
+<span class="w">                                </span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Jupiter&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">5.2029</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.0484</span><span class="p">},</span>
+<span class="w">                                </span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Saturn&quot;</span><span class="p">,</span><span class="w">  </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">9.5370</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.0539</span><span class="p">},</span>
+<span class="w">                                </span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Uranus&quot;</span><span class="p">,</span><span class="w">  </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">19.189</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.0473</span><span class="p">},</span>
+<span class="w">                                </span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Neptune&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">30.070</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">e</span><span class="o">=</span><span class="mf">0.0086</span><span class="p">}};</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">p</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">planets</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">p</span><span class="p">.</span><span class="n">P</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pow</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">planets</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;planet {} has a period of {:.2f} years.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">                                 </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">P</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</details></li>
 <li><p>Create a vector with this list of names:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">luke</span>
 <span class="n">leia</span>
@@ -501,7 +544,42 @@ Kepler’s law in a loop.</p></li>
 <code class="docutils literal notranslate"><span class="pre">cctype</span></code> to capitalize the first letter in each name (updating the
 vector.</p>
 <p>Finally loop over the vector again and output the names.</p>
-</li>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 44 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">names.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cctype&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="p">{</span><span class="s">&quot;luke&quot;</span><span class="p">,</span>
+<span class="w">                                   </span><span class="s">&quot;leia&quot;</span><span class="p">,</span>
+<span class="w">                                   </span><span class="s">&quot;han&quot;</span><span class="p">,</span>
+<span class="w">                                   </span><span class="s">&quot;chewy&quot;</span><span class="p">,</span>
+<span class="w">                                   </span><span class="s">&quot;obi-wan&quot;</span><span class="p">,</span>
+<span class="w">                                   </span><span class="s">&quot;yoda&quot;</span><span class="p">,</span>
+<span class="w">                                   </span><span class="s">&quot;vader&quot;</span><span class="p">,</span>
+<span class="w">                                   </span><span class="s">&quot;lando&quot;</span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nm</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">names</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">nm</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">toupper</span><span class="p">(</span><span class="n">nm</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="w">    </span><span class="p">}</span>
+
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nm</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">names</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nm</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</details></li>
 <li><p>Create a vector containing the numbers 0 through 9.</p>
 <p>Now loop over the vector, and modify each element to be the sum of
 itself and the all the previous elements.</p>
@@ -509,7 +587,37 @@ itself and the all the previous elements.</p>
 a variable called <code class="docutils literal notranslate"><span class="pre">previous</span></code> that will be updated in the loop body
 to always hold the previous sum.</p>
 <p>Upon completion, output the new values to the screen.</p>
-</li>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 45 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">sum.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nums</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">};</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">previous</span><span class="p">{};</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">previous</span><span class="p">;</span>
+<span class="w">        </span><span class="n">previous</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">{};</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:2} : {:3}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span>
+<span class="w">        </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</details></li>
 </ol>
 </section>
 
