@@ -2,3 +2,7 @@
 button.search-button-field.pst-js-only {
   display: none !important;
 }
+
+#pst-search-dialog {
+  display: none !important;
+}
