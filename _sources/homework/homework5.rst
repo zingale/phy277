@@ -37,28 +37,37 @@ Homework #5
 
    Use SI units, where $g = -9.81~\mathrm{m~s^{-2}}$.
 
+   Structure your code as follows:
+
    * Create a ``struct`` called ``Projectile`` with 3 data members: ``t``, ``x``, ``y``
 
    * Ask the user for an angle (positive, from the horizontal),
-     initial velocity, and a time interval $\Delta t$ at which we want
-     to store the projectile's position.
+     initial velocity magnitude (m/s), and a time interval $\Delta
+     t$ (s) at which we want to store the projectile's position.
+
+     .. note::
+
+        $\Delta t$ should be chosen to be much smaller ($\sim few %) than
+        the flight time of the projectile.
 
    * Create a ``std::vector`` of ``Projectile``
 
    * Start at $t = 0$ and $(x, y) = 0$, and loop for as long as the
-     projectile is in the air and:
+     projectile is in the air ($y >= 0$).
+
+     .. tip::
+
+        Use a ``while`` loop here.
 
      * Compute the current $x$ and $y$ position of the projectile
 
-     * If $y < 0$ exit the loop; otherwise, store the position in your vector.
-
-       .. tip::
-
-          Use a ``while`` loop here.
+     * Store the position in your vector.
 
      * Increment the time by $\Delta t$
 
-   * Finally, output the trajectory as rows with 3 columns: $t$, $x$, and $y$.
+   * Finally, output the trajectory as rows with 3 columns: $t$, $x$,
+     and $y$.  Use ``std::format`` to make the data line up neatly
+     in columns.
 
    Later we'll see how to plot this output.
 

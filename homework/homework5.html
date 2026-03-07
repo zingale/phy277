@@ -516,26 +516,34 @@ then the equations of motion are:</p>
 \[y = y_0 + v \sin\theta \, t + \frac{1}{2} g t^2\]</div>
 </p>
 <p>Use SI units, where <span class="math notranslate nohighlight">\(g = -9.81~\mathrm{m~s^{-2}}\)</span>.</p>
+<p>Structure your code as follows:</p>
 <ul>
 <li><p>Create a <code class="docutils literal notranslate"><span class="pre">struct</span></code> called <code class="docutils literal notranslate"><span class="pre">Projectile</span></code> with 3 data members: <code class="docutils literal notranslate"><span class="pre">t</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code></p></li>
 <li><p>Ask the user for an angle (positive, from the horizontal),
-initial velocity, and a time interval <span class="math notranslate nohighlight">\(\Delta t\)</span> at which we want
-to store the projectile’s position.</p></li>
+initial velocity magnitude (m/s), and a time interval <span class="math notranslate nohighlight">\(\Delta
+t\)</span> (s) at which we want to store the projectile’s position.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(\Delta t\)</span> should be chosen to be much smaller ($\sim few %) than
+the flight time of the projectile.</p>
+</div>
+</li>
 <li><p>Create a <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> of <code class="docutils literal notranslate"><span class="pre">Projectile</span></code></p></li>
 <li><p>Start at <span class="math notranslate nohighlight">\(t = 0\)</span> and <span class="math notranslate nohighlight">\((x, y) = 0\)</span>, and loop for as long as the
-projectile is in the air and:</p>
-<ul>
-<li><p>Compute the current <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> position of the projectile</p></li>
-<li><p>If <span class="math notranslate nohighlight">\(y &lt; 0\)</span> exit the loop; otherwise, store the position in your vector.</p>
+projectile is in the air (<span class="math notranslate nohighlight">\(y &gt;= 0\)</span>).</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Use a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop here.</p>
 </div>
-</li>
+<ul class="simple">
+<li><p>Compute the current <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> position of the projectile</p></li>
+<li><p>Store the position in your vector.</p></li>
 <li><p>Increment the time by <span class="math notranslate nohighlight">\(\Delta t\)</span></p></li>
 </ul>
 </li>
-<li><p>Finally, output the trajectory as rows with 3 columns: <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(x\)</span>, and <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+<li><p>Finally, output the trajectory as rows with 3 columns: <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(x\)</span>,
+and <span class="math notranslate nohighlight">\(y\)</span>.  Use <code class="docutils literal notranslate"><span class="pre">std::format</span></code> to make the data line up neatly
+in columns.</p></li>
 </ul>
 <p>Later we’ll see how to plot this output.</p>
 </li>
