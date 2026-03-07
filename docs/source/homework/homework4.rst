@@ -66,7 +66,7 @@ Homework #4
 
      ::
 
-        Point ( 1.50, -2.30) is  2.746 from the origin.
+        Point ( 1.50, 2.30) is  2.746 from the origin.
 
 3. Let's find the maximum element in a vector.  The ``algorithm``
    library provides ``std::max(a, b)`` which will return
