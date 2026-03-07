@@ -47,7 +47,7 @@ Homework #5
 
      .. note::
 
-        $\Delta t$ should be chosen to be much smaller ($\sim few %) than
+        $\Delta t$ should be chosen to be much smaller (~ few %) than
         the flight time of the projectile.
 
    * Create a ``std::vector`` of ``Projectile``
