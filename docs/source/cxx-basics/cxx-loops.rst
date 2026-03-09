@@ -73,7 +73,7 @@ where the body is executed so long as ``condition`` is true.  For example:
 
 .. code:: c++
 
-   int i{0};
+   int i{1};
 
    while (i < 10) {
       i = 2*i;
@@ -82,6 +82,14 @@ where the body is executed so long as ``condition`` is true.  For example:
 The loop body is only ever executed if the condition is true.
 
 .. warning::
+
+   If we did ``int i{}``, then this loop would be infinite, since ``i``
+   will always be ``0``.
+
+   To break out of a program that encountered an infinite loop, use
+   :kbd:`Ctrl-c`.
+
+.. caution::
 
    There is another form of the ``while`` loop that has the form:
 
