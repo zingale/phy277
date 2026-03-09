@@ -561,7 +561,7 @@ avoided.</p>
 </pre></div>
 </div>
 <p>where the body is executed so long as <code class="docutils literal notranslate"><span class="pre">condition</span></code> is true.  For example:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">{</span><span class="mi">1</span><span class="p">};</span>
 
 <span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">   </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">;</span>
@@ -571,6 +571,13 @@ avoided.</p>
 <p>The loop body is only ever executed if the condition is true.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
+<p>If we did <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">i{}</span></code>, then this loop would be infinite, since <code class="docutils literal notranslate"><span class="pre">i</span></code>
+will always be <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>To break out of a program that encountered an infinite loop, use
+<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">c</kbd>.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
 <p>There is another form of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop that has the form:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// do stuff</span>
