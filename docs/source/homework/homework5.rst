@@ -40,7 +40,7 @@ Homework #5
 
    * initialize $\epsilon = 1$
 
-   * loop, using a while construct, testing if $1 + \epsilon \ne 1$.
+   * loop, using a while construct, testing if $1 + \epsilon \ne 1$:
 
      * cut $\epsilon$ in half
 
