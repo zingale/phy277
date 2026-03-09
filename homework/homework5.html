@@ -505,7 +505,27 @@ g++</em>) to Brightspace.</p>
 of this assignment.</p>
 </div>
 <ol class="arabic">
-<li><p>We’ll write a simple code that does projectile motion.</p>
+<li><p><em>Computing <span class="math notranslate nohighlight">\(\epsilon\)</span></em> :</p>
+<p>When we discussed <a class="reference internal" href="../cxx-basics/floating-point.html#sec-floating-point"><span class="std std-ref">Floating Point</span></a>, we learned about <span class="math notranslate nohighlight">\(\epsilon\)</span>, the smallest
+number that can be added to one that gives a result indistinguishable from <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>Let’s estimate that now.  We will write a program that starts with
+a large guess for <span class="math notranslate nohighlight">\(\epsilon\)</span> and then, using a loop, continually
+cuts it until roundoff makes <span class="math notranslate nohighlight">\(1 + \epsilon\)</span> indistinguishable from
+<span class="math notranslate nohighlight">\(1\)</span>:</p>
+<p>Structure your program as follows:</p>
+<ul class="simple">
+<li><p>initialize <span class="math notranslate nohighlight">\(\epsilon = 1\)</span></p></li>
+<li><p>loop, using a while construct, testing if <span class="math notranslate nohighlight">\(1 + \epsilon \ne 1\)</span>.</p>
+<ul>
+<li><p>cut <span class="math notranslate nohighlight">\(\epsilon\)</span> in half</p></li>
+</ul>
+</li>
+<li><p>output <span class="math notranslate nohighlight">\(\epsilon\)</span></p></li>
+</ul>
+<p>You loop should continue until the test fails.  At that point, <span class="math notranslate nohighlight">\(\epsilon\)</span>
+should be close to the actual value.</p>
+</li>
+<li><p><em>Projectile motion</em> : We’ll write a simple code that does projectile motion.</p>
 <p>If we assume that our projectile starts at a position <span class="math notranslate nohighlight">\((x, y) = (0, 0)\)</span>,
 and is launched with a velocity <span class="math notranslate nohighlight">\(v\)</span> at an angle <span class="math notranslate nohighlight">\(\theta\)</span> from the horizontal,
 then the equations of motion are:</p>
