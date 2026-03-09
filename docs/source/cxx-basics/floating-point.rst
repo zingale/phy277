@@ -1,3 +1,5 @@
+.. _sec:floating_point:
+
 ================
  Floating Point
 ================

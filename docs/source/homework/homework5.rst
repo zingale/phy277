@@ -26,7 +26,30 @@ Homework #5
    of this assignment.
 
 
-1. We'll write a simple code that does projectile motion.
+1. *Computing $\epsilon$* :
+
+   When we discussed :ref:`sec:floating_point`, we learned about $\epsilon$, the smallest
+   number that can be added to one that gives a result indistinguishable from $1$.
+
+   Let's estimate that now.  We will write a program that starts with
+   a large guess for $\epsilon$ and then, using a loop, continually
+   cuts it until roundoff makes $1 + \epsilon$ indistinguishable from
+   $1$:
+
+   Structure your program as follows:
+
+   * initialize $\epsilon = 1$
+
+   * loop, using a while construct, testing if $1 + \epsilon \ne 1$.
+
+     * cut $\epsilon$ in half
+
+   * output $\epsilon$
+
+   You loop should continue until the test fails.  At that point, $\epsilon$
+   should be close to the actual value.
+
+2. *Projectile motion* : We'll write a simple code that does projectile motion.
 
    If we assume that our projectile starts at a position $(x, y) = (0, 0)$,
    and is launched with a velocity $v$ at an angle $\theta$ from the horizontal,
@@ -70,5 +93,4 @@ Homework #5
      in columns.
 
    Later we'll see how to plot this output.
-
 
