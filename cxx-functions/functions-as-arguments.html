@@ -484,7 +484,25 @@
                   
   <section id="passing-a-function-to-a-function">
 <h1>Passing a function to a function<a class="headerlink" href="#passing-a-function-to-a-function" title="Link to this heading">#</a></h1>
-<p>Sometimes we want to write a function that takes another function as an argument.</p>
+<p>Sometimes we want to write a function that takes another function as an argument.
+We’ll use this a lot when we learn about numerical methods, for instance, writing
+a function that computes an integral of a user-supplied function.</p>
+<p>We use <a class="reference external" href="https://en.cppreference.com/w/cpp/utility/functional/function.html">std::function</a>
+(defined in the <code class="docutils literal notranslate"><span class="pre">functional</span></code> header) to define a function argument.</p>
+<p>We need to give the signature of the function in the template arguments (<code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">&gt;</span></code>).
+For instance, for our function:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <em>function type</em> is <code class="docutils literal notranslate"><span class="pre">double(double,</span> <span class="pre">double)</span></code> —it takes 2
+<code class="docutils literal notranslate"><span class="pre">double</span></code> as arguments and returns a <code class="docutils literal notranslate"><span class="pre">double</span></code>.  So we would use
+<code class="docutils literal notranslate"><span class="pre">std::function&lt;double(double,</span> <span class="pre">double)&gt;</span> <span class="pre">f</span></code> as a argument to define
+the function <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p>
+<p>Here’s a concrete example—let’s write a function called <code class="docutils literal notranslate"><span class="pre">fill</span></code>
+that takes a vector <code class="docutils literal notranslate"><span class="pre">x</span></code> and a function <code class="docutils literal notranslate"><span class="pre">f</span></code> and returns a new
+vector creating by calling the function <code class="docutils literal notranslate"><span class="pre">f</span></code> on each value in <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-number">Listing 59 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">vector_fill.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
