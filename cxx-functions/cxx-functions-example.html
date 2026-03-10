@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>More Functions &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Returning a std::vector &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -246,7 +246,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cxx-functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-value-reference.html">Passing by Value vs. Reference</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">More Functions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Returning a <code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
 <ul class="nav bd-sidenav">
@@ -456,7 +456,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -467,11 +469,21 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>More Functions</h1>
+    <h1>Returning a std::vector</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-via-an-argument">Updating via an argument</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#returning-a-reference">Returning a reference?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -481,9 +493,9 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="more-functions">
-<span id="sec-more-functions"></span><h1>More Functions<a class="headerlink" href="#more-functions" title="Link to this heading">#</a></h1>
-<p>Consider wanting to write a vector that takes one vector as input and returns a new one.</p>
+  <section id="returning-a-std-vector">
+<span id="sec-more-functions"></span><h1>Returning a <code class="docutils literal notranslate"><span class="pre">std::vector</span></code><a class="headerlink" href="#returning-a-std-vector" title="Link to this heading">#</a></h1>
+<p>Consider a function that takes a vector as input and returns a new one.</p>
 <p>We can imagine:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v_in</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
@@ -500,12 +512,21 @@
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">v_new</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">v_old</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>that we need to make a copy.  But C++ instead provides <em>move
-semantics</em>—this means that instead of copying the entire contents
-of the local <code class="docutils literal notranslate"><span class="pre">v_out</span></code> to the vector in the caller <code class="docutils literal notranslate"><span class="pre">v_new</span></code> it simply
-moves the data by setting the pointer to the data region in <code class="docutils literal notranslate"><span class="pre">v_new</span></code>
-to the data region in <code class="docutils literal notranslate"><span class="pre">v_out</span></code> before <code class="docutils literal notranslate"><span class="pre">v_out</span></code> is destroyed.</p>
-<p>A second method is to pass it through the argument list as a reference:</p>
+<p>that we need to make a copy from the function to the caller.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">auto</span></code> here because C++ knows the return type.  We could
+also be explicit and do:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v_new</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">v_old</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<p>But C++ instead provides optimizations (usually <a class="reference external" href="https://en.wikipedia.org/wiki/Copy_elision#Return_value_optimization">return value optimization</a>) that eliminates the need for making a copy.  As a result,
+there is little performance penalty in writing a function
+that returns something large like a vector.</p>
+<section id="updating-via-an-argument">
+<h2>Updating via an argument<a class="headerlink" href="#updating-via-an-argument" title="Link to this heading">#</a></h2>
+<p>An alternate method to create a vector via a function is to pass it through the argument list as a reference:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v_in</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v_out</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="c1">// fill v_out based on v_in</span>
@@ -520,6 +541,9 @@ to the data region in <code class="docutils literal notranslate"><span class="pr
 <span class="n">f</span><span class="p">(</span><span class="n">v_old</span><span class="p">,</span><span class="w"> </span><span class="n">v_new</span><span class="p">);</span>
 </pre></div>
 </div>
+</section>
+<section id="returning-a-reference">
+<h2>Returning a reference?<a class="headerlink" href="#returning-a-reference" title="Link to this heading">#</a></h2>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>What about returning a reference?  We might think that we could do:</p>
@@ -539,12 +563,18 @@ to the data region in <code class="docutils literal notranslate"><span class="pr
 This is not allowed—we cannot return a reference to a local
 variable.</p>
 </div>
-<p>Let’s play with this:</p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<p>Let’s play with this.  Here’s an example that tries several ways
+to have a function create a new vector whose elements are initialized
+to be twice those of the input vector:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 57 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">function_vector.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 58 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">function_vector.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 
+<span class="c1">// take a vector as input and return a new vector</span>
 <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f1</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v_in</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v_out</span><span class="p">;</span>
@@ -557,8 +587,11 @@ variable.</p>
 
 <span class="p">}</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="n">f2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v_in</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v_out</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">// update a vector through the argument list</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">f2</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v_in</span><span class="p">,</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v_out</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
+<span class="w">    </span><span class="c1">// erase any stored contents</span>
 <span class="w">    </span><span class="n">v_out</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
 
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">v_in</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -567,6 +600,7 @@ variable.</p>
 
 <span class="p">}</span>
 
+<span class="c1">// attempt to return a reference to our vector</span>
 <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">f3</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">v_in</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v_out</span><span class="p">;</span>
@@ -583,12 +617,17 @@ variable.</p>
 
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v_old</span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">};</span>
 
+<span class="w">    </span><span class="c1">// method 1: new vector is returned</span>
+
 <span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">v_new1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f1</span><span class="p">(</span><span class="n">v_old</span><span class="p">);</span>
 
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">v_new1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// method 2: pass the new vector as an argument</span>
+<span class="w">    </span><span class="c1">// and it is updated</span>
 
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v_new2</span><span class="p">{};</span>
 
@@ -598,6 +637,9 @@ variable.</p>
 <span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// method 3: try to get a reference to a vector</span>
+<span class="w">    </span><span class="c1">// created in the function.  This will not work.</span>
 
 <span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">v_new3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f3</span><span class="p">(</span><span class="n">v_old</span><span class="p">);</span>
 
@@ -611,6 +653,7 @@ variable.</p>
 </pre></div>
 </div>
 </div>
+</section>
 </section>
 
 
@@ -648,6 +691,25 @@ variable.</p>
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-via-an-argument">Updating via an argument</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#returning-a-reference">Returning a reference?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
