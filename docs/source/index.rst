@@ -176,6 +176,7 @@ the top of many pages.
    cxx-functions/cxx-functions
    cxx-functions/cxx-value-reference
    cxx-functions/cxx-functions-example
+   cxx-functions/functions-as-arguments
 
 .. toctree::
    :maxdepth: 1
