@@ -75,7 +75,7 @@ $f(x_0 + \Delta x)$ and $f(x_0 - \Delta x)$:
 
 .. math::
 
-   f(x_0 + \Delta x) = f(x_0) - \left . \frac{df}{dx} \right |_{x_0} \Delta x +
+   f(x_0 - \Delta x) = f(x_0) - \left . \frac{df}{dx} \right |_{x_0} \Delta x +
                                 \frac{1}{2} \left . \frac{d^2f}{dx^2} \right |_{x_0} \Delta x^2 -
                                 \mathcal{O}(\Delta x^3)
 
