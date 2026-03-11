@@ -23,7 +23,24 @@ For instance, for our function:
 The *function type* is ``double(double, double)`` ---it takes 2
 ``double`` as arguments and returns a ``double``.  So we would use
 ``std::function<double(double, double)> f`` as a argument to define
-the function ``f``.
+the function ``f``, e.g.,
+
+.. code:: c++
+
+   void f(std::function<double(double, double> f) {
+       // do stuff with f ...
+   }
+
+could be called as:
+
+.. code:: c++
+
+   f(sum);
+
+using our ``sum`` function defined above.
+
+Example
+=======
 
 Here's a concrete example---let's write a function called ``fill``
 that takes a vector ``x`` and a function ``f`` and returns a new

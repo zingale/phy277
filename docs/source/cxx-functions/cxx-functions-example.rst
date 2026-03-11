@@ -101,4 +101,11 @@ to be twice those of the input vector:
    :language: c++
    :caption: ``function_vector.cpp``
 
+We see that the first two methods work, but the last results in a
+segmentation fault.  In fact, the compiler even warned us about this.
 
+Of the two methods that work, the first one ``f1`` is more readable,
+since it is clear what is being returned.
+
+Some codes adopt the style that functions should not modify their
+arguments at all, but only return new data via return values.
