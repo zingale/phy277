@@ -20,3 +20,8 @@ Here are some practice problems to help us understand functions.
 #. Let's rewrite our :ref:`sec:prime_numbers` example to use a function
    called ``is_prime()`` that takes an ``int`` and returns a ``bool``
    indicated whether the input number is prime.
+
+#. Let's rewrite our :ref:`sec:homework4` problem of creating a vector
+   of ``Point`` and finding the distance from the origin to use a function
+   that finds the distance for a single ``Point``.
+
