@@ -26,6 +26,17 @@ Consider the following code:
 As written, in the loop we cannot modify the value of ``e``.  How do
 we change this to let us modify ``e``?
 
+.. dropdown:: solution
+
+   We need to use a reference when accessing the element of the vector.
+   This means modifying the loop to be:
+
+   .. code:: c++
+
+      for (auto &e : vec) {
+          // do something with e
+      }
+
 
 Question 2
 ==========
@@ -44,3 +55,21 @@ mathematical vector (with $x$, $y$, and $z$ components):
 How do you create a ``MathVector`` called ``v`` and initialize it with
 $(x, y, z) = (1, 2, 3)$?
 
+.. dropdown:: solution
+
+   We would do any of the following:
+
+   .. code:: c++
+
+      MathVector v{1, 2, 3};
+
+   .. code:: c++
+
+      MathVector v{.x=1, .y=2, .z=3};
+
+   .. code:: c++
+
+      MathVector v;
+      v.x = 1;
+      v.y = 2;
+      v.z = 3;
