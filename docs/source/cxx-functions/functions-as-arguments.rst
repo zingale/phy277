@@ -1,5 +1,5 @@
 ********************************
-Passing a function to a function
+Passing a Function to a Function
 ********************************
 
 Sometimes we want to write a function that takes another function as an argument.
