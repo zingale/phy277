@@ -455,7 +455,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -471,6 +473,14 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -497,7 +507,19 @@ For instance, for our function:</p>
 <p>The <em>function type</em> is <code class="docutils literal notranslate"><span class="pre">double(double,</span> <span class="pre">double)</span></code> —it takes 2
 <code class="docutils literal notranslate"><span class="pre">double</span></code> as arguments and returns a <code class="docutils literal notranslate"><span class="pre">double</span></code>.  So we would use
 <code class="docutils literal notranslate"><span class="pre">std::function&lt;double(double,</span> <span class="pre">double)&gt;</span> <span class="pre">f</span></code> as a argument to define
-the function <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p>
+the function <code class="docutils literal notranslate"><span class="pre">f</span></code>, e.g.,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// do stuff with f ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>could be called as:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">sum</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>using our <code class="docutils literal notranslate"><span class="pre">sum</span></code> function defined above.</p>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
 <p>Here’s a concrete example—let’s write a function called <code class="docutils literal notranslate"><span class="pre">fill</span></code>
 that takes a vector <code class="docutils literal notranslate"><span class="pre">x</span></code> and a function <code class="docutils literal notranslate"><span class="pre">f</span></code> and returns a new
 vector creating by calling the function <code class="docutils literal notranslate"><span class="pre">f</span></code> on each value in <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
@@ -546,6 +568,7 @@ vector creating by calling the function <code class="docutils literal notranslat
 </div>
 </div>
 </section>
+</section>
 
 
                 </article>
@@ -582,6 +605,23 @@ vector creating by calling the function <code class="docutils literal notranslat
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
