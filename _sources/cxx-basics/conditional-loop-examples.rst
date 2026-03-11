@@ -2,6 +2,8 @@
 ``if`` + Looping Examples
 *************************
 
+.. _sec:prime_numbers:
+
 Prime numbers
 =============
 
