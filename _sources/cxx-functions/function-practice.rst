@@ -25,3 +25,10 @@ Here are some practice problems to help us understand functions.
    of ``Point`` and finding the distance from the origin to use a function
    that finds the distance for a single ``Point``.
 
+#. Write a function called ``linspace`` that takes a minimum and
+   maximum coordinate, $x_\mathrm{min}$ and $x_\mathrm{max}$, and a
+   number of points, $N$ and returns a vector with $N$ points equally
+   spaced between $x_\mathrm{min}$ and $x_\mathrm{max}$ (with those
+   endpoints included).
+
+   E.g., ``linspace(0, 1, 11)`` would return ``{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0}``.
