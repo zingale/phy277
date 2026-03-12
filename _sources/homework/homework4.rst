@@ -40,6 +40,13 @@ Homework #4
 
    Have your code output the average and standard deviation.
 
+   .. dropdown:: solution
+
+      .. literalinclude:: hw4_p1_stddev.cpp
+         :language: c++
+         :caption: ``hw4_p1_stddev.cpp``
+
+
 2. Consider a ``struct`` that defines a point in the 2D plane:
 
    .. code:: c++
@@ -70,6 +77,12 @@ Homework #4
 
         Point ( 1.50, 2.30) is  2.746 from the origin.
 
+   .. dropdown:: solution
+
+      .. literalinclude:: hw4_p2_points.cpp
+         :language: c++
+         :caption: ``hw4_p2_points.cpp``
+
 3. Let's find the maximum element in a vector.  The ``algorithm``
    library provides ``std::max(a, b)`` which will return
    whichever of ``a`` or ``b`` is the largest.
@@ -99,3 +112,9 @@ Homework #4
          #include <algorithm>
 
       to your code to get access to ``std::max``.
+
+   .. dropdown:: solution
+
+      .. literalinclude:: hw4_p3_maximum.cpp
+         :language: c++
+         :caption: ``hw4_p3_maximum.cpp``
