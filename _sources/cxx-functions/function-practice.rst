@@ -26,7 +26,7 @@ Here are some practice problems to help us understand functions.
 
       .. tip::
 
-         Swaping objects is a key part of a sorting algorithm, so
+         Swapping objects is a key part of a sorting algorithm, so
          C++ provides `std::swap <https://en.cppreference.com/w/cpp/utility/swap.html>`_.
 
 #. Write a function ``sum`` that accepts a ``std::vector`` of numbers and
