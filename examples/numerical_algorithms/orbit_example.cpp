@@ -5,6 +5,9 @@
 #include <numbers>
 #include <format>
 
+// G * Mass in AU, year, solar mass units
+const double GM = 4.0 * std::numbers::pi * std::numbers::pi;
+
 struct OrbitState {
     double t;
     double x;
@@ -12,12 +15,6 @@ struct OrbitState {
     double vx;
     double vy;
 };
-
-OrbitState rhs(const OrbitState& state);
-void write_history(const std::vector<OrbitState>& history);
-std::vector<OrbitState> integrate(const double a, const double tmax, const double dt_in);
-
-const double GM = 4.0 * std::numbers::pi * std::numbers::pi;   // G * Mass in AU, year, solar mass units
 
 OrbitState rhs(const OrbitState& state) {
 
@@ -42,12 +39,15 @@ OrbitState rhs(const OrbitState& state) {
 void write_history(const std::vector<OrbitState>& history) {
 
     for (const auto& o : history) {
-        std::cout << std::format("{:11.8f} {:11.8f} {:11.8f} {:11.8f} {:11.8f}\n",
-                                 o.t, o.x, o.y, o.vx, o.vy);
+        std::cout
+            << std::format("{:11.8f} {:11.8f} {:11.8f} {:11.8f} {:11.8f}\n",
+                           o.t, o.x, o.y, o.vx, o.vy);
     }
 }
 
-std::vector<OrbitState> integrate(const double a, const double tmax, const double dt_in) {
+std::vector<OrbitState> integrate(const double a,
+                                  const double tmax,
+                                  const double dt_in) {
 
     // how the history of the orbit
 

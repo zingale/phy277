@@ -114,12 +114,12 @@ To make our code flexible, we'll write the following functions:
   integration it will return the history.
 
 
-.. admonition:: try it...
+Implementation
+==============
 
-   Implement the solver by filling in the details of the functions described above.
+Implement the solver by filling in the details of the functions
+described above.
 
-   .. dropdown:: solution
-
-      .. literalinclude:: ../../../examples/functions/orbit_example.cpp
-         :language: c++
-         :caption: ``orbit_example.cpp``
+.. literalinclude:: ../../../examples/numerical_algorithms/orbit_example.cpp
+   :language: c++
+   :caption: ``orbit_example.cpp``
