@@ -38,12 +38,12 @@ Here are some practice problems to help us understand functions.
          :language: c++
          :caption: ``sum.cpp``
 
-       This is pretty straightforward, with one implementation note.
-       We accept the vector argument ``vec`` as a ``const`` reference.
-       This is to prevent C++ from making a potentially-expensive copy
-       (since the default is pass-by-value).  By marking it ``const``
-       we are ensuring that the function ``sum`` cannot modify the
-       contents of ``vec``.
+      This is pretty straightforward, with one implementation note.
+      We accept the vector argument ``vec`` as a ``const`` reference.
+      This is to prevent C++ from making a potentially-expensive copy
+      (since the default is pass-by-value).  By marking it ``const``
+      we are ensuring that the function ``sum`` cannot modify the
+      contents of ``vec``.
 
 #. Functions can be called `recursively
    <https://en.wikipedia.org/wiki/Recursion_(computer_science)>`_
