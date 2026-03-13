@@ -40,6 +40,13 @@ Homework #4
 
    Have your code output the average and standard deviation.
 
+   .. dropdown:: solution
+
+      .. literalinclude:: hw4_p1_stddev.cpp
+         :language: c++
+         :caption: ``hw4_p1_stddev.cpp``
+
+
 2. Consider a ``struct`` that defines a point in the 2D plane:
 
    .. code:: c++
@@ -70,6 +77,20 @@ Homework #4
 
         Point ( 1.50, 2.30) is  2.746 from the origin.
 
+   .. dropdown:: solution
+
+      .. literalinclude:: hw4_p2_points.cpp
+         :language: c++
+         :caption: ``hw4_p2_points.cpp``
+
+      .. tip::
+
+         Alternately, we could use `std::hypot
+         <https://en.cppreference.com/w/cpp/numeric/math/hypot>`_ to
+         compute the distance.  This will do the calculation just like
+         we did here, but adds additional logic for floating point
+         overflows.
+
 3. Let's find the maximum element in a vector.  The ``algorithm``
    library provides ``std::max(a, b)`` which will return
    whichever of ``a`` or ``b`` is the largest.
@@ -99,3 +120,16 @@ Homework #4
          #include <algorithm>
 
       to your code to get access to ``std::max``.
+
+   .. dropdown:: solution
+
+      .. literalinclude:: hw4_p3_maximum.cpp
+         :language: c++
+         :caption: ``hw4_p3_maximum.cpp``
+
+      .. tip::
+
+         Later we'll see that can use the `std::max_element
+         <https://en.cppreference.com/w/cpp/algorithm/max_element.html>`_
+         function for this.  But we need to learn about pointers
+         first.
