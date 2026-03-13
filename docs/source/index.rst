@@ -181,7 +181,9 @@ the top of many pages.
    algorithms/truncation
    algorithms/integration
    algorithms/optimization
+   algorithms/odes
    algorithms/cxx-orbit-example
+   algorithms/plotting
    algorithms/cxx-orbit-rk2-example
    algorithms/roots
    algorithms/monte-carlo
