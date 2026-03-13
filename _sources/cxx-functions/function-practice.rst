@@ -96,7 +96,7 @@ Here are some practice problems to help us understand functions.
 
       This is a straightforward change to the code.  The main utility here
       is that we can now easily use our ``dist()`` function elsewhere in our
-      code as needed. 
+      code as needed.
 
 #. Write a function called ``linspace`` that takes a minimum and
    maximum coordinate, $x_\mathrm{min}$ and $x_\mathrm{max}$, and a
