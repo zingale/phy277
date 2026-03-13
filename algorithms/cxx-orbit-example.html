@@ -55,8 +55,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'algorithms/cxx-orbit-example';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2nd Order Runge-Kutta Orbit" href="cxx-orbit-rk2-example.html" />
-    <link rel="prev" title="Compiler Optimization" href="optimization.html" />
+    <link rel="next" title="Plotting" href="plotting.html" />
+    <link rel="prev" title="Ordinary Differential Equations" href="odes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -254,7 +254,9 @@
 <li class="toctree-l1"><a class="reference internal" href="truncation.html">Derivatives and Truncation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integration.html">Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimization.html">Compiler Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odes.html">Ordinary Differential Equations</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Example: Planetary Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roots.html">Root Finding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="monte-carlo.html">Monte Carlo Methods</a></li>
@@ -482,6 +484,7 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-method">Euler’s Method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implementation</a></li>
 </ul>
             </nav>
         </div>
@@ -514,8 +517,8 @@ units of solar masses, astronomical units, and years, then this becomes:</p>
 <p>where <span class="math notranslate nohighlight">\({\bf r} = (x, y)\)</span> and <span class="math notranslate nohighlight">\({\bf v} = (v_x, v_y)\)</span>.</p>
 <section id="euler-s-method">
 <h2>Euler’s Method<a class="headerlink" href="#euler-s-method" title="Link to this heading">#</a></h2>
-<p>The simplest method to advance the solution begins with a first-order accurate difference approximation
-to the derivative:</p>
+<p>Using Euler’s method, as we just learned, the solution begins with a
+first-order accurate difference approximation to the derivative:</p>
 <div class="math notranslate nohighlight">
 \[\frac{{\bf r}^{n+1} - {\bf r}^n}{\tau} = {\bf v}^n + \mathcal{O}(\tau)\]</div>
 <div class="math notranslate nohighlight">
@@ -525,20 +528,6 @@ to the derivative:</p>
 \[{\bf r}^{n+1} = {\bf r}^n + \tau {\bf v}^n + \mathcal{O}(\tau^2)\]</div>
 <div class="math notranslate nohighlight">
 \[{\bf v}^{n+1} = {\bf v}^n + \tau {\bf a}({\bf r}^n,{\bf v}^n) + \mathcal{O}(\tau^2)\]</div>
-<p>This shows that each time we take a step, we make an error (called
-<em>truncation error</em>) of <span class="math notranslate nohighlight">\(\mathcal{O}(\tau^2)\)</span>.  Over the course
-of the orbit we will take <span class="math notranslate nohighlight">\(N = T / \tau\)</span> steps, so the global
-error will be <span class="math notranslate nohighlight">\(\mathcal{O}(\tau)\)</span>.</p>
-<p>This method is <em>first-order accurate</em> in time.</p>
-<p>Graphically, Euler’s method looks like:</p>
-<figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/rk2_Euler.png"><img alt="A plot of an exponential function with a point marked as the starting point for integration (labelled y^n).  A straight line follows the initial slope to the new time, giving the point y^{n+1} which is well below the analytic value of the function at that time." src="../_images/rk2_Euler.png" style="width: 90%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Euler’s method: we evaluate the slope at the start of the timestep and then follow
-this through to the new time.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
 </section>
 <section id="implementation">
 <h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h2>
@@ -581,12 +570,11 @@ storing the solution in our history vector each step.  At the end of
 integration it will return the history.</p>
 </li>
 </ul>
-<div class="admonition-try-it admonition">
-<p class="admonition-title">try it…</p>
-<p>Implement the solver by filling in the details of the functions described above.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+</section>
+<section id="id1">
+<h2>Implementation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Implement the solver by filling in the details of the functions
+described above.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-number">Listing 68 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">orbit_example.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -596,6 +584,9 @@ integration it will return the history.</p>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numbers&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
 
+<span class="c1">// G * Mass in AU, year, solar mass units</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">GM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="p">;</span>
+
 <span class="k">struct</span><span class="w"> </span><span class="nc">OrbitState</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
@@ -603,12 +594,6 @@ integration it will return the history.</p>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">vx</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">vy</span><span class="p">;</span>
 <span class="p">};</span>
-
-<span class="n">OrbitState</span><span class="w"> </span><span class="nf">rhs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">OrbitState</span><span class="o">&amp;</span><span class="w"> </span><span class="n">state</span><span class="p">);</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">write_history</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">OrbitState</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">history</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">OrbitState</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integrate</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">tmax</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dt_in</span><span class="p">);</span>
-
-<span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">GM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="p">;</span><span class="w">   </span><span class="c1">// G * Mass in AU, year, solar mass units</span>
 
 <span class="n">OrbitState</span><span class="w"> </span><span class="nf">rhs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">OrbitState</span><span class="o">&amp;</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
@@ -633,12 +618,15 @@ integration it will return the history.</p>
 <span class="kt">void</span><span class="w"> </span><span class="nf">write_history</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">OrbitState</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">history</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">history</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:11.8f} {:11.8f} {:11.8f} {:11.8f} {:11.8f}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
-<span class="w">                                 </span><span class="n">o</span><span class="p">.</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">vx</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">vy</span><span class="p">);</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:11.8f} {:11.8f} {:11.8f} {:11.8f} {:11.8f}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">                           </span><span class="n">o</span><span class="p">.</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">vx</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">vy</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">OrbitState</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integrate</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">tmax</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dt_in</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">OrbitState</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integrate</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span>
+<span class="w">                                  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">tmax</span><span class="p">,</span>
+<span class="w">                                  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dt_in</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="c1">// how the history of the orbit</span>
 
@@ -696,39 +684,6 @@ integration it will return the history.</p>
 </pre></div>
 </div>
 </div>
-</div>
-</details></div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>We can plot the solution using <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code>.</p>
-<p>First, when you run, redirect the output to a file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">./orbit_example<span class="w"> </span>&gt;<span class="w"> </span>orbit.dat</span>
-</pre></div></div><p>Now run <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">gnuplot</span>
-</pre></div></div><p>A simple plot in <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code> is made using the <code class="docutils literal notranslate"><span class="pre">plot</span></code> command, specifying the file with the
-data, the columns to use for x and y axes, and any styling (like <code class="docutils literal notranslate"><span class="pre">w</span> <span class="pre">l</span></code> for <em>with-lines</em>):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt2:before {
-  content: "gnuplot> ";
-}
-</style><span class="prompt2">plot &#39;orbit.dat&#39; using 2:3 w l</span>
-<span class="prompt2">set size square</span>
-<span class="prompt2">replot</span>
-</pre></div></div><p>This will make something like:</p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../_images/orbit.png"><img alt="the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it only completes about 90% of the circumference and the radius drifts slightly outward in the orbit." src="../_images/orbit.png" style="width: 80%;" />
-</a>
-</figure>
-<p>You can save the plot as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">set term png</span>
-<span class="prompt2">set output &quot;orbit.png&quot;</span>
-<span class="prompt2">replot</span>
-</pre></div></div><p>For more info, see: <a class="reference external" href="http://www.gnuplot.info/">http://www.gnuplot.info/</a></p>
-</div>
 </section>
 </section>
 
@@ -744,20 +699,20 @@ span.prompt2:before {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="optimization.html"
+       href="odes.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Compiler Optimization</p>
+        <p class="prev-next-title">Ordinary Differential Equations</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-orbit-rk2-example.html"
+       href="plotting.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2nd Order Runge-Kutta Orbit</p>
+        <p class="prev-next-title">Plotting</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -781,6 +736,7 @@ span.prompt2:before {
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-method">Euler’s Method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implementation</a></li>
 </ul>
   </nav></div>
 

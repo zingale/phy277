@@ -94,6 +94,6 @@ Here's a solution:
 
 .. dropdown:: solution
 
-   .. literalinclude:: ../../../examples/functions/orbit_rk2_example.cpp
+   .. literalinclude:: ../../../examples/numerical_algorithms/orbit_rk2_example.cpp
       :language: c++
       :caption: ``orbit_rk2_example.cpp``

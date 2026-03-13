@@ -254,7 +254,9 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Derivatives and Truncation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integration.html">Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimization.html">Compiler Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odes.html">Ordinary Differential Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-orbit-example.html">Example: Planetary Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roots.html">Root Finding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="monte-carlo.html">Monte Carlo Methods</a></li>
@@ -506,8 +508,13 @@
 <div class="math notranslate nohighlight">
 \[\left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} + \mathcal{O}(\Delta x)\]</div>
 <p>This shows that this approximation for the derivative is first-order
-accurate in <span class="math notranslate nohighlight">\(\Delta x\)</span>—that is the <a class="reference external" href="https://en.wikipedia.org/wiki/Truncation_error_(numerical_integration)">truncation error</a> of the
-approximation.</p>
+accurate in <span class="math notranslate nohighlight">\(\Delta x\)</span>—that is the <a class="reference external" href="https://en.wikipedia.org/wiki/Truncation_error_(numerical_integration)">truncation error</a>
+of the approximation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is called a <a class="reference external" href="https://en.wikipedia.org/wiki/Numerical_differentiation#Finite_differences">finite-difference approximation</a> to the
+derivative.</p>
+</div>
 </section>
 <section id="roundoff-vs-truncation">
 <h2>Roundoff vs. truncation<a class="headerlink" href="#roundoff-vs-truncation" title="Link to this heading">#</a></h2>
@@ -587,9 +594,18 @@ to dominate.  In effect, we are seeing that:</p>
 <li><p>The minimum error here is around <span class="math notranslate nohighlight">\(\sqrt{\epsilon}\)</span>, where <span class="math notranslate nohighlight">\(\epsilon\)</span> is
 machine epsilon.</p></li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For computing a finite-difference approximation to a derivative, <span class="math notranslate nohighlight">\(\Delta x\)</span>
+should be chosen such that <span class="math notranslate nohighlight">\(|\Delta x / x_0| \sim \sqrt{\epsilon}\)</span>.</p>
+</div>
 </section>
 <section id="higher-order-approximations">
 <h2>Higher-order approximations<a class="headerlink" href="#higher-order-approximations" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Higher-order here means better truncation error, not a higher (e.g. second) derivative.</p>
+</div>
 <p>Let’s look back at our difference approximation, but now consider Taylor expanding
 <span class="math notranslate nohighlight">\(f(x_0 + \Delta x)\)</span> and <span class="math notranslate nohighlight">\(f(x_0 - \Delta x)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -603,10 +619,12 @@ machine epsilon.</p></li>
 <p>Now, if we subtract these, we get:</p>
 <div class="math notranslate nohighlight">
 \[f(x_0 + \Delta x) - f(x_0 - \Delta x) = 2 \left . \frac{df}{dx} \right |_{x_0} \Delta x + \mathcal{O}(\Delta x^3)\]</div>
-<p>Notice that the <span class="math notranslate nohighlight">\(\Delta x^2\)</span> term cancels out.  Now solving for the first derivative, we have:</p>
+<p>Notice that the <span class="math notranslate nohighlight">\(\Delta x^2\)</span> term cancels out.  Now solving for the
+first derivative, we have:</p>
 <div class="math notranslate nohighlight">
 \[\left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0 - \Delta x)}{2  \Delta x}  + \mathcal{O}(\Delta x^2)\]</div>
-<p>We see that this is second-order accurate.  This is sometimes called a <em>centered-difference</em>.</p>
+<p>We see that this is second-order accurate.  This is sometimes called a
+<em>centered-difference</em>.</p>
 </section>
 </section>
 

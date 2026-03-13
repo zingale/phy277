@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Special Floating Point Quantities &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Plotting &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -50,11 +50,11 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/floating-point-special-numbers';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'algorithms/plotting';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="In-Class Review I" href="../interactive_review/review1.html" />
-    <link rel="prev" title="Minimizing Roundoff" href="minimizing-roundoff.html" />
+    <link rel="next" title="2nd Order Runge-Kutta Orbit" href="cxx-orbit-rk2-example.html" />
+    <link rel="prev" title="Example: Planetary Orbit" href="cxx-orbit-example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -190,17 +190,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../editors/configure-emacs.html">Configuring emacs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basic Datatypes</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-operators.html">Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-mixing-types.html">Mixing types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-sizes-limits.html">Datatype Sizes and Limits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="floating-point.html">Floating Point</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmath.html">Numerical Library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="function-preview.html">Preview of Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="minimizing-roundoff.html">Minimizing Roundoff</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Special Floating Point Quantities</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-mixing-types.html">Mixing types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-sizes-limits.html">Datatype Sizes and Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point.html">Floating Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cmath.html">Numerical Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/function-preview.html">Preview of Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/minimizing-roundoff.html">Minimizing Roundoff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point-special-numbers.html">Special Floating Point Quantities</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Review</span></p>
 <ul class="nav bd-sidenav">
@@ -209,35 +209,35 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings-escape.html">Escape Sequences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings-math.html">String Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-escape.html">Escape Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-math.html">String Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-indexing.html">Indexing Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-reading.html">Reading Input</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-vectors.html">Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vectors-loops.html">Looping Over Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-examples.html">Examples of Using <code class="docutils literal notranslate"><span class="pre">vector</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-arrays.html">Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-of-struct.html">Vector of Structs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="memory-stack-heap.html">Memory: Stack vs. Heap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-references.html">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors.html">Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors-loops.html">Looping Over Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-examples.html">Examples of Using <code class="docutils literal notranslate"><span class="pre">vector</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-arrays.html">Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-structs.html">Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-of-struct.html">Vector of Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/memory-stack-heap.html">Memory: Stack vs. Heap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../interactive_review/review-vecs.html">Practice Problems</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-conditional-combine.html">And (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>) and Or (<code class="docutils literal notranslate"><span class="pre">||</span></code>)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-loops.html">Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="conditional-loop-examples.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> + Looping Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-conditional.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-conditional-combine.html">And (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>) and Or (<code class="docutils literal notranslate"><span class="pre">||</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-statements.html">Statement Blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/conditional-loop-examples.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> + Looping Examples</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
 <ul class="nav bd-sidenav">
@@ -248,20 +248,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/function-practice.html">Function Practice</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/truncation.html">Derivatives and Truncation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/integration.html">Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/optimization.html">Compiler Optimization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/odes.html">Ordinary Differential Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-example.html">Example: Planetary Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/plotting.html">Plotting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/roots.html">Root Finding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/monte-carlo.html">Monte Carlo Methods</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="truncation.html">Derivatives and Truncation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration.html">Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Compiler Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odes.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-example.html">Example: Planetary Orbit</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roots.html">Root Finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monte-carlo.html">Monte Carlo Methods</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
 <ul class="nav bd-sidenav">
@@ -272,7 +272,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-pointers.html">Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vector-iterators.html">Vector Iterators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vectors-algorithms.html">Vector Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-strings-functions.html">Working with Strings</a></li>
@@ -280,7 +280,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-stdlib.html">SL Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-lambdas.html">Lambda Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-multid-arrays.html">Multidimensional Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">In-class Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -378,7 +378,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/floating-point-special-numbers.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/algorithms/plotting.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -395,7 +395,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/floating-point-special-numbers.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/algorithms/plotting.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -412,7 +412,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/floating-point-special-numbers.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Falgorithms/plotting.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -468,7 +468,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Special Floating Point Quantities</h1>
+    <h1>Plotting</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -482,35 +482,37 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="special-floating-point-quantities">
-<h1>Special Floating Point Quantities<a class="headerlink" href="#special-floating-point-quantities" title="Link to this heading">#</a></h1>
-<p>IEEE 754 defines a few special quantities:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">NaN</span></code> (not a number) is the result of <code class="docutils literal notranslate"><span class="pre">0.0/0.0</span></code> or <code class="docutils literal notranslate"><span class="pre">std::sqrt(-1.0)</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Inf</span></code> (infinity) is the result of <code class="docutils literal notranslate"><span class="pre">1.0/0.0</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-0</span></code> is a valid number and the standard says that <code class="docutils literal notranslate"><span class="pre">-0</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
-</ul>
-<p>We can test on these values using <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/math/isnan">std::isnan</a> and
-<a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/math/isinf.html">std::isinf</a>.  For
-instance, here we generate a NaN:</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 17 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">nan.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">-1.0</span><span class="p">};</span>
-
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">isnan</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
+  <section id="plotting">
+<h1>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h1>
+<p>We can plot the solution using <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code>.</p>
+<p>First, when you run, redirect the output to a file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">./orbit_example<span class="w"> </span>&gt;<span class="w"> </span>orbit.dat</span>
+</pre></div></div><p>Now run <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">gnuplot</span>
+</pre></div></div><p>A simple plot in <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code> is made using the <code class="docutils literal notranslate"><span class="pre">plot</span></code> command,
+specifying the file with the data, the columns to use for x and y
+axes, and any styling (like <code class="docutils literal notranslate"><span class="pre">w</span> <span class="pre">l</span></code> for <em>with-lines</em>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt2:before {
+  content: "gnuplot> ";
+}
+</style><span class="prompt2">plot &#39;orbit.dat&#39; using 2:3 w l</span>
+<span class="prompt2">set size square</span>
+<span class="prompt2">replot</span>
+</pre></div></div><p>This will make something like:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/orbit.png"><img alt="the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it only completes about 90% of the circumference and the radius drifts slightly outward in the orbit." src="../_images/orbit.png" style="width: 80%;" />
+</a>
+</figure>
+<p>You can save the plot as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">set term png</span>
+<span class="prompt2">set output &quot;orbit.png&quot;</span>
+<span class="prompt2">replot</span>
+</pre></div></div><p>For more info, see: <a class="reference external" href="http://www.gnuplot.info/">http://www.gnuplot.info/</a></p>
 </section>
 
 
@@ -525,20 +527,20 @@ instance, here we generate a NaN:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="minimizing-roundoff.html"
+       href="cxx-orbit-example.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Minimizing Roundoff</p>
+        <p class="prev-next-title">Example: Planetary Orbit</p>
       </div>
     </a>
     <a class="right-next"
-       href="../interactive_review/review1.html"
+       href="cxx-orbit-rk2-example.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">In-Class Review I</p>
+        <p class="prev-next-title">2nd Order Runge-Kutta Orbit</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
