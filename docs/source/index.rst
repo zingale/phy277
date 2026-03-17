@@ -259,6 +259,7 @@ the top of many pages.
    homework/homework3
    homework/homework4
    homework/homework5
+   homework/homework6
 
 .. toctree::
    :maxdepth: 1

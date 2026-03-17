@@ -1,3 +1,5 @@
+.. _sec:funcs-as-args:
+
 ********************************
 Passing a Function to a Function
 ********************************
