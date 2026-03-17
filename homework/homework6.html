@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>grep &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Homework #6 &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -50,11 +50,13 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'shell/finding';</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/homework6';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="scp and Transferring Files" href="../getting_started/scp.html" />
-    <link rel="prev" title="Redirection and Pipes" href="shell-redirection-pipes.html" />
+    <link rel="next" title="Midterm 1" href="../exam-solutions/midterm1.html" />
+    <link rel="prev" title="Homework #5" href="homework5.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -158,20 +160,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/ai.html">What About AI?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The UNIX Shell</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="why_command_line.html">Why Use the Command Line?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell.html">The Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sample-data.html">Some Sample Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="filesystem.html">Navigating the Filesystem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-history.html">Shell History</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-file-create.html">Create Files and Directories</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-copy-move.html">Copying, Moving, and Deleting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-wildcards.html">Wildcards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-redirection-pipes.html">Redirection and Pipes</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../shell/why_command_line.html">Why Use the Command Line?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell.html">The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/sample-data.html">Some Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/filesystem.html">Navigating the Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-history.html">Shell History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-file-create.html">Create Files and Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-copy-move.html">Copying, Moving, and Deleting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-wildcards.html">Wildcards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-redirection-pipes.html">Redirection and Pipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/finding.html"><code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/scp.html"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="permissions.html">File Permissions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="path.html">Search Path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/permissions.html">File Permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/path.html">Search Path</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Programming</span></p>
 <ul class="nav bd-sidenav">
@@ -292,13 +294,13 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework1.html">Homework #1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework #2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework3.html">Homework #3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework4.html">Homework #4</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework5.html">Homework #5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework6.html">Homework #6</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="homework1.html">Homework #1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework2.html">Homework #2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework3.html">Homework #3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework4.html">Homework #4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework5.html">Homework #5</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework #6</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exams</span></p>
 <ul class="nav bd-sidenav">
@@ -379,7 +381,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/shell/finding.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/homework/homework6.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -396,7 +398,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/shell/finding.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/homework/homework6.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -413,7 +415,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fshell/finding.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fhomework/homework6.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -458,9 +460,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -471,21 +471,11 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>grep</h1>
+    <h1>Homework #6</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-chapters">Counting chapters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-character-appearances">Counting character appearances</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remembering-a-command-from-history">Remembering a command from history</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -495,129 +485,59 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="grep">
-<h1><code class="docutils literal notranslate"><span class="pre">grep</span></code><a class="headerlink" href="#grep" title="Link to this heading">#</a></h1>
-<div class="admonition-reading admonition">
-<p class="admonition-title">reading</p>
-<p>We will loosely follow the Software Carpentry <a class="reference external" href="https://swcarpentry.github.io/shell-novice/07-find.html">Finding Things</a>
-lesson from <a class="reference external" href="https://swcarpentry.github.io/shell-novice/">The Unix Shell</a></p>
+  <section id="homework-6">
+<h1>Homework #6<a class="headerlink" href="#homework-6" title="Link to this heading">#</a></h1>
+<div class="admonition-completing-this-assignment admonition">
+<p class="admonition-title">Completing this assignment</p>
+<p>For the each of the problems below, write a separate C++ program
+named in the problem <code class="samp docutils literal notranslate"><span class="pre">problem</span><em><span class="pre">N</span></em><span class="pre">.cpp</span></code>, where <code class="samp docutils literal notranslate"><em><span class="pre">N</span></em></code> is the
+problem number.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure your that <code class="docutils literal notranslate"><span class="pre">g++</span></code> can compile your code.  For some of
+the problems here, you will need to use <code class="docutils literal notranslate"><span class="pre">-std=c++20</span></code>.</p>
 </div>
-<p>The final handy Unix command we’ll look at (for now) is <code class="docutils literal notranslate"><span class="pre">grep</span></code>.
-<code class="docutils literal notranslate"><span class="pre">grep</span></code> searches for patterns in files (or input that is piped to it).</p>
-<p>Let’s start in <code class="docutils literal notranslate"><span class="pre">~/shell-lesson-data/exercise-data/writing/</span></code></p>
-<section id="counting-chapters">
-<h2>Counting chapters<a class="headerlink" href="#counting-chapters" title="Link to this heading">#</a></h2>
-<p>The file <code class="docutils literal notranslate"><span class="pre">LittleWomen.txt</span></code> has the entire novel Little Women (along
-with some copyright text indicating it is public domain).</p>
-<p>Let’s figure out how many chapters there are in Little Women.  We imagine
-that the word <code class="docutils literal notranslate"><span class="pre">Chapter</span></code> should appear.  So let’s do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">grep<span class="w"> </span>Chapter<span class="w"> </span>LittleWomen.txt</span>
-</pre></div></div><p>This returns nothing.</p>
-<p>If we do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">man<span class="w"> </span>grep</span>
-</pre></div></div><p>we see that if we use the <code class="docutils literal notranslate"><span class="pre">-i</span></code> flag, then it will do the search as case-insensitive.  So
-maybe that’s the problem.  Let’s try again, now as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">grep<span class="w"> </span>-i<span class="w"> </span>Chapter<span class="w"> </span>LittleWomen.txt</span>
-</pre></div></div><p>Now we see a lot of output.  Some of it looks like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CHAPTER</span> <span class="n">ONE</span>
-<span class="n">CHAPTER</span> <span class="n">TWO</span>
-<span class="n">CHAPTER</span> <span class="n">THREE</span>
-<span class="n">CHAPTER</span> <span class="n">FOUR</span>
-</pre></div>
+<p>Upload your C++ source files (<em>not the executables produced by
+g++</em>) to Brightspace.</p>
 </div>
-<p>These are clearly what we were looking for.  But other instance look like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">the</span> <span class="n">chapter</span><span class="p">,</span> <span class="ow">and</span> <span class="n">don</span><span class="s1">&#39;t be impertinent, miss&#39;</span><span class="o">.</span><span class="s2">&quot;</span>
-</pre></div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>All work must be your own.</p>
+<p>You may not use generative AI / large-language models for any part
+of this assignment.</p>
 </div>
-<p>This is a case where the characters in the book were talking about chapters.  That’s
-not what we want.</p>
-<p>In this case, we can recognize that the actual book chapters are all upper case, so
-we can do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">grep<span class="w"> </span>CHAPTER<span class="w"> </span>LittleWomen.txt</span>
-</pre></div></div><p>And we get:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CHAPTER</span> <span class="n">ONE</span>
-<span class="n">CHAPTER</span> <span class="n">TWO</span>
-<span class="n">CHAPTER</span> <span class="n">THREE</span>
-<span class="n">CHAPTER</span> <span class="n">FOUR</span>
-<span class="n">CHAPTER</span> <span class="n">FIVE</span>
-<span class="n">CHAPTER</span> <span class="n">SIX</span>
-<span class="n">CHAPTER</span> <span class="n">SEVEN</span>
-<span class="n">CHAPTER</span> <span class="n">EIGHT</span>
-<span class="n">CHAPTER</span> <span class="n">NINE</span>
-<span class="n">CHAPTER</span> <span class="n">TEN</span>
-<span class="n">CHAPTER</span> <span class="n">ELEVEN</span>
-<span class="n">CHAPTER</span> <span class="n">TWELVE</span>
-<span class="n">CHAPTER</span> <span class="n">THIRTEEN</span>
-<span class="n">CHAPTER</span> <span class="n">FOURTEEN</span>
-<span class="n">CHAPTER</span> <span class="n">FIFTEEN</span>
-<span class="n">CHAPTER</span> <span class="n">SIXTEEN</span>
-<span class="n">CHAPTER</span> <span class="n">SEVENTEEN</span>
-<span class="n">CHAPTER</span> <span class="n">EIGHTEEN</span>
-<span class="n">CHAPTER</span> <span class="n">NINETEEN</span>
-<span class="n">CHAPTER</span> <span class="n">TWENTY</span>
-<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">ONE</span>
-<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">TWO</span>
-<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">THREE</span>
-<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">FOUR</span>
-<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">FIVE</span>
-<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">SIX</span>
-<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">SEVEN</span>
-<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">EIGHT</span>
-<span class="n">CHAPTER</span> <span class="n">TWENTY</span><span class="o">-</span><span class="n">NINE</span>
-<span class="n">CHAPTER</span> <span class="n">THIRTY</span>
-<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">ONE</span>
-<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">TWO</span>
-<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">THREE</span>
-<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">FOUR</span>
-<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">FIVE</span>
-<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">SIX</span>
-<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">SEVEN</span>
-<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">EIGHT</span>
-<span class="n">CHAPTER</span> <span class="n">THIRTY</span><span class="o">-</span><span class="n">NINE</span>
-<span class="n">CHAPTER</span> <span class="n">FORTY</span>
-<span class="n">CHAPTER</span> <span class="n">FORTY</span><span class="o">-</span><span class="n">ONE</span>
-<span class="n">CHAPTER</span> <span class="n">FORTY</span><span class="o">-</span><span class="n">TWO</span>
-<span class="n">CHAPTER</span> <span class="n">FORTY</span><span class="o">-</span><span class="n">THREE</span>
-<span class="n">CHAPTER</span> <span class="n">FORTY</span><span class="o">-</span><span class="n">FOUR</span>
-<span class="n">CHAPTER</span> <span class="n">FORTY</span><span class="o">-</span><span class="n">FIVE</span>
-<span class="n">CHAPTER</span> <span class="n">FORTY</span><span class="o">-</span><span class="n">SIX</span>
-<span class="n">CHAPTER</span> <span class="n">FORTY</span><span class="o">-</span><span class="n">SEVEN</span>
-</pre></div>
+<ol class="arabic">
+<li><p><em>Function practice I</em> :</p></li>
+<li><p><em>Function practice II</em> :</p></li>
+<li><p><em>Centered difference</em> :</p>
+<p>At the end of our discussion on derivatives, we saw the
+<a class="reference internal" href="../algorithms/truncation.html#sec-centered-diff"><span class="std std-ref">Centered-difference approximation</span></a>.  Let’s code this up and explore the
+error.</p>
+<p>We’ll call this discrete approximation to the derivative <span class="math notranslate nohighlight">\(D^c(x)\)</span>,
+so:</p>
+<p><div class="math notranslate nohighlight">
+\[D^c(x) = \frac{f(x + \Delta x) - f(x - \Delta x)}{2\Delta x}\]</div>
+</p>
+<p>Consider the derivative of <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> at <span class="math notranslate nohighlight">\(x=1\)</span>.</p>
+<p>Compute the centered difference approximation for <span class="math notranslate nohighlight">\(\Delta x = 0.1\)</span>,
+<span class="math notranslate nohighlight">\(0.05\)</span>, <span class="math notranslate nohighlight">\(0.025\)</span>, and <span class="math notranslate nohighlight">\(0.0125\)</span>, and make a table giving <span class="math notranslate nohighlight">\(\Delta x\)</span>,
+<span class="math notranslate nohighlight">\(D^c(x)\)</span>, and the error compared to the analytic solution, <span class="math notranslate nohighlight">\(e
+\equiv |f^\prime(x) - D^c(x)|\)</span>.</p>
+<p>Your implementation should:</p>
+<ul class="simple">
+<li><p>Use C++ functions for <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(f^\prime(x)\)</span></p></li>
+<li><p>Use a C++ function for <span class="math notranslate nohighlight">\(D^c(x)\)</span> that takes a function as an argument (<span class="math notranslate nohighlight">\(f(x)\)</span>), using the
+<code class="docutils literal notranslate"><span class="pre">std::function&lt;&gt;</span></code> method we discussed in <a class="reference internal" href="../cxx-functions/functions-as-arguments.html#sec-funcs-as-args"><span class="std std-ref">Passing a Function to a Function</span></a>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">std::format()</span></code> to make the columns line up for the output
+done with each <span class="math notranslate nohighlight">\(\Delta x\)</span>.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You should see the error drop by a factor of 4 each time <span class="math notranslate nohighlight">\(\Delta
+x\)</span> is cut in half.</p>
 </div>
-<p>and we can just read off from this that there are 47 chapters.</p>
-<p>Of course, we could also do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">grep<span class="w"> </span>CHAPTER<span class="w"> </span>LittleWomen.txt<span class="w">  </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l</span>
-</pre></div></div><p>What if we weren’t so lucky and the word “chapter” wasn’t distinguishable from
-its use in the text?</p>
-<p>In this case, we could recognize that the “chapter” we are interested in always
-appears at the very start of the line.  We can use the <code class="docutils literal notranslate"><span class="pre">^</span></code> character in our search
-to indicate that we want to start at the beginning of the line, e.g,:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;^Chapter&quot;</span><span class="w"> </span>LittleWomen.txt</span>
-</pre></div></div><p>There are many other patterns that we’ll see can be useful, and we’ll introduce those
-as we need them later in the course.</p>
-</section>
-<section id="counting-character-appearances">
-<h2>Counting character appearances<a class="headerlink" href="#counting-character-appearances" title="Link to this heading">#</a></h2>
-<p>One of the main characters is “Jo”.  If we do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">grep<span class="w"> </span>Jo<span class="w"> </span>LittleWomen.txt</span>
-</pre></div></div><p>we see all of her appearances, but we also see a character “John”.</p>
-<p>In this case, we can use the <code class="docutils literal notranslate"><span class="pre">-w</span></code> option to match on words.  If we do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">grep<span class="w"> </span>-w<span class="w"> </span>Jo<span class="w"> </span>LittleWomen.txt</span>
-</pre></div></div><p>then it no longer matches “John”.</p>
-</section>
-<section id="remembering-a-command-from-history">
-<h2>Remembering a command from history<a class="headerlink" href="#remembering-a-command-from-history" title="Link to this heading">#</a></h2>
-<p>Previously we compiled our <code class="docutils literal notranslate"><span class="pre">hello.cpp</span></code> code using <code class="docutils literal notranslate"><span class="pre">g++</span></code>.  If we
-want to find the command we used, we can look at our history, using
-the <code class="docutils literal notranslate"><span class="pre">history</span></code> command as we previously saw.</p>
-<p>But that can be a lot to scroll through.</p>
-<p>Instead, we can pipe the output from <code class="docutils literal notranslate"><span class="pre">history</span></code> into grep, like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">history</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>g++</span>
-</pre></div></div></section>
+</li>
+</ol>
 </section>
 
 
@@ -632,20 +552,20 @@ the <code class="docutils literal notranslate"><span class="pre">history</span><
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="shell-redirection-pipes.html"
+       href="homework5.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Redirection and Pipes</p>
+        <p class="prev-next-title">Homework #5</p>
       </div>
     </a>
     <a class="right-next"
-       href="../getting_started/scp.html"
+       href="../exam-solutions/midterm1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</p>
+        <p class="prev-next-title">Midterm 1</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -655,25 +575,6 @@ the <code class="docutils literal notranslate"><span class="pre">history</span><
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-chapters">Counting chapters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-character-appearances">Counting character appearances</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remembering-a-command-from-history">Remembering a command from history</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

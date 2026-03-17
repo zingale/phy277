@@ -72,8 +72,10 @@ Let's discuss the trends:
    For computing a finite-difference approximation to a derivative, $\Delta x$
    should be chosen such that $|\Delta x / x_0| \sim \sqrt{\epsilon}$.
 
-Higher-order approximations
-===========================
+.. _sec:centered-diff:
+
+Centered-difference approximation
+=================================
 
 .. note::
 
