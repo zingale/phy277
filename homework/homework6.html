@@ -507,8 +507,56 @@ g++</em>) to Brightspace.</p>
 of this assignment.</p>
 </div>
 <ol class="arabic">
-<li><p><em>Function practice I</em> :</p></li>
-<li><p><em>Function practice II</em> :</p></li>
+<li><p><em>Function practice I</em> :</p>
+<p>Let’s understand different ways that functions can return
+information.  We want to write a function that accepts
+a <code class="docutils literal notranslate"><span class="pre">double</span></code> and simply squares it.</p>
+<ul>
+<li><p>Our first version, called <code class="docutils literal notranslate"><span class="pre">square1</span></code> should accept
+our <code class="docutils literal notranslate"><span class="pre">double</span></code> and return a new double via a <code class="docutils literal notranslate"><span class="pre">return</span></code>
+statement.  So we would call it as:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">2.0</span><span class="p">};</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">xsq</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">square1</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">x</span></code> is unchanged here.</p>
+</li>
+<li><p>Our second version, called <code class="docutils literal notranslate"><span class="pre">square2</span></code>, will update the data
+passed in as an argument, with no return value.  So we would call
+it as:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">2.0</span><span class="p">};</span>
+<span class="n">square2</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">x</span></code> is changed here, and is now <span class="math notranslate nohighlight">\(x^2\)</span> after
+calling the function.</p>
+</li>
+</ul>
+</li>
+<li><p><em>Function practice II</em> :</p>
+<p>In <a class="reference internal" href="homework4.html#sec-homework4"><span class="std std-ref">Homework #4</span></a>, we found the maximum element of a
+vector.  Let’s rewrite that now.  Create a function of the
+form:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">max_element</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That takes a vector, <code class="docutils literal notranslate"><span class="pre">vec</span></code>, and returns the maximum value
+in the vector.</p>
+<p>Now, let’s instead write a function that returns the index
+into the vector that contains the maximum element.  This
+function should be:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">max_index</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>which returns the index into <code class="docutils literal notranslate"><span class="pre">vec</span></code> that represents the
+maximum element.  E.g.,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_index</span><span class="p">(</span><span class="n">vec</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>would tell us that the maximum element in <code class="docutils literal notranslate"><span class="pre">vec</span></code> is <code class="docutils literal notranslate"><span class="pre">vec[idx]</span></code>.</p>
+<p>Test both of your functions using the same vector as used in
+Homework 4.</p>
+</li>
 <li><p><em>Centered difference</em> :</p>
 <p>At the end of our discussion on derivatives, we saw the
 <a class="reference internal" href="../algorithms/truncation.html#sec-centered-diff"><span class="std std-ref">Centered-difference approximation</span></a>.  Let’s code this up and explore the

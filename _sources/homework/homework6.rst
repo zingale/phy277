@@ -28,7 +28,66 @@ Homework #6
 
 1. *Function practice I* :
 
+   Let's understand different ways that functions can return
+   information.  We want to write a function that accepts
+   a ``double`` and simply squares it.
+
+   * Our first version, called ``square1`` should accept
+     our ``double`` and return a new double via a ``return``
+     statement.  So we would call it as:
+
+     .. code:: c++
+
+        double x{2.0};
+        double xsq = square1(x);
+
+     Note that ``x`` is unchanged here.
+
+   * Our second version, called ``square2``, will update the data
+     passed in as an argument, with no return value.  So we would call
+     it as:
+
+     .. code:: c++
+
+        double x{2.0};
+        square2(x);
+
+     Note that ``x`` is changed here, and is now $x^2$ after
+     calling the function.
+
 2. *Function practice II* :
+
+   In :ref:`sec:homework4`, we found the maximum element of a
+   vector.  Let's rewrite that now.  Create a function of the
+   form:
+
+   .. code:: c++
+
+      double max_element(const std::vector<double> vec)
+
+   That takes a vector, ``vec``, and returns the maximum value
+   in the vector.
+
+   Now, let's instead write a function that returns the index
+   into the vector that contains the maximum element.  This
+   function should be:
+
+   .. code:: c++
+
+      int max_index(const std::vector<double> vec)
+
+   which returns the index into ``vec`` that represents the
+   maximum element.  E.g.,
+
+   .. code:: c++
+
+      int idx = max_index(vec);
+
+   would tell us that the maximum element in ``vec`` is ``vec[idx]``.
+
+   Test both of your functions using the same vector as used in
+   Homework 4.
+
 
 3. *Centered difference* :
 
