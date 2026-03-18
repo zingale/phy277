@@ -55,7 +55,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'algorithms/truncation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Integration" href="integration.html" />
+    <link rel="next" title="Plotting" href="plotting.html" />
     <link rel="prev" title="Function Practice" href="../cxx-functions/function-practice.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -252,11 +252,11 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Derivatives and Truncation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integration.html">Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimization.html">Compiler Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="odes.html">Ordinary Differential Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-orbit-example.html">Example: Planetary Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roots.html">Root Finding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="monte-carlo.html">Monte Carlo Methods</a></li>
@@ -485,7 +485,6 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-approximation-to-first-derivative">Difference approximation to first derivative</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roundoff-vs-truncation">Roundoff vs. truncation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centered-difference-approximation">Centered-difference approximation</a></li>
 </ul>
             </nav>
         </div>
@@ -601,32 +600,6 @@ machine epsilon.</p></li>
 should be chosen such that <span class="math notranslate nohighlight">\(|\Delta x / x_0| \sim \sqrt{\epsilon}\)</span>.</p>
 </div>
 </section>
-<section id="centered-difference-approximation">
-<span id="sec-centered-diff"></span><h2>Centered-difference approximation<a class="headerlink" href="#centered-difference-approximation" title="Link to this heading">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Higher-order here means better truncation error, not a higher (e.g. second) derivative.</p>
-</div>
-<p>Let’s look back at our difference approximation, but now consider Taylor expanding
-<span class="math notranslate nohighlight">\(f(x_0 + \Delta x)\)</span> and <span class="math notranslate nohighlight">\(f(x_0 - \Delta x)\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[f(x_0 + \Delta x) = f(x_0) + \left . \frac{df}{dx} \right |_{x_0} \Delta x +
-                             \frac{1}{2} \left . \frac{d^2f}{dx^2} \right |_{x_0} \Delta x^2 +
-                             \mathcal{O}(\Delta x^3)\]</div>
-<div class="math notranslate nohighlight">
-\[f(x_0 - \Delta x) = f(x_0) - \left . \frac{df}{dx} \right |_{x_0} \Delta x +
-                             \frac{1}{2} \left . \frac{d^2f}{dx^2} \right |_{x_0} \Delta x^2 -
-                             \mathcal{O}(\Delta x^3)\]</div>
-<p>Now, if we subtract these, we get:</p>
-<div class="math notranslate nohighlight">
-\[f(x_0 + \Delta x) - f(x_0 - \Delta x) = 2 \left . \frac{df}{dx} \right |_{x_0} \Delta x + \mathcal{O}(\Delta x^3)\]</div>
-<p>Notice that the <span class="math notranslate nohighlight">\(\Delta x^2\)</span> term cancels out.  Now solving for the
-first derivative, we have:</p>
-<div class="math notranslate nohighlight">
-\[\left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0 - \Delta x)}{2  \Delta x}  + \mathcal{O}(\Delta x^2)\]</div>
-<p>We see that this is second-order accurate.  This is sometimes called a
-<em>centered-difference</em>.</p>
-</section>
 </section>
 
 
@@ -650,11 +623,11 @@ first derivative, we have:</p>
       </div>
     </a>
     <a class="right-next"
-       href="integration.html"
+       href="plotting.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Integration</p>
+        <p class="prev-next-title">Plotting</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -678,7 +651,6 @@ first derivative, we have:</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#difference-approximation-to-first-derivative">Difference approximation to first derivative</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roundoff-vs-truncation">Roundoff vs. truncation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#centered-difference-approximation">Centered-difference approximation</a></li>
 </ul>
   </nav></div>
 

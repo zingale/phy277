@@ -123,3 +123,48 @@ described above.
 .. literalinclude:: ../../../examples/numerical_algorithms/orbit_example.cpp
    :language: c++
    :caption: ``orbit_example.cpp``
+
+Plotting
+========
+
+We can plot the solution using ``gnuplot``.
+
+First, when you run, redirect the output to a file:
+
+.. prompt:: bash
+
+   ./orbit_example > orbit.dat
+
+Now run ``gnuplot``:
+
+.. prompt:: bash
+
+   gnuplot
+
+Again, we'll use ``plot`` and plot different columns against
+one another:
+
+.. prompt::
+   :prompts: gnuplot>
+
+   plot 'orbit.dat' using 2:3 w l
+   set size square
+   replot
+
+This will make something like:
+
+.. figure:: orbit.png
+  :align: center
+  :width: 80%
+  :alt: the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it only completes about 90% of the circumference and the radius drifts slightly outward in the orbit.
+
+You can save the plot as:
+
+.. prompt::
+   :prompts: gnuplot>
+
+   set term png
+   set output "orbit.png"
+   replot
+
+

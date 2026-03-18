@@ -55,7 +55,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'algorithms/cxx-orbit-example';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Plotting" href="plotting.html" />
+    <link rel="next" title="2nd Order Runge-Kutta Orbit" href="cxx-orbit-rk2-example.html" />
     <link rel="prev" title="Ordinary Differential Equations" href="odes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -252,11 +252,11 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="truncation.html">Derivatives and Truncation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integration.html">Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimization.html">Compiler Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="odes.html">Ordinary Differential Equations</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Example: Planetary Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roots.html">Root Finding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="monte-carlo.html">Monte Carlo Methods</a></li>
@@ -486,6 +486,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-method">Euler’s Method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
 </ul>
             </nav>
         </div>
@@ -686,6 +687,36 @@ described above.</p>
 </div>
 </div>
 </section>
+<section id="plotting">
+<h2>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h2>
+<p>We can plot the solution using <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code>.</p>
+<p>First, when you run, redirect the output to a file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">./orbit_example<span class="w"> </span>&gt;<span class="w"> </span>orbit.dat</span>
+</pre></div></div><p>Now run <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">gnuplot</span>
+</pre></div></div><p>Again, we’ll use <code class="docutils literal notranslate"><span class="pre">plot</span></code> and plot different columns against
+one another:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt2:before {
+  content: "gnuplot> ";
+}
+</style><span class="prompt2">plot &#39;orbit.dat&#39; using 2:3 w l</span>
+<span class="prompt2">set size square</span>
+<span class="prompt2">replot</span>
+</pre></div></div><p>This will make something like:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/orbit.png"><img alt="the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it only completes about 90% of the circumference and the radius drifts slightly outward in the orbit." src="../_images/orbit.png" style="width: 80%;" />
+</a>
+</figure>
+<p>You can save the plot as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">set term png</span>
+<span class="prompt2">set output &quot;orbit.png&quot;</span>
+<span class="prompt2">replot</span>
+</pre></div></div></section>
 </section>
 
 
@@ -709,11 +740,11 @@ described above.</p>
       </div>
     </a>
     <a class="right-next"
-       href="plotting.html"
+       href="cxx-orbit-rk2-example.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Plotting</p>
+        <p class="prev-next-title">2nd Order Runge-Kutta Orbit</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -738,6 +769,7 @@ described above.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-method">Euler’s Method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
 </ul>
   </nav></div>
 

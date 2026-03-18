@@ -53,8 +53,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'algorithms/plotting';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2nd Order Runge-Kutta Orbit" href="cxx-orbit-rk2-example.html" />
-    <link rel="prev" title="Example: Planetary Orbit" href="cxx-orbit-example.html" />
+    <link rel="next" title="Integration" href="integration.html" />
+    <link rel="prev" title="Derivatives and Truncation" href="truncation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -250,11 +250,11 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="truncation.html">Derivatives and Truncation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Plotting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integration.html">Integration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimization.html">Compiler Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="odes.html">Ordinary Differential Equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-orbit-example.html">Example: Planetary Orbit</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Plotting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roots.html">Root Finding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="monte-carlo.html">Monte Carlo Methods</a></li>
@@ -485,35 +485,72 @@
                   
   <section id="plotting">
 <h1>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h1>
-<p>We can plot the solution using <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code>.</p>
-<p>First, when you run, redirect the output to a file:</p>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code> to make simple plots.  Typically, we
+will plot columns from our output, making one column the x-axis
+and the other column the y-axis.</p>
+<p>Let’s rerun our code, but redirect the output to a file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
 }
-</style><span class="prompt1">./orbit_example<span class="w"> </span>&gt;<span class="w"> </span>orbit.dat</span>
-</pre></div></div><p>Now run <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code>:</p>
+</style><span class="prompt1">./truncation_vs_roundoff<span class="w"> </span>&gt;<span class="w"> </span>diff.out</span>
+</pre></div></div><p>If we look at the file <code class="docutils literal notranslate"><span class="pre">diff.out</span></code> (you can use <code class="docutils literal notranslate"><span class="pre">cat</span></code>, e.g.),
+then we see there are 2 columns.</p>
+<p>We can start gnuplot as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">gnuplot</span>
-</pre></div></div><p>A simple plot in <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code> is made using the <code class="docutils literal notranslate"><span class="pre">plot</span></code> command,
-specifying the file with the data, the columns to use for x and y
-axes, and any styling (like <code class="docutils literal notranslate"><span class="pre">w</span> <span class="pre">l</span></code> for <em>with-lines</em>):</p>
+</pre></div></div><p>The gnuplot program will give us a commandline interface that
+lets us make plots, and now the prompt will be <code class="docutils literal notranslate"><span class="pre">gnuplot&gt;</span></code>.
+To make our plot, we can do:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt2:before {
   content: "gnuplot> ";
 }
-</style><span class="prompt2">plot &#39;orbit.dat&#39; using 2:3 w l</span>
-<span class="prompt2">set size square</span>
+</style><span class="prompt2">plot &#39;diff.out&#39; using 1:2 w l</span>
+</pre></div></div><p>There are a few parts to this:</p>
+<ul class="simple">
+<li><p>This will use the data in <code class="docutils literal notranslate"><span class="pre">diff.out</span></code></p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">using</span> <span class="pre">1:2</span></code> part means that the first column (gnuplot uses
+1-based indexing) will be on the x-axis and the second column will
+be on the y-axis.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">w</span> <span class="pre">l</span></code> part means “with lines”, so the data will be draw
+using line segments instead of plotting points.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>By default, gnuplot will display the plot in a window.  This
+uses the Unix X Window System.  This can work when we run
+on the machines in the MathLab.</p>
+<p>If you use <code class="docutils literal notranslate"><span class="pre">portal</span></code> or <code class="docutils literal notranslate"><span class="pre">portal2</span></code> the, when you ssh
+into these remote machines, you need to add <code class="docutils literal notranslate"><span class="pre">-Y</span></code> to enable
+forwarding of windows, e.g.,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-Y<span class="w"> </span>username@portal.mathlab.stonybrook.edu</span>
+</pre></div></div><p>If you are using your own machine, you will need to install a X
+server.  See our <a class="reference internal" href="../getting_started/using_your_computer.html#sec-using-remote-servers"><span class="std std-ref">Using the remote servers</span></a> documentation.</p>
+<p>If you are unable to get this to work, you can still have
+gnuplot make an image file directly (e.g. PNG) instead, as
+shown below.</p>
+</div>
+<p>This plot will not look like what we saw previously,
+since it is using a linear scale, and we really want a log-scale
+to see the range of data.  We can switch by doing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">set logscale</span>
 <span class="prompt2">replot</span>
-</pre></div></div><p>This will make something like:</p>
-<figure class="align-center">
-<a class="reference internal image-reference" href="../_images/orbit.png"><img alt="the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it only completes about 90% of the circumference and the radius drifts slightly outward in the orbit." src="../_images/orbit.png" style="width: 80%;" />
-</a>
-</figure>
-<p>You can save the plot as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">set term png</span>
-<span class="prompt2">set output &quot;orbit.png&quot;</span>
+</pre></div></div><p>By default, gnuplot shows a legend based on the plot command.
+We can make this more descriptive by adding the <code class="docutils literal notranslate"><span class="pre">title</span></code> keyword:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">plot &#39;diff.out&#39; using 1:2 title &quot;error&quot; w l</span>
+</pre></div></div><p>or remove the title as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">plot &#39;diff.out&#39; using 1:2 notitle w l</span>
+</pre></div></div><p>Now we can add axis labels:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">set xlabel &quot;dx&quot;</span>
+<span class="prompt2">set ylabel &quot;error&quot;</span>
 <span class="prompt2">replot</span>
-</pre></div></div><p>For more info, see: <a class="reference external" href="http://www.gnuplot.info/">http://www.gnuplot.info/</a></p>
+</pre></div></div><p>Finally, to output as an image file (PNG), we can do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">set term png enhanced</span>
+<span class="prompt2">set output &quot;diff.png&quot;</span>
+<span class="prompt2">replot</span>
+</pre></div></div><p>Then you can exit gnuplot either by typing <code class="docutils literal notranslate"><span class="pre">exit</span></code> or using
+<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">d</kbd>.</p>
+<p>You should then see the file <code class="docutils literal notranslate"><span class="pre">diff.png</span></code> in your directory.</p>
 </section>
 
 
@@ -528,20 +565,20 @@ span.prompt2:before {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-orbit-example.html"
+       href="truncation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Example: Planetary Orbit</p>
+        <p class="prev-next-title">Derivatives and Truncation</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-orbit-rk2-example.html"
+       href="integration.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2nd Order Runge-Kutta Orbit</p>
+        <p class="prev-next-title">Integration</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

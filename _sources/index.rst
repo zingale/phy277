@@ -179,11 +179,12 @@ the top of many pages.
    :hidden:
 
    algorithms/truncation
+   algorithms/plotting
+   algorithms/higher-order
    algorithms/integration
    algorithms/optimization
    algorithms/odes
    algorithms/cxx-orbit-example
-   algorithms/plotting
    algorithms/cxx-orbit-rk2-example
    algorithms/roots
    algorithms/monte-carlo
