@@ -535,17 +535,26 @@ calling the function.</p>
 </li>
 <li><p><em>Function practice II</em> :</p>
 <p>In <a class="reference internal" href="homework4.html#sec-homework4"><span class="std std-ref">Homework #4</span></a>, we found the maximum element of a
-vector.  Let’s rewrite that now.  Create a function of the
-form:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">max_element</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span>
+vector.  Let’s rewrite that now.  We’ll do two slightly
+different concepts.</p>
+<ul>
+<li><p>Create a function of the form:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">max_element</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>That takes a vector, <code class="docutils literal notranslate"><span class="pre">vec</span></code>, and returns the maximum value
 in the vector.</p>
-<p>Now, let’s instead write a function that returns the index
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We are taking the vector here as a <code class="docutils literal notranslate"><span class="pre">const</span></code> reference.  This
+avoids a potentially expensive copy (so it performs better), but
+still prevents us from modifying the contents of the vector.</p>
+</div>
+</li>
+<li><p>Now, let’s instead write a function that returns the index
 into the vector that contains the maximum element.  This
 function should be:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">max_index</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">max_index</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>which returns the index into <code class="docutils literal notranslate"><span class="pre">vec</span></code> that represents the
@@ -554,8 +563,32 @@ maximum element.  E.g.,</p>
 </pre></div>
 </div>
 <p>would tell us that the maximum element in <code class="docutils literal notranslate"><span class="pre">vec</span></code> is <code class="docutils literal notranslate"><span class="pre">vec[idx]</span></code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Instead of using a ranged-for loop over the vector, you should
+loop using and integer representing the index, like:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">vec</span><span class="p">.</span><span class="n">size</span><span class="p">());</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="c1">// do stuff</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>and then you can access the current element of the vector as
+<code class="docutils literal notranslate"><span class="pre">vec[i]</span></code> inside the loop.  You will also need to keep track
+of which index has the maximum element as you go through the
+loop—you will need to figure out that logic on your own.</p>
+</div>
+</li>
+</ul>
 <p>Test both of your functions using the same vector as used in
-Homework 4.</p>
+Homework 4.  You can also (optionally) test this by doing:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">max_val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_element</span><span class="p">(</span><span class="n">vec</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">idx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max_index</span><span class="p">(</span><span class="n">vec</span><span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">vec</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">max_val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;our functions agree&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </li>
 <li><p><em>Centered difference</em> :</p>
 <p>At the end of our discussion on derivatives, we saw the
