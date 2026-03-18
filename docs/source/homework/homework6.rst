@@ -58,35 +58,68 @@ Homework #6
 2. *Function practice II* :
 
    In :ref:`sec:homework4`, we found the maximum element of a
-   vector.  Let's rewrite that now.  Create a function of the
-   form:
+   vector.  Let's rewrite that now.  We'll do two slightly
+   different concepts.
 
-   .. code:: c++
+   * Create a function of the form:
 
-      double max_element(const std::vector<double> vec)
+     .. code:: c++
 
-   That takes a vector, ``vec``, and returns the maximum value
-   in the vector.
+        double max_element(const std::vector<double>& vec)
 
-   Now, let's instead write a function that returns the index
-   into the vector that contains the maximum element.  This
-   function should be:
+     That takes a vector, ``vec``, and returns the maximum value
+     in the vector.
 
-   .. code:: c++
+     .. tip::
 
-      int max_index(const std::vector<double> vec)
+        We are taking the vector here as a ``const`` reference.  This
+        avoids a potentially expensive copy (so it performs better), but
+        still prevents us from modifying the contents of the vector.
 
-   which returns the index into ``vec`` that represents the
-   maximum element.  E.g.,
+   * Now, let's instead write a function that returns the index
+     into the vector that contains the maximum element.  This
+     function should be:
 
-   .. code:: c++
+     .. code:: c++
 
-      int idx = max_index(vec);
+        int max_index(const std::vector<double>& vec)
 
-   would tell us that the maximum element in ``vec`` is ``vec[idx]``.
+     which returns the index into ``vec`` that represents the
+     maximum element.  E.g.,
+
+     .. code:: c++
+
+        int idx = max_index(vec);
+
+     would tell us that the maximum element in ``vec`` is ``vec[idx]``.
+
+     .. tip::
+
+        Instead of using a ranged-for loop over the vector, you should
+        loop using and integer representing the index, like:
+
+        .. code:: c++
+
+           for (int i = 0; i < static_cast<int>(vec.size()); ++i) {
+                // do stuff
+           }
+
+        and then you can access the current element of the vector as
+        ``vec[i]`` inside the loop.  You will also need to keep track
+        of which index has the maximum element as you go through the
+        loop---you will need to figure out that logic on your own.
 
    Test both of your functions using the same vector as used in
-   Homework 4.
+   Homework 4.  You can also (optionally) test this by doing:
+
+   .. code:: c++
+
+      double max_val = max_element(vec);
+      int idx = max_index(vec);
+
+      if (vec[idx] == max_val) {
+         std::cout << "our functions agree" << std::endl;
+      }
 
 
 3. *Centered difference* :
