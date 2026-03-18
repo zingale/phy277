@@ -37,7 +37,7 @@ The new solution is then:
 
    y^{n+1} = y^n + \tau f(y^n) + \mathcal{O}(\tau^2)
 
-This method is called Euler's method. 
+This method is called Euler's method.
 
 This shows that each time we take a step, we make an error (called
 *truncation error*) of :math:`\mathcal{O}(\tau^2)`.  Over the course
@@ -55,4 +55,3 @@ We evaluate the derivative at the start of the timestep and follow
 that slope to the new time.  As shown in the figure, the error in this
 method is the difference between the true solution (black line) and
 the data point at the new time, $y^{n+1}$.
-
