@@ -2,47 +2,110 @@
 Plotting
 ********
 
-We can plot the solution using ``gnuplot``.
+We can use ``gnuplot`` to make simple plots.  Typically, we
+will plot columns from our output, making one column the x-axis
+and the other column the y-axis.
 
-First, when you run, redirect the output to a file:
+Let's rerun our code, but redirect the output to a file:
 
 .. prompt:: bash
 
-   ./orbit_example > orbit.dat
+   ./truncation_vs_roundoff > diff.out
 
-Now run ``gnuplot``:
+If we look at the file ``diff.out`` (you can use ``cat``, e.g.),
+then we see there are 2 columns.
+
+We can start gnuplot as:
 
 .. prompt:: bash
 
    gnuplot
 
-A simple plot in ``gnuplot`` is made using the ``plot`` command,
-specifying the file with the data, the columns to use for x and y
-axes, and any styling (like ``w l`` for *with-lines*):
+The gnuplot program will give us a commandline interface that
+lets us make plots, and now the prompt will be ``gnuplot>``.
+To make our plot, we can do:
 
 .. prompt::
    :prompts: gnuplot>
 
-   plot 'orbit.dat' using 2:3 w l
-   set size square
-   replot
+   plot 'diff.out' using 1:2 w l
 
-This will make something like:
+There are a few parts to this:
 
-.. figure:: orbit.png
-  :align: center
-  :width: 80%
-  :alt: the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it only completes about 90% of the circumference and the radius drifts slightly outward in the orbit.
+* This will use the data in ``diff.out``
 
-You can save the plot as:
+* The ``using 1:2`` part means that the first column (gnuplot uses
+  1-based indexing) will be on the x-axis and the second column will
+  be on the y-axis.
+
+* The ``w l`` part means "with lines", so the data will be draw
+  using line segments instead of plotting points.
+
+.. important::
+
+   By default, gnuplot will display the plot in a window.  This
+   uses the Unix X Window System.  This can work when we run
+   on the machines in the MathLab.
+
+   If you use ``portal`` or ``portal2`` the, when you ssh
+   into these remote machines, you need to add ``-Y`` to enable
+   forwarding of windows, e.g.,
+
+   .. prompt:: bash
+
+      ssh -Y username@portal.mathlab.stonybrook.edu
+
+   If you are using your own machine, you will need to install a X
+   server.  See our :ref:`sec:using_remote_servers` documentation.
+
+   If you are unable to get this to work, you can still have
+   gnuplot make an image file directly (e.g. PNG) instead, as
+   shown below.
+
+This plot will not look like what we saw previously,
+since it is using a linear scale, and we really want a log-scale
+to see the range of data.  We can switch by doing:
 
 .. prompt::
    :prompts: gnuplot>
 
-   set term png
-   set output "orbit.png"
+   set logscale
    replot
 
+By default, gnuplot shows a legend based on the plot command.
+We can make this more descriptive by adding the ``title`` keyword:
 
-For more info, see: http://www.gnuplot.info/
+.. prompt::
+   :prompts: gnuplot>
 
+   plot 'diff.out' using 1:2 title "error" w l
+
+or remove the title as:
+
+.. prompt::
+   :prompts: gnuplot>
+
+   plot 'diff.out' using 1:2 notitle w l
+
+Now we can add axis labels:
+
+.. prompt::
+   :prompts: gnuplot>
+
+   set xlabel "dx"
+   set ylabel "error"
+   replot
+
+Finally, to output as an image file (PNG), we can do:
+
+.. prompt::
+   :prompts: gnuplot>
+
+   set term png enhanced
+   set output "diff.png"
+   replot
+
+Then you can exit gnuplot either by typing ``exit`` or using
+:kbd:`Ctrl-d`.
+
+You should then see the file ``diff.png`` in your directory.
