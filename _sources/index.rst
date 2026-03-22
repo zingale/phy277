@@ -181,6 +181,7 @@ the top of many pages.
    algorithms/truncation
    algorithms/plotting
    algorithms/higher-order
+   algorithms/second-derivative
    algorithms/integration
    algorithms/odes
    algorithms/cxx-orbit-example

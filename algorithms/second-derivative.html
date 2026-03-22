@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Some Sample Data &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>In-class Second-Derivative &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -50,11 +50,13 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'shell/sample-data';</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'algorithms/second-derivative';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Navigating the Filesystem" href="filesystem.html" />
-    <link rel="prev" title="The Shell" href="shell.html" />
+    <link rel="next" title="Integration" href="integration.html" />
+    <link rel="prev" title="Higher-order Approximations" href="higher-order.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -158,20 +160,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/ai.html">What About AI?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The UNIX Shell</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="why_command_line.html">Why Use the Command Line?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell.html">The Shell</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Some Sample Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="filesystem.html">Navigating the Filesystem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-history.html">Shell History</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-file-create.html">Create Files and Directories</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-copy-move.html">Copying, Moving, and Deleting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-wildcards.html">Wildcards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-redirection-pipes.html">Redirection and Pipes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="finding.html"><code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../shell/why_command_line.html">Why Use the Command Line?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell.html">The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/sample-data.html">Some Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/filesystem.html">Navigating the Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-history.html">Shell History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-file-create.html">Create Files and Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-copy-move.html">Copying, Moving, and Deleting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-wildcards.html">Wildcards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-redirection-pipes.html">Redirection and Pipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/finding.html"><code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/scp.html"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="permissions.html">File Permissions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="path.html">Search Path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/permissions.html">File Permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/path.html">Search Path</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Programming</span></p>
 <ul class="nav bd-sidenav">
@@ -248,17 +250,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/function-practice.html">Function Practice</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/truncation.html">Derivatives and Truncation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/plotting.html">Plotting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/higher-order.html">Higher-order Approximations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/second-derivative.html">In-class Second-Derivative</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/integration.html">Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/odes.html">Ordinary Differential Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-example.html">Example: Planetary Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/roots.html">Root Finding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/monte-carlo.html">Monte Carlo Methods</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="truncation.html">Derivatives and Truncation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="higher-order.html">Higher-order Approximations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">In-class Second-Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration.html">Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odes.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-example.html">Example: Planetary Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">2nd Order Runge-Kutta Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roots.html">Root Finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monte-carlo.html">Monte Carlo Methods</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
 <ul class="nav bd-sidenav">
@@ -381,7 +383,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/shell/sample-data.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/algorithms/second-derivative.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -398,7 +400,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/shell/sample-data.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/algorithms/second-derivative.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -415,7 +417,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fshell/sample-data.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Falgorithms/second-derivative.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -471,7 +473,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Some Sample Data</h1>
+    <h1>In-class Second-Derivative</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -485,29 +487,38 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="some-sample-data">
-<span id="sec-shell-sample-data"></span><h1>Some Sample Data<a class="headerlink" href="#some-sample-data" title="Link to this heading">#</a></h1>
-<p>To help us understand some basic shell operations, we will all work
-with a collection of files and directories.  Type (or copy/paste) the
-following commands into your terminal to get the files we need (we’ll
-explain their meaning later):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">curl<span class="w"> </span>https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip<span class="w"> </span>--output<span class="w"> </span>shell-lesson-data.zip</span>
-<span class="prompt1">unzip<span class="w"> </span>shell-lesson-data.zip</span>
-</pre></div></div><div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Remember you can click on the copy button in the upper right of the text box and then paste into your
-terminal using <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">v</kbd>.</p>
+  <section id="in-class-second-derivative">
+<h1>In-class Second-Derivative<a class="headerlink" href="#in-class-second-derivative" title="Link to this heading">#</a></h1>
+<p>Let’s investigate a second-derivative, <span class="math notranslate nohighlight">\(d^2f/dx^2\)</span>.  We can start with the same
+Taylor expansions:</p>
+<div class="math notranslate nohighlight">
+\[f(x_0 + \Delta x) = f(x_0) + \left . \frac{df}{dx} \right |_{x_0} \Delta x +
+                             \frac{1}{2} \left . \frac{d^2f}{dx^2} \right |_{x_0} \Delta x^2 +
+                             \mathcal{O}(\Delta x^3)\]</div>
+<div class="math notranslate nohighlight">
+\[f(x_0 - \Delta x) = f(x_0) - \left . \frac{df}{dx} \right |_{x_0} \Delta x +
+                             \frac{1}{2} \left . \frac{d^2f}{dx^2} \right |_{x_0} \Delta x^2 -
+                             \mathcal{O}(\Delta x^3)\]</div>
+<p>Now, instead of subtracting them, we add them:</p>
+<div class="math notranslate nohighlight">
+\[f(x_0 + \Delta x) + f(x_0 - \Delta x) = 2 f(x_0)  + \left . \frac{d^2f}{dx^2} \right |_{x_0} \Delta x^2 + \mathcal{O}(\Delta x^4)\]</div>
+<p>Notice that the <span class="math notranslate nohighlight">\(\Delta x\)</span> and <span class="math notranslate nohighlight">\(\Delta x^3\)</span> terms cancel out.  Now solving for the
+second derivative, we have:</p>
+<div class="math notranslate nohighlight">
+\[\left . \frac{d^2f}{dx^2} \right |_{x_0} = \frac{f(x_0 + \Delta x) - 2 f(x_0) + f(x_0 - \Delta x)}{\Delta x^2}  + \mathcal{O}(\Delta x^2)\]</div>
+<p>We see that this is second-order accurate.</p>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">try it…</p>
+<p>Let’s code up the second derivative and test it on</p>
+<p><div class="math notranslate nohighlight">
+\[f(x) = x^4 + x^2 + 1\]</div>
+</p>
+<p>This has the second derivative:</p>
+<p><div class="math notranslate nohighlight">
+\[f^{\prime\prime}(x) = 12 x^2 + 2\]</div>
+</p>
 </div>
-<p>This data set comes from the <a class="reference external" href="https://software-carpentry.org/">Software Carpentry project</a>.</p>
-<p>This creates a directory on the filesystem named
-<code class="docutils literal notranslate"><span class="pre">shell-lesson-data/</span></code>.  To begin, we want to “change directory” into
-that directory, using the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">cd</span><span class="w"> </span>shell-lesson-data</span>
-</pre></div></div></section>
+</section>
 
 
                 </article>
@@ -521,20 +532,20 @@ that directory, using the <code class="docutils literal notranslate"><span class
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="shell.html"
+       href="higher-order.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The Shell</p>
+        <p class="prev-next-title">Higher-order Approximations</p>
       </div>
     </a>
     <a class="right-next"
-       href="filesystem.html"
+       href="integration.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Navigating the Filesystem</p>
+        <p class="prev-next-title">Integration</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
