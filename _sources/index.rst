@@ -182,7 +182,6 @@ the top of many pages.
    algorithms/plotting
    algorithms/higher-order
    algorithms/integration
-   algorithms/optimization
    algorithms/odes
    algorithms/cxx-orbit-example
    algorithms/cxx-orbit-rk2-example
@@ -202,6 +201,7 @@ the top of many pages.
    :hidden:
 
    software_engineering/compiler-flags
+   software_engineering/optimization
    software_engineering/multiple-files
    software_engineering/make
    software_engineering/inclass-split-orbit
