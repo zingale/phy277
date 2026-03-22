@@ -1,6 +1,6 @@
-**************************
-In-class Second-Derivative
-**************************
+***************************
+In-class: Second-Derivative
+***************************
 
 Let's investigate a second-derivative, $d^2f/dx^2$.  We can start with the same
 Taylor expansions:
