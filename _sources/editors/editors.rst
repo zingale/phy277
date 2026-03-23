@@ -28,7 +28,7 @@ nano
 ====
 
 ``nano`` is a pretty basic editor and very easy to use.  We already saw that when we saved our
-``hello.cpp`` it recognized it as C++ code and highlighted it in different colors.
+``hello.cpp``, it recognized it as C++ code and highlighted it in different colors.
 
 There are some basic customizations you can make by creating a ``~/.nanorc`` file,
 some of which are listed here: `customizing nano <https://timnash.co.uk/customising-nano-productivity-friday/>`_
