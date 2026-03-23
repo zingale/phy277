@@ -26,6 +26,13 @@ of the approximation.
 
 .. note::
 
+   We use `big-O notation <https://en.wikipedia.org/wiki/Big_O_notation>`_ here to indicate
+   the truncation error.  By writing $\mathcal{O}(\Delta x)$, we are saying that there are
+   terms of order $\Delta x$ that we are neglecting.  These indicates the leading term
+   of the truncation error.
+
+.. note::
+
    This is called a `finite-difference approximation
    <https://en.wikipedia.org/wiki/Numerical_differentiation#Finite_differences>`_ to the
    derivative.
