@@ -485,6 +485,7 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-plotting">Interactive plotting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-plot">Saving the plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-plotting-script">Using a plotting script</a></li>
 </ul>
             </nav>
         </div>
@@ -575,12 +576,35 @@ should look like the plot from the previous page:</p>
 <a class="reference internal image-reference" href="../_images/error_plot.png"><img alt="A comparison of truncation error and roundoff error as dx is changed." src="../_images/error_plot.png" style="width: 80%;" />
 </a>
 </figure>
+</section>
+<section id="using-a-plotting-script">
+<h2>Using a plotting script<a class="headerlink" href="#using-a-plotting-script" title="Link to this heading">#</a></h2>
+<p>We can put all of the plotting commands into a file, like <code class="docutils literal notranslate"><span class="pre">diff.gp</span></code>
+(the extension, <code class="docutils literal notranslate"><span class="pre">.gp</span></code> is not standard, but here we use it to
+indicate gnuplot).  An example script is:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 67 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">diff.gp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-gnuplot notranslate"><div class="highlight"><pre><span></span><span class="k">set</span><span class="w"> </span><span class="nb">term</span><span class="w"> </span><span class="n">png</span><span class="w"> </span><span class="n">enhanced</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="mi">800</span><span class="o">,</span><span class="mi">600</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">output</span><span class="w"> </span><span class="s">&quot;diff.png&quot;</span>
+
+<span class="k">set</span><span class="w"> </span><span class="nb">logscale</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">grid</span>
+
+<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">&quot;dx&quot;</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">&quot;error&quot;</span>
+
+<span class="k">plot</span><span class="w"> </span><span class="s">&quot;diff.out&quot;</span><span class="w"> </span><span class="nb">using</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="mi">2</span><span class="w"> </span><span class="nb">notitle</span><span class="w"> </span><span class="nb">with</span><span class="w"> </span><span class="n">lines</span>
+</pre></div>
+</div>
+</div>
+<p>and you would use this by doing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">gnuplot<span class="w"> </span>diff.gp</span>
+</pre></div></div><p>The key part of this is that the <code class="docutils literal notranslate"><span class="pre">plot</span></code> command comes at the very end.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If you could not get the X Window forwarding to work, then do the
-<code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">term</span> <span class="pre">png</span> <span class="pre">enhanced</span></code> command followed by giving the output
-file name right when you begin.  Then you will write directly to an
-image file.</p>
+<p>If you could not get the X Window forwarding to work, then adapting
+the script above it the easiest approach.  You can then <code class="docutils literal notranslate"><span class="pre">scp</span></code> the
+plot (<code class="docutils literal notranslate"><span class="pre">diff.png</span></code> in this case) to your local machine.</p>
 </div>
 </section>
 </section>
@@ -634,6 +658,7 @@ image file.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-plotting">Interactive plotting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-plot">Saving the plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-plotting-script">Using a plotting script</a></li>
 </ul>
   </nav></div>
 
