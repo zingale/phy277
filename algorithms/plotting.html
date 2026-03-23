@@ -460,7 +460,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -476,6 +478,15 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-plotting">Interactive plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-plot">Saving the plot</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -487,15 +498,33 @@
                   
   <section id="plotting">
 <h1>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h1>
-<p>We can use <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code> to make simple plots.  Typically, we
-will plot columns from our output, making one column the x-axis
-and the other column the y-axis.</p>
-<p>Let’s rerun our code, but redirect the output to a file:</p>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code> to make simple plots.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>By default, gnuplot will display the plot in a window.  This uses
+the Unix <a class="reference external" href="https://en.wikipedia.org/wiki/X_Window_System">X Window System</a>.  This can work
+when we run directly on the machines in the MathLab.</p>
+<p>If you use <code class="docutils literal notranslate"><span class="pre">portal</span></code> or <code class="docutils literal notranslate"><span class="pre">portal2</span></code> then, when you ssh
+into these remote machines, you need to add <code class="docutils literal notranslate"><span class="pre">-Y</span></code> to enable
+forwarding of windows, e.g.,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
 }
-</style><span class="prompt1">./truncation_vs_roundoff<span class="w"> </span>&gt;<span class="w"> </span>diff.out</span>
+</style><span class="prompt1">ssh<span class="w"> </span>-Y<span class="w"> </span>username@portal.mathlab.stonybrook.edu</span>
+</pre></div></div><p>If you are using your own machine, you will need to install a X
+server.  See our <a class="reference internal" href="../getting_started/using_your_computer.html#sec-using-remote-servers"><span class="std std-ref">Using the remote servers</span></a> documentation.</p>
+<p>If you are unable to get this to work, you can still have
+gnuplot make an image file directly (e.g. PNG) instead, as
+shown below.</p>
+</div>
+<section id="interactive-plotting">
+<h2>Interactive plotting<a class="headerlink" href="#interactive-plotting" title="Link to this heading">#</a></h2>
+<p>Typically, we
+will plot columns from our output, making one column the x-axis
+and the other column the y-axis.</p>
+<p>Let’s rerun our code, but redirect the output to a file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">./truncation_vs_roundoff<span class="w"> </span>&gt;<span class="w"> </span>diff.out</span>
 </pre></div></div><p>If we look at the file <code class="docutils literal notranslate"><span class="pre">diff.out</span></code> (you can use <code class="docutils literal notranslate"><span class="pre">cat</span></code>, e.g.),
 then we see there are 2 columns.</p>
 <p>We can start gnuplot as:</p>
@@ -517,21 +546,6 @@ be on the y-axis.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">w</span> <span class="pre">l</span></code> part means “with lines”, so the data will be draw
 using line segments instead of plotting points.</p></li>
 </ul>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>By default, gnuplot will display the plot in a window.  This
-uses the Unix X Window System.  This can work when we run
-on the machines in the MathLab.</p>
-<p>If you use <code class="docutils literal notranslate"><span class="pre">portal</span></code> or <code class="docutils literal notranslate"><span class="pre">portal2</span></code> the, when you ssh
-into these remote machines, you need to add <code class="docutils literal notranslate"><span class="pre">-Y</span></code> to enable
-forwarding of windows, e.g.,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh<span class="w"> </span>-Y<span class="w"> </span>username@portal.mathlab.stonybrook.edu</span>
-</pre></div></div><p>If you are using your own machine, you will need to install a X
-server.  See our <a class="reference internal" href="../getting_started/using_your_computer.html#sec-using-remote-servers"><span class="std std-ref">Using the remote servers</span></a> documentation.</p>
-<p>If you are unable to get this to work, you can still have
-gnuplot make an image file directly (e.g. PNG) instead, as
-shown below.</p>
-</div>
 <p>This plot will not look like what we saw previously,
 since it is using a linear scale, and we really want a log-scale
 to see the range of data.  We can switch by doing:</p>
@@ -546,13 +560,29 @@ We can make this more descriptive by adding the <code class="docutils literal no
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">set xlabel &quot;dx&quot;</span>
 <span class="prompt2">set ylabel &quot;error&quot;</span>
 <span class="prompt2">replot</span>
-</pre></div></div><p>Finally, to output as an image file (PNG), we can do:</p>
+</pre></div></div></section>
+<section id="saving-the-plot">
+<h2>Saving the plot<a class="headerlink" href="#saving-the-plot" title="Link to this heading">#</a></h2>
+<p>To output as an image file (PNG), we can do:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">set term png enhanced</span>
 <span class="prompt2">set output &quot;diff.png&quot;</span>
 <span class="prompt2">replot</span>
 </pre></div></div><p>Then you can exit gnuplot either by typing <code class="docutils literal notranslate"><span class="pre">exit</span></code> or using
 <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">d</kbd>.</p>
-<p>You should then see the file <code class="docutils literal notranslate"><span class="pre">diff.png</span></code> in your directory.</p>
+<p>You should then see the file <code class="docutils literal notranslate"><span class="pre">diff.png</span></code> in your directory, which
+should look like the plot from the previous page:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/error_plot.png"><img alt="A comparison of truncation error and roundoff error as dx is changed." src="../_images/error_plot.png" style="width: 80%;" />
+</a>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you could not get the X Window forwarding to work, then do the
+<code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">term</span> <span class="pre">png</span> <span class="pre">enhanced</span></code> command followed by giving the output
+file name right when you begin.  Then you will write directly to an
+image file.</p>
+</div>
+</section>
 </section>
 
 
@@ -590,6 +620,24 @@ We can make this more descriptive by adding the <code class="docutils literal no
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-plotting">Interactive plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-plot">Saving the plot</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -2,7 +2,34 @@
 Plotting
 ********
 
-We can use ``gnuplot`` to make simple plots.  Typically, we
+We can use ``gnuplot`` to make simple plots.
+
+.. important::
+
+   By default, gnuplot will display the plot in a window.  This uses
+   the Unix `X Window System
+   <https://en.wikipedia.org/wiki/X_Window_System>`_.  This can work
+   when we run directly on the machines in the MathLab.
+
+   If you use ``portal`` or ``portal2`` then, when you ssh
+   into these remote machines, you need to add ``-Y`` to enable
+   forwarding of windows, e.g.,
+
+   .. prompt:: bash
+
+      ssh -Y username@portal.mathlab.stonybrook.edu
+
+   If you are using your own machine, you will need to install a X
+   server.  See our :ref:`sec:using_remote_servers` documentation.
+
+   If you are unable to get this to work, you can still have
+   gnuplot make an image file directly (e.g. PNG) instead, as
+   shown below.
+
+Interactive plotting
+====================
+
+Typically, we
 will plot columns from our output, making one column the x-axis
 and the other column the y-axis.
 
@@ -41,26 +68,6 @@ There are a few parts to this:
 * The ``w l`` part means "with lines", so the data will be draw
   using line segments instead of plotting points.
 
-.. important::
-
-   By default, gnuplot will display the plot in a window.  This
-   uses the Unix X Window System.  This can work when we run
-   on the machines in the MathLab.
-
-   If you use ``portal`` or ``portal2`` the, when you ssh
-   into these remote machines, you need to add ``-Y`` to enable
-   forwarding of windows, e.g.,
-
-   .. prompt:: bash
-
-      ssh -Y username@portal.mathlab.stonybrook.edu
-
-   If you are using your own machine, you will need to install a X
-   server.  See our :ref:`sec:using_remote_servers` documentation.
-
-   If you are unable to get this to work, you can still have
-   gnuplot make an image file directly (e.g. PNG) instead, as
-   shown below.
 
 This plot will not look like what we saw previously,
 since it is using a linear scale, and we really want a log-scale
@@ -96,7 +103,10 @@ Now we can add axis labels:
    set ylabel "error"
    replot
 
-Finally, to output as an image file (PNG), we can do:
+Saving the plot
+===============
+
+To output as an image file (PNG), we can do:
 
 .. prompt::
    :prompts: gnuplot>
@@ -108,4 +118,19 @@ Finally, to output as an image file (PNG), we can do:
 Then you can exit gnuplot either by typing ``exit`` or using
 :kbd:`Ctrl-d`.
 
-You should then see the file ``diff.png`` in your directory.
+You should then see the file ``diff.png`` in your directory, which
+should look like the plot from the previous page:
+
+.. figure:: error_plot.png
+   :align: center
+   :width: 80%
+   :alt: A comparison of truncation error and roundoff error as dx is changed.
+
+
+.. tip::
+
+   If you could not get the X Window forwarding to work, then do the
+   ``set term png enhanced`` command followed by giving the output
+   file name right when you begin.  Then you will write directly to an
+   image file.
+
