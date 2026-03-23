@@ -117,7 +117,7 @@ Testing for equality
 ====================
 
 Because of roundoff error, we should never exactly compare two floating point numbers,
-but instead ask they they agree within some tolerance, e.g., test equality as:
+but instead ask if they agree within some tolerance, e.g., test equality as:
 
 .. math::
 
@@ -128,5 +128,4 @@ For example:
 .. literalinclude:: ../../../examples/floating_point/comparing.cpp
    :language: c++
    :caption: ``comparing.cpp``
-
 
