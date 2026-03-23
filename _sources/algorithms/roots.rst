@@ -40,6 +40,35 @@ Here's an animation of bisection finding a root:
    :align: center
    :alt: An animation of bisection finding the zero of a parabola.
 
+Here's an implementation:
+
+.. literalinclude:: ../../../examples/numerical_algorithms/roots/bisection.cpp
+   :language: c++
+   :caption: ``bisection.cpp``
+
+A few features:
+
+* We use a ``namespace`` to hold the parameters that affect the
+  behavior of the root finding algorithms.  This ensures that if we
+  ``#include "roots.H"`` in a file, these names don't conflict with
+  any that might be locally defined.
+
+* We use both a relative and absolute tolerance for assessing the error.  Convergence
+  is met when:
+
+  .. math::
+
+     \epsilon < \mathrm{RTOL} |x_0| + \mathrm{ATOL}
+
+  This ensures that if the current estimate of the root, :math:`x_0`,
+  is close to zero then :math:`\mathrm{ATOL}` is used but if the root
+  :math:`x_0` is large, then :math:`\mathrm{RTOL}` use used for the
+  error.
+
+* We have a maximum number of iterations, ``Roots::MAX_ITER``, after which
+  we exit with an error.  This ensures we don't get stuck in an infinite
+  loop if something goes wrong.
+
 Bisection is slow to converge---it only reduces the error by a factor of 2 each iteration.
 
 .. note::
@@ -97,58 +126,10 @@ There are a few things to note here:
    If we don't have an analytic form of the derivative, then we can compute it via
    finite-differences.   This can give rise to the `secant method <https://en.wikipedia.org/wiki/Secant_method>`_.
 
+Here's an implementation:
 
-
-Implementation
-==============
-
-We want to write a function that takes as input the function we want to zero, so we'll
-use ``std::function`` to define the function as an argument.
-
-
-Here's the header that implements both bisection and Newton's method:
-
-.. literalinclude:: ../../../examples/numerical_algorithms/roots/roots.H
+.. literalinclude:: ../../../examples/numerical_algorithms/roots/newton.cpp
    :language: c++
-   :caption: ``roots.H``
+   :caption: ``newton.cpp``
 
-
-A few features:
-
-* We use a ``namespace`` to hold the parameters that affect the
-  behavior of the root finding algorithms.  This ensures that if we
-  ``#include "roots.H"`` in a file, these names don't conflict with
-  any that might be locally defined.
-
-* We use both a relative and absolute tolerance for assessing the error.  Convergence
-  is met when:
-
-  .. math::
-
-     \epsilon < \mathrm{RTOL} |x_0| + \mathrm{ATOL}
-
-  This ensures that if the current estimate of the root, :math:`x_0`,
-  is close to zero then :math:`\mathrm{ATOL}` is used but if the root
-  :math:`x_0` is large, then :math:`\mathrm{RTOL}` use used for the
-  error.
-
-* We have a maximum number of iterations, ``Roots::MAX_ITER``, after which
-  we exit with an error.  This ensures we don't get stuck in an infinite
-  loop if something goes wrong.
-
-Here's a test driver for it:
-
-.. literalinclude:: ../../../examples/numerical_algorithms/roots/test_roots.cpp
-
-
-.. note::
-
-   What happens if we use :math:`x_0 = 0` as the initial guess for :math:`f(x) = x^2`
-   with Newton's method?
-
-
-.. admonition:: try it...
-
-   Write a version of Newton's method that uses a finite-difference approximation
-   to the derivative.
 
