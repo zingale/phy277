@@ -38,8 +38,8 @@ where :math:`{\bf r} = (x, y)` and :math:`{\bf v} = (v_x, v_y)`.
 Euler's Method
 ==============
 
-The simplest method to advance the solution begins with a first-order accurate difference approximation
-to the derivative:
+Using Euler's method, as we just learned, the solution begins with a
+first-order accurate difference approximation to the derivative:
 
 .. math::
 
@@ -59,23 +59,6 @@ or
 
    {\bf v}^{n+1} = {\bf v}^n + \tau {\bf a}({\bf r}^n,{\bf v}^n) + \mathcal{O}(\tau^2)
 
-This shows that each time we take a step, we make an error (called
-*truncation error*) of :math:`\mathcal{O}(\tau^2)`.  Over the course
-of the orbit we will take :math:`N = T / \tau` steps, so the global
-error will be :math:`\mathcal{O}(\tau)`.
-
-This method is *first-order accurate* in time.
-
-
-Graphically, Euler's method looks like:
-
-.. figure:: rk2_Euler.png
-   :align: center
-   :width: 90%
-   :alt:  A plot of an exponential function with a point marked as the starting point for integration (labelled y^n).  A straight line follows the initial slope to the new time, giving the point y^{n+1} which is well below the analytic value of the function at that time.
-
-   Euler's method: we evaluate the slope at the start of the timestep and then follow
-   this through to the new time.
 
 Implementation
 ==============
@@ -131,58 +114,57 @@ To make our code flexible, we'll write the following functions:
   integration it will return the history.
 
 
-.. admonition:: try it...
+Implementation
+==============
 
-   Implement the solver by filling in the details of the functions described above.
+Implement the solver by filling in the details of the functions
+described above.
 
-   .. dropdown:: solution
+.. literalinclude:: ../../../examples/numerical_algorithms/orbit_example.cpp
+   :language: c++
+   :caption: ``orbit_example.cpp``
 
-      .. literalinclude:: ../../../examples/functions/orbit_example.cpp
-         :language: c++
-         :caption: ``orbit_example.cpp``
+Plotting
+========
 
-.. tip::
+We can plot the solution using ``gnuplot``.
 
-   We can plot the solution using ``gnuplot``.
+First, when you run, redirect the output to a file:
 
-   First, when you run, redirect the output to a file:
+.. prompt:: bash
 
-   .. prompt:: bash
+   ./orbit_example > orbit.dat
 
-      ./orbit_example > orbit.dat
+Now run ``gnuplot``:
 
-   Now run ``gnuplot``:
+.. prompt:: bash
 
-   .. prompt:: bash
+   gnuplot
 
-      gnuplot
+Again, we'll use ``plot`` and plot different columns against
+one another:
 
-   A simple plot in ``gnuplot`` is made using the ``plot`` command, specifying the file with the
-   data, the columns to use for x and y axes, and any styling (like ``w l`` for *with-lines*):
+.. prompt::
+   :prompts: gnuplot>
 
-   .. prompt::
-      :prompts: gnuplot>
+   plot 'orbit.dat' using 2:3 w l
+   set size square
+   replot
 
-      plot 'orbit.dat' using 2:3 w l
-      set size square
-      replot
+This will make something like:
 
-   This will make something like:
+.. figure:: orbit.png
+  :align: center
+  :width: 80%
+  :alt: the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it only completes about 90% of the circumference and the radius drifts slightly outward in the orbit.
 
-   .. figure:: orbit.png
-     :align: center
-     :width: 80%
-     :alt: the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it only completes about 90% of the circumference and the radius drifts slightly outward in the orbit.
+You can save the plot as:
 
-   You can save the plot as:
+.. prompt::
+   :prompts: gnuplot>
 
-   .. prompt::
-      :prompts: gnuplot>
+   set term png
+   set output "orbit.png"
+   replot
 
-      set term png
-      set output "orbit.png"
-      replot
-
-
-   For more info, see: http://www.gnuplot.info/
 

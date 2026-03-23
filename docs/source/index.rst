@@ -179,8 +179,11 @@ the top of many pages.
    :hidden:
 
    algorithms/truncation
+   algorithms/plotting
+   algorithms/higher-order
+   algorithms/second-derivative
    algorithms/integration
-   algorithms/optimization
+   algorithms/odes
    algorithms/cxx-orbit-example
    algorithms/cxx-orbit-rk2-example
    algorithms/roots
@@ -199,6 +202,7 @@ the top of many pages.
    :hidden:
 
    software_engineering/compiler-flags
+   software_engineering/optimization
    software_engineering/multiple-files
    software_engineering/make
    software_engineering/inclass-split-orbit
@@ -257,6 +261,7 @@ the top of many pages.
    homework/homework3
    homework/homework4
    homework/homework5
+   homework/homework6
 
 .. toctree::
    :maxdepth: 1

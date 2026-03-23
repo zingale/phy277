@@ -26,6 +26,8 @@ If you want to use your own laptop, then you have a few options:
    software on your personal machine.
 
 
+.. _sec:using_remote_servers:
+
 Using the remote servers
 ========================
 

@@ -5,6 +5,9 @@
 #include <numbers>
 #include <format>
 
+// G * Mass in AU, year, solar mass units
+const double GM = 4.0 * std::numbers::pi * std::numbers::pi;
+
 struct OrbitState {
     double t;
     double x;
@@ -12,12 +15,6 @@ struct OrbitState {
     double vx;
     double vy;
 };
-
-OrbitState rhs(const OrbitState& state);
-void write_history(const std::vector<OrbitState>& history);
-std::vector<OrbitState> integrate(const double a, const double tmax, const double dt_in);
-
-const double GM = 4.0 * std::numbers::pi * std::numbers::pi;   // G * Mass in AU, year, solar mass units
 
 OrbitState rhs(const OrbitState& state) {
 
@@ -39,15 +36,33 @@ OrbitState rhs(const OrbitState& state) {
 
 }
 
+OrbitState update_state(const OrbitState& state,
+                        const double dt,
+                        const OrbitState& state_derivs) {
+
+    OrbitState state_new{};
+
+    state_new.t = state.t + dt;
+    state_new.x = state.x + dt * state_derivs.x;
+    state_new.y = state.y + dt * state_derivs.y;
+    state_new.vx = state.vx + dt * state_derivs.vx;
+    state_new.vy = state.vy + dt * state_derivs.vy;
+
+    return state_new;
+}
+
 void write_history(const std::vector<OrbitState>& history) {
 
     for (const auto& o : history) {
-        std::cout << std::format("{:11.8f} {:11.8f} {:11.8f} {:11.8f} {:11.8f}\n",
-                                 o.t, o.x, o.y, o.vx, o.vy);
+        std::cout
+            << std::format("{:11.8f} {:11.8f} {:11.8f} {:11.8f} {:11.8f}\n",
+                           o.t, o.x, o.y, o.vx, o.vy);
     }
 }
 
-std::vector<OrbitState> integrate(const double a, const double tmax, const double dt_in) {
+std::vector<OrbitState> integrate(const double a,
+                                  const double tmax,
+                                  const double dt_in) {
 
     // how the history of the orbit
 
@@ -78,12 +93,12 @@ std::vector<OrbitState> integrate(const double a, const double tmax, const doubl
         // get the derivatives
         auto state_derivs = rhs(state);
 
+        // get the derivatives at the midpoint in time
+        auto state_star = update_state(state, 0.5 * dt, state_derivs);
+        state_derivs = rhs(state_star);
+
         // update the state
-        state.t += dt;
-        state.x += state_derivs.x * dt;
-        state.y += state_derivs.y * dt;
-        state.vx += state_derivs.vx * dt;
-        state.vy += state_derivs.vy * dt;
+        state = update_state(state, dt, state_derivs);
 
         orbit_history.push_back(state);
     }
@@ -95,7 +110,7 @@ std::vector<OrbitState> integrate(const double a, const double tmax, const doubl
 int main() {
 
     double tmax = 1.0;
-    double dt = 0.001;
+    double dt = 0.05;
     double a = 1.0;      // 1 AU
 
     auto orbit_history = integrate(a, tmax, dt);

@@ -20,8 +20,15 @@ We can solve for the derivative to find an approximation for the first derivativ
    \left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} + \mathcal{O}(\Delta x)
 
 This shows that this approximation for the derivative is first-order
-accurate in :math:`\Delta x`---that is the `truncation error <https://en.wikipedia.org/wiki/Truncation_error_(numerical_integration)>`_ of the
-approximation.
+accurate in :math:`\Delta x`---that is the `truncation error
+<https://en.wikipedia.org/wiki/Truncation_error_(numerical_integration)>`_
+of the approximation.
+
+.. note::
+
+   This is called a `finite-difference approximation
+   <https://en.wikipedia.org/wiki/Numerical_differentiation#Finite_differences>`_ to the
+   derivative.
 
 Roundoff vs. truncation
 =======================
@@ -123,35 +130,7 @@ Let's discuss the trends:
 * The minimum error here is around :math:`\sqrt{\epsilon}`, where :math:`\epsilon` is
   machine epsilon.
 
+.. tip::
 
-Higher-order approximations
-===========================
-
-Let's look back at our difference approximation, but now consider Taylor expanding
-$f(x_0 + \Delta x)$ and $f(x_0 - \Delta x)$:
-
-.. math::
-
-   f(x_0 + \Delta x) = f(x_0) + \left . \frac{df}{dx} \right |_{x_0} \Delta x +
-                                \frac{1}{2} \left . \frac{d^2f}{dx^2} \right |_{x_0} \Delta x^2 +
-                                \mathcal{O}(\Delta x^3)
-
-.. math::
-
-   f(x_0 - \Delta x) = f(x_0) - \left . \frac{df}{dx} \right |_{x_0} \Delta x +
-                                \frac{1}{2} \left . \frac{d^2f}{dx^2} \right |_{x_0} \Delta x^2 -
-                                \mathcal{O}(\Delta x^3)
-
-Now, if we subtract these, we get:
-
-.. math::
-
-   f(x_0 + \Delta x) - f(x_0 - \Delta x) = 2 \left . \frac{df}{dx} \right |_{x_0} \Delta x + \mathcal{O}(\Delta x^3)
-
-Notice that the $\Delta x^2$ term cancels out.  Now solving for the first derivative, we have:
-
-.. math::
-
-   \left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0 - \Delta x)}{2  \Delta x}  + \mathcal{O}(\Delta x^2)
-
-We see that this is second-order accurate.  This is sometimes called a *centered-difference*.
+   For computing a finite-difference approximation to a derivative, $\Delta x$
+   should be chosen such that $|\Delta x / x_0| \sim \sqrt{\epsilon}$.
