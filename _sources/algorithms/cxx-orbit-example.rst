@@ -120,7 +120,7 @@ Implementation
 Implement the solver by filling in the details of the functions
 described above.
 
-.. literalinclude:: ../../../examples/numerical_algorithms/orbit_example.cpp
+.. literalinclude:: ../../../examples/numerical_algorithms/ODEs/orbit_example.cpp
    :language: c++
    :caption: ``orbit_example.cpp``
 
