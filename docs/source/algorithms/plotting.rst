@@ -127,10 +127,28 @@ should look like the plot from the previous page:
    :alt: A comparison of truncation error and roundoff error as dx is changed.
 
 
+Using a plotting script
+=======================
+
+We can put all of the plotting commands into a file, like ``diff.gp``
+(the extension, ``.gp`` is not standard, but here we use it to
+indicate gnuplot).  An example script is:
+
+.. literalinclude:: ../../../examples/floating_point/diff.gp
+   :language: gnuplot
+   :caption: ``diff.gp``
+
+and you would use this by doing:
+
+.. prompt:: bash
+
+   gnuplot diff.gp
+
+The key part of this is that the ``plot`` command comes at the very end.
+
 .. tip::
 
-   If you could not get the X Window forwarding to work, then do the
-   ``set term png enhanced`` command followed by giving the output
-   file name right when you begin.  Then you will write directly to an
-   image file.
+   If you could not get the X Window forwarding to work, then adapting
+   the script above it the easiest approach.  You can then ``scp`` the
+   plot (``diff.png`` in this case) to your local machine.
 
