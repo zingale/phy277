@@ -44,7 +44,7 @@ We see that this is second-order accurate.
 
 .. dropdown:: solution
 
-   .. literalinclude:: ../../../examples/numerical_algorithms/second_derivative.cpp
+   .. literalinclude:: ../../../examples/numerical_algorithms/derivatives/second_derivative.cpp
       :language: c++
       :caption: ``second_derivative.cpp``
 
