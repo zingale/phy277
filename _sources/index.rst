@@ -183,6 +183,7 @@ the top of many pages.
    algorithms/higher-order
    algorithms/second-derivative
    algorithms/integration
+   algorithms/integration-higher-order
    algorithms/odes
    algorithms/cxx-orbit-example
    algorithms/cxx-orbit-rk2-example
