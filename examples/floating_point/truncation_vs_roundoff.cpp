@@ -40,8 +40,6 @@ int main() {
         dx /= 2.0;
     }
 
-    std::cout << std::setprecision(8) << std::scientific;
-
     for (const auto p : data) {
         std::cout << std::format("{:12.6g} {:12.6g}\n", p.dx, p.err);
     }
