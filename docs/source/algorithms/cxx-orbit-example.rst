@@ -182,6 +182,18 @@ This will make something like:
   :width: 80%
   :alt: the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it really moves far from the center as it orbits.
 
+.. tip::
+
+   We used a new gnuplot command here:
+
+   .. prompt::
+      :prompts: gnuplot>
+
+      set size ratio -1
+
+   This ensures that the aspect ratio of the coordinates is preserved
+   (so a circle will appear as a circle in our plot).
+
 You can save the plot as:
 
 .. prompt::
