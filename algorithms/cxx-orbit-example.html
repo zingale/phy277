@@ -519,7 +519,12 @@ units of solar masses, astronomical units, and years, then this becomes:</p>
 \[\dot{\bf r} = {\bf v}\]</div>
 <div class="math notranslate nohighlight">
 \[\dot{\bf v} = - \frac{G M_\star {\bf r}}{r^3}\]</div>
-<p>where <span class="math notranslate nohighlight">\({\bf r} = (x, y)\)</span> and <span class="math notranslate nohighlight">\({\bf v} = (v_x, v_y)\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\({\bf r} = (x, y)\)</span> and <span class="math notranslate nohighlight">\({\bf v} = (v_x, v_y)\)</span> are vectors.
+This means that we have 4 equations overall to advance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We use <span class="math notranslate nohighlight">\(\dot{y}\)</span> as our notation for a time-derivative, <span class="math notranslate nohighlight">\(dy/dt\)</span>,</p>
+</div>
 <section id="euler-s-method">
 <h2>Euler’s Method<a class="headerlink" href="#euler-s-method" title="Link to this heading">#</a></h2>
 <p>Using Euler’s method, as we just learned, the solution begins with a
@@ -559,15 +564,19 @@ first-order accurate difference approximation to the derivative:</p>
 </div>
 <p>we can evaluate this as needed by passing in an <code class="docutils literal notranslate"><span class="pre">OrbitState</span></code> and
 returning the derivative of that state with respect to time.</p>
+<p>As we’ve seen a few times now, we pass this in as a <code class="docutils literal notranslate"><span class="pre">const</span></code> reference
+for performance.  The <code class="docutils literal notranslate"><span class="pre">const</span></code> ensures that it is read-only.</p>
 </li>
 <li><p>A function to write out the history:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">write_history</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">OrbitState</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">history</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>We can adapt this as desired to write to the screen or a file.</p>
+<p>We can adapt this as desired to write to the screen or a file (which
+we’ll see soon).</p>
 </li>
 <li><p>An integration function:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">OrbitState</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integrate</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">tmax</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">OrbitState</span><span class="o">&gt;</span><span class="w"> </span><span class="n">integrate</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span>
+<span class="w">                                  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">tmax</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>This manages the time-stepping, implementing Euler’s method and
@@ -655,6 +664,8 @@ described above.</p>
 <span class="w">    </span><span class="c1">// integration loop</span>
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tmax</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
+<span class="w">        </span><span class="c1">// if the final dt step takes us past our stopping time</span>
+<span class="w">        </span><span class="c1">// (tmax), cut the timestep</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">t</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">tmax</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmax</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">t</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
@@ -679,7 +690,7 @@ described above.</p>
 <span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">tmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.001</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w">      </span><span class="c1">// 1 AU</span>
 
 <span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">orbit_history</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">integrate</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">tmax</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
