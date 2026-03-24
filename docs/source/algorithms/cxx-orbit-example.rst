@@ -138,8 +138,8 @@ Running
 =======
 
 This is setup for Earth (the semi-major axis is 1 AU).  The main thing
-we control is the timestep.  Our default, ``dt = 0.1`` corresponds to
-1/10th of a year.
+we control is the timestep.  Our default, ``dt = 0.05`` corresponds to
+1/20th of a year.
 
 From our method, we expect that the error will decrease by a factor of 2 each time
 we cut the timestep in half.
@@ -170,23 +170,24 @@ one another:
 .. prompt::
    :prompts: gnuplot>
 
-   plot 'orbit.dat' using 2:3 w l
-   set size square
-   replot
+   set size ratio -1
+   set xlabel "x"
+   set ylabel "y"
+   plot 'orbit.dat' using 2:3 notitle w l
 
 This will make something like:
 
 .. figure:: orbit.png
   :align: center
   :width: 80%
-  :alt: the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it only completes about 90% of the circumference and the radius drifts slightly outward in the orbit.
+  :alt: the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it really moves far from the center as it orbits.
 
 You can save the plot as:
 
 .. prompt::
    :prompts: gnuplot>
 
-   set term png
+   set term png enhanced
    set output "orbit.png"
    replot
 
