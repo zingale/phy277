@@ -71,6 +71,8 @@ std::vector<OrbitState> integrate(const double a,
     // integration loop
     while (state.t < tmax) {
 
+        // if the final dt step takes us past our stopping time
+        // (tmax), cut the timestep
         if (state.t + dt > tmax) {
             dt = tmax - state.t;
         }
@@ -95,7 +97,7 @@ std::vector<OrbitState> integrate(const double a,
 int main() {
 
     double tmax = 1.0;
-    double dt = 0.001;
+    double dt = 0.1;
     double a = 1.0;      // 1 AU
 
     auto orbit_history = integrate(a, tmax, dt);

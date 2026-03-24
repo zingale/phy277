@@ -33,7 +33,12 @@ The evolution of the planet is given by
 
    \dot{\bf v} = - \frac{G M_\star {\bf r}}{r^3}
 
-where :math:`{\bf r} = (x, y)` and :math:`{\bf v} = (v_x, v_y)`.
+where :math:`{\bf r} = (x, y)` and :math:`{\bf v} = (v_x, v_y)` are vectors.
+This means that we have 4 equations overall to advance.
+
+.. note::
+
+   We use $\dot{y}$ as our notation for a time-derivative, $dy/dt$,
 
 Euler's Method
 ==============
@@ -95,19 +100,24 @@ To make our code flexible, we'll write the following functions:
   we can evaluate this as needed by passing in an ``OrbitState`` and
   returning the derivative of that state with respect to time.
 
+  As we've seen a few times now, we pass this in as a ``const`` reference
+  for performance.  The ``const`` ensures that it is read-only.
+
 * A function to write out the history:
 
   .. code:: c++
 
      void write_history(const std::vector<OrbitState>& history);
 
-  We can adapt this as desired to write to the screen or a file.
+  We can adapt this as desired to write to the screen or a file (which
+  we'll see soon).
 
 * An integration function:
 
   .. code:: c++
 
-     std::vector<OrbitState> integrate(const double a, const double tmax, const double dt);
+     std::vector<OrbitState> integrate(const double a,
+                                       const double tmax, const double dt);
 
   This manages the time-stepping, implementing Euler's method and
   storing the solution in our history vector each step.  At the end of

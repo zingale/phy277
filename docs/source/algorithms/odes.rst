@@ -10,15 +10,6 @@ Consider an ordinary differential equation,
 
 To solve this we need some initial conditions, $y(t = 0) = 0$.
 
-.. note::
-
-   We'll use $\dot{y}$ as our notation for a time-derivative, $dy/dt$,
-   so we can write our system as:
-
-   .. math::
-
-      \dot{y} = f(y)
-
 To advance this system, we can use a finite difference approximation
 for the time-derivative:
 

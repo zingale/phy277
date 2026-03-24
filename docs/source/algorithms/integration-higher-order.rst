@@ -27,11 +27,15 @@ Then evaluating it at the 3 points we have:
 
 .. math::
 
-   \begin{align*}
-   f_0 &= c \\
-   f_1 &= a \Delta x^2 + b\Delta x + c \\
-   f_2 &= 4 a \Delta x^2 + 2 b \Delta x + c
-   \end{align*}
+   f_0 = c
+
+.. math::
+
+   f_1 = a \Delta x^2 + b\Delta x + c
+
+.. math::
+
+   f_2 = 4 a \Delta x^2 + 2 b \Delta x + c
 
 This can be solved analytically to get:
 
