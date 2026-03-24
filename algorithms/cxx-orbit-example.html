@@ -692,7 +692,7 @@ described above.</p>
 <span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">tmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w">      </span><span class="c1">// 1 AU</span>
 
 <span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">orbit_history</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">integrate</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">tmax</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">);</span>
@@ -706,8 +706,8 @@ described above.</p>
 <section id="running">
 <h2>Running<a class="headerlink" href="#running" title="Link to this heading">#</a></h2>
 <p>This is setup for Earth (the semi-major axis is 1 AU).  The main thing
-we control is the timestep.  Our default, <code class="docutils literal notranslate"><span class="pre">dt</span> <span class="pre">=</span> <span class="pre">0.1</span></code> corresponds to
-1/10th of a year.</p>
+we control is the timestep.  Our default, <code class="docutils literal notranslate"><span class="pre">dt</span> <span class="pre">=</span> <span class="pre">0.05</span></code> corresponds to
+1/20th of a year.</p>
 <p>From our method, we expect that the error will decrease by a factor of 2 each time
 we cut the timestep in half.</p>
 <p>The main question is—how small does our timestep need to be to get an
@@ -730,16 +730,17 @@ one another:</p>
 span.prompt2:before {
   content: "gnuplot> ";
 }
-</style><span class="prompt2">plot &#39;orbit.dat&#39; using 2:3 w l</span>
-<span class="prompt2">set size square</span>
-<span class="prompt2">replot</span>
+</style><span class="prompt2">set size ratio -1</span>
+<span class="prompt2">set xlabel &quot;x&quot;</span>
+<span class="prompt2">set ylabel &quot;y&quot;</span>
+<span class="prompt2">plot &#39;orbit.dat&#39; using 2:3 notitle w l</span>
 </pre></div></div><p>This will make something like:</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="../_images/orbit.png"><img alt="the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it only completes about 90% of the circumference and the radius drifts slightly outward in the orbit." src="../_images/orbit.png" style="width: 80%;" />
+<a class="reference internal image-reference" href="../_images/orbit.png"><img alt="the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it really moves far from the center as it orbits." src="../_images/orbit.png" style="width: 80%;" />
 </a>
 </figure>
 <p>You can save the plot as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">set term png</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">set term png enhanced</span>
 <span class="prompt2">set output &quot;orbit.png&quot;</span>
 <span class="prompt2">replot</span>
 </pre></div></div></section>
