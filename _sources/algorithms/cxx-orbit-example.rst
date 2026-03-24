@@ -134,6 +134,19 @@ described above.
    :language: c++
    :caption: ``orbit_example.cpp``
 
+Running
+=======
+
+This is setup for Earth (the semi-major axis is 1 AU).  The main thing
+we control is the timestep.  Our default, ``dt = 0.1`` corresponds to
+1/10th of a year.
+
+From our method, we expect that the error will decrease by a factor of 2 each time
+we cut the timestep in half.
+
+The main question is---how small does our timestep need to be to get an
+acceptable solution?
+
 Plotting
 ========
 
@@ -178,3 +191,17 @@ You can save the plot as:
    replot
 
 
+Error estimate
+==============
+
+We can estimate the error by computing the initial distance from the
+Sun and comparing to the final distance from the Sun.  The orbit is
+circular, so it should be constant.  Let's write an error function
+of the form:
+
+.. code:: c++
+
+   double error(const std::vector<OrbitState>& history)
+
+that computes this error, and the output the error at the end of
+integration.

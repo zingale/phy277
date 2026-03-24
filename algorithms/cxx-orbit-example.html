@@ -489,7 +489,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-method">Euler’s Method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running">Running</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-estimate">Error estimate</a></li>
 </ul>
             </nav>
         </div>
@@ -701,6 +703,16 @@ described above.</p>
 </div>
 </div>
 </section>
+<section id="running">
+<h2>Running<a class="headerlink" href="#running" title="Link to this heading">#</a></h2>
+<p>This is setup for Earth (the semi-major axis is 1 AU).  The main thing
+we control is the timestep.  Our default, <code class="docutils literal notranslate"><span class="pre">dt</span> <span class="pre">=</span> <span class="pre">0.1</span></code> corresponds to
+1/10th of a year.</p>
+<p>From our method, we expect that the error will decrease by a factor of 2 each time
+we cut the timestep in half.</p>
+<p>The main question is—how small does our timestep need to be to get an
+acceptable solution?</p>
+</section>
 <section id="plotting">
 <h2>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h2>
 <p>We can plot the solution using <code class="docutils literal notranslate"><span class="pre">gnuplot</span></code>.</p>
@@ -731,6 +743,18 @@ span.prompt2:before {
 <span class="prompt2">set output &quot;orbit.png&quot;</span>
 <span class="prompt2">replot</span>
 </pre></div></div></section>
+<section id="error-estimate">
+<h2>Error estimate<a class="headerlink" href="#error-estimate" title="Link to this heading">#</a></h2>
+<p>We can estimate the error by computing the initial distance from the
+Sun and comparing to the final distance from the Sun.  The orbit is
+circular, so it should be constant.  Let’s write an error function
+of the form:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">error</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">OrbitState</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">history</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>that computes this error, and the output the error at the end of
+integration.</p>
+</section>
 </section>
 
 
@@ -783,7 +807,9 @@ span.prompt2:before {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-method">Euler’s Method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running">Running</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-estimate">Error estimate</a></li>
 </ul>
   </nav></div>
 
