@@ -654,6 +654,15 @@ quickly allow us to explore different numbers of intervals:</p>
 </div>
 <p>We saw this in our <a class="reference internal" href="../cxx-basics/cxx-vectors-loops.html#sec-vector-list-initializer"><span class="std std-ref">List initializer</span></a> discussion.</p>
 </li>
+<li><p>In our heading that we output, via:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:^3} {:^10} {:^12}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">                         </span><span class="s">&quot;N&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;I&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;error&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>we are using the <code class="docutils literal notranslate"><span class="pre">^</span></code> format alignment character to center the
+names over the width of the columns we output.  This is described
+in the <a class="reference external" href="https://en.cppreference.com/w/cpp/utility/format/spec.html">standard format specification on cppreference.com</a>.</p>
+</li>
 </ul>
 <p>when run, we get:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">N</span>      <span class="n">I</span>         <span class="n">error</span>

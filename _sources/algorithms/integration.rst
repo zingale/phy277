@@ -104,6 +104,16 @@ Some notes:
 
   We saw this in our :ref:`sec:vector-list-initializer` discussion.
 
+* In our heading that we output, via:
+
+  .. code:: c++
+
+     std::cout << std::format("{:^3} {:^10} {:^12}\n",
+                              "N", "I", "error");
+
+  we are using the ``^`` format alignment character to center the
+  names over the width of the columns we output.  This is described
+  in the `standard format specification on cppreference.com <https://en.cppreference.com/w/cpp/utility/format/spec.html>`_.
 
 when run, we get:
 
