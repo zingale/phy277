@@ -21,7 +21,8 @@ To derive Simpson's rule, we would choose a parabola of the form:
 
 $$f(x) = a (x - x_0)^2 + b (x - x_0) + c$$
 
-and we fit it to 3 points: $(x_0, f_0)$, $(x_1, f_1)$, $(x_2, f_2)$
+and we fit it to 3 points: $(x_0, f_0)$, $(x_1, f_1)$, $(x_2, f_2)$, where we assume
+that these are equally spaced, $x_1 = x_0 + \Delta x$ and $x_2 = x_1 + \Delta x$.
 
 Then evaluating it at the 3 points we have:
 
@@ -45,7 +46,7 @@ This can be solved analytically to get:
       + \frac{-3 f_0 + 4 f_1 - f_2}{2 \Delta x} (x - x_0) + f_0
 
 and then we can integrate this from $[x_0, x_2]$ or equivalently
-$[x_0 + 2 \Delta x]$, giving:
+$[x_0, x_0 + 2 \Delta x]$, giving:
 
 $$\frac{\Delta{}x \left(f_{0} + 4 f_{1} + f_{2}\right)}{3}$$
 

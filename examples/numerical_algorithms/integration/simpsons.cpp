@@ -18,23 +18,31 @@ double I_analytic() {
 
 
 // trapezoid rule for numerical integration
-double trapezoid(double a, double b, int N,
-                 std::function<double(double)> func) {
+double simpsons(double a, double b, int N,
+                std::function<double(double)> func) {
 
-    // compute the width of an interval
+    // width of single interval
     double dx = (b - a) / static_cast<double>(N);
 
     double I{};
 
-    // loop over intervals
-    for (int n = 0; n < N; ++n) {
-        double xl = a + dx * n;
-        double xr = a + dx * (n+1);
+    // loop over pairs of intervals
+    for (int n = 0; n < N/2; ++n) {
 
+        double xl = a + dx * 2 * n;
         double fl = func(xl);
+
+        double xm = a + dx * (2 * n + 1);
+        double fm = func(xm);
+
+        double xr = a + dx * (2 * n + 2);
         double fr = func(xr);
 
-        I += 0.5 * dx * (fl + fr);
+        //std::cout << std::format("n = {}, xl = {}, xm = {}, xr = {}\n",
+        //                         n, xl, xm, xr);
+
+        I += dx * (fl + 4.0 * fm + fr) / 3.0;
+
     }
 
     return I;
@@ -53,8 +61,8 @@ int main() {
     std::cout << std::format("{:^3} {:^10} {:^12}\n",
                              "N", "I", "error");
 
-    for (auto N : {2, 4, 8, 16, 32, 64, 128}) {
-        auto I = trapezoid(a, b, N, f);
+    for (auto N : {2 , 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384}) {
+        auto I = simpsons(a, b, N, f);
         auto I_exact = I_analytic();
         double err = std::abs(I - I_exact);
 
@@ -62,4 +70,3 @@ int main() {
                                  N, I, err);
     }
 }
-
