@@ -17,6 +17,10 @@ Visually, this appears as:
    :align: center
    :width: 80%
 
+
+Derivation
+==========
+
 To derive Simpson's rule, we would choose a parabola of the form:
 
 $$f(x) = a (x - x_0)^2 + b (x - x_0) + c$$
@@ -63,3 +67,23 @@ Simpson's rule is 4th-order accurate.
    a single remaining interval by integrating the parabola over only
    a single interval.
 
+Implementation
+==============
+
+Here's an implementation of Simpson's rule, based on our ``trapezoid.cpp`` code:
+
+.. literalinclude:: ../../../examples/numerical_algorithms/integration/simpsons.cpp
+   :language: c++
+   :caption: ``simpsons.cpp``
+
+Notice:
+
+* The errors are much better than the trapezoid rule when comparing
+  the same number of intervals, $N$
+
+* The error drops by a factor of 16 when we double the number of
+  intervals---this is the $\mathcal{O}(\Delta x^4)$ convergence we
+  expect from the truncation error.
+
+* When we make the number of intervals really large, we eventually hit
+  roundoff error, and we cannot improve the answer any further.
