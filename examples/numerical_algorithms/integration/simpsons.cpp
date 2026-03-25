@@ -60,7 +60,7 @@ int main() {
     double a = 0.5;
     double b = 1.5;
 
-    std::cout << std::format("{:^3} {:^10} {:^12}\n",
+    std::cout << std::format("{:^6} {:^10} {:^12}\n",
                              "N", "I", "error");
 
     auto I_exact = I_analytic();
@@ -71,7 +71,7 @@ int main() {
         auto I = simpsons(a, b, N, f);
         double err = std::abs(I - I_exact);
 
-        std::cout << std::format("{:3} {:10.5f} {:12.5e}\n",
+        std::cout << std::format("{:6} {:10.5f} {:12.5e}\n",
                                  N, I, err);
     }
 }
