@@ -34,7 +34,7 @@ Homework #5
    .. note::
 
       I originally wrote "that can be added to one that gives a result
-      indistinguishable from $1$.  This will differ by a factor of 2 from
+      indistinguishable from $1$".  This will differ by a factor of 2 from
       the statement above.
 
       For this assignment, I am not worrying about a factor of 2.  We really
