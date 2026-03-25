@@ -23,6 +23,8 @@ use the ``auto`` keyword to have the compiler automatically deduce the
 data type.
 
 
+.. _sec:vector-list-initializer:
+
 List initializer
 ================
 

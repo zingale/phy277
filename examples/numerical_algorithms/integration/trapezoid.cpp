@@ -4,15 +4,20 @@
 #include <cmath>
 #include <format>
 
+
+// the integrand / function we are integrating
 double f(double x) {
     return 1.0 + 0.25 * x * std::sin(std::numbers::pi * x);
 }
 
 
+// the analytic integral of f(x) over our limits
 double I_analytic() {
     return 1.0 - 1.0 / (2.0 * std::pow(std::numbers::pi, 2.0));
 }
 
+
+// trapezoid rule for numerical integration
 double trapezoid(double a, double b, int N,
                  std::function<double(double)> func) {
 
