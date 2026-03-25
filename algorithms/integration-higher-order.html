@@ -505,7 +505,8 @@ time.</p>
 <p><div class="math notranslate nohighlight">
 \[f(x) = a (x - x_0)^2 + b (x - x_0) + c\]</div>
 </p>
-<p>and we fit it to 3 points: <span class="math notranslate nohighlight">\((x_0, f_0)\)</span>, <span class="math notranslate nohighlight">\((x_1, f_1)\)</span>, <span class="math notranslate nohighlight">\((x_2, f_2)\)</span></p>
+<p>and we fit it to 3 points: <span class="math notranslate nohighlight">\((x_0, f_0)\)</span>, <span class="math notranslate nohighlight">\((x_1, f_1)\)</span>, <span class="math notranslate nohighlight">\((x_2, f_2)\)</span>, where we assume
+that these are equally spaced, <span class="math notranslate nohighlight">\(x_1 = x_0 + \Delta x\)</span> and <span class="math notranslate nohighlight">\(x_2 = x_1 + \Delta x\)</span>.</p>
 <p>Then evaluating it at the 3 points we have:</p>
 <div class="math notranslate nohighlight">
 \[f_0 = c\]</div>
@@ -518,7 +519,7 @@ time.</p>
 \[f(x) = \frac{f_0 - 2 f_1 + f_2}{2 \Delta x^2} (x - x_0)^2
    + \frac{-3 f_0 + 4 f_1 - f_2}{2 \Delta x} (x - x_0) + f_0\]</div>
 <p>and then we can integrate this from <span class="math notranslate nohighlight">\([x_0, x_2]\)</span> or equivalently
-<span class="math notranslate nohighlight">\([x_0 + 2 \Delta x]\)</span>, giving:</p>
+<span class="math notranslate nohighlight">\([x_0, x_0 + 2 \Delta x]\)</span>, giving:</p>
 <p><div class="math notranslate nohighlight">
 \[\frac{\Delta{}x \left(f_{0} + 4 f_{1} + f_{2}\right)}{3}\]</div>
 </p>
