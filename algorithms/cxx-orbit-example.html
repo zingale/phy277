@@ -739,6 +739,13 @@ span.prompt2:before {
 <a class="reference internal image-reference" href="../_images/orbit.png"><img alt="the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it really moves far from the center as it orbits." src="../_images/orbit.png" style="width: 80%;" />
 </a>
 </figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We used a new gnuplot command here:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">set size ratio -1</span>
+</pre></div></div><p>This ensures that the aspect ratio of the coordinates is preserved
+(so a circle will appear as a circle in our plot).</p>
+</div>
 <p>You can save the plot as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">set term png enhanced</span>
 <span class="prompt2">set output &quot;orbit.png&quot;</span>
