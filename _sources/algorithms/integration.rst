@@ -82,6 +82,29 @@ Here's an implementation that tries several different values of $N$:
    :language: c++
    :caption: ``trapezoid.cpp``
 
+Some notes:
+
+* We use ``std::function`` to have our ``trapezoid`` function take the function
+  we are integrating:
+
+  .. code:: c++
+
+     double trapezoid(double a, double b, int N,
+                      std::function<double(double)> func)
+
+  This makes our function reusable for any integrand we want.
+  We saw this in :ref:`sec:funcs-as-args`.
+
+* We are using a ranged-for loop over an initialization list to
+  quickly allow us to explore different numbers of intervals:
+
+  .. code:: c++
+
+     for (auto N : {2, 4, 8, 16, 32, 64, 128})
+
+  We saw this in our :ref:`sec:vector-list-initializer` discussion.
+
+
 when run, we get:
 
 ::
