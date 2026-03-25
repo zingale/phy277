@@ -29,7 +29,16 @@ Homework #5
 1. *Computing $\epsilon$* :
 
    When we discussed :ref:`sec:floating_point`, we learned about $\epsilon$, the smallest
-   number that can be added to one that gives a result indistinguishable from $1$.
+   number that can be added to one that gives a result distinct from $1$.
+
+   .. note::
+
+      I originally wrote "that can be added to one that gives a result
+      indistinguishable from $1$.  This will differ by a factor of 2 from
+      the statement above.
+
+      For this assignment, I am not worrying about a factor of 2.  We really
+      want to understand the order-of-magnitude.
 
    Let's estimate that now.  We will write a program that starts with
    a large guess for $\epsilon$ and then, using a loop, continually

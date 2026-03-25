@@ -512,7 +512,15 @@ of this assignment.</p>
 <ol class="arabic">
 <li><p><em>Computing <span class="math notranslate nohighlight">\(\epsilon\)</span></em> :</p>
 <p>When we discussed <a class="reference internal" href="../cxx-basics/floating-point.html#sec-floating-point"><span class="std std-ref">Floating Point</span></a>, we learned about <span class="math notranslate nohighlight">\(\epsilon\)</span>, the smallest
-number that can be added to one that gives a result indistinguishable from <span class="math notranslate nohighlight">\(1\)</span>.</p>
+number that can be added to one that gives a result distinct from <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I originally wrote “that can be added to one that gives a result
+indistinguishable from <span class="math notranslate nohighlight">\(1\)</span>.  This will differ by a factor of 2 from
+the statement above.</p>
+<p>For this assignment, I am not worrying about a factor of 2.  We really
+want to understand the order-of-magnitude.</p>
+</div>
 <p>Let’s estimate that now.  We will write a program that starts with
 a large guess for <span class="math notranslate nohighlight">\(\epsilon\)</span> and then, using a loop, continually
 cuts it until roundoff makes <span class="math notranslate nohighlight">\(1 + \epsilon\)</span> indistinguishable from
