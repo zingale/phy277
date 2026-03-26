@@ -8,7 +8,7 @@ Let's consider an example of integrating the orbit of Earth around the
 Sun (we'll consider the mass of the Earth to be tiny compared to the
 Sun so we can neglect the Sun's motion around the center of mass).
 
-Kepler's third law tells us:
+`Kepler's third law <https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion>`_ tells us:
 
 .. math::
 
@@ -39,6 +39,13 @@ This means that we have 4 equations overall to advance.
 .. note::
 
    We use $\dot{y}$ as our notation for a time-derivative, $dy/dt$,
+
+.. important::
+
+   This is 4 first-order ordinary differential equations, so we need 4
+   initial conditions.
+
+We want to evolve the orbit of Earth around the Sun using these ODEs.
 
 Euler's Method
 ==============
@@ -91,14 +98,16 @@ This corresponds to the "array-of-structs" storage scheme we discussed in our :r
 
 To make our code flexible, we'll write the following functions:
 
-* A righthand side function, with the forward declaration:
+* A righthand side function, that takes an ``OrbitState`` and returns
+  an ``OrbitState``:
 
   .. code:: c++
 
      OrbitState rhs(const OrbitState& state);
 
-  we can evaluate this as needed by passing in an ``OrbitState`` and
-  returning the derivative of that state with respect to time.
+  We can compute all of the ODE righthand sides from the input state
+  and then return the derivatives using an ``OrbitState`` (there, each
+  component will actually be the derivative in time).
 
   As we've seen a few times now, we pass this in as a ``const`` reference
   for performance.  The ``const`` ensures that it is read-only.
@@ -123,29 +132,57 @@ To make our code flexible, we'll write the following functions:
   storing the solution in our history vector each step.  At the end of
   integration it will return the history.
 
+  An important parameter here is ``dt``---the size of our timestep.  We'll
+  see that it has a large influence on the quality of our solution.
 
 Implementation
 ==============
 
-Implement the solver by filling in the details of the functions
-described above.
+Here's our implementation:
 
 .. literalinclude:: ../../../examples/numerical_algorithms/ODEs/orbit_example.cpp
    :language: c++
    :caption: ``orbit_example.cpp``
 
+Some notes:
+
+* We make ``GM`` a ``const``, since it should not change.
+
+* In our ``integrate`` function, we create an ``OrbitState`` named ``state``.
+  This will hold the current state at the start of each step / loop iteration,
+  and be advanced to the new time at the end of the loop iteration.
+
+  Note that when we do:
+
+  .. code:: c++
+
+     orbit_history.push_back(state);
+
+  We are making a copy of ``state`` and storing it in our ``orbit_history`` vector.
+
+* We have a check to ensure that the last step does not take us past
+  the maximum time we want to evolve for:
+
+  .. code:: c++
+
+     if (state.t + dt > tmax) {
+         dt = tmax - state.t;
+     }
+
 Running
 =======
 
-This is setup for Earth (the semi-major axis is 1 AU).  The main thing
-we control is the timestep.  Our default, ``dt = 0.05`` corresponds to
-1/20th of a year.
+This is setup for Earth (the semi-major axis is 1 AU), and to
+integrate for 1 year.  After this time, the Earth should be right back
+where it started.  Any difference in the final position from the initial
+position is integration error.
 
 From our method, we expect that the error will decrease by a factor of 2 each time
 we cut the timestep in half.
 
-The main question is---how small does our timestep need to be to get an
-acceptable solution?
+We control is the timestep.  Our default, ``dt = 0.05`` corresponds to
+1/20th of a year.  The main question is---how small does our timestep
+need to be to get an acceptable solution?
 
 Plotting
 ========

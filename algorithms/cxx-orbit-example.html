@@ -509,7 +509,7 @@
 <p>Let’s consider an example of integrating the orbit of Earth around the
 Sun (we’ll consider the mass of the Earth to be tiny compared to the
 Sun so we can neglect the Sun’s motion around the center of mass).</p>
-<p>Kepler’s third law tells us:</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion">Kepler’s third law</a> tells us:</p>
 <div class="math notranslate nohighlight">
 \[4\pi^2 a^3 = G M_\star P^2\]</div>
 <p>where <span class="math notranslate nohighlight">\(a\)</span> is the semi-major axis and <span class="math notranslate nohighlight">\(P\)</span> is the period of the orbit.  If we work in
@@ -528,6 +528,12 @@ This means that we have 4 equations overall to advance.</p>
 <p class="admonition-title">Note</p>
 <p>We use <span class="math notranslate nohighlight">\(\dot{y}\)</span> as our notation for a time-derivative, <span class="math notranslate nohighlight">\(dy/dt\)</span>,</p>
 </div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This is 4 first-order ordinary differential equations, so we need 4
+initial conditions.</p>
+</div>
+<p>We want to evolve the orbit of Earth around the Sun using these ODEs.</p>
 <section id="euler-s-method">
 <h2>Euler’s Method<a class="headerlink" href="#euler-s-method" title="Link to this heading">#</a></h2>
 <p>Using Euler’s method, as we just learned, the solution begins with a
@@ -561,12 +567,14 @@ first-order accurate difference approximation to the derivative:</p>
 <p>This corresponds to the “array-of-structs” storage scheme we discussed in our <a class="reference internal" href="../cxx-basics/cxx-vector-of-struct.html#sec-vec-of-struct"><span class="std std-ref">Vector of Structs</span></a> section.</p>
 <p>To make our code flexible, we’ll write the following functions:</p>
 <ul>
-<li><p>A righthand side function, with the forward declaration:</p>
+<li><p>A righthand side function, that takes an <code class="docutils literal notranslate"><span class="pre">OrbitState</span></code> and returns
+an <code class="docutils literal notranslate"><span class="pre">OrbitState</span></code>:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">OrbitState</span><span class="w"> </span><span class="nf">rhs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">OrbitState</span><span class="o">&amp;</span><span class="w"> </span><span class="n">state</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>we can evaluate this as needed by passing in an <code class="docutils literal notranslate"><span class="pre">OrbitState</span></code> and
-returning the derivative of that state with respect to time.</p>
+<p>We can compute all of the ODE righthand sides from the input state
+and then return the derivatives using an <code class="docutils literal notranslate"><span class="pre">OrbitState</span></code> (there, each
+component will actually be the derivative in time).</p>
 <p>As we’ve seen a few times now, we pass this in as a <code class="docutils literal notranslate"><span class="pre">const</span></code> reference
 for performance.  The <code class="docutils literal notranslate"><span class="pre">const</span></code> ensures that it is read-only.</p>
 </li>
@@ -585,13 +593,14 @@ we’ll see soon).</p>
 <p>This manages the time-stepping, implementing Euler’s method and
 storing the solution in our history vector each step.  At the end of
 integration it will return the history.</p>
+<p>An important parameter here is <code class="docutils literal notranslate"><span class="pre">dt</span></code>—the size of our timestep.  We’ll
+see that it has a large influence on the quality of our solution.</p>
 </li>
 </ul>
 </section>
 <section id="id1">
 <h2>Implementation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>Implement the solver by filling in the details of the functions
-described above.</p>
+<p>Here’s our implementation:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-number">Listing 71 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">orbit_example.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -703,16 +712,39 @@ described above.</p>
 </pre></div>
 </div>
 </div>
+<p>Some notes:</p>
+<ul>
+<li><p>We make <code class="docutils literal notranslate"><span class="pre">GM</span></code> a <code class="docutils literal notranslate"><span class="pre">const</span></code>, since it should not change.</p></li>
+<li><p>In our <code class="docutils literal notranslate"><span class="pre">integrate</span></code> function, we create an <code class="docutils literal notranslate"><span class="pre">OrbitState</span></code> named <code class="docutils literal notranslate"><span class="pre">state</span></code>.
+This will hold the current state at the start of each step / loop iteration,
+and be advanced to the new time at the end of the loop iteration.</p>
+<p>Note that when we do:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">orbit_history</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>We are making a copy of <code class="docutils literal notranslate"><span class="pre">state</span></code> and storing it in our <code class="docutils literal notranslate"><span class="pre">orbit_history</span></code> vector.</p>
+</li>
+<li><p>We have a check to ensure that the last step does not take us past
+the maximum time we want to evolve for:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">t</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">tmax</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmax</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">t</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
 </section>
 <section id="running">
 <h2>Running<a class="headerlink" href="#running" title="Link to this heading">#</a></h2>
-<p>This is setup for Earth (the semi-major axis is 1 AU).  The main thing
-we control is the timestep.  Our default, <code class="docutils literal notranslate"><span class="pre">dt</span> <span class="pre">=</span> <span class="pre">0.05</span></code> corresponds to
-1/20th of a year.</p>
+<p>This is setup for Earth (the semi-major axis is 1 AU), and to
+integrate for 1 year.  After this time, the Earth should be right back
+where it started.  Any difference in the final position from the initial
+position is integration error.</p>
 <p>From our method, we expect that the error will decrease by a factor of 2 each time
 we cut the timestep in half.</p>
-<p>The main question is—how small does our timestep need to be to get an
-acceptable solution?</p>
+<p>We control is the timestep.  Our default, <code class="docutils literal notranslate"><span class="pre">dt</span> <span class="pre">=</span> <span class="pre">0.05</span></code> corresponds to
+1/20th of a year.  The main question is—how small does our timestep
+need to be to get an acceptable solution?</p>
 </section>
 <section id="plotting">
 <h2>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h2>
