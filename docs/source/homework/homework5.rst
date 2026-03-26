@@ -68,6 +68,13 @@ Homework #5
       $1 + \epsilon = 1$.  You may instead be interested in the last value
       that passed the loop conditions, which is twice this.
 
+   This gives:
+
+   ::
+
+       epsilon ~ 1.11022e-16
+
+
 2. *Projectile motion* : We'll write a simple code that does projectile motion.
 
    If we assume that our projectile starts at a position $(x, y) = (0, 0)$,
