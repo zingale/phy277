@@ -74,11 +74,13 @@ Homework #7
       v_0 &= V \sin(\theta)
 
    and we want to integrate until the ball hits the ground,
-   $y(t_\mathrm{max}) = 0$.
+   :math:`y(t_\mathrm{max}) = 0`.
 
    Your task: solve this system using our 2nd-order Runge-Kutta method.
 
-   You should structure your program the same way we did for our :ref:`sec:rk2-orbit` code in class.  The main differences will be to the righthand side function and the stopping criterion.
+   You should structure your program the same way we did for our
+   :ref:`sec:rk2-orbit` code in class.  The main differences will be
+   to the righthand side function and the stopping criterion.
 
    Run the case with and without drag (you can set $C = 0$ for no
    drag), and plot the results together on the same plot.
