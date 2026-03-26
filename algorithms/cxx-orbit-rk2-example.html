@@ -676,6 +676,8 @@ the state based on the derivatives, like:</p>
 <span class="w">    </span><span class="c1">// integration loop</span>
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">t</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tmax</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
+<span class="w">        </span><span class="c1">// if the final dt step takes us past our stopping time</span>
+<span class="w">        </span><span class="c1">// (tmax), cut the timestep</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">t</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">tmax</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmax</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">t</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
