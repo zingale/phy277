@@ -73,15 +73,15 @@ Homework #7
       u_0 &= V \cos(\theta) \\
       v_0 &= V \sin(\theta)
 
-   and we want to integrate until the ball hits the ground, $y(t_\mathrm{max}) = 0$.
+   and we want to integrate until the ball hits the ground,
+   $y(t_\mathrm{max}) = 0$.
 
    Your task: solve this system using our 2nd-order Runge-Kutta method.
 
-   * Use a separate C++ function to give the righthand side of our ODE system.
+   You should structure your program the same way we did for our :ref:`sec:rk2-orbit` code in class.  The main differences will be to the righthand side function and the stopping criterion.
 
-   * Use a fixed timestep $dt$, and integrate until your solution gets to $y \le 0$.
+   Run the case with and without drag (you can set $C = 0$ for no
+   drag), and plot the results together on the same plot.
 
-   * Run the case with and without drag (you can set $C = 0$ for no drag), and plot the
-     results together on the same plot.
 
 
