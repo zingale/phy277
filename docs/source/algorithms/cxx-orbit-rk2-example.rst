@@ -73,7 +73,8 @@ the state based on the derivatives, like:
 
 .. code:: c++
 
-   OrbitState update_state(const OrbitState& state, const double dt, const OrbitState& state_derivs);
+   OrbitState update_state(const OrbitState& state, const double dt,
+                           const OrbitState& state_derivs);
 
 This way we can easily do the update both times as needed via a simple function call.
 
@@ -92,10 +93,31 @@ This way we can easily do the update both times as needed via a simple function 
       auto state_new = state + dt * state_derivs;
 
 
-Here's a solution:
+Implementation
+==============
 
-.. dropdown:: solution
+Our implementation looks largely the same as the first-order method:
 
-   .. literalinclude:: ../../../examples/numerical_algorithms/ODEs/orbit_rk2_example.cpp
-      :language: c++
-      :caption: ``orbit_rk2_example.cpp``
+.. literalinclude:: ../../../examples/numerical_algorithms/ODEs/orbit_rk2_example.cpp
+   :language: c++
+   :caption: ``orbit_rk2_example.cpp``
+
+The main difference is that we compute an intermediate solution at the half-time:
+
+.. code:: c++
+
+   // get the derivatives at the midpoint in time
+   auto state_star = update_state(state, 0.5 * dt, state_derivs);
+   state_derivs = rhs(state_star);
+
+This makes the final update time-centered, and gives us second-order accuracy.
+
+Convergence
+===========
+
+We should converge as second order.
+
+.. admonition:: try it...
+
+   Add our error estimate into the code and compute the orbit for
+   different values of ``dt`` and see how it converges.
