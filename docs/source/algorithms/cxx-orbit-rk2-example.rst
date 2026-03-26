@@ -1,5 +1,5 @@
 ***************************
-2nd Order Runge-Kutta Orbit
+2nd-order Runge-Kutta Orbit
 ***************************
 
 The main utility of functions is that we can reuse them in a code.
