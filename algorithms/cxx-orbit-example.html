@@ -557,7 +557,7 @@ first-order accurate difference approximation to the derivative:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">OrbitState</span><span class="o">&gt;</span><span class="w"> </span><span class="n">orbit_history</span><span class="p">{};</span>
 </pre></div>
 </div>
-<p>This corresponds to the “array-of-structs” storage scheme we discussed earlier.</p>
+<p>This corresponds to the “array-of-structs” storage scheme we discussed in our <a class="reference internal" href="../cxx-basics/cxx-vector-of-struct.html#sec-vec-of-struct"><span class="std std-ref">Vector of Structs</span></a> section.</p>
 <p>To make our code flexible, we’ll write the following functions:</p>
 <ul>
 <li><p>A righthand side function, with the forward declaration:</p>
@@ -750,18 +750,30 @@ span.prompt2:before {
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">set term png enhanced</span>
 <span class="prompt2">set output &quot;orbit.png&quot;</span>
 <span class="prompt2">replot</span>
-</pre></div></div></section>
+</pre></div></div><p>Look how bad this is!!!</p>
+<p>We should have a nice circular orbit, but it goes way off a circle and
+out to much greater distances in the solar system.</p>
+<p>The problem here is that our timestep is too large—truncation
+error is dominating.</p>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">try it…</p>
+<p>Let’s see how the solution behaves as we cut the timestep.</p>
+</div>
+</section>
 <section id="error-estimate">
 <h2>Error estimate<a class="headerlink" href="#error-estimate" title="Link to this heading">#</a></h2>
 <p>We can estimate the error by computing the initial distance from the
 Sun and comparing to the final distance from the Sun.  The orbit is
-circular, so it should be constant.  Let’s write an error function
-of the form:</p>
+circular, so it should be constant.</p>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">try it…</p>
+<p>Let’s write an error function of the form:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">error</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">OrbitState</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">history</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>that computes this error, and the output the error at the end of
-integration.</p>
+integration for a variety of timestep sizes.</p>
+</div>
 </section>
 </section>
 

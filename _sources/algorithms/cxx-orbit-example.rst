@@ -86,7 +86,7 @@ and we'll save the solution at each step in a vector:
 
    std::vector<OrbitState> orbit_history{};
 
-This corresponds to the "array-of-structs" storage scheme we discussed earlier.
+This corresponds to the "array-of-structs" storage scheme we discussed in our :ref:`sec:vec-of-struct` section.
 
 
 To make our code flexible, we'll write the following functions:
@@ -204,17 +204,34 @@ You can save the plot as:
    replot
 
 
+Look how bad this is!!!
+
+We should have a nice circular orbit, but it goes way off a circle and
+out to much greater distances in the solar system.
+
+The problem here is that our timestep is too large---truncation
+error is dominating.
+
+.. admonition:: try it...
+
+   Let's see how the solution behaves as we cut the timestep.
+
 Error estimate
 ==============
 
 We can estimate the error by computing the initial distance from the
 Sun and comparing to the final distance from the Sun.  The orbit is
-circular, so it should be constant.  Let's write an error function
-of the form:
+circular, so it should be constant.
 
-.. code:: c++
 
-   double error(const std::vector<OrbitState>& history)
+.. admonition:: try it...
 
-that computes this error, and the output the error at the end of
-integration.
+   Let's write an error function of the form:
+
+   .. code:: c++
+
+      double error(const std::vector<OrbitState>& history)
+
+   that computes this error, and the output the error at the end of
+   integration for a variety of timestep sizes.
+
