@@ -53,9 +53,10 @@ int main() {
     std::cout << std::format("{:^3} {:^10} {:^12}\n",
                              "N", "I", "error");
 
+    auto I_exact = I_analytic();
+
     for (auto N : {2, 4, 8, 16, 32, 64, 128}) {
         auto I = trapezoid(a, b, N, f);
-        auto I_exact = I_analytic();
         double err = std::abs(I - I_exact);
 
         std::cout << std::format("{:3} {:10.5f} {:12.5e}\n",
