@@ -537,7 +537,32 @@ cuts it until roundoff makes <span class="math notranslate nohighlight">\(1 + \e
 </ul>
 <p>You loop should continue until the test fails.  At that point, <span class="math notranslate nohighlight">\(\epsilon\)</span>
 should be close to the actual value.</p>
-</li>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 111 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">epsilon.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">epsilon</span><span class="p">{</span><span class="mf">1.0</span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mf">1.0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">epsilon</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">epsilon</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;epsilon ~ &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">epsilon</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p class="sd-card-text">Note that the value printed out here is the first value for which
+<span class="math notranslate nohighlight">\(1 + \epsilon = 1\)</span>.  You may instead be interested in the last value
+that passed the loop conditions, which is twice this.</p>
+</div>
+</details></li>
 <li><p><em>Projectile motion</em> : We’ll write a simple code that does projectile motion.</p>
 <p>If we assume that our projectile starts at a position <span class="math notranslate nohighlight">\((x, y) = (0, 0)\)</span>,
 and is launched with a velocity <span class="math notranslate nohighlight">\(v\)</span> at an angle <span class="math notranslate nohighlight">\(\theta\)</span> from the horizontal,
@@ -579,7 +604,126 @@ and <span class="math notranslate nohighlight">\(y\)</span>.  Use <code class="d
 in columns.</p></li>
 </ul>
 <p>Later we’ll see how to plot this output.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 112 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">projectile.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numbers&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Projectile</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">t</span><span class="p">{};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">{};</span>
+<span class="p">};</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Projectile</span><span class="o">&gt;</span><span class="w"> </span><span class="n">trajectory</span><span class="p">{};</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">angle</span><span class="p">{};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">vmag</span><span class="p">{};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="p">{};</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;# Enter angle (degrees), velocity (m/s), and time interval (s): &quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">vmag</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// convert angle to radians</span>
+<span class="w">    </span><span class="n">angle</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">180.0</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// initial conditions</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">t</span><span class="p">{};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x0</span><span class="p">{};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">y0</span><span class="p">{};</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">-9.81</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">trajectory</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">Projectile</span><span class="p">{.</span><span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">x</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">y</span><span class="o">=</span><span class="n">y0</span><span class="p">});</span>
+
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">trajectory</span><span class="p">[</span><span class="n">trajectory</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="mi">-1</span><span class="p">].</span><span class="n">y</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">t</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">xnew</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vmag</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">ynew</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vmag</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">pow</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">trajectory</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">Projectile</span><span class="p">{.</span><span class="n">t</span><span class="o">=</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">x</span><span class="o">=</span><span class="n">xnew</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">y</span><span class="o">=</span><span class="n">ynew</span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">trajectory</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:7.4f} {:8.5f} {:8.5f}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">                                 </span><span class="n">e</span><span class="p">.</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p class="sd-card-text">Some comments on the code:</p>
+<ul>
+<li><p class="sd-card-text">We read in all 3 inputs with a single line:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">vmag</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+</pre></div>
+</div>
+<p class="sd-card-text">alternately, we could do:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">angle</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">vmag</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+</pre></div>
+</div>
 </li>
+<li><p class="sd-card-text">We access the last element of our vector in
+our <code class="docutils literal notranslate"><span class="pre">while</span></code> loop:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">trajectory</span><span class="p">[</span><span class="n">trajectory</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="mi">-1</span><span class="p">].</span><span class="n">y</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Each iteration through the loop, this will be reevaluated
+and <code class="docutils literal notranslate"><span class="pre">trajectory[trajectory.size()-1]</span></code> will always be
+the last <code class="docutils literal notranslate"><span class="pre">Projectile</span></code> object added to our vector.</p>
+</li>
+</ul>
+<p class="sd-card-text">We can plot this by doing using gnuplot.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p class="sd-card-text">When outputting the header, I started with a <code class="docutils literal notranslate"><span class="pre">#</span></code>—gnuplot
+will ignore this line (it treats anything starting with <code class="docutils literal notranslate"><span class="pre">#</span></code>
+as a comment.</p>
+</div>
+<p class="sd-card-text">If we want to redirect the output to a file, we need to
+have a way to send in the input that <code class="docutils literal notranslate"><span class="pre">cin</span></code> will read.
+We can do this as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">0</span>.1<span class="w"> </span><span class="p">|</span><span class="w"> </span>./projectile<span class="w"> </span>&gt;<span class="w"> </span>out</span>
+</pre></div></div><p class="sd-card-text">This will set the angle to 45 degrees, the velocity to 10 m/s,
+and the timestep to 0.1 s.</p>
+<p class="sd-card-text">Here’s a gnuplot script that will plot the output:</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 113 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">projectile.gp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-gnuplot notranslate"><div class="highlight"><pre><span></span><span class="k">set</span><span class="w"> </span><span class="nb">term</span><span class="w"> </span><span class="n">png</span><span class="w"> </span><span class="n">enhanced</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">output</span><span class="w"> </span><span class="s">&quot;projectile.png&quot;</span>
+
+<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">&quot;x&quot;</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">&quot;y&quot;</span>
+
+<span class="k">set</span><span class="w"> </span><span class="nb">grid</span>
+
+<span class="k">plot</span><span class="w"> </span><span class="s">&quot;out&quot;</span><span class="w"> </span><span class="nb">using</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="mi">3</span><span class="w"> </span><span class="nb">notitle</span>
+</pre></div>
+</div>
+</div>
+<p class="sd-card-text">and the resulting plot:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/projectile.png"><img alt="a plot of y vs. x for our projectile." src="../_images/projectile.png" style="width: 80%;" />
+</a>
+</figure>
+</div>
+</details></li>
 </ol>
 </section>
 

@@ -58,6 +58,16 @@ Homework #5
    You loop should continue until the test fails.  At that point, $\epsilon$
    should be close to the actual value.
 
+   .. dropdown:: solution
+
+      .. literalinclude:: hw5_p1_epsilon.cpp
+         :language: c++
+         :caption: ``epsilon.cpp``
+
+      Note that the value printed out here is the first value for which
+      $1 + \epsilon = 1$.  You may instead be interested in the last value
+      that passed the loop conditions, which is twice this.
+
 2. *Projectile motion* : We'll write a simple code that does projectile motion.
 
    If we assume that our projectile starts at a position $(x, y) = (0, 0)$,
@@ -102,4 +112,69 @@ Homework #5
      in columns.
 
    Later we'll see how to plot this output.
+
+   .. dropdown:: solution
+
+      .. literalinclude:: hw5_p2_projectile.cpp
+         :language: c++
+         :caption: ``projectile.cpp``
+
+      Some comments on the code:
+
+      * We read in all 3 inputs with a single line:
+
+        .. code:: c++
+
+           std::cin >> angle >> vmag >> dt;
+
+        alternately, we could do:
+
+        .. code:: c++
+
+           std::cin >> angle;
+           std::cin >> vmag;
+           std::cin >> dt;
+
+      * We access the last element of our vector in
+        our ``while`` loop:
+
+        .. code:: c++
+
+           while (trajectory[trajectory.size()-1].y >= 0.0)
+
+        Each iteration through the loop, this will be reevaluated
+        and ``trajectory[trajectory.size()-1]`` will always be
+        the last ``Projectile`` object added to our vector.
+
+      We can plot this by doing using gnuplot.
+
+      .. tip::
+
+         When outputting the header, I started with a ``#``---gnuplot
+         will ignore this line (it treats anything starting with ``#``
+         as a comment.
+
+      If we want to redirect the output to a file, we need to
+      have a way to send in the input that ``cin`` will read.
+      We can do this as:
+
+      .. prompt:: bash
+
+         echo 45 10 0.1 | ./projectile > out
+
+      This will set the angle to 45 degrees, the velocity to 10 m/s,
+      and the timestep to 0.1 s.
+
+      Here's a gnuplot script that will plot the output:
+
+      .. literalinclude:: projectile.gp
+         :language: gnuplot
+         :caption: ``projectile.gp``
+
+      and the resulting plot:
+
+      .. figure:: projectile.png
+         :width: 80%
+         :align: center
+         :alt: a plot of y vs. x for our projectile.
 
