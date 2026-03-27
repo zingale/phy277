@@ -112,12 +112,53 @@ The main difference is that we compute an intermediate solution at the half-time
 
 This makes the final update time-centered, and gives us second-order accuracy.
 
-Convergence
-===========
+Error estimate
+==============
 
-We should converge as second order.
+We can estimate the error by computing the initial distance from the
+Sun and comparing to the final distance from the Sun.  The orbit is
+circular, so it should be constant.
+
 
 .. admonition:: try it...
 
-   Add our error estimate into the code and compute the orbit for
-   different values of ``dt`` and see how it converges.
+   Let's write an error function of the form:
+
+   .. code:: c++
+
+      double error(const std::vector<OrbitState>& history)
+
+   that computes this error, and the output the error at the end of
+   integration for a variety of timestep sizes.
+
+   .. dropdown:: solution
+
+      Here's a version of the code with the error function and a loop in the ``main``
+      function that explores different timestep sizes.
+
+      .. literalinclude:: ../../../examples/numerical_algorithms/ODEs/orbit_rk2_error.cpp
+         :language: c++
+         :caption: ``orbit_rk2_error.cpp``
+
+
+      When this is run, we get:
+
+      ::
+
+          0.10000    0.0116001
+          0.05000    0.0111227
+          0.02500   0.00247085
+          0.01250  0.000360686
+          0.00625  4.69261e-05
+
+      For very coarse ``dt``, we have a large error, but once ``dt`` is below ``0.05``,
+      we see that the solution is converging 2nd-order or better.
+
+      .. note::
+
+         Comparing the starting and ending radius is just one error
+         measure.  We could also consider the distance between the
+         initial and final positions or the total energy of the
+         system.  Each of these should converge 2nd order once the
+         timestep is small enough.
+
