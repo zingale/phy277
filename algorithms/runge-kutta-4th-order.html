@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Vectors &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>4th-order Runge-Kutta &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -50,11 +50,13 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/cxx-vectors';</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'algorithms/runge-kutta-4th-order';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="More vector functions" href="cxx-vector-push.html" />
-    <link rel="prev" title="Reading Input" href="cxx-reading.html" />
+    <link rel="next" title="Root Finding" href="roots.html" />
+    <link rel="prev" title="2nd-order Runge-Kutta Orbit" href="cxx-orbit-rk2-example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -191,16 +193,16 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basic Datatypes</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-operators.html">Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-mixing-types.html">Mixing types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-sizes-limits.html">Datatype Sizes and Limits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="floating-point.html">Floating Point</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmath.html">Numerical Library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="function-preview.html">Preview of Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="minimizing-roundoff.html">Minimizing Roundoff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="floating-point-special-numbers.html">Special Floating Point Quantities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-mixing-types.html">Mixing types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-sizes-limits.html">Datatype Sizes and Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point.html">Floating Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cmath.html">Numerical Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/function-preview.html">Preview of Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/minimizing-roundoff.html">Minimizing Roundoff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point-special-numbers.html">Special Floating Point Quantities</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Review</span></p>
 <ul class="nav bd-sidenav">
@@ -209,35 +211,35 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings-escape.html">Escape Sequences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings-math.html">String Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-escape.html">Escape Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-math.html">String Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-indexing.html">Indexing Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-reading.html">Reading Input</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vectors-loops.html">Looping Over Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-examples.html">Examples of Using <code class="docutils literal notranslate"><span class="pre">vector</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-arrays.html">Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-of-struct.html">Vector of Structs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="memory-stack-heap.html">Memory: Stack vs. Heap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-references.html">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors.html">Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors-loops.html">Looping Over Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-examples.html">Examples of Using <code class="docutils literal notranslate"><span class="pre">vector</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-arrays.html">Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-structs.html">Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-of-struct.html">Vector of Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/memory-stack-heap.html">Memory: Stack vs. Heap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../interactive_review/review-vecs.html">Practice Problems</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-conditional-combine.html">And (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>) and Or (<code class="docutils literal notranslate"><span class="pre">||</span></code>)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-loops.html">Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="conditional-loop-examples.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> + Looping Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-conditional.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-conditional-combine.html">And (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>) and Or (<code class="docutils literal notranslate"><span class="pre">||</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-statements.html">Statement Blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/conditional-loop-examples.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> + Looping Examples</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
 <ul class="nav bd-sidenav">
@@ -248,23 +250,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../cxx-functions/function-practice.html">Function Practice</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/truncation.html">Derivatives and Truncation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/plotting.html">Plotting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/higher-order.html">Higher-order Approximations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/second-derivative.html">In-class: Second-Derivative</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/integration.html">Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/integration-higher-order.html">High-order Integration: Simpson’s Rule</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/odes.html">Ordinary Differential Equations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-example.html">Example: Planetary Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-rk2-example.html">2nd-order Runge-Kutta Orbit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/runge-kutta-4th-order.html">4th-order Runge-Kutta</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/roots.html">Root Finding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../algorithms/monte-carlo.html">Monte Carlo Methods</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="truncation.html">Derivatives and Truncation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="higher-order.html">Higher-order Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second-derivative.html">In-class: Second-Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration.html">Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integration-higher-order.html">High-order Integration: Simpson’s Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odes.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-example.html">Example: Planetary Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-orbit-rk2-example.html">2nd-order Runge-Kutta Orbit</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4th-order Runge-Kutta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roots.html">Root Finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monte-carlo.html">Monte Carlo Methods</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
 <ul class="nav bd-sidenav">
@@ -276,7 +278,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-pointers.html">Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vector-iterators.html">Vector Iterators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vectors-algorithms.html">Vector Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-strings-functions.html">Working with Strings</a></li>
@@ -284,7 +286,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-stdlib.html">SL Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-lambdas.html">Lambda Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-multid-arrays.html">Multidimensional Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">In-class Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -384,7 +386,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/cxx-vectors.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/algorithms/runge-kutta-4th-order.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -401,7 +403,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/cxx-vectors.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/algorithms/runge-kutta-4th-order.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -418,7 +420,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/cxx-vectors.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Falgorithms/runge-kutta-4th-order.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -463,9 +465,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -476,21 +476,11 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Vectors</h1>
+    <h1>4th-order Runge-Kutta</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-vector"><code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-vector">Creating a vector</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-vectors">Indexing vectors</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -500,80 +490,88 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="vectors">
-<h1>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h1>
-<div class="admonition-reading admonition">
-<p class="admonition-title">reading</p>
-<p><a class="reference external" href="https://cplusplus.com/reference/vector/vector/">std::vector at cpluscplus.com</a></p>
+  <section id="th-order-runge-kutta">
+<h1>4th-order Runge-Kutta<a class="headerlink" href="#th-order-runge-kutta" title="Link to this heading">#</a></h1>
+<p>One of the most widely-used methods for ODE integration is 4th-order
+Runge-Kutta (RK4).  This consists of 4 stages, each estimating the
+slope of the solution at a different time or with a different
+prediction of the state.  These are then combined in a final update to
+advance the solution.  The sequence is illustrated below:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Stage 1</label><div class="sd-tab-content docutils">
+<p>The advance begins by estimating the derivatives (righthand side or
+slope) at time <span class="math notranslate nohighlight">\(t^n\)</span>.  We’ll call this <span class="math notranslate nohighlight">\({\bf k}_1\)</span>.</p>
+<p><div class="math notranslate nohighlight">
+\[{\bf k}_1 = {\bf f}(t^n, {\bf y}^n)\]</div>
+</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/rk4_k1.png"><img alt="../_images/rk4_k1.png" src="../_images/rk4_k1.png" style="width: 90%;" />
+</a>
+</figure>
 </div>
-<p>C++ has the <a class="reference external" href="https://en.wikipedia.org/wiki/C%2B%2B_Standard_Library">standard library</a> (C++ SL)
-which adds an immense amount of functionality to the language.  Let’s
-look at <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>.  A <code class="docutils literal notranslate"><span class="pre">vector</span></code> is a container that can hold
-data of the same type (e.g., <code class="docutils literal notranslate"><span class="pre">double</span></code>).  It differs from an array
-that you might have used in other languages in that it is not a fixed
-size—it can grow as needed to hold more data.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>There are many other <a class="reference external" href="https://en.cppreference.com/w/cpp/container.html">types of containers in the C++ SL</a> that have
-different properties.  Vectors are one of the most useful.</p>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Stage 2</label><div class="sd-tab-content docutils">
+<p>We then follow the slope <span class="math notranslate nohighlight">\({\bf k}_1\)</span> to the midpoint in time,
+<span class="math notranslate nohighlight">\(t^{n+1/2}\)</span> and evaluate the slope there.  We call the new slope <span class="math notranslate nohighlight">\({\bf
+k}_2\)</span>.</p>
+<p><div class="math notranslate nohighlight">
+\[{\bf k}_2 = {\bf f}(t^n + \tau/2, {\bf y}^n + (\tau/2) {\bf k}_1)\]</div>
+</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/rk4_k2.png"><img alt="../_images/rk4_k2.png" src="../_images/rk4_k2.png" style="width: 90%;" />
+</a>
+</figure>
 </div>
-<section id="std-vector">
-<h2><code class="docutils literal notranslate"><span class="pre">std::vector</span></code><a class="headerlink" href="#std-vector" title="Link to this heading">#</a></h2>
-<p>Vectors are very useful to store data and loop over it, etc.
-Information on the properties of C++ vectors can be found at the
-<a class="reference external" href="https://www.cplusplus.com/reference/vector/vector/">CPlusPlus vector page</a>.
-From that description, we see that vectors:</p>
-<ul class="simple">
-<li><p>store the data contiguously in memory</p></li>
-<li><p>can grow as needed (but occasionally, this means creating a new
-vector of larger size and copying data into it—a slow operation)</p></li>
-<li><p>have a lot of functions that can work on them</p></li>
-<li><p>can access any location directly</p></li>
-<li><p>are very efficient at adding data to the end, but not efficient for
-inserting data in the middle</p></li>
-</ul>
-</section>
-<section id="creating-a-vector">
-<h2>Creating a vector<a class="headerlink" href="#creating-a-vector" title="Link to this heading">#</a></h2>
-<p>When we create a vector, we need to specify what type of data it holds.  E.g.,
-a vector that holds <code class="docutils literal notranslate"><span class="pre">double</span></code> precision numbers would be declared as:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
-</pre></div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Stage 3</label><div class="sd-tab-content docutils">
+<p>We then go back to the start, but this time follow the new slope,
+<span class="math notranslate nohighlight">\({\bf k}_2\)</span> to the midpoint in time, <span class="math notranslate nohighlight">\(t^{n+1/2}\)</span>.  We again evaluate
+the slope here, and call it <span class="math notranslate nohighlight">\({\bf k}_3\)</span>.</p>
+<p><div class="math notranslate nohighlight">
+\[{\bf k}_3 = {\bf f}(t^n + \tau/2, {\bf y}^n + (\tau/2) {\bf k}_2)\]</div>
+</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/rk4_k3.png"><img alt="../_images/rk4_k3.png" src="../_images/rk4_k3.png" style="width: 90%;" />
+</a>
+</figure>
 </div>
-<p>and a vector holding <code class="docutils literal notranslate"><span class="pre">int</span></code> would be declared as:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
-</pre></div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Stage 4</label><div class="sd-tab-content docutils">
+<p>Finally, we go back to the start and follow <span class="math notranslate nohighlight">\({\bf k}_3\)</span> for the full
+timestep, to <span class="math notranslate nohighlight">\(t^{n+1}\)</span> and evaluate the slope there, calling it <span class="math notranslate nohighlight">\({\bf
+k}_4\)</span>.</p>
+<p><div class="math notranslate nohighlight">
+\[{\bf k}_4 = {\bf f}(t^n + \tau, {\bf y}^n + \tau {\bf k}_3)\]</div>
+</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/rk4_k4.png"><img alt="../_images/rk4_k4.png" src="../_images/rk4_k4.png" style="width: 90%;" />
+</a>
+</figure>
 </div>
-<p>These vectors are empty.  We can specify the data at initialization or add it later.</p>
-<p>To initialize a vector with data, we can do:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p">};</span>
-</pre></div>
-</div>
-</section>
-<section id="indexing-vectors">
-<h2>Indexing vectors<a class="headerlink" href="#indexing-vectors" title="Link to this heading">#</a></h2>
-<p>Just like with strings, we can index a vector to access a single element.
-We use 0-based indexing.</p>
-<p>We can also access the first element using <code class="docutils literal notranslate"><span class="pre">.front()</span></code> and the last
-element using <code class="docutils literal notranslate"><span class="pre">.back()</span></code>.</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 30 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">vector_indexing.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">};</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Element 0 is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Last element is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">back</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="p">}</span>
-</pre></div>
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Final update</label><div class="sd-tab-content docutils">
+<p>We then get the updated solution using a linear combination of the 4
+slopes:</p>
+<p><div class="math notranslate nohighlight">
+\[{\bf y}^{n+1} = {\bf y}^n + \frac{\tau}{6} ({\bf k}_1 + 2 {\bf k}_2 + 2 {\bf k}_3 + {\bf k}_4)\]</div>
+</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/rk4_final.png"><img alt="../_images/rk4_final.png" src="../_images/rk4_final.png" style="width: 90%;" />
+</a>
+</figure>
+<p>Note the similarity of RK4 to Simpson’s rule for integration.</p>
 </div>
 </div>
-</section>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">try it…</p>
+<p>Let’s modify our orbit integration code to do RK4.</p>
+</div>
 </section>
 
 
@@ -588,20 +586,20 @@ element using <code class="docutils literal notranslate"><span class="pre">.back
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-reading.html"
+       href="cxx-orbit-rk2-example.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Reading Input</p>
+        <p class="prev-next-title">2nd-order Runge-Kutta Orbit</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-vector-push.html"
+       href="roots.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</p>
+        <p class="prev-next-title">Root Finding</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -611,25 +609,6 @@ element using <code class="docutils literal notranslate"><span class="pre">.back
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-vector"><code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-vector">Creating a vector</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-vectors">Indexing vectors</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

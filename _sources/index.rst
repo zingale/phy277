@@ -187,6 +187,7 @@ the top of many pages.
    algorithms/odes
    algorithms/cxx-orbit-example
    algorithms/cxx-orbit-rk2-example
+   algorithms/runge-kutta-4th-order
    algorithms/roots
    algorithms/monte-carlo
 
