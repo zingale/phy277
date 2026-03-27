@@ -68,6 +68,11 @@ computed at $t^{n+1/2}$.  Also note that the solution at $t^{n+1}$ is
 much closer to the analytic solution than in the figure from Euler's
 method.
 
+This method is called 2nd-order Runge-Kutta.
+
+Implementation
+==============
+
 To implement this, it would be nice to have a function that updates
 the state based on the derivatives, like:
 
@@ -93,8 +98,6 @@ This way we can easily do the update both times as needed via a simple function 
       auto state_new = state + dt * state_derivs;
 
 
-Implementation
-==============
 
 Our implementation looks largely the same as the first-order method:
 
@@ -111,6 +114,17 @@ The main difference is that we compute an intermediate solution at the half-time
    state_derivs = rhs(state_star);
 
 This makes the final update time-centered, and gives us second-order accuracy.
+
+When run with ``dt = 0.05``, we get:
+
+.. figure:: orbit_rk2.png
+  :align: center
+  :width: 80%
+  :alt: our orbit (y vs. x).  It is almost a complete circle.
+
+We see that this is *far* better than the first-order Euler method.  It is
+still not perfect, but as we cut the timestep, the solution should
+improve much faster than the Euler case.
 
 Error estimate
 ==============
