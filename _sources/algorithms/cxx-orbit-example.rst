@@ -253,22 +253,4 @@ error is dominating.
 
    Let's see how the solution behaves as we cut the timestep.
 
-Error estimate
-==============
-
-We can estimate the error by computing the initial distance from the
-Sun and comparing to the final distance from the Sun.  The orbit is
-circular, so it should be constant.
-
-
-.. admonition:: try it...
-
-   Let's write an error function of the form:
-
-   .. code:: c++
-
-      double error(const std::vector<OrbitState>& history)
-
-   that computes this error, and the output the error at the end of
-   integration for a variety of timestep sizes.
 

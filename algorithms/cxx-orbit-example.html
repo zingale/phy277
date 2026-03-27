@@ -493,7 +493,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implementation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running">Running</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-estimate">Error estimate</a></li>
 </ul>
             </nav>
         </div>
@@ -794,21 +793,6 @@ error is dominating.</p>
 <p>Let’s see how the solution behaves as we cut the timestep.</p>
 </div>
 </section>
-<section id="error-estimate">
-<h2>Error estimate<a class="headerlink" href="#error-estimate" title="Link to this heading">#</a></h2>
-<p>We can estimate the error by computing the initial distance from the
-Sun and comparing to the final distance from the Sun.  The orbit is
-circular, so it should be constant.</p>
-<div class="admonition-try-it admonition">
-<p class="admonition-title">try it…</p>
-<p>Let’s write an error function of the form:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">error</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">OrbitState</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">history</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>that computes this error, and the output the error at the end of
-integration for a variety of timestep sizes.</p>
-</div>
-</section>
 </section>
 
 
@@ -863,7 +847,6 @@ integration for a variety of timestep sizes.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Implementation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running">Running</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#error-estimate">Error estimate</a></li>
 </ul>
   </nav></div>
 
