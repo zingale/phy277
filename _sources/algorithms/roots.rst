@@ -53,6 +53,13 @@ A few features:
   ``#include "roots.H"`` in a file, these names don't conflict with
   any that might be locally defined.
 
+  .. tip::
+
+     A `namespace <https://en.cppreference.com/w/cpp/language/namespace.html>`_ can be
+     used to put a number of orbits or functions into their own scope.  You can then
+     access them using the scope operator ``::``.  This is a way to group together
+     related concepts and makes the code easier to read.
+
 * We use both a relative and absolute tolerance for assessing the error.  Convergence
   is met when:
 
