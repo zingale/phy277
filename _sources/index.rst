@@ -193,6 +193,13 @@ the top of many pages.
 
 .. toctree::
    :maxdepth: 1
+   :caption: Review
+   :hidden:
+
+   interactive_review/review2
+
+.. toctree::
+   :maxdepth: 1
    :caption: File I/O
    :hidden:
 
