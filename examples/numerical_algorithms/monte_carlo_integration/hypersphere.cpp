@@ -10,7 +10,7 @@
 
 constexpr int N_MAX{1000000};
 
-double integrand(std::vector<double> x) {
+double integrand(const std::vector<double>& x) {
 
     // inner_product() here will compute x . x
     double radius = std::sqrt(std::inner_product(x.cbegin(), x.cend(), x.cbegin(), 0.0));
