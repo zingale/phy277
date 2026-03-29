@@ -61,4 +61,29 @@ Conditionals
    is empty.
 
 
+Loops
+=====
+
+#. Write a for loop that prints the integers 0 through 4.
+
+#. Given ``std::vector<int> a{1,2,3,4};``, write a loop that prints each element of ``a``.
+
+#. Given ``std::string s = "hello";``, write a loop that prints each character on its own line.
+
+#. Given ``int n = 5;``, write a while loop that prints ``5 4 3 2 1``.
+
+
+Putting it together
+===================
+
+#. Given ``std::vector<int> a{1,2,3,4,5};``, write 1 to 3 lines that
+   print all elements greater than ``3``.
+
+#. Given ``std::string s = "apple";``, write 1 to 2 lines that print
+   ``"long"`` if the string has more than 4 characters.
+
+#. Write a function ``is_even`` that returns whether an integer is even.
+
+#. Given ``std::vector<std::string> words{"red", "blue", "green"};``,
+   write 1 to 3 lines that print each word.
 
