@@ -207,17 +207,6 @@ the top of many pages.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Software Engineering
-   :hidden:
-
-   software_engineering/compiler-flags
-   software_engineering/optimization
-   software_engineering/multiple-files
-   software_engineering/make
-   software_engineering/inclass-split-orbit
-
-.. toctree::
-   :maxdepth: 1
    :caption: Some SL Algorithms
    :hidden:
 
@@ -233,12 +222,19 @@ the top of many pages.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Classes
+   :caption: Software Engineering
    :hidden:
+
+   software_engineering/compiler-flags
+   software_engineering/optimization
+   software_engineering/multiple-files
+   software_engineering/make
+   software_engineering/inclass-split-orbit
+
 
 .. toctree::
    :maxdepth: 1
-   :caption: More Classes
+   :caption: Classes
    :hidden:
 
 .. toctree::
