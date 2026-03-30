@@ -643,8 +643,8 @@ otherwise set <span class="math notranslate nohighlight">\(x_l = x_m\)</span></p
 <ul>
 <li><p>We use a <code class="docutils literal notranslate"><span class="pre">namespace</span></code> to hold the parameters that affect the
 behavior of the root finding algorithms.  This ensures that if we
-<code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;roots.H&quot;</span></code> in a file, these names don’t conflict with
-any that might be locally defined.</p>
+<code class="docutils literal notranslate"><span class="pre">#include</span></code> another header file that defines a variable <code class="docutils literal notranslate"><span class="pre">ATOL</span></code>, <code class="docutils literal notranslate"><span class="pre">RTOL</span></code>, or <code class="docutils literal notranslate"><span class="pre">MAX_ITER</span></code>,
+that it does not clash with our versions.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>A <a class="reference external" href="https://en.cppreference.com/w/cpp/language/namespace.html">namespace</a> can be
@@ -652,6 +652,7 @@ used to put a number of orbits or functions into their own scope.  You can then
 access them using the scope operator <code class="docutils literal notranslate"><span class="pre">::</span></code>.  This is a way to group together
 related concepts and makes the code easier to read.</p>
 </div>
+<p>This is not required here, but it does help organize our code better.</p>
 </li>
 <li><p>We use both a relative and absolute tolerance for assessing the error.  Convergence
 is met when:</p>
