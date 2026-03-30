@@ -34,6 +34,9 @@ This is a review of some of the concepts we covered since the previous midterm.
 
 #. Given ``std::string s = "cat";``, write one line that changes it to ``"cats"``.
 
+``struct``
+==========
+
 Functions
 =========
 
@@ -72,6 +75,7 @@ Loops
 
 #. Given ``int n = 5;``, write a while loop that prints ``5 4 3 2 1``.
 
+#. Example of using ``break``
 
 Putting it together
 ===================
@@ -86,4 +90,11 @@ Putting it together
 
 #. Given ``std::vector<std::string> words{"red", "blue", "green"};``,
    write 1 to 3 lines that print each word.
+
+#. Write a function that takes a vector
+
+Numerical methods
+=================
+
+#. truncation error
 
