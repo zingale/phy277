@@ -75,3 +75,19 @@ advance the solution.  The sequence is illustrated below:
 .. admonition:: try it...
 
    Let's modify our orbit integration code to do RK4.
+
+   .. dropdown:: solution
+
+      .. literalinclude:: ../../../examples/numerical_algorithms/ODEs/orbit_rk4_error.cpp
+         :language: C++
+         :caption: ``orbit_rk4_error.cpp``
+
+      When run, we see the convergence as:
+
+      ::
+
+          0.10000    0.0202442
+          0.05000  0.000547327
+          0.02500  1.67785e-05
+          0.01250  5.22248e-07
+          0.00625  1.63047e-08
