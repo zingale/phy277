@@ -237,6 +237,16 @@ the top of many pages.
    :caption: Classes
    :hidden:
 
+   cxx-classes/cxx-classes-intro
+   cxx-classes/object-oriented
+   cxx-classes/cxx-vector2d-class
+   cxx-classes/inclass-orbit-class
+   cxx-classes/inheritance-and-access
+   cxx-classes/this-class
+   cxx-classes/copy_and_assignment
+   cxx-classes/compound-operators
+   cxx-classes/inclass-orbit-compound
+
 .. toctree::
    :maxdepth: 1
    :caption: Templates
