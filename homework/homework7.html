@@ -522,13 +522,19 @@ of this assignment.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\dot{\bf r} &amp;= {\bf v} \\
 \dot{\bf v} &amp;= \frac{1}{m} {\bf F}_a({\bf v}) - |g| \hat{\bf y}\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(m\)</span> is the mass of the projectile and</p>
+<p>where <span class="math notranslate nohighlight">\({\bf r} = (x, y)\)</span> is the position vector, <span class="math notranslate nohighlight">\({\bf v} = (v_x,
+v_y)\)</span> is the velocity vector, <span class="math notranslate nohighlight">\(m\)</span> is the mass of the projectile and</p>
 <div class="math notranslate nohighlight">
 \[{\bf F}_a({\bf v}) = - \frac{1}{2}C \rho_\mathrm{air} A |v| {\bf v}\]</div>
 <p>is the <a class="reference external" href="https://en.wikipedia.org/wiki/Projectile_motion#Trajectory_of_a_projectile_with_Newton_drag">Newton drag term</a>
 that is applicable for large Reynolds numbers (turbulent), and
 <span class="math notranslate nohighlight">\(\rho_\mathrm{air}\)</span> is the density of air, <span class="math notranslate nohighlight">\(C\)</span> is the drag
 coefficient, <span class="math notranslate nohighlight">\(A\)</span> is the cross-sectional area of the projectile.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Gravity only affects the vertical (<span class="math notranslate nohighlight">\(y\)</span>) component of velocity,
+but drag affects both, since it is proportional to <span class="math notranslate nohighlight">\({\bf v}\)</span>.</p>
+</div>
 <p>We’ll consider a baseball.  Then we can take:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(C = 0.3\)</span></p></li>
@@ -538,21 +544,36 @@ coefficient, <span class="math notranslate nohighlight">\(A\)</span> is the cros
 </ul>
 <p>and we take the gravitational acceleration to be <span class="math notranslate nohighlight">\(g = -9.81~\mathrm{m~s^{-2}}\)</span>,</p>
 <p>We’ll imagine throwing the baseball from some height, <span class="math notranslate nohighlight">\(y_0\)</span>, above the
-ground (<span class="math notranslate nohighlight">\(y = 0\)</span>) at an angle <span class="math notranslate nohighlight">\(\theta\)</span> from the horizontal with velocity magnitude <span class="math notranslate nohighlight">\(V\)</span>.</p>
+ground (<span class="math notranslate nohighlight">\(y = 0\)</span>) at an angle <span class="math notranslate nohighlight">\(\theta\)</span> from the horizontal with velocity magnitude <span class="math notranslate nohighlight">\(v_0\)</span>.</p>
 <p>This means our initial conditions are:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}x_0 &amp;= 0 \\
 y_0 &amp;= y_0 \\
-u_0 &amp;= V \cos(\theta) \\
-v_0 &amp;= V \sin(\theta)\end{split}\]</div>
+{v_x}_0 &amp;= v_0 \cos(\theta) \\
+{v_y}_0 &amp;= v_0 \sin(\theta)\end{split}\]</div>
 <p>and we want to integrate until the ball hits the ground,
 <span class="math notranslate nohighlight">\(y(t_\mathrm{max}) = 0\)</span>.</p>
-<p>Your task: solve this system using our 2nd-order Runge-Kutta method.</p>
+<div class="admonition-your-task admonition">
+<p class="admonition-title">Your task</p>
+<p>Solve this system using our 2nd-order Runge-Kutta method.</p>
 <p>You should structure your program the same way we did for our
 <a class="reference internal" href="../algorithms/cxx-orbit-rk2-example.html#sec-rk2-orbit"><span class="std std-ref">2nd-order Runge-Kutta Orbit</span></a> code in class.  The main differences will be
 to the righthand side function and the stopping criterion.</p>
 <p>Run the case with and without drag (you can set <span class="math notranslate nohighlight">\(C = 0\)</span> for no
 drag), and plot the results together on the same plot.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you have 2 output files, <code class="docutils literal notranslate"><span class="pre">file1.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">file2.txt</span></code>, you
+can plot both of them together in gnuplot as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "gnuplot> ";
+}
+</style><span class="prompt1">plot &#39;file1.txt&#39; using 1:2 title &quot;no drag&quot;, &#39;file2.txt&#39; using 1:2 title &quot;drag&quot;</span>
+</pre></div></div><p>This will plot column 2 vs. column 1 from each file as separate
+lines and label them in the plot.</p>
+</div>
 </li>
 </ol>
 </section>

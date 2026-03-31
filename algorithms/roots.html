@@ -536,7 +536,23 @@ otherwise set <span class="math notranslate nohighlight">\(x_l = x_m\)</span></p
 <figure class="align-center">
 <img alt="An animation of bisection finding the zero of a parabola." src="../_images/bisection.gif" />
 </figure>
-<p>Here’s an implementation:</p>
+<p>Let’s find the root:</p>
+<p><div class="math notranslate nohighlight">
+\[f(x) = x^3 + x^2 + 1 = 0\]</div>
+</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It is always a good idea to plot the function you are trying to
+find the root of (if possible).  We can do this easily in gnuplot:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "gnuplot> ";
+}
+</style><span class="prompt1">set grid</span>
+<span class="prompt1">set xrange [-5:5]</span>
+<span class="prompt1">plot x**3 + x**2 + 1</span>
+</pre></div></div></div>
+<p>Here’s the implementation:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-number">Listing 75 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">bisection.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -667,10 +683,21 @@ error.</p>
 we exit with an error.  This ensures we don’t get stuck in an infinite
 loop if something goes wrong.</p></li>
 </ul>
-<p>Bisection is slow to converge—it only reduces the error by a factor of 2 each iteration.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Bisection will fail to find the root for <span class="math notranslate nohighlight">\(f(x) = x^2\)</span>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It is always a good idea to plot the function you are trying to
+find the root of (if possible).  We can do this easily in gnuplot:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">set grid</span>
+<span class="prompt1">set xrange [-5:5]</span>
+<span class="prompt1">plot x**3 + x**2 + 1</span>
+</pre></div></div></div>
+<p>Bisection is slow to converge—it only reduces the error by a factor
+of 2 each iteration.</p>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">try it…</p>
+<p>Bisection will fail to find the root for <span class="math notranslate nohighlight">\(f(x) = x^2\)</span>.
+This is because the root is tangent to the x axis—the function
+doesn’t change sign.</p>
 </div>
 </section>
 <section id="newton-s-method">
@@ -693,19 +720,25 @@ will be small, so we can neglect them.  This tells us that the correction is:</p
 <figure class="align-center">
 <img alt="An animation of Newton's method finding the root of a function." src="../_images/newton.gif" />
 </figure>
-<p>There are a few things to note here:</p>
-<ul class="simple">
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul>
 <li><p>The initial guess needs to be good—if it is not, then the higher
 order terms, which start with <span class="math notranslate nohighlight">\(\delta x^2\)</span> are not small, and
 we should not have neglected them.</p></li>
 <li><p>We need a good estimate of the derivative.  Ideally this means that we
-supply a function that computes the derivative analytically.</p></li>
-<li><p>Newton’s method can fail in a variety of ways, including <a class="reference external" href="https://en.wikipedia.org/wiki/Newton's_method#Oscillatory_behavior">entering a cycle</a>.</p></li>
+supply a function that computes the derivative analytically.</p>
+<p>If we don’t have an analytic form of the derivative, then we can
+compute it via finite-differences.  This can give rise to the
+<a class="reference external" href="https://en.wikipedia.org/wiki/Secant_method">secant method</a>.</p>
+</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If we don’t have an analytic form of the derivative, then we can compute it via
-finite-differences.   This can give rise to the <a class="reference external" href="https://en.wikipedia.org/wiki/Secant_method">secant method</a>.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Newton’s method can fail in a variety of ways, including <a class="reference external" href="https://en.wikipedia.org/wiki/Newton's_method#Oscillatory_behavior">entering
+a cycle</a>.
+This is why we put a cap on the number of iterations.</p>
 </div>
 <p>Here’s an implementation:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
@@ -788,6 +821,22 @@ finite-differences.   This can give rise to the <a class="reference external" hr
 <span class="p">}</span>
 </pre></div>
 </div>
+</div>
+<p>Some notes:</p>
+<ul class="simple">
+<li><p>We use the same combination of a relative and absolute tolerance
+here as we did with bisection.  Too see why, set <code class="docutils literal notranslate"><span class="pre">ATOL</span> <span class="pre">=</span> <span class="pre">0.0</span></code> for
+the <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> function.</p></li>
+<li><p>We are not guarding against the case where <span class="math notranslate nohighlight">\(df/dx = 0\)</span>—this could
+cause problems.</p></li>
+</ul>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">try it…</p>
+<p>Run the bisection and Newton methods on the same problem:</p>
+<p><div class="math notranslate nohighlight">
+\[f(x) = x^3 + x^2 + 1 = 0\]</div>
+</p>
+<p>and compare how many iterations they need.</p>
 </div>
 </section>
 </section>
