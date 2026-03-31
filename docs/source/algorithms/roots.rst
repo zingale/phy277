@@ -50,8 +50,17 @@ A few features:
 
 * We use a ``namespace`` to hold the parameters that affect the
   behavior of the root finding algorithms.  This ensures that if we
-  ``#include "roots.H"`` in a file, these names don't conflict with
-  any that might be locally defined.
+  ``#include`` another header file that defines a variable ``ATOL``, ``RTOL``, or ``MAX_ITER``,
+  that it does not clash with our versions.
+
+  .. tip::
+
+     A `namespace <https://en.cppreference.com/w/cpp/language/namespace.html>`_ can be
+     used to put a number of orbits or functions into their own scope.  You can then
+     access them using the scope operator ``::``.  This is a way to group together
+     related concepts and makes the code easier to read.
+
+  This is not required here, but it does help organize our code better.
 
 * We use both a relative and absolute tolerance for assessing the error.  Convergence
   is met when:

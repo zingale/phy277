@@ -1,6 +1,7 @@
 #include <iostream>
 #include <functional>
 #include <cmath>
+#include <format>
 
 namespace Roots {
     const double ATOL = 1.e-10;   // absolute tolerance
@@ -38,22 +39,31 @@ int bisection(double xleft, double xright,
         double fmid = f(xmid);
 
         if (fleft * fmid > 0.0) {
-            // root is in [fmid, fright]
+            // root is in [xmid, xright]
             xleft = xmid;
+            fleft = fmid;
         } else {
-            // root is in [fleft, fmid]
+            // root is in [xleft, xmid]
             xright = xmid;
+            // fright = fmid;  // we don't use fright
         }
 
         double err = std::abs(xright - xleft);
         xmid = 0.5 * (xleft + xright);
 
+        // check if we've converged
         if (err < Roots::RTOL * std::abs(xmid) + Roots::ATOL) {
             ierr = 0;
             break;
         }
 
         iter++;
+    }
+
+    // check to see if we took too many iterations
+    if (iter == Roots::MAX_ITER) {
+        std::cout << "too many iterations" << std::endl;
+        ierr = 1;
     }
 
     root = xmid;
@@ -77,11 +87,11 @@ int main() {
     ierr = bisection(-5.0, 5.0, f, root);
 
     if (ierr == 0) {
-        std::cout << root << std::endl;
+        std::cout << std::format("x_0 = {}; f(x_0) = {}\n",
+                                 root, f(root));
     } else {
         std::cout << "root not found" << std::endl;
     }
     std::cout << std::endl;
 
 }
-

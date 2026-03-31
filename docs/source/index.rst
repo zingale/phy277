@@ -187,8 +187,16 @@ the top of many pages.
    algorithms/odes
    algorithms/cxx-orbit-example
    algorithms/cxx-orbit-rk2-example
+   algorithms/runge-kutta-4th-order
    algorithms/roots
    algorithms/monte-carlo
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Review
+   :hidden:
+
+   interactive_review/review2
 
 .. toctree::
    :maxdepth: 1
@@ -196,17 +204,6 @@ the top of many pages.
    :hidden:
 
    cxx-basics/cxx-io
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Software Engineering
-   :hidden:
-
-   software_engineering/compiler-flags
-   software_engineering/optimization
-   software_engineering/multiple-files
-   software_engineering/make
-   software_engineering/inclass-split-orbit
 
 .. toctree::
    :maxdepth: 1
@@ -225,12 +222,19 @@ the top of many pages.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Classes
+   :caption: Software Engineering
    :hidden:
+
+   software_engineering/compiler-flags
+   software_engineering/optimization
+   software_engineering/multiple-files
+   software_engineering/make
+   software_engineering/inclass-split-orbit
+
 
 .. toctree::
    :maxdepth: 1
-   :caption: More Classes
+   :caption: Classes
    :hidden:
 
 .. toctree::
