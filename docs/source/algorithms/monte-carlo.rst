@@ -87,13 +87,14 @@ Notice that each time we run it we get a different sequence of random numbers.
 
    However, this is implementation dependent, so you may not be sure what engine it is using.
 
-   There are many other distributions we can use.
 
-   .. tip::
+There are many other distributions we can use.
 
-      The cppreference site has a `nice example of a normal distributon
-      <https://en.cppreference.com/w/cpp/numeric/random/normal_distribution>`_
-      that also introduces ``std::map`` to hold "key:value" pairs.
+.. tip::
+
+   The cppreference site has a `nice example of a normal distributon
+   <https://en.cppreference.com/w/cpp/numeric/random/normal_distribution>`_
+   that also introduces ``std::map`` to hold "key:value" pairs.
 
 Seeding
 -------
