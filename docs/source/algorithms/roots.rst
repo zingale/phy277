@@ -110,21 +110,26 @@ Here's an animation showing the method converging:
    :align: center
    :alt: An animation of Newton's method finding the root of a function.
 
-There are a few things to note here:
+.. important::
 
-* The initial guess needs to be good---if it is not, then the higher
-  order terms, which start with :math:`\delta x^2` are not small, and
-  we should not have neglected them.
+   * The initial guess needs to be good---if it is not, then the higher
+     order terms, which start with :math:`\delta x^2` are not small, and
+     we should not have neglected them.
 
-* We need a good estimate of the derivative.  Ideally this means that we
-  supply a function that computes the derivative analytically.
+   * We need a good estimate of the derivative.  Ideally this means that we
+     supply a function that computes the derivative analytically.
 
-* Newton's method can fail in a variety of ways, including `entering a cycle <https://en.wikipedia.org/wiki/Newton's_method#Oscillatory_behavior>`_.
+     If we don't have an analytic form of the derivative, then we can
+     compute it via finite-differences.  This can give rise to the
+     `secant method <https://en.wikipedia.org/wiki/Secant_method>`_.
 
-.. note::
+.. caution::
 
-   If we don't have an analytic form of the derivative, then we can compute it via
-   finite-differences.   This can give rise to the `secant method <https://en.wikipedia.org/wiki/Secant_method>`_.
+   Newton's method can fail in a variety of ways, including `entering
+   a cycle
+   <https://en.wikipedia.org/wiki/Newton's_method#Oscillatory_behavior>`_.
+   This is why we put a cap on the number of iterations.
+
 
 Here's an implementation:
 
@@ -133,3 +138,7 @@ Here's an implementation:
    :caption: ``newton.cpp``
 
 
+Some notes:
+
+* We use the same combination of a relative and absolute tolerance here as
+  we did with bisection.  Too see why 

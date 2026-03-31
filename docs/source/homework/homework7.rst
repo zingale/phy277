@@ -37,7 +37,8 @@ Homework #7
       \dot{\bf r} &= {\bf v} \\
       \dot{\bf v} &= \frac{1}{m} {\bf F}_a({\bf v}) - |g| \hat{\bf y}
 
-   where $m$ is the mass of the projectile and
+   where ${\bf r} = (x, y)$ is the position vector, ${\bf v} = (v_x,
+   v_y)$ is the velocity vector, $m$ is the mass of the projectile and
 
    .. math::
 
@@ -48,6 +49,11 @@ Homework #7
    that is applicable for large Reynolds numbers (turbulent), and
    $\rho_\mathrm{air}$ is the density of air, $C$ is the drag
    coefficient, $A$ is the cross-sectional area of the projectile.
+
+   .. note::
+
+      Gravity only affects the vertical ($y$) component of velocity,
+      but drag affects both, since it is proportional to ${\bf v}$.
 
    We'll consider a baseball.  Then we can take:
 
@@ -62,7 +68,7 @@ Homework #7
    and we take the gravitational acceleration to be $g = -9.81~\mathrm{m~s^{-2}}$,
 
    We’ll imagine throwing the baseball from some height, $y_0$, above the
-   ground ($y = 0$) at an angle $\theta$ from the horizontal with velocity magnitude $V$.
+   ground ($y = 0$) at an angle $\theta$ from the horizontal with velocity magnitude $v_0$.
 
    This means our initial conditions are:
 
@@ -70,20 +76,34 @@ Homework #7
 
       x_0 &= 0 \\
       y_0 &= y_0 \\
-      u_0 &= V \cos(\theta) \\
-      v_0 &= V \sin(\theta)
+      {v_x}_0 &= v_0 \cos(\theta) \\
+      {v_y}_0 &= v_0 \sin(\theta)
 
    and we want to integrate until the ball hits the ground,
    :math:`y(t_\mathrm{max}) = 0`.
 
-   Your task: solve this system using our 2nd-order Runge-Kutta method.
+   .. admonition:: Your task
 
-   You should structure your program the same way we did for our
-   :ref:`sec:rk2-orbit` code in class.  The main differences will be
-   to the righthand side function and the stopping criterion.
+      Solve this system using our 2nd-order Runge-Kutta method.
 
-   Run the case with and without drag (you can set $C = 0$ for no
-   drag), and plot the results together on the same plot.
+      You should structure your program the same way we did for our
+      :ref:`sec:rk2-orbit` code in class.  The main differences will be
+      to the righthand side function and the stopping criterion.
 
+      Run the case with and without drag (you can set $C = 0$ for no
+      drag), and plot the results together on the same plot.
+
+   .. tip::
+
+      If you have 2 output files, ``file1.txt`` and ``file2.txt``, you
+      can plot both of them together in gnuplot as:
+
+      .. prompt::
+         :prompts: gnuplot>
+
+         plot 'file1.txt' using 1:2 title "no drag", 'file2.txt' using 1:2 title "drag"
+
+      This will plot column 2 vs. column 1 from each file as separate
+      lines and label them in the plot.
 
 
