@@ -238,6 +238,8 @@ the top of many pages.
    :hidden:
 
    cxx-classes/cxx-classes-intro
+   cxx-classes/cxx-classes-planet
+   cxx-classes/cxx-classes-planet-2
    cxx-classes/object-oriented
    cxx-classes/cxx-vector2d-class
    cxx-classes/inclass-orbit-class
