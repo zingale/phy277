@@ -14,6 +14,8 @@ This is a review of some of the concepts we covered since the previous midterm.
 ``std::vector``
 ===============
 
+#. What header file do we need to include to work with vectors?
+
 #. Given ``std::vector<int> a{4, 7, 2, 9};``
 
    a. Write one line that prints the number of elements in ``a``.
@@ -21,8 +23,12 @@ This is a review of some of the concepts we covered since the previous midterm.
    c. Write one line that changes the last element to ``10``.
    d. Write one line that adds ``8`` to the end of the vector.
 
-``std::string``
-===============
+#. Create an empty vector, ``vec``, of integers, and then add
+   the integers ``1``, ``2``, and ``3`` to it.
+
+
+strings and formatting
+======================
 
 #. Given ``std::string s = "hello";``
 
@@ -34,8 +40,42 @@ This is a review of some of the concepts we covered since the previous midterm.
 
 #. Given ``std::string s = "cat";``, write one line that changes it to ``"cats"``.
 
+#. How would you use ``std::format`` to print out two double precision quantities,
+   $x$ and $y$, to make a sentence like ``"x = 2.0, y = 3.0"``?
+
 ``struct``
 ==========
+
+#. Consider a point in spherical coordinates, with components
+   for $r$, $\theta$, $\phi$
+
+   a. Create a ``struct`` called ``SphericalPoint`` that holds the data for a single point.
+
+   b. Initialize a ``SphericalPoint`` named ``p`` for the point $(r,
+      \theta, \phi) = (1, \pi/4, \pi/8)$
+
+   c. We can get the $x$, $y$, and $z$ components as:
+
+      .. math::
+
+         x &= r \sin\theta \cos\phi \\
+         y &= r \sin\theta \sin\phi \\
+         z &= r \cos\theta
+
+      Show the lines of code that compute this from ``p``
+
+#. Consider the ``struct``:
+
+   .. code:: c++
+
+     struct Rectangle {
+         double width{};
+         double height{};
+     };
+
+   Create a ``Rectangle`` named ``box`` with width ``4.0`` and height
+   ``2.5``.  Then write an expression that computes its area.
+
 
 Functions
 =========
@@ -49,6 +89,17 @@ Functions
 #. Write a function ``print_hello`` that takes no arguments and prints ``"Hello"``.
 
 #. Write a function ``add`` that takes two integers and returns their sum.
+
+#. Imagine we write a function ``doit`` that takes a function as an argument.  We want to
+   pass in a function like:
+
+   .. code:: c++
+
+      int add(int x, int y) {
+          return x + y;
+      }
+
+   How would we write the argument for this in our function ``doit``?
 
 
 Conditionals
@@ -71,11 +122,28 @@ Loops
 
 #. Given ``std::vector<int> a{1,2,3,4};``, write a loop that prints each element of ``a``.
 
+#. What is the difference in the way that these two loops work, given a vector ``vec``?
+
+   .. code:: c++
+
+      for (auto e : vec) {
+          // do stuff
+      }
+
+   vs.
+
+   .. code:: c++
+
+      for (auto &e : vec) {
+          // do stuff
+      }
+
 #. Given ``std::string s = "hello";``, write a loop that prints each character on its own line.
 
 #. Given ``int n = 5;``, write a while loop that prints ``5 4 3 2 1``.
 
-#. Example of using ``break``
+#. What is the difference between ``break`` and ``continue`` when used inside a loop?
+
 
 Putting it together
 ===================
@@ -96,5 +164,19 @@ Putting it together
 Numerical methods
 =================
 
-#. truncation error
+#. Our centered difference has a form:
+
+   .. math::
+
+      \left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0 - \Delta x)}{2 \Delta x} + \mathcal{O}(\Delta x^2)
+
+   a. What is the meaning of $\mathcal{O}(\Delta x^2)$?
+
+   b. If we get a error $E$ using a value $\Delta x$, what error should we
+      expect if we use $\Delta x / 2$?
+
+   c. What happens to the error if we make $\Delta x$ close to machine epsilon?
+
+#. Given a function $f(x)$, if we want to find the zero, $x_0$, such that $f(x_0) = 0$,
+   what is the requirement on the starting conditions for the bisection algorithm?
 
