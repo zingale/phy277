@@ -829,21 +829,23 @@ This is why we put a cap on the number of iterations.</p>
 </div>
 </div>
 <p>Some notes:</p>
-<ul class="simple">
+<ul>
 <li><p>We use the same combination of a relative and absolute tolerance
 here as we did with bisection.  Too see why, set <code class="docutils literal notranslate"><span class="pre">ATOL</span> <span class="pre">=</span> <span class="pre">0.0</span></code> for
 the <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> function.</p></li>
 <li><p>We are not guarding against the case where <span class="math notranslate nohighlight">\(df/dx = 0\)</span>—this could
-cause problems.</p></li>
-</ul>
+cause problems.</p>
 <div class="admonition-try-it admonition">
 <p class="admonition-title">try it…</p>
-<p>Run the bisection and Newton methods on the same problem:</p>
+<p>Run the Newton method on the same problem we did for bisection:</p>
 <p><div class="math notranslate nohighlight">
 \[f(x) = x^3 + x^2 + 1 = 0\]</div>
 </p>
-<p>and compare how many iterations they need.</p>
+<p>and use an initial guess of -1.  Notice that this generates an inf
+quickly.</p>
 </div>
+</li>
+</ul>
 </section>
 </section>
 
