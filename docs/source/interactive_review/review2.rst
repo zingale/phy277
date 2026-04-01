@@ -14,12 +14,18 @@ This is a review of some of the concepts we covered since the previous midterm.
 ``std::vector``
 ===============
 
+#. What header file do we need to include to work with vectors?
+
 #. Given ``std::vector<int> a{4, 7, 2, 9};``
 
    a. Write one line that prints the number of elements in ``a``.
    b. Write one line that prints the first element.
    c. Write one line that changes the last element to ``10``.
    d. Write one line that adds ``8`` to the end of the vector.
+
+#. Create an empty vector, ``vec`` of integers, and then add
+   the integers ``1``, ``2``, and ``3`` to it.
+
 
 ``std::string``
 ===============
@@ -49,8 +55,8 @@ This is a review of some of the concepts we covered since the previous midterm.
 
       .. math::
 
-         x &= r \sin\theta \cos\phi
-         y &= r \sin\theta \sin\phi
+         x &= r \sin\theta \cos\phi \\
+         y &= r \sin\theta \sin\phi \\
          z &= r \cos\theta
 
       Show the lines of code that compute this from ``p``
