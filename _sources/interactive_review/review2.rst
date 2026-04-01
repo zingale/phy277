@@ -23,7 +23,7 @@ This is a review of some of the concepts we covered since the previous midterm.
    c. Write one line that changes the last element to ``10``.
    d. Write one line that adds ``8`` to the end of the vector.
 
-#. Create an empty vector, ``vec`` of integers, and then add
+#. Create an empty vector, ``vec``, of integers, and then add
    the integers ``1``, ``2``, and ``3`` to it.
 
 
@@ -39,6 +39,9 @@ This is a review of some of the concepts we covered since the previous midterm.
    write one line that creates ``full`` equal to ``"Ada Lovelace"``.
 
 #. Given ``std::string s = "cat";``, write one line that changes it to ``"cats"``.
+
+#. How would you use ``std::format`` to print out two double precision quantities,
+   $x$ and $y$, to make a sentence like ``"x = 2.0, y = 3.0"``?
 
 ``struct``
 ==========
@@ -133,5 +136,17 @@ Putting it together
 Numerical methods
 =================
 
-#. truncation error
+#. Our centered difference has a form:
+
+   $$\left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0 - \Delta x)}{2 \Delta x} + \mathcal{O}(\Delta x^2)$$
+
+   a. What is the meaning of $\mathcal{O}(\Delta x^2)$?
+
+   b. If we get a error $E$ using a value $\Delta x$, what error should we
+      expect if we use $\Delta x / 2$?
+
+   c. What happens to the error if we make $\Delta x$ close to machine epsilon?
+
+#. Given a function $f(x)$, if we want to find the zero, $x_0$, such that $f(x_0) = 0$,
+   what is the requirement on the starting conditions for the bisection algorithm?
 

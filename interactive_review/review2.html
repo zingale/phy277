@@ -546,7 +546,7 @@ homework solutions.</p>
 <li><p>Write one line that adds <code class="docutils literal notranslate"><span class="pre">8</span></code> to the end of the vector.</p></li>
 </ol>
 </li>
-<li><p>Create an empty vector, <code class="docutils literal notranslate"><span class="pre">vec</span></code> of integers, and then add
+<li><p>Create an empty vector, <code class="docutils literal notranslate"><span class="pre">vec</span></code>, of integers, and then add
 the integers <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, and <code class="docutils literal notranslate"><span class="pre">3</span></code> to it.</p></li>
 </ol>
 </section>
@@ -562,6 +562,8 @@ the integers <code class="docutils literal notranslate"><span class="pre">1</spa
 <li><p>Given <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">first</span> <span class="pre">=</span> <span class="pre">&quot;Ada&quot;;</span></code> and <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">last</span> <span class="pre">=</span> <span class="pre">&quot;Lovelace&quot;;</span></code>,
 write one line that creates <code class="docutils literal notranslate"><span class="pre">full</span></code> equal to <code class="docutils literal notranslate"><span class="pre">&quot;Ada</span> <span class="pre">Lovelace&quot;</span></code>.</p></li>
 <li><p>Given <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">&quot;cat&quot;;</span></code>, write one line that changes it to <code class="docutils literal notranslate"><span class="pre">&quot;cats&quot;</span></code>.</p></li>
+<li><p>How would you use <code class="docutils literal notranslate"><span class="pre">std::format</span></code> to print out two double precision quantities,
+<span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, to make a sentence like <code class="docutils literal notranslate"><span class="pre">&quot;x</span> <span class="pre">=</span> <span class="pre">2.0,</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">3.0&quot;</span></code>?</p></li>
 </ol>
 </section>
 <section id="struct">
@@ -641,8 +643,18 @@ write 1 to 3 lines that print each word.</p></li>
 </section>
 <section id="numerical-methods">
 <h2>Numerical methods<a class="headerlink" href="#numerical-methods" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>truncation error</p></li>
+<ol class="arabic">
+<li><p>Our centered difference has a form:</p>
+<p>$$left . frac{df}{dx} right <a href="#id1"><span class="problematic" id="id2">|</span></a>_{x_0} = frac{f(x_0 + Delta x) - f(x_0 - Delta x)}{2 Delta x} + mathcal{O}(Delta x^2)$$</p>
+<ol class="loweralpha simple">
+<li><p>What is the meaning of <span class="math notranslate nohighlight">\(\mathcal{O}(\Delta x^2)\)</span>?</p></li>
+<li><p>If we get a error <span class="math notranslate nohighlight">\(E\)</span> using a value <span class="math notranslate nohighlight">\(\Delta x\)</span>, what error should we
+expect if we use <span class="math notranslate nohighlight">\(\Delta x / 2\)</span>?</p></li>
+<li><p>What happens to the error if we make <span class="math notranslate nohighlight">\(\Delta x\)</span> close to machine epsilon?</p></li>
+</ol>
+</li>
+<li><p>Given a function <span class="math notranslate nohighlight">\(f(x)\)</span>, if we want to find the zero, <span class="math notranslate nohighlight">\(x_0\)</span>, such that <span class="math notranslate nohighlight">\(f(x_0) = 0\)</span>,
+what is the requirement on the starting conditions for the bisection algorithm?</p></li>
 </ol>
 </section>
 </section>
