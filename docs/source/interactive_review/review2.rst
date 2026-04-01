@@ -37,6 +37,37 @@ This is a review of some of the concepts we covered since the previous midterm.
 ``struct``
 ==========
 
+#. Consider a point in spherical coordinates, with components
+   for $r$, $\theta$, $\phi$
+
+   a. Create a ``struct`` called ``SphericalPoint`` that holds the data for a single point.
+
+   b. Initialize a ``SphericalPoint`` named ``p`` for the point $(r,
+      \theta, \phi) = (1, \pi/4, \pi/8)$
+
+   c. We can get the $x$, $y$, and $z$ components as:
+
+      .. math::
+
+         x &= r \sin\theta \cos\phi
+         y &= r \sin\theta \sin\phi
+         z &= r \cos\theta
+
+      Show the lines of code that compute this from ``p``
+
+#. Consider the ``struct``:
+
+   .. code:: c++
+
+     struct Rectangle {
+         double width{};
+         double height{};
+     };
+
+   Create a ``Rectangle`` named ``box`` with width ``4.0`` and height
+   ``2.5``.  Then write an expression that computes its area.
+
+
 Functions
 =========
 
