@@ -519,49 +519,73 @@ A class is an object that holds both data and functions that know how to operate
 <p>In C++, both <code class="docutils literal notranslate"><span class="pre">struct</span></code> and <code class="docutils literal notranslate"><span class="pre">class</span></code> create a class, with the difference being
 whether the data is publicly accessible by default.</p>
 </div>
-<p>We’ll start by making a simple container that holds a vector.  It is not very
-useful (since it doesn’t do much that <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> doesn’t already do).</p>
+<p>We’ll start by making a class that describes a circle:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-number">Listing 105 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple-class.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numbers&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
 
-<span class="k">struct</span><span class="w"> </span><span class="nc">SimpleContainer</span><span class="w"> </span><span class="p">{</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Circle</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="c1">// member data</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">{};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">{};</span>
 
 <span class="w">    </span><span class="c1">// constructor</span>
-<span class="w">    </span><span class="n">SimpleContainer</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="n">Circle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">)</span>
+<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">radius</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{}</span>
 
 <span class="w">    </span><span class="c1">// member functions</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">add_item</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">circumference</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">_sum</span><span class="p">{};</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="n">_sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_sum</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
+
 <span class="p">};</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="n">SimpleContainer</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Circle</span><span class="w"> </span><span class="n">c</span><span class="p">(</span><span class="mf">3.0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;circle with radius {:6.3f} has circumference {:6.3f} and area {:6.3f}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">                             </span><span class="n">c</span><span class="p">.</span><span class="n">radius</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">circumference</span><span class="p">(),</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">area</span><span class="p">());</span>
 
-<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">add_item</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-<span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">add_item</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
-
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">sum</span><span class="p">();</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;the sum of elements is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
+<p>Let’s understand the syntax:</p>
+<ul>
+<li><p>We use <code class="docutils literal notranslate"><span class="pre">struct</span></code> just like we did before, but now in addition to data, there are
+functions inside the <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code> that define the <code class="docutils literal notranslate"><span class="pre">struct</span></code>.</p></li>
+<li><p>We start with the <em>member data</em>.  In this class, there is only piece of member data,
+<code class="docutils literal notranslate"><span class="pre">radius</span></code>—the radius of our circle.</p></li>
+<li><p>We have one special function here, the <em>constructor</em>—it has the same name as the
+class, <code class="docutils literal notranslate"><span class="pre">Circle</span></code>.  This is what is called when we create an instance of our class,
+e.g.,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Circle</span> <span class="n">c</span><span class="p">(</span><span class="mf">2.0</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>calls our <code class="docutils literal notranslate"><span class="pre">Circle(double</span> <span class="pre">r)</span></code> function in our class <code class="docutils literal notranslate"><span class="pre">Circle</span></code>.</p>
+</li>
+<li><p>We have two <em>member functions</em>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">circumference()</span></code> will return the circumference of the circle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">area()</span></code> will return the area of the circle</p></li>
+</ul>
+<p>Notice that we don’t need to pass the radius into this functions.  Since they are
+members of the class, they will use the member data <code class="docutils literal notranslate"><span class="pre">radius</span></code> directly.  We
+invoke these on our instance of the class, e.g.,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">auto</span> <span class="n">C</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">circumference</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>This is the power of classes—the functions work directly on the data that is
+a member of the class.</p>
+</li>
+</ul>
 </section>
 
 

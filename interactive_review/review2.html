@@ -50,6 +50,8 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'interactive_review/review2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -561,6 +563,33 @@ write one line that creates <code class="docutils literal notranslate"><span cla
 </section>
 <section id="struct">
 <h2><code class="docutils literal notranslate"><span class="pre">struct</span></code><a class="headerlink" href="#struct" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Consider a point in spherical coordinates, with components
+for <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, <span class="math notranslate nohighlight">\(\phi\)</span></p>
+<ol class="loweralpha">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">struct</span></code> called <code class="docutils literal notranslate"><span class="pre">SphericalPoint</span></code> that holds the data for a single point.</p></li>
+<li><p>Initialize a <code class="docutils literal notranslate"><span class="pre">SphericalPoint</span></code> named <code class="docutils literal notranslate"><span class="pre">p</span></code> for the point <span class="math notranslate nohighlight">\((r,
+\theta, \phi) = (1, \pi/4, \pi/8)\)</span></p></li>
+<li><p>We can get the <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span> components as:</p>
+<div class="math notranslate nohighlight">
+\[x &amp;= r \sin\theta \cos\phi
+y &amp;= r \sin\theta \sin\phi
+z &amp;= r \cos\theta\]</div>
+<p>Show the lines of code that compute this from <code class="docutils literal notranslate"><span class="pre">p</span></code></p>
+</li>
+</ol>
+</li>
+<li><p>Consider the <code class="docutils literal notranslate"><span class="pre">struct</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">Rectangle</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">width</span><span class="p">{};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">height</span><span class="p">{};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> named <code class="docutils literal notranslate"><span class="pre">box</span></code> with width <code class="docutils literal notranslate"><span class="pre">4.0</span></code> and height
+<code class="docutils literal notranslate"><span class="pre">2.5</span></code>.  Then write an expression that computes its area.</p>
+</li>
+</ol>
 </section>
 <section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
