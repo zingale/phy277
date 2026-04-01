@@ -186,12 +186,14 @@ Some notes:
 * We are not guarding against the case where $df/dx = 0$---this could
   cause problems.
 
-.. admonition:: try it...
+  .. admonition:: try it...
 
-   Run the bisection and Newton methods on the same problem:
+     Run the Newton method on the same problem we did for bisection:
 
-   $$f(x) = x^3 + x^2 + 1 = 0$$
+     $$f(x) = x^3 + x^2 + 1 = 0$$
 
-   and compare how many iterations they need.
+     and use an initial guess of -1.  Notice that this generates an inf
+     quickly.
+
 
 
