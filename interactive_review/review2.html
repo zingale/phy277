@@ -629,12 +629,25 @@ is empty.</p></li>
 </section>
 <section id="loops">
 <h2>Loops<a class="headerlink" href="#loops" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Write a for loop that prints the integers 0 through 4.</p></li>
 <li><p>Given <code class="docutils literal notranslate"><span class="pre">std::vector&lt;int&gt;</span> <span class="pre">a{1,2,3,4};</span></code>, write a loop that prints each element of <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p></li>
+<li><p>What is the difference in the way that these two loops work, given a vector <code class="docutils literal notranslate"><span class="pre">vec</span></code>?</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// do stuff</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>vs.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="o">&amp;</span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// do stuff</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
 <li><p>Given <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">&quot;hello&quot;;</span></code>, write a loop that prints each character on its own line.</p></li>
 <li><p>Given <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">n</span> <span class="pre">=</span> <span class="pre">5;</span></code>, write a while loop that prints <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">4</span> <span class="pre">3</span> <span class="pre">2</span> <span class="pre">1</span></code>.</p></li>
-<li><p>Example of using <code class="docutils literal notranslate"><span class="pre">break</span></code></p></li>
+<li><p>What is the difference between <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> when used inside a loop?</p></li>
 </ol>
 </section>
 <section id="putting-it-together">
