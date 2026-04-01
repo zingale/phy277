@@ -122,11 +122,28 @@ Loops
 
 #. Given ``std::vector<int> a{1,2,3,4};``, write a loop that prints each element of ``a``.
 
+#. What is the difference in the way that these two loops work, given a vector ``vec``?
+
+   .. code:: c++
+
+      for (auto e : vec) {
+          // do stuff
+      }
+
+   vs.
+
+   .. code:: c++
+
+      for (auto &e : vec) {
+          // do stuff
+      }
+
 #. Given ``std::string s = "hello";``, write a loop that prints each character on its own line.
 
 #. Given ``int n = 5;``, write a while loop that prints ``5 4 3 2 1``.
 
-#. Example of using ``break``
+#. What is the difference between ``break`` and ``continue`` when used inside a loop?
+
 
 Putting it together
 ===================
