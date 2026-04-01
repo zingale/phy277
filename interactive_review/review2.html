@@ -507,7 +507,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-vector"><code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-string"><code class="docutils literal notranslate"><span class="pre">std::string</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-and-formatting">strings and formatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struct"><code class="docutils literal notranslate"><span class="pre">struct</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a></li>
@@ -550,8 +550,8 @@ homework solutions.</p>
 the integers <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, and <code class="docutils literal notranslate"><span class="pre">3</span></code> to it.</p></li>
 </ol>
 </section>
-<section id="std-string">
-<h2><code class="docutils literal notranslate"><span class="pre">std::string</span></code><a class="headerlink" href="#std-string" title="Link to this heading">#</a></h2>
+<section id="strings-and-formatting">
+<h2>strings and formatting<a class="headerlink" href="#strings-and-formatting" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Given <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">&quot;hello&quot;;</span></code></p>
 <ol class="loweralpha simple">
@@ -598,13 +598,22 @@ z &amp;= r \cos\theta\end{split}\]</div>
 </section>
 <section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Write a function <code class="docutils literal notranslate"><span class="pre">square</span></code> that takes a <code class="docutils literal notranslate"><span class="pre">double</span></code> named <code class="docutils literal notranslate"><span class="pre">x</span></code> and
 returns <code class="docutils literal notranslate"><span class="pre">x*x</span></code>.</p></li>
 <li><p>Write a function <code class="docutils literal notranslate"><span class="pre">is_zero</span></code> that takes an <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">n</span></code> and returns
 <code class="docutils literal notranslate"><span class="pre">true</span></code> if <code class="docutils literal notranslate"><span class="pre">n</span></code> is zero.</p></li>
 <li><p>Write a function <code class="docutils literal notranslate"><span class="pre">print_hello</span></code> that takes no arguments and prints <code class="docutils literal notranslate"><span class="pre">&quot;Hello&quot;</span></code>.</p></li>
 <li><p>Write a function <code class="docutils literal notranslate"><span class="pre">add</span></code> that takes two integers and returns their sum.</p></li>
+<li><p>Imagine we write a function <code class="docutils literal notranslate"><span class="pre">doit</span></code> that takes a function as an argument.  We want to
+pass in a function like:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>How would we write the argument for this in our function <code class="docutils literal notranslate"><span class="pre">doit</span></code>?</p>
+</li>
 </ol>
 </section>
 <section id="conditionals">
@@ -645,7 +654,8 @@ write 1 to 3 lines that print each word.</p></li>
 <h2>Numerical methods<a class="headerlink" href="#numerical-methods" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>Our centered difference has a form:</p>
-<p>$$left . frac{df}{dx} right <a href="#id1"><span class="problematic" id="id2">|</span></a>_{x_0} = frac{f(x_0 + Delta x) - f(x_0 - Delta x)}{2 Delta x} + mathcal{O}(Delta x^2)$$</p>
+<div class="math notranslate nohighlight">
+\[\left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0 - \Delta x)}{2 \Delta x} + \mathcal{O}(\Delta x^2)\]</div>
 <ol class="loweralpha simple">
 <li><p>What is the meaning of <span class="math notranslate nohighlight">\(\mathcal{O}(\Delta x^2)\)</span>?</p></li>
 <li><p>If we get a error <span class="math notranslate nohighlight">\(E\)</span> using a value <span class="math notranslate nohighlight">\(\Delta x\)</span>, what error should we
@@ -707,7 +717,7 @@ what is the requirement on the starting conditions for the bisection algorithm?<
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-vector"><code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#std-string"><code class="docutils literal notranslate"><span class="pre">std::string</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-and-formatting">strings and formatting</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struct"><code class="docutils literal notranslate"><span class="pre">struct</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a></li>

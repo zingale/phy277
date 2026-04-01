@@ -27,8 +27,8 @@ This is a review of some of the concepts we covered since the previous midterm.
    the integers ``1``, ``2``, and ``3`` to it.
 
 
-``std::string``
-===============
+strings and formatting
+======================
 
 #. Given ``std::string s = "hello";``
 
@@ -90,6 +90,17 @@ Functions
 
 #. Write a function ``add`` that takes two integers and returns their sum.
 
+#. Imagine we write a function ``doit`` that takes a function as an argument.  We want to
+   pass in a function like:
+
+   .. code:: c++
+
+      int add(int x, int y) {
+          return x + y;
+      }
+
+   How would we write the argument for this in our function ``doit``?
+
 
 Conditionals
 ============
@@ -138,7 +149,9 @@ Numerical methods
 
 #. Our centered difference has a form:
 
-   $$\left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0 - \Delta x)}{2 \Delta x} + \mathcal{O}(\Delta x^2)$$
+   .. math::
+
+      \left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0 - \Delta x)}{2 \Delta x} + \mathcal{O}(\Delta x^2)
 
    a. What is the meaning of $\mathcal{O}(\Delta x^2)$?
 
