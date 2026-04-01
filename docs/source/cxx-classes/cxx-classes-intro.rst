@@ -53,5 +53,3 @@ Let's understand the syntax:
 
   This is the power of classes---the functions work directly on the data that is
   a member of the class.
-
- 
