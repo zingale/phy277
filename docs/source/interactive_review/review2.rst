@@ -101,6 +101,21 @@ Functions
 
    How would we write the argument for this in our function ``doit``?
 
+#. Explain difference between a function that looks like:
+
+   .. code:: c++
+
+      void f1(double x) {
+          // do stuff
+      }
+
+   and
+
+   .. code:: c++
+
+      void f1(double &x) {
+          // do stuff
+      }
 
 Conditionals
 ============
@@ -114,6 +129,8 @@ Conditionals
 #. Given ``std::string s;``, write an if statement that prints ``"empty"`` if the string
    is empty.
 
+#. Write an if-test that checks if an integer ``a`` is greater than 0 *and* a boolean
+   ``test`` is true.
 
 Loops
 =====
@@ -159,7 +176,8 @@ Putting it together
 #. Given ``std::vector<std::string> words{"red", "blue", "green"};``,
    write 1 to 3 lines that print each word.
 
-#. Write a function that takes a vector
+#. Write a function that takes a vector of strings and returns
+   the length of the longest string.
 
 Numerical methods
 =================
