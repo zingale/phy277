@@ -614,6 +614,19 @@ pass in a function like:</p>
 </div>
 <p>How would we write the argument for this in our function <code class="docutils literal notranslate"><span class="pre">doit</span></code>?</p>
 </li>
+<li><p>Explain difference between a function that looks like:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">f1</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// do stuff</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">f1</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// do stuff</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
 </ol>
 </section>
 <section id="conditionals">
@@ -625,6 +638,8 @@ if <code class="docutils literal notranslate"><span class="pre">x</span></code> 
 is 60 or higher.</p></li>
 <li><p>Given <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">s;</span></code>, write an if statement that prints <code class="docutils literal notranslate"><span class="pre">&quot;empty&quot;</span></code> if the string
 is empty.</p></li>
+<li><p>Write an if-test that checks if an integer <code class="docutils literal notranslate"><span class="pre">a</span></code> is greater than 0 <em>and</em> a boolean
+<code class="docutils literal notranslate"><span class="pre">test</span></code> is true.</p></li>
 </ol>
 </section>
 <section id="loops">
@@ -660,7 +675,8 @@ print all elements greater than <code class="docutils literal notranslate"><span
 <li><p>Write a function <code class="docutils literal notranslate"><span class="pre">is_even</span></code> that returns whether an integer is even.</p></li>
 <li><p>Given <code class="docutils literal notranslate"><span class="pre">std::vector&lt;std::string&gt;</span> <span class="pre">words{&quot;red&quot;,</span> <span class="pre">&quot;blue&quot;,</span> <span class="pre">&quot;green&quot;};</span></code>,
 write 1 to 3 lines that print each word.</p></li>
-<li><p>Write a function that takes a vector</p></li>
+<li><p>Write a function that takes a vector of strings and returns
+the length of the longest string.</p></li>
 </ol>
 </section>
 <section id="numerical-methods">
