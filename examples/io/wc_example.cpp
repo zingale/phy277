@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 
 int main() {
 
@@ -13,7 +14,7 @@ int main() {
     }
 
     // loop over line by line
-    std::string line{};
+    std::string line;
 
     unsigned int line_count{0};
     unsigned int char_count{0};

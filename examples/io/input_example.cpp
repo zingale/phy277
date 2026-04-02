@@ -1,12 +1,13 @@
 #include <iostream>
-#include <iomanip>
 #include <sstream>
 #include <fstream>
+#include <format>
+#include <string>
 #include <vector>
 
 struct Planet
 {
-    std::string name{};
+    std::string name;
     double a{};            // semi-major axis
     double e{};            // eccentricity
 };
@@ -35,8 +36,8 @@ int main() {
     data_file.close();
 
     for (const auto& p : planets) {
-        of << std::format("{:12} : ({:6.3f}, {:6.3f})\n",
-                          p.name, p.a, p.e);
+        std::cout << std::format("{:12} : ({:6.3f}, {:6.3f})\n",
+                                 p.name, p.a, p.e);
     }
 
 }
