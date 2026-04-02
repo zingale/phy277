@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <sstream>
 #include <fstream>
 #include <vector>
 
@@ -14,31 +15,28 @@ int main() {
 
     std::vector<Planet> planets;
 
-    std::ifstream data_file;
-
-    data_file.open("planets.txt");
+    std::ifstream data_file("planets.txt");
 
     if (! data_file.is_open()) {
         std::cout << "Error opening the file" << std::endl;
         return 1;
     }
 
-    // this doesn't work as expected, since .eof() is only set _after_
-    // a failed read
+    std::string line{};
 
-    while (! data_file.eof()) {
+    while (std::getline(data_file, line)) {
         Planet p;
-        data_file >> p.name;
-        data_file >> p.a;
-        data_file >> p.e;
-
+        std::stringstream ss(line);
+        ss >> p.name >> p.a >> p.e;
         planets.push_back(p);
+
     }
 
     data_file.close();
 
     for (const auto& p : planets) {
-        std::cout << std::setw(12) << p.name << std::setw(12) << p.a << std::setw(12) << p.e << std::endl;
+        of << std::format("{:12} : ({:6.3f}, {:6.3f})\n",
+                          p.name, p.a, p.e);
     }
 
 }

@@ -38,6 +38,9 @@ When we are done with the file, we can close it:
    the end of a function).  However, you can still free it earlier if
    desired.
 
+Writing example
+===============
+
 The alternate to open a file for reading is ``std::ifstream``.  Note
 that both of these are defined by the ``fstream`` header.
 
@@ -46,6 +49,10 @@ Here's an example of writing our planet information out to a file:
 .. literalinclude:: ../../../examples/io/output_example.cpp
    :language: c++
    :caption: ``output_example.cpp``
+
+
+Reading our file
+================
 
 Let's now look at how to read that file back in.
 
@@ -80,9 +87,9 @@ Here's an example of reading our file line by line.  We rely on the
 fact when it reaches the end of the file, ``getline()`` will evaluate
 as ``false`` in a conditional.
 
-.. literalinclude:: ../../../examples/io/input_example2.cpp
+.. literalinclude:: ../../../examples/io/input_example.cpp
    :language: c++
-   :caption: ``input_example2.cpp``
+   :caption: ``input_example.cpp``
 
 .. admonition:: try it...
 
@@ -106,6 +113,9 @@ as ``false`` in a conditional.
 
       std::ofstream of("file.txt", std::ios::app);
 
+
+Exercises
+=========
 
 .. admonition:: try it...
 
