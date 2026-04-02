@@ -180,3 +180,6 @@ Numerical methods
 #. Given a function $f(x)$, if we want to find the zero, $x_0$, such that $f(x_0) = 0$,
    what is the requirement on the starting conditions for the bisection algorithm?
 
+#. When we looked a integration, we saw the trapezoid rule and Simpson's rule.  Explain
+   how they are different.
+
