@@ -17,9 +17,28 @@ struct SolarSystem {
         assert(mass > 0.0);
     }
 
-    void add_planet(const std::string& name, const double a, const double e=0.0);
+    void add_planet(const std::string& name,
+                    const double a, const double e=0.0) {
 
-    void print_planets();
+        // make sure a planet with that name doesn't already exist
+        // if the pointer returned here is not null, then the planet exists
 
+        for (auto p : planets) {
+            if (name == p.name) {
+                std::cout << "planet already exists" << std::endl;
+                return;
+            }
+        }
+
+        Planet p{.name=name, .a=a, .e=e};
+        planets.push_back(p);
+    }
+
+    void print_planets() {
+
+        for (auto p : planets) {
+            std::cout << p << std::endl;
+        }
+    }
 };
 #endif

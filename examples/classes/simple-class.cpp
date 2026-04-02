@@ -1,36 +1,32 @@
 #include <iostream>
-#include <vector>
+#include <numbers>
+#include <format>
 
-struct SimpleContainer {
+struct Circle {
 
     // member data
-    std::vector<double> vec{};
+    double radius{};
 
     // constructor
-    SimpleContainer() {}
+    Circle(double r)
+        : radius(r)
+    {}
 
     // member functions
-    void add_item(double x) {
-        vec.push_back(x);
+    double circumference() {
+        return 2.0 * std::numbers::pi * radius;
     }
 
-    double sum() {
-        double _sum{};
-        for (auto e : vec) {
-            _sum += e;
-        }
-        return _sum;
+    double area() {
+        return std::numbers::pi * radius * radius;
     }
+
 };
 
 int main() {
 
-    SimpleContainer a;
+    Circle c(3.0);
+    std::cout << std::format("circle with radius {:6.3f} has circumference {:6.3f} and area {:6.3f}\n",
+                             c.radius, c.circumference(), c.area());
 
-    a.add_item(10);
-    a.add_item(20);
-
-    auto total = a.sum();
-
-    std::cout << "the sum of elements is " << total << std::endl;
 }

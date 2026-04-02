@@ -4,6 +4,7 @@
 #include <vector>
 #include <cassert>
 #include <cmath>
+#include <algorithm>
 
 #include "planet.H"
 
@@ -24,11 +25,10 @@ struct SolarSystem {
         // make sure a planet with that name doesn't already exist
         // if the pointer returned here is not null, then the planet exists
 
-        for (auto p : planets) {
-            if (name == p.name) {
-                std::cout << "planet already exists" << std::endl;
-                return;
-            }
+        if (std::ranges::any_of(planets,
+                                [=] (const Planet& p) {return p.name == name;})) {
+            std::cout << "planet already exists" << std::endl;
+            return;
         }
 
         Planet p{.name=name, .a=a, .e=e};
@@ -37,39 +37,31 @@ struct SolarSystem {
 
     void print_planets() {
 
-        for (auto p : planets) {
+        for (const auto& p : planets) {
             std::cout << p << std::endl;
         }
     }
 
-    int get_planet(const std::string& name, Planet& p_return) {
+    Planet* get_planet(const std::string& name) {
 
-        // istatus = 1 means the planet doesn't exist
+        auto it = std::ranges::find_if(planets,
+                                       [&] (const Planet& p) {return p.name == name;});
 
-        int istatus = 1;
-
-        for (auto p: planets) {
-            if (p.name == name) {
-                p_return.name = p.name;
-                p_return.a = p.a;
-                p_return.e = p.e;
-                istatus = 0;
-                break;
-            }
+        if (it != planets.end()) {
+            return &(*it);
         }
 
-        return istatus;
+        return nullptr;
     }
 
     double get_period(const std::string& name) {
 
         double period = -1;
 
-        Planet p;
-        int istatus = get_planet(name, p);
+        const auto *p = get_planet(name);
 
-        if (! istatus) {
-            period = std::sqrt(std::pow(p.a, 3.0) / star_mass);
+        if (p) {
+            period = std::sqrt(std::pow(p->a, 3.0) / star_mass);
         }
 
         return period;

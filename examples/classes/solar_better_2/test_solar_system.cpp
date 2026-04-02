@@ -1,6 +1,5 @@
 #include <iostream>
 #include "solar_system.H"
-#include "planet.H"
 
 int main() {
 
@@ -13,6 +12,6 @@ int main() {
     // this generates an error
     ss.add_planet("alpha", 2.0);
 
-    ss.print_planets();
+    std::cout << "period of alpha = " << ss.get_period("alpha") << std::endl;
 
 }
