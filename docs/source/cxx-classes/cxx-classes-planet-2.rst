@@ -26,12 +26,6 @@ period.
       :language: c++
       :caption: new ``solar_system.H``
 
-   and corresponding functions:
-
-   .. literalinclude:: ../../../examples/classes/solar_better/solar_system.cpp
-      :language: c++
-      :caption: new ``solar_system.cpp``
-
    and test driver:
 
    .. literalinclude:: ../../../examples/classes/solar_better/test_solar_system.cpp
