@@ -30,11 +30,7 @@ struct SolarSystem {
             }
         }
 
-        Planet p;
-        p.name = name;
-        p.a = a;
-        p.e = e;
-
+        Planet p{.name=name, .a=a, .e=e};
         planets.push_back(p);
     }
 

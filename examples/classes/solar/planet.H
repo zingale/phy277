@@ -18,5 +18,4 @@ std::ostream& operator<< (std::ostream& os, const Planet& p) {
     return os;
 }
 
-
 #endif
