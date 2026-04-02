@@ -1,3 +1,5 @@
+.. _sec:compiler-flags:
+
 *******************************
 Making the Compiler Do the Work
 *******************************
