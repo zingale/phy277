@@ -481,7 +481,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -497,6 +499,16 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-example">Writing example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-our-file">Reading our file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -534,6 +546,8 @@ used to take input from a user or write to the screen.</p>
 the end of a function).  However, you can still free it earlier if
 desired.</p>
 </div>
+<section id="writing-example">
+<h2>Writing example<a class="headerlink" href="#writing-example" title="Link to this heading">#</a></h2>
 <p>The alternate to open a file for reading is <code class="docutils literal notranslate"><span class="pre">std::ifstream</span></code>.  Note
 that both of these are defined by the <code class="docutils literal notranslate"><span class="pre">fstream</span></code> header.</p>
 <p>Here’s an example of writing our planet information out to a file:</p>
@@ -576,6 +590,9 @@ that both of these are defined by the <code class="docutils literal notranslate"
 </pre></div>
 </div>
 </div>
+</section>
+<section id="reading-our-file">
+<h2>Reading our file<a class="headerlink" href="#reading-our-file" title="Link to this heading">#</a></h2>
 <p>Let’s now look at how to read that file back in.</p>
 <p>There are 2 approaches we can take:</p>
 <ul>
@@ -604,7 +621,7 @@ as a stream and read from it.</p>
 fact when it reaches the end of the file, <code class="docutils literal notranslate"><span class="pre">getline()</span></code> will evaluate
 as <code class="docutils literal notranslate"><span class="pre">false</span></code> in a conditional.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 80 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">input_example2.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 80 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">input_example.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iomanip&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstream&gt;</span>
@@ -667,6 +684,9 @@ an existing file of that name.</p>
 </pre></div>
 </div>
 </div>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <div class="admonition-try-it admonition">
 <p class="admonition-title">try it…</p>
 <p>Let’s write our own version of <code class="docutils literal notranslate"><span class="pre">wc</span></code>.  Here’s a text file:
@@ -741,6 +761,7 @@ just hardcode the file name into the program for now.</p>
 </div>
 </details></div>
 </section>
+</section>
 
 
                 </article>
@@ -777,6 +798,25 @@ just hardcode the file name into the program for now.</p>
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-example">Writing example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-our-file">Reading our file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
