@@ -35,9 +35,8 @@ int main() {
     data_file.close();
 
     for (const auto& p : planets) {
-        std::cout << std::setw(12) << p.name
-                  << std::setw(12) << p.a
-                  << std::setw(12) << p.e << std::endl;
+        of << std::format("{:12} : ({:6.3f}, {:6.3f})\n",
+                          p.name, p.a, p.e);
     }
 
 }
