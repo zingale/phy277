@@ -10,7 +10,7 @@ HEADERS := $(wildcard *.H)
 OBJECTS := $(SOURCES:.cpp=.o)
 
 
-CFLAGS := -Wall -Wextra -Wpedantic -Wshadow -g
+CFLAGS := -Wall -Wextra -Wpedantic -Wshadow -g -std=c++20
 
 # a recipe for making an object file from a .cpp file
 # Note: this makes every header file a dependency of every object file,

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "solar_system.H"
+#include "planet.H"
 
 int main() {
 

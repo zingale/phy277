@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <format>
 
 struct Planet
 {
@@ -11,7 +12,11 @@ struct Planet
     double e{};            // eccentricity
 };
 
-std::ostream& operator<< (std::ostream& os, const Planet& p);
+std::ostream& operator<< (std::ostream& os, const Planet& p) {
+    os << std::format("{:12} : ({:6.3f}, {:6.3f})",
+                      p.name, p.a, p.e);
+    return os;
+}
 
 
 #endif
