@@ -37,11 +37,7 @@ Here's how this function looks:
 .. code:: c++
 
    std::ostream& operator<< (std::ostream& os, const Planet& p) {
-
-       os << std::setw(12) << p.name << " : ("
-          << std::setw(8) << p.a << " , "
-          << std::setw(8) << p.e << ")";
-
+       os << std::format("{:12} : ({:8}, {:8}))", p.name, p.a, p.e);
        return os;
    }
 
@@ -59,5 +55,3 @@ and then outputting them.
 .. literalinclude:: ../../../examples/functions/planet_sort.cpp
    :language: c++
    :caption: ``planet_sort.cpp``
-
-
