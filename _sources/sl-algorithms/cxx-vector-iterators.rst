@@ -14,8 +14,7 @@ There are 2 ways to access the beginning and end of a ``vector``:
 * ``.cend()``, ``.end()`` : these will return an iterator that points
   *to one past the last element*.
 
-An iterator can be thought of as a special type of *pointer*---a
-topic that we will discuss much more later.  Iterators have
+An iterator can be thought of as a special type of pointer.  Iterators have
 restrictions on their use, depending on the container---this makes
 them more safe to use.
 
@@ -25,11 +24,12 @@ If we think about an iterator like:
 
    auto it = container.cbegin();
 
-Then we can access the next element in ``container`` by incrementing the iterator, ``it++``.
+Then we can access the next element in ``container`` by incrementing
+the iterator, ``it++``.
 
 If we want to see the value in ``container`` that the iterator is
-pointing to, then we need to *dereference* it---this is done with the
-``*`` operator:
+pointing to, then we need to dereference it---just as with pointers,
+this is done with the ``*`` operator:
 
 .. code:: c++
 

@@ -528,18 +528,18 @@ contents of the vector.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.cend()</span></code>, <code class="docutils literal notranslate"><span class="pre">.end()</span></code> : these will return an iterator that points
 <em>to one past the last element</em>.</p></li>
 </ul>
-<p>An iterator can be thought of as a special type of <em>pointer</em>—a
-topic that we will discuss much more later.  Iterators have
+<p>An iterator can be thought of as a special type of pointer.  Iterators have
 restrictions on their use, depending on the container—this makes
 them more safe to use.</p>
 <p>If we think about an iterator like:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="n">cbegin</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>Then we can access the next element in <code class="docutils literal notranslate"><span class="pre">container</span></code> by incrementing the iterator, <code class="docutils literal notranslate"><span class="pre">it++</span></code>.</p>
+<p>Then we can access the next element in <code class="docutils literal notranslate"><span class="pre">container</span></code> by incrementing
+the iterator, <code class="docutils literal notranslate"><span class="pre">it++</span></code>.</p>
 <p>If we want to see the value in <code class="docutils literal notranslate"><span class="pre">container</span></code> that the iterator is
-pointing to, then we need to <em>dereference</em> it—this is done with the
-<code class="docutils literal notranslate"><span class="pre">*</span></code> operator:</p>
+pointing to, then we need to dereference it—just as with pointers,
+this is done with the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;cbegin is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
