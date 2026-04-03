@@ -617,7 +617,7 @@ the integers <code class="docutils literal notranslate"><span class="pre">1</spa
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">We use <code class="docutils literal notranslate"><span class="pre">.size()</span></code>, just like with vectors:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="err">&#39;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -686,16 +686,57 @@ and also compile with C++20 support, <code class="docutils literal notranslate">
 <li><p>Consider a point in spherical coordinates, with components
 for <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(\theta\)</span>, <span class="math notranslate nohighlight">\(\phi\)</span></p>
 <ol class="loweralpha">
-<li><p>Create a <code class="docutils literal notranslate"><span class="pre">struct</span></code> called <code class="docutils literal notranslate"><span class="pre">SphericalPoint</span></code> that holds the data for a single point.</p></li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">struct</span></code> called <code class="docutils literal notranslate"><span class="pre">SphericalPoint</span></code> that holds the data for a single point.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">SphericalPoint</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">{};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">theta</span><span class="p">{};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">phi</span><span class="p">{};</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Note the <code class="docutils literal notranslate"><span class="pre">;</span></code> at the end of the <code class="docutils literal notranslate"><span class="pre">struct</span></code> definition.</p>
+</div>
+</details></li>
 <li><p>Initialize a <code class="docutils literal notranslate"><span class="pre">SphericalPoint</span></code> named <code class="docutils literal notranslate"><span class="pre">p</span></code> for the point <span class="math notranslate nohighlight">\((r,
-\theta, \phi) = (1, \pi/4, \pi/8)\)</span></p></li>
+\theta, \phi) = (1, \pi/4, \pi/8)\)</span></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The cleanest way to do this is:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">SphericalPoint</span><span class="w"> </span><span class="n">p</span><span class="p">{.</span><span class="n">r</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">                 </span><span class="p">.</span><span class="n">theta</span><span class="o">=</span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="o">/</span><span class="mf">4.0</span><span class="p">,</span>
+<span class="w">                 </span><span class="p">.</span><span class="n">phi</span><span class="o">=</span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="o">/</span><span class="mf">8.0</span><span class="p">};</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Where we use <code class="docutils literal notranslate"><span class="pre">std::numbers</span></code> to get the value of <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p class="sd-card-text">As with <code class="docutils literal notranslate"><span class="pre">std::format</span></code>, this is a C++20 feature, so we
+need to enable C++20 support when compiling.</p>
+</div>
+</div>
+</details></li>
 <li><p>We can get the <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span> components as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}x &amp;= r \sin\theta \cos\phi \\
 y &amp;= r \sin\theta \sin\phi \\
 z &amp;= r \cos\theta\end{split}\]</div>
 <p>Show the lines of code that compute this from <code class="docutils literal notranslate"><span class="pre">p</span></code></p>
-</li>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">We use the <code class="docutils literal notranslate"><span class="pre">.</span></code> operator to access the components of our <code class="docutils literal notranslate"><span class="pre">struct</span></code>.
+Our code can be:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sin</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">theta</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cos</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">phi</span><span class="p">);</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sin</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">theta</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">sin</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">phi</span><span class="p">);</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cos</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">theta</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</details></li>
 </ol>
 </li>
 <li><p>Consider the <code class="docutils literal notranslate"><span class="pre">struct</span></code>:</p>
@@ -707,7 +748,17 @@ z &amp;= r \cos\theta\end{split}\]</div>
 </div>
 <p>Create a <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code> named <code class="docutils literal notranslate"><span class="pre">box</span></code> with width <code class="docutils literal notranslate"><span class="pre">4.0</span></code> and height
 <code class="docutils literal notranslate"><span class="pre">2.5</span></code>.  Then write an expression that computes its area.</p>
-</li>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">After we create our <code class="docutils literal notranslate"><span class="pre">Rectangle</span></code>, we access the components
+using the <code class="docutils literal notranslate"><span class="pre">.</span></code> operator:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Rectangle</span><span class="w"> </span><span class="n">box</span><span class="p">{.</span><span class="n">width</span><span class="o">=</span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">height</span><span class="o">=</span><span class="mf">2.5</span><span class="p">};</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">box</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">box</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</details></li>
 </ol>
 </section>
 <section id="functions">

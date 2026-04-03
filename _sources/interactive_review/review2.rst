@@ -92,7 +92,7 @@ strings and formatting
 
          .. code:: c++
 
-            std::cout << s.size() << std::endl;'
+            std::cout << s.size() << std::endl;
 
    b. Write one line that prints the first character.
 
@@ -159,9 +159,38 @@ strings and formatting
 
    a. Create a ``struct`` called ``SphericalPoint`` that holds the data for a single point.
 
+      .. dropdown:: solution
+
+         .. code:: c++
+
+            struct SphericalPoint {
+                double r{};
+                double theta{};
+                double phi{};
+            };
+
+         Note the ``;`` at the end of the ``struct`` definition.
+
    b. Initialize a ``SphericalPoint`` named ``p`` for the point $(r,
       \theta, \phi) = (1, \pi/4, \pi/8)$
 
+      .. dropdown:: solution
+
+         The cleanest way to do this is:
+
+         .. code:: c++
+
+            SphericalPoint p{.r=1.0,
+                             .theta=std::numbers::pi/4.0,
+                             .phi=std::numbers::pi/8.0};
+
+         Where we use ``std::numbers`` to get the value of $\pi$.
+
+         .. important::
+
+            As with ``std::format``, this is a C++20 feature, so we 
+            need to enable C++20 support when compiling.
+ 
    c. We can get the $x$, $y$, and $z$ components as:
 
       .. math::
@@ -171,6 +200,17 @@ strings and formatting
          z &= r \cos\theta
 
       Show the lines of code that compute this from ``p``
+
+      .. dropdown:: solution
+
+         We use the ``.`` operator to access the components of our ``struct``.
+         Our code can be:
+
+         .. code:: c++
+
+            double x = p.r * std::sin(p.theta) * std::cos(p.phi);
+            double y = p.r * std::sin(p.theta) * std::sin(p.phi);
+            double z = p.r * std::cos(p.theta);
 
 #. Consider the ``struct``:
 
@@ -184,6 +224,15 @@ strings and formatting
    Create a ``Rectangle`` named ``box`` with width ``4.0`` and height
    ``2.5``.  Then write an expression that computes its area.
 
+   .. dropdown:: solution
+
+      After we create our ``Rectangle``, we access the components
+      using the ``.`` operator:
+
+      .. code:: c++
+
+         Rectangle box{.width=4.0, .height=2.5};
+         double area = box.width * box.height;
 
 Functions
 =========
