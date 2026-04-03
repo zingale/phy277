@@ -34,23 +34,24 @@ int main() {
                 // if the previous character was a space too, then
                 // just skip, otherwise, increment the word counter
                 // and set it as a space
-                if (!was_space) {
-                    word_count += 1;
+                if (! was_space) {
+                    word_count++;
                     was_space = true;
                 }
             } else {
                 was_space = false;
             }
 
-            char_count += 1;
+            char_count++;
         }
 
-        line_count += 1;
+        line_count++;
 
     }
 
     std::cout << "number of lines = " << line_count << std::endl;
     std::cout << "number of words = " << word_count << std::endl;
-    std::cout << "number of characters = " << char_count << std::endl;
+    std::cout << "number of characters = "
+              << char_count << std::endl;
 
 }

@@ -129,6 +129,9 @@ Exercises
    just hardcode the file name into the program for now.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: ../../../examples/io/wc_example.cpp
          :language: c++

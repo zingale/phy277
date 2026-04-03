@@ -1,21 +1,27 @@
-#include <iostream>
-#include <vector>
 #include <algorithm>
+#include <iostream>
+#include <ranges>
+#include <vector>
 
 int main() {
 
-    std::vector<int> container{100, 200, 300, 400, 500, 600};
+    const std::vector<int> container{100, 200, 300, 400, 500, 600};
 
     // search through the entire vector to find the first instance of the
     // element "400"
 
-    auto pos = std::find(container.cbegin(), container.cend(), 400);
+    auto pos = std::ranges::find(container, 400);
 
-    std::cout << "element found: " << *pos << std::endl;
+    if (pos == container.end()) {
+        std::cout << "element not found\n";
+        return 0;
+    }
+
+    std::cout << "element found: " << *pos << '\n';
 
     // output the remaining elements after the one we searched for
 
-    for (auto it = pos+1; it < container.cend(); ++it) {
-        std::cout << *it << std::endl;
+    for (int value : std::ranges::subrange(std::next(pos), container.end())) {
+        std::cout << value << '\n';
     }
 }
