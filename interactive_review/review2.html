@@ -609,18 +609,75 @@ the integers <code class="docutils literal notranslate"><span class="pre">1</spa
 </section>
 <section id="strings-and-formatting">
 <h2>strings and formatting<a class="headerlink" href="#strings-and-formatting" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Given <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">&quot;hello&quot;;</span></code></p>
-<ol class="loweralpha simple">
-<li><p>Write one line that prints the length of <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p></li>
-<li><p>Write one line that prints the first character.</p></li>
+<ol class="loweralpha">
+<li><p>Write one line that prints the length of <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">We use <code class="docutils literal notranslate"><span class="pre">.size()</span></code>, just like with vectors:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="err">&#39;</span>
+</pre></div>
+</div>
+</div>
+</details></li>
+<li><p>Write one line that prints the first character.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">We index it starting with <code class="docutils literal notranslate"><span class="pre">0</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</details></li>
 </ol>
 </li>
 <li><p>Given <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">first</span> <span class="pre">=</span> <span class="pre">&quot;Ada&quot;;</span></code> and <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">last</span> <span class="pre">=</span> <span class="pre">&quot;Lovelace&quot;;</span></code>,
-write one line that creates <code class="docutils literal notranslate"><span class="pre">full</span></code> equal to <code class="docutils literal notranslate"><span class="pre">&quot;Ada</span> <span class="pre">Lovelace&quot;</span></code>.</p></li>
-<li><p>Given <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">&quot;cat&quot;;</span></code>, write one line that changes it to <code class="docutils literal notranslate"><span class="pre">&quot;cats&quot;</span></code>.</p></li>
+write one line that creates <code class="docutils literal notranslate"><span class="pre">full</span></code> equal to <code class="docutils literal notranslate"><span class="pre">&quot;Ada</span> <span class="pre">Lovelace&quot;</span></code>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">We can use the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">full</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">last</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</details></li>
+<li><p>Given <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">s</span> <span class="pre">=</span> <span class="pre">&quot;cat&quot;;</span></code>, write one line that changes it to <code class="docutils literal notranslate"><span class="pre">&quot;cats&quot;</span></code>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The easiest way to do this is via addition, updating <code class="docutils literal notranslate"><span class="pre">s</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s">&quot;s&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</details></li>
 <li><p>How would you use <code class="docutils literal notranslate"><span class="pre">std::format</span></code> to print out two double precision quantities,
-<span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, to make a sentence like <code class="docutils literal notranslate"><span class="pre">&quot;x</span> <span class="pre">=</span> <span class="pre">2.0,</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">3.0&quot;</span></code>?</p></li>
+<span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, to make a sentence like <code class="docutils literal notranslate"><span class="pre">&quot;x</span> <span class="pre">=</span> <span class="pre">2.0,</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">3.0&quot;</span></code>?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Given:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mi">2</span><span class="p">};</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">{</span><span class="mi">3</span><span class="p">};</span>
+</pre></div>
+</div>
+<p class="sd-card-text">we can do:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;x = {:.1f}, y = {:.1f}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text">here the <code class="docutils literal notranslate"><span class="pre">.1f</span></code> means “one digit after the decimal point and
+use fixed-point formatting”.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p class="sd-card-text">When using <code class="docutils literal notranslate"><span class="pre">std::format</span></code>, we need to include the <code class="docutils literal notranslate"><span class="pre">&lt;format&gt;</span></code> header
+and also compile with C++20 support, <code class="docutils literal notranslate"><span class="pre">-std=c++20</span></code>.</p>
+</div>
+</div>
+</details></li>
 </ol>
 </section>
 <section id="struct">
