@@ -548,14 +548,14 @@ Loops
       :icon: pencil
       :animate: fade-in-slide-down
 
-       We can loop over characters using a ranged-for loop, just like with
-       a vector.
+      We can loop over characters using a ranged-for loop, just like with
+      a vector.
 
-       .. code:: c++
+      .. code:: c++
 
-          for (auto c : s) {
-              std::cout << c << std::endl;
-          }
+         for (auto c : s) {
+             std::cout << c << std::endl;
+         }
 
 #. Given ``int n = 5;``, write a while loop that prints ``5 4 3 2 1``.
 
@@ -564,16 +564,16 @@ Loops
       :icon: pencil
       :animate: fade-in-slide-down
 
-       .. code:: c++
+      .. code:: c++
 
-          int n{5};
-          while (n > 0) {
-              std::cout << n << " ";
-              --n;
-          }
+         int n{5};
+         while (n > 0) {
+             std::cout << n << " ";
+             --n;
+         }
 
-       The important bit is to remember to decrement ``n`` inside of the loop.  We
-       can do either ``--n`` or ``n--``.
+      The important bit is to remember to decrement ``n`` inside of the loop.  We
+      can do either ``--n`` or ``n--``.
 
 #. What is the difference between ``break`` and ``continue`` when used inside a loop?
 
