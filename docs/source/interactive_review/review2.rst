@@ -340,10 +340,11 @@ Functions
       Function ``f1`` takes ``x`` as a copy---this is the default
       behavior in C++.  In contrast, ``f2`` takes ``x`` as a
       reference---this means that it has access to the memory where
-      the argument in the calling function lives.  The difference here
-      is that any changes to ``x`` done in the function body would not
-      be seen by the caller when using ``f1``, but they would see the
-      changes when using ``f2``.
+      the argument in the calling function lives.
+
+      The difference here is that any changes to ``x`` done in the
+      function body would not be seen by the caller when using ``f1``,
+      but they would see the changes when using ``f2``.
 
 Conditionals
 ============
@@ -351,14 +352,63 @@ Conditionals
 #. Given ``int x;``, write an if/else statement that prints ``"even"``
    if ``x`` is even and ``"odd"`` otherwise.
 
+   .. dropdown:: solution
+
+      .. code:: c++
+
+         if (x % 2 == 0) {
+             std::cout << "even" << std::endl;
+         } else {
+             std::cout << "odd" << std::endl;
+         }
+
 #. Given ``double grade;``, write an if statement that prints ``"pass"`` if the grade
    is 60 or higher.
+
+   .. dropdown:: solution
+
+      .. code:: c++
+
+         if (grade >= 60) {
+             std::cout << "pass" << std::endl;
+         }
+
+      Notice that we use ``>=`` and not just ``>`` to ensure that ``60`` is a pass.
 
 #. Given ``std::string s;``, write an if statement that prints ``"empty"`` if the string
    is empty.
 
+   .. dropdown:: solution
+
+      .. code:: c++
+
+         if (s.size() == 0) {
+             std::cout << "empty" << std::endl;
+         }
+
+      alternately we could do:
+
+      .. code:: c++
+
+         if (s.empty()) {
+             std::cout << "empty" << std::endl;
+         }
+
+
 #. Write an if-test that checks if an integer ``a`` is greater than 0 *and* a boolean
    ``test`` is true.
+
+   .. dropdown :: solution
+
+      We use the ``&&`` operator for "and":
+
+      .. code:: c++
+
+         if (a > 0 && test) {
+             // do stuff
+         }
+
+      If we wanted "or", we would use ``||``.
 
 Loops
 =====
