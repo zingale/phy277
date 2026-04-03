@@ -188,9 +188,9 @@ strings and formatting
 
          .. important::
 
-            As with ``std::format``, this is a C++20 feature, so we 
+            As with ``std::format``, this is a C++20 feature, so we
             need to enable C++20 support when compiling.
- 
+
    c. We can get the $x$, $y$, and $z$ components as:
 
       .. math::
@@ -240,12 +240,55 @@ Functions
 #. Write a function ``square`` that takes a ``double`` named ``x`` and
    returns ``x*x``.
 
+   .. dropdown:: solution
+
+      .. code:: c++
+
+         double square(double x) {
+             return x * x;
+         }
+
 #. Write a function ``is_zero`` that takes an ``int n`` and returns
    ``true`` if ``n`` is zero.
 
+   .. dropdown:: solution
+
+      Our return type will be ``bool`` in this case:
+
+      .. code:: c++
+
+         bool is_zero(int n) {
+             bool result{};
+             if (n == 0) {
+                 result = true;
+             }
+             return result;
+         }
+
+      here, ``bool result{};`` initializes ``result`` to ``false``.
+
 #. Write a function ``print_hello`` that takes no arguments and prints ``"Hello"``.
 
+   .. dropdown:: solution
+
+      When a function does not return a value, we use the ``void`` keyword:
+
+      .. code:: c++
+
+         void print_hello() {
+             std::cout << "Hello" << std::endl;'
+         }
+
 #. Write a function ``add`` that takes two integers and returns their sum.
+
+   .. dropdown:: solution
+
+      .. code:: c++
+
+         int add(int x, int y) {
+             return x + y;
+         }
+
 
 #. Imagine we write a function ``doit`` that takes a function as an argument.  We want to
    pass in a function like:
@@ -257,6 +300,24 @@ Functions
       }
 
    How would we write the argument for this in our function ``doit``?
+
+   .. dropdown:: solution
+
+      We use ``std::function`` to define the function interface.  In
+      the ``< >``, we need to indicate the return type and the types
+      of the arguments.  For this case, it would be ``<int(int,
+      int)>`` (we take two ``int`` and return an ``int``).
+
+
+      A possible implementation of ``doit`` is:
+
+      .. code:: c++
+
+         int doit(std::function<int(int, int)> f, int a, int b) {
+             return f(a, b);
+         }
+
+      Also remember you need to ``#include <functional>``.
 
 #. Explain difference between a function that looks like:
 
@@ -270,9 +331,19 @@ Functions
 
    .. code:: c++
 
-      void f1(double &x) {
+      void f2(double &x) {
           // do stuff
       }
+
+   .. dropdown:: solution
+
+      Function ``f1`` takes ``x`` as a copy---this is the default
+      behavior in C++.  In contrast, ``f2`` takes ``x`` as a
+      reference---this means that it has access to the memory where
+      the argument in the calling function lives.  The difference here
+      is that any changes to ``x`` done in the function body would not
+      be seen by the caller when using ``f1``, but they would see the
+      changes when using ``f2``.
 
 Conditionals
 ============
@@ -357,4 +428,3 @@ Numerical methods
 
 #. When we looked a integration, we saw the trapezoid rule and Simpson's rule.  Explain
    how they are different.
-
