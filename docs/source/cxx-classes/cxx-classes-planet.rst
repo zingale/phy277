@@ -32,6 +32,23 @@ Some notes:
   in that (comma-separated) list is initialized when an object is
   created as an instance of the class.
 
+  .. note::
+
+     In this simple example, we really did not need to use an initialization list, but there
+     are situations when it is desired or even required:
+
+     * if any of our member data is ``const`` or a reference.
+
+     * if we have other classes as our member data (including things like ``std::vector``)
+       and initializing them involves some overhead.  It can be faster to do the initialization
+       via the initialization list.
+
+     See the stack overflow `Why should I prefer to use member
+     initialization lists?
+     <https://stackoverflow.com/questions/926752/why-should-i-prefer-to-use-member-initialization-lists>`_
+     discussion.
+
+
 * In the constructor body we have an ``assert()`` statement---this
   will abort the code if it is false.  This is a way to add runtime
   checking to the code to ensure that it is being used properly /

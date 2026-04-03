@@ -36,7 +36,7 @@ struct SolarSystem {
 
     void print_planets() {
 
-        for (auto p : planets) {
+        for (const auto& p : planets) {
             std::cout << p << std::endl;
         }
     }
