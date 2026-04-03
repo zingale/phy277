@@ -17,6 +17,9 @@ Bash shell
    are currently in?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. prompt:: bash
 
@@ -29,6 +32,9 @@ Bash shell
    filesystem?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       You can simply do:
 
@@ -51,6 +57,9 @@ Bash shell
    computer you are sitting at in the MathLab?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       We use ``scp`` (secure copy) for this:
 
@@ -84,6 +93,9 @@ Bash shell
    a. What is the full (absolute) path to the file ``report1.txt``?
 
       .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          .. code:: bash
 
@@ -96,6 +108,9 @@ Bash shell
       command for this.
 
       .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          We would use the copy command, ``cp``.  There are several variations of how
          we could specify the source files and the destination.  You could do:
@@ -119,6 +134,9 @@ Bash shell
       the files under ``files/``?
 
       .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          In addition to ``*.txt`` that we used above, we could do any of these:
 
@@ -137,6 +155,9 @@ Bash shell
       it.  How do you do this?
 
       .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          Starting in your home directory, you can do:
 
@@ -167,6 +188,9 @@ Bash shell
    write to it?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       You can do this in a few ways.  One way is:
 
@@ -187,6 +211,9 @@ Bash shell
       grep -i yellow database.txt | wc -l
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       This will return the number of lines in ``database.txt`` that contain the word ``yellow``,
       without worrying about case.
@@ -195,6 +222,9 @@ Bash shell
    prompt--what command sequence could do this?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       You could do:
 
@@ -218,6 +248,9 @@ Bash shell
    you get an error ("command not found").  How do you run this.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       You need to give the path to the executable.  A relative path works, so you
       can just do
@@ -232,6 +265,9 @@ Bash shell
    word in a file?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       We use ``grep``.
 
@@ -242,6 +278,9 @@ C++ basics
    possible--what C++ data type would I use?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       Since this number has a decimal point, we need a floating point
       type.  We know ``float`` and ``double``, but ``double`` has more
@@ -251,6 +290,9 @@ C++ basics
    I would need to include?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       We could do:
 
@@ -270,6 +312,9 @@ C++ basics
    named ``power``?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       We do:
 
@@ -280,6 +325,9 @@ C++ basics
 #. When I write ``std::cout``, what is the meaning of the ``::``?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       This is the *scope operator*. It means "look inside ``std`` to find ``cout``".
       We call ``std`` the *namespace*.
@@ -294,6 +342,9 @@ C++ basics
    what is the value of ``y``?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       The thing to remember here is that multiplication, ``*``, has higher precedence than addition, ``+``.
       So this is  ``2.0 + (1.5 * 5.0)`` or ``9.5``.
@@ -308,6 +359,9 @@ C++ basics
    what is the value of ``y``?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       All operators here have the same precedence, so we go left to right.  Just computing this
       we would get ``8/3``, but the result is an ``int``, so the decimal part is discarded, and we
@@ -323,6 +377,9 @@ C++ basics
    what is the value of ``y``?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       Here, the ``-`` is the *unary minus* or "negation operator".  It simply changes the sign of ``x``,
       and it has the highest precision here.  So this is equivalent to ``2 * (-2)``.
@@ -330,6 +387,9 @@ C++ basics
 #. Every C++ program needs a function with what name?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       ``main``
 
@@ -343,6 +403,9 @@ C++ basics
    what value is output to the screen?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       The key here is that ``1/3`` is integer math, so this evaluates to ``0``, and as a result,
       ``0`` is output to the screen.
@@ -359,6 +422,9 @@ C++ basics
    what value would you expect ``y`` to have?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       Compared to ``1.0``, the number ``1.e-30`` (or $10^{-30}$) is
       very small, and it is below the roundoff precision, so we would

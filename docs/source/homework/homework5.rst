@@ -59,6 +59,9 @@ Homework #5
    should be close to the actual value.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: hw5_p1_epsilon.cpp
          :language: c++
@@ -121,6 +124,9 @@ Homework #5
    Later we'll see how to plot this output.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: hw5_p2_projectile.cpp
          :language: c++

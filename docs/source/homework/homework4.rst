@@ -41,6 +41,9 @@ Homework #4
    Have your code output the average and standard deviation.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: hw4_p1_stddev.cpp
          :language: c++
@@ -78,6 +81,9 @@ Homework #4
         Point ( 1.50, 2.30) is  2.746 from the origin.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: hw4_p2_points.cpp
          :language: c++
@@ -122,6 +128,9 @@ Homework #4
       to your code to get access to ``std::max``.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: hw4_p3_maximum.cpp
          :language: c++
