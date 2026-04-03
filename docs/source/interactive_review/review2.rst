@@ -85,15 +85,71 @@ strings and formatting
 #. Given ``std::string s = "hello";``
 
    a. Write one line that prints the length of ``s``.
+
+      .. dropdown:: solution
+
+         We use ``.size()``, just like with vectors:
+
+         .. code:: c++
+
+            std::cout << s.size() << std::endl;'
+
    b. Write one line that prints the first character.
+
+      .. dropdown:: solution
+
+         We index it starting with ``0``:
+
+         .. code:: c++
+
+            std::cout << s[0] << std::endl;
 
 #. Given ``std::string first = "Ada";`` and ``std::string last = "Lovelace";``,
    write one line that creates ``full`` equal to ``"Ada Lovelace"``.
 
+   .. dropdown:: solution
+
+      We can use the ``+`` operator:
+
+      .. code:: c++
+
+         auto full = first + " " + last;
+
 #. Given ``std::string s = "cat";``, write one line that changes it to ``"cats"``.
+
+   .. dropdown:: solution
+
+      The easiest way to do this is via addition, updating ``s``:
+
+      .. code:: c++
+
+         s += "s";
 
 #. How would you use ``std::format`` to print out two double precision quantities,
    $x$ and $y$, to make a sentence like ``"x = 2.0, y = 3.0"``?
+
+   .. dropdown:: solution
+
+      Given:
+
+      .. code:: c++
+
+         double x{2};
+         double y{3};
+
+      we can do:
+
+      .. code:: c++
+
+         std::cout << std::format("x = {:.1f}, y = {:.1f}\n", x, y);
+
+      here the ``.1f`` means "one digit after the decimal point and
+      use fixed-point formatting".
+
+      .. important::
+
+         When using ``std::format``, we need to include the ``<format>`` header
+         and also compile with C++20 support, ``-std=c++20``.
 
 ``struct``
 ==========
