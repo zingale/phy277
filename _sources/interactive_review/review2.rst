@@ -537,7 +537,7 @@ Loops
 
       This is essentially the same as our ``f1`` vs. ``f2`` function
       example above.  The second case uses a reference to access the
-      element of the vector (``&e``).  This means that it is work
+      element of the vector (``&e``).  This means that it is working
       directly on the memory in ``vec``, so any changes we do to ``e``
       in the second loop example are reflected back in ``vec``.
 
@@ -599,7 +599,7 @@ Putting it together
       .. code:: c++
 
          for (auto e : a) {
-             if (a > 3) {
+             if (e > 3) {
                  std::cout << e << std::endl;
              }
          }
@@ -666,7 +666,7 @@ Putting it together
              return len;
          }
 
-      This is similar to a recent homework.  One thing to take are of
+      This is similar to a recent homework.  One thing to take care of
       is that ``w.size()`` returns a ``std::size_t``, so we need to
       cast to an ``int`` for the ``std::max()`` (it wants both arguments
       to be the same type).
@@ -691,7 +691,7 @@ Numerical methods
           from a Taylor expansion, we truncated the series at a finite number of terms.  This tells us
           that the error from that truncation is "of-order $\Delta x^2$".
 
-   b. If we get a error $E$ using a value $\Delta x$, what error should we
+   b. If we get an error $E$ using a value $\Delta x$, what error should we
       expect if we use $\Delta x / 2$?
 
       .. dropdown:: solution
@@ -720,7 +720,11 @@ Numerical methods
       :icon: pencil
       :animate: fade-in-slide-down
 
-#. When we looked a integration, we saw the trapezoid rule and Simpson's rule.  Explain
+      We require that an interval is provided, $[x_l, x_r]$, such that the root is
+      contained in the interval.  Mathematically, we require that the function
+      change sign, $f(x_l) \cdot f(x_r) < 0$.
+
+#. When we looked at integration, we saw the trapezoid rule and Simpson's rule.  Explain
    how they are different.
 
    .. dropdown:: solution
@@ -734,5 +738,5 @@ Numerical methods
       interval is taken to be the area of the trapezoid.
 
       In Simpson's rule, three adjacent points are fit with a parabola, and the area
-      under that parabola is use to approximate the integral over the two intervals
+      under that parabola is used to approximate the integral over the two intervals
       defined by the 3 function samples.  This is more accurate, in general.
