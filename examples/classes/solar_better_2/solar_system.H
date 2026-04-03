@@ -56,7 +56,7 @@ struct SolarSystem {
 
     double get_period(const std::string& name) {
 
-        double period = -1;
+        double period{-1.0};
 
         const auto *p = get_planet(name);
 
