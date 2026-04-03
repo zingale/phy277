@@ -280,7 +280,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-stdlib.html">SL Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-lambdas.html">Lambda Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
 <ul class="nav bd-sidenav">
@@ -521,7 +520,7 @@ whether the data is publicly accessible by default.</p>
 </div>
 <p>We’ll start by making a class that describes a circle:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 103 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple-class.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 102 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple-class.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numbers&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
@@ -532,9 +531,9 @@ whether the data is publicly accessible by default.</p>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">{};</span>
 
 <span class="w">    </span><span class="c1">// constructor</span>
-<span class="w">    </span><span class="n">Circle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">)</span>
-<span class="w">        </span><span class="o">:</span><span class="w"> </span><span class="n">radius</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{}</span>
+<span class="w">    </span><span class="n">Circle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="c1">// member functions</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">circumference</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>

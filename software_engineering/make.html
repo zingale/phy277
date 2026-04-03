@@ -280,7 +280,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-stdlib.html">SL Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-lambdas.html">Lambda Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
 <ul class="current nav bd-sidenav">
@@ -533,7 +532,7 @@ example.</p>
 <h2>A first <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code><a class="headerlink" href="#a-first-gnumakefile" title="Link to this heading">#</a></h2>
 <p>Here’s a basic makefile, which we’ll name <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 101 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 100 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="c"># by default, make will try to build the first target it encounters.</span>
 <span class="c"># here we make up a dummy name &quot;ALL&quot; (note: this is not a special make</span>
 <span class="c"># name, it is just commonly used).</span>
@@ -543,10 +542,10 @@ example.</p>
 <span class="c"># explicitly list the rules for making each of the object files</span>
 
 <span class="nf">planet_sort_split.o</span><span class="o">:</span><span class="w"> </span><span class="n">planet_sort_split</span>.<span class="n">cpp</span> <span class="n">planet</span>.<span class="n">H</span>
-<span class="w">	</span>g++<span class="w"> </span>-c<span class="w"> </span>planet_sort_split.cpp
+<span class="w">	</span>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-c<span class="w"> </span>planet_sort_split.cpp
 
 <span class="nf">planet.o</span><span class="o">:</span><span class="w"> </span><span class="n">planet</span>.<span class="n">cpp</span> <span class="n">planet</span>.<span class="n">H</span>
-<span class="w">	</span>g++<span class="w"> </span>-c<span class="w"> </span>planet.cpp
+<span class="w">	</span>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-c<span class="w"> </span>planet.cpp
 
 <span class="c"># explicitly write the rule for linking together the executable</span>
 
@@ -568,7 +567,7 @@ the rules that are of the form:</p>
 </div>
 <p>For example, the rule:</p>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">planet_sort_split.o</span><span class="o">:</span><span class="w"> </span><span class="n">planet_sort_split</span>.<span class="n">cpp</span> <span class="n">planet</span>.<span class="n">H</span>
-<span class="w">     </span>g++<span class="w"> </span>-c<span class="w"> </span>planet_sort_split.cpp
+<span class="w">     </span>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-c<span class="w"> </span>planet_sort_split.cpp
 </pre></div>
 </div>
 <p>says that <code class="docutils literal notranslate"><span class="pre">planet_sort_split.o</span></code> depends on the files
@@ -604,7 +603,7 @@ and <a class="reference external" href="https://www.gnu.org/software/make/manual
 to automate a lot of the logic.</p>
 <p>Here’s the improved <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 102 </span><span class="caption-text">new <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 101 </span><span class="caption-text">new <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="c"># by default, make will try to build the first target it encounters.</span>
 <span class="c"># here we make up a dummy name &quot;ALL&quot; (note: this is not a special make</span>
 <span class="c"># name, it is just commonly used).</span>
@@ -625,7 +624,7 @@ to automate a lot of the logic.</p>
 <span class="c"># which is not ideal, but it is safe.</span>
 
 <span class="nf">%.o </span><span class="o">:</span><span class="w"> </span>%.<span class="n">cpp</span> ${<span class="n">HEADERS</span>}
-<span class="w">	</span>g++<span class="w"> </span>-c<span class="w"> </span>$&lt;
+<span class="w">	</span>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-c<span class="w"> </span>$&lt;
 
 <span class="c"># explicitly write the rule for linking together the executable</span>
 
@@ -651,7 +650,7 @@ expression:</p>
 </div>
 <p>Finally, we have a generic rule to compile a C++ file:</p>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">%.o </span><span class="o">:</span><span class="w"> </span>%.<span class="n">cpp</span> ${<span class="n">HEADERS</span>}
-<span class="w">     </span>g++<span class="w"> </span>-c<span class="w"> </span>$&lt;
+<span class="w">     </span>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-c<span class="w"> </span>$&lt;
 </pre></div>
 </div>
 <p>Note that we make every header file a dependency for every object

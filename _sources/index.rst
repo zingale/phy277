@@ -218,7 +218,6 @@ the top of many pages.
    sl-algorithms/cxx-stdlib
    sl-algorithms/cxx-lambdas
    sl-algorithms/cxx-functions-planets
-   cxx-basics/cxx-multid-arrays
 
 .. toctree::
    :maxdepth: 1

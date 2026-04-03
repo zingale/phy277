@@ -100,8 +100,8 @@ and then link them all together.  Here are the steps:
 
 .. prompt:: bash
 
-   g++ -c planet.cpp
-   g++ -c planet_sort_split.cpp
+   g++ -std=c++20 -c planet.cpp
+   g++ -std=c++20 -c planet_sort_split.cpp
    g++ -o planet_sort_split planet.o planet_sort_split.o
 
 The first two commands are the compilation step.  The take the source file
