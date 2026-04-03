@@ -35,11 +35,11 @@ Bash shell
    called ``session.txt``.  How could you do this?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. prompt:: bash
-         :color: muted
-         :icon: pencil
-         :animate: fade-in-slide-down
 
          history > session.txt
 
