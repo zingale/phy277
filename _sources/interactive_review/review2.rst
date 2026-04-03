@@ -17,6 +17,9 @@ This is a review of some of the concepts we covered since the previous midterm.
 #. What header file do we need to include to work with vectors?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       We need to ``#include <vector>``.
 
@@ -25,6 +28,9 @@ This is a review of some of the concepts we covered since the previous midterm.
    a. Write one line that prints the number of elements in ``a``.
 
       .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          .. code:: c++
 
@@ -33,6 +39,9 @@ This is a review of some of the concepts we covered since the previous midterm.
    b. Write one line that prints the first element.
 
       .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          .. code:: c++
 
@@ -41,6 +50,9 @@ This is a review of some of the concepts we covered since the previous midterm.
    c. Write one line that changes the last element to ``10``.
 
       .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          There are a few ways.  We could use ``.back()`` which
          returns a *reference* to the last element:
@@ -59,6 +71,9 @@ This is a review of some of the concepts we covered since the previous midterm.
    d. Write one line that adds ``8`` to the end of the vector.
 
       .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          We use ``.push_back()`` for this:
 
@@ -70,6 +85,9 @@ This is a review of some of the concepts we covered since the previous midterm.
    the integers ``1``, ``2``, and ``3`` to it.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. code:: c++
 
@@ -87,6 +105,9 @@ strings and formatting
    a. Write one line that prints the length of ``s``.
 
       .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          We use ``.size()``, just like with vectors:
 
@@ -97,6 +118,9 @@ strings and formatting
    b. Write one line that prints the first character.
 
       .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          We index it starting with ``0``:
 
@@ -108,6 +132,9 @@ strings and formatting
    write one line that creates ``full`` equal to ``"Ada Lovelace"``.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       We can use the ``+`` operator:
 
@@ -118,6 +145,9 @@ strings and formatting
 #. Given ``std::string s = "cat";``, write one line that changes it to ``"cats"``.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       The easiest way to do this is via addition, updating ``s``:
 
@@ -129,6 +159,9 @@ strings and formatting
    $x$ and $y$, to make a sentence like ``"x = 2.0, y = 3.0"``?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       Given:
 
@@ -160,6 +193,9 @@ strings and formatting
    a. Create a ``struct`` called ``SphericalPoint`` that holds the data for a single point.
 
       .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          .. code:: c++
 
@@ -175,6 +211,9 @@ strings and formatting
       \theta, \phi) = (1, \pi/4, \pi/8)$
 
       .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          The cleanest way to do this is:
 
@@ -202,6 +241,9 @@ strings and formatting
       Show the lines of code that compute this from ``p``
 
       .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          We use the ``.`` operator to access the components of our ``struct``.
          Our code can be:
@@ -225,6 +267,9 @@ strings and formatting
    ``2.5``.  Then write an expression that computes its area.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       After we create our ``Rectangle``, we access the components
       using the ``.`` operator:
@@ -241,6 +286,9 @@ Functions
    returns ``x*x``.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. code:: c++
 
@@ -252,6 +300,9 @@ Functions
    ``true`` if ``n`` is zero.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       Our return type will be ``bool`` in this case:
 
@@ -270,18 +321,24 @@ Functions
 #. Write a function ``print_hello`` that takes no arguments and prints ``"Hello"``.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       When a function does not return a value, we use the ``void`` keyword:
 
       .. code:: c++
 
          void print_hello() {
-             std::cout << "Hello" << std::endl;'
+             std::cout << "Hello" << std::endl;
          }
 
 #. Write a function ``add`` that takes two integers and returns their sum.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. code:: c++
 
@@ -302,6 +359,9 @@ Functions
    How would we write the argument for this in our function ``doit``?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       We use ``std::function`` to define the function interface.  In
       the ``< >``, we need to indicate the return type and the types
@@ -336,6 +396,9 @@ Functions
       }
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       Function ``f1`` takes ``x`` as a copy---this is the default
       behavior in C++.  In contrast, ``f2`` takes ``x`` as a
@@ -353,6 +416,9 @@ Conditionals
    if ``x`` is even and ``"odd"`` otherwise.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. code:: c++
 
@@ -366,6 +432,9 @@ Conditionals
    is 60 or higher.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. code:: c++
 
@@ -379,6 +448,9 @@ Conditionals
    is empty.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. code:: c++
 
@@ -398,7 +470,10 @@ Conditionals
 #. Write an if-test that checks if an integer ``a`` is greater than 0 *and* a boolean
    ``test`` is true.
 
-   .. dropdown :: solution
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       We use the ``&&`` operator for "and":
 
@@ -415,7 +490,29 @@ Loops
 
 #. Write a for loop that prints the integers 0 through 4.
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. code:: c++
+
+         for (int i = 0; i < 5; ++i) {
+             std::cout << i << std::endl;
+         }
+
 #. Given ``std::vector<int> a{1,2,3,4};``, write a loop that prints each element of ``a``.
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. code:: c++
+
+         for (auto e : a) {
+             std::cout << e << std::endl;
+         }
 
 #. What is the difference in the way that these two loops work, given a vector ``vec``?
 
@@ -433,12 +530,60 @@ Loops
           // do stuff
       }
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      This is essentially the same as our ``f1`` vs. ``f2`` function
+      example above.  The second case uses a reference to access the
+      element of the vector (``&e``).  This means that it is work
+      directly on the memory in ``vec``, so any changes we do to ``e``
+      in the second loop example are reflected back in ``vec``.
+
 #. Given ``std::string s = "hello";``, write a loop that prints each character on its own line.
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+       We can loop over characters using a ranged-for loop, just like with
+       a vector.
+
+       .. code:: c++
+
+          for (auto c : s) {
+              std::cout << c << std::endl;
+          }
 
 #. Given ``int n = 5;``, write a while loop that prints ``5 4 3 2 1``.
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+       .. code:: c++
+
+          int n{5};
+          while (n > 0) {
+              std::cout << n << " ";
+              --n;
+          }
+
+       The important bit is to remember to decrement ``n`` inside of the loop.  We
+       can do either ``--n`` or ``n--``.
+
 #. What is the difference between ``break`` and ``continue`` when used inside a loop?
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      ``break`` exits out of the loop completely, while ``continue`` will jump to
+      the next value in the loop.
 
 Putting it together
 ===================
@@ -446,16 +591,85 @@ Putting it together
 #. Given ``std::vector<int> a{1,2,3,4,5};``, write 1 to 3 lines that
    print all elements greater than ``3``.
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. code:: c++
+
+         for (auto e : a) {
+             if (a > 3) {
+                 std::cout << e << std::endl;
+             }
+         }
+
 #. Given ``std::string s = "apple";``, write 1 to 2 lines that print
    ``"long"`` if the string has more than 4 characters.
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. code:: c++
+
+         if (s.size() > 4) {
+             std::cout << "long" << std::endl;
+         }
+
 #. Write a function ``is_even`` that returns whether an integer is even.
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. code:: c++
+
+         bool is_even(int n) {
+             if (n % 2 == 0) {
+                  return true;
+             }
+             return false;
+         }
 
 #. Given ``std::vector<std::string> words{"red", "blue", "green"};``,
    write 1 to 3 lines that print each word.
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. code:: c++
+
+         for (auto w : words) {
+             std::cout << w << std::endl;
+         }
+
 #. Write a function that takes a vector of strings and returns
    the length of the longest string.
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. code:: c++
+
+         int longest(const std::vector<std::string>& words) {
+             int len{};
+             for (auto w : words) {
+                 len = std::max(len, static_cast<int>(w.size()));
+             }
+             return len;
+         }
+
+      This is similar to a recent homework.  One thing to take are of
+      is that ``w.size()`` returns a ``std::size_t``, so we need to
+      cast to an ``int`` for the ``std::max()`` (it wants both arguments
+      to be the same type).
 
 Numerical methods
 =================
