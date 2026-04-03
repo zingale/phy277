@@ -1103,17 +1103,58 @@ to be the same type).</p>
 <li><p>Our centered difference has a form:</p>
 <div class="math notranslate nohighlight">
 \[\left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0 - \Delta x)}{2 \Delta x} + \mathcal{O}(\Delta x^2)\]</div>
-<ol class="loweralpha simple">
-<li><p>What is the meaning of <span class="math notranslate nohighlight">\(\mathcal{O}(\Delta x^2)\)</span>?</p></li>
+<ol class="loweralpha">
+<li><p>What is the meaning of <span class="math notranslate nohighlight">\(\mathcal{O}(\Delta x^2)\)</span>?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header sd-bg-muted sd-bg-text-muted">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-pencil" viewBox="0 0 16 16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"></path></svg></span><span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text">This is telling us about the truncation error of the method.  When we derived this expression
+from a Taylor expansion, we truncated the series at a finite number of terms.  This tells us
+that the error from that truncation is “of-order <span class="math notranslate nohighlight">\(\Delta x^2\)</span>”.</p>
+</div></blockquote>
+</div>
+</details></li>
 <li><p>If we get a error <span class="math notranslate nohighlight">\(E\)</span> using a value <span class="math notranslate nohighlight">\(\Delta x\)</span>, what error should we
-expect if we use <span class="math notranslate nohighlight">\(\Delta x / 2\)</span>?</p></li>
-<li><p>What happens to the error if we make <span class="math notranslate nohighlight">\(\Delta x\)</span> close to machine epsilon?</p></li>
+expect if we use <span class="math notranslate nohighlight">\(\Delta x / 2\)</span>?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header sd-bg-muted sd-bg-text-muted">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-pencil" viewBox="0 0 16 16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"></path></svg></span><span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Since this is second-order accurate, cutting <span class="math notranslate nohighlight">\(\Delta x\)</span> by 2 reduces the
+error by <span class="math notranslate nohighlight">\(2^2\)</span> or 4, so we expect the error to be <span class="math notranslate nohighlight">\(E/4\)</span>.</p>
+</div>
+</details></li>
+<li><p>What happens to the error if we make <span class="math notranslate nohighlight">\(\Delta x\)</span> close to machine epsilon?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header sd-bg-muted sd-bg-text-muted">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-pencil" viewBox="0 0 16 16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"></path></svg></span><span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">As we saw in <a class="reference internal" href="../algorithms/truncation.html#sec-roundoff-vs-truncation"><span class="std std-ref">Roundoff vs. truncation</span></a>, when we make <span class="math notranslate nohighlight">\(\Delta x\)</span>
+too small, roundoff error begins to dominate, and our error grows.</p>
+</div>
+</details></li>
 </ol>
 </li>
 <li><p>Given a function <span class="math notranslate nohighlight">\(f(x)\)</span>, if we want to find the zero, <span class="math notranslate nohighlight">\(x_0\)</span>, such that <span class="math notranslate nohighlight">\(f(x_0) = 0\)</span>,
-what is the requirement on the starting conditions for the bisection algorithm?</p></li>
+what is the requirement on the starting conditions for the bisection algorithm?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header sd-bg-muted sd-bg-text-muted">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-pencil" viewBox="0 0 16 16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"></path></svg></span><span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+</div>
+</details></li>
 <li><p>When we looked a integration, we saw the trapezoid rule and Simpson’s rule.  Explain
-how they are different.</p></li>
+how they are different.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header sd-bg-muted sd-bg-text-muted">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-pencil" viewBox="0 0 16 16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"></path></svg></span><span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Both methods use the set of points that sample the function to estimate the
+integral.  In the trapezoid rule, two adjacent function values are connected,
+resulting in a trapezoid shape for the interval, and the integral for that
+interval is taken to be the area of the trapezoid.</p>
+<p class="sd-card-text">In Simpson’s rule, three adjacent points are fit with a parabola, and the area
+under that parabola is use to approximate the integral over the two intervals
+defined by the 3 function samples.  This is more accurate, in general.</p>
+</div>
+</details></li>
 </ol>
 </section>
 </section>
