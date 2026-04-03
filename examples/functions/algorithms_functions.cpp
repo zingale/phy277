@@ -3,7 +3,9 @@
 #include <string>
 #include <algorithm>
 
-bool size_compare(const std::string& a, const std::string& b);
+bool size_compare(const std::string& a, const std::string& b) {
+    return a.size() < b.size();
+}
 
 int main() {
 
@@ -17,24 +19,21 @@ int main() {
                                     "the last jedi",
                                     "the rise of skywalker"};
 
-    std::sort(titles.begin(), titles.end());
+    std::ranges::sort(titles);
 
-    for (auto e : titles) {
+    for (const auto& e : titles) {
         std::cout << e << std::endl;
     }
     std::cout << std::endl;
 
     // now sort by string length
 
-    std::sort(titles.begin(), titles.end(), size_compare);
+    std::ranges::sort(titles, size_compare);
 
-    for (auto e : titles) {
+    for (const auto& e : titles) {
         std::cout << e << std::endl;
     }
     std::cout << std::endl;
 
 }
 
-bool size_compare(const std::string& a, const std::string& b) {
-    return a.size() < b.size();
-}
