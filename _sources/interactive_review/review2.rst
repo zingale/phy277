@@ -16,15 +16,67 @@ This is a review of some of the concepts we covered since the previous midterm.
 
 #. What header file do we need to include to work with vectors?
 
+   .. dropdown:: solution
+
+      We need to ``#include <vector>``.
+
 #. Given ``std::vector<int> a{4, 7, 2, 9};``
 
    a. Write one line that prints the number of elements in ``a``.
+
+      .. dropdown:: solution
+
+         .. code:: c++
+
+            std::cout << a.size() << std::endl;
+
    b. Write one line that prints the first element.
+
+      .. dropdown:: solution
+
+         .. code:: c++
+
+            std::cout << a[0] << std::endl;
+
    c. Write one line that changes the last element to ``10``.
+
+      .. dropdown:: solution
+
+         There are a few ways.  We could use ``.back()`` which
+         returns a *reference* to the last element:
+
+         .. code:: c++
+
+            a.back() = 10;
+
+         We could index it using ``a.size()-1`` (the ``-1`` accounts for
+         the fact that we use 0-based indexing:
+
+         .. code:: c++
+
+            a[a.size()-1] = 10;
+
    d. Write one line that adds ``8`` to the end of the vector.
+
+      .. dropdown:: solution
+
+         We use ``.push_back()`` for this:
+
+         .. code:: c++
+
+            a.push_back(8);
 
 #. Create an empty vector, ``vec``, of integers, and then add
    the integers ``1``, ``2``, and ``3`` to it.
+
+   .. dropdown:: solution
+
+      .. code:: c++
+
+         std::vector<int> vec{};
+         vec.push_back(1);
+         vec.push_back(2);
+         vec.push_back(3);
 
 
 strings and formatting
