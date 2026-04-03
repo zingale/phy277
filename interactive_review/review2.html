@@ -859,25 +859,76 @@ of the arguments.  For this case, it would be <code class="docutils literal notr
 <p class="sd-card-text">Function <code class="docutils literal notranslate"><span class="pre">f1</span></code> takes <code class="docutils literal notranslate"><span class="pre">x</span></code> as a copy—this is the default
 behavior in C++.  In contrast, <code class="docutils literal notranslate"><span class="pre">f2</span></code> takes <code class="docutils literal notranslate"><span class="pre">x</span></code> as a
 reference—this means that it has access to the memory where
-the argument in the calling function lives.  The difference here
-is that any changes to <code class="docutils literal notranslate"><span class="pre">x</span></code> done in the function body would not
-be seen by the caller when using <code class="docutils literal notranslate"><span class="pre">f1</span></code>, but they would see the
-changes when using <code class="docutils literal notranslate"><span class="pre">f2</span></code>.</p>
+the argument in the calling function lives.</p>
+<p class="sd-card-text">The difference here is that any changes to <code class="docutils literal notranslate"><span class="pre">x</span></code> done in the
+function body would not be seen by the caller when using <code class="docutils literal notranslate"><span class="pre">f1</span></code>,
+but they would see the changes when using <code class="docutils literal notranslate"><span class="pre">f2</span></code>.</p>
 </div>
 </details></li>
 </ol>
 </section>
 <section id="conditionals">
 <h2>Conditionals<a class="headerlink" href="#conditionals" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Given <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">x;</span></code>, write an if/else statement that prints <code class="docutils literal notranslate"><span class="pre">&quot;even&quot;</span></code>
-if <code class="docutils literal notranslate"><span class="pre">x</span></code> is even and <code class="docutils literal notranslate"><span class="pre">&quot;odd&quot;</span></code> otherwise.</p></li>
+if <code class="docutils literal notranslate"><span class="pre">x</span></code> is even and <code class="docutils literal notranslate"><span class="pre">&quot;odd&quot;</span></code> otherwise.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;even&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;odd&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details></li>
 <li><p>Given <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">grade;</span></code>, write an if statement that prints <code class="docutils literal notranslate"><span class="pre">&quot;pass&quot;</span></code> if the grade
-is 60 or higher.</p></li>
+is 60 or higher.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">grade</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;pass&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Notice that we use <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> and not just <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> to ensure that <code class="docutils literal notranslate"><span class="pre">60</span></code> is a pass.</p>
+</div>
+</details></li>
 <li><p>Given <code class="docutils literal notranslate"><span class="pre">std::string</span> <span class="pre">s;</span></code>, write an if statement that prints <code class="docutils literal notranslate"><span class="pre">&quot;empty&quot;</span></code> if the string
-is empty.</p></li>
+is empty.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;empty&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p class="sd-card-text">alternately we could do:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;empty&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details></li>
 <li><p>Write an if-test that checks if an integer <code class="docutils literal notranslate"><span class="pre">a</span></code> is greater than 0 <em>and</em> a boolean
-<code class="docutils literal notranslate"><span class="pre">test</span></code> is true.</p></li>
+<code class="docutils literal notranslate"><span class="pre">test</span></code> is true.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">We use the <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> operator for “and”:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">test</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// do stuff</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p class="sd-card-text">If we wanted “or”, we would use <code class="docutils literal notranslate"><span class="pre">||</span></code>.</p>
+</div>
+</details></li>
 </ol>
 </section>
 <section id="loops">
