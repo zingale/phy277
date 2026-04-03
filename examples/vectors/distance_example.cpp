@@ -1,12 +1,17 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <iterator>
 
 int main() {
 
-    std::vector<int> container{100, 200, 300, 400, 500, 600};
+    const std::vector<int> container{100, 200, 300, 400, 500, 600};
 
-    auto pos = std::find(container.cbegin(), container.cend(), 400);
+    auto pos = std::ranges::find(container, 400);
+
+    if (pos == container.end()) {
+        std::cout << "value not found" << std::endl;
+    }
 
     // here we seek the distance from the beginning of the vector
     auto idx = std::distance(container.cbegin(), pos);

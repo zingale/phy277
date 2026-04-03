@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <iostream>
+#include <iterator>
 #include <ranges>
 #include <vector>
 
@@ -13,15 +14,15 @@ int main() {
     auto pos = std::ranges::find(container, 400);
 
     if (pos == container.end()) {
-        std::cout << "element not found\n";
+        std::cout << "element not found" << std::endl;
         return 0;
     }
 
-    std::cout << "element found: " << *pos << '\n';
+    std::cout << "element found: " << *pos << std::endl;
 
     // output the remaining elements after the one we searched for
 
     for (int value : std::ranges::subrange(std::next(pos), container.end())) {
-        std::cout << value << '\n';
+        std::cout << value << std::endl;
     }
 }
