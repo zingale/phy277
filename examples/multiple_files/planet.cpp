@@ -1,13 +1,9 @@
 #include <iostream>
-#include <iomanip>
+#include <format>
 
 #include "planet.H"
 
 std::ostream& operator<< (std::ostream& os, const Planet& p) {
-
-    os << std::setw(12) << p.name << " : ("
-       << std::setw(8) << p.a << " , "
-       << std::setw(8) << p.e << ")";
-
+    os << std::format("{:12} : ({:8}, {:8}))", p.name, p.a, p.e);
     return os;
 }

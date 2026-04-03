@@ -8,9 +8,9 @@ struct Circle {
     double radius{};
 
     // constructor
-    Circle(double r)
-        : radius(r)
-    {}
+    Circle(double r) {
+        radius = r;
+    }
 
     // member functions
     double circumference() {
