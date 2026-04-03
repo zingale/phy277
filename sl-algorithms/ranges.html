@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Object-Oriented Design &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Ranges Library &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -50,11 +50,11 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-classes/object-oriented';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sl-algorithms/ranges';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Example: Mathematical Vectors" href="cxx-vector2d-class.html" />
-    <link rel="prev" title="Extending our Solar System Class" href="cxx-classes-planet-2.html" />
+    <link rel="next" title="auto and decltype" href="cxx-auto-decltype.html" />
+    <link rel="prev" title="Vector Algorithms" href="cxx-vectors-algorithms.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -271,15 +271,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vector-iterators.html">Vector Iterators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vectors-algorithms.html">Vector Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/ranges.html">Ranges Library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-auto-decltype.html"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-stdlib.html">SL Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-lambdas.html">Lambda Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-vector-iterators.html">Vector Iterators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-vectors-algorithms.html">Vector Algorithms</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ranges Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-auto-decltype.html"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-stdlib.html">SL Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-lambdas.html">Lambda Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-functions-planets.html">Example: Sorting Planets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-multid-arrays.html">Multidimensional Arrays</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
@@ -291,18 +291,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../software_engineering/inclass-split-orbit.html">In-Class Example: Splitting Up Our Orbit Code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-classes-intro.html">Introduction to Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-classes-planet.html">Example: Solar System Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-classes-planet-2.html">Extending our Solar System Class</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Object-Oriented Design</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector2d-class.html">Example: Mathematical Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inclass-orbit-class.html">In-Class Example: Orbit Integrator Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inheritance-and-access.html">Inheritance and Access</a></li>
-<li class="toctree-l1"><a class="reference internal" href="this-class.html"><code class="docutils literal notranslate"><span class="pre">this</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="copy_and_assignment.html">Copy, Assignment, and Destructors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compound-operators.html">Compound Assignment Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inclass-orbit-compound.html">In-Class Example: Orbit Integrator Compound Operators</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/cxx-classes-intro.html">Introduction to Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/cxx-classes-planet.html">Example: Solar System Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/cxx-classes-planet-2.html">Extending our Solar System Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/object-oriented.html">Object-Oriented Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/cxx-vector2d-class.html">Example: Mathematical Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/inclass-orbit-class.html">In-Class Example: Orbit Integrator Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/inheritance-and-access.html">Inheritance and Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/this-class.html"><code class="docutils literal notranslate"><span class="pre">this</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/copy_and_assignment.html">Copy, Assignment, and Destructors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/compound-operators.html">Compound Assignment Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/inclass-orbit-compound.html">In-Class Example: Orbit Integrator Compound Operators</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">In-class Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -402,7 +402,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-classes/object-oriented.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/sl-algorithms/ranges.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -419,7 +419,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-classes/object-oriented.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/sl-algorithms/ranges.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -436,7 +436,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-classes/object-oriented.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fsl-algorithms/ranges.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -492,7 +492,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Object-Oriented Design</h1>
+    <h1>Ranges Library</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -506,69 +506,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="object-oriented-design">
-<h1>Object-Oriented Design<a class="headerlink" href="#object-oriented-design" title="Link to this heading">#</a></h1>
-<div class="admonition-reading admonition">
-<p class="admonition-title">reading</p>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Object-oriented_programming">Object-oriented programming</a></p>
-</div>
-<p>The use of classes to organize concepts into reusable software objects
-containing data and functions is the hallmark of <a class="reference external" href="https://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented
-programming</a>.</p>
-<p>Some basic concepts when working with classes:</p>
-<ul>
-<li><p>Instance / object: A <code class="docutils literal notranslate"><span class="pre">class</span></code> provides the definitions of the
-member data and function that work together to describe a concept.
-We create an <em>instance</em> of a class, resulting in an <code class="docutils literal notranslate"><span class="pre">object</span></code>.
-This is something that is defined in our system’s memory.  We can
-have multiple objects of the same class, each with their own memory.</p></li>
-<li><p>Constructor / destructor: a constructor is a function that is called
-when we create an instance of a class.  Its job is to allocate any
-memory and initialize values of the member data.</p>
-<p>A destructor is a function that is called when we destroy our
-object—usually by letting it go out of scope.  Its job is to free
-any memory we allocated and do any other needed clean-up.</p>
-</li>
-</ul>
-<p>Core concepts in OO programming are listed below.  It’s hard to find
-precise definitions of these, and they often seem to overlap a bit
-in what they mean.</p>
-<ul>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)">Encapsulation</a>:
-: this means we hide how the data in the class is stored.  For
-example, by making the member data <code class="docutils literal notranslate"><span class="pre">private</span></code>.</p>
-<p>There may be <em>setters</em> and <em>getters</em> to access some information, but
-the types of objects that are used are hidden from a user of the
-class.  This allows us to change how we store the data (refactor the
-code) without affecting users of the class.</p>
-</li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)">Inheritance</a>:
-this means that we can use a class as the <em>base class</em> (or
-<em>superclass</em>) to define new classes.  These new classes <em>inherit</em>
-all of the data and functions of the base, but can also change its
-behavior as needed to work in a new way, specific to the new class.</p></li>
-<li><p><em>abstraction</em> : this works at the level of the interfaces of the
-member functions of the class.  Similar to encapsulation, it hides
-implementation details from the user.</p>
-<p>For example, operator overloading the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator to work with
-our vectors is an example of abstraction.  We used something
-familiar to ourself to work on our vectors without having to know
-how it is implemented in the class.</p>
-<p>Another example comes into play with inheritance, where a base class
-implements the interface that all of the child classes will then
-define for their specific data.</p>
-</li>
-<li><p><em>polymorphism</em> : this is another type of abstraction, and means
-“many forms”.  This typically means that we have functions that know
-how to operate with different types.  Overloading functions and
-operators with the same name is an example of polymorphism.</p></li>
-</ul>
-<p>A nice discussion about the difference between abstraction and encapsulation is given in this <a class="reference external" href="https://stackoverflow.com/questions/742341/difference-between-abstraction-and-encapsulation">Difference between abstraction and encapsulation? Stack Overflow question</a>.</p>
-<p>Concisely, it says:</p>
-<ul class="simple">
-<li><p>encapsulation means <em>information hiding</em></p></li>
-<li><p>abstraction means <em>implementation hiding</em></p></li>
-</ul>
+  <section id="ranges-library">
+<h1>Ranges Library<a class="headerlink" href="#ranges-library" title="Link to this heading">#</a></h1>
 </section>
 
 
@@ -583,20 +522,20 @@ operators with the same name is an example of polymorphism.</p></li>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cxx-classes-planet-2.html"
+       href="cxx-vectors-algorithms.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Extending our Solar System Class</p>
+        <p class="prev-next-title">Vector Algorithms</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-vector2d-class.html"
+       href="cxx-auto-decltype.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Example: Mathematical Vectors</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
