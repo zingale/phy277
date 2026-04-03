@@ -687,9 +687,11 @@ Numerical methods
          :icon: pencil
          :animate: fade-in-slide-down
 
-          This is telling us about the truncation error of the method.  When we derived this expression
-          from a Taylor expansion, we truncated the series at a finite number of terms.  This tells us
-          that the error from that truncation is "of-order $\Delta x^2$".
+         This is telling us about the truncation error of the method.
+         When we derived this expression from a Taylor expansion, we
+         truncated the series at a finite number of terms.  This tells
+         us that the error from that truncation is "of-order $\Delta
+         x^2$".
 
    b. If we get an error $E$ using a value $\Delta x$, what error should we
       expect if we use $\Delta x / 2$?
