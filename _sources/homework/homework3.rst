@@ -32,6 +32,9 @@ Homework #3
    enough precision to see if you get the expected result.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: hw3_p1_roundoff.cpp
          :language: c++
@@ -66,6 +69,9 @@ Homework #3
    What do you observe?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: hw3_p2_roundoff.cpp
          :language: c++
@@ -111,6 +117,9 @@ Homework #3
    and the error in the small-angle approximation (4 columns).
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: hw3_p3_sine.cpp
          :language: c++
@@ -148,6 +157,9 @@ Homework #3
    * Output the updated value to the screen.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: hw3_p4_overflow.cpp
          :language: c++

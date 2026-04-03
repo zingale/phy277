@@ -15,6 +15,9 @@ Bash shell
    a. What is a wildcard pattern that matches all of the ``.cpp`` files?
 
       .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          ``*.cpp``
 
@@ -22,6 +25,9 @@ Bash shell
       and end in ``.H``?
 
       .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          ``sdc*.H``
 
@@ -31,6 +37,9 @@ Bash shell
    .. dropdown:: solution
 
       .. prompt:: bash
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
          history > session.txt
 
@@ -38,6 +47,9 @@ Bash shell
    what is the command for a text editor that you can use?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. prompt:: bash
 
@@ -47,6 +59,9 @@ Bash shell
 #. What is the difference between the ``mv`` command and the ``cp`` command?
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       ``mv`` moves a file while ``cp`` copies a file.  They both take arguments for the source
       and destination.  After ``mv`` the file is no longer at the source location.
@@ -63,6 +78,9 @@ C++ basics
       double a{1.5};
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       An ``int`` holds an integer, so it cannot express ``1.5`` and will truncate it to
       the integer ``1``.
@@ -71,6 +89,9 @@ C++ basics
    Give the entire program that does this.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. code:: c++
 
@@ -95,6 +116,9 @@ C++ basics
       y = a + b * -c;
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       They are equivalent.  Even though we are using ``( )`` in the first expression,
       the multiplication already has higher precedence than addition.
@@ -106,6 +130,9 @@ C++ basics
       x += 2.0;
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       This is equivalent to:
 
