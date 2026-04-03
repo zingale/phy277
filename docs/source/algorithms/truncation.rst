@@ -37,6 +37,8 @@ of the approximation.
    <https://en.wikipedia.org/wiki/Numerical_differentiation#Finite_differences>`_ to the
    derivative.
 
+.. _sec:roundoff-vs-truncation:
+
 Roundoff vs. truncation
 =======================
 

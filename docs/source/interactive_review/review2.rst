@@ -682,13 +682,57 @@ Numerical methods
 
    a. What is the meaning of $\mathcal{O}(\Delta x^2)$?
 
+      .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
+
+          This is telling us about the truncation error of the method.  When we derived this expression
+          from a Taylor expansion, we truncated the series at a finite number of terms.  This tells us
+          that the error from that truncation is "of-order $\Delta x^2$".
+
    b. If we get a error $E$ using a value $\Delta x$, what error should we
       expect if we use $\Delta x / 2$?
 
+      .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
+
+         Since this is second-order accurate, cutting $\Delta x$ by 2 reduces the
+         error by $2^2$ or 4, so we expect the error to be $E/4$.
+
    c. What happens to the error if we make $\Delta x$ close to machine epsilon?
+
+      .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
+
+         As we saw in :ref:`sec:roundoff-vs-truncation`, when we make $\Delta x$
+         too small, roundoff error begins to dominate, and our error grows.
 
 #. Given a function $f(x)$, if we want to find the zero, $x_0$, such that $f(x_0) = 0$,
    what is the requirement on the starting conditions for the bisection algorithm?
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
 #. When we looked a integration, we saw the trapezoid rule and Simpson's rule.  Explain
    how they are different.
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      Both methods use the set of points that sample the function to estimate the
+      integral.  In the trapezoid rule, two adjacent function values are connected,
+      resulting in a trapezoid shape for the interval, and the integral for that
+      interval is taken to be the area of the trapezoid.
+
+      In Simpson's rule, three adjacent points are fit with a parabola, and the area
+      under that parabola is use to approximate the integral over the two intervals
+      defined by the 3 function samples.  This is more accurate, in general.
