@@ -55,6 +55,15 @@ Homework #6
      Note that ``x`` is changed here, and is now $x^2$ after
      calling the function.
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. literalinclude:: hw6_p1_square.cpp
+         :language: c++
+         :caption: ``square.cpp``
+
 2. *Function practice II* :
 
    In :ref:`sec:homework4`, we found the maximum element of a
@@ -121,6 +130,15 @@ Homework #6
          std::cout << "our functions agree" << std::endl;
       }
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. literalinclude:: hw6_p2_max.cpp
+         :language: c++
+         :caption: ``max_function.cpp``
+
 
 3. *Centered difference* :
 
@@ -155,3 +173,11 @@ Homework #6
       You should see the error drop by a factor of 4 each time $\Delta
       x$ is cut in half.
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. literalinclude:: hw6_p3_diff.cpp
+         :language: c++
+         :caption: ``difference.cpp``
