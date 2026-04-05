@@ -181,3 +181,15 @@ Homework #6
       .. literalinclude:: hw6_p3_diff.cpp
          :language: c++
          :caption: ``difference.cpp``
+
+      When run, this gives:
+
+      ::
+
+          0.1000  0.53940 9.00054e-04
+          0.0500  0.54008 2.25098e-04
+          0.0250  0.54025 5.62797e-05
+          0.0125  0.54029 1.40703e-05
+
+      and we see that halving $\Delta x$ drops the error by a factor
+      of 4, as expected.
