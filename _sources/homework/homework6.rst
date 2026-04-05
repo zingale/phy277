@@ -64,6 +64,8 @@ Homework #6
          :language: c++
          :caption: ``square.cpp``
 
+      The key here is that ``square2`` accepts the argument as a reference.
+
 2. *Function practice II* :
 
    In :ref:`sec:homework4`, we found the maximum element of a
