@@ -14,9 +14,11 @@ There are 2 ways to access the beginning and end of a ``vector``:
 * ``.cend()``, ``.end()`` : these will return an iterator that points
   *to one past the last element*.
 
-An iterator can be thought of as a special type of pointer.  Iterators have
-restrictions on their use, depending on the container---this makes
-them more safe to use.
+.. tip::
+
+   An iterator can be thought of as a special type of pointer.  Iterators have
+   restrictions on their use, depending on the container---this makes
+   them more safe to use.
 
 If we think about an iterator like:
 
@@ -40,3 +42,8 @@ Here's an example of looping over an entire vector using iterators:
 .. literalinclude:: ../../../examples/vectors/iterator_loop.cpp
    :language: c++
    :caption: ``iterator_loop.cpp``
+
+.. important::
+
+   Remember that ``container.cend()`` points to one past the last element.
+   This is why we use the ``<`` operator here, and not ``<=``.

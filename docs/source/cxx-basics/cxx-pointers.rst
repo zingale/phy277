@@ -48,9 +48,8 @@ Here's an example:
 .. note::
 
    We will not use pointers directly much in this class, but they are
-   useful for managing memory.  Later (if there is time) we'll see
-   that there are *smart pointers* in C++ that handle a lot of the
-   memory management for us.
+   useful for managing memory.  We will not go into that topic in this
+   class.
 
 .. tip::
 
