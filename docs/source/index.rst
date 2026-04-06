@@ -286,3 +286,4 @@ the top of many pages.
    :hidden:
 
    exam-solutions/midterm1
+   exam-solutions/midterm2
