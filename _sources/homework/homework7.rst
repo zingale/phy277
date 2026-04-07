@@ -4,18 +4,13 @@ Homework #7
 
 .. admonition:: Completing this assignment
 
-   For the each of the problems below, write a separate C++ program
-   named in the problem :samp:`problem{N}.cpp`, where :samp:`{N}` is the
-   problem number.
+   Upload your C++ source file (*not the executables produced by
+   g++*) **and** the plot output (a PNG file) to Brightspace.
 
    .. important::
 
-      Make sure your that ``g++`` can compile your code.  For some of
-      the problems here, you will need to use ``-std=c++20``.
-
-   Upload your C++ source files (*not the executables produced by
-   g++*) to Brightspace.
-
+      Make sure your that ``g++`` can compile your code.  You
+      may need to use ``-std=c++20``.
 
 
 .. important::
