@@ -481,7 +481,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -497,6 +499,15 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms">Algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-adaptors">Range adaptors</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -518,8 +529,8 @@ and ending iterator into a container to work on.</p>
 </pre></div>
 </div>
 </li>
-<li><p>In C++20, the ranges library was introduced.  This provides functions
-that operate directly on containers.</p>
+<li><p>In C++20, the <a class="reference external" href="https://cppreference.net/cpp/ranges.html">ranges library</a> was introduced.  This
+provides functions that operate directly on containers.</p>
 <p>e.g.:</p>
 <div class="highlight-c+= notranslate"><div class="highlight"><pre><span></span>auto it = std::ranges::find(vec, 42);
 </pre></div>
@@ -527,12 +538,20 @@ that operate directly on containers.</p>
 </li>
 </ul>
 <p>The ranges library is the more modern approach.</p>
-<p>The <a class="reference external" href="https://cppreference.net/cpp/ranges.html">ranges library</a>
-provides a number of methods for easily working with containers.</p>
+<section id="algorithms">
+<h2>Algorithms<a class="headerlink" href="#algorithms" title="Link to this heading">#</a></h2>
 <p>A list of the algorithms can be found on the <a class="reference external" href="https://cppreference.net/cpp/algorithm/ranges.html">cppreference.net
 constrined algorithms page</a></p>
-<p>It also provides <a class="reference external" href="https://cppreference.net/cpp/ranges.html#Range_adaptors">adaptors</a> that can
+<p>This includes algorithms that search through a container, check conditions
+on elements, and more.  Many of these take a function to work with.</p>
+<p>This also includes algorithms that change our container, transforming it,
+sorting it, etc.</p>
+</section>
+<section id="range-adaptors">
+<h2>Range adaptors<a class="headerlink" href="#range-adaptors" title="Link to this heading">#</a></h2>
+<p>The ranges library also provides <a class="reference external" href="https://cppreference.net/cpp/ranges.html#Range_adaptors">adaptors</a> that can
 change how we view a sequence.  We won’t consider these here.</p>
+</section>
 </section>
 
 
@@ -570,6 +589,24 @@ change how we view a sequence.  We won’t consider these here.</p>
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms">Algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-adaptors">Range adaptors</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

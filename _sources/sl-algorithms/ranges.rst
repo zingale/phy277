@@ -14,8 +14,9 @@ for working with containers.  There are two slightly different interfaces:
 
      auto it = std::find(vec.begin(), vec.end(), 42);
 
-* In C++20, the ranges library was introduced.  This provides functions
-  that operate directly on containers.
+* In C++20, the `ranges library
+  <https://cppreference.net/cpp/ranges.html>`_ was introduced.  This
+  provides functions that operate directly on containers.
 
   e.g.:
 
@@ -25,15 +26,23 @@ for working with containers.  There are two slightly different interfaces:
 
 The ranges library is the more modern approach.
 
-
-The `ranges library <https://cppreference.net/cpp/ranges.html>`_
-provides a number of methods for easily working with containers.
+Algorithms
+==========
 
 A list of the algorithms can be found on the `cppreference.net
 constrined algorithms page
 <https://cppreference.net/cpp/algorithm/ranges.html>`_
 
-It also provides `adaptors
+This includes algorithms that search through a container, check conditions
+on elements, and more.  Many of these take a function to work with.
+
+This also includes algorithms that change our container, transforming it,
+sorting it, etc.
+
+Range adaptors
+==============
+
+The ranges library also provides `adaptors
 <https://cppreference.net/cpp/ranges.html#Range_adaptors>`_ that can
 change how we view a sequence.  We won't consider these here.
 
