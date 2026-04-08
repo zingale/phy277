@@ -18,6 +18,11 @@ alternately, we can pass the name of the file to the *constructor* of the class,
 
    std::ofstream of("file.txt");
 
+.. note::
+
+   We need to ``#include <fstream>`` to get access to this function
+   from the standard library.
+
 Once the file is open, we can send output to it using the stream operator ``<<``:
 
 .. code:: c++
@@ -38,11 +43,13 @@ When we are done with the file, we can close it:
    the end of a function).  However, you can still free it earlier if
    desired.
 
+The inverse, opening a file for reading, is handled by
+``std::ifstream``.  Again, this is defined by the
+``fstream`` header.
+
 Writing example
 ===============
 
-The alternate to open a file for reading is ``std::ifstream``.  Note
-that both of these are defined by the ``fstream`` header.
 
 Here's an example of writing our planet information out to a file:
 
@@ -50,6 +57,9 @@ Here's an example of writing our planet information out to a file:
    :language: c++
    :caption: ``output_example.cpp``
 
+
+Notice that just like sending output to the terminal, we need to
+manage line breaks ourselves (we use ``"\n"`` here).
 
 Reading our file
 ================
