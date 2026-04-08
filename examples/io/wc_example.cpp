@@ -25,15 +25,18 @@ int main() {
     while (std::getline(input_file, line)) {
 
         // by design, getline drops the newline, so add it back here
-        // so we can accurate capture line breaks and get the words right
+        // so we can accurately capture line breaks and get the words
+        // right
         line += "\n";
 
         for (auto c : line) {
             bool test = (c == ' ' || c == '\n');
             if (test) {
-                // if the previous character was a space too, then
-                // just skip, otherwise, increment the word counter
-                // and set it as a space
+                // the current character is a space or newline
+
+                // if the previous character was a space or newline
+                // too, then just skip, otherwise, increment the word
+                // counter and set was_space
                 if (! was_space) {
                     word_count++;
                     was_space = true;

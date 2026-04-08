@@ -15,4 +15,6 @@ just hardcode the file name into the program for now.
    :language: c++
    :caption: ``wc_example.cpp``
 
-
+The trickiest part of this is counting words.  There could be multiple
+spaces or newlines separating words.  We count a word only when we
+encounter a space or newline for the first time.

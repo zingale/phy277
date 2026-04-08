@@ -101,6 +101,9 @@ as ``false`` in a conditional.
    :language: c++
    :caption: ``input_example.cpp``
 
+Notice that we also check to see if the file is opened successfully.  We should
+have done that for our write example as well.
+
 .. caution::
 
    A file stream object has an ``.eof()`` member that is ``true`` when

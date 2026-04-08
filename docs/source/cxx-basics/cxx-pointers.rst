@@ -9,13 +9,20 @@ Pointers
 Pointers are similar to references in that they provide indirect access to an object's data.
 However, in C++, references are much more widely used than pointers.
 
-.. tip::
+References and pointers can provide similar functionality.  Pointers
+are more general but also more error-prone.  Some differences,
+following `differences between references and pointers
+<https://en.wikipedia.org/wiki/Reference_(C%2B%2B)#Relationship_to_pointers>`_:
 
-   References and pointers can provide similar functionality.  In
-   general, pointers are more general but also more error-prone.
-   Here's a summary of the `differences between references and
-   pointers
-   <https://en.wikipedia.org/wiki/Reference_(C%2B%2B)#Relationship_to_pointers>`_
+* A pointer is an object.  It has it's own memory where the address of
+  what it is pointing to is stored.  A reference is just an alias---another
+  name for something.
+
+* We can change what a pointer is pointing to.  A reference is set when
+  it is initialized and cannot be made to refer to some other object.
+
+* A pointer can point to nothing (``nullptr``).  A reference always
+  refers to something (and that is set when it is initialized).
 
 Here's a simple example:
 
