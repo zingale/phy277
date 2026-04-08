@@ -53,7 +53,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'sl-algorithms/cxx-vectors-algorithms';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SL Algorithms" href="cxx-stdlib.html" />
+    <link rel="next" title="Vector Modifications" href="cxx-vectors-algorithms-2.html" />
     <link rel="prev" title="Ranges Library" href="ranges.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -277,7 +277,8 @@
 <li class="toctree-l1"><a class="reference internal" href="cxx-vector-iterators.html">Vector Iterators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ranges.html">Ranges Library</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Vector Algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-stdlib.html">SL Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-vectors-algorithms-2.html">Vector Modifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cxx-vectors-algorithms-3.html">Sorting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-lambdas.html">Lambda Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-functions-planets.html">Example: Sorting Planets</a></li>
 </ul>
@@ -504,13 +505,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-if-any-element-matches">Checking if any element matches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-repetitions">Counting repetitions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-an-element">Finding an element</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inserting">Inserting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erasing">Erasing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting">Sorting</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resize-and-clear">Resize and clear</a></li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -524,14 +521,15 @@
                   
   <section id="vector-algorithms">
 <h1>Vector Algorithms<a class="headerlink" href="#vector-algorithms" title="Link to this heading">#</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">algorithms</span></code> library provides some powerful algorithms that can
-work on vectors.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>A nice overview of the different algorithms that work on the
-standard C++ containers is provided by “hacking C++”: <a class="reference external" href="https://hackingcpp.com/cpp/std/algorithms.png">C++ Standard
-Library Algorithms</a></p>
-</div>
+<p>Here we’ll look at some of the standard library algorithms that
+don’t modify the container.  We’ll use <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> for all
+these examples, but other containers in C++ work as well.</p>
+<section id="checking-if-any-element-matches">
+<h2>Checking if any element matches<a class="headerlink" href="#checking-if-any-element-matches" title="Link to this heading">#</a></h2>
+</section>
+<section id="counting-repetitions">
+<h2>Counting repetitions<a class="headerlink" href="#counting-repetitions" title="Link to this heading">#</a></h2>
+</section>
 <section id="finding-an-element">
 <h2>Finding an element<a class="headerlink" href="#finding-an-element" title="Link to this heading">#</a></h2>
 <p>Here’s an example of using <code class="docutils literal notranslate"><span class="pre">find</span></code> on a vector
@@ -602,144 +600,6 @@ Library Algorithms</a></p>
 </div>
 </div>
 </section>
-<section id="inserting">
-<h2>Inserting<a class="headerlink" href="#inserting" title="Link to this heading">#</a></h2>
-<p>We saw that <code class="docutils literal notranslate"><span class="pre">.push_back()</span></code> is used to add an element to the end of a
-vector.  To insert in the middle of the vector, we use
-<code class="docutils literal notranslate"><span class="pre">.insert(it_pos)</span></code>, where <code class="docutils literal notranslate"><span class="pre">it_pos</span></code> is an iterator pointing to the
-element in the vector we want to insert <em>in front of</em>.  (Note:
-<code class="docutils literal notranslate"><span class="pre">insert()</span></code> can actually allow you to insert multiple elements by
-specifying an additional argument.)</p>
-<p>Here’s an example: we start with a vector with the elements <code class="docutils literal notranslate"><span class="pre">100</span></code>, <code class="docutils literal notranslate"><span class="pre">200</span></code>,
-<code class="docutils literal notranslate"><span class="pre">300</span></code> and then use <code class="docutils literal notranslate"><span class="pre">insert()</span></code> to put <code class="docutils literal notranslate"><span class="pre">150</span></code> in between <code class="docutils literal notranslate"><span class="pre">100</span></code>
-and <code class="docutils literal notranslate"><span class="pre">200</span></code>.</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 87 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">insert_example.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">int_vec</span><span class="p">{</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">};</span>
-
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">int_vec</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
-
-<span class="w">    </span><span class="n">int_vec</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">it</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">);</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">int_vec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="erasing">
-<h2>Erasing<a class="headerlink" href="#erasing" title="Link to this heading">#</a></h2>
-<p>Erasing works similar to inserting.  We give an iterator pointing to
-the start and end of the range we want to erase, and all elements up
-to, but not including the end, are erased.</p>
-<p>The end point being <em>exclusive</em> rather than <em>inclusive</em> is consistent
-with <code class="docutils literal notranslate"><span class="pre">.end()</span></code> returning an iterator that points one-past the end of
-the vector.</p>
-<p>Here’s an example that removes the first 4 elements of a vector.</p>
-<p>What happens if we try to remove past the end?  To be save, we should
-always add a check on whether our end is past <code class="docutils literal notranslate"><span class="pre">.end()</span></code>.</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 88 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">vector_erase.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">int_vec</span><span class="p">{</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w"> </span><span class="mi">-100</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">};</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;initial vector: &quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">int_vec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">int_vec</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-
-<span class="w">    </span><span class="n">int_vec</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">,</span><span class="w"> </span><span class="n">it</span><span class="o">+</span><span class="mi">4</span><span class="p">);</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;updated vector: &quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">int_vec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="admonition-try-it admonition">
-<p class="admonition-title">try it…</p>
-<p>What happens if you use <code class="docutils literal notranslate"><span class="pre">.cbegin()</span></code> and/or <code class="docutils literal notranslate"><span class="pre">.cend()</span></code> instead
-<code class="docutils literal notranslate"><span class="pre">.begin()</span></code> and <code class="docutils literal notranslate"><span class="pre">.end()</span></code>?</p>
-<p>Remember that the <code class="docutils literal notranslate"><span class="pre">c</span></code> in those functions is for <code class="docutils literal notranslate"><span class="pre">const</span></code>—it
-provides read-only access to the elements through the iterator.</p>
-</div>
-</section>
-<section id="sorting">
-<h2>Sorting<a class="headerlink" href="#sorting" title="Link to this heading">#</a></h2>
-<div class="admonition-try-it admonition">
-<p class="admonition-title">try it…</p>
-<p>Let’s try to understand how the <code class="docutils literal notranslate"><span class="pre">sort</span></code> function works.
-<a class="reference external" href="https://www.cplusplus.com/reference/algorithm/sort/">https://www.cplusplus.com/reference/algorithm/sort/</a></p>
-</div>
-<section id="resize-and-clear">
-<h3>Resize and clear<a class="headerlink" href="#resize-and-clear" title="Link to this heading">#</a></h3>
-<p>If we have an existing vector we can resize it with <code class="docutils literal notranslate"><span class="pre">.resize(num,</span>
-<span class="pre">init)</span></code> where <code class="docutils literal notranslate"><span class="pre">num</span></code> is the number of new elements and (optionally) <code class="docutils literal notranslate"><span class="pre">init</span></code> is
-their initial value.</p>
-<p>We can remove everything from the vector using <code class="docutils literal notranslate"><span class="pre">.clear()</span></code>.  Here’s an example:</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-number">Listing 89 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">resize_example.cpp</span></code></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">container</span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">};</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;current contents: &quot;</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">container</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="n">container</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;new contents: &quot;</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">container</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="w">    </span><span class="n">container</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;after clear: &quot;</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">container</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</section>
-</section>
 </section>
 
 
@@ -763,11 +623,11 @@ their initial value.</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-stdlib.html"
+       href="cxx-vectors-algorithms-2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SL Algorithms</p>
+        <p class="prev-next-title">Vector Modifications</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -789,13 +649,9 @@ their initial value.</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-if-any-element-matches">Checking if any element matches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-repetitions">Counting repetitions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-an-element">Finding an element</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inserting">Inserting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#erasing">Erasing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting">Sorting</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resize-and-clear">Resize and clear</a></li>
-</ul>
-</li>
 </ul>
   </nav></div>
 
