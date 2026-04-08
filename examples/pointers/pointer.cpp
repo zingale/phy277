@@ -8,7 +8,9 @@ int main() {
 
     a = &b;
 
-    std::cout << a << std::endl;
-    std::cout << *a << std::endl;
+    std::cout << "pointer value (memory location) = "
+              << a << std::endl;
+    std::cout << "value of what we are pointing to (dereferencing pointer) = "
+              << *a << std::endl;
 
 }
