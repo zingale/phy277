@@ -46,7 +46,24 @@ use the *address operator* ``&`` here).  Visually, this appears as:
    (Wikipedia/Sven)
 
 We can access the data pointed to by the pointer by using the *dereference operator*, ``*``.
-Here's an example:
+
+Here's a more complete version of our example above, showing both the
+value of the pointer (the memory address it points to) and the value
+of the data there (dereferencing the pointer):
+
+.. literalinclude:: ../../../examples/pointers/pointer.cpp
+   :language: c++
+   :caption: ``pointer.cpp``
+
+Note: the memory address you see on your computer will be different
+that what someone else sees, and also change if you rerun the program
+some time later.  The operating system determines where ``b`` is stored
+in memory when the program is run.
+
+Full example
+============
+
+Here's an example showing how to access data via a reference or a pointer.
 
 .. literalinclude:: ../../../examples/pointers/pointers_example.cpp
    :language: c++
@@ -74,8 +91,4 @@ Here's an example:
       if (p) {
           // do stuff
       }
-
-.. admonition:: try it...
-
-   What happens if we compare two pointers with ``==``?
 

@@ -482,7 +482,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -498,6 +500,14 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-example">Full example</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -546,10 +556,38 @@ use the <em>address operator</em> <code class="docutils literal notranslate"><sp
 </div>
 </figcaption>
 </figure>
-<p>We can access the data pointed to by the pointer by using the <em>dereference operator</em>, <code class="docutils literal notranslate"><span class="pre">*</span></code>.
-Here’s an example:</p>
+<p>We can access the data pointed to by the pointer by using the <em>dereference operator</em>, <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
+<p>Here’s a more complete version of our example above, showing both the
+value of the pointer (the memory address it points to) and the value
+of the data there (dereferencing the pointer):</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 82 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pointers_example.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 82 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pointer.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">{};</span>
+
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Note: the memory address you see on your computer will be different
+that what someone else sees, and also change if you rerun the program
+some time later.  The operating system determines where <code class="docutils literal notranslate"><span class="pre">b</span></code> is stored
+in memory when the program is run.</p>
+<section id="full-example">
+<h2>Full example<a class="headerlink" href="#full-example" title="Link to this heading">#</a></h2>
+<p>Here’s an example showing how to access data via a reference or a pointer.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-number">Listing 83 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pointers_example.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -610,10 +648,7 @@ all other object types).  C++ provides <code class="docutils literal notranslate
 </pre></div>
 </div>
 </div>
-<div class="admonition-try-it admonition">
-<p class="admonition-title">try it…</p>
-<p>What happens if we compare two pointers with <code class="docutils literal notranslate"><span class="pre">==</span></code>?</p>
-</div>
+</section>
 </section>
 
 
@@ -651,6 +686,23 @@ all other object types).  C++ provides <code class="docutils literal notranslate
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-example">Full example</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
