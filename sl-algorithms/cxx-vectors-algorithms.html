@@ -561,13 +561,34 @@ the works on a single element and returns a <code class="docutils literal notran
 </section>
 <section id="counting-repetitions">
 <h2>Counting repetitions<a class="headerlink" href="#counting-repetitions" title="Link to this heading">#</a></h2>
+<p>We can use <a class="reference external" href="https://en.cppreference.com/w/cpp/algorithm/ranges/count.html">std::ranges::count</a> to
+count how many instances of an element exist in a vector:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 86 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">count_example.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">-2</span><span class="p">,</span><span class="w"> </span><span class="mi">-8</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">count</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;the number of times 1 appears in v is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>A variation, <code class="docutils literal notranslate"><span class="pre">std::ranges::count_if</span></code> takes a function that is used to determine if we count
+an element (e.g., only counting odd elements).</p>
 </section>
 <section id="finding-an-element">
 <h2>Finding an element<a class="headerlink" href="#finding-an-element" title="Link to this heading">#</a></h2>
 <p>Here’s an example of using <code class="docutils literal notranslate"><span class="pre">find</span></code> on a vector
 (using <a class="reference external" href="https://en.cppreference.com/w/cpp/algorithm/ranges/find.html">std::ranges::find</a>):</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 86 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">find_example.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 87 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">find_example.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iterator&gt;</span>
@@ -601,8 +622,8 @@ the works on a single element and returns a <code class="docutils literal notran
 </div>
 <p>If we want to know the index of the element we found, we could use
 <a class="reference external" href="https://en.cppreference.com/w/cpp/iterator/ranges/distance.html">std::ranges::distance()</a></p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 87 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">distance_example.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-number">Listing 88 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">distance_example.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>

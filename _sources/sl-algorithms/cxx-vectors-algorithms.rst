@@ -25,6 +25,15 @@ There is also an ``all_of`` and ``none_of`` variant.
 Counting repetitions
 ====================
 
+We can use `std::ranges::count <https://en.cppreference.com/w/cpp/algorithm/ranges/count.html>`_ to
+count how many instances of an element exist in a vector:
+
+.. literalinclude:: ../../../examples/vectors/count_example.cpp
+   :language: c++
+   :caption: ``count_example.cpp``
+
+A variation, ``std::ranges::count_if`` takes a function that is used to determine if we count
+an element (e.g., only counting odd elements).
 
 Finding an element
 ==================
