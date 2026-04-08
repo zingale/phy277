@@ -12,7 +12,7 @@ Inserting
 We saw that ``.push_back()`` is used to add an element to the end of a
 vector.  To insert in the middle of the vector, we use
 ``.insert(it_pos)``, where ``it_pos`` is an iterator pointing to the
-element in the vector we want to insert *in front of*.  
+element in the vector we want to insert *in front of*.
 
 Here's an example: we start with a vector with the elements ``100``, ``200``,
 ``300`` and then use ``insert()`` to put ``150`` in between ``100``
@@ -54,4 +54,3 @@ always add a check on whether our end is past ``.end()``.
 
    Remember that the ``c`` in those functions is for ``const``---it
    provides read-only access to the elements through the iterator.
-
