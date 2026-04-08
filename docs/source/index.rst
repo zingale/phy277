@@ -216,7 +216,7 @@ the top of many pages.
    sl-algorithms/ranges
    sl-algorithms/cxx-vectors-algorithms
    sl-algorithms/cxx-vectors-algorithms-2
-   sl-algorithms/cxx-stdlib
+   sl-algorithms/cxx-vectors-algorithms-3
    sl-algorithms/cxx-lambdas
    sl-algorithms/cxx-functions-planets
 
