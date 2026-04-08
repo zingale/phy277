@@ -14,7 +14,7 @@ int main() {
     }
 
     // here we seek the distance from the beginning of the vector
-    auto idx = std::distance(container.cbegin(), pos);
+    auto idx = std::ranges::distance(container.cbegin(), pos);
 
     std::cout << "index = " << idx << std::endl;
 
