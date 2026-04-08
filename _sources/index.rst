@@ -213,7 +213,6 @@ the top of many pages.
 
    cxx-basics/cxx-pointers
    sl-algorithms/cxx-vector-iterators
-   sl-algorithms/cxx-auto-decltype
    sl-algorithms/ranges
    sl-algorithms/cxx-vectors-algorithms
    sl-algorithms/cxx-stdlib

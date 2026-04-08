@@ -53,7 +53,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'sl-algorithms/cxx-vector-iterators';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="auto and decltype" href="cxx-auto-decltype.html" />
+    <link rel="next" title="Ranges Library" href="ranges.html" />
     <link rel="prev" title="Pointers" href="../cxx-basics/cxx-pointers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -275,7 +275,6 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Vector Iterators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-auto-decltype.html"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="ranges.html">Ranges Library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vectors-algorithms.html">Vector Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-stdlib.html">SL Algorithms</a></li>
@@ -567,6 +566,9 @@ this is done with the <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </div>
 </div>
+<p>Notice that we advance the iterator to point to the next element in
+the vector using <code class="docutils literal notranslate"><span class="pre">++it</span></code>.  We could also do <code class="docutils literal notranslate"><span class="pre">it</span> <span class="pre">+=</span> <span class="pre">4</span></code> to skip
+4 elements (but it is up to us to ensure that we don’t go past the end).</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Remember that <code class="docutils literal notranslate"><span class="pre">container.cend()</span></code> points to one past the last element.
@@ -598,11 +600,11 @@ ranged-for loop we’ve been using until now.</p>
       </div>
     </a>
     <a class="right-next"
-       href="cxx-auto-decltype.html"
+       href="ranges.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">auto</span></code> and <code class="docutils literal notranslate"><span class="pre">decltype</span></code></p>
+        <p class="prev-next-title">Ranges Library</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
