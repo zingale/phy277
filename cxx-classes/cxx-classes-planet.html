@@ -279,6 +279,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vectors-algorithms.html">Vector Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vectors-algorithms-2.html">Vector Modifications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vectors-algorithms-3.html">Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-views.html">Views</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-lambdas.html">Lambda Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
 </ul>
@@ -529,7 +530,7 @@ that know how to operate on that data.</p>
 <p>First well define the <code class="docutils literal notranslate"><span class="pre">struct</span></code> called <code class="docutils literal notranslate"><span class="pre">SolarSystem</span></code> and write the
 constructor:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 104 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">solar_system.H</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 105 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">solar_system.H</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef SOLAR_SYSTEM_H</span>
 <span class="cp">#define SOLAR_SYSTEM_H</span>
 
@@ -617,7 +618,7 @@ already exists.</p></li>
 </ul>
 <p>This uses <code class="docutils literal notranslate"><span class="pre">planet.H</span></code> header from before:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 105 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet.H</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 106 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet.H</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef PLANET_H</span>
 <span class="cp">#define PLANET_H</span>
 
@@ -652,7 +653,7 @@ already exists.</p></li>
 <h2>Driver<a class="headerlink" href="#driver" title="Link to this heading">#</a></h2>
 <p>Finally, we can use our <code class="docutils literal notranslate"><span class="pre">SolarSystem</span></code> class.  Here’s a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 106 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">test_solar_system.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 107 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">test_solar_system.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;solar_system.H&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;planet.H&quot;</span>
@@ -680,7 +681,7 @@ already exists.</p></li>
 <p>We can compile this using the same general <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> we
 developed previously.  We’ll add two features to it:</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 107 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 108 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">ALL</span><span class="o">:</span><span class="w"> </span><span class="n">test_solar_system</span>
 
 <span class="c"># find all of the source files and header files</span>

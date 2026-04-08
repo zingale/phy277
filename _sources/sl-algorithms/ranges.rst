@@ -24,6 +24,10 @@ for working with containers.  There are two slightly different interfaces:
 
      auto it = std::ranges::find(vec, 42);
 
+.. tip::
+
+   In C++, a range is anything that we can iterate over.
+
 For viewing, transforming, and filtering a container, the ranges
 library is the more modern approach.  There are some instances
 (like modifying the structure of the container) where we'll
