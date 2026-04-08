@@ -20,17 +20,28 @@ for working with containers.  There are two slightly different interfaces:
 
   e.g.:
 
-  .. code:: c+=
+  .. code:: c++
 
      auto it = std::ranges::find(vec, 42);
 
-The ranges library is the more modern approach.
+For viewing, transforming, and filtering a container, the ranges
+library is the more modern approach.  There are some instances
+(like modifying the structure of the container) where we'll
+use the iterator-based algorithms.
+
+
+.. note::
+
+   For some algorithms, the ranges versions don't come until standards
+   after C++20.  An example is summing the elements of a vector.  In
+   C++23, we could use ``std::ranges::fold_left()``, but here we'll
+   use the iterator-based ``std::accumulate()``.
 
 Algorithms
 ==========
 
-A list of the algorithms can be found on the `cppreference.net
-constrined algorithms page
+A list of the algorithms in the ranges library can be found on the
+`cppreference.net constrained algorithms page
 <https://cppreference.net/cpp/algorithm/ranges.html>`_
 
 This includes algorithms that search through a container, check conditions
