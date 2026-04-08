@@ -204,6 +204,7 @@ the top of many pages.
    :hidden:
 
    cxx-basics/cxx-io
+   cxx-basics/cxx-io-wc
 
 .. toctree::
    :maxdepth: 1
