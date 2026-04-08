@@ -515,13 +515,18 @@
 </div>
 <p>Pointers are similar to references in that they provide indirect access to an object’s data.
 However, in C++, references are much more widely used than pointers.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>References and pointers can provide similar functionality.  In
-general, pointers are more general but also more error-prone.
-Here’s a summary of the <a class="reference external" href="https://en.wikipedia.org/wiki/Reference_(C%2B%2B)#Relationship_to_pointers">differences between references and
-pointers</a></p>
-</div>
+<p>References and pointers can provide similar functionality.  Pointers
+are more general but also more error-prone.  Some differences,
+following <a class="reference external" href="https://en.wikipedia.org/wiki/Reference_(C%2B%2B)#Relationship_to_pointers">differences between references and pointers</a>:</p>
+<ul class="simple">
+<li><p>A pointer is an object.  It has it’s own memory where the address of
+what it is pointing to is stored.  A reference is just an alias—another
+name for something.</p></li>
+<li><p>We can change what a pointer is pointing to.  A reference is set when
+it is initialized and cannot be made to refer to some other object.</p></li>
+<li><p>A pointer can point to nothing (<code class="docutils literal notranslate"><span class="pre">nullptr</span></code>).  A reference always
+refers to something (and that is set when it is initialized).</p></li>
+</ul>
 <p>Here’s a simple example:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">{};</span>

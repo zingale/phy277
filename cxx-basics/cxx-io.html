@@ -531,6 +531,11 @@ used to take input from a user or write to the screen.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="n">of</span><span class="p">(</span><span class="s">&quot;file.txt&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We need to <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;fstream&gt;</span></code> to get access to this function
+from the standard library.</p>
+</div>
 <p>Once the file is open, we can send output to it using the stream operator <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">0.0</span><span class="p">};</span>
 <span class="n">of</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
@@ -546,10 +551,11 @@ used to take input from a user or write to the screen.</p>
 the end of a function).  However, you can still free it earlier if
 desired.</p>
 </div>
+<p>The inverse, opening a file for reading, is handled by
+<code class="docutils literal notranslate"><span class="pre">std::ifstream</span></code>.  Again, this is defined by the
+<code class="docutils literal notranslate"><span class="pre">fstream</span></code> header.</p>
 <section id="writing-example">
 <h2>Writing example<a class="headerlink" href="#writing-example" title="Link to this heading">#</a></h2>
-<p>The alternate to open a file for reading is <code class="docutils literal notranslate"><span class="pre">std::ifstream</span></code>.  Note
-that both of these are defined by the <code class="docutils literal notranslate"><span class="pre">fstream</span></code> header.</p>
 <p>Here’s an example of writing our planet information out to a file:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-number">Listing 79 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">output_example.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
@@ -589,6 +595,8 @@ that both of these are defined by the <code class="docutils literal notranslate"
 </pre></div>
 </div>
 </div>
+<p>Notice that just like sending output to the terminal, we need to
+manage line breaks ourselves (we use <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code> here).</p>
 </section>
 <section id="reading-our-file">
 <h2>Reading our file<a class="headerlink" href="#reading-our-file" title="Link to this heading">#</a></h2>
@@ -667,6 +675,8 @@ as <code class="docutils literal notranslate"><span class="pre">false</span></co
 </pre></div>
 </div>
 </div>
+<p>Notice that we also check to see if the file is opened successfully.  We should
+have done that for our write example as well.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>A file stream object has an <code class="docutils literal notranslate"><span class="pre">.eof()</span></code> member that is <code class="docutils literal notranslate"><span class="pre">true</span></code> when
