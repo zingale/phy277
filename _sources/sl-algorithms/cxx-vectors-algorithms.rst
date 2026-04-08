@@ -10,6 +10,17 @@ these examples, but other containers in C++ work as well.
 Checking if any element matches
 ===============================
 
+We can use `std::ranges::any_of <https://en.cppreference.com/w/cpp/algorithm/ranges/all_any_none_of.html>`_
+to see if any element in the vector satisfies a condition.
+
+This requires that we pass in a function
+the works on a single element and returns a ``bool``.
+
+.. literalinclude:: ../../../examples/vectors/any_element.cpp
+   :language: c++
+   :caption: ``any_element.cpp``
+
+There is also an ``all_of`` and ``none_of`` variant.
 
 Counting repetitions
 ====================
@@ -19,14 +30,14 @@ Finding an element
 ==================
 
 Here's an example of using ``find`` on a vector
-(using `std::find <https://en.cppreference.com/w/cpp/algorithm/find>`_):
+(using `std::ranges::find <https://en.cppreference.com/w/cpp/algorithm/ranges/find.html>`_):
 
 .. literalinclude:: ../../../examples/vectors/find_example.cpp
    :language: c++
    :caption: ``find_example.cpp``
 
 If we want to know the index of the element we found, we could use
-`std::distance() <https://en.cppreference.com/w/cpp/iterator/distance>`_
+`std::ranges::distance() <https://en.cppreference.com/w/cpp/iterator/ranges/distance.html>`_
 
 .. literalinclude:: ../../../examples/vectors/distance_example.cpp
    :language: c++
