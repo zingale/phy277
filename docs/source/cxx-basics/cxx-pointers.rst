@@ -9,7 +9,7 @@ Pointers
 Pointers are similar to references in that they provide indirect access to an object's data.
 However, in C++, references are much more widely used than pointers.
 
-.. note::
+.. tip::
 
    References and pointers can provide similar functionality.  In
    general, pointers are more general but also more error-prone.
@@ -21,8 +21,8 @@ Here's a simple example:
 
 .. code:: c++
 
-   int *a;
-   int b;
+   int *a = nullptr;
+   int b{};
 
    a = &b;
 
