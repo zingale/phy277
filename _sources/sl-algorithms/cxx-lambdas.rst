@@ -46,12 +46,30 @@ Sort Example
 ============
 
 Lambdas make it easy to provide simple functions as arguments
-to other functions (like we did with ``std::sort()`` previously).
+to other functions (like we did with ``std::ranges::sort()`` previously).
 Here's an implementation of that using a lambda function:
 
 .. literalinclude:: ../../../examples/functions/algorithms_functions_lambda.cpp
    :language: c++
    :caption: ``algorithms_functions_lambda.cpp``
+
+Here, our lambda function is:
+
+.. code:: c++
+
+   [] (const std::string& a, const std::string& b)
+      {return a.size() < b.size();}
+
+This means:
+
+* We don't capture any data from the surrounding scope, ``[]``
+
+* Our function takes 2 strings as const references, ``(const std::string& a, const std::string& b)``
+
+* We return a ``bool`` by comparing the sizes, ``{return a.size() < b.size();}``
+
+  Note that C++ deduces the return type from the function definition, so we don't
+  write ``bool`` explicitly here.
 
 .. admonition:: try it...
 

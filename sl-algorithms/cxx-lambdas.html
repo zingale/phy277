@@ -568,7 +568,7 @@ data by value and others by reference</p>
 <section id="sort-example">
 <h2>Sort Example<a class="headerlink" href="#sort-example" title="Link to this heading">#</a></h2>
 <p>Lambdas make it easy to provide simple functions as arguments
-to other functions (like we did with <code class="docutils literal notranslate"><span class="pre">std::sort()</span></code> previously).
+to other functions (like we did with <code class="docutils literal notranslate"><span class="pre">std::ranges::sort()</span></code> previously).
 Here’s an implementation of that using a lambda function:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-number">Listing 93 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">algorithms_functions_lambda.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
@@ -611,6 +611,20 @@ Here’s an implementation of that using a lambda function:</p>
 </pre></div>
 </div>
 </div>
+<p>Here, our lambda function is:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="w">   </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">();}</span>
+</pre></div>
+</div>
+<p>This means:</p>
+<ul>
+<li><p>We don’t capture any data from the surrounding scope, <code class="docutils literal notranslate"><span class="pre">[]</span></code></p></li>
+<li><p>Our function takes 2 strings as const references, <code class="docutils literal notranslate"><span class="pre">(const</span> <span class="pre">std::string&amp;</span> <span class="pre">a,</span> <span class="pre">const</span> <span class="pre">std::string&amp;</span> <span class="pre">b)</span></code></p></li>
+<li><p>We return a <code class="docutils literal notranslate"><span class="pre">bool</span></code> by comparing the sizes, <code class="docutils literal notranslate"><span class="pre">{return</span> <span class="pre">a.size()</span> <span class="pre">&lt;</span> <span class="pre">b.size();}</span></code></p>
+<p>Note that C++ deduces the return type from the function definition, so we don’t
+write <code class="docutils literal notranslate"><span class="pre">bool</span></code> explicitly here.</p>
+</li>
+</ul>
 <div class="admonition-try-it admonition">
 <p class="admonition-title">try it…</p>
 <p>We can change the sort to alphabetically by the last letter in the title
