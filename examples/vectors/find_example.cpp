@@ -15,7 +15,7 @@ int main() {
 
     if (pos == container.end()) {
         std::cout << "element not found" << std::endl;
-        return 0;
+        return 1;
     }
 
     std::cout << "element found: " << *pos << std::endl;
