@@ -526,9 +526,7 @@
 <p>We saw that <code class="docutils literal notranslate"><span class="pre">.push_back()</span></code> is used to add an element to the end of a
 vector.  To insert in the middle of the vector, we use
 <code class="docutils literal notranslate"><span class="pre">.insert(it_pos)</span></code>, where <code class="docutils literal notranslate"><span class="pre">it_pos</span></code> is an iterator pointing to the
-element in the vector we want to insert <em>in front of</em>.  (Note:
-<code class="docutils literal notranslate"><span class="pre">insert()</span></code> can actually allow you to insert multiple elements by
-specifying an additional argument.)</p>
+element in the vector we want to insert <em>in front of</em>.</p>
 <p>Here’s an example: we start with a vector with the elements <code class="docutils literal notranslate"><span class="pre">100</span></code>, <code class="docutils literal notranslate"><span class="pre">200</span></code>,
 <code class="docutils literal notranslate"><span class="pre">300</span></code> and then use <code class="docutils literal notranslate"><span class="pre">insert()</span></code> to put <code class="docutils literal notranslate"><span class="pre">150</span></code> in between <code class="docutils literal notranslate"><span class="pre">100</span></code>
 and <code class="docutils literal notranslate"><span class="pre">200</span></code>.</p>
@@ -554,17 +552,22 @@ and <code class="docutils literal notranslate"><span class="pre">200</span></cod
 </pre></div>
 </div>
 </div>
+<p>Note: <code class="docutils literal notranslate"><span class="pre">insert()</span></code> can actually allow you to insert multiple elements
+by specifying an additional argument.</p>
 </section>
 <section id="erasing">
 <h2>Erasing<a class="headerlink" href="#erasing" title="Link to this heading">#</a></h2>
 <p>Erasing works similar to inserting.  We give an iterator pointing to
 the start and end of the range we want to erase, and all elements up
 to, but not including the end, are erased.</p>
-<p>The end point being <em>exclusive</em> rather than <em>inclusive</em> is consistent
-with <code class="docutils literal notranslate"><span class="pre">.end()</span></code> returning an iterator that points one-past the end of
-the vector.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The end point is <em>exclusive</em> rather than <em>inclusive</em> is consistent
+with <code class="docutils literal notranslate"><span class="pre">.end()</span></code> returning an iterator that points one-past the end
+of the vector.</p>
+</div>
 <p>Here’s an example that removes the first 4 elements of a vector.</p>
-<p>What happens if we try to remove past the end?  To be save, we should
+<p>What happens if we try to remove past the end?  To be safe, we should
 always add a check on whether our end is past <code class="docutils literal notranslate"><span class="pre">.end()</span></code>.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-number">Listing 90 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">vector_erase.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>

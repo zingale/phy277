@@ -509,11 +509,9 @@
                   
   <section id="sorting">
 <h1>Sorting<a class="headerlink" href="#sorting" title="Link to this heading">#</a></h1>
-<p>We looked at some of the <a class="reference external" href="https://en.cppreference.com/w/cpp/algorithm">algorithms that work on standard C++
-containers</a> (like
-vectors) previously.  Now we can look at some more.</p>
-<p>Consider <code class="docutils literal notranslate"><span class="pre">std::sort()</span></code>—you can provide a function to <code class="docutils literal notranslate"><span class="pre">sort</span></code>
-that tells it how to do the comparison.</p>
+<p>We can sort a vector using <a class="reference external" href="https://en.cppreference.com/w/cpp/algorithm/ranges/sort.html">std::ranges::sort</a>.
+This requires that we provide a function that tells sort how to
+compare 2 elements.</p>
 <p>Here’s an example that sorts some strings using the default comparison
 (alphabetically) and then again with a custom comparison function that
 sorts by string length:</p>
