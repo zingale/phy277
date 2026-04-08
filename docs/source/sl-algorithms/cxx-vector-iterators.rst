@@ -46,6 +46,10 @@ Here's an example of looping over an entire vector using iterators:
    :language: c++
    :caption: ``iterator_loop.cpp``
 
+Notice that we advance the iterator to point to the next element in
+the vector using ``++it``.  We could also do ``it += 4`` to skip
+4 elements (but it is up to us to ensure that we don't go past the end).
+
 .. important::
 
    Remember that ``container.cend()`` points to one past the last element.
