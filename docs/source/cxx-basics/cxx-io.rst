@@ -91,7 +91,7 @@ as ``false`` in a conditional.
    :language: c++
    :caption: ``input_example.cpp``
 
-.. admonition:: try it...
+.. caution::
 
    A file stream object has an ``.eof()`` member that is ``true`` when
    we reach the end of a file.  However, it is only set after a failed
@@ -112,29 +112,3 @@ as ``false`` in a conditional.
    .. code:: c++
 
       std::ofstream of("file.txt", std::ios::app);
-
-
-Exercises
-=========
-
-.. admonition:: try it...
-
-   Let's write our own version of ``wc``.  Here's a text file:
-   :download:`lorem-ipsum.txt <./lorem-ipsum.txt>`.
-
-   Let's write a C++ code the counts the number of lines, words, and
-   characters from the input file.
-
-   We don't know how to take a command line argument yet, so let's
-   just hardcode the file name into the program for now.
-
-   .. dropdown:: solution
-      :color: muted
-      :icon: pencil
-      :animate: fade-in-slide-down
-
-      .. literalinclude:: ../../../examples/io/wc_example.cpp
-         :language: c++
-         :caption: ``wc_example.cpp``
-
-.. You text has an example of writing to a file in table 3.5
