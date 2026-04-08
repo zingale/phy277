@@ -37,6 +37,9 @@ this is done with the ``*`` operator:
 
    std::cout << "cbegin is " << *it << std::endl;
 
+Looping with iterators
+======================
+
 Here's an example of looping over an entire vector using iterators:
 
 .. literalinclude:: ../../../examples/vectors/iterator_loop.cpp
@@ -47,3 +50,6 @@ Here's an example of looping over an entire vector using iterators:
 
    Remember that ``container.cend()`` points to one past the last element.
    This is why we use the ``<`` operator here, and not ``<=``.
+
+There's really no advantage in this example in using iterators vs. the
+ranged-for loop we've been using until now.

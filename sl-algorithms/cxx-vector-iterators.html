@@ -482,7 +482,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -498,6 +500,14 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-with-iterators">Looping with iterators</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -537,6 +547,8 @@ this is done with the <code class="docutils literal notranslate"><span class="pr
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;cbegin is &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
+<section id="looping-with-iterators">
+<h2>Looping with iterators<a class="headerlink" href="#looping-with-iterators" title="Link to this heading">#</a></h2>
 <p>Here’s an example of looping over an entire vector using iterators:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-number">Listing 84 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">iterator_loop.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
@@ -560,6 +572,9 @@ this is done with the <code class="docutils literal notranslate"><span class="pr
 <p>Remember that <code class="docutils literal notranslate"><span class="pre">container.cend()</span></code> points to one past the last element.
 This is why we use the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator here, and not <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>.</p>
 </div>
+<p>There’s really no advantage in this example in using iterators vs. the
+ranged-for loop we’ve been using until now.</p>
+</section>
 </section>
 
 
@@ -597,6 +612,23 @@ This is why we use the <code class="docutils literal notranslate"><span class="p
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-with-iterators">Looping with iterators</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
