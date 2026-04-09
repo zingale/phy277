@@ -12,6 +12,7 @@ int main() {
     // this generates an error
     ss.add_planet("alpha", 2.0);
 
-    std::cout << "period of alpha = " << ss.get_period("alpha") << std::endl;
+    std::cout << "period of alpha = "
+              << ss.get_period("alpha") << std::endl;
 
 }

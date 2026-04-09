@@ -59,5 +59,5 @@ Range adaptors
 
 The ranges library also provides `adaptors
 <https://cppreference.net/cpp/ranges.html#Range_adaptors>`_ that can
-change how we view a sequence.  We won't consider these here.
+change how we view a sequence.  We will look at this briefly.
 
