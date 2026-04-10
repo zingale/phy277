@@ -37,6 +37,22 @@ this is done with the ``*`` operator:
 
    std::cout << "cbegin is " << *it << std::endl;
 
+.. note::
+
+   C++ doesn't support printing the iterator itself, e.g.,
+
+   .. code:: c++
+
+      std::cout << it << std::endl;
+
+   does not compile.  If you want to see the memory address (for some reason),
+   you need to dereference the iterator and then take the address of the object
+   it is pointing to, e.g.,
+
+   .. code:: c++
+
+      std::cout << &(*it) << std::endl;
+
 Looping with iterators
 ======================
 
