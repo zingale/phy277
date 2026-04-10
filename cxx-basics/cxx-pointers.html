@@ -539,6 +539,11 @@ it is initialized and cannot be made to refer to some other object.</p></li>
 <li><p>A pointer can point to nothing (<code class="docutils literal notranslate"><span class="pre">nullptr</span></code>).  A reference always
 refers to something (and that is set when it is initialized).</p></li>
 </ul>
+<p>We define a pointer by using the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator in the declaration, e.g.,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>We read this as <a href="#id2"><span class="problematic" id="id3">*</span></a>x is a pointer to an <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
 <p>Here’s a simple example:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">{};</span>
@@ -548,22 +553,23 @@ refers to something (and that is set when it is initialized).</p></li>
 </div>
 <p>This has the pointer <code class="docutils literal notranslate"><span class="pre">a</span></code> point to the memory location of <code class="docutils literal notranslate"><span class="pre">b</span></code> (we
 use the <em>address operator</em> <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> here).  Visually, this appears as:</p>
-<figure class="align-center" id="id2">
+<figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="../_images/692px-Pointers.svg.png"><img alt="A diagram showing pointers and the memory they point to." src="../_images/692px-Pointers.svg.png" style="width: 70%;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">A pointer, <code class="docutils literal notranslate"><span class="pre">a</span></code> that points to the memory location of variable <code class="docutils literal notranslate"><span class="pre">b</span></code>.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">A pointer, <code class="docutils literal notranslate"><span class="pre">a</span></code> that points to the memory location of variable <code class="docutils literal notranslate"><span class="pre">b</span></code>.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 <div class="legend">
 <p>(Wikipedia/Sven)</p>
 </div>
 </figcaption>
 </figure>
-<p>We can access the data pointed to by the pointer by using the <em>dereference operator</em>, <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
+<p>We can access the data pointed to by the pointer by using the
+<em>dereference operator</em>, <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
 <p>Here’s a more complete version of our example above, showing both the
 value of the pointer (the memory address it points to) and the value
 of the data there (dereferencing the pointer):</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 82 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pointer.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-number">Listing 82 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pointer.cpp</span></code></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -590,8 +596,8 @@ in memory when the program is run.</p>
 <section id="full-example">
 <h2>Full example<a class="headerlink" href="#full-example" title="Link to this heading">#</a></h2>
 <p>Here’s an example showing how to access data via a reference or a pointer.</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 83 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pointers_example.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-number">Listing 83 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">pointers_example.cpp</span></code></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
