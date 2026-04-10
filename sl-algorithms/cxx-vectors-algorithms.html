@@ -670,6 +670,14 @@ and ask for the distance from the beginning of the vector:</p>
 </pre></div>
 </div>
 </div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p><code class="docutils literal notranslate"><span class="pre">std::ranges::distance</span></code> will return a <em>signed</em> integer, since the distance
+count be negative, depending on the starting point we used.  But we can only
+index a vector using an unsigned integer (that is what <code class="docutils literal notranslate"><span class="pre">std::size_t</span></code> is,
+so we need to be careful when we do the indexing here.  We know we are safe
+because we use <code class="docutils literal notranslate"><span class="pre">.begin()</span></code> as the starting point.</p>
+</div>
 </section>
 </section>
 

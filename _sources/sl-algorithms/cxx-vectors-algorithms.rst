@@ -72,3 +72,10 @@ and ask for the distance from the beginning of the vector:
    :caption: ``distance_example.cpp``
 
 
+.. caution::
+
+   ``std::ranges::distance`` will return a *signed* integer, since the distance
+   count be negative, depending on the starting point we used.  But we can only
+   index a vector using an unsigned integer (that is what ``std::size_t`` is,
+   so we need to be careful when we do the indexing here.  We know we are safe
+   because we use ``.begin()`` as the starting point.
