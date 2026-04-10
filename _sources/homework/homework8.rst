@@ -41,4 +41,7 @@ Homework #8
 
    generate -- fill with random numbers
 
+5. binary search using std::ranges::upper_bound()
+
+
 
