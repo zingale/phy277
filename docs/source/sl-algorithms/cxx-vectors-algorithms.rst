@@ -17,6 +17,21 @@ count how many instances of an element exist in a vector:
    :language: c++
    :caption: ``count_example.cpp``
 
+.. note::
+
+   If we did this manually, using a loop, we would have to write:
+
+   .. code:: c++
+
+      int count{};
+      for (auto e : v) {
+          if (e == 1) {
+              count++;
+          }
+      }
+
+   so the ``ranges`` library version is much more compact.
+
 A variation, ``std::ranges::count_if`` takes a function that is used to determine if we count
 an element (e.g., only counting odd elements).
 
