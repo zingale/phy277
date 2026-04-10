@@ -10,7 +10,8 @@ int main() {
     auto pos = std::ranges::find(container, 400);
 
     if (pos == container.end()) {
-        std::cout << "value not found" << std::endl;
+        std::cout << "element not found" << std::endl;
+        return 1;
     }
 
     // here we seek the distance from the beginning of the vector
@@ -21,5 +22,6 @@ int main() {
     // note: we need to be careful here and ensure that idx is >= 0.
     // and < the size of the vector.  We could be accessing out
     // of bounds if the value we searched for was not in the vector
+
     std::cout << "value = " << container[idx] << std::endl;
 }
