@@ -17,6 +17,6 @@ int main() {
     std::cout << "any of a are even? " << test << std::endl;
 
     auto test2 = std::ranges::any_of(b, is_even);
-    std::cout << "any of a are even? " << test2 << std::endl;
+    std::cout << "any of b are even? " << test2 << std::endl;
 
 }
