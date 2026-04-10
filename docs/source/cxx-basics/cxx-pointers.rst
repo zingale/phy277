@@ -24,6 +24,14 @@ following `differences between references and pointers
 * A pointer can point to nothing (``nullptr``).  A reference always
   refers to something (and that is set when it is initialized).
 
+We define a pointer by using the ``*`` operator in the declaration, e.g.,
+
+.. code:: c++
+
+   int *x;
+
+We read this as *x is a pointer to an ``int``.
+
 Here's a simple example:
 
 .. code:: c++
@@ -45,7 +53,8 @@ use the *address operator* ``&`` here).  Visually, this appears as:
 
    (Wikipedia/Sven)
 
-We can access the data pointed to by the pointer by using the *dereference operator*, ``*``.
+We can access the data pointed to by the pointer by using the
+*dereference operator*, ``*``.
 
 Here's a more complete version of our example above, showing both the
 value of the pointer (the memory address it points to) and the value
