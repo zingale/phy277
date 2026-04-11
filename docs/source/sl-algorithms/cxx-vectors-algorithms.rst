@@ -17,6 +17,21 @@ count how many instances of an element exist in a vector:
    :language: c++
    :caption: ``count_example.cpp``
 
+.. note::
+
+   If we did this manually, using a loop, we would have to write:
+
+   .. code:: c++
+
+      int count{};
+      for (auto e : v) {
+          if (e == 1) {
+              count++;
+          }
+      }
+
+   so the ``ranges`` library version is much more compact.
+
 A variation, ``std::ranges::count_if`` takes a function that is used to determine if we count
 an element (e.g., only counting odd elements).
 
@@ -49,6 +64,20 @@ Here's an example of using ``find`` on a vector
 
 This returns an iterator that points to the first match in the vector.
 
+.. important::
+
+   Notice the check:
+
+   .. code:: c++
+
+      if (pos == container.end()) {
+          std::cout << "element not found" << std::endl;
+          return 1;
+      }
+
+   If ``std::ranges::find`` does not find a match, then it returns an iterator
+   that points to one past the end of the vector (that's what ``.end()`` is).
+
 If we want to know the index of the element we found, we could use
 `std::ranges::distance <https://en.cppreference.com/w/cpp/iterator/ranges/distance.html>`_
 and ask for the distance from the beginning of the vector:
@@ -58,3 +87,10 @@ and ask for the distance from the beginning of the vector:
    :caption: ``distance_example.cpp``
 
 
+.. caution::
+
+   ``std::ranges::distance`` will return a *signed* integer, since the distance
+   count be negative, depending on the starting point we used.  But we can only
+   index a vector using an unsigned integer (that is what ``std::size_t`` is,
+   so we need to be careful when we do the indexing here.  We know we are safe
+   because we use ``.begin()`` as the starting point.
