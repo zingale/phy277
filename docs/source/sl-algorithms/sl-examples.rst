@@ -12,4 +12,4 @@ Let's do some more practice on using the standard library.
    Then use ``std::ranges::distance`` to find the index (just like
    we did with our :ref:`sec:std_ranges_find` example.
 
-#. 
+#.
