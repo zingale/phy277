@@ -30,7 +30,7 @@ We define a pointer by using the ``*`` operator in the declaration, e.g.,
 
    int *x;
 
-We read this as *x is a pointer to an ``int``.
+We read this as ``*x`` is a pointer to an ``int``.
 
 Here's a simple example:
 
