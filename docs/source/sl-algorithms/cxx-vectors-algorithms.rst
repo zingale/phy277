@@ -52,6 +52,8 @@ the works on a single element and returns a ``bool``.
 There is also an ``all_of`` and ``none_of`` variant.
 
 
+.. _sec:std_ranges_find:
+
 Finding an element
 ==================
 
