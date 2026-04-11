@@ -12,7 +12,7 @@ Let's do some more practice on using the standard library.
    Then use ``std::ranges::distance`` to find the index (just like
    we did with our :ref:`sec:std_ranges_find` example.
 
-#. We can use `std::accumulate <https://en.cppreference.com/w/cpp/algorithm/accumulate.html>_
+#. We can use `std::accumulate <https://en.cppreference.com/w/cpp/algorithm/accumulate.html>`_
    to sum the elements of a vector, or multiply them, or some other transformation.
 
    Write some code to find the sum of the elements and the product of
