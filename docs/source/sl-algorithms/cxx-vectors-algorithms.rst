@@ -13,7 +13,7 @@ Counting repetitions
 We can use `std::ranges::count <https://en.cppreference.com/w/cpp/algorithm/ranges/count.html>`_ to
 count how many instances of an element exist in a vector:
 
-.. literalinclude:: ../../../examples/vectors/count_example.cpp
+.. literalinclude:: ../../../examples/standard_library/count_example.cpp
    :language: c++
    :caption: ``count_example.cpp``
 
@@ -45,7 +45,7 @@ to see if any element in the vector satisfies a condition.
 This requires that we pass in a function
 the works on a single element and returns a ``bool``.
 
-.. literalinclude:: ../../../examples/vectors/any_element.cpp
+.. literalinclude:: ../../../examples/standard_library/any_element.cpp
    :language: c++
    :caption: ``any_element.cpp``
 
@@ -60,7 +60,7 @@ Finding an element
 Here's an example of using ``find`` on a vector
 (using `std::ranges::find <https://en.cppreference.com/w/cpp/algorithm/ranges/find.html>`_):
 
-.. literalinclude:: ../../../examples/vectors/find_example.cpp
+.. literalinclude:: ../../../examples/standard_library/find_example.cpp
    :language: c++
    :caption: ``find_example.cpp``
 
@@ -84,7 +84,7 @@ If we want to know the index of the element we found, we could use
 `std::ranges::distance <https://en.cppreference.com/w/cpp/iterator/ranges/distance.html>`_
 and ask for the distance from the beginning of the vector:
 
-.. literalinclude:: ../../../examples/vectors/distance_example.cpp
+.. literalinclude:: ../../../examples/standard_library/distance_example.cpp
    :language: c++
    :caption: ``distance_example.cpp``
 

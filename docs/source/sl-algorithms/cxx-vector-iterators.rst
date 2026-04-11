@@ -58,7 +58,7 @@ Looping with iterators
 
 Here's an example of looping over an entire vector using iterators:
 
-.. literalinclude:: ../../../examples/vectors/iterator_loop.cpp
+.. literalinclude:: ../../../examples/standard_library/iterator_loop.cpp
    :language: c++
    :caption: ``iterator_loop.cpp``
 
