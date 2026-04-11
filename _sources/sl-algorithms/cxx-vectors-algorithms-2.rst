@@ -18,7 +18,7 @@ Here's an example: we start with a vector with the elements ``100``, ``200``,
 ``300`` and then use ``insert()`` to put ``150`` in between ``100``
 and ``200``.
 
-.. literalinclude:: ../../../examples/vectors/insert_example.cpp
+.. literalinclude:: ../../../examples/standard_library/insert_example.cpp
    :language: c++
    :caption: ``insert_example.cpp``
 
@@ -43,7 +43,7 @@ Here's an example that removes the first 4 elements of a vector.
 What happens if we try to remove past the end?  To be safe, we should
 always add a check on whether our end is past ``.end()``.
 
-.. literalinclude:: ../../../examples/vectors/vector_erase.cpp
+.. literalinclude:: ../../../examples/standard_library/vector_erase.cpp
    :language: c++
    :caption: ``vector_erase.cpp``
 
