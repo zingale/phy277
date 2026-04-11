@@ -220,6 +220,7 @@ the top of many pages.
    sl-algorithms/cxx-views
    sl-algorithms/cxx-lambdas
    sl-algorithms/cxx-functions-planets
+   sl-algorithms/sl-examples
 
 .. toctree::
    :maxdepth: 1
