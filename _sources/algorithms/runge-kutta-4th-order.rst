@@ -80,7 +80,7 @@ advance the solution.  The sequence is illustrated below:
       :color: muted
       :icon: pencil
       :animate: fade-in-slide-down
- 
+
       .. literalinclude:: ../../../examples/numerical_algorithms/ODEs/orbit_rk4_error.cpp
          :language: C++
          :caption: ``orbit_rk4_error.cpp``
