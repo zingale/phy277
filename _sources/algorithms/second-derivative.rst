@@ -43,6 +43,9 @@ We see that this is second-order accurate.
    $$f^{\prime\prime}(x) = 12 x^2 + 2$$
 
 .. dropdown:: solution
+   :color: muted
+   :icon: pencil
+   :animate: fade-in-slide-down
 
    .. literalinclude:: ../../../examples/numerical_algorithms/derivatives/second_derivative.cpp
       :language: c++

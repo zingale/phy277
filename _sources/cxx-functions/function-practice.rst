@@ -8,6 +8,9 @@ Here are some practice problems to help us understand functions.
    and swaps their values.  There is no return value.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: ../../../examples/functions/swap.cpp
          :language: c++
@@ -33,6 +36,9 @@ Here are some practice problems to help us understand functions.
    returns the sum.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: ../../../examples/functions/sum.cpp
          :language: c++
@@ -53,6 +59,9 @@ Here are some practice problems to help us understand functions.
    of an integer.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: ../../../examples/functions/fac.cpp
          :language: c++
@@ -72,6 +81,9 @@ Here are some practice problems to help us understand functions.
    indicated whether the input number is prime.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: ../../../examples/functions/primes.cpp
          :language: c++
@@ -89,6 +101,9 @@ Here are some practice problems to help us understand functions.
    that finds the distance for a single ``Point``.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: ../../../examples/functions/points.cpp
          :language: c++
@@ -107,6 +122,9 @@ Here are some practice problems to help us understand functions.
    E.g., ``linspace(0, 1, 11)`` would return ``{0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0}``.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: ../../../examples/functions/linspace.cpp
          :language: c++

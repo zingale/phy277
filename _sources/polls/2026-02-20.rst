@@ -18,6 +18,10 @@ looking back through the notes, write a simple C++ program that
 outputs "Hello, World" to the screen.
 
 .. dropdown:: solution
+   :color: muted
+   :icon: pencil
+   :animate: fade-in-slide-down
+
 
    Our basic "Hello, World" program is:
 
