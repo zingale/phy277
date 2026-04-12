@@ -70,6 +70,6 @@ Our sorting
 Here's the full code of initializing our planets, sorting by eccentricity,
 and then outputting them.
 
-.. literalinclude:: ../../../examples/functions/planet_sort.cpp
+.. literalinclude:: ../../../examples/standard_library/planet_sort.cpp
    :language: c++
    :caption: ``planet_sort.cpp``

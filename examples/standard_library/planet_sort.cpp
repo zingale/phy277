@@ -29,7 +29,8 @@ int main() {
                                 {.name="Neptune", .a=30.070, .e=0.0086}};
 
     std::ranges::sort(planets,
-                      [] (const Planet& a, const Planet& b) {return a.e < b.e;});
+                      [] (const Planet& a, const Planet& b)
+                         {return a.e < b.e;});
 
     for (const auto& p : planets) {
         std::cout << p << std::endl;
