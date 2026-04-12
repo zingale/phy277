@@ -36,6 +36,8 @@ A variation, ``std::ranges::count_if`` takes a function that is used to determin
 an element (e.g., only counting odd elements).
 
 
+.. _sec:vector_any_element:
+
 Checking if any element matches
 ===============================
 
