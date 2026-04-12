@@ -40,12 +40,80 @@ Here's an animation of bisection finding a root:
    :align: center
    :alt: An animation of bisection finding the zero of a parabola.
 
-Bisection is slow to converge---it only reduces the error by a factor of 2 each iteration.
+Let's find the root:
 
-.. note::
+$$f(x) = x^3 + x^2 + 1 = 0$$
+
+.. tip::
+
+   It is always a good idea to plot the function you are trying to
+   find the root of (if possible).  We can do this easily in gnuplot:
+
+   .. prompt::
+      :prompts: gnuplot>
+
+      set grid
+      set xrange [-5:5]
+      plot x**3 + x**2 + 1
+
+Here's the implementation:
+
+.. literalinclude:: ../../../examples/numerical_algorithms/roots/bisection.cpp
+   :language: c++
+   :caption: ``bisection.cpp``
+
+A few features:
+
+* We use a ``namespace`` to hold the parameters that affect the
+  behavior of the root finding algorithms.  This ensures that if we
+  ``#include`` another header file that defines a variable ``ATOL``, ``RTOL``, or ``MAX_ITER``,
+  that it does not clash with our versions.
+
+  .. tip::
+
+     A `namespace <https://en.cppreference.com/w/cpp/language/namespace.html>`_ can be
+     used to put a number of orbits or functions into their own scope.  You can then
+     access them using the scope operator ``::``.  This is a way to group together
+     related concepts and makes the code easier to read.
+
+  This is not required here, but it does help organize our code better.
+
+* We use both a relative and absolute tolerance for assessing the error.  Convergence
+  is met when:
+
+  .. math::
+
+     \epsilon < \mathrm{RTOL} |x_0| + \mathrm{ATOL}
+
+  This ensures that if the current estimate of the root, :math:`x_0`,
+  is close to zero then :math:`\mathrm{ATOL}` is used but if the root
+  :math:`x_0` is large, then :math:`\mathrm{RTOL}` use used for the
+  error.
+
+* We have a maximum number of iterations, ``Roots::MAX_ITER``, after which
+  we exit with an error.  This ensures we don't get stuck in an infinite
+  loop if something goes wrong.
+
+.. tip::
+
+   It is always a good idea to plot the function you are trying to
+   find the root of (if possible).  We can do this easily in gnuplot:
+
+   .. prompt::
+      :prompts: gnuplot>
+
+      set grid
+      set xrange [-5:5]
+      plot x**3 + x**2 + 1
+
+Bisection is slow to converge---it only reduces the error by a factor
+of 2 each iteration.
+
+.. admonition:: try it...
 
    Bisection will fail to find the root for :math:`f(x) = x^2`.
-
+   This is because the root is tangent to the x axis---the function
+   doesn't change sign.
 
 Newton's method
 ===============
@@ -81,74 +149,51 @@ Here's an animation showing the method converging:
    :align: center
    :alt: An animation of Newton's method finding the root of a function.
 
-There are a few things to note here:
+.. important::
 
-* The initial guess needs to be good---if it is not, then the higher
-  order terms, which start with :math:`\delta x^2` are not small, and
-  we should not have neglected them.
+   * The initial guess needs to be good---if it is not, then the higher
+     order terms, which start with :math:`\delta x^2` are not small, and
+     we should not have neglected them.
 
-* We need a good estimate of the derivative.  Ideally this means that we
-  supply a function that computes the derivative analytically.
+   * We need a good estimate of the derivative.  Ideally this means that we
+     supply a function that computes the derivative analytically.
 
-* Newton's method can fail in a variety of ways, including `entering a cycle <https://en.wikipedia.org/wiki/Newton's_method#Oscillatory_behavior>`_.
+     If we don't have an analytic form of the derivative, then we can
+     compute it via finite-differences.  This can give rise to the
+     `secant method <https://en.wikipedia.org/wiki/Secant_method>`_.
 
-.. note::
+.. caution::
 
-   If we don't have an analytic form of the derivative, then we can compute it via
-   finite-differences.   This can give rise to the `secant method <https://en.wikipedia.org/wiki/Secant_method>`_.
-
-
-
-Implementation
-==============
-
-We want to write a function that takes as input the function we want to zero, so we'll
-use ``std::function`` to define the function as an argument.
+   Newton's method can fail in a variety of ways, including `entering
+   a cycle
+   <https://en.wikipedia.org/wiki/Newton's_method#Oscillatory_behavior>`_.
+   This is why we put a cap on the number of iterations.
 
 
-Here's the header that implements both bisection and Newton's method:
+Here's an implementation:
 
-.. literalinclude:: ../../../examples/numerical_algorithms/roots/roots.H
+.. literalinclude:: ../../../examples/numerical_algorithms/roots/newton.cpp
    :language: c++
-   :caption: ``roots.H``
+   :caption: ``newton.cpp``
 
 
-A few features:
+Some notes:
 
-* We use a ``namespace`` to hold the parameters that affect the
-  behavior of the root finding algorithms.  This ensures that if we
-  ``#include "roots.H"`` in a file, these names don't conflict with
-  any that might be locally defined.
+* We use the same combination of a relative and absolute tolerance
+  here as we did with bisection.  Too see why, set ``ATOL = 0.0`` for
+  the $f(x) = x^2$ function.
 
-* We use both a relative and absolute tolerance for assessing the error.  Convergence
-  is met when:
+* We are not guarding against the case where $df/dx = 0$---this could
+  cause problems.
 
-  .. math::
+  .. admonition:: try it...
 
-     \epsilon < \mathrm{RTOL} |x_0| + \mathrm{ATOL}
+     Run the Newton method on the same problem we did for bisection:
 
-  This ensures that if the current estimate of the root, :math:`x_0`,
-  is close to zero then :math:`\mathrm{ATOL}` is used but if the root
-  :math:`x_0` is large, then :math:`\mathrm{RTOL}` use used for the
-  error.
+     $$f(x) = x^3 + x^2 + 1 = 0$$
 
-* We have a maximum number of iterations, ``Roots::MAX_ITER``, after which
-  we exit with an error.  This ensures we don't get stuck in an infinite
-  loop if something goes wrong.
-
-Here's a test driver for it:
-
-.. literalinclude:: ../../../examples/numerical_algorithms/roots/test_roots.cpp
+     and use an initial guess of -1.  Notice that this generates an inf
+     quickly.
 
 
-.. note::
-
-   What happens if we use :math:`x_0 = 0` as the initial guess for :math:`f(x) = x^2`
-   with Newton's method?
-
-
-.. admonition:: try it...
-
-   Write a version of Newton's method that uses a finite-difference approximation
-   to the derivative.
 

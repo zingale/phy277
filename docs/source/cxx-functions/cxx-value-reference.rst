@@ -2,6 +2,9 @@
 Passing by Value vs. Reference
 ******************************
 
+Passing by value
+================
+
 When we write a function like:
 
 .. code:: c++
@@ -27,11 +30,24 @@ called *value semantics*).
    passed as a pointer to the first element.  This is another reason why you
    should use ``std::array`` for arrays, since it will be clearer in function.
 
-Inside of ``f()`` any changes we do to ``x`` will not be reflected
-back to the caller, so ``z`` will be unmodified by anything that
-happens in the function.
+.. caution::
 
-Many times this is what we want.  But not always.  What if we want to
+   Any changes we make to ``x`` Inside of ``f()`` will not be reflected
+   back to the caller, so ``z`` will be unmodified by anything that
+   happens in the function.
+
+Let's see this in action:
+
+.. literalinclude:: ../../../examples/functions/pass_by_value.cpp
+   :language: c++
+   :caption: ``pass_by_value.cpp``
+
+Many times this is what we want.  But not always.
+
+Passing by reference
+====================
+
+What if we want to
 allow the function to modify its argument and for those modifications
 to be reflected to the caller?  In this case, we use a reference
 argument:
@@ -43,26 +59,34 @@ argument:
    }
 
 
-.. tip::
+Here's our example updated:
 
-   Sometimes, if the object we are passing is big (like a
-   ``std::vector``), then the copy incurred by passing by value is
-   expensive.  If we use a reference, then there is no copy, and
-   passing the object is faster.
+.. literalinclude:: ../../../examples/functions/pass_by_reference.cpp
+   :language: c++
+   :caption: ``pass_by_reference.cpp``
 
-   If we know that we only want the function we are calling to read
-   from the object and not write to it, we can mark the reference as
-   const, like:
+Now we see that upon returning from the function, the data we passed
+into the function as an argument is updated.
+
+Sometimes: ``const`` reference
+==============================
+
+Sometimes, if the object we are passing is big (like a
+``std::vector``), then the copy incurred by passing by value is
+expensive.  If we use a reference, then there is no copy, and
+passing the object is faster.
+
+If we know that we only want the function we are calling to read
+from the object and not write to it, we can mark the reference as
+const, like:
 
    .. code:: c++
 
-      void h(const double& x) {
+      void h(const std::vector<double>& x) {
           // x is passed as a reference, but we cannot modify it
       }
 
-Here's an example of different ways to pass data into a function:
+and this can be more efficient.
 
-.. literalinclude:: ../../../examples/functions/function_value_reference.cpp
-   :language: c++
-   :caption: ``function_value_reference.cpp``
-
+We'll use this in the future, and we will also see that some tools
+can suggest this to us to help optimize our codes.

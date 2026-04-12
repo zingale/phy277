@@ -14,8 +14,8 @@ understanding the material.  They will contribute to the 5%
 .. toctree::
    :maxdepth: 1
    :caption: Polls
-   :hidden:
 
    2026-02-05
    2026-02-20
    2026-03-06
+   2026-04-10

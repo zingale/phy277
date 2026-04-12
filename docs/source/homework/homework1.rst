@@ -27,6 +27,9 @@ Homework #1
         ~/homework/1/files/
 
      .. dropdown:: solution
+        :color: muted
+        :icon: pencil
+        :animate: fade-in-slide-down
 
         Starting in your home directory:
 
@@ -56,6 +59,9 @@ Homework #1
      a file called ``problem.txt`` using the ``touch`` command.
 
      .. dropdown:: solution
+        :color: muted
+        :icon: pencil
+        :animate: fade-in-slide-down
 
         .. prompt:: bash
 
@@ -74,6 +80,9 @@ Homework #1
         ~/shell-lesson-data/exercise-data/alkanes
 
      .. dropdown:: solution
+        :color: muted
+        :icon: pencil
+        :animate: fade-in-slide-down
 
         .. prompt:: bash
 
@@ -83,6 +92,9 @@ Homework #1
      and change directory into ``tests/``.
 
      .. dropdown:: solution
+        :color: muted
+        :icon: pencil
+        :animate: fade-in-slide-down
 
         .. prompt:: bash
 
@@ -95,6 +107,9 @@ Homework #1
      it.
 
      .. dropdown:: solution
+        :color: muted
+        :icon: pencil
+        :animate: fade-in-slide-down
 
         .. prompt:: bash
 
@@ -116,6 +131,9 @@ Homework #1
        (only the version ``homeworks/answer.txt``) should remain.
 
      .. dropdown:: solution
+        :color: muted
+        :icon: pencil
+        :animate: fade-in-slide-down
 
         .. prompt:: bash
 
@@ -133,6 +151,9 @@ Homework #1
        ``homeworks/`` directory you created previously.
 
      .. dropdown:: solution
+        :color: muted
+        :icon: pencil
+        :animate: fade-in-slide-down
 
         .. prompt:: bash
 
@@ -146,6 +167,9 @@ Homework #1
    * Give the ``ls`` command that will do this sorting + long listing
 
      .. dropdown:: solution
+        :color: muted
+        :icon: pencil
+        :animate: fade-in-slide-down
 
         .. prompt:: bash
 
@@ -167,6 +191,9 @@ Homework #1
      (long-listing) output when you sort by size
 
      .. dropdown:: solution
+        :color: muted
+        :icon: pencil
+        :animate: fade-in-slide-down
 
         ::
 

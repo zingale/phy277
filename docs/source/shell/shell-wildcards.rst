@@ -28,7 +28,7 @@ If we do ``ls -l`` we should see:
     -rw-rw----. 1 mzingale mzingale 1226 Apr 23  2025 pentane.pdb
     -rw-rw----. 1 mzingale mzingale  825 Apr 23  2025 propane.pdb
 
-This files contain information about the atomic structure of each compound (you
+These files contain information about the atomic structure of each compound (you
 can just use ``cat`` to look at one).
 
 We can list all the files that start with ``p`` by doing:

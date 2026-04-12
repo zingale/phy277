@@ -7,10 +7,10 @@ ALL: planet_sort_split
 # explicitly list the rules for making each of the object files
 
 planet_sort_split.o: planet_sort_split.cpp planet.H
-	g++ -c planet_sort_split.cpp
+	g++ -std=c++20 -c planet_sort_split.cpp
 
 planet.o: planet.cpp planet.H
-	g++ -c planet.cpp
+	g++ -std=c++20 -c planet.cpp
 
 # explicitly write the rule for linking together the executable
 

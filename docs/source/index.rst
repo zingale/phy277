@@ -148,12 +148,6 @@ the top of many pages.
    cxx-basics/memory-stack-heap
    cxx-basics/cxx-references
    cxx-basics/cxx-vector-modify-loop
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Practice
-   :hidden:
-
    interactive_review/review-vecs
 
 .. toctree::
@@ -162,6 +156,7 @@ the top of many pages.
    :hidden:
 
    cxx-basics/cxx-conditional
+   cxx-basics/cxx-conditional-combine
    cxx-basics/cxx-loops
    cxx-basics/cxx-statements
    cxx-basics/cxx-continue-break
@@ -175,6 +170,8 @@ the top of many pages.
    cxx-functions/cxx-functions
    cxx-functions/cxx-value-reference
    cxx-functions/cxx-functions-example
+   cxx-functions/functions-as-arguments
+   cxx-functions/function-practice
 
 .. toctree::
    :maxdepth: 1
@@ -182,12 +179,24 @@ the top of many pages.
    :hidden:
 
    algorithms/truncation
+   algorithms/plotting
+   algorithms/higher-order
+   algorithms/second-derivative
    algorithms/integration
-   algorithms/optimization
+   algorithms/integration-higher-order
+   algorithms/odes
    algorithms/cxx-orbit-example
    algorithms/cxx-orbit-rk2-example
+   algorithms/runge-kutta-4th-order
    algorithms/roots
    algorithms/monte-carlo
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Review
+   :hidden:
+
+   interactive_review/review2
 
 .. toctree::
    :maxdepth: 1
@@ -195,16 +204,7 @@ the top of many pages.
    :hidden:
 
    cxx-basics/cxx-io
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Software Engineering
-   :hidden:
-
-   software_engineering/compiler-flags
-   software_engineering/multiple-files
-   software_engineering/make
-   software_engineering/inclass-split-orbit
+   cxx-basics/cxx-io-wc
 
 .. toctree::
    :maxdepth: 1
@@ -213,23 +213,43 @@ the top of many pages.
 
    cxx-basics/cxx-pointers
    sl-algorithms/cxx-vector-iterators
+   sl-algorithms/ranges
    sl-algorithms/cxx-vectors-algorithms
-   sl-algorithms/cxx-strings-functions
-   sl-algorithms/cxx-auto-decltype
-   sl-algorithms/cxx-stdlib
+   sl-algorithms/cxx-vectors-algorithms-2
+   sl-algorithms/cxx-vectors-algorithms-3
+   sl-algorithms/cxx-views
    sl-algorithms/cxx-lambdas
    sl-algorithms/cxx-functions-planets
-   cxx-basics/cxx-multid-arrays
+   sl-algorithms/sl-examples
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Software Engineering
+   :hidden:
+
+   software_engineering/compiler-flags
+   software_engineering/optimization
+   software_engineering/multiple-files
+   software_engineering/make
+   software_engineering/inclass-split-orbit
+
 
 .. toctree::
    :maxdepth: 1
    :caption: Classes
    :hidden:
 
-.. toctree::
-   :maxdepth: 1
-   :caption: More Classes
-   :hidden:
+   cxx-classes/cxx-classes-intro
+   cxx-classes/cxx-classes-planet
+   cxx-classes/cxx-classes-planet-2
+   cxx-classes/object-oriented
+   cxx-classes/cxx-vector2d-class
+   cxx-classes/inclass-orbit-class
+   cxx-classes/inheritance-and-access
+   cxx-classes/this-class
+   cxx-classes/copy_and_assignment
+   cxx-classes/compound-operators
+   cxx-classes/inclass-orbit-compound
 
 .. toctree::
    :maxdepth: 1
@@ -259,6 +279,9 @@ the top of many pages.
    homework/homework2
    homework/homework3
    homework/homework4
+   homework/homework5
+   homework/homework6
+   homework/homework7
 
 .. toctree::
    :maxdepth: 1
@@ -266,3 +289,4 @@ the top of many pages.
    :hidden:
 
    exam-solutions/midterm1
+   exam-solutions/midterm2

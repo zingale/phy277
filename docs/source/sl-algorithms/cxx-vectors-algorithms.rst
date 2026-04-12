@@ -2,102 +2,99 @@
 Vector Algorithms
 *****************
 
-The ``algorithms`` library provides some powerful algorithms that can
-work on vectors.
+Here we'll look at some of the standard library algorithms that
+don't modify the container.  We'll use ``std::vector`` for all
+these examples, but other containers in C++ work as well.
 
 
-.. tip::
+Counting repetitions
+====================
 
-   A nice overview of the different algorithms that work on the
-   standard C++ containers is provided by "hacking C++": `C++ Standard
-   Library Algorithms
-   <https://hackingcpp.com/cpp/std/algorithms.png>`_
+We can use `std::ranges::count <https://en.cppreference.com/w/cpp/algorithm/ranges/count.html>`_ to
+count how many instances of an element exist in a vector:
+
+.. literalinclude:: ../../../examples/standard_library/count_example.cpp
+   :language: c++
+   :caption: ``count_example.cpp``
+
+.. note::
+
+   If we did this manually, using a loop, we would have to write:
+
+   .. code:: c++
+
+      int count{};
+      for (auto e : v) {
+          if (e == 1) {
+              count++;
+          }
+      }
+
+   so the ``ranges`` library version is much more compact.
+
+A variation, ``std::ranges::count_if`` takes a function that is used to determine if we count
+an element (e.g., only counting odd elements).
+
+
+.. _sec:vector_any_element:
+
+Checking if any element matches
+===============================
+
+We can use `std::ranges::any_of <https://en.cppreference.com/w/cpp/algorithm/ranges/all_any_none_of.html>`_
+to see if any element in the vector satisfies a condition.
+
+This requires that we pass in a function
+the works on a single element and returns a ``bool``.
+
+.. literalinclude:: ../../../examples/standard_library/any_element.cpp
+   :language: c++
+   :caption: ``any_element.cpp``
+
+There is also an ``all_of`` and ``none_of`` variant.
+
+
+.. _sec:std_ranges_find:
 
 Finding an element
-------------------
+==================
 
 Here's an example of using ``find`` on a vector
-(using `std::find <https://en.cppreference.com/w/cpp/algorithm/find>`_):
+(using `std::ranges::find <https://en.cppreference.com/w/cpp/algorithm/ranges/find.html>`_):
 
-.. literalinclude:: ../../../examples/vectors/find_example.cpp
+.. literalinclude:: ../../../examples/standard_library/find_example.cpp
    :language: c++
    :caption: ``find_example.cpp``
 
-If we want to know the index of the element we found, we could use
-`std::distance() <https://en.cppreference.com/w/cpp/iterator/distance>`_
+This returns an iterator that points to the first match in the vector.
 
-.. literalinclude:: ../../../examples/vectors/distance_example.cpp
+.. important::
+
+   Notice the check:
+
+   .. code:: c++
+
+      if (pos == container.end()) {
+          std::cout << "element not found" << std::endl;
+          return 1;
+      }
+
+   If ``std::ranges::find`` does not find a match, then it returns an iterator
+   that points to one past the end of the vector (that's what ``.end()`` is).
+
+If we want to know the index of the element we found, we could use
+`std::ranges::distance <https://en.cppreference.com/w/cpp/iterator/ranges/distance.html>`_
+and ask for the distance from the beginning of the vector:
+
+.. literalinclude:: ../../../examples/standard_library/distance_example.cpp
    :language: c++
    :caption: ``distance_example.cpp``
 
 
+.. caution::
 
-
-Inserting
----------
-
-We saw that ``.push_back()`` is used to add an element to the end of a
-vector.  To insert in the middle of the vector, we use
-``.insert(it_pos)``, where ``it_pos`` is an iterator pointing to the
-element in the vector we want to insert *in front of*.  (Note:
-``insert()`` can actually allow you to insert multiple elements by
-specifying an additional argument.)
-
-Here's an example: we start with a vector with the elements ``100``, ``200``,
-``300`` and then use ``insert()`` to put ``150`` in between ``100``
-and ``200``.
-
-.. literalinclude:: ../../../examples/vectors/insert_example.cpp
-   :language: c++
-   :caption: ``insert_example.cpp``
-
-Erasing
--------
-
-Erasing works similar to inserting.  We give an iterator pointing to
-the start and end of the range we want to erase, and all elements up
-to, but not including the end, are erased.
-
-The end point being *exclusive* rather than *inclusive* is consistent
-with ``.end()`` returning an iterator that points one-past the end of
-the vector.
-
-Here's an example that removes the first 4 elements of a vector.
-
-What happens if we try to remove past the end?  To be save, we should
-always add a check on whether our end is past ``.end()``.
-
-.. literalinclude:: ../../../examples/vectors/vector_erase.cpp
-   :language: c++
-   :caption: ``vector_erase.cpp``
-
-.. admonition:: try it...
-
-   What happens if you use ``.cbegin()`` and/or ``.cend()`` instead
-   ``.begin()`` and ``.end()``?
-
-   Remember that the ``c`` in those functions is for ``const``---it
-   provides read-only access to the elements through the iterator.
-
-Sorting
--------
-
-.. admonition:: try it...
-
-   Let's try to understand how the ``sort`` function works.
-   https://www.cplusplus.com/reference/algorithm/sort/
-
-
-Resize and clear
-================
-
-If we have an existing vector we can resize it with ``.resize(num,
-init)`` where ``num`` is the number of new elements and (optionally) ``init`` is
-their initial value.
-
-We can remove everything from the vector using ``.clear()``.  Here's an example:
-
-.. literalinclude:: ../../../examples/vectors/resize_example.cpp
-   :language: c++
-   :caption: ``resize_example.cpp``
-
+   ``std::ranges::distance`` will return a *signed* integer, since the distance
+   count be negative, depending on the starting point we used.  But we can only
+   index a vector using an unsigned integer (that is what ``std::size_t`` is,
+   so we need to be careful when we do the indexing here.  We know we are safe
+   because we use ``.begin()`` as the starting point.

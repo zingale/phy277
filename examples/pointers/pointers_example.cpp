@@ -4,7 +4,7 @@ int main() {
 
     double x{2.0};
 
-    double *x_ptr;
+    double *x_ptr = nullptr;
 
     double &x_ref = x;
 

@@ -40,7 +40,7 @@ For example, the rule:
 .. code:: make
 
    planet_sort_split.o: planet_sort_split.cpp planet.H
-   	g++ -c planet_sort_split.cpp
+   	g++ -std=c++20 -c planet_sort_split.cpp
 
 says that ``planet_sort_split.o`` depends on the files
 ``planet_sort_split.cpp`` and ``planet.H``.  And the rule to make it
@@ -121,7 +121,7 @@ Finally, we have a generic rule to compile a C++ file:
 .. code:: make
 
    %.o : %.cpp ${HEADERS}
-   	g++ -c $<
+   	g++ -std=c++20 -c $<
 
 Note that we make every header file a dependency for every object
 file, whether or not it is included in the source file.  This is not

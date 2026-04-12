@@ -18,6 +18,11 @@ alternately, we can pass the name of the file to the *constructor* of the class,
 
    std::ofstream of("file.txt");
 
+.. note::
+
+   We need to ``#include <fstream>`` to get access to this function
+   from the standard library.
+
 Once the file is open, we can send output to it using the stream operator ``<<``:
 
 .. code:: c++
@@ -38,14 +43,26 @@ When we are done with the file, we can close it:
    the end of a function).  However, you can still free it earlier if
    desired.
 
-The alternate to open a file for reading is ``std::ifstream``.  Note
-that both of these are defined by the ``fstream`` header.
+The inverse, opening a file for reading, is handled by
+``std::ifstream``.  Again, this is defined by the
+``fstream`` header.
+
+Writing example
+===============
+
 
 Here's an example of writing our planet information out to a file:
 
 .. literalinclude:: ../../../examples/io/output_example.cpp
    :language: c++
    :caption: ``output_example.cpp``
+
+
+Notice that just like sending output to the terminal, we need to
+manage line breaks ourselves (we use ``"\n"`` here).
+
+Reading our file
+================
 
 Let's now look at how to read that file back in.
 
@@ -80,11 +97,14 @@ Here's an example of reading our file line by line.  We rely on the
 fact when it reaches the end of the file, ``getline()`` will evaluate
 as ``false`` in a conditional.
 
-.. literalinclude:: ../../../examples/io/input_example2.cpp
+.. literalinclude:: ../../../examples/io/input_example.cpp
    :language: c++
-   :caption: ``input_example2.cpp``
+   :caption: ``input_example.cpp``
 
-.. admonition:: try it...
+Notice that we also check to see if the file is opened successfully.  We should
+have done that for our write example as well.
+
+.. caution::
 
    A file stream object has an ``.eof()`` member that is ``true`` when
    we reach the end of a file.  However, it is only set after a failed
@@ -105,23 +125,3 @@ as ``false`` in a conditional.
    .. code:: c++
 
       std::ofstream of("file.txt", std::ios::app);
-
-
-.. admonition:: try it...
-
-   Let's write our own version of ``wc``.  Here's a text file:
-   :download:`lorem-ipsum.txt <./lorem-ipsum.txt>`.
-
-   Let's write a C++ code the counts the number of lines, words, and
-   characters from the input file.
-
-   We don't know how to take a command line argument yet, so let's
-   just hardcode the file name into the program for now.
-
-   .. dropdown:: solution
-
-      .. literalinclude:: ../../../examples/io/wc_example.cpp
-         :language: c++
-         :caption: ``wc_example.cpp``
-
-.. You text has an example of writing to a file in table 3.5

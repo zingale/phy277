@@ -71,7 +71,7 @@ main_doc = 'index'
 
 # General information about the project.
 project = 'PHY 277'
-copyright = '2025-2026, Michael Zingale'
+copyright = '2025-2026, Michael Zingale; License: CC BY-NC-SA 4.0'
 author = 'Michael Zingale'
 
 #html_logo = "castro_logo_hot_200.png"
@@ -155,6 +155,12 @@ html_theme_options = {
     "use_download_button": False
 }
 
+html_context = {
+    "license_name": "CC BY-NC-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -170,5 +176,7 @@ linkcheck_retries = 3
 linkcheck_timeout = 100
 linkcheck_allow_unauthorized = True
 linkcheck_ignore = [r"https://dl.acm.org/doi/10.1145/103162.103163",
-                    r"https://www.gnu.org/*"]
+                    r"https://www.gnu.org/*",
+                    r"https://hackingcpp.com'/*"]
+
 

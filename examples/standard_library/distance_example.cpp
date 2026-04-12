@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <iterator>
+
+int main() {
+
+    const std::vector<int> container{100, 200, 300, 400, 500, 600};
+
+    auto pos = std::ranges::find(container, 400);
+
+    if (pos == container.end()) {
+        std::cout << "element not found" << std::endl;
+        return 1;
+    }
+
+    // here we seek the distance from the beginning of the vector
+    auto idx = std::ranges::distance(container.cbegin(), pos);
+
+    std::cout << "index = " << idx << std::endl;
+
+    // note: we need to be careful here and ensure that idx is >= 0.
+    // and < the size of the vector.  We could be accessing out
+    // of bounds if the value we searched for was not in the vector
+
+    std::cout << "value = " << container[idx] << std::endl;
+}

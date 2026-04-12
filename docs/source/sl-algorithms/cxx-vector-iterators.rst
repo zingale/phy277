@@ -14,10 +14,11 @@ There are 2 ways to access the beginning and end of a ``vector``:
 * ``.cend()``, ``.end()`` : these will return an iterator that points
   *to one past the last element*.
 
-An iterator can be thought of as a special type of *pointer*---a
-topic that we will discuss much more later.  Iterators have
-restrictions on their use, depending on the container---this makes
-them more safe to use.
+.. tip::
+
+   An iterator can be thought of as a special type of pointer.  Iterators have
+   restrictions on their use, depending on the container---this makes
+   them more safe to use.
 
 If we think about an iterator like:
 
@@ -25,29 +26,50 @@ If we think about an iterator like:
 
    auto it = container.cbegin();
 
-Then we can access the next element in ``container`` by incrementing the iterator, ``it++``.
+Then we can access the next element in ``container`` by incrementing
+the iterator, ``it++``.
 
 If we want to see the value in ``container`` that the iterator is
-pointing to, then we need to *dereference* it---this is done with the
-``*`` operator:
+pointing to, then we need to dereference it---just as with pointers,
+this is done with the ``*`` operator:
 
 .. code:: c++
 
    std::cout << "cbegin is " << *it << std::endl;
 
+.. note::
+
+   C++ doesn't support printing the iterator itself, e.g.,
+
+   .. code:: c++
+
+      std::cout << it << std::endl;
+
+   does not compile.  If you want to see the memory address (for some reason),
+   you need to dereference the iterator and then take the address of the object
+   it is pointing to, e.g.,
+
+   .. code:: c++
+
+      std::cout << &(*it) << std::endl;
+
+Looping with iterators
+======================
+
 Here's an example of looping over an entire vector using iterators:
 
-.. literalinclude:: ../../../examples/vectors/iterator_loop.cpp
+.. literalinclude:: ../../../examples/standard_library/iterator_loop.cpp
    :language: c++
    :caption: ``iterator_loop.cpp``
 
-Reverse iterators
-=================
+Notice that we advance the iterator to point to the next element in
+the vector using ``++it``.  We could also do ``it += 4`` to skip
+4 elements (but it is up to us to ensure that we don't go past the end).
 
-We can use ``std::rbegin()`` / ``std::rend()`` to iterate through a container
-in reverse.
+.. important::
 
-.. literalinclude:: ../../../examples/vectors/vector_reverse.cpp
-   :language: c++
-   :caption: ``vector_reverse.cpp``
+   Remember that ``container.cend()`` points to one past the last element.
+   This is why we use the ``<`` operator here, and not ``<=``.
 
+There's really no advantage in this example in using iterators vs. the
+ranged-for loop we've been using until now.

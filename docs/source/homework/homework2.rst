@@ -46,6 +46,9 @@ Homework #2
 
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       The ``scp`` command I would use is:
 
@@ -130,6 +133,9 @@ Homework #2
    with no duplicates.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       cut -d , -f 2 animals.csv | sort | uniq
 
@@ -179,6 +185,9 @@ Homework #2
      your script simply as ``./myscript.sh``
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       Your script will look like:
 

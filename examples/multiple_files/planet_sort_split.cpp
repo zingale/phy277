@@ -15,10 +15,10 @@ int main() {
                                  {"Uranus",  19.189,  0.0473},
                                  {"Neptune", 30.070,  0.0086}};
 
-    std::sort(planets.begin(), planets.end(),
-              [] (const Planet& a, const Planet& b) {return a.e < b.e;});
+    std::ranges::sort(planets,
+                      [] (const Planet& a, const Planet& b) {return a.e < b.e;});
 
-    for (auto p : planets) {
+    for (const auto &p : planets) {
         std::cout << p << std::endl;
     }
 

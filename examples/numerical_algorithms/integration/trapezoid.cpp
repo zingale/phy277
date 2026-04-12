@@ -4,19 +4,25 @@
 #include <cmath>
 #include <format>
 
+
+// the integrand / function we are integrating
 double f(double x) {
     return 1.0 + 0.25 * x * std::sin(std::numbers::pi * x);
 }
 
 
+// the analytic integral of f(x) over our limits
 double I_analytic() {
     return 1.0 - 1.0 / (2.0 * std::pow(std::numbers::pi, 2.0));
 }
 
+
+// trapezoid rule for numerical integration
 double trapezoid(double a, double b, int N,
                  std::function<double(double)> func) {
 
-    double dx = (b - a) / static_cast<int>(N);
+    // compute the width of an interval
+    double dx = (b - a) / static_cast<double>(N);
 
     double I{};
 
@@ -47,9 +53,10 @@ int main() {
     std::cout << std::format("{:^3} {:^10} {:^12}\n",
                              "N", "I", "error");
 
+    auto I_exact = I_analytic();
+
     for (auto N : {2, 4, 8, 16, 32, 64, 128}) {
         auto I = trapezoid(a, b, N, f);
-        auto I_exact = I_analytic();
         double err = std::abs(I - I_exact);
 
         std::cout << std::format("{:3} {:10.5f} {:12.5e}\n",
