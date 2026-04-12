@@ -21,6 +21,13 @@ Access the form: https://forms.gle/8zfGbH52q3EBKvZF7
    How do we see the value in the memory location that ``p`` is
    pointing to?
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      We deference it as ``*p``.
+
 2. Consider the following---what do you think the output printed
    to the screen is?
 
@@ -41,3 +48,11 @@ Access the form: https://forms.gle/8zfGbH52q3EBKvZF7
 
           std::cout << val << std::endl;
       }
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      This will only count the elements in the vector for which
+      ``is_even`` returns ``true``, so we will get ``4``.

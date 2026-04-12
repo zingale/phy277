@@ -121,7 +121,7 @@ compilation step.
    What happens if you don't pass ``planet.o`` to the link step?
 
 
-One Definition Rule
+One definition rule
 ===================
 
 An important concept when working with multiple files is the
