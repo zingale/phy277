@@ -485,7 +485,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -501,6 +503,15 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interlude-outputting-a-planet">Interlude: outputting a <code class="docutils literal notranslate"><span class="pre">Planet</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-sorting">Our sorting</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -525,6 +536,8 @@ how to output our <code class="docutils literal notranslate"><span class="pre">P
 <span class="p">};</span>
 </pre></div>
 </div>
+<section id="interlude-outputting-a-planet">
+<h2>Interlude: outputting a <code class="docutils literal notranslate"><span class="pre">Planet</span></code><a class="headerlink" href="#interlude-outputting-a-planet" title="Link to this heading">#</a></h2>
 <p>We’d like to be able to do:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Planet</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
 <span class="p">...</span>
@@ -533,6 +546,10 @@ how to output our <code class="docutils literal notranslate"><span class="pre">P
 </div>
 <p>We need to write a function that takes an output stream (<code class="docutils literal notranslate"><span class="pre">std::ostream</span></code>)
 and returns a reference to that same output stream.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This is an example of a concept called <a class="reference external" href="https://en.wikipedia.org/wiki/Operator_overloading">operator overloading</a>.</p>
+</div>
 <p>Here’s how this function looks:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="n">os</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Planet</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">os</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:12} : ({:8}, {:8}))&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">e</span><span class="p">);</span>
@@ -540,6 +557,12 @@ and returns a reference to that same output stream.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>Here:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">std::ostream&amp;</span></code> is the return type</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">operator&lt;&lt;</span></code> uses the <code class="docutils literal notranslate"><span class="pre">operator</span></code> keyword to say that we are
+defining how to overload the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> operator.</p></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Previously we saw that we could not write a function that returns a
@@ -547,6 +570,9 @@ reference to a local object.  But here, the return value, <code class="docutils 
 not local—we pass a reference to it via the argument list.</p>
 <p>This construction is what allows us to string <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> together.</p>
 </div>
+</section>
+<section id="our-sorting">
+<h2>Our sorting<a class="headerlink" href="#our-sorting" title="Link to this heading">#</a></h2>
 <p>Here’s the full code of initializing our planets, sorting by eccentricity,
 and then outputting them.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
@@ -593,6 +619,7 @@ and then outputting them.</p>
 </div>
 </div>
 </section>
+</section>
 
 
                 </article>
@@ -629,6 +656,24 @@ and then outputting them.</p>
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interlude-outputting-a-planet">Interlude: outputting a <code class="docutils literal notranslate"><span class="pre">Planet</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-sorting">Our sorting</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -39,7 +39,12 @@ Here's a simple example:
    :language: c++
    :caption: ``lambda_examples.cpp``
 
+Here, the function ``f`` computes ``x + y``, but only ``y`` is an
+argument of the function.  The value (we used ``[=]``) of ``x`` is
+captured from the surrounding scope and used in the function.
 
+In the second example, function ``g``, we captured ``x`` by reference
+``[&]``, so we can update it.
 
 
 Sort Example

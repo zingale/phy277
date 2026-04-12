@@ -18,3 +18,6 @@ Let's do some more practice on using the standard library.
    Write some code to find the sum of the elements and the product of
    the elements of a vector.
 
+#. In our :ref:`sec:vector_any_element` example, we checked if any element in a
+   vector was even.  Let's rewrite that using a lambda function.
+

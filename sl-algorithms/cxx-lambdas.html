@@ -568,6 +568,11 @@ data by value and others by reference</p>
 </pre></div>
 </div>
 </div>
+<p>Here, the function <code class="docutils literal notranslate"><span class="pre">f</span></code> computes <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>, but only <code class="docutils literal notranslate"><span class="pre">y</span></code> is an
+argument of the function.  The value (we used <code class="docutils literal notranslate"><span class="pre">[=]</span></code>) of <code class="docutils literal notranslate"><span class="pre">x</span></code> is
+captured from the surrounding scope and used in the function.</p>
+<p>In the second example, function <code class="docutils literal notranslate"><span class="pre">g</span></code>, we captured <code class="docutils literal notranslate"><span class="pre">x</span></code> by reference
+<code class="docutils literal notranslate"><span class="pre">[&amp;]</span></code>, so we can update it.</p>
 <section id="sort-example">
 <h2>Sort Example<a class="headerlink" href="#sort-example" title="Link to this heading">#</a></h2>
 <p>Lambdas make it easy to provide simple functions as arguments
