@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pull requests &#8212; PHY 277 Spring 2026 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css?v=15ab05d9" />
+    <link rel="stylesheet" type="text/css" href="../_static/no-search.css?v=5a7f427f" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=e6052340"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=eaa7b67c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'git/pull-requests';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to Classes" href="../cxx-classes/cxx-classes-intro.html" />
+    <link rel="prev" title="github" href="github.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="Spring 2026" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">PHY 277</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Logistics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/topics.html">Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/remote_servers.html"><code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/using_your_computer.html">Using your own computer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/computing.html">Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/hello_world.html">Hello, World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/ai.html">What About AI?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The UNIX Shell</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../shell/why_command_line.html">Why Use the Command Line?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell.html">The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/sample-data.html">Some Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/filesystem.html">Navigating the Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-history.html">Shell History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-file-create.html">Create Files and Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-copy-move.html">Copying, Moving, and Deleting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-wildcards.html">Wildcards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-redirection-pipes.html">Redirection and Pipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/finding.html"><code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/scp.html"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/permissions.html">File Permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/path.html">Search Path</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Programming</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../programming/hardware.html">Computer Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/development-tools.html">Software Development Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/preparing-our-system.html">Preparing <code class="docutils literal notranslate"><span class="pre">portal</span></code> / <code class="docutils literal notranslate"><span class="pre">portal2</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/structure.html">Structure of a C++ Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/tools.html">Helpful C++ Tools / Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/compiling.html">Compiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming/first_project.html">A First C++ Project</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Editors</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../editors/editors.html">Different Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/emacs.html">emacs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/configure-emacs.html">Configuring emacs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basic Datatypes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-mixing-types.html">Mixing types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-sizes-limits.html">Datatype Sizes and Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point.html">Floating Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cmath.html">Numerical Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/function-preview.html">Preview of Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/minimizing-roundoff.html">Minimizing Roundoff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point-special-numbers.html">Special Floating Point Quantities</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Review</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../interactive_review/review1.html">In-Class Review I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactive_review/more-practice1.html">More Practice Problems</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-escape.html">Escape Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-math.html">String Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-indexing.html">Indexing Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-reading.html">Reading Input</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors.html">Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors-loops.html">Looping Over Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-examples.html">Examples of Using <code class="docutils literal notranslate"><span class="pre">vector</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-arrays.html">Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-structs.html">Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-of-struct.html">Vector of Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/memory-stack-heap.html">Memory: Stack vs. Heap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interactive_review/review-vecs.html">Practice Problems</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-conditional.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-conditional-combine.html">And (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>) and Or (<code class="docutils literal notranslate"><span class="pre">||</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-statements.html">Statement Blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/conditional-loop-examples.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> + Looping Examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-value-reference.html">Passing by Value vs. Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/cxx-functions-example.html">Returning a <code class="docutils literal notranslate"><span class="pre">std::vector</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/functions-as-arguments.html">Passing a Function to a Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-functions/function-practice.html">Function Practice</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Some Numerical Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/truncation.html">Derivatives and Truncation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/higher-order.html">Higher-order Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/second-derivative.html">In-class: Second-Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/integration.html">Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/integration-higher-order.html">High-order Integration: Simpson’s Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/odes.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-example.html">Example: Planetary Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/cxx-orbit-rk2-example.html">2nd-order Runge-Kutta Orbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/runge-kutta-4th-order.html">4th-order Runge-Kutta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/roots.html">Root Finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/monte-carlo.html">Monte Carlo Methods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Review</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../interactive_review/review2.html">In-Class Review II</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io-wc.html">I/O Example: <code class="docutils literal notranslate"><span class="pre">wc</span></code></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vector-iterators.html">Vector Iterators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/ranges.html">Ranges Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vectors-algorithms.html">Vector Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vectors-algorithms-2.html">Vector Modifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vectors-algorithms-3.html">Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-views.html">Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-lambdas.html">Lambda Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html">Example: Sorting Planets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/sl-examples.html">SL Practice</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software Engineering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../software_engineering/compiler-flags.html">Making the Compiler Do the Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software_engineering/optimization.html">Compiler Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software_engineering/multiple-files.html">Working with Multiple Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software_engineering/make.html">Makefiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software_engineering/inclass-split-orbit.html">In-Class Example: Splitting Up Our Orbit Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="version-control.html">Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">A Git Walkthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git-branches.html">Git Branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="github.html">github</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pull requests</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/cxx-classes-intro.html">Introduction to Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/cxx-classes-planet.html">Example: Solar System Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/cxx-classes-planet-2.html">Extending our Solar System Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/object-oriented.html">Object-Oriented Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/cxx-vector2d-class.html">Example: Mathematical Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/inclass-orbit-class.html">In-Class Example: Orbit Integrator Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/inheritance-and-access.html">Inheritance and Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/this-class.html"><code class="docutils literal notranslate"><span class="pre">this</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/copy_and_assignment.html">Copy, Assignment, and Destructors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/compound-operators.html">Compound Assignment Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-classes/inclass-orbit-compound.html">In-Class Example: Orbit Integrator Compound Operators</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">In-class Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../polls/polls.html">In-class Participation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../polls/2026-02-05.html">Feb 05 In-Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polls/2026-02-20.html">Feb 20 In-Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polls/2026-03-06.html">Mar 06 In-Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../polls/2026-04-10.html">Apr 10 In-Class</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework1.html">Homework #1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework #2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework3.html">Homework #3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework4.html">Homework #4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework5.html">Homework #5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework6.html">Homework #6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/homework7.html">Homework #7</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exams</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../exam-solutions/midterm1.html">Midterm 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exam-solutions/midterm2.html">Midterm 2</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/zingale/phy277" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/git/pull-requests.rst?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/git/pull-requests.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fgit/pull-requests.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pull requests</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forks">Forks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-pull-request">Creating a pull-request</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-class-notes-github">Our class notes github</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pull-requests">
+<h1>Pull requests<a class="headerlink" href="#pull-requests" title="Link to this heading">#</a></h1>
+<p>Github allows you to give permissions to users to contribute to a
+repository (read, write, or admin access).  But the best type of workflow
+is one where users don’t push directly to the git repo.  Instead it is based
+around pulls.</p>
+<p>How do we contribute to a project that we don’t own?</p>
+<p>Here’s a github <em>organization</em> for our class: <a class="github reference external" href="https://github.com/ast390-sbu">ast390-sbu</a></p>
+<p>and here’s a simple repo in this organization: <a class="github reference external" href="https://github.com/ast390-sbu/test-repo">ast390-sbu/test-repo</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An organization is meant to be used by a collection of developers who
+can all have different access permissions.  It provides tools for
+managing who can do different things to the repos under its control.</p>
+</div>
+<p>Let’s clone this repo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ast390-sbu/test-repo.git</span>
+<span class="prompt1"><span class="nb">cd</span><span class="w"> </span>test-repo</span>
+</pre></div></div><p>Now, let’s each try to add a file of the form <em>username.txt</em> containing
+your full name.  Ex:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="nb">echo</span><span class="w"> </span>Michael<span class="w"> </span>Zingale<span class="w"> </span>&gt;<span class="w"> </span>zingale.txt</span>
+<span class="prompt1">git<span class="w"> </span>add<span class="w"> </span>zingale.txt</span>
+<span class="prompt1">git<span class="w"> </span>commit</span>
+</pre></div></div><p>Now try to push it to the repo we clone:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>push</span>
+</pre></div></div><p>what happened?</p>
+<p>The issue is that you don’t have <em>write</em> permission to that repo,
+since I own it.  So you are denied access.</p>
+<p>This is okay.  The workflow that github emphasizes is one based around
+<em>pulls</em> not <em>pushes</em>, so let’s see how we do that.</p>
+<section id="forks">
+<h2>Forks<a class="headerlink" href="#forks" title="Link to this heading">#</a></h2>
+<p>First, we need to <em>fork</em> the repo—this creates a clone under our
+control that we can do with as we please.  Click on the “fork” button.</p>
+<img alt="../_images/github-fork.png" class="align-center" src="../_images/github-fork.png" />
+<p>It may ask you where you want the fork to live—you want it to live
+under your profile / username.</p>
+<p>This will bring you to a new github page, displaying the fork, with a
+URL that should look something like: <code class="docutils literal notranslate"><span class="pre">https://github.com/zingale/test-repo</span></code></p>
+<p>Now click on the <em>code</em> button and copy the SSH location.</p>
+<img alt="../_images/github-copy-ssh.png" class="align-center" src="../_images/github-copy-ssh.png" />
+<p>We want to add this fork as a new remote:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>myfork<span class="w"> </span>git@github.com:zingale/test-repo.git</span>
+</pre></div></div><p>(again, make sure you replace that with the link to your repo).</p>
+<p>Now you can do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>push<span class="w"> </span>myfork</span>
+</pre></div></div><p>If you reload your github page, you should see your change there.</p>
+</section>
+<section id="creating-a-pull-request">
+<h2>Creating a pull-request<a class="headerlink" href="#creating-a-pull-request" title="Link to this heading">#</a></h2>
+<p>Now we can do all <em>pull-request</em>.  Select “pull requests”</p>
+<img alt="../_images/github-pr.png" class="align-center" src="../_images/github-pr.png" />
+<p>Then click on the “New pull request” button, and you’ll see something like:</p>
+<img alt="../_images/github-pr2.png" class="align-center" src="../_images/github-pr2.png" />
+<p>This is showing that you are asking to merge the changes in your fork into the
+class <code class="docutils literal notranslate"><span class="pre">test-repo</span></code> repository.</p>
+<p>Click on <em>create pull request</em>, type in a comment about what this does, and then click
+on the <em>create pull request</em> button again.</p>
+<p>Now it is out of your hands.</p>
+<p>The owner of the class repo (me) will get a notification that you want
+to incorporate your changes into the class repo, and I can merge them
+via the github web tools.</p>
+<p>The overall workflow that we did: fork, push to our fork, issue a PR, looks like:</p>
+<a class="reference internal image-reference" href="../_images/github-workflow.png"><img alt="../_images/github-workflow.png" class="align-center" src="../_images/github-workflow.png" style="width: 80%;" />
+</a>
+</section>
+<section id="our-class-notes-github">
+<h2>Our class notes github<a class="headerlink" href="#our-class-notes-github" title="Link to this heading">#</a></h2>
+<p>Let’s take a tour of our class notes on github: <a class="github reference external" href="https://github.com/zingale/phy277">zingale/phy277</a></p>
+<p>There are a lot of other features that github provides that we can
+explore later in the semester, including:</p>
+<ul class="simple">
+<li><p>github actions : automating some workflows (like testing) on our code</p></li>
+<li><p>github pages : building and hosting web pages for our project</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="github.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">github</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../cxx-classes/cxx-classes-intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to Classes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forks">Forks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-pull-request">Creating a pull-request</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-class-notes-github">Our class notes github</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Michael Zingale
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025-2026, Michael Zingale; License: CC BY-NC-SA 4.0.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
