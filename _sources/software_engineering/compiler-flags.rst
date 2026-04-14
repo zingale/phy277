@@ -35,8 +35,8 @@ These have the follow effects:
    <https://github.com/zingale/phy277/blob/main/test.py>`_.
 
 
-Comparing different types warning
-=================================
+"Comparing different types" warning
+===================================
 
 Here's an example of a case of using the wrong type in a loop that can be caught with these flags:
 
@@ -55,8 +55,8 @@ when we compile this with these additional flags, we see:
 
 This is telling us that we are comparing a signed ``int`` and an unsigned ``int``.
 
-Unused variable warning
-=======================
+"Unused variable" warning
+=========================
 
 Here's an example of catching unused variables:
 
