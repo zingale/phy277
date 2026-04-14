@@ -34,6 +34,10 @@ Generally speaking, we'll talk about two types of files:
   (the function definitions corresponding to the forward declarations),
   and of course the ``main()`` function.
 
+
+Splitting our planet sort example
+=================================
+
 Let's consider our example of :ref:`sorting planets <sec:sorting_planets>`.
 
 We'll start with a header file defining our ``struct`` and the operator
@@ -121,6 +125,13 @@ and then link them all together.  Here are the steps:
    g++ -std=c++20 -c planet_sort_split.cpp
    g++ -o planet_sort_split planet.o planet_sort_split.o
 
+.. note::
+
+   We see a new compiler flag, ``-c``.  This tells the compiler to
+   compile the file, but not do the final linking step to make
+   the executable.  This results in an output file with the ``.o``
+   extension (for *object*).
+
 The first two commands are the compilation step.  The take the source file
 and produce an object file (e.g., ``planet.cpp`` → ``planet.o``).
 
@@ -144,6 +155,9 @@ One definition rule
 An important concept when working with multiple files is the
 `One Definition Rule <https://en.wikipedia.org/wiki/One_Definition_Rule>`_
 (ODR).
+
+This means that we can only have a single definition of a function or
+type in our program.
 
 A consequence of the ODR is that if you put a function entirely in
 a header, then you need to make it `inline <https://en.cppreference.com/w/cpp/language/inline>`_.

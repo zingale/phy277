@@ -3,19 +3,22 @@
 from pathlib import Path
 import subprocess
 
-OKAY_TO_FAIL = ["function_vector.cpp",
-                "vector_modify.cpp",
-                "shadowing.cpp",
-                "undefined_stacktrace.cpp",
-                "println.cpp",
-                "format_too_few.cpp",
-                "fallthrough.cpp",
-                "types.cpp",
-                "unused.cpp",
-                "narrowing.cpp",
-                "bounds.cpp",
-                "const_reference_example.cpp",
-                "if-scope.cpp"]
+OKAY_TO_FAIL = [
+    "bounds.cpp",
+    "const_reference_example.cpp",
+    "fallthrough.cpp",
+    "format_too_few.cpp",
+    "function_vector.cpp",
+    "if-scope.cpp",
+    "narrowing.cpp",
+    "println.cpp",
+    "shadow.cpp",
+    "shadowing.cpp",
+    "types.cpp",
+    "undefined_stacktrace.cpp",
+    "unused.cpp",
+    "vector_modify.cpp"
+]
 
 GCC_OPTS = ["-Wall",
             "-Wextra",
