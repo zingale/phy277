@@ -71,11 +71,11 @@ Now we'll create a source file that implements the ``<<`` operator:
 .. literalinclude:: ../../../examples/multiple_files/planet-source/planet.cpp
    :language: c++
    :caption: ``planet.cpp``
-We use ``"`` in the ``#include`` for ``planets.H``:
+We use ``"`` in the ``#include`` for ``planet.H``:
 
 .. code:: c++
 
-   #include "planets.H"
+   #include "planet.H"
 
 This gives us the forward declaration we need for this function.
 
@@ -166,4 +166,14 @@ header, then you need to make it `inline
 Here's an example of putting our ``operator<<`` function directly into the
 ``planet.H`` header.  Now we add ``inline`` before the function, and we no
 longer need ``planet.cpp``
+
+.. literalinclude:: ../../../examples/multiple_files/planet-inline/planet.H
+   :language: c++
+   :caption: ``planet.H``
+
+We can compile the source now simply as:
+
+.. prompt:: bash
+
+   g++ -std=c++20 -o planet_source planet_sort_split.cpp
 
