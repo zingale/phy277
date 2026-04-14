@@ -67,23 +67,40 @@ Now we'll create a source file that implements the ``<<`` operator:
 .. literalinclude:: ../../../examples/multiple_files/planet.cpp
    :language: c++
    :caption: ``planet.cpp``
+We use ``"`` in the ``#include`` for ``planets.H``:
 
-Here, note the following:
+.. code:: c++
 
-* We use ``"`` in the ``#include`` for ``planets.H``:
+   #include "planets.H"
 
-  .. code:: c++
+This gives us the forward declaration we need for this function.
 
-     #include "planets.H"
+.. important::
 
-  This gives us the forward declaration we need for this function.
+   The compiler treats
 
-* For the standard C++ headers we use ``<>`` in the ``#include``.
+   .. code:: c++
 
-  These are treated differently by the preprocessor.  For ``"``, the
-  compiler will first look in the local directory and a list of
-  include paths you provide, while with ``<>`` the compiler will look
-  in the default system locations for the headers.
+      #include <planet.H>
+
+   and
+
+   .. code:: c++
+
+      #include "planet.H"
+
+   differently.
+
+   When using quotes ``"..."``, the compiler will look
+   in the current directory for the header first, and then in the
+   system include paths.
+
+   When using ``< ..>``, it will look in the system include
+   paths, but not your current directory (unless you
+   explicitly force it to).
+
+   Additional paths to search can be specified using the ``-I``
+   flag to the compiler (we won't consider this).
 
 Finally, we'll put the ``main()`` in a third file:
 
