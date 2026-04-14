@@ -231,6 +231,7 @@ the top of many pages.
    software_engineering/optimization
    software_engineering/multiple-files
    software_engineering/make
+   software_engineering/make2
    software_engineering/inclass-split-orbit
 
 .. toctree::
