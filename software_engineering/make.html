@@ -574,14 +574,15 @@ example.</p>
 </div>
 <p>There are a few different types of lines, but the most important are
 the rules that are of the form:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">target</span><span class="p">:</span>   <span class="n">dependencies</span> <span class="o">...</span>
-          <span class="n">commands</span>
-          <span class="o">...</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">target</span><span class="p">:</span> <span class="n">dependencies</span> <span class="o">...</span>
+     <span class="n">commands</span>
+     <span class="o">...</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>make uses a tab character to indent the commands, not spaces.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><code class="docutils literal notranslate"><span class="pre">make</span></code> uses a tab character to indent the commands to be executed
+for each target, not spaces.</p>
 </div>
 <p>For example, the rule:</p>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">planet_sort_split.o</span><span class="o">:</span><span class="w"> </span><span class="n">planet_sort_split</span>.<span class="n">cpp</span> <span class="n">planet</span>.<span class="n">H</span>
@@ -620,6 +621,37 @@ explicitly.  Instead, we can use <a class="reference external" href="https://www
 and <a class="reference external" href="https://www.gnu.org/software/make/manual/html_node/Wildcard-Function.html">wildcards</a>
 to automate a lot of the logic.</p>
 <p>Here’s the improved <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 108 </span><span class="caption-text">new <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="c"># by default, make will try to build the first target it encounters.</span>
+<span class="c"># here we make up a dummy name &quot;ALL&quot; (note: this is not a special make</span>
+<span class="c"># name, it is just commonly used).</span>
+
+<span class="nf">ALL</span><span class="o">:</span><span class="w"> </span><span class="n">planet_sort_split</span>
+
+<span class="c"># find all of the source files and header files</span>
+
+<span class="nv">SOURCES</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.cpp<span class="k">)</span>
+<span class="nv">HEADERS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.H<span class="k">)</span>
+
+<span class="c"># create a list of object files by replacing .cpp with .o</span>
+
+<span class="nv">OBJECTS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>SOURCES:.cpp<span class="o">=</span>.o<span class="k">)</span>
+
+<span class="c"># a recipe for making an object file from a .cpp file</span>
+<span class="c"># Note: this makes every header file a dependency of every object file,</span>
+<span class="c"># which is not ideal, but it is safe.</span>
+
+<span class="nf">%.o </span><span class="o">:</span><span class="w"> </span>%.<span class="n">cpp</span> ${<span class="n">HEADERS</span>}
+<span class="w">	</span>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-c<span class="w"> </span>$&lt;
+
+<span class="c"># explicitly write the rule for linking together the executable</span>
+
+<span class="nf">planet_sort_split</span><span class="o">:</span><span class="w"> </span>${<span class="n">OBJECTS</span>}
+<span class="w">	</span>g++<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span><span class="si">${</span><span class="nv">OBJECTS</span><span class="si">}</span>
+</pre></div>
+</div>
+</div>
 <p>The first thing we do is find all of the sources and headers:</p>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nv">SOURCES</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.cpp<span class="k">)</span>
 <span class="nv">HEADERS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.H<span class="k">)</span>
