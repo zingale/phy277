@@ -498,7 +498,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -514,6 +516,16 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-different-types-warning">Comparing different types warning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unused-variable-warning">Unused variable warning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shadowing-warning">Shadowing warning</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -526,15 +538,19 @@
   <section id="making-the-compiler-do-the-work">
 <span id="sec-compiler-flags"></span><h1>Making the Compiler Do the Work<a class="headerlink" href="#making-the-compiler-do-the-work" title="Link to this heading">#</a></h1>
 <p>Compilers have lots of options that affect the compilation.  So far,
-with <code class="docutils literal notranslate"><span class="pre">g++</span></code> we’ve just been using <code class="docutils literal notranslate"><span class="pre">-o</span></code> to name the executable.  But
-we can also have the compiler warn us about problematic C++ code we may
-have written.  A useful set of options is:</p>
+with <code class="docutils literal notranslate"><span class="pre">g++</span></code> we’ve been using:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-o</span></code> to name the executable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-std=c++20</span></code> to use the C++20 standard</p></li>
+</ul>
+<p>But we can also have the compiler warn us about problematic C++ code
+we may have written.  A useful set of options is:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
 }
 </style><span class="prompt1">g++<span class="w"> </span>-Wall<span class="w"> </span>-Wextra<span class="w"> </span>-Wshadow<span class="w"> </span>-Wpedantic</span>
-</pre></div></div><p>Here’s a brief summary:</p>
+</pre></div></div><p>These have the follow effects:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">-Wall</span></code> : this turns on options that warn about things most users deem problematic.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-Wextra</span></code> : enabled additional warnings that most people think are good to check
@@ -542,6 +558,14 @@ for.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-Wpedantic</span></code> : makes sure that you conform to the language standard and not rely
 on any extensions that the compiler might support.</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All of the code included in these course notes is tested with these
+compiler flags automatically each time a change is made (through
+this <a class="reference external" href="https://github.com/zingale/phy277/blob/main/test.py">test.py script</a>.</p>
+</div>
+<section id="comparing-different-types-warning">
+<h2>Comparing different types warning<a class="headerlink" href="#comparing-different-types-warning" title="Link to this heading">#</a></h2>
 <p>Here’s an example of a case of using the wrong type in a loop that can be caught with these flags:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-number">Listing 100 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">types.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
@@ -559,6 +583,17 @@ on any extensions that the compiler might support.</p></li>
 </pre></div>
 </div>
 </div>
+<p>when we compile this with these additional flags, we see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>types.cpp: In function ‘int main()’:
+types.cpp:7:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘std::array&lt;double, 10&gt;::size_type’ {aka ‘long unsigned int’} [-Wsign-compare]
+    7 |     for (int i = 0; i &lt; x.size(); ++i) {
+      |                     ~~^~~~~~~~~~
+</pre></div>
+</div>
+<p>This is telling us that we are comparing a signed <code class="docutils literal notranslate"><span class="pre">int</span></code> and an unsigned <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+</section>
+<section id="unused-variable-warning">
+<h2>Unused variable warning<a class="headerlink" href="#unused-variable-warning" title="Link to this heading">#</a></h2>
 <p>Here’s an example of catching unused variables:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-number">Listing 101 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">unused.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
@@ -573,38 +608,50 @@ on any extensions that the compiler might support.</p></li>
 </pre></div>
 </div>
 </div>
-<p>Here’s an example of catching a fallthrough in a <code class="docutils literal notranslate"><span class="pre">switch</span></code> statement:</p>
+<p>when we build this, we get:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>unused.cpp: In function ‘int main()’:
+unused.cpp:3:12: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
+    3 |     int x, y, z;
+      |            ^
+unused.cpp:3:15: warning: unused variable ‘z’ [-Wunused-variable]
+    3 |     int x, y, z;
+      |               ^
+</pre></div>
+</div>
+</section>
+<section id="shadowing-warning">
+<h2>Shadowing warning<a class="headerlink" href="#shadowing-warning" title="Link to this heading">#</a></h2>
+<p>Here’s an example of shadowing:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-number">Listing 102 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">fallthrough.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 102 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">shadow.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ranges&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{};</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">sign</span><span class="p">{};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">1.0</span><span class="p">};</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;enter a number: &quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">sgn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">copysign</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">));</span>
-
-<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">sgn</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">-1</span><span class="p">:</span>
-<span class="w">        </span><span class="n">sign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;negative&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span>
-<span class="w">        </span><span class="n">sign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">;</span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span>
-<span class="w">    </span><span class="k">default</span><span class="o">:</span>
-<span class="w">        </span><span class="n">sign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;positive&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">views</span><span class="o">::</span><span class="n">iota</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;sign = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">sign</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
+<p>when we build with <code class="docutils literal notranslate"><span class="pre">-Wshadow</span></code>, we see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>shadow.cpp: In function ‘int main()’:
+shadow.cpp:9:16: warning: declaration of ‘x’ shadows a previous local [-Wshadow]
+    9 |         double x;
+      |                ^
+shadow.cpp:6:12: note: shadowed declaration is here
+    6 |     double x{1.0};
+      |            ^
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -642,6 +689,25 @@ on any extensions that the compiler might support.</p></li>
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-different-types-warning">Comparing different types warning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unused-variable-warning">Unused variable warning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shadowing-warning">Shadowing warning</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
