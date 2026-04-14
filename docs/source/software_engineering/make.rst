@@ -20,7 +20,7 @@ A first ``GNUmakefile``
 
 Here's a basic makefile, which we'll name ``GNUmakefile``:
 
-.. literalinclude:: ../../../examples/multiple_files/GNUmakefile
+.. literalinclude:: ../../../examples/multiple_files/planet-source/GNUmakefile
    :language: make
    :caption: ``GNUmakefile``
 
