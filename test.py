@@ -17,6 +17,27 @@ OKAY_TO_FAIL = ["function_vector.cpp",
                 "const_reference_example.cpp",
                 "if-scope.cpp"]
 
+GCC_OPTS = ["-Wall",
+            "-Wextra",
+            "-Wshadow",
+            "-Werror",
+            "-Wpedantic"]
+
+GCC_OPTS_STR = " ".join(GCC_OPTS)
+
+CLANG_OKAY_TO_FAIL = ["absolute.cpp",
+                      "function_value_reference.cpp"]
+
+CLANG_OPTS = ["-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "-Wheader-hygiene",
+              "-Wpragma-once-outside-header",
+              "-Wquoted-include-in-framework-header",
+              "-Werror"]
+
+CLANG_OPTS_STR = " ".join(CLANG_OPTS)
+
 
 def main():
 
@@ -29,11 +50,15 @@ def main():
 
         else:
             print(f"working on {pdir/file}")
-            subprocess.run(f"g++ -Wall -Wextra -Wshadow -Werror -Wpedantic -std=c++20 -c {file}",
-                           capture_output=False, shell=True, cwd=pdir, check=True)
+            subprocess.run(f"g++ {GCC_OPTS_STR} -std=c++20 -c {file}",
+                           capture_output=False, shell=True, cwd=pdir,
+                           check=True)
+
+            if file not in CLANG_OKAY_TO_FAIL:
+                subprocess.run(f"clang++ {CLANG_OPTS_STR} -std=c++20 -c {file}",
+                               capture_output=False, shell=True, cwd=pdir,
+                               check=True)
 
 
 if __name__ == "__main__":
     main()
-
-
