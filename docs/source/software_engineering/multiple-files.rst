@@ -43,7 +43,7 @@ Let's consider our example of :ref:`sorting planets <sec:sorting_planets>`.
 We'll start with a header file defining our ``struct`` and the operator
 declaration:
 
-.. literalinclude:: ../../../examples/multiple_files/planet.H
+.. literalinclude:: ../../../examples/multiple_files/planet-source/planet.H
    :language: c++
    :caption: ``planet.H``
 
@@ -68,7 +68,7 @@ A few things to note:
 
 Now we'll create a source file that implements the ``<<`` operator:
 
-.. literalinclude:: ../../../examples/multiple_files/planet.cpp
+.. literalinclude:: ../../../examples/multiple_files/planet-source/planet.cpp
    :language: c++
    :caption: ``planet.cpp``
 We use ``"`` in the ``#include`` for ``planets.H``:
@@ -108,7 +108,7 @@ This gives us the forward declaration we need for this function.
 
 Finally, we'll put the ``main()`` in a third file:
 
-.. literalinclude:: ../../../examples/multiple_files/planet_sort_split.cpp
+.. literalinclude:: ../../../examples/multiple_files/planet-source/planet_sort_split.cpp
    :language: c++
    :caption: ``planet_sort_split.cpp``
 
@@ -159,5 +159,11 @@ An important concept when working with multiple files is the
 This means that we can only have a single definition of a function or
 type in our program.
 
-A consequence of the ODR is that if you put a function entirely in
-a header, then you need to make it `inline <https://en.cppreference.com/w/cpp/language/inline>`_.
+A consequence of the ODR is that if you put a function entirely in a
+header, then you need to make it `inline
+<https://en.cppreference.com/w/cpp/language/inline>`_.
+
+Here's an example of putting our ``operator<<`` function directly into the
+``planet.H`` header.  Now we add ``inline`` before the function, and we no
+longer need ``planet.cpp``
+
