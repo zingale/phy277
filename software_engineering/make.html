@@ -54,7 +54,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="In-Class Example: Splitting Up Our Orbit Code" href="inclass-split-orbit.html" />
+    <link rel="next" title="Generalizing our GNUmakefile" href="make2.html" />
     <link rel="prev" title="Working with Multiple Files" href="multiple-files.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -295,6 +295,7 @@
 <li class="toctree-l1"><a class="reference internal" href="optimization.html">Compiler Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multiple-files.html">Working with Multiple Files</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Makefiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make2.html">Generalizing our <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="inclass-split-orbit.html">In-Class Example: Splitting Up Our Orbit Code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Version Control</span></p>
@@ -522,8 +523,6 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-gnumakefile">A first <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizing-our-gnumakefile">Generalizing our <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#going-further">Going further</a></li>
 </ul>
             </nav>
         </div>
@@ -614,101 +613,6 @@ files changed, so it does not need to update the build.</p>
 changed.</p>
 </div>
 </section>
-<section id="generalizing-our-gnumakefile">
-<h2>Generalizing our <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code><a class="headerlink" href="#generalizing-our-gnumakefile" title="Link to this heading">#</a></h2>
-<p>Our first makefile required us to write a rule for every <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> file
-explicitly.  Instead, we can use <a class="reference external" href="https://www.gnu.org/software/make/manual/html_node/Pattern-Rules.html">pattern rules</a>
-and <a class="reference external" href="https://www.gnu.org/software/make/manual/html_node/Wildcard-Function.html">wildcards</a>
-to automate a lot of the logic.</p>
-<p>Here’s the improved <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>:</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 108 </span><span class="caption-text">new <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
-<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="c"># by default, make will try to build the first target it encounters.</span>
-<span class="c"># here we make up a dummy name &quot;ALL&quot; (note: this is not a special make</span>
-<span class="c"># name, it is just commonly used).</span>
-
-<span class="nf">ALL</span><span class="o">:</span><span class="w"> </span><span class="n">planet_sort_split</span>
-
-<span class="c"># find all of the source files and header files</span>
-
-<span class="nv">SOURCES</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.cpp<span class="k">)</span>
-<span class="nv">HEADERS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.H<span class="k">)</span>
-
-<span class="c"># create a list of object files by replacing .cpp with .o</span>
-
-<span class="nv">OBJECTS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>SOURCES:.cpp<span class="o">=</span>.o<span class="k">)</span>
-
-<span class="c"># a recipe for making an object file from a .cpp file</span>
-<span class="c"># Note: this makes every header file a dependency of every object file,</span>
-<span class="c"># which is not ideal, but it is safe.</span>
-
-<span class="nf">%.o </span><span class="o">:</span><span class="w"> </span>%.<span class="n">cpp</span> ${<span class="n">HEADERS</span>}
-<span class="w">	</span>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-c<span class="w"> </span>$&lt;
-
-<span class="c"># explicitly write the rule for linking together the executable</span>
-
-<span class="nf">planet_sort_split</span><span class="o">:</span><span class="w"> </span>${<span class="n">OBJECTS</span>}
-<span class="w">	</span>g++<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span><span class="si">${</span><span class="nv">OBJECTS</span><span class="si">}</span>
-</pre></div>
-</div>
-</div>
-<p>The first thing we do is find all of the sources and headers:</p>
-<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nv">SOURCES</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.cpp<span class="k">)</span>
-<span class="nv">HEADERS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.H<span class="k">)</span>
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">:=</span></code> operator evaluates these expressions immediately when
-<code class="docutils literal notranslate"><span class="pre">make</span></code> encounters them and stores the results in the variables
-<code class="docutils literal notranslate"><span class="pre">SOURCES</span></code> and <code class="docutils literal notranslate"><span class="pre">HEADERS</span></code>.  To reference the list of files in
-these variables, we use <code class="docutils literal notranslate"><span class="pre">${}</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">${SOURCES}</span></code>.</p>
-<p>The next trick is that we create a list of object files by automatically
-replacing the <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> extension with a <code class="docutils literal notranslate"><span class="pre">.o</span></code> extension via the <code class="docutils literal notranslate"><span class="pre">make</span></code>
-expression:</p>
-<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nv">OBJECTS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>SOURCES:.cpp<span class="o">=</span>.o<span class="k">)</span>
-</pre></div>
-</div>
-<p>Finally, we have a generic rule to compile a C++ file:</p>
-<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">%.o </span><span class="o">:</span><span class="w"> </span>%.<span class="n">cpp</span> ${<span class="n">HEADERS</span>}
-<span class="w">     </span>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-c<span class="w"> </span>$&lt;
-</pre></div>
-</div>
-<p>Note that we make every header file a dependency for every object
-file, whether or not it is included in the source file.  This is not
-necessary, but simplifies how we specify the dependencies.</p>
-<p>We use a make <a class="reference external" href="https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html">automatic variable</a>,
-<code class="docutils literal notranslate"><span class="pre">$&lt;</span></code> to indicate the first name in the dependencies.</p>
-<p>We use another automatic variable in the final rule, <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code> to indicate
-the name of the target, to be used as the executable name:</p>
-<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">planet_sort_split</span><span class="o">:</span><span class="w"> </span>${<span class="n">OBJECTS</span>}
-<span class="w">     </span>g++<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span><span class="si">${</span><span class="nv">OBJECTS</span><span class="si">}</span>
-</pre></div>
-</div>
-</section>
-<section id="going-further">
-<h2>Going further<a class="headerlink" href="#going-further" title="Link to this heading">#</a></h2>
-<p>There are more things we can do to generalize our makefile.</p>
-<ul class="simple">
-<li><p>We can use <a class="reference external" href="https://stackoverflow.com/questions/11855386/using-g-with-mmd-in-makefile-to-automatically-generate-dependencies">g++ to automatically determine dependencies</a>.  Also see the <a class="reference external" href="https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html">GNU make automatic prerequisites</a>.</p></li>
-<li><p>We can have the makefile create code at build time, for instance, writing
-a function that contains the current git hash of the code</p></li>
-<li><p>We can different levels of build: optimized and debug</p></li>
-</ul>
-<div class="admonition-try-it admonition">
-<p class="admonition-title">try it…</p>
-<p>Modify the <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> to add the warning flags we discussed earlier to
-the compilation of each source.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>A common target in makefiles is <code class="docutils literal notranslate"><span class="pre">clean</span></code>, which will delete the intermediate
-<code class="docutils literal notranslate"><span class="pre">*.o</span></code> files and the executable.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Here’s a <a class="reference external" href="https://github.com/zingale/phy504/blob/main/examples/vectors/GNUmakefile">GNUmakefile</a>
-I use with some of the in-class examples to build several executables in the same directory.</p>
-</div>
-</section>
 </section>
 
 
@@ -732,11 +636,11 @@ I use with some of the in-class examples to build several executables in the sam
       </div>
     </a>
     <a class="right-next"
-       href="inclass-split-orbit.html"
+       href="make2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">In-Class Example: Splitting Up Our Orbit Code</p>
+        <p class="prev-next-title">Generalizing our <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -759,8 +663,6 @@ I use with some of the in-class examples to build several executables in the sam
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-gnumakefile">A first <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizing-our-gnumakefile">Generalizing our <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#going-further">Going further</a></li>
 </ul>
   </nav></div>
 
