@@ -27,13 +27,14 @@ Here's a basic makefile, which we'll name ``GNUmakefile``:
 There are a few different types of lines, but the most important are
 the rules that are of the form::
 
-    target:   dependencies ...
-              commands
-              ...
+    target: dependencies ...
+         commands
+         ...
 
-.. note::
+.. important::
 
-   make uses a tab character to indent the commands, not spaces.
+   ``make`` uses a tab character to indent the commands to be executed
+   for each target, not spaces.
 
 For example, the rule:
 
@@ -92,7 +93,7 @@ to automate a lot of the logic.
 
 Here's the improved ``GNUmakefile``:
 
-.. literalinclude:: ../../../examples/multiple_files/GNUmakefile.new
+.. literalinclude:: ../../../examples/multiple_files/planet-source/GNUmakefile.new
    :language: make
    :caption: new ``GNUmakefile``
 
