@@ -27,6 +27,13 @@ These have the follow effects:
 * ``-Wpedantic`` : makes sure that you conform to the language standard and not rely
   on any extensions that the compiler might support.
 
+.. note::
+
+   All of the code included in these course notes is tested with these
+   compiler flags automatically each time a change is made (through
+   this `test.py script
+   <https://github.com/zingale/phy277/blob/main/test.py>`_.
+
 
 Comparing different types warning
 =================================
