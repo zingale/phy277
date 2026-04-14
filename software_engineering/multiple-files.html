@@ -521,6 +521,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-our-planet-sort-example">Splitting our planet sort example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling">Compiling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-definition-rule">One definition rule</a></li>
 </ul>
@@ -561,6 +562,8 @@ resulting in faster performance.</p>
 (the function definitions corresponding to the forward declarations),
 and of course the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function.</p></li>
 </ul>
+<section id="splitting-our-planet-sort-example">
+<h2>Splitting our planet sort example<a class="headerlink" href="#splitting-our-planet-sort-example" title="Link to this heading">#</a></h2>
 <p>Let’s consider our example of <a class="reference internal" href="../sl-algorithms/cxx-functions-planets.html#sec-sorting-planets"><span class="std std-ref">sorting planets</span></a>.</p>
 <p>We’ll start with a header file defining our <code class="docutils literal notranslate"><span class="pre">struct</span></code> and the operator
 declaration:</p>
@@ -673,6 +676,7 @@ flag to the compiler (we won’t consider this).</p>
 </pre></div>
 </div>
 </div>
+</section>
 <section id="compiling">
 <h2>Compiling<a class="headerlink" href="#compiling" title="Link to this heading">#</a></h2>
 <p>To produce an executable, we need to compile each of the <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> files first
@@ -684,7 +688,14 @@ span.prompt1:before {
 </style><span class="prompt1">g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-c<span class="w"> </span>planet.cpp</span>
 <span class="prompt1">g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-c<span class="w"> </span>planet_sort_split.cpp</span>
 <span class="prompt1">g++<span class="w"> </span>-o<span class="w"> </span>planet_sort_split<span class="w"> </span>planet.o<span class="w"> </span>planet_sort_split.o</span>
-</pre></div></div><p>The first two commands are the compilation step.  The take the source file
+</pre></div></div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We see a new compiler flag, <code class="docutils literal notranslate"><span class="pre">-c</span></code>.  This tells the compiler to
+compile the file, but not do the final linking step to make
+the executable.  This results in an output file with the <code class="docutils literal notranslate"><span class="pre">.o</span></code>
+extension (for <em>object</em>).</p>
+</div>
+<p>The first two commands are the compilation step.  The take the source file
 and produce an object file (e.g., <code class="docutils literal notranslate"><span class="pre">planet.cpp</span></code> → <code class="docutils literal notranslate"><span class="pre">planet.o</span></code>).</p>
 <p>The final command is the link step—notice that we use the same command,
 <code class="docutils literal notranslate"><span class="pre">g++</span></code>, as the compiler and linker.  In this case, we tell it the name
@@ -703,6 +714,8 @@ compilation step.</p>
 <p>An important concept when working with multiple files is the
 <a class="reference external" href="https://en.wikipedia.org/wiki/One_Definition_Rule">One Definition Rule</a>
 (ODR).</p>
+<p>This means that we can only have a single definition of a function or
+type in our program.</p>
 <p>A consequence of the ODR is that if you put a function entirely in
 a header, then you need to make it <a class="reference external" href="https://en.cppreference.com/w/cpp/language/inline">inline</a>.</p>
 </section>
@@ -755,6 +768,7 @@ a header, then you need to make it <a class="reference external" href="https://e
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-our-planet-sort-example">Splitting our planet sort example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling">Compiling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-definition-rule">One definition rule</a></li>
 </ul>
