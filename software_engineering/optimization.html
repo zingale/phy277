@@ -50,6 +50,8 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'software_engineering/optimization';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -522,6 +524,7 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-flags">Optimization flags</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-computing-pi-revisited">Example: computing <span class="math notranslate nohighlight">\(\pi\)</span> revisited</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ndebug"><code class="docutils literal notranslate"><span class="pre">NDEBUG</span></code></a></li>
 </ul>
             </nav>
@@ -557,6 +560,18 @@ algebraically equivalent but has different roundoff.</p>
 <p>You can see what the different optimization levels do by looking at
 <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">g++</span></code>.</p>
 </div>
+</section>
+<section id="example-computing-pi-revisited">
+<h2>Example: computing <span class="math notranslate nohighlight">\(\pi\)</span> revisited<a class="headerlink" href="#example-computing-pi-revisited" title="Link to this heading">#</a></h2>
+<p>Let’s look at our Monte Carlo <a class="reference internal" href="../algorithms/monte-carlo.html#sec-computing-pi"><span class="std std-ref">Example: computing \pi</span></a> code again.</p>
+<p>We can time the execution with the Unix <code class="docutils literal notranslate"><span class="pre">time</span></code> command, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1"><span class="nb">time</span><span class="w"> </span>pi</span>
+</pre></div></div><p>Let’s do this with the default optimization level and compare to
+<code class="docutils literal notranslate"><span class="pre">-O3</span></code>.</p>
 </section>
 <section id="ndebug">
 <h2><code class="docutils literal notranslate"><span class="pre">NDEBUG</span></code><a class="headerlink" href="#ndebug" title="Link to this heading">#</a></h2>
@@ -614,6 +629,7 @@ flag <code class="docutils literal notranslate"><span class="pre">-DNDEBUG</span
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-flags">Optimization flags</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-computing-pi-revisited">Example: computing <span class="math notranslate nohighlight">\(\pi\)</span> revisited</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ndebug"><code class="docutils literal notranslate"><span class="pre">NDEBUG</span></code></a></li>
 </ul>
   </nav></div>

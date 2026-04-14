@@ -617,21 +617,31 @@ throughout this course.</p>
 </pre></div>
 </div>
 </div>
-<p>Here, note the following:</p>
-<ul>
-<li><p>We use <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> in the <code class="docutils literal notranslate"><span class="pre">#include</span></code> for <code class="docutils literal notranslate"><span class="pre">planets.H</span></code>:</p>
+<p>We use <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> in the <code class="docutils literal notranslate"><span class="pre">#include</span></code> for <code class="docutils literal notranslate"><span class="pre">planets.H</span></code>:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;planets.H&quot;</span>
 </pre></div>
 </div>
 <p>This gives us the forward declaration we need for this function.</p>
-</li>
-<li><p>For the standard C++ headers we use <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code> in the <code class="docutils literal notranslate"><span class="pre">#include</span></code>.</p>
-<p>These are treated differently by the preprocessor.  For <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>, the
-compiler will first look in the local directory and a list of
-include paths you provide, while with <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code> the compiler will look
-in the default system locations for the headers.</p>
-</li>
-</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The compiler treats</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;planet.H&gt;</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;planet.H&quot;</span>
+</pre></div>
+</div>
+<p>differently.</p>
+<p>When using quotes <code class="docutils literal notranslate"><span class="pre">&quot;...&quot;</span></code>, the compiler will look
+in the current directory for the header first, and then in the
+system include paths.</p>
+<p>When using <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">..&gt;</span></code>, it will look in the system include
+paths, but not your current directory (unless you
+explicitly force it to).</p>
+<p>Additional paths to search can be specified using the <code class="docutils literal notranslate"><span class="pre">-I</span></code>
+flag to the compiler (we won’t consider this).</p>
+</div>
 <p>Finally, we’ll put the <code class="docutils literal notranslate"><span class="pre">main()</span></code> in a third file:</p>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-number">Listing 105 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet_sort_split.cpp</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
