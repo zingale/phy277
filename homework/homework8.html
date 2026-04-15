@@ -553,6 +553,38 @@ of this assignment.</p>
 (<a class="reference internal" href="homework7.html#sec-homework7"><span class="std std-ref">Homework #7</span></a>) to write the output to a file.  Have your
 <code class="docutils literal notranslate"><span class="pre">main</span></code> function do the integration for both <span class="math notranslate nohighlight">\(C=0\)</span> and <span class="math notranslate nohighlight">\(C=0.3\)</span>,
 writing each integration to a separate file.</p></li>
+<li><p><em>Lambda practice</em> : Consider the following code:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 138 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">count_if.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">is_perfect_square</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">xroot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">xroot</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">xroot</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w"> </span><span class="mi">49</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="mi">64</span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">count_if</span><span class="p">(</span><span class="n">vec</span><span class="p">,</span><span class="w"> </span><span class="n">is_perfect_square</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;there are &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; perfect squares in vec&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>This counts how many elements in the vector <code class="docutils literal notranslate"><span class="pre">vec</span></code> are perfect squares,
+using the <a class="reference external" href="https://en.cppreference.com/w/cpp/algorithm/ranges/count">std::ranges::count_if</a>
+algorithm.</p>
+<p>Rewrite this code to using a lambda function (review <a class="reference internal" href="../sl-algorithms/cxx-lambdas.html#lambdafunctions"><span class="std std-ref">Lambda Functions</span></a>)
+in the <code class="docutils literal notranslate"><span class="pre">std::ranges::count_if</span></code> call, in place of the <code class="docutils literal notranslate"><span class="pre">is_perfect_square</span></code>
+function above.</p>
+</li>
 <li><p><em>Transforming</em> : <a class="reference external" href="https://en.cppreference.com/w/cpp/algorithm/ranges/transform">std::ranges::transform</a>
 takes a range (vector for us), an output iterator (where to start
 writing the result), and an operator (the function to apply to each
@@ -574,6 +606,11 @@ updating our vector in-place.</p>
 is the number of elements in the vector.</p>
 <p>Now, apply the transformation: <span class="math notranslate nohighlight">\(f(e) = x_\mathrm{min} + e \Delta x\)</span>
 to the vector, using <code class="docutils literal notranslate"><span class="pre">std::ranges::transform</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can use either a standard C++ function or a lambda-function
+for <span class="math notranslate nohighlight">\(f(e)\)</span>.</p>
+</div>
 <p>Finally, loop over the vector and output the updated elements.</p>
 </li>
 <li><p><em>Bounds</em> : An operation we often want to do is search through a

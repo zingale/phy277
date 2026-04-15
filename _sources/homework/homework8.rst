@@ -31,7 +31,21 @@ Homework #8
    ``main`` function do the integration for both $C=0$ and $C=0.3$,
    writing each integration to a separate file.
 
-2. *Transforming* : `std::ranges::transform
+2. *Lambda practice* : Consider the following code:
+
+   .. literalinclude:: count_if.cpp
+      :language: c++
+      :caption: ``count_if.cpp``
+
+   This counts how many elements in the vector ``vec`` are perfect squares,
+   using the `std::ranges::count_if <https://en.cppreference.com/w/cpp/algorithm/ranges/count>`_
+   algorithm.
+
+   Rewrite this code to using a lambda function (review :ref:`lambdafunctions`)
+   in the ``std::ranges::count_if`` call, in place of the ``is_perfect_square``
+   function above.
+
+3. *Transforming* : `std::ranges::transform
    <https://en.cppreference.com/w/cpp/algorithm/ranges/transform>`_
    takes a range (vector for us), an output iterator (where to start
    writing the result), and an operator (the function to apply to each
@@ -62,9 +76,14 @@ Homework #8
    Now, apply the transformation: :math:`f(e) = x_\mathrm{min} + e \Delta x`
    to the vector, using ``std::ranges::transform``.
 
+   .. note::
+
+      You can use either a standard C++ function or a lambda-function
+      for $f(e)$.
+
    Finally, loop over the vector and output the updated elements.
 
-3. *Bounds* : An operation we often want to do is search through a
+4. *Bounds* : An operation we often want to do is search through a
    sorted list of numbers and find the interval that contains an
    desired value.  This comes up in interpolation, for example.
 
