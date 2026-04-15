@@ -522,6 +522,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-this-gnumakefile-for-other-projects">Using this <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> for other projects</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#going-further">Going further</a></li>
 </ul>
             </nav>
@@ -617,6 +618,16 @@ for the final executable.  This ensures that all of those
 are built first.</p>
 </li>
 </ul>
+<section id="using-this-gnumakefile-for-other-projects">
+<h2>Using this <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> for other projects<a class="headerlink" href="#using-this-gnumakefile-for-other-projects" title="Link to this heading">#</a></h2>
+<p>This version of our <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> is generic enough to work for any project
+we do in this class.  The main restriction is that all the source and
+headers are in the same directory.</p>
+<p>To use this with a different source, you just need to change <code class="docutils literal notranslate"><span class="pre">planet_sort_split</span></code>
+to the basename of your source file that contains the <code class="docutils literal notranslate"><span class="pre">main</span></code> function.
+This should be done both in the <code class="docutils literal notranslate"><span class="pre">ALL</span></code> target and in the final link rule
+at the end.</p>
+</section>
 <section id="going-further">
 <h2>Going further<a class="headerlink" href="#going-further" title="Link to this heading">#</a></h2>
 <p>There are more things we can do to generalize our makefile.</p>
@@ -686,6 +697,7 @@ the compilation of each source.</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-this-gnumakefile-for-other-projects">Using this <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> for other projects</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#going-further">Going further</a></li>
 </ul>
   </nav></div>

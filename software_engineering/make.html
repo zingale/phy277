@@ -523,6 +523,7 @@
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-gnumakefile">A first <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-make">Using <code class="docutils literal notranslate"><span class="pre">make</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -593,15 +594,25 @@ for each target, not spaces.</p>
 is <code class="docutils literal notranslate"><span class="pre">g++</span> <span class="pre">-c</span> <span class="pre">planet_sort_split.cpp</span></code>.  By specifying the dependencies,
 <code class="docutils literal notranslate"><span class="pre">make</span></code> knows whether it needs to recompile a file by looking at
 whether its dependencies changed.</p>
-<p>It is common to put a target called <code class="docutils literal notranslate"><span class="pre">ALL</span></code> at the top, since by
-default <code class="docutils literal notranslate"><span class="pre">make</span></code> will try to build the first target it encounters.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It is common to put a target called <code class="docutils literal notranslate"><span class="pre">ALL</span></code> at the top that depends
+on the executable you want to produce, since by default <code class="docutils literal notranslate"><span class="pre">make</span></code>
+will try to build the first target it encounters.</p>
+</div>
+</section>
+<section id="using-make">
+<h2>Using <code class="docutils literal notranslate"><span class="pre">make</span></code><a class="headerlink" href="#using-make" title="Link to this heading">#</a></h2>
 <p>We build the project by doing:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
 }
 </style><span class="prompt1">make</span>
-</pre></div></div><div class="admonition-try-it admonition">
+</pre></div></div><p>When you do this, you’ll see that it first builds the object files (in
+order that they were listed as dependencies) and then does the link
+step.</p>
+<div class="admonition-try-it admonition">
 <p class="admonition-title">try it…</p>
 <p>If you type <code class="docutils literal notranslate"><span class="pre">make</span></code> again, it doesn’t do anything, since none of the source
 files changed, so it does not need to update the build.</p>
@@ -663,6 +674,7 @@ changed.</p>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-gnumakefile">A first <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-make">Using <code class="docutils literal notranslate"><span class="pre">make</span></code></a></li>
 </ul>
   </nav></div>
 
