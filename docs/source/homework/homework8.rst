@@ -26,27 +26,45 @@ Homework #8
    of this assignment.
 
 
-1. Update your projectile motion code from the previous homework
+1. *File I/O* : Update your projectile motion code from the previous homework
    (:ref:`sec:homework7`) to write the output to a file.  Have your
    ``main`` function do the integration for both $C=0$ and $C=0.3$,
    writing each to a separate file.
 
-2. iota
+2. *Transforming* : `std::ranges::transform
+   <https://en.cppreference.com/w/cpp/algorithm/ranges/transform>`_
+   takes a range (vector for us), an output iterator (where to start
+   writing the result), and an operator (the function to apply to each
+   element).
 
+   For instance, given a vector ``v`` of ``double``, we could do:
 
-3. *Ranges* :
+   .. code:: c++
 
-   contains is simpler than any_of
+      std::ranges::transform(v, v.begin(), f)
 
-   count_if
+   where ``f`` is a function of the form ``double f(double e) {}``,
+   and the result would be to apply ``f(e)`` to each element, ``e``, of ``v``,
+   changing them in-place in the vector.
 
-4. transform
+   Let's use this to convert a vector of indices into $x$ values.
 
-   generate -- fill with random numbers
+   Start with:
 
-5. An operation we often want to do is search through a sorted list of
-   numbers and find the interval that contains an desired value.  This
-   comes up in interpolation, for example.
+   .. code::
+
+      std::vector<double> is{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+   and define $x_\mathrm{min} = 1$, $x_\mathrm{max} = 2$, and
+   $dx = (x_\mathrm{max} - x_\mathrm{min}) / (N-1)$, where $N$
+   is the number of elements in the vector.
+
+   Now, apply the transformation: $f(e) = x_\mathrm{min} + e dx$
+   to the vector, and output the result.
+
+3. *Bounds* : An operation we often want to do is search through a
+   sorted list of numbers and find the interval that contains an
+   desired value.  This comes up in interpolation, for example.
 
    Consider the following vector:
 
@@ -69,10 +87,15 @@ Homework #8
 
       * ``std::ranges::upper_bound`` returns an iterator to the first element $>$ ``T0``
 
-   Write a code that finds the index for:
+   Write a code that finds the *index* for:
 
    * ``T0 = 1.2``
    * ``T0 = 3.0`` ---note: this is one of the data points in the vector.
+
+   .. tip::
+
+      You'll want to use ``std::distance`` to convert the iterator into a
+      distance from the beginning of the container, just like we did in class.
 
    Also check what happens in the case that our ``T0`` is out of the limits
    of our ``temp_vec`` by finding the index for:
