@@ -24,6 +24,9 @@ These have the follow effects:
 * ``-Wextra`` : enabled additional warnings that most people think are good to check
   for.
 
+* ``-Wshadow`` : this checks if we redefine an variable / object that exists in the
+  surrounding scope.
+
 * ``-Wpedantic`` : makes sure that you conform to the language standard and not rely
   on any extensions that the compiler might support.
 
@@ -55,6 +58,15 @@ when we compile this with these additional flags, we see:
 
 This is telling us that we are comparing a signed ``int`` and an unsigned ``int``.
 
+In this case, we can fix this, by doing:
+
+.. code:: c++
+
+   for (std::size_t i = 0; i < x.size(); ++i) {
+
+since ``std::size_t`` is the same type as return by ``x.size()`` (for
+this compiler, a ``long unsigned int``).
+
 "Unused variable" warning
 =========================
 
@@ -76,6 +88,13 @@ when we build this, we get:
         3 |     int x, y, z;
           |               ^
 
+These are actually two different messages.  Variable ``z`` is never
+used, so we should just remove it.  But for variable ``y``, we assign
+it a value, but then never access that value.  Maybe we meant to?
+Sometimes, this is intentional, in which case we can use the
+`[[maybe_unused]] attribute
+<https://en.cppreference.com/w/cpp/language/attributes/maybe_unused.html>`_
+to silence the compiler warning.
 
 Shadowing warning
 =================
