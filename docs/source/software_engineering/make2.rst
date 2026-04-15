@@ -72,6 +72,18 @@ Let's look at the different parts:
   are built first.
 
 
+Using this ``GNUmakefile`` for other projects
+=============================================
+
+This version of our ``GNUmakefile`` is generic enough to work for any project
+we do in this class.  The main restriction is that all the source and
+headers are in the same directory.
+
+To use this with a different source, you just need to change ``planet_sort_split``
+to the basename of your source file that contains the ``main`` function.
+This should be done both in the ``ALL`` target and in the final link rule
+at the end.
+
 
 Going further
 =============

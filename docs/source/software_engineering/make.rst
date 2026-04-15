@@ -49,9 +49,14 @@ is ``g++ -c planet_sort_split.cpp``.  By specifying the dependencies,
 ``make`` knows whether it needs to recompile a file by looking at
 whether its dependencies changed.
 
-It is common to put a target called ``ALL`` at the top, since by
-default ``make`` will try to build the first target it encounters.
+.. tip::
 
+   It is common to put a target called ``ALL`` at the top that depends
+   on the executable you want to produce, since by default ``make``
+   will try to build the first target it encounters.
+
+Using ``make``
+==============
 
 We build the project by doing:
 
@@ -59,6 +64,9 @@ We build the project by doing:
 
    make
 
+When you do this, you'll see that it first builds the object files (in
+order that they were listed as dependencies) and then does the link
+step.
 
 .. admonition:: try it...
 
