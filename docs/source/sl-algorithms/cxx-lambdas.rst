@@ -33,6 +33,12 @@ surrounding scope:
 mixed types of capture are also possible, where you can capture some
 data by value and others by reference
 
+.. note::
+
+   There can be multiple statements in the ``{  }`` part of the lambda
+   function.  Each should be terminated with a ``;``, just like any
+   other C++ we write.
+
 Here's a simple example:
 
 .. literalinclude:: ../../../examples/functions/lambda_examples.cpp

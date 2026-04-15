@@ -4,7 +4,7 @@
 #include <cmath>
 
 bool is_perfect_square(int x) {
-    double xroot = static_cast<int>(std::sqrt(x));
+    int xroot = static_cast<int>(std::sqrt(x));
     return x == xroot * xroot;
 }
 
