@@ -552,7 +552,7 @@ of this assignment.</p>
 <li><p><em>File I/O</em> : Update your projectile motion code from the previous homework
 (<a class="reference internal" href="homework7.html#sec-homework7"><span class="std std-ref">Homework #7</span></a>) to write the output to a file.  Have your
 <code class="docutils literal notranslate"><span class="pre">main</span></code> function do the integration for both <span class="math notranslate nohighlight">\(C=0\)</span> and <span class="math notranslate nohighlight">\(C=0.3\)</span>,
-writing each to a separate file.</p></li>
+writing each integration to a separate file.</p></li>
 <li><p><em>Transforming</em> : <a class="reference external" href="https://en.cppreference.com/w/cpp/algorithm/ranges/transform">std::ranges::transform</a>
 takes a range (vector for us), an output iterator (where to start
 writing the result), and an operator (the function to apply to each
@@ -561,19 +561,20 @@ element).</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>where <code class="docutils literal notranslate"><span class="pre">f</span></code> is a function of the form <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">f(double</span> <span class="pre">e)</span> <span class="pre">{}</span></code>,
+<p>where <code class="docutils literal notranslate"><span class="pre">f</span></code> is a function of the form <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">f(double</span> <span class="pre">e)</span></code>,
 and the result would be to apply <code class="docutils literal notranslate"><span class="pre">f(e)</span></code> to each element, <code class="docutils literal notranslate"><span class="pre">e</span></code>, of <code class="docutils literal notranslate"><span class="pre">v</span></code>,
-changing them in-place in the vector.</p>
+updating our vector in-place.</p>
 <p>Let’s use this to convert a vector of indices into <span class="math notranslate nohighlight">\(x\)</span> values.</p>
 <p>Start with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;</span> <span class="ow">is</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">};</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;</span> <span class="ow">is</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">};</span>
 </pre></div>
 </div>
 <p>and define <span class="math notranslate nohighlight">\(x_\mathrm{min} = 1\)</span>, <span class="math notranslate nohighlight">\(x_\mathrm{max} = 2\)</span>, and
-$dx = (<a href="#id1"><span class="problematic" id="id2">x_</span></a>mathrm{max} - <a href="#id3"><span class="problematic" id="id4">x_</span></a>\mathrm{min}) / (N-1)<span class="math notranslate nohighlight">\(, where \)</span>N$
+<span class="math notranslate nohighlight">\(\Delta x = (x_\mathrm{max} - x_\mathrm{min}) / (N-1)\)</span>, where <span class="math notranslate nohighlight">\(N\)</span>
 is the number of elements in the vector.</p>
-<p>Now, apply the transformation: $f(e) = <a href="#id5"><span class="problematic" id="id6">x_</span></a>mathrm{min} + e dx$
-to the vector, and output the result.</p>
+<p>Now, apply the transformation: <span class="math notranslate nohighlight">\(f(e) = x_\mathrm{min} + e \Delta x\)</span>
+to the vector, using <code class="docutils literal notranslate"><span class="pre">std::ranges::transform</span></code>.</p>
+<p>Finally, loop over the vector and output the updated elements.</p>
 </li>
 <li><p><em>Bounds</em> : An operation we often want to do is search through a
 sorted list of numbers and find the interval that contains an
