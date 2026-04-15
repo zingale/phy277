@@ -29,7 +29,7 @@ Homework #8
 1. *File I/O* : Update your projectile motion code from the previous homework
    (:ref:`sec:homework7`) to write the output to a file.  Have your
    ``main`` function do the integration for both $C=0$ and $C=0.3$,
-   writing each to a separate file.
+   writing each integration to a separate file.
 
 2. *Transforming* : `std::ranges::transform
    <https://en.cppreference.com/w/cpp/algorithm/ranges/transform>`_
@@ -43,9 +43,9 @@ Homework #8
 
       std::ranges::transform(v, v.begin(), f)
 
-   where ``f`` is a function of the form ``double f(double e) {}``,
+   where ``f`` is a function of the form ``double f(double e)``,
    and the result would be to apply ``f(e)`` to each element, ``e``, of ``v``,
-   changing them in-place in the vector.
+   updating our vector in-place.
 
    Let's use this to convert a vector of indices into $x$ values.
 
@@ -53,14 +53,16 @@ Homework #8
 
    .. code::
 
-      std::vector<double> is{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+      std::vector<double> is{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
    and define $x_\mathrm{min} = 1$, $x_\mathrm{max} = 2$, and
-   $dx = (x_\mathrm{max} - x_\mathrm{min}) / (N-1)$, where $N$
+   :math:`\Delta x = (x_\mathrm{max} - x_\mathrm{min}) / (N-1)`, where $N$
    is the number of elements in the vector.
 
-   Now, apply the transformation: $f(e) = x_\mathrm{min} + e dx$
-   to the vector, and output the result.
+   Now, apply the transformation: :math:`f(e) = x_\mathrm{min} + e \Delta x`
+   to the vector, using ``std::ranges::transform``.
+
+   Finally, loop over the vector and output the updated elements.
 
 3. *Bounds* : An operation we often want to do is search through a
    sorted list of numbers and find the interval that contains an
