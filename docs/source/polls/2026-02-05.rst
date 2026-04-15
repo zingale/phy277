@@ -19,6 +19,9 @@ You created a text file in your current directory with your analysis, and named 
 What command could you use to give the file the correct spelling (``analysis.txt``)?
 
 .. dropdown:: solution
+   :color: muted
+   :icon: pencil
+   :animate: fade-in-slide-down
 
    .. prompt:: bash
 
@@ -41,6 +44,9 @@ two halves together in the single file.  How do you think you could
 use ``cat`` to create this ``whole.txt`` file?
 
 .. dropdown:: solution
+   :color: muted
+   :icon: pencil
+   :animate: fade-in-slide-down
 
    .. prompt:: bash
 
@@ -64,6 +70,9 @@ Using the wildcards we learned, what pattern would match just
 the files ``hello.cpp`` and ``hello.H``?
 
 .. dropdown:: solution
+   :color: muted
+   :icon: pencil
+   :animate: fade-in-slide-down
 
    .. code:: bash
 

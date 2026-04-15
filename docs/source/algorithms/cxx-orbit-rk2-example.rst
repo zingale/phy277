@@ -146,6 +146,9 @@ circular, so it should be constant.
    integration for a variety of timestep sizes.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       Here's a version of the code with the error function and a loop in the ``main``
       function that explores different timestep sizes.

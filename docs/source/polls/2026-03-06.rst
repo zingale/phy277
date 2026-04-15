@@ -27,6 +27,9 @@ As written, in the loop we cannot modify the value of ``e``.  How do
 we change this to let us modify ``e``?
 
 .. dropdown:: solution
+   :color: muted
+   :icon: pencil
+   :animate: fade-in-slide-down
 
    We need to use a reference when accessing the element of the vector.
    This means modifying the loop to be:
@@ -56,6 +59,9 @@ How do you create a ``MathVector`` called ``v`` and initialize it with
 $(x, y, z) = (1, 2, 3)$?
 
 .. dropdown:: solution
+   :color: muted
+   :icon: pencil
+   :animate: fade-in-slide-down
 
    We would do any of the following:
 

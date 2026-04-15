@@ -77,6 +77,9 @@ advance the solution.  The sequence is illustrated below:
    Let's modify our orbit integration code to do RK4.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: ../../../examples/numerical_algorithms/ODEs/orbit_rk4_error.cpp
          :language: C++

@@ -10,6 +10,9 @@ Let's look at some practice problems on ``std::vector``, ``structs``, and refere
    Kepler's law in a loop.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: ../../../examples/in-class/period.cpp
          :language: c++
@@ -35,6 +38,9 @@ Let's look at some practice problems on ``std::vector``, ``structs``, and refere
    Finally loop over the vector again and output the names.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: ../../../examples/in-class/names.cpp
          :language: c++
@@ -52,6 +58,9 @@ Let's look at some practice problems on ``std::vector``, ``structs``, and refere
    Upon completion, output the new values to the screen.
 
    .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
       .. literalinclude:: ../../../examples/in-class/sum.cpp
          :language: c++

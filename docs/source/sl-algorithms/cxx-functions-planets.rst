@@ -21,6 +21,9 @@ Recall, that our ``Planet`` is a ``struct`` of the form:
        double e{};            // eccentricity
    };
 
+Interlude: outputting a ``Planet``
+==================================
+
 We'd like to be able to do:
 
 .. code:: c++
@@ -32,6 +35,11 @@ We'd like to be able to do:
 We need to write a function that takes an output stream (``std::ostream``)
 and returns a reference to that same output stream.
 
+.. tip::
+
+   This is an example of a concept called `operator overloading
+   <https://en.wikipedia.org/wiki/Operator_overloading>`_.
+
 Here's how this function looks:
 
 .. code:: c++
@@ -41,6 +49,13 @@ Here's how this function looks:
        return os;
    }
 
+Here:
+
+* ``std::ostream&`` is the return type
+
+* ``operator<<`` uses the ``operator`` keyword to say that we are
+  defining how to overload the ``<<`` operator.
+
 .. note::
 
    Previously we saw that we could not write a function that returns a
@@ -49,9 +64,12 @@ Here's how this function looks:
 
    This construction is what allows us to string ``<<`` together.
 
+Our sorting
+===========
+
 Here's the full code of initializing our planets, sorting by eccentricity,
 and then outputting them.
 
-.. literalinclude:: ../../../examples/functions/planet_sort.cpp
+.. literalinclude:: ../../../examples/standard_library/planet_sort.cpp
    :language: c++
    :caption: ``planet_sort.cpp``

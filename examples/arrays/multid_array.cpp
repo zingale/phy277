@@ -7,7 +7,7 @@ using fixed_mat_t = std::array<row_arr_t, 3>;
 
 int main() {
 
-    fixed_mat_t M{0.0};
+    fixed_mat_t M{};
 
     double val{0.0};
     for (auto &r : M) {
