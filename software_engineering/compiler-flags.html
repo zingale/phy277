@@ -556,6 +556,8 @@ span.prompt1:before {
 <li><p><code class="docutils literal notranslate"><span class="pre">-Wall</span></code> : this turns on options that warn about things most users deem problematic.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-Wextra</span></code> : enabled additional warnings that most people think are good to check
 for.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-Wshadow</span></code> : this checks if we redefine an variable / object that exists in the
+surrounding scope.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-Wpedantic</span></code> : makes sure that you conform to the language standard and not rely
 on any extensions that the compiler might support.</p></li>
 </ul>
@@ -592,6 +594,12 @@ types.cpp:7:23: warning: comparison of integer expressions of different signedne
 </pre></div>
 </div>
 <p>This is telling us that we are comparing a signed <code class="docutils literal notranslate"><span class="pre">int</span></code> and an unsigned <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>In this case, we can fix this, by doing:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</pre></div>
+</div>
+<p>since <code class="docutils literal notranslate"><span class="pre">std::size_t</span></code> is the same type as return by <code class="docutils literal notranslate"><span class="pre">x.size()</span></code> (for
+this compiler, a <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">unsigned</span> <span class="pre">int</span></code>).</p>
 </section>
 <section id="unused-variable-warning">
 <h2>“Unused variable” warning<a class="headerlink" href="#unused-variable-warning" title="Link to this heading">#</a></h2>
@@ -619,6 +627,12 @@ unused.cpp:3:15: warning: unused variable ‘z’ [-Wunused-variable]
       |               ^
 </pre></div>
 </div>
+<p>These are actually two different messages.  Variable <code class="docutils literal notranslate"><span class="pre">z</span></code> is never
+used, so we should just remove it.  But for variable <code class="docutils literal notranslate"><span class="pre">y</span></code>, we assign
+it a value, but then never access that value.  Maybe we meant to?
+Sometimes, this is intentional, in which case we can use the
+<a class="reference external" href="https://en.cppreference.com/w/cpp/language/attributes/maybe_unused.html">[[maybe_unused]] attribute</a>
+to silence the compiler warning.</p>
 </section>
 <section id="shadowing-warning">
 <h2>Shadowing warning<a class="headerlink" href="#shadowing-warning" title="Link to this heading">#</a></h2>
