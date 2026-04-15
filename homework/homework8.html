@@ -50,10 +50,14 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'homework/homework8';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Midterm 1" href="../exam-solutions/midterm1.html" />
+    <link rel="prev" title="Homework #7" href="homework7.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -108,8 +112,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -331,7 +333,7 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="homework1.html">Homework #1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="homework2.html">Homework #2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="homework3.html">Homework #3</a></li>
@@ -339,6 +341,7 @@
 <li class="toctree-l1"><a class="reference internal" href="homework5.html">Homework #5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="homework6.html">Homework #6</a></li>
 <li class="toctree-l1"><a class="reference internal" href="homework7.html">Homework #7</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework #8</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exams</span></p>
 <ul class="nav bd-sidenav">
@@ -546,7 +549,10 @@ g++</em>) to Brightspace.</p>
 of this assignment.</p>
 </div>
 <ol class="arabic">
-<li><p><em>Files</em> :</p></li>
+<li><p>Update your projectile motion code from the previous homework
+(<a class="reference internal" href="homework7.html#sec-homework7"><span class="std std-ref">Homework #7</span></a>) to write the output to a file.  Have your
+<code class="docutils literal notranslate"><span class="pre">main</span></code> function do the integration for both <span class="math notranslate nohighlight">\(C=0\)</span> and <span class="math notranslate nohighlight">\(C=0.3\)</span>,
+writing each to a separate file.</p></li>
 <li><p>iota</p></li>
 <li><p><em>Ranges</em> :</p>
 <p>contains is simpler than any_of</p>
@@ -555,7 +561,38 @@ of this assignment.</p>
 <li><p>transform</p>
 <p>generate – fill with random numbers</p>
 </li>
-<li><p>binary search using std::ranges::upper_bound()</p></li>
+<li><p>An operation we often want to do is search through a sorted list of
+numbers and find the interval that contains an desired value.  This
+comes up in interpolation, for example.</p>
+<p>Consider the following vector:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">temp_vec</span><span class="p">{</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">};</span>
+</pre></div>
+</div>
+<p>For a value <code class="docutils literal notranslate"><span class="pre">T0</span></code>, we want to find the index into the vector,
+<code class="docutils literal notranslate"><span class="pre">i</span></code>, such that <code class="docutils literal notranslate"><span class="pre">temp_vec[i-1]</span> <span class="pre">&lt;</span> <span class="pre">T0</span> <span class="pre">&lt;=</span> <span class="pre">temp_vec[i]</span></code>.  We can get
+an iterator to <code class="docutils literal notranslate"><span class="pre">temp_vec[i]</span></code> using <a class="reference external" href="https://en.cppreference.com/w/cpp/algorithm/ranges/lower_bound">std::ranges::lower_bound</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a similar function, <code class="docutils literal notranslate"><span class="pre">std::ranges::upper_bound</span></code> —they
+differ only in how they handle the case where we are searching for
+a value that is in our vector:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">std::ranges::lower_bound</span></code> returns an iterator to the first element <span class="math notranslate nohighlight">\(\ge\)</span> <code class="docutils literal notranslate"><span class="pre">T0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">std::ranges::upper_bound</span></code> returns an iterator to the first element <span class="math notranslate nohighlight">\(&gt;\)</span> <code class="docutils literal notranslate"><span class="pre">T0</span></code></p></li>
+</ul>
+</div>
+<p>Write a code that finds the index for:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T0</span> <span class="pre">=</span> <span class="pre">1.2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T0</span> <span class="pre">=</span> <span class="pre">3.0</span></code> —note: this is one of the data points in the vector.</p></li>
+</ul>
+<p>Also check what happens in the case that our <code class="docutils literal notranslate"><span class="pre">T0</span></code> is out of the limits
+of our <code class="docutils literal notranslate"><span class="pre">temp_vec</span></code> by finding the index for:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T0</span> <span class="pre">=</span> <span class="pre">0.05</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T0</span> <span class="pre">=</span> <span class="pre">20</span></code></p></li>
+</ul>
+</li>
 </ol>
 </section>
 
@@ -570,6 +607,24 @@ of this assignment.</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="homework7.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Homework #7</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../exam-solutions/midterm1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Midterm 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
