@@ -26,7 +26,10 @@ Homework #8
    of this assignment.
 
 
-1. *Files* :
+1. Update your projectile motion code from the previous homework
+   (:ref:`sec:homework7`) to write the output to a file.  Have your
+   ``main`` function do the integration for both $C=0$ and $C=0.3$,
+   writing each to a separate file.
 
 2. iota
 
@@ -41,7 +44,39 @@ Homework #8
 
    generate -- fill with random numbers
 
-5. binary search using std::ranges::upper_bound()
+5. An operation we often want to do is search through a sorted list of
+   numbers and find the interval that contains an desired value.  This
+   comes up in interpolation, for example.
 
+   Consider the following vector:
 
+   .. code:: c++
+
+      std::vector<double> temp_vec{0.1, 0.2, 0.5, 1.0, 2.0, 3.0, 4.0, 5.0, 7.5, 10.0};
+
+   For a value ``T0``, we want to find the index into the vector,
+   ``i``, such that ``temp_vec[i-1] < T0 <= temp_vec[i]``.  We can get
+   an iterator to ``temp_vec[i]`` using `std::ranges::lower_bound
+   <https://en.cppreference.com/w/cpp/algorithm/ranges/lower_bound>`_.
+
+   .. note::
+
+      There is a similar function, ``std::ranges::upper_bound`` ---they
+      differ only in how they handle the case where we are searching for
+      a value that is in our vector:
+
+      * ``std::ranges::lower_bound`` returns an iterator to the first element $\ge$ ``T0``
+
+      * ``std::ranges::upper_bound`` returns an iterator to the first element $>$ ``T0``
+
+   Write a code that finds the index for:
+
+   * ``T0 = 1.2``
+   * ``T0 = 3.0`` ---note: this is one of the data points in the vector.
+
+   Also check what happens in the case that our ``T0`` is out of the limits
+   of our ``temp_vec`` by finding the index for:
+
+   * ``T0 = 0.05``
+   * ``T0 = 20``
 
