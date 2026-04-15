@@ -15,48 +15,62 @@ Here's the improved ``GNUmakefile``:
    :language: make
    :caption: new ``GNUmakefile``
 
-The first thing we do is find all of the sources and headers:
+Let's look at the different parts:
 
-.. code:: make
+* We use the `wildcard function <https://www.gnu.org/software/make/manual/html_node/Wildcard-Function.html>`_
+  to match every source and every header in our directory:
 
-   SOURCES := $(wildcard *.cpp)
-   HEADERS := $(wildcard *.H)
+  .. code:: make
 
-The ``:=`` operator evaluates these expressions immediately when
-``make`` encounters them and stores the results in the variables
-``SOURCES`` and ``HEADERS``.  To reference the list of files in
-these variables, we use ``${}``, e.g., ``${SOURCES}``.
+     SOURCES := $(wildcard *.cpp)
+     HEADERS := $(wildcard *.H)
 
-The next trick is that we create a list of object files by automatically
-replacing the ``.cpp`` extension with a ``.o`` extension via the ``make``
-expression:
+  The ``:=`` operator evaluates these expressions immediately when
+  ``make`` encounters them and stores the results in the variables
+  ``SOURCES`` and ``HEADERS``.
 
-.. code:: make
+  To reference the list of files in these variables, we use ``${}``,
+  e.g., ``${SOURCES}``.
 
-   OBJECTS := $(SOURCES:.cpp=.o)
+* We create the list of object files by automatically
+  replacing the ``.cpp`` extension with a ``.o`` extension via the ``make``
+  expression:
 
-Finally, we have a generic rule to compile a C++ file:
+  .. code:: make
 
-.. code:: make
+     OBJECTS := $(SOURCES:.cpp=.o)
 
-   %.o : %.cpp ${HEADERS}
-   	g++ -std=c++20 -c $<
+  This is called a `substitution reference <https://www.gnu.org/software/make/manual/html_node/Substitution-Refs.html>`_.
 
-Note that we make every header file a dependency for every object
-file, whether or not it is included in the source file.  This is not
-necessary, but simplifies how we specify the dependencies.
+* We have a generic rule to compile a C++ file:
 
-We use a make `automatic variable
-<https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html>`_,
-``$<`` to indicate the first name in the dependencies.
+  .. code:: make
 
-We use another automatic variable in the final rule, ``$@`` to indicate
-the name of the target, to be used as the executable name:
+     %.o : %.cpp ${HEADERS}
+          g++ -std=c++20 -c $<
 
-.. code:: make
+  Note that we make every header file a dependency for every object
+  file, whether or not it is included in the source file.  This is not
+  necessary, but simplifies how we specify the dependencies.
 
-   planet_sort_split: ${OBJECTS}
-   	g++ -o $@ ${OBJECTS}
+  We use a make `automatic variable
+  <https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html>`_,
+  ``$<`` to indicate the first name in the dependencies.
+
+* We have a separate rule for the link step:
+
+  .. code:: make
+
+     planet_sort_split: ${OBJECTS}
+          g++ -o $@ ${OBJECTS}
+
+  We use another automatic variable here, ``$@`` to indicate
+  the name of the target, to be used as the executable name.
+
+  Notice that all of the object files are dependencies
+  for the final executable.  This ensures that all of those
+  are built first.
+
 
 
 Going further
