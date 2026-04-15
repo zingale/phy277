@@ -572,22 +572,29 @@ to automate a lot of the logic.</p>
 </pre></div>
 </div>
 </div>
-<p>The first thing we do is find all of the sources and headers:</p>
+<p>Let’s look at the different parts:</p>
+<ul>
+<li><p>We use the <a class="reference external" href="https://www.gnu.org/software/make/manual/html_node/Wildcard-Function.html">wildcard function</a>
+to match every source and every header in our directory:</p>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nv">SOURCES</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.cpp<span class="k">)</span>
 <span class="nv">HEADERS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.H<span class="k">)</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">:=</span></code> operator evaluates these expressions immediately when
 <code class="docutils literal notranslate"><span class="pre">make</span></code> encounters them and stores the results in the variables
-<code class="docutils literal notranslate"><span class="pre">SOURCES</span></code> and <code class="docutils literal notranslate"><span class="pre">HEADERS</span></code>.  To reference the list of files in
-these variables, we use <code class="docutils literal notranslate"><span class="pre">${}</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">${SOURCES}</span></code>.</p>
-<p>The next trick is that we create a list of object files by automatically
+<code class="docutils literal notranslate"><span class="pre">SOURCES</span></code> and <code class="docutils literal notranslate"><span class="pre">HEADERS</span></code>.</p>
+<p>To reference the list of files in these variables, we use <code class="docutils literal notranslate"><span class="pre">${}</span></code>,
+e.g., <code class="docutils literal notranslate"><span class="pre">${SOURCES}</span></code>.</p>
+</li>
+<li><p>We create the list of object files by automatically
 replacing the <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> extension with a <code class="docutils literal notranslate"><span class="pre">.o</span></code> extension via the <code class="docutils literal notranslate"><span class="pre">make</span></code>
 expression:</p>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nv">OBJECTS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>SOURCES:.cpp<span class="o">=</span>.o<span class="k">)</span>
 </pre></div>
 </div>
-<p>Finally, we have a generic rule to compile a C++ file:</p>
+<p>This is called a <a class="reference external" href="https://www.gnu.org/software/make/manual/html_node/Substitution-Refs.html">substitution reference</a>.</p>
+</li>
+<li><p>We have a generic rule to compile a C++ file:</p>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">%.o </span><span class="o">:</span><span class="w"> </span>%.<span class="n">cpp</span> ${<span class="n">HEADERS</span>}
 <span class="w">     </span>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-c<span class="w"> </span>$&lt;
 </pre></div>
@@ -597,12 +604,19 @@ file, whether or not it is included in the source file.  This is not
 necessary, but simplifies how we specify the dependencies.</p>
 <p>We use a make <a class="reference external" href="https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html">automatic variable</a>,
 <code class="docutils literal notranslate"><span class="pre">$&lt;</span></code> to indicate the first name in the dependencies.</p>
-<p>We use another automatic variable in the final rule, <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code> to indicate
-the name of the target, to be used as the executable name:</p>
+</li>
+<li><p>We have a separate rule for the link step:</p>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">planet_sort_split</span><span class="o">:</span><span class="w"> </span>${<span class="n">OBJECTS</span>}
 <span class="w">     </span>g++<span class="w"> </span>-o<span class="w"> </span><span class="nv">$@</span><span class="w"> </span><span class="si">${</span><span class="nv">OBJECTS</span><span class="si">}</span>
 </pre></div>
 </div>
+<p>We use another automatic variable here, <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code> to indicate
+the name of the target, to be used as the executable name.</p>
+<p>Notice that all of the object files are dependencies
+for the final executable.  This ensures that all of those
+are built first.</p>
+</li>
+</ul>
 <section id="going-further">
 <h2>Going further<a class="headerlink" href="#going-further" title="Link to this heading">#</a></h2>
 <p>There are more things we can do to generalize our makefile.</p>
