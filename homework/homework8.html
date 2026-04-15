@@ -549,21 +549,35 @@ g++</em>) to Brightspace.</p>
 of this assignment.</p>
 </div>
 <ol class="arabic">
-<li><p>Update your projectile motion code from the previous homework
+<li><p><em>File I/O</em> : Update your projectile motion code from the previous homework
 (<a class="reference internal" href="homework7.html#sec-homework7"><span class="std std-ref">Homework #7</span></a>) to write the output to a file.  Have your
 <code class="docutils literal notranslate"><span class="pre">main</span></code> function do the integration for both <span class="math notranslate nohighlight">\(C=0\)</span> and <span class="math notranslate nohighlight">\(C=0.3\)</span>,
 writing each to a separate file.</p></li>
-<li><p>iota</p></li>
-<li><p><em>Ranges</em> :</p>
-<p>contains is simpler than any_of</p>
-<p>count_if</p>
+<li><p><em>Transforming</em> : <a class="reference external" href="https://en.cppreference.com/w/cpp/algorithm/ranges/transform">std::ranges::transform</a>
+takes a range (vector for us), an output iterator (where to start
+writing the result), and an operator (the function to apply to each
+element).</p>
+<p>For instance, given a vector <code class="docutils literal notranslate"><span class="pre">v</span></code> of <code class="docutils literal notranslate"><span class="pre">double</span></code>, we could do:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">transform</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">f</span></code> is a function of the form <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">f(double</span> <span class="pre">e)</span> <span class="pre">{}</span></code>,
+and the result would be to apply <code class="docutils literal notranslate"><span class="pre">f(e)</span></code> to each element, <code class="docutils literal notranslate"><span class="pre">e</span></code>, of <code class="docutils literal notranslate"><span class="pre">v</span></code>,
+changing them in-place in the vector.</p>
+<p>Let’s use this to convert a vector of indices into <span class="math notranslate nohighlight">\(x\)</span> values.</p>
+<p>Start with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">double</span><span class="o">&gt;</span> <span class="ow">is</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">};</span>
+</pre></div>
+</div>
+<p>and define <span class="math notranslate nohighlight">\(x_\mathrm{min} = 1\)</span>, <span class="math notranslate nohighlight">\(x_\mathrm{max} = 2\)</span>, and
+$dx = (<a href="#id1"><span class="problematic" id="id2">x_</span></a>mathrm{max} - <a href="#id3"><span class="problematic" id="id4">x_</span></a>\mathrm{min}) / (N-1)<span class="math notranslate nohighlight">\(, where \)</span>N$
+is the number of elements in the vector.</p>
+<p>Now, apply the transformation: $f(e) = <a href="#id5"><span class="problematic" id="id6">x_</span></a>mathrm{min} + e dx$
+to the vector, and output the result.</p>
 </li>
-<li><p>transform</p>
-<p>generate – fill with random numbers</p>
-</li>
-<li><p>An operation we often want to do is search through a sorted list of
-numbers and find the interval that contains an desired value.  This
-comes up in interpolation, for example.</p>
+<li><p><em>Bounds</em> : An operation we often want to do is search through a
+sorted list of numbers and find the interval that contains an
+desired value.  This comes up in interpolation, for example.</p>
 <p>Consider the following vector:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">temp_vec</span><span class="p">{</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">7.5</span><span class="p">,</span><span class="w"> </span><span class="mf">10.0</span><span class="p">};</span>
 </pre></div>
@@ -581,11 +595,16 @@ a value that is in our vector:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">std::ranges::upper_bound</span></code> returns an iterator to the first element <span class="math notranslate nohighlight">\(&gt;\)</span> <code class="docutils literal notranslate"><span class="pre">T0</span></code></p></li>
 </ul>
 </div>
-<p>Write a code that finds the index for:</p>
+<p>Write a code that finds the <em>index</em> for:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">T0</span> <span class="pre">=</span> <span class="pre">1.2</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">T0</span> <span class="pre">=</span> <span class="pre">3.0</span></code> —note: this is one of the data points in the vector.</p></li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You’ll want to use <code class="docutils literal notranslate"><span class="pre">std::distance</span></code> to convert the iterator into a
+distance from the beginning of the container, just like we did in class.</p>
+</div>
 <p>Also check what happens in the case that our <code class="docutils literal notranslate"><span class="pre">T0</span></code> is out of the limits
 of our <code class="docutils literal notranslate"><span class="pre">temp_vec</span></code> by finding the index for:</p>
 <ul class="simple">
