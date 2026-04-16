@@ -7,109 +7,103 @@ changes.  Here we walk through an example of branches.
 
 To get more practice, we'll start a new project and initialize it.
 
-.. figure:: https://imgs.xkcd.com/comics/git.png
-   :width: 75%
-   :align: center
-   :alt: xkcd comic on git
+Let's repeat the setup we did before...
 
-   from XKCD
+.. prompt:: bask
 
-1. Let's repeat the setup we did before...
+   mkdir project2
+   cd project2
+   echo "a second git project" > README
+   git init
 
-   .. prompt:: bask
+Now let's add our ``README`` to git and commit:
 
-      mkdir project2
-      cd project2
-      echo "a second git project" > README
-      git init
+.. prompt:: bash
 
-2. Now let's add our ``README`` to git and commit:
+   git add README
+   git commit
 
-   .. prompt:: bash
+(Remember to enter a log and save...)
 
-      git add README
-      git commit
+Let's create and add another file.
 
-   (Remember to enter a log and save...)
+We write a simple shell script.  Open a new file, called
+``myscript``, e.g., with ``nano``:
 
-3. Let's create and add another file.
+.. prompt:: bash
 
-   We write a simple shell script.  Open a new file, called
-   ``myscript``, e.g., with ``nano``:
+   nano myscript
 
-   .. prompt:: bash
+and copy-paste the following content into it:
 
-      nano myscript
+.. code:: bash
 
-   and copy-paste the following content into it:
+   ls -l > script.out
 
-   .. code:: bash
+be sure to end with a new line.
 
-      ls -l > script.out
+Now, this script is not that fancy and it needs to be run as:
 
-   be sure to end with a new line.
+.. prompt:: bash
 
-   Now, this script is not that fancy and it needs to be run as:
+   bash ./myscript
 
-   .. prompt:: bash
+when you do this, you should see the output ``script.out`` created.
 
-      bash ./myscript
+Now let's tell git that we want it to track this:
 
-   when you do this, you should see the output ``script.out`` created.
+.. prompt:: bash
 
-   Now let's tell git that we want it to track this:
+   git add myscript
+   git commit
 
-   .. prompt:: bash
+Be sure to add a useful message.
 
-      git add myscript
-      git commit
+``.gitignore``
+==============
 
-   Be sure to add a useful message.
+Sometimes we want git to ignoring things.  Let's look at the status of our project:
 
-4. Ignoring things.
+.. prompt:: bash
 
-   Let's look at the status of our project:
+   git status
 
-   .. prompt:: bash
+You'll see something like:
 
-      git status
+.. code:: bash
 
-   You'll see something like:
+   On branch main
+   Untracked files:
+     (use "git add <file>..." to include in what will be committed)
 
-   .. code:: bash
+        script.out
 
-      On branch main
-      Untracked files:
-        (use "git add <file>..." to include in what will be committed)
+   nothing added to commit but untracked files present (use "git add" to track)
 
-           script.out
+It is telling us that it is not keeping track of ``script.out``.
+But we don't want it to---that is the output from running out
+script, and generally we don't keep the output of our codes in
+version control.
 
-      nothing added to commit but untracked files present (use "git add" to track)
+So we'd like to tell git to ignore that file.  The way to do this is to
+create a ``.gitignore`` file:
 
-   It is telling us that it is not keeping track of ``script.out``.
-   But we don't want it to---that is the output from running out
-   script, and generally we don't keep the output of our codes in
-   version control.
+.. prompt:: bash
 
-   So we'd like to tell git to ignore that file.  The way to do this is to
-   create a ``.gitignore`` file:
+   nano .gitignore
 
-   .. prompt:: bash
+and add the following:
 
-      nano .gitignore
+.. code:: bash
 
-   and add the following:
+   *.out
 
-   .. code:: bash
+now if you do ``git status``, that file will not appear, but ``.gitignore`` does!
 
-      *.out
+.. important::
 
-   now if you do ``git status``, that file will not appear, but ``.gitignore`` does!
-
-   .. important::
-
-      Be sure to add ``.gitignore`` to your git repo by doing ``git add``
-      followed by ``git commit``.
+   Be sure to add ``.gitignore`` to your git repo by doing ``git add``
+   followed by ``git commit``.
 
 
 
