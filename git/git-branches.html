@@ -523,6 +523,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gitignore"><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-feature-branch">A Feature Branch</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-branches">Switching Branches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff">Diff</a></li>
@@ -544,15 +545,7 @@
 <p>When we develop as a team, we often use <em>branches</em> to organize our
 changes.  Here we walk through an example of branches.</p>
 <p>To get more practice, we’ll start a new project and initialize it.</p>
-<figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="https://imgs.xkcd.com/comics/git.png"><img alt="xkcd comic on git" src="https://imgs.xkcd.com/comics/git.png" style="width: 75%;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">from XKCD</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<ol class="arabic">
-<li><p>Let’s repeat the setup we did before…</p>
+<p>Let’s repeat the setup we did before…</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: " ";
@@ -561,8 +554,7 @@ span.prompt1:before {
 <span class="prompt1">cd project2</span>
 <span class="prompt1">echo &quot;a second git project&quot; &gt; README</span>
 <span class="prompt1">git init</span>
-</pre></div></div></li>
-<li><p>Now let’s add our <code class="docutils literal notranslate"><span class="pre">README</span></code> to git and commit:</p>
+</pre></div></div><p>Now let’s add our <code class="docutils literal notranslate"><span class="pre">README</span></code> to git and commit:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt2:before {
   content: "$ ";
@@ -570,8 +562,7 @@ span.prompt2:before {
 </style><span class="prompt2">git<span class="w"> </span>add<span class="w"> </span>README</span>
 <span class="prompt2">git<span class="w"> </span>commit</span>
 </pre></div></div><p>(Remember to enter a log and save…)</p>
-</li>
-<li><p>Let’s create and add another file.</p>
+<p>Let’s create and add another file.</p>
 <p>We write a simple shell script.  Open a new file, called
 <code class="docutils literal notranslate"><span class="pre">myscript</span></code>, e.g., with <code class="docutils literal notranslate"><span class="pre">nano</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">nano<span class="w"> </span>myscript</span>
@@ -587,9 +578,9 @@ span.prompt2:before {
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">git<span class="w"> </span>add<span class="w"> </span>myscript</span>
 <span class="prompt2">git<span class="w"> </span>commit</span>
 </pre></div></div><p>Be sure to add a useful message.</p>
-</li>
-<li><p>Ignoring things.</p>
-<p>Let’s look at the status of our project:</p>
+<section id="gitignore">
+<h2><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code><a class="headerlink" href="#gitignore" title="Link to this heading">#</a></h2>
+<p>Sometimes we want git to ignoring things.  Let’s look at the status of our project:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">git<span class="w"> </span>status</span>
 </pre></div></div><p>You’ll see something like:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>On<span class="w"> </span>branch<span class="w"> </span>main
@@ -618,8 +609,7 @@ create a <code class="docutils literal notranslate"><span class="pre">.gitignore
 <p>Be sure to add <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> to your git repo by doing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>
 followed by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>.</p>
 </div>
-</li>
-</ol>
+</section>
 <section id="a-feature-branch">
 <h2>A Feature Branch<a class="headerlink" href="#a-feature-branch" title="Link to this heading">#</a></h2>
 <p>Now let’s imagine that our project is mature and we don’t want to
@@ -866,6 +856,7 @@ starting bits, as long as it is unique.</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gitignore"><code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-feature-branch">A Feature Branch</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-branches">Switching Branches</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff">Diff</a></li>
