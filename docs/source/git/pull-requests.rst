@@ -9,21 +9,16 @@ around pulls.
 
 How do we contribute to a project that we don't own?
 
-Here's a github *organization* for our class: https://github.com/ast390-sbu
+Class repo
+==========
 
-and here's a simple repo in this organization: https://github.com/ast390-sbu/test-repo
-
-.. note::
-
-   An organization is meant to be used by a collection of developers who
-   can all have different access permissions.  It provides tools for
-   managing who can do different things to the repos under its control.
+Here's a github repo for our class: https://github.com/phy277-sbu/test-repo
 
 Let's clone this repo:
 
 .. prompt:: bash
 
-   git clone git@github.com:ast390-sbu/test-repo.git
+   git clone git@github.com:phy277-sbu/test-repo.git
    cd test-repo
 
 Now, let's each try to add a file of the form *username.txt* containing
@@ -93,12 +88,8 @@ Now we can do all *pull-request*.  Select "pull requests"
 .. image:: github-pr.png
    :align: center
 
-Then click on the "New pull request" button, and you'll see something like:
-
-.. image:: github-pr2.png
-   :align: center
-
-This is showing that you are asking to merge the changes in your fork into the
+Then click on the "New pull request" button, and you'll see a summary
+of the changes.  It is showing that you are asking to merge the changes in your fork into the
 class ``test-repo`` repository.
 
 Click on *create pull request*, type in a comment about what this does, and then click
