@@ -523,6 +523,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-repo">Class repo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forks">Forks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-pull-request">Creating a pull-request</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-class-notes-github">Our class notes github</a></li>
@@ -544,20 +545,15 @@ repository (read, write, or admin access).  But the best type of workflow
 is one where users don’t push directly to the git repo.  Instead it is based
 around pulls.</p>
 <p>How do we contribute to a project that we don’t own?</p>
-<p>Here’s a github <em>organization</em> for our class: <a class="reference external" href="https://github.com/ast390-sbu">https://github.com/ast390-sbu</a></p>
-<p>and here’s a simple repo in this organization: <a class="reference external" href="https://github.com/ast390-sbu/test-repo">https://github.com/ast390-sbu/test-repo</a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>An organization is meant to be used by a collection of developers who
-can all have different access permissions.  It provides tools for
-managing who can do different things to the repos under its control.</p>
-</div>
+<section id="class-repo">
+<h2>Class repo<a class="headerlink" href="#class-repo" title="Link to this heading">#</a></h2>
+<p>Here’s a github repo for our class: <a class="reference external" href="https://github.com/phy277-sbu/test-repo">https://github.com/phy277-sbu/test-repo</a></p>
 <p>Let’s clone this repo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
 }
-</style><span class="prompt1">git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ast390-sbu/test-repo.git</span>
+</style><span class="prompt1">git<span class="w"> </span>clone<span class="w"> </span>git@github.com:phy277-sbu/test-repo.git</span>
 <span class="prompt1"><span class="nb">cd</span><span class="w"> </span>test-repo</span>
 </pre></div></div><p>Now, let’s each try to add a file of the form <em>username.txt</em> containing
 your full name.  Ex:</p>
@@ -571,6 +567,7 @@ your full name.  Ex:</p>
 since I own it.  So you are denied access.</p>
 <p>This is okay.  The workflow that github emphasizes is one based around
 <em>pulls</em> not <em>pushes</em>, so let’s see how we do that.</p>
+</section>
 <section id="forks">
 <h2>Forks<a class="headerlink" href="#forks" title="Link to this heading">#</a></h2>
 <p>First, we need to <em>fork</em> the repo—this creates a clone under our
@@ -593,9 +590,8 @@ URL that should look something like: <code class="docutils literal notranslate">
 <h2>Creating a pull-request<a class="headerlink" href="#creating-a-pull-request" title="Link to this heading">#</a></h2>
 <p>Now we can do all <em>pull-request</em>.  Select “pull requests”</p>
 <img alt="../_images/github-pr.png" class="align-center" src="../_images/github-pr.png" />
-<p>Then click on the “New pull request” button, and you’ll see something like:</p>
-<img alt="../_images/github-pr2.png" class="align-center" src="../_images/github-pr2.png" />
-<p>This is showing that you are asking to merge the changes in your fork into the
+<p>Then click on the “New pull request” button, and you’ll see a summary
+of the changes.  It is showing that you are asking to merge the changes in your fork into the
 class <code class="docutils literal notranslate"><span class="pre">test-repo</span></code> repository.</p>
 <p>Click on <em>create pull request</em>, type in a comment about what this does, and then click
 on the <em>create pull request</em> button again.</p>
@@ -666,6 +662,7 @@ explore later in the semester, including:</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-repo">Class repo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forks">Forks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-pull-request">Creating a pull-request</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-class-notes-github">Our class notes github</a></li>
