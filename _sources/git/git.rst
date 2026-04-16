@@ -2,11 +2,11 @@
 A Git Walkthrough
 *****************
 
-We'll do a walkthrough on git.
+We'll do a walkthrough on git---you can use ``portal`` / ``portal2``.
 
-.. important::
+.. tip::
 
-   You should install `git` on your laptop to follow along.
+   You should can also install `git` on your laptop to follow along.
 
    For:
 
@@ -35,6 +35,9 @@ GitHub.
    You should create a `GitHub account <https://github.com>`_.  Pick a
    username that is professional and meaningful.
 
+Setting up git
+==============
+
 Let's start by setting up our git environment:
 
 .. prompt:: bash
@@ -49,6 +52,8 @@ with (see https://swcarpentry.github.io/git-novice/02-setup.html).
 
 This information will be stored in a file called ``.gitconfig`` in your home directory.
 
+A single-developer project
+==========================
 
 Our goal here is to create a project (we'll call the directory
 ``project/``) and have git keep track of the files and changes to our
