@@ -111,9 +111,19 @@ Homework #7
 
       Here's the code:
 
-      .. literalinclude:: ./hw7-projectile-rk.cpp
+      .. literalinclude:: ./hw7_projectile_rk.cpp
          :language: c++
          :caption: ``projectile-rk.cpp``
+
+      Notice that our while loop is:
+
+      .. code:: c++
+
+         while (state.y > 0.0) {
+             ...
+         }
+
+      This will keep looping until the projectile hits the ground.
 
       This prompts the user for the drag coefficient when run.  You can run
       both cases as:
@@ -139,7 +149,7 @@ Homework #7
 
       .. figure:: projectile-drag.png
          :align: center
-         :width: 85%
+         :width: 95%
 
          The motion of the projectile with and without drag.
 
