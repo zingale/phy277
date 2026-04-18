@@ -104,3 +104,42 @@ Homework #7
       lines and label them in the plot.
 
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      Here's the code:
+
+      .. literalinclude:: ./hw7-projectile-rk.cpp
+         :language: c++
+         :caption: ``projectile-rk.cpp``
+
+      This prompts the user for the drag coefficient when run.  You can run
+      both cases as:
+
+      .. prompt:: bash
+
+         echo 0.0 | ./projectile  > proj-nodrag.txt
+         echo 0.3 | ./projectile  > proj-drag0.3.txt
+
+      .. note::
+
+         It's fine also if you just hardcode the value of $C$ into the
+         program and recompile each time.
+
+      To make the plot, given the output names above, we can use this
+      GNUplot script:
+
+      .. literalinclude:: projectile-drag.gp
+         :language: gnuplot
+         :caption: ``projectile-drag.gp``
+
+      which produces this image:
+
+      .. figure:: projectile-drag.png
+         :align: center
+         :width: 85%
+
+         The motion of the projectile with and without drag.
+
