@@ -89,7 +89,12 @@ Now we can do all *pull-request*.  Select "pull requests"
    :align: center
 
 Then click on the "New pull request" button, and you'll see a summary
-of the changes.  It is showing that you are asking to merge the changes in your fork into the
+of the changes:
+
+.. image:: github-pr2.png
+   :align: center
+
+  It is showing that you are asking to merge the changes in your fork into the
 class ``test-repo`` repository.
 
 Click on *create pull request*, type in a comment about what this does, and then click
