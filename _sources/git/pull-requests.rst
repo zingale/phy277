@@ -94,7 +94,7 @@ of the changes:
 .. image:: github-pr2.png
    :align: center
 
-  It is showing that you are asking to merge the changes in your fork into the
+It is showing that you are asking to merge the changes in your fork into the
 class ``test-repo`` repository.
 
 Click on *create pull request*, type in a comment about what this does, and then click
