@@ -26,7 +26,8 @@ struct Circle {
 int main() {
 
     Circle c(3.0);
-    std::cout << std::format("circle with radius {:6.3f} has circumference {:6.3f} and area {:6.3f}\n",
-                             c.radius, c.circumference(), c.area());
+    std::cout
+        << std::format("circle: r = {:.3f}; C = {:.3f}; A = {:.3f}\n",
+                       c.radius, c.circumference(), c.area());
 
 }

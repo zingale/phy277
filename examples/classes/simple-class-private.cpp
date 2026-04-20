@@ -33,7 +33,7 @@ int main() {
 
     Circle c(3.0);
     std::cout
-        << std::format("circle: radius = {:6.3f}; C = {:6.3f}; A = {:6.3f}\n",
+        << std::format("circle: r = {:.3f}; C = {:.3f}; A = {:.3f}\n",
                        c.r(), c.circumference(), c.area());
 
 }
