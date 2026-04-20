@@ -309,6 +309,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to Classes</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="cxx-classes-planet.html">Example: Solar System Class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-classes-planet-2.html">Extending our Solar System Class</a></li>
 <li class="toctree-l1"><a class="reference internal" href="object-oriented.html">Object-Oriented Design</a></li>
@@ -500,7 +501,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -516,6 +519,16 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction to Classes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#class-vs-struct"><code class="docutils literal notranslate"><span class="pre">class</span></code> vs. <code class="docutils literal notranslate"><span class="pre">struct</span></code></a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -569,8 +582,9 @@ whether the data is publicly accessible by default.</p>
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="n">Circle</span><span class="w"> </span><span class="n">c</span><span class="p">(</span><span class="mf">3.0</span><span class="p">);</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;circle with radius {:6.3f} has circumference {:6.3f} and area {:6.3f}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
-<span class="w">                             </span><span class="n">c</span><span class="p">.</span><span class="n">radius</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">circumference</span><span class="p">(),</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">area</span><span class="p">());</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span>
+<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;circle: r = {:.3f}; C = {:.3f}; A = {:.3f}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">                       </span><span class="n">c</span><span class="p">.</span><span class="n">radius</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">circumference</span><span class="p">(),</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">area</span><span class="p">());</span>
 
 <span class="p">}</span>
 </pre></div>
@@ -589,6 +603,10 @@ e.g.,</p>
 </pre></div>
 </div>
 <p>calls our <code class="docutils literal notranslate"><span class="pre">Circle(double</span> <span class="pre">r)</span></code> function in our class <code class="docutils literal notranslate"><span class="pre">Circle</span></code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>We <em>call</em> the constructor, so we are using <code class="docutils literal notranslate"><span class="pre">()</span></code> here instead of <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+</div>
 </li>
 <li><p>We have two <em>member functions</em>:</p>
 <ul class="simple">
@@ -605,6 +623,62 @@ invoke these on our instance of the class, e.g.,</p>
 a member of the class.</p>
 </li>
 </ul>
+</section>
+<section id="class-vs-struct">
+<h1><code class="docutils literal notranslate"><span class="pre">class</span></code> vs. <code class="docutils literal notranslate"><span class="pre">struct</span></code><a class="headerlink" href="#class-vs-struct" title="Link to this heading">#</a></h1>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">try it…</p>
+<p>Change the keyword from <code class="docutils literal notranslate"><span class="pre">struct</span></code> to <code class="docutils literal notranslate"><span class="pre">class</span></code> —what happens?</p>
+</div>
+<p>Now the data and functions are private by default, so we fail to compile.
+We need to explicitly make public anything that we want the user to access.</p>
+<p>Let’s keep the data (<code class="docutils literal notranslate"><span class="pre">radius</span></code>) private but make the functions
+(including the constructor) public.  We’ll add a new function <code class="docutils literal notranslate"><span class="pre">r()</span></code>
+to access the radius.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 110 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple-class-private.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numbers&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Circle</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// member data</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">{};</span>
+
+<span class="k">public</span><span class="o">:</span>
+
+<span class="w">    </span><span class="c1">// constructor</span>
+<span class="w">    </span><span class="n">Circle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// member functions</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">circumference</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">};</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">Circle</span><span class="w"> </span><span class="n">c</span><span class="p">(</span><span class="mf">3.0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span>
+<span class="w">        </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;circle: r = {:.3f}; C = {:.3f}; A = {:.3f}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">                       </span><span class="n">c</span><span class="p">.</span><span class="n">r</span><span class="p">(),</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">circumference</span><span class="p">(),</span><span class="w"> </span><span class="n">c</span><span class="p">.</span><span class="n">area</span><span class="p">());</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </section>
 
 
@@ -642,6 +716,25 @@ a member of the class.</p>
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction to Classes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#class-vs-struct"><code class="docutils literal notranslate"><span class="pre">class</span></code> vs. <code class="docutils literal notranslate"><span class="pre">struct</span></code></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
