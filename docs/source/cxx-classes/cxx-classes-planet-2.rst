@@ -7,14 +7,19 @@ Let's make our class more useful.  Lets implement the following functions:
 
    Planet* get_planet(const std::string& name);
 
-   double get_period(const std::string& name);
-
-The first will take the name of a planet, and if it exists
+This will take the name of a planet, and if it exists
 in our ``SolarSystem``, it will return a pointer to the ``Planet``.
 If the planet does not exist, then the pointer will be ``nullptr``.
 
-The second will take a planet ``name`` and compute and return its
+.. code:: c++
+
+   double get_period(const std::string& name);
+
+This will take a planet ``name`` and compute and return its
 period.
+
+Implementation
+--------------
 
 Here's our updated class:
 
@@ -29,6 +34,8 @@ Some notes:
   <https://en.cppreference.com/w/cpp/algorithm/ranges/all_any_none_of.html>`_.
   This will return ``true`` if we already have a planet with that
   name.  This makes the code more compact.
+
+  We use a lambda-function here.
 
 * Our ``get_planet`` function uses `std::ranges::find_if
   <https://en.cppreference.com/w/cpp/algorithm/ranges/find.html>`_ to
@@ -47,7 +54,12 @@ Some notes:
   ``Planet``, and then it takes the address of that, using the ``&``
   operator.
 
-and here's a driver:
+  If the planet does not exist, then we return ``nullptr``.
+
+Driver
+------
+
+Here's a driver using our new implementation:
 
 .. literalinclude:: ../../../examples/classes/solar_better_2/test_solar_system.cpp
    :language: c++
@@ -56,12 +68,7 @@ and here's a driver:
 
 .. admonition:: try it...
 
-   To understand the difference between a ``struct``, where everything is public, and
-   a ``class`` where everything is private by default, let's edit ``solar_system.H``
-   and change ``struct`` to ``class``.
-
-   What happens when we compile?
-
-   Now try adding a ``public:`` statement to the code.
-
-
+   Let's use our ``get_planet`` function to get a pointer to one of
+   the planets, and then print its properties using the ``<<``
+   operator.  We need to remember to dereference the pointer in this
+   case.

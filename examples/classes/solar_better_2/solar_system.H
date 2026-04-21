@@ -23,10 +23,10 @@ struct SolarSystem {
                     const double a, const double e=0.0) {
 
         // make sure a planet with that name doesn't already exist
-        // if the pointer returned here is not null, then the planet exists
 
         if (std::ranges::any_of(planets,
-                                [=] (const Planet& p) {return p.name == name;})) {
+                                [=] (const Planet& p)
+                                    {return p.name == name;})) {
             std::cout << "planet already exists" << std::endl;
             return;
         }
@@ -45,7 +45,11 @@ struct SolarSystem {
     Planet* get_planet(const std::string& name) {
 
         auto it = std::ranges::find_if(planets,
-                                       [&] (const Planet& p) {return p.name == name;});
+                                       [&] (const Planet& p)
+                                           {return p.name == name;});
+
+        // if the planet doesn't exist, the iterator will point to
+        // .end()
 
         if (it != planets.end()) {
             return &(*it);

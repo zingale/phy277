@@ -85,6 +85,13 @@ Finally, we can use our ``SolarSystem`` class.  Here's a ``main()`` function:
    :language: c++
    :caption: ``test_solar_system.cpp``
 
+The main advantage to using a class here is that we don't need to know
+how the planet data is actually stored (in this case in a
+``std::vector<Planet>``).  By creating member functions that are part
+of the class, we hide the implementation details from the user.
+Instead they are given a simple set of functions to interact with the
+data.
+
 Building
 ========
 
@@ -111,9 +118,3 @@ The second new feature is the addition of some compilation flags:
 
 We saw these in our :ref:`sec:compiler-flags` discussion.
 
-The main advantage to using a class here is that we don't need to know
-how the planet data is actually stored (in this case in a
-``std::vector<Planet>``).  By creating member functions that are part
-of the class, we hide the implementation details from the user.
-Instead they are given a simple set of functions to interact with the
-data.
