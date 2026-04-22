@@ -17,7 +17,7 @@ endif
 
 # general rule for compiling a .cpp file to .o
 %.o : %.cpp ${HEADERS}
-	g++ ${CFLAGS} ${OPTS} -c $<
+	g++ ${CXXFLAGS} ${OPTS} -c $<
 
 # the test_array program -- we need to explicitly include
 # test_array.o here

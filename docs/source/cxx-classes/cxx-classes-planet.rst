@@ -114,7 +114,7 @@ The second new feature is the addition of some compilation flags:
 
 .. code:: make
 
-   CFLAGS := -Wall -Wextra -Wpedantic -Wshadow -g -std=c++20
+   CXXFLAGS := -Wall -Wextra -Wpedantic -Wshadow -g -std=c++20
 
 We saw these in our :ref:`sec:compiler-flags` discussion.
 
