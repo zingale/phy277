@@ -44,16 +44,42 @@ and can be in very disparate positions in memory.
 
 We want an array where all the elements are stored *contiguously* in memory.
 
+``array``-of-``array``'s
+========================
+
+We could alternately do an array-of-arrays using ``std::array``.  In this case,
+we need to know the size of the array ahead of time.  Here's an example that creates
+a 3×4 array (3 rows by 4 columns):
+
+.. literalinclude:: ../../../examples/arrays/multid_array.cpp
+   :language: c++
+   :caption: ``multid_array.cpp``
+
+The downside of this is that we need know how big our array is at
+compile-time.  This is not always possible.  However, this type of
+array is guaranteed to be contiguous in memory.
+
+.. caution::
+
+   The older C-style way to create an array like this is:
+
+   .. code:: c++
+
+      double M[3][4];
+
+   but this should not be used.  When passing to a function,
+   it behaves like a pointer, and the size information is lost.
+   This makes it less convenient to work with.
+
 Contiguous multi-dimensional array
 ==================================
 
 Our goal now is to create a contiguous memory space that stores all the
-elements of the 2-d array.
+elements of the 2-d array.  Further, we want to be able to specify
+the size at runtime, instead of compile-time.
 
 To make a contiguous vector, we will use a single ``vector``
-dimensioned with a size of ``nrows * ncols`` (note: C++ will likely
-have more elements than this, to allow for the potential expansion of
-the vector, but we won't use that).
+dimensioned with a size of ``nrows * ncols``.
 
 .. note::
 
