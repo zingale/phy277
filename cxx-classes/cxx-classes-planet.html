@@ -528,6 +528,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driver">Driver</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building">Building</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-hiding">Data hiding</a></li>
 </ul>
             </nav>
         </div>
@@ -575,7 +576,7 @@ constructor:</p>
 <span class="w">        </span><span class="c1">// make sure a planet with that name doesn&#39;t already exist</span>
 <span class="w">        </span><span class="c1">// if the pointer returned here is not null, then the planet exists</span>
 
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">planets</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">planets</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;planet already exists&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="w">                </span><span class="k">return</span><span class="p">;</span>
@@ -704,7 +705,19 @@ data.</p>
 <section id="building">
 <h2>Building<a class="headerlink" href="#building" title="Link to this heading">#</a></h2>
 <p>We can compile this using the same general <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> we
-developed previously.  We’ll add two features to it:</p>
+developed previously.  We’ll add two features to it.</p>
+<p>The first is a new target: <code class="docutils literal notranslate"><span class="pre">clean</span></code>.  By doing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">make<span class="w"> </span>clean</span>
+</pre></div></div><p>We will remove all of the object files (<code class="docutils literal notranslate"><span class="pre">*.o</span></code>) and the executable.</p>
+<p>The second new feature is the addition of some compilation flags:</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>-Wall<span class="w"> </span>-Wextra<span class="w"> </span>-Wpedantic<span class="w"> </span>-Wshadow<span class="w"> </span>-g<span class="w"> </span>-std<span class="o">=</span>c++20
+</pre></div>
+</div>
+<p>We saw these in our <a class="reference internal" href="../software_engineering/compiler-flags.html#sec-compiler-flags"><span class="std std-ref">Making the Compiler Do the Work</span></a> discussion.</p>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-number">Listing 116 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">ALL</span><span class="o">:</span><span class="w"> </span><span class="n">test_solar_system</span>
@@ -719,14 +732,14 @@ developed previously.  We’ll add two features to it:</p>
 <span class="nv">OBJECTS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>SOURCES:.cpp<span class="o">=</span>.o<span class="k">)</span>
 
 
-<span class="nv">CFLAGS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>-Wall<span class="w"> </span>-Wextra<span class="w"> </span>-Wpedantic<span class="w"> </span>-Wshadow<span class="w"> </span>-g<span class="w"> </span>-std<span class="o">=</span>c++20
+<span class="nv">CXXFLAGS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>-Wall<span class="w"> </span>-Wextra<span class="w"> </span>-Wpedantic<span class="w"> </span>-Wshadow<span class="w"> </span>-g<span class="w"> </span>-std<span class="o">=</span>c++20
 
 <span class="c"># a recipe for making an object file from a .cpp file</span>
 <span class="c"># Note: this makes every header file a dependency of every object file,</span>
 <span class="c"># which is not ideal, but it is safe.</span>
 
 <span class="nf">%.o </span><span class="o">:</span><span class="w"> </span>%.<span class="n">cpp</span> ${<span class="n">HEADERS</span>}
-<span class="w">	</span>g++<span class="w"> </span><span class="si">${</span><span class="nv">CFLAGS</span><span class="si">}</span><span class="w"> </span>-c<span class="w"> </span>$&lt;
+<span class="w">	</span>g++<span class="w"> </span><span class="si">${</span><span class="nv">CXXFLAGS</span><span class="si">}</span><span class="w"> </span>-c<span class="w"> </span>$&lt;
 
 <span class="c"># explicitly write the rule for linking together the executable</span>
 
@@ -739,18 +752,17 @@ developed previously.  We’ll add two features to it:</p>
 </pre></div>
 </div>
 </div>
-<p>The first is a new target: <code class="docutils literal notranslate"><span class="pre">clean</span></code>.  By doing</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">make<span class="w"> </span>clean</span>
-</pre></div></div><p>We will remove all of the object files (<code class="docutils literal notranslate"><span class="pre">*.o</span></code>) and the executable.</p>
-<p>The second new feature is the addition of some compilation flags:</p>
-<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nv">CFLAGS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>-Wall<span class="w"> </span>-Wextra<span class="w"> </span>-Wpedantic<span class="w"> </span>-Wshadow<span class="w"> </span>-g<span class="w"> </span>-std<span class="o">=</span>c++20
+</section>
+<section id="data-hiding">
+<h2>Data hiding<a class="headerlink" href="#data-hiding" title="Link to this heading">#</a></h2>
+<p>Note that nothing in our class is private, so we can directly access
+the <code class="docutils literal notranslate"><span class="pre">planets</span></code> vector.  This means that we can still add a planet like this:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ss</span><span class="p">.</span><span class="n">planets</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">Planet</span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;delta&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">10.0</span><span class="p">});</span>
 </pre></div>
 </div>
-<p>We saw these in our <a class="reference internal" href="../software_engineering/compiler-flags.html#sec-compiler-flags"><span class="std std-ref">Making the Compiler Do the Work</span></a> discussion.</p>
+<p>Usually we would want to prevent this, and force a user of the class
+to use our <code class="docutils literal notranslate"><span class="pre">add_planet</span></code> method.  To do this, we need to make
+our data <code class="docutils literal notranslate"><span class="pre">private</span></code>.</p>
 </section>
 </section>
 
@@ -804,6 +816,7 @@ span.prompt1:before {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driver">Driver</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building">Building</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-hiding">Data hiding</a></li>
 </ul>
   </nav></div>
 

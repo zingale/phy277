@@ -96,11 +96,7 @@ Building
 ========
 
 We can compile this using the same general ``GNUmakefile`` we
-developed previously.  We'll add two features to it:
-
-.. literalinclude:: ../../../examples/classes/solar/GNUmakefile
-   :language: make
-   :caption: ``GNUmakefile``
+developed previously.  We'll add two features to it.
 
 The first is a new target: ``clean``.  By doing
 
@@ -114,7 +110,26 @@ The second new feature is the addition of some compilation flags:
 
 .. code:: make
 
-   CFLAGS := -Wall -Wextra -Wpedantic -Wshadow -g -std=c++20
+   CXXFLAGS := -Wall -Wextra -Wpedantic -Wshadow -g -std=c++20
 
 We saw these in our :ref:`sec:compiler-flags` discussion.
 
+
+.. literalinclude:: ../../../examples/classes/solar/GNUmakefile
+   :language: make
+   :caption: ``GNUmakefile``
+
+
+Data hiding
+===========
+
+Note that nothing in our class is private, so we can directly access
+the ``planets`` vector.  This means that we can still add a planet like this:
+
+.. code:: c++
+
+   ss.planets.push_back(Planet{.name="delta", .a=10.0});
+
+Usually we would want to prevent this, and force a user of the class
+to use our ``add_planet`` method.  To do this, we need to make
+our data ``private``.

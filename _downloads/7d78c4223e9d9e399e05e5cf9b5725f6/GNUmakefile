@@ -5,10 +5,10 @@ HEADERS = $(wildcard *.H)
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
-CFLAGS := -Wall -Wextra -Wshadow -Wpedantic
+CXXFLAGS := -Wall -Wextra -Wshadow -Wpedantic
 
 %.o: %.cpp ${HEADERS}
-	g++ ${CFLAGS} -c $<
+	g++ ${CXXFLAGS} -c $<
 
 test_orbit: ${OBJECTS} ${HEADERS}
 	g++ -o $@ ${OBJECTS}
