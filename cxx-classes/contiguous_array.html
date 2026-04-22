@@ -585,7 +585,22 @@ elements of the 2-d array.</p>
 dimensioned with a size of <code class="docutils literal notranslate"><span class="pre">nrows</span> <span class="pre">*</span> <span class="pre">ncols</span></code> (note: C++ will likely
 have more elements than this, to allow for the potential expansion of
 the vector, but we won’t use that).</p>
-<p>We will then overload the <code class="docutils literal notranslate"><span class="pre">()</span></code> operator to allow for us to index
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We have a choice to make—how do we unravel the multidimensional
+structure into a one-dimensional space?  There are two options:
+row-major and column-major ordering:</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/row_column_major.png"><img alt="../_images/row_column_major.png" src="../_images/row_column_major.png" style="width: 75%;" />
+</a>
+</figure>
+<p>In row-major storage, the elements of each row are next to each
+other in memory, and after one row begins the next.  In
+column-major ordering, the elements of a column are next to each
+other in memory.  Most languages default to row-major ordering, so
+that’s what we’ll use.</p>
+</div>
+<p>We will overload the <code class="docutils literal notranslate"><span class="pre">()</span></code> operator to allow for us to index
 into this one-dimensional buffer as <code class="docutils literal notranslate"><span class="pre">a(nrow,</span> <span class="pre">ncol)</span></code>.</p>
 <p>This can be visualized as:</p>
 <figure class="align-center" id="id2">
