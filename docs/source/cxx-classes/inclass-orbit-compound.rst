@@ -12,7 +12,6 @@ operators to allow us to further simplify the code to do:
 
 Here's the code we created in class for this example:
 
-* :download:`orbit.H <../../examples/orbits/orbit_class/orbit.H>`
-* :download:`orbit_integrator.cpp <../../examples/orbits/orbit_class/orbit_integrator.cpp>`
-* :download:`test_orbit.cpp <../../examples/orbits/orbit_class/test_orbit.cpp>`
-* :download:`GNUmakefile <../../examples/orbits/orbit_class/GNUmakefile>`
+* :download:`orbit.H <../../../examples/orbits/orbit_class/orbit.H>`
+* :download:`test_orbit.cpp <../../../examples/orbits/orbit_class/test_orbit.cpp>`
+* :download:`GNUmakefile <../../../examples/orbits/orbit_class/GNUmakefile>`
