@@ -172,9 +172,11 @@ There are a few bits here that need explanation:
 
      auto a = (*p).a;
 
-   but C++ provides a shortcut for access a member of a pointer to an object---the ``->`` operator,
-   so we can equivalently do:
+  but C++ provides a shortcut for access a member of a pointer to an
+  object---the ``->`` operator (see `member access operators
+  <https://en.cppreference.com/cpp/language/operator_member_access>`_),
+  so we can equivalently do:
 
-   .. code:: c++
+  .. code:: c++
 
-      auto a = p->a;
+     auto a = p->a;

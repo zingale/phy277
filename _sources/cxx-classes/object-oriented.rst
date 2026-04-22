@@ -8,7 +8,7 @@ Object-Oriented Design
 
 The use of classes to organize concepts into reusable software objects
 containing data and functions is the hallmark of `object-oriented
-programming
+programming (OOP)
 <https://en.wikipedia.org/wiki/Object-oriented_programming>`_.
 
 Some basic concepts when working with classes:
@@ -28,7 +28,7 @@ Some basic concepts when working with classes:
   any memory we allocated and do any other needed clean-up.
 
 
-Core concepts in OO programming are listed below.  It's hard to find
+Core concepts in OOP are listed below.  It's hard to find
 precise definitions of these, and they often seem to overlap a bit
 in what they mean.
 

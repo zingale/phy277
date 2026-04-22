@@ -860,14 +860,13 @@ Then we return the address of that.</p>
 </pre></div>
 </div>
 <p>To access the member data, we need to dereference it.  So to get the semi-major axis, we could do:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">).</span><span class="n">a</span><span class="p">;</span>
-
-<span class="n">but</span><span class="w"> </span><span class="n">C</span><span class="o">++</span><span class="w"> </span><span class="n">provides</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">shortcut</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">access</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">member</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">object</span><span class="o">---</span><span class="n">the</span><span class="w"> </span><span class="err">``</span><span class="o">-&gt;</span><span class="err">``</span><span class="w"> </span><span class="k">operator</span><span class="p">,</span>
-<span class="n">so</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">equivalently</span><span class="w"> </span><span class="k">do</span><span class="o">:</span>
-
-<span class="p">..</span><span class="w"> </span><span class="n">code</span><span class="o">::</span><span class="w"> </span><span class="n">c</span><span class="o">++</span>
-
-<span class="w">   </span><span class="k">auto</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">).</span><span class="n">a</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>but C++ provides a shortcut for access a member of a pointer to an
+object—the <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code> operator (see <a class="reference external" href="https://en.cppreference.com/cpp/language/operator_member_access">member access operators</a>),
+so we can equivalently do:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
