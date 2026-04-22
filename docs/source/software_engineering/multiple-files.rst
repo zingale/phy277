@@ -71,6 +71,7 @@ Now we'll create a source file that implements the ``<<`` operator:
 .. literalinclude:: ../../../examples/multiple_files/planet-source/planet.cpp
    :language: c++
    :caption: ``planet.cpp``
+
 We use ``"`` in the ``#include`` for ``planet.H``:
 
 .. code:: c++
