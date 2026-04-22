@@ -28,8 +28,7 @@ If we consider:
 
 Then this is creating a 1-d array that corresponds to the rows of our
 array, where each element of this is a separate vector to store the
-columns that make up that row.  But each of those row vectors are independent,
-and can be in very disparate positions in memory.
+columns that make up that row.
 
 This can be visualized as:
 
@@ -40,6 +39,10 @@ This can be visualized as:
    Illustration of a ``vector``-of-``vector``'s for a :math:`4\times
    3` array.
 
+However, each of these row vectors are independent,
+and can be in very disparate positions in memory.
+
+We want an array where all the elements are stored *contiguously* in memory.
 
 Contiguous multi-dimensional array
 ==================================

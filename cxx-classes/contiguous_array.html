@@ -563,8 +563,7 @@ included.</p>
 </div>
 <p>Then this is creating a 1-d array that corresponds to the rows of our
 array, where each element of this is a separate vector to store the
-columns that make up that row.  But each of those row vectors are independent,
-and can be in very disparate positions in memory.</p>
+columns that make up that row.</p>
 <p>This can be visualized as:</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/vector_of_vectors1.png"><img alt="../_images/vector_of_vectors1.png" src="../_images/vector_of_vectors1.png" style="width: 80%;" />
@@ -574,6 +573,9 @@ and can be in very disparate positions in memory.</p>
 3\)</span> array.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<p>However, each of these row vectors are independent,
+and can be in very disparate positions in memory.</p>
+<p>We want an array where all the elements are stored <em>contiguously</em> in memory.</p>
 </section>
 <section id="contiguous-multi-dimensional-array">
 <h2>Contiguous multi-dimensional array<a class="headerlink" href="#contiguous-multi-dimensional-array" title="Link to this heading">#</a></h2>
