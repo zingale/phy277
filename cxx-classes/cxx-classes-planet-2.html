@@ -501,7 +501,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -517,6 +519,15 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driver">Driver</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -530,15 +541,18 @@
 <h1>Extending our Solar System Class<a class="headerlink" href="#extending-our-solar-system-class" title="Link to this heading">#</a></h1>
 <p>Let’s make our class more useful.  Lets implement the following functions:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Planet</span><span class="o">*</span><span class="w"> </span><span class="nf">get_planet</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
-
-<span class="kt">double</span><span class="w"> </span><span class="nf">get_period</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The first will take the name of a planet, and if it exists
+<p>This will take the name of a planet, and if it exists
 in our <code class="docutils literal notranslate"><span class="pre">SolarSystem</span></code>, it will return a pointer to the <code class="docutils literal notranslate"><span class="pre">Planet</span></code>.
 If the planet does not exist, then the pointer will be <code class="docutils literal notranslate"><span class="pre">nullptr</span></code>.</p>
-<p>The second will take a planet <code class="docutils literal notranslate"><span class="pre">name</span></code> and compute and return its
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">get_period</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This will take a planet <code class="docutils literal notranslate"><span class="pre">name</span></code> and compute and return its
 period.</p>
+<section id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h2>
 <p>Here’s our updated class:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-number">Listing 115 </span><span class="caption-text">new <code class="docutils literal notranslate"><span class="pre">solar_system.H</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
@@ -567,10 +581,10 @@ period.</p>
 <span class="w">                    </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">e</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">        </span><span class="c1">// make sure a planet with that name doesn&#39;t already exist</span>
-<span class="w">        </span><span class="c1">// if the pointer returned here is not null, then the planet exists</span>
 
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">any_of</span><span class="p">(</span><span class="n">planets</span><span class="p">,</span>
-<span class="w">                                </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Planet</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">name</span><span class="p">;}))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Planet</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span>
+<span class="w">                                    </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">name</span><span class="p">;}))</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;planet already exists&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="w">            </span><span class="k">return</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
@@ -589,7 +603,11 @@ period.</p>
 <span class="w">    </span><span class="n">Planet</span><span class="o">*</span><span class="w"> </span><span class="n">get_planet</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">find_if</span><span class="p">(</span><span class="n">planets</span><span class="p">,</span>
-<span class="w">                                       </span><span class="p">[</span><span class="o">&amp;</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Planet</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">name</span><span class="p">;});</span>
+<span class="w">                                       </span><span class="p">[</span><span class="o">&amp;</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Planet</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span>
+<span class="w">                                           </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">name</span><span class="p">;});</span>
+
+<span class="w">        </span><span class="c1">// if the planet doesn&#39;t exist, the iterator will point to</span>
+<span class="w">        </span><span class="c1">// .end()</span>
 
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">planets</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="p">(</span><span class="o">*</span><span class="n">it</span><span class="p">);</span>
@@ -621,7 +639,9 @@ period.</p>
 <li><p>We’ve rewritten our <code class="docutils literal notranslate"><span class="pre">add_planet</span></code> check on whether the planet
 already exists to use <a class="reference external" href="https://en.cppreference.com/w/cpp/algorithm/ranges/all_any_none_of.html">std::ranges::any_of</a>.
 This will return <code class="docutils literal notranslate"><span class="pre">true</span></code> if we already have a planet with that
-name.  This makes the code more compact.</p></li>
+name.  This makes the code more compact.</p>
+<p>We use a lambda-function here.</p>
+</li>
 <li><p>Our <code class="docutils literal notranslate"><span class="pre">get_planet</span></code> function uses <a class="reference external" href="https://en.cppreference.com/w/cpp/algorithm/ranges/find.html">std::ranges::find_if</a> to
 find the planet with the name we provide.  This returns an iterator
 that points to the planet.  If the planet does not exist, then the
@@ -634,9 +654,13 @@ iterator, so we do:</p>
 <p>This first dereferences the iterator, <code class="docutils literal notranslate"><span class="pre">*it</span></code>, to get the underlying
 <code class="docutils literal notranslate"><span class="pre">Planet</span></code>, and then it takes the address of that, using the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>
 operator.</p>
+<p>If the planet does not exist, then we return <code class="docutils literal notranslate"><span class="pre">nullptr</span></code>.</p>
 </li>
 </ul>
-<p>and here’s a driver:</p>
+</section>
+<section id="driver">
+<h2>Driver<a class="headerlink" href="#driver" title="Link to this heading">#</a></h2>
+<p>Here’s a driver using our new implementation:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-number">Listing 116 </span><span class="caption-text">new <code class="docutils literal notranslate"><span class="pre">test_solar_system.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -662,12 +686,12 @@ operator.</p>
 </div>
 <div class="admonition-try-it admonition">
 <p class="admonition-title">try it…</p>
-<p>To understand the difference between a <code class="docutils literal notranslate"><span class="pre">struct</span></code>, where everything is public, and
-a <code class="docutils literal notranslate"><span class="pre">class</span></code> where everything is private by default, let’s edit <code class="docutils literal notranslate"><span class="pre">solar_system.H</span></code>
-and change <code class="docutils literal notranslate"><span class="pre">struct</span></code> to <code class="docutils literal notranslate"><span class="pre">class</span></code>.</p>
-<p>What happens when we compile?</p>
-<p>Now try adding a <code class="docutils literal notranslate"><span class="pre">public:</span></code> statement to the code.</p>
+<p>Let’s use our <code class="docutils literal notranslate"><span class="pre">get_planet</span></code> function to get a pointer to one of
+the planets, and then print its properties using the <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>
+operator.  We need to remember to dereference the pointer in this
+case.</p>
 </div>
+</section>
 </section>
 
 
@@ -705,6 +729,24 @@ and change <code class="docutils literal notranslate"><span class="pre">struct</
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#driver">Driver</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

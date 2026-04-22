@@ -693,6 +693,12 @@ already exists.</p></li>
 </pre></div>
 </div>
 </div>
+<p>The main advantage to using a class here is that we don’t need to know
+how the planet data is actually stored (in this case in a
+<code class="docutils literal notranslate"><span class="pre">std::vector&lt;Planet&gt;</span></code>).  By creating member functions that are part
+of the class, we hide the implementation details from the user.
+Instead they are given a simple set of functions to interact with the
+data.</p>
 </section>
 <section id="building">
 <h2>Building<a class="headerlink" href="#building" title="Link to this heading">#</a></h2>
@@ -744,12 +750,6 @@ span.prompt1:before {
 </pre></div>
 </div>
 <p>We saw these in our <a class="reference internal" href="../software_engineering/compiler-flags.html#sec-compiler-flags"><span class="std std-ref">Making the Compiler Do the Work</span></a> discussion.</p>
-<p>The main advantage to using a class here is that we don’t need to know
-how the planet data is actually stored (in this case in a
-<code class="docutils literal notranslate"><span class="pre">std::vector&lt;Planet&gt;</span></code>).  By creating member functions that are part
-of the class, we hide the implementation details from the user.
-Instead they are given a simple set of functions to interact with the
-data.</p>
 </section>
 </section>
 
