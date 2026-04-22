@@ -34,7 +34,7 @@ in what they mean.
 
 * `Encapsulation
   <https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)>`_:
-  : this means we hide how the data in the class is stored.  For
+  this means we hide how the data in the class is stored.  For
   example, by making the member data ``private``.
 
   There may be *setters* and *getters* to access some information, but
@@ -54,9 +54,9 @@ in what they mean.
   implementation details from the user.
 
   For example, operator overloading the ``+`` operator to work with
-  our vectors is an example of abstraction.  We used something
-  familiar to ourself to work on our vectors without having to know
-  how it is implemented in the class.
+  objects of our class is an example of abstraction (we'll see this
+  next).  This uses a familiar operator to do an addition task that
+  makes sense for our objects.
 
   Another example comes into play with inheritance, where a base class
   implements the interface that all of the child classes will then
