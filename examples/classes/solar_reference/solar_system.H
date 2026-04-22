@@ -10,8 +10,12 @@
 
 struct SolarSystem {
 
+    // member data
+
     double star_mass;
     std::vector<Planet> planets;
+
+    // our constructor
 
     SolarSystem(const double mass)
        : star_mass{mass}
@@ -19,13 +23,15 @@ struct SolarSystem {
         assert(mass > 0.0);
     }
 
+    // member functions
+
     void add_planet(const std::string& name,
                     const double a, const double e=0.0) {
 
         // make sure a planet with that name doesn't already exist
 
         if (std::ranges::any_of(planets,
-                                [=] (const Planet& p)
+                                [&] (const Planet& p)
                                     {return p.name == name;})) {
             std::cout << "planet already exists" << std::endl;
             return;
@@ -42,7 +48,7 @@ struct SolarSystem {
         }
     }
 
-    Planet* get_planet(const std::string& name) {
+    const Planet& get_planet(const std::string& name) {
 
         auto it = std::ranges::find_if(planets,
                                        [&] (const Planet& p)
@@ -51,22 +57,21 @@ struct SolarSystem {
         // if the planet doesn't exist, the iterator will point to
         // .end()
 
-        if (it != planets.end()) {
-            return &(*it);
+        if (it == planets.end()) {
+            std::cout << "planet not found";
+            std::exit(1);
         }
 
-        return nullptr;
+        return *it;
     }
 
     double get_period(const std::string& name) {
 
         double period{-1.0};
 
-        const auto *p = get_planet(name);
+        const auto &p = get_planet(name);
 
-        if (p) {
-            period = std::sqrt(std::pow(p->a, 3.0) / star_mass);
-        }
+        period = std::sqrt(std::pow(p.a, 3.0) / star_mass);
 
         return period;
     }

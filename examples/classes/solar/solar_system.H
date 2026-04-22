@@ -23,7 +23,7 @@ struct SolarSystem {
         // make sure a planet with that name doesn't already exist
         // if the pointer returned here is not null, then the planet exists
 
-        for (auto p : planets) {
+        for (const auto& p : planets) {
             if (name == p.name) {
                 std::cout << "planet already exists" << std::endl;
                 return;

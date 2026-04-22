@@ -30,8 +30,14 @@ Let's make our class more useful.  Lets implement the following functions:
     This is similar to the pointer version, but we need to deal
     with the case where the planet is not found.  There is no
     ``nullptr`` equivalent for references---a reference must always
-    refer to a valid object.  So we can adopt the convention that
-    we return an empty ``Planet`` object, i.e., ``Planet{}``.
+    refer to a valid object.
+
+    Additionally, we cannot just return an empty ``Planet`` object,
+    i.e., ``Planet{}``, because that would be a local / temporary
+    object that will go out of scope once the function exits (and
+    therefore be destroyed).
+
+    Our solution here is to abort, using ``std::exit()``.
 
   * We can return a copy of the ``Planet`` in the ``planets``
     vector.  This would look like:
@@ -43,18 +49,18 @@ Let's make our class more useful.  Lets implement the following functions:
     We would still use an empty ``Planet`` for the case where
     the name is not found.
 
-  .. important::
+  The first two approaches (returning ``Planet*`` and ``Planet&``)
+  would allow a user to directly modify the data in the ``planets``
+  vector via the return value.  This may not be what we want.
+  In that case, we can add the ``const`` qualifier to the return
+  type in the function definition to ensure that it cannot be used
+  to modify the data.
 
-     The first two approaches (returning ``Planet*`` and ``Planet&``
-     would allow a user to directly modify the data in the ``planets``
-     vector via the return value.  This may not be what we want.
-     In that case, we can add the ``const`` qualifier to the return
-     type in the function definition to ensure that it cannot be used
-     to modify the data.
+  .. note::
 
-   We'll take the second approach here (a reference), but we'll make it
-   ``const``.  I'll also include an implementation that uses the pointer
-   separately so you can compare, if desired.
+     We'll take the second approach here (a reference), but we'll make it
+     ``const``.  I'll also include an implementation that uses the pointer
+     separately so you can compare, if desired.
 
 * ``get_period(name)`` : This will take the name of the planet and compute
   its period using Kepler's laws.  If the planet doesn't exist, we'll have
@@ -82,7 +88,9 @@ Some notes:
   This will return ``true`` if we already have a planet with that
   name.  This makes the code more compact.
 
-  We use a lambda-function here.
+  We use a lambda-function here.  The capture clause, ``[&]`` will
+  capture ``name`` by reference from the surrounding scope so it
+  can be used in our function body.
 
 * Our ``get_planet`` function uses `std::ranges::find_if
   <https://en.cppreference.com/w/cpp/algorithm/ranges/find.html>`_ to
@@ -90,18 +98,13 @@ Some notes:
   that points to the planet.  If the planet does not exist, then the
   iterator will point to one-past the last element, ``planets.end()``.
 
-  We want to return a pointer to the ``Planet`` in the vector, and not the
-  iterator, so we do:
+  We want to return a reference to the ``Planet`` in the vector, and not the
+  iterator, so we simply dereference it,
 
   .. code:: c++
 
-     return &(*it);
+     return *it;
 
-  This first dereferences the iterator, ``*it``, to get the underlying
-  ``Planet``, and then it takes the address of that, using the ``&``
-  operator.
-
-  If the planet does not exist, then we return ``nullptr``.
 
 Driver
 ------
@@ -115,7 +118,10 @@ Here's a driver using our new implementation:
 
 .. admonition:: try it...
 
-   Let's use our ``get_planet`` function to get a pointer to one of
+   Let's use our ``get_planet`` function to get a reference to one of
    the planets, and then print its properties using the ``<<``
-   operator.  We need to remember to dereference the pointer in this
-   case.
+   operator.
+
+
+Pointer version
+---------------
