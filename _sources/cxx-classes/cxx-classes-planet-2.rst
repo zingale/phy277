@@ -46,8 +46,10 @@ Let's make our class more useful.  Lets implement the following functions:
 
        Planet get_planet(const std::string& name);
 
-    We would still use an empty ``Planet`` for the case where
-    the name is not found.
+    Now we could use an empty ``Planet`` for the case where
+    the name is not found, and the calling function can just
+    check if the ``p.name.empty()`` for a return value ``p``
+    to determine if no planet was found.
 
   The first two approaches (returning ``Planet*`` and ``Planet&``)
   would allow a user to directly modify the data in the ``planets``

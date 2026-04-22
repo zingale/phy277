@@ -577,8 +577,10 @@ vector.  This would look like:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Planet</span><span class="w"> </span><span class="nf">get_planet</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>We would still use an empty <code class="docutils literal notranslate"><span class="pre">Planet</span></code> for the case where
-the name is not found.</p>
+<p>Now we could use an empty <code class="docutils literal notranslate"><span class="pre">Planet</span></code> for the case where
+the name is not found, and the calling function can just
+check if the <code class="docutils literal notranslate"><span class="pre">p.name.empty()</span></code> for a return value <code class="docutils literal notranslate"><span class="pre">p</span></code>
+to determine if no planet was found.</p>
 </li>
 </ul>
 <p>The first two approaches (returning <code class="docutils literal notranslate"><span class="pre">Planet*</span></code> and <code class="docutils literal notranslate"><span class="pre">Planet&amp;</span></code>)
