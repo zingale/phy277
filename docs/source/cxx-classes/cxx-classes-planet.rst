@@ -120,3 +120,16 @@ We saw these in our :ref:`sec:compiler-flags` discussion.
    :caption: ``GNUmakefile``
 
 
+Data hiding
+===========
+
+Note that nothing in our class is private, so we can directly access
+the ``planets`` vector.  This means that we can still add a planet like this:
+
+.. code:: c++
+
+   ss.planets.push_back(Planet{.name="delta", .a=10.0});
+
+Usually we would want to prevent this, and force a user of the class
+to use our ``add_planet`` method.  To do this, we need to make
+our data ``private``.
