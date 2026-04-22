@@ -63,7 +63,7 @@ the vector, but we won't use that).
 
    .. figure:: row_column_major.png
       :align: center
-      :width: 75%
+      :width: 50%
 
    In row-major storage, the elements of each row are next to each
    other in memory, and after one row begins the next.  In
