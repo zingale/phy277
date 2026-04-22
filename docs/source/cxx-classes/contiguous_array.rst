@@ -2,14 +2,20 @@
 Example: Multidimensional Contiguous Array
 ******************************************
 
-.. admonition:: reading
+A common data-structure in scientific computing is a multidimensional
+array.  For example, a mathematical matrix is best represented by a
+two-dimensional array.  We want to look at some of the ways we can
+do this in C++.
 
-   Your text does an example of a multi-dimensional array that is a
-   ``vector`` of ``vector``.
+.. note::
 
-   We are doing something different here---we want the memory space
-   to be fully contiguous, so we will create a 1-d memory space and create
-   operators to index into it.
+   Unlike some languages (like Fortran, python w/ NumPy), C++ does not
+   have a multidimensional array in its standard library.  This will
+   improve in C++23 with the introduction of `std::mdspan
+   <https://en.cppreference.com/cpp/container/mdspan>`_.  In a future
+   standard (C++29?), another object, ``std::mdarray`` may be
+   included.
+
 
 ``vector``-of-``vector``'s
 ==========================
@@ -66,7 +72,7 @@ Implementation
 
 We will implement the main ``struct`` in a header so we can reuse this
 
-.. literalinclude:: ../../examples/contiguous_array/array.H
+.. literalinclude:: ../../../examples/contiguous_array/array.H
    :language: c++
    :caption: ``array.H``
 
@@ -86,7 +92,7 @@ Some comments on this implementation:
 Here's a test program for the ``Array`` object.  Notice that we gain
 access to the ``Array`` class via ``#include "array.H"``.
 
-.. literalinclude:: ../../examples/contiguous_array/test_array.cpp
+.. literalinclude:: ../../../examples/contiguous_array/test_array.cpp
    :language: c++
    :caption: ``test_array.cpp``
 
@@ -110,7 +116,7 @@ Notice a few things:
 Here's a makefile that builds this test program + a few others that
 we'll compare with.
 
-.. literalinclude:: ../../examples/contiguous_array/GNUmakefile
+.. literalinclude:: ../../../examples/contiguous_array/GNUmakefile
    :language: make
    :caption: ``GNUmakefile``
 
@@ -147,61 +153,9 @@ will be discussed below.
 
 .. admonition:: try it...
 
-   Let's add ``.min()`` and ``.max()`` member functions to the class to
-   return the minimum and maximum element in the array respectively.
-
-   .. dropdown:: solution
-
-      .. literalinclude:: ../../examples/contiguous_array/array_new.H
-         :language: c++
-         :caption: new ``array.H``
-         :emphasize-lines: 7, 53-67
-
-.. admonition:: try it...
-
    What would we need to change if we wanted to make this a ``class``
    instead of a ``struct``?
 
-
-Performance
-===========
-
-Let's see how the speed of this compares to doing
-
-.. code:: c++
-
-   std::array<std::array<double, ncols>, nrows>
-
-This needs the size known at compile time, and the array in this case
-is allocated on the *stack* instead of the *heap*.  This means that it
-is likely we will have a stack overflow if we make the array too big.
-
-We'll also compare to a ``vector``-of-``vector``, initialized as
-
-.. code:: c++
-
-   std::vector<std::vector<double>> d(nrows, std::vector<double>(ncols, 0.0));
-
-
-.. tip::
-
-   Here we access a simple clock via ``<chrono>`` by calling
-   ``clock()`` and use it to time different implementations.
-
-   We need to call ``clock()`` before and after the code block we are
-   timing to remove any offset in the time returned by ``clock()``.  We
-   convert to seconds using ``CLOCKS_PER_SEC``.
-
-
-.. literalinclude:: ../../examples/contiguous_array/timing.cpp
-   :language: c++
-   :caption: ``timing.cpp``
-
-We can build this via:
-
-.. prompt:: bash
-
-   make timing
 
 
 
@@ -212,36 +166,13 @@ Some things to consider:
   performance difference compared to putting their implementation in
   a separate C++ file.
 
-* We are not timing the array creation.  It is likely that creating
-  our ``Array`` is more expensive than the
-  ``std::array<std::array<>>`` approach.
-
 * The ``std::array<std::array<>>`` is allocated on the stack, and we
   can quickly exceed the stack size.  Meanwhile, the ``Array`` class
   holds the data on the heap.
 
-.. admonition:: try it...
-
-   How does the performance change with array size, compiler
-   optimization level, asserts enabled, etc.?
-
-.. tip::
-
-   In our ``GNUmakefile``, we have one additional feature---we are compiling
-   with optimization via ``-O3``.  Look to see how the performance changes
-   if we do not optimize.
-
-Finally, we can compare to a Fortran implementation:
-
-.. literalinclude:: ../../examples/contiguous_array/fortran_array.f90
-   :language: fortran
-   :caption: ``fortran_array.f90``
-
-which we can build via
-
-.. prompt:: bash
-
-   make fortran_array
+* In our ``GNUmakefile``, we have one additional feature---we are compiling
+  with optimization via ``-O3``.  Look to see how the performance changes
+  if we do not optimize.
 
 
 
