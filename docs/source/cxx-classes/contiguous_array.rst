@@ -50,13 +50,28 @@ Contiguous multi-dimensional array
 Our goal now is to create a contiguous memory space that stores all the
 elements of the 2-d array.
 
-
 To make a contiguous vector, we will use a single ``vector``
 dimensioned with a size of ``nrows * ncols`` (note: C++ will likely
 have more elements than this, to allow for the potential expansion of
 the vector, but we won't use that).
 
-We will then overload the ``()`` operator to allow for us to index
+.. note::
+
+   We have a choice to make---how do we unravel the multidimensional
+   structure into a one-dimensional space?  There are two options:
+   row-major and column-major ordering:
+
+   .. figure:: row_column_major.png
+      :align: center
+      :width: 75%
+
+   In row-major storage, the elements of each row are next to each
+   other in memory, and after one row begins the next.  In
+   column-major ordering, the elements of a column are next to each
+   other in memory.  Most languages default to row-major ordering, so
+   that's what we'll use.
+
+We will overload the ``()`` operator to allow for us to index
 into this one-dimensional buffer as ``a(nrow, ncol)``.
 
 This can be visualized as:
