@@ -13,11 +13,11 @@
 
 struct Array {
 
-    std::size_t _rows;
-    std::size_t _cols;
+    int _rows;
+    int _cols;
     std::vector<double> _data;
 
-    Array (std::size_t rows, std::size_t cols, double val=0.0)
+    Array (int rows, int cols, double val=0.0)
         : _rows{rows},
           _cols{cols},
           _data(rows * cols, val)
@@ -56,8 +56,8 @@ struct Array {
 inline
 std::ostream& operator<< (std::ostream& os, const Array& a) {
 
-    for (std::size_t row=0; row < a.nrows(); ++row) {
-        for (std::size_t col=0; col < a.ncols(); ++col) {
+    for (std::size_t row = 0; row < a.nrows(); ++row) {
+        for (std::size_t col = 0; col < a.ncols(); ++col) {
             os << a(row, col) << " ";
         }
         os << std::endl;

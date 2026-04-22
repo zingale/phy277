@@ -1,14 +1,10 @@
 # get all the sources and the headers
-SOURCE := $(wildcard *.cpp)
 HEADERS := $(wildcard *.H)
+SOURCE := test_array.cpp
 
 # create the list of objects by replacing the .cpp with .o for the
 # sources
 OBJECTS := $(SOURCE:.cpp=.o)
-
-# tell the compiler where to look for our headers
-INCLUDEPATH := .
-INCLUDES := $(foreach i, ${INCLUDEPATH}, -I$i)
 
 # by default, debug mode will be disabled
 DEBUG ?= FALSE
@@ -21,7 +17,7 @@ endif
 
 # general rule for compiling a .cpp file to .o
 %.o : %.cpp ${HEADERS}
-	g++ ${CFLAGS} ${OPTS} ${INCLUDES} -c $<
+	g++ ${CFLAGS} ${OPTS} -c $<
 
 # the test_array program -- we need to explicitly include
 # test_array.o here
