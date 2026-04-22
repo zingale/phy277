@@ -5,6 +5,9 @@
 #include <cassert>
 #include <cmath>
 #include <algorithm>
+#include <iostream>
+#include <string>
+#include <cstdlib>
 
 #include "planet.H"
 

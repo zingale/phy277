@@ -132,4 +132,49 @@ Here's a version that implements the ``get_planet`` class returning ``Planet*``:
    :language: c++
    :caption: new ``solar_system.H``
 
-There are a few bits here that need
+There are a few bits here that need explanation:
+
+* In our ``get_planet`` function, we now return ``nullptr`` if our
+  iterator points to ``planets.end()``.  This allows the caller to
+  safely check if the planet was found and avoids the need to do
+  ``std::exit``.
+
+  If the planet is found, then we need to convert the iterator into a pointer
+  to a planet and then return the address of this.  The important bit, is that
+  the pointer should point to the object as it lives in the vector, and not
+  a local / temporary variable.  We do this as:
+
+  .. code::
+
+     const Planet& p = *it;
+     return &p;
+
+  This first creates a reference to the ``Planet`` that lives in our ``planets`` vector.
+  Then we return the address of that.
+
+  We could also write this as:
+
+  .. code::
+
+     return &(*it);
+
+  but the first form is more explicit.
+
+* In get period, we get a pointer to our planet as:
+
+  .. code:: c++
+
+     const auto *p = get_planet(name);
+
+  To access the member data, we need to dereference it.  So to get the semi-major axis, we could do:
+
+  .. code:: c++
+
+     auto a = (*p).a;
+
+   but C++ provides a shortcut for access a member of a pointer to an object---the ``->`` operator,
+   so we can equivalently do:
+
+   .. code:: c++
+
+      auto a = p->a;

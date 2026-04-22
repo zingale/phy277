@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <cassert>
+#include <iostream>
+#include <string>
 
 #include "planet.H"
 
