@@ -261,6 +261,7 @@ the top of many pages.
    cxx-classes/copy_and_assignment
    cxx-classes/compound-operators
    cxx-classes/inclass-orbit-compound
+   cxx-classes/contiguous_array
 
 .. toctree::
    :maxdepth: 1

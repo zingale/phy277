@@ -99,7 +99,7 @@ Some notes:
   As an alternate to making this a ``friend``, we could have added *getter*
   functions to our class to get the private data.
 
-.. info::
+.. important::
 
    In the operator-overload function
 
@@ -117,7 +117,7 @@ Some notes:
 
    See this `stackoverflow discussion <https://stackoverflow.com/questions/6921185/why-do-objects-of-the-same-class-have-access-to-each-others-private-data>`_
 
-.. info::
+.. tip::
 
    When do we need to make something a ``friend``?
 
