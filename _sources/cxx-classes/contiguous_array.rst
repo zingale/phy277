@@ -31,8 +31,6 @@ array, where each element of this is a separate vector to store the
 columns that make up that row.  But each of those row vectors are independent,
 and can be in very disparate positions in memory.
 
-This is essentially what we did previously as our :ref:`matrix container <sec:cxx_matrix>`.
-
 This can be visualized as:
 
 .. figure:: vector_of_vectors.png
