@@ -9,8 +9,7 @@ int main() {
     ss.add_planet("beta", 1.5, 0.1);
     ss.add_planet("gamma", 3.0, 0.24);
 
-    // this generates an error
-    ss.add_planet("alpha", 2.0);
+    ss.print_planets();
 
     std::cout << "period of alpha = "
               << ss.get_period("alpha") << std::endl;

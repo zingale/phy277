@@ -125,3 +125,11 @@ Here's a driver using our new implementation:
 
 Pointer version
 ---------------
+
+Here's a version that implements the ``get_planet`` class returning ``Planet*``:
+
+.. literalinclude:: ../../../examples/classes/solar_pointer/solar_system.H
+   :language: c++
+   :caption: new ``solar_system.H``
+
+There are a few bits here that need
