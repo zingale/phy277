@@ -210,26 +210,3 @@ Now let's test this out.  Here's a test driver:
 There are a wide range of other capabilities we could imagine adding
 to this class to make it easier to work with vectors.
 
-.. admonition:: try it...
-
-   Try overloading ``>>`` so we can read directly into a ``Vector2d`` object, e.g.,
-
-   .. code:: c++
-
-      Vector2d v;
-
-      cin >> v;
-
-   Your function should look like:
-
-   .. code:: c++
-
-      friend std::istream& operator>>(std::istream& is, Vector2d &v);
-
-   Notice that the ``Vector2d`` is not ``const``, since we will be modifying it.
-
-   You will want to read 2 pieces of data from the input stream and directly
-   set ``v.x`` and ``v.y``.
-
-
-
