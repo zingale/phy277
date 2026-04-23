@@ -2,6 +2,7 @@
 #define VECTOR_2D_H
 
 #include <iostream>
+#include <cmath>
 
 class Vector2d {
 
@@ -37,37 +38,64 @@ public:
     // add two vectors
 
     Vector2d operator+(const Vector2d& vec) {
-        Vector2d v_out;
-        v_out.x = x + vec.x;
-        v_out.y = y + vec.y;
-        return v_out;
+        return Vector2d(x + vec.x, y + vec.y);
     }
 
     // subtract two vectors
 
     Vector2d operator-(const Vector2d& vec) {
-        Vector2d v_out;
-        v_out.x = x - vec.x;
-        v_out.y = y - vec.y;
-        return v_out;
+        return Vector2d(x - vec.x, y - vec.y);
     }
 
     // unary minus
 
     Vector2d operator-() {
-        Vector2d v_out;
-        v_out.x = -x;
-        v_out.y = -y;
-        return v_out;
+        return Vector2d(-x, -y);
     }
 
-    // these operators are not a class member, but need access to the
-    // member data
+    // multiplication
+
+    Vector2d operator*(double a) {
+        return Vector2d(x * a, y * a);
+    }
+
+    friend Vector2d operator*(double a, const Vector2d& v);
+
+    // division
+
+    Vector2d operator/(double a) {
+        return Vector2d(x / a, y / a);
+    }
+
+    // special vector operations
+
+    double dot(const Vector2d& v) {
+        return x * v.x + y * v.y;
+    }
+
+    double cross(const Vector2d& v) {
+        return x * v.y - y * v.x;
+    }
+
+    double abs() {
+        return std::sqrt(x * x + y * y);
+    }
+
+    // equality
+
+    bool operator==(const Vector2d& v) const = default;
+
+    // stream operators -- not class members
 
     friend std::ostream& operator<< (std::ostream& os, const Vector2d& v);
     friend std::istream& operator>> (std::istream& is, Vector2d& v);
 
 };
+
+inline
+Vector2d operator*(double a, const Vector2d& v) {
+    return Vector2d(v.x * a, v.y * a);
+}
 
 inline
 std::ostream& operator<< (std::ostream& os, const Vector2d& v)

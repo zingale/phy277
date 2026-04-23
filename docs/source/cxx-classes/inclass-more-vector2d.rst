@@ -2,7 +2,7 @@
 Adding to our ``Vector2d`` Class
 ********************************
 
-Let's extend our ``Vector2d`` class with the following operators / functions:
+Let's extend our ``Vector2d`` class with the following operators / functions.
 
 
 Multiplication by a scalar
@@ -71,7 +71,7 @@ Cross product
 =============
 
 For vectors $u$ and $v$, the cross-product is $u \times v = (u_x v_y -
-u_y v_x) \hat{z}$.  We'll use return the magnitude, since we don't
+u_y v_x) \hat{z}$.  We'll just return the magnitude, since we don't
 have the ability in ``Vector2d`` to express the $z$-component of a
 vector.
 
@@ -82,14 +82,36 @@ vector.
 Magnitude
 =========
 
-The magnitude of a vector $v$ is $|v| = \sqrt{v_x^2 + v_y^2}$.  We''
+The magnitude of a vector $v$ is $|v| = \sqrt{v_x^2 + v_y^2}$.  We'll
 implement this as a function ``abs`` to be similar to the absolute
 value function we already use from the standard library:
 
 .. code:: c++
 
-   double abs(const Vector2d& v);
+   double abs();
 
+
+Equality test
+=============
+
+We want the ``==`` operator to be able to do assertions.  This
+has the form:
+
+.. code:: c++
+
+   bool operator== (const Vector2d& v) const;
+
+Note the ``const`` after the parameter list---this indicates that
+this function can be used on a ``const Vector2d``.  This ``const``
+is basically saying that this operator will not modify our object.
+This is called a *const member function*.
+
+But with C++20, we could also use the default comparison operator,
+since our object is simple enough for the compiler to understand:
+
+.. code:: c++
+
+   bool operator==(const Vector2d& v) const = default;
 
 Input stream operator, ``>>``
 =============================
@@ -121,4 +143,8 @@ Test driver
 
 Here's a test driver that exercises these new capabilities.  It uses
 assertions to ensure that we implemented them correctly.
+
+.. literalinclude:: ../../../examples/classes/vector-improved/test_vectors.cpp
+   :language: c++
+   :caption: ``test_vectors.cpp``
 

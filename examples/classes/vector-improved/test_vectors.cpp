@@ -1,4 +1,6 @@
+#include <cassert>
 #include <iostream>
+
 #include "vector2d.H"
 
 int main() {
@@ -8,30 +10,47 @@ int main() {
     Vector2d v1(1, 2);
     Vector2d v2(2, 4);
 
+    // ask for input for a third:
+    Vector2d v_user{};
+    std::cout << "Enter x and y for a vector: ";
+    std::cin >> v_user;
+    std::cout << "Your vector is: " << v_user << std::endl;
+    std::cout << std::endl;
+
     // output our vectors
 
-    std::cout << v1 << " " << v2 << std::endl;
+    std::cout << "test vectors: " << std::endl;
+    std::cout << "v1 = " << v1 << std::endl;
+    std::cout << "v2 = " << v2 << std::endl;
+    std::cout << std::endl;
 
     // output their sum
 
-    std::cout << v1 + v2 << std::endl;
+    auto v_add = v1 + v2;
+    assert(v_add == Vector2d(3, 6));
+    std::cout << "v1 + v2 = " << v_add << std::endl;
 
     // create a new vector from subtracting our two vectors
 
-    auto v3 = v1 - v2;
-    std::cout << v3 << std::endl;
+    auto v_sub = v1 - v2;
+    assert(v_sub == Vector2d(-1, -2));
+    std::cout << "v1 - v2 = " << v_sub << std::endl;
+    std::cout << std::endl;
 
-    // create a copy
+    // test multiplication
+    auto v_mul1 = v1 * 10;
+    auto v_mul2 = 10 * v1;
+    assert (v_mul1 == v_mul2);
+    std::cout << "v1 * 10 = " << v_mul1 << std::endl;
+    std::cout << "10 * v1 = " << v_mul2 << std::endl;
+    std::cout << std::endl;
 
-    auto v4 = v3;
-    std::cout << v3 << " " << v4 << std::endl;
+    // test division
+    auto v_div = v2 / 2;
+    assert (v_div == v1);
+    std::cout << "v2 / 2 = " << v_div << std::endl;
+    std::cout << std::endl;
 
-    // change the data in the original
-    v3.set_x(0.0);
-    v3.set_y(0.0);
 
-    // did both change? or just the original?
-
-    std::cout << v3 << " " << v4 << std::endl;
 
 }
