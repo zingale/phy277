@@ -51,6 +51,17 @@ int main() {
     std::cout << "v2 / 2 = " << v_div << std::endl;
     std::cout << std::endl;
 
+    // test vector products
+    auto v_dot = v1.dot(v2);
+    assert(v_dot == 10);
+    std::cout << "v1 . v2 = " << v_dot << std::endl;
 
+    auto v_cross = v1.cross(v2);
+    assert(v_cross == 0);
+    std::cout << "v1 x v2 = " << v_cross << std::endl;
+
+    auto v_mag = v1.abs();
+    assert(std::abs(v_mag - std::sqrt(5)) < 1.e-14);
+    std::cout << "|v1| = " << v_mag << std::endl;
 
 }
