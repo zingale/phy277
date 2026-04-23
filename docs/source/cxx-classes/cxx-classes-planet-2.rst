@@ -1,5 +1,6 @@
+********************************
 Extending our Solar System Class
-=================================
+********************************
 
 Let's make our class more useful.  Lets implement the following functions:
 
@@ -74,7 +75,7 @@ Let's make our class more useful.  Lets implement the following functions:
 
 
 Implementation
---------------
+==============
 
 Here's our updated class:
 
@@ -109,7 +110,7 @@ Some notes:
 
 
 Driver
-------
+======
 
 Here's a driver using our new implementation:
 
@@ -126,7 +127,7 @@ Here's a driver using our new implementation:
 
 
 Pointer version
----------------
+===============
 
 Here's a version that implements the ``get_planet`` class returning ``Planet*``:
 
