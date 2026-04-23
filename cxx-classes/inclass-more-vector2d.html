@@ -50,6 +50,8 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-classes/inclass-more-vector2d';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -529,7 +531,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#division-by-a-scalar">Division by a scalar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-product">Dot product</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">Cross product</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value-magnitude">Absolute value / magnitude</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude">Magnitude</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-stream-operator">Input stream operator, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-driver">Test driver</a></li>
 </ul>
@@ -548,18 +550,69 @@
 <p>Let’s extend our <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code> class with the following operators / functions:</p>
 <section id="multiplication-by-a-scalar">
 <h2>Multiplication by a scalar<a class="headerlink" href="#multiplication-by-a-scalar" title="Link to this heading">#</a></h2>
+<p>We need to consider 2 different multiplication operations—given a
+<code class="docutils literal notranslate"><span class="pre">Vector2d</span> <span class="pre">v</span></code> and a <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">a</span></code>, we can do:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In the first, our <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code> object appears to the left of the
+operator, so this is a member of the class, and the function will
+look like:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Vector2d</span><span class="w"> </span><span class="k">operator</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>But for the second, our <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code> is to the right of the operator,
+so we need to create this function outside of the class, but give it
+permission to access a <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code> ‘s data—this means it needs to
+be a <code class="docutils literal notranslate"><span class="pre">friend</span></code>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">friend</span><span class="w"> </span><span class="n">Vector2d</span><span class="w"> </span><span class="k">operator</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Vector2d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In both cases, this operator returns a new <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code>.</p>
 </section>
 <section id="division-by-a-scalar">
 <h2>Division by a scalar<a class="headerlink" href="#division-by-a-scalar" title="Link to this heading">#</a></h2>
+<p>For division, it only makes sense to do <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">/</span> <span class="pre">a</span></code>, where <code class="docutils literal notranslate"><span class="pre">v</span></code> is
+a <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code> and <code class="docutils literal notranslate"><span class="pre">a</span></code> is a double.  For this operation, our
+object is to the left of the operator, so this would be a member
+of the class.  This function would look like:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Vector2d</span><span class="w"> </span><span class="k">operator</span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+</pre></div>
+</div>
 </section>
 <section id="dot-product">
 <h2>Dot product<a class="headerlink" href="#dot-product" title="Link to this heading">#</a></h2>
+<p>For vectors <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span>, the dot-product is <span class="math notranslate nohighlight">\(u_x v_x + u_y v_y\)</span>.</p>
+<p>We could imagine overloading <code class="docutils literal notranslate"><span class="pre">*</span></code> to work for doing the dot-product
+of two vectors, e.g., <code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">*</span> <span class="pre">v</span></code> would do <code class="docutils literal notranslate"><span class="pre">u.x</span> <span class="pre">*</span> <span class="pre">v.x</span> <span class="pre">+</span> <span class="pre">u.y</span> <span class="pre">*</span>
+<span class="pre">v.y</span></code>.  But this could be confusing, because some might think it is
+the element-wise multiplication operation, <code class="docutils literal notranslate"><span class="pre">Vector2d(u.x</span> <span class="pre">*</span> <span class="pre">v.x,</span>
+<span class="pre">u.y</span> <span class="pre">*</span> <span class="pre">v.y)</span></code>.</p>
+<p>In python, the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator serves as the dot-product operator, but
+no such operator exists in C++.  So we’ll use a function:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">dot</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vector2d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
+</pre></div>
+</div>
 </section>
 <section id="cross-product">
 <h2>Cross product<a class="headerlink" href="#cross-product" title="Link to this heading">#</a></h2>
+<p>For vectors <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span>, the cross-product is <span class="math notranslate nohighlight">\(u \times v = (u_x v_y -
+u_y v_x) \hat{z}\)</span>.  We’ll use return the magnitude, since we don’t
+have the ability in <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code> to express the <span class="math notranslate nohighlight">\(z\)</span>-component of a
+vector.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">cross</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vector2d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
+</pre></div>
+</div>
 </section>
-<section id="absolute-value-magnitude">
-<h2>Absolute value / magnitude<a class="headerlink" href="#absolute-value-magnitude" title="Link to this heading">#</a></h2>
+<section id="magnitude">
+<h2>Magnitude<a class="headerlink" href="#magnitude" title="Link to this heading">#</a></h2>
+<p>The magnitude of a vector <span class="math notranslate nohighlight">\(v\)</span> is <span class="math notranslate nohighlight">\(|v| = \sqrt{v_x^2 + v_y^2}\)</span>.  We’’
+implement this as a function <code class="docutils literal notranslate"><span class="pre">abs</span></code> to be similar to the absolute
+value function we already use from the standard library:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vector2d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
+</pre></div>
+</div>
 </section>
 <section id="input-stream-operator">
 <h2>Input stream operator, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code><a class="headerlink" href="#input-stream-operator" title="Link to this heading">#</a></h2>
@@ -636,7 +689,7 @@ assertions to ensure that we implemented them correctly.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#division-by-a-scalar">Division by a scalar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-product">Dot product</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">Cross product</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value-magnitude">Absolute value / magnitude</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude">Magnitude</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-stream-operator">Input stream operator, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-driver">Test driver</a></li>
 </ul>
