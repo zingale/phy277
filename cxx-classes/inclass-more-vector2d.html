@@ -532,6 +532,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-product">Dot product</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">Cross product</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude">Magnitude</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equality-test">Equality test</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-stream-operator">Input stream operator, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-driver">Test driver</a></li>
 </ul>
@@ -547,7 +548,7 @@
                   
   <section id="adding-to-our-vector2d-class">
 <h1>Adding to our <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code> Class<a class="headerlink" href="#adding-to-our-vector2d-class" title="Link to this heading">#</a></h1>
-<p>Let’s extend our <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code> class with the following operators / functions:</p>
+<p>Let’s extend our <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code> class with the following operators / functions.</p>
 <section id="multiplication-by-a-scalar">
 <h2>Multiplication by a scalar<a class="headerlink" href="#multiplication-by-a-scalar" title="Link to this heading">#</a></h2>
 <p>We need to consider 2 different multiplication operations—given a
@@ -598,7 +599,7 @@ no such operator exists in C++.  So we’ll use a function:</p>
 <section id="cross-product">
 <h2>Cross product<a class="headerlink" href="#cross-product" title="Link to this heading">#</a></h2>
 <p>For vectors <span class="math notranslate nohighlight">\(u\)</span> and <span class="math notranslate nohighlight">\(v\)</span>, the cross-product is <span class="math notranslate nohighlight">\(u \times v = (u_x v_y -
-u_y v_x) \hat{z}\)</span>.  We’ll use return the magnitude, since we don’t
+u_y v_x) \hat{z}\)</span>.  We’ll just return the magnitude, since we don’t
 have the ability in <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code> to express the <span class="math notranslate nohighlight">\(z\)</span>-component of a
 vector.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">cross</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vector2d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
@@ -607,10 +608,27 @@ vector.</p>
 </section>
 <section id="magnitude">
 <h2>Magnitude<a class="headerlink" href="#magnitude" title="Link to this heading">#</a></h2>
-<p>The magnitude of a vector <span class="math notranslate nohighlight">\(v\)</span> is <span class="math notranslate nohighlight">\(|v| = \sqrt{v_x^2 + v_y^2}\)</span>.  We’’
+<p>The magnitude of a vector <span class="math notranslate nohighlight">\(v\)</span> is <span class="math notranslate nohighlight">\(|v| = \sqrt{v_x^2 + v_y^2}\)</span>.  We’ll
 implement this as a function <code class="docutils literal notranslate"><span class="pre">abs</span></code> to be similar to the absolute
 value function we already use from the standard library:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">abs</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vector2d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">abs</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+<section id="equality-test">
+<h2>Equality test<a class="headerlink" href="#equality-test" title="Link to this heading">#</a></h2>
+<p>We want the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator to be able to do assertions.  This
+has the form:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vector2d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Note the <code class="docutils literal notranslate"><span class="pre">const</span></code> after the parameter list—this indicates that
+this function can be used on a <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">Vector2d</span></code>.  This <code class="docutils literal notranslate"><span class="pre">const</span></code>
+is basically saying that this operator will not modify our object.
+This is called a <em>const member function</em>.</p>
+<p>But with C++20, we could also use the default comparison operator,
+since our object is simple enough for the compiler to understand:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vector2d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
@@ -635,6 +653,67 @@ set <code class="docutils literal notranslate"><span class="pre">v.x</span></cod
 <h2>Test driver<a class="headerlink" href="#test-driver" title="Link to this heading">#</a></h2>
 <p>Here’s a test driver that exercises these new capabilities.  It uses
 assertions to ensure that we implemented them correctly.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 122 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">test_vectors.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cassert&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;vector2d.H&quot;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// create 2 vectors</span>
+
+<span class="w">    </span><span class="n">Vector2d</span><span class="w"> </span><span class="n">v1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Vector2d</span><span class="w"> </span><span class="n">v2</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// ask for input for a third:</span>
+<span class="w">    </span><span class="n">Vector2d</span><span class="w"> </span><span class="n">v_user</span><span class="p">{};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Enter x and y for a vector: &quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">v_user</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Your vector is: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v_user</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// output our vectors</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;test vectors: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;v1 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;v2 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// output their sum</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">v_add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="n">v_add</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">));</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;v1 + v2 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v_add</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// create a new vector from subtracting our two vectors</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">v_sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">v2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="n">v_sub</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">-2</span><span class="p">));</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;v1 - v2 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v_sub</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// test multiplication</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">v_mul1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">v_mul2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">assert</span><span class="w"> </span><span class="p">(</span><span class="n">v_mul1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">v_mul2</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;v1 * 10 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v_mul1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;10 * v1 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v_mul2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// test division</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">v_div</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">assert</span><span class="w"> </span><span class="p">(</span><span class="n">v_div</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">v1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;v2 / 2 = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">v_div</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 
@@ -690,6 +769,7 @@ assertions to ensure that we implemented them correctly.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-product">Dot product</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">Cross product</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude">Magnitude</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equality-test">Equality test</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-stream-operator">Input stream operator, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-driver">Test driver</a></li>
 </ul>
