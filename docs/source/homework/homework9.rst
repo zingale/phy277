@@ -1,5 +1,5 @@
 ***********
-Homework #8
+Homework #9
 ***********
 
 .. important::
@@ -38,12 +38,21 @@ Homework #8
 
         Rectangle r(1.5);
 
-   * Have two member functions, ``perimeter()`` that returns the perimeter of
-     the rectangle and ``area()`` that returns the area.
+   * Have member functions, ``perimeter()``, that returns the perimeter of
+     the rectangle and ``area()``, that returns the area.
 
-   Next create a source file containing the ``main`` an show how to
-   create (1) a rectangle and (2) a square, and for each, output their
-   properties (perimeter and area) to the terminal.
+   * Have a third member function, ``is_square()`` that returns ``true`` if
+     the ``Rectangle`` is a square.
+
+   Next create a source file containing the ``main`` and show how to
+   create:
+
+   * a rectangle
+   * a square
+
+   and for each, output their
+   properties (perimeter,area, and the result of the test if it is
+   square) to the terminal.
 
 2. *3D vectors* : Starting with our ``vector2d.H`` implementation (:ref:`sec:vector2d`),
    extend it to three-dimensions (call your new implementation ``vector3d.H``).
@@ -65,4 +74,69 @@ Homework #8
    Now write a ``main()`` function that exercises each of these operators---use the
    driver we created for the 2D implementation as the starting point.
 
+3. *Temperature logger* : Let's write a class called
+   ``TemperatureLog`` that stores measurements of temperature at
+   different times.  Here's how you should construct it:
 
+   * The member data will be a ``vector`` of ``TemperatureReading``, which is
+     defined as:
+
+     .. code:: c++
+
+        struct TemperatureReading {
+            double time;
+            double temp;
+        };
+
+     You can create this member data as:
+
+     .. code::
+
+        std::vector<TemperatureReading> log;
+
+   * The constructor will take no arguments.  You would create a log just as:
+
+     .. code::
+
+        TemperatureLog tlog;
+
+     and it will hold no data initially.
+
+   * A member function ``add_data`` will be used to add a (time, temperature)
+     pair.  You can have it take each quantity as a separate argument or
+     write it to take a ``TemperatureReading`` object.
+
+   Next you will add 3 member functions that act of the data:
+
+   * The function ``mean()`` will return the average temperature.
+
+   * The function ``max()`` will return the maximum temperature.
+
+   * The function ``time_of_max()`` will return the time when the maximum
+     temperature was reached.
+
+   For these, you can use the ranges libraries or explicitly loop over the
+   elements of ``log``.
+
+   Finally, write a driver / ``main()`` that creates a ``TemperatureLog`` and adds the following
+   and adds the following data:
+
+   ======  ===========
+    time   temperature
+   ======  ===========
+    10        75
+    15        68
+    22        79
+    40        85
+    49        96
+    55        88
+    62        78
+    70        71
+    76        62
+   ======  ===========
+
+   and uses your functions to output:
+
+   * the average temperature
+   * the maximum temperature
+   * the time of the maximum temperature
