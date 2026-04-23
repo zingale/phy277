@@ -8,23 +8,87 @@ Let's extend our ``Vector2d`` class with the following operators / functions:
 Multiplication by a scalar
 ==========================
 
+We need to consider 2 different multiplication operations---given a
+``Vector2d v`` and a ``double a``, we can do:
+
+.. code:: c++
+
+   auto v1 = v * a;
+   auto v2 = a * v;
+
+In the first, our ``Vector2d`` object appears to the left of the
+operator, so this is a member of the class, and the function will
+look like:
+
+.. code:: c++
+
+   Vector2d operator* (double a);
+
+But for the second, our ``Vector2d`` is to the right of the operator,
+so we need to create this function outside of the class, but give it
+permission to access a ``Vector2d`` 's data---this means it needs to
+be a ``friend``:
+
+.. code:: c++
+
+   friend Vector2d operator* (double a, const Vector2d& v);
+
+In both cases, this operator returns a new ``Vector2d``.
 
 
 Division by a scalar
 ====================
 
+For division, it only makes sense to do ``v / a``, where ``v`` is
+a ``Vector2d`` and ``a`` is a double.  For this operation, our
+object is to the left of the operator, so this would be a member
+of the class.  This function would look like:
+
+.. code:: c++
+
+   Vector2d operator/ (double a);
+
 
 Dot product
 ===========
 
+For vectors $u$ and $v$, the dot-product is $u_x v_x + u_y v_y$.
+
+We could imagine overloading ``*`` to work for doing the dot-product
+of two vectors, e.g., ``u * v`` would do ``u.x * v.x + u.y *
+v.y``.  But this could be confusing, because some might think it is
+the element-wise multiplication operation, ``Vector2d(u.x * v.x,
+u.y * v.y)``.
+
+In python, the ``@`` operator serves as the dot-product operator, but
+no such operator exists in C++.  So we'll use a function:
+
+.. code:: c++
+
+   double dot(const Vector2d& v);
 
 Cross product
 =============
 
+For vectors $u$ and $v$, the cross-product is $u \times v = (u_x v_y -
+u_y v_x) \hat{z}$.  We'll use return the magnitude, since we don't
+have the ability in ``Vector2d`` to express the $z$-component of a
+vector.
 
-Absolute value / magnitude
-==========================
+.. code:: c++
 
+   double cross(const Vector2d& v);
+
+Magnitude
+=========
+
+The magnitude of a vector $v$ is $|v| = \sqrt{v_x^2 + v_y^2}$.  We''
+implement this as a function ``abs`` to be similar to the absolute
+value function we already use from the standard library:
+
+.. code:: c++
+
+   double abs(const Vector2d& v);
 
 
 Input stream operator, ``>>``
