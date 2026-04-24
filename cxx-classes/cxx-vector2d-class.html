@@ -735,7 +735,9 @@ signature:</p>
 left of the operator, so this is not a member function.  We would
 have to define this operator’s function outside of the class with
 the signature:</p>
-<p>Vector2d operator+ (const double, const Vector2d&amp; vec);</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Vector2d</span> <span class="n">operator</span><span class="o">+</span> <span class="p">(</span><span class="n">const</span> <span class="n">double</span><span class="p">,</span> <span class="n">const</span> <span class="n">Vector2d</span><span class="o">&amp;</span> <span class="n">vec</span><span class="p">);</span>
+</pre></div>
+</div>
 <p>and if our data is private in the class, then we would need to
 make this function a <code class="docutils literal notranslate"><span class="pre">friend</span></code>.</p>
 </li>

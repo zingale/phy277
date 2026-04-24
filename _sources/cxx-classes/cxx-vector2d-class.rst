@@ -149,7 +149,9 @@ Some notes:
      have to define this operator's function outside of the class with
      the signature:
 
-     Vector2d operator+ (const double, const Vector2d& vec);
+     .. code::
+
+        Vector2d operator+ (const double, const Vector2d& vec);
 
      and if our data is private in the class, then we would need to
      make this function a ``friend``.
