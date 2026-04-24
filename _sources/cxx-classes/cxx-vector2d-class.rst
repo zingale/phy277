@@ -140,16 +140,16 @@ Some notes:
      our object itself in the argument list, so we use the function
      signature:
 
-   .. code:: c++
+     .. code:: c++
 
-      Vector2d operator+ (const double a);
+        Vector2d operator+ (const double a);
 
    * For ``a + vec``, something other than a ``Vector2d`` is to the
      left of the operator, so this is not a member function.  We would
      have to define this operator's function outside of the class with
      the signature:
 
-     Vector2d operatore+ (const double, const Vector2d& vec);
+     Vector2d operator+ (const double, const Vector2d& vec);
 
      and if our data is private in the class, then we would need to
      make this function a ``friend``.

@@ -722,21 +722,20 @@ the left of the operator.</p>
 <span class="k">auto</span><span class="w"> </span><span class="n">new_vec2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vec</span><span class="p">;</span><span class="w">   </span><span class="c1">// our class is on the right -- not a member func</span>
 </pre></div>
 </div>
-<ul class="simple">
+<ul>
 <li><p>For <code class="docutils literal notranslate"><span class="pre">vec</span> <span class="pre">+</span> <span class="pre">a</span></code>, our object is to the left of the operator, so
 this is a member function of the clsas.  We don’t need to include
 our object itself in the argument list, so we use the function
-signature:</p></li>
-</ul>
+signature:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Vector2d</span><span class="w"> </span><span class="k">operator</span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
 </pre></div>
 </div>
-<ul>
+</li>
 <li><p>For <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">vec</span></code>, something other than a <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code> is to the
 left of the operator, so this is not a member function.  We would
 have to define this operator’s function outside of the class with
 the signature:</p>
-<p>Vector2d operatore+ (const double, const Vector2d&amp; vec);</p>
+<p>Vector2d operator+ (const double, const Vector2d&amp; vec);</p>
 <p>and if our data is private in the class, then we would need to
 make this function a <code class="docutils literal notranslate"><span class="pre">friend</span></code>.</p>
 </li>
