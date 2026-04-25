@@ -9,7 +9,7 @@ int main() {
                                  3.0, 4.0, 5.0, 7.5, 10.0};
 
     {
-        // a point inbetween elements in our vector
+        // a point in-between elements in our vector
 
         double T0{1.2};
         auto it = std::ranges::lower_bound(temp_vec, T0);
