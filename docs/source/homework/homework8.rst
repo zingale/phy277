@@ -31,6 +31,31 @@ Homework #8
    ``main`` function do the integration for both $C=0$ and $C=0.3$,
    writing each integration to a separate file.
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. literalinclude:: hw8_p1_projectile-rk-file.cpp
+         :language: c++
+         :caption: ``projectile-rk-file.cpp``
+
+      The only function that changed here is ``write_history``, which now
+      takes the drag coefficient, ``C``, as an additional argument.
+
+      In that function, the filename is constructed to include the drag coefficient,
+      like:
+
+      .. code:: c++
+
+         std::string filename = std::format("projectile-C{:.2f}.out"
+
+      .. note::
+
+         You could have also asked the user for the name of the
+         filename or constructed it in some other fashion, as long as
+         different values of ``C`` result in different files.
+
 2. *Lambda practice* : Consider the following code:
 
    .. literalinclude:: count_if.cpp
@@ -44,6 +69,18 @@ Homework #8
    Rewrite this code to using a lambda function (review :ref:`lambdafunctions`)
    in the ``std::ranges::count_if`` call, in place of the ``is_perfect_square``
    function above.
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. literalinclude:: hw8_p2_count_if_lambda.cpp
+         :language: c++
+         :caption: ``count_if_lambda.cpp``
+
+      In this case, our lambda function has two statements in the ``{
+      }``---that's fine.
 
 3. *Transforming* : `std::ranges::transform
    <https://en.cppreference.com/w/cpp/algorithm/ranges/transform>`_
@@ -82,6 +119,16 @@ Homework #8
       for $f(e)$.
 
    Finally, loop over the vector and output the updated elements.
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. literalinclude:: hw8_p3_transform.cpp
+         :language: c++
+         :caption: ``transform.cpp``
+
 
 4. *Bounds* : An operation we often want to do is search through a
    sorted list of numbers and find the interval that contains an
@@ -123,4 +170,22 @@ Homework #8
 
    * ``T0 = 0.05``
    * ``T0 = 20``
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. literalinclude:: hw8_p4_binary_search.cpp
+         :language: c++
+         :caption: ``binary_search.cpp``
+
+      Notice that for the case of ``0.05``, we get the index ``0``.
+      So when we seek a value smaller than any element in our vector,
+      we get the start of our vector.
+
+      And for the case of ``20.0``, we get an index of ``10`` which is
+      out of bounds for our vector.  So when we seek a value larger
+      than any element in our vector the iterator points to ``end()``.
+
 
