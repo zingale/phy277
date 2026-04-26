@@ -256,12 +256,9 @@ the top of many pages.
    cxx-classes/object-oriented
    cxx-classes/cxx-vector2d-class
    cxx-classes/inclass-more-vector2d
-   cxx-classes/inclass-orbit-class
-   cxx-classes/inheritance-and-access
    cxx-classes/this-class
    cxx-classes/copy_and_assignment
    cxx-classes/compound-operators
-   cxx-classes/inclass-orbit-compound
    cxx-classes/contiguous_array
 
 .. toctree::
