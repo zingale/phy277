@@ -28,6 +28,7 @@ Differences between python and C++
 
 .. list-table::
    :header-rows: 1
+   :width: 85%
 
    * - python
      - C++
