@@ -2,6 +2,16 @@
 More On Templates
 *****************
 
+Templating our ``Array``
+========================
+
+Let's revisit our :ref:`sec:contiguous-array`, and make the data type a template parameter.
+Then we can create an array of ``int`` as:
+
+.. code:: c++
+
+   Array<int> x(4, 3);
+
 ``static_assert``
 =================
 
@@ -26,20 +36,3 @@ This ensures that ``T`` is an arithmetic type (integer or floating point type).
    This is defined in ``<type_traits>``
 
 There are additional type checks like ``is_integral_v`` and ``is_floating_point_v``
-
-.. tip::
-
-   The ``_v`` versions of these checks were introduced in C++17.  You may need to compile
-   as:
-
-   .. prompt:: bash
-
-      g++ -std=c++17 ...
-
-   For C++11, you would do:
-
-   .. code:: c++
-
-      static_assert (std::is_arithmetic<T>::value);
-
-

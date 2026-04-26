@@ -57,7 +57,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Templates" href="../templates/templates-intro.html" />
-    <link rel="prev" title="In-Class Example: Orbit Integrator Compound Operators" href="inclass-orbit-compound.html" />
+    <link rel="prev" title="Compound Assignment Operators" href="compound-operators.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -316,12 +316,9 @@
 <li class="toctree-l1"><a class="reference internal" href="object-oriented.html">Object-Oriented Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vector2d-class.html">Example: Mathematical Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inclass-more-vector2d.html">Adding to our <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code> Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inclass-orbit-class.html">In-Class Example: Orbit Integrator Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inheritance-and-access.html">Inheritance and Access</a></li>
 <li class="toctree-l1"><a class="reference internal" href="this-class.html"><code class="docutils literal notranslate"><span class="pre">this</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="copy_and_assignment.html">Copy, Assignment, and Destructors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compound-operators.html">Compound Assignment Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inclass-orbit-compound.html">In-Class Example: Orbit Integrator Compound Operators</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Example: Multidimensional Contiguous Array</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Templates</span></p>
@@ -554,7 +551,7 @@
                 <article class="bd-article">
                   
   <section id="example-multidimensional-contiguous-array">
-<h1>Example: Multidimensional Contiguous Array<a class="headerlink" href="#example-multidimensional-contiguous-array" title="Link to this heading">#</a></h1>
+<span id="sec-contiguous-array"></span><h1>Example: Multidimensional Contiguous Array<a class="headerlink" href="#example-multidimensional-contiguous-array" title="Link to this heading">#</a></h1>
 <p>A common data-structure in scientific computing is a multidimensional
 array.  For example, a mathematical matrix is best represented by a
 two-dimensional array.  We want to look at some of the ways we can
@@ -595,7 +592,7 @@ and can be in very disparate positions in memory.</p>
 we need to know the size of the array ahead of time.  Here’s an example that creates
 a 3×4 array (3 rows by 4 columns):</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 130 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">multid_array.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 128 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">multid_array.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;array&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
@@ -675,7 +672,7 @@ indexed as a two-dimensional array.</span><a class="headerlink" href="#id3" titl
 <h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h2>
 <p>We will implement the main <code class="docutils literal notranslate"><span class="pre">struct</span></code> in a header so we can reuse this</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 131 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">array.H</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 129 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">array.H</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef ARRAY_H</span>
 <span class="cp">#define ARRAY_H</span>
 
@@ -762,7 +759,7 @@ case of a non-<code class="docutils literal notranslate"><span class="pre">const
 <p>Here’s a test program for the <code class="docutils literal notranslate"><span class="pre">Array</span></code> object.  Notice that we gain
 access to the <code class="docutils literal notranslate"><span class="pre">Array</span></code> class via <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;array.H&quot;</span></code>.</p>
 <div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-number">Listing 132 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">test_array.cpp</span></code></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 130 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">test_array.cpp</span></code></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;array.H&quot;</span>
@@ -816,7 +813,7 @@ this.</p></li>
 <p>Here’s a makefile that builds this test program + a few others that
 we’ll compare with.</p>
 <div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-number">Listing 133 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 131 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="c"># get all the sources and the headers</span>
 <span class="nv">HEADERS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.H<span class="k">)</span>
 <span class="nv">SOURCE</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>test_array.cpp
@@ -904,12 +901,12 @@ if we do not optimize.</p></li>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="inclass-orbit-compound.html"
+       href="compound-operators.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">In-Class Example: Orbit Integrator Compound Operators</p>
+        <p class="prev-next-title">Compound Assignment Operators</p>
       </div>
     </a>
     <a class="right-next"

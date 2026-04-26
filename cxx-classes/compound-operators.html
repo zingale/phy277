@@ -54,7 +54,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="In-Class Example: Orbit Integrator Compound Operators" href="inclass-orbit-compound.html" />
+    <link rel="next" title="Example: Multidimensional Contiguous Array" href="contiguous_array.html" />
     <link rel="prev" title="Copy, Assignment, and Destructors" href="copy_and_assignment.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -314,12 +314,9 @@
 <li class="toctree-l1"><a class="reference internal" href="object-oriented.html">Object-Oriented Design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cxx-vector2d-class.html">Example: Mathematical Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inclass-more-vector2d.html">Adding to our <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code> Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inclass-orbit-class.html">In-Class Example: Orbit Integrator Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inheritance-and-access.html">Inheritance and Access</a></li>
 <li class="toctree-l1"><a class="reference internal" href="this-class.html"><code class="docutils literal notranslate"><span class="pre">this</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="copy_and_assignment.html">Copy, Assignment, and Destructors</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Compound Assignment Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="inclass-orbit-compound.html">In-Class Example: Orbit Integrator Compound Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contiguous_array.html">Example: Multidimensional Contiguous Array</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Templates</span></p>
@@ -569,7 +566,7 @@ the form:</p>
 <p>(since <code class="docutils literal notranslate"><span class="pre">this</span></code> is a pointer, we dereference it and return it via reference).</p>
 <p>Here’s a full implementation (adding to our previous <code class="docutils literal notranslate"><span class="pre">vector2d.H</span></code>:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 128 </span><span class="caption-text">updated <code class="docutils literal notranslate"><span class="pre">vector2d.H</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 126 </span><span class="caption-text">updated <code class="docutils literal notranslate"><span class="pre">vector2d.H</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef VECTOR_2D_H</span>
 <span class="cp">#define VECTOR_2D_H</span>
 
@@ -747,7 +744,7 @@ the form:</p>
 </div>
 <p>and here’s a driver:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 129 </span><span class="caption-text">updated <code class="docutils literal notranslate"><span class="pre">compound_test_vectors.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 127 </span><span class="caption-text">updated <code class="docutils literal notranslate"><span class="pre">compound_test_vectors.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;vector2d.H&quot;</span>
@@ -823,11 +820,11 @@ the form:</p>
       </div>
     </a>
     <a class="right-next"
-       href="inclass-orbit-compound.html"
+       href="contiguous_array.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">In-Class Example: Orbit Integrator Compound Operators</p>
+        <p class="prev-next-title">Example: Multidimensional Contiguous Array</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

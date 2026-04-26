@@ -1,3 +1,5 @@
+.. _sec:contiguous-array:
+
 ******************************************
 Example: Multidimensional Contiguous Array
 ******************************************
