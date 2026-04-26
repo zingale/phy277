@@ -274,6 +274,7 @@ the top of many pages.
    :caption: Python Crash Course
    :hidden:
 
+   python/python-intro
    python/python-lists
 
 
