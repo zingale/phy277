@@ -269,6 +269,9 @@ the top of many pages.
    :caption: Templates
    :hidden:
 
+   templates/templates-intro
+   templates/templates-more
+
 .. toctree::
    :maxdepth: 1
    :caption: Python Crash Course

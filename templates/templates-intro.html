@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>std::numbers &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Templates &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -50,14 +50,12 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'cxx-basics/numbers';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'templates/templates-intro';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Numerical Library" href="cmath.html" />
-    <link rel="prev" title="Floating Point" href="floating-point.html" />
+    <link rel="next" title="More On Templates" href="templates-more.html" />
+    <link rel="prev" title="Example: Multidimensional Contiguous Array" href="../cxx-classes/contiguous_array.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -197,17 +195,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../editors/configure-emacs.html">Configuring emacs</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Basic Datatypes</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-operators.html">Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-mixing-types.html">Mixing types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-sizes-limits.html">Datatype Sizes and Limits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="floating-point.html">Floating Point</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cmath.html">Numerical Library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="function-preview.html">Preview of Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="minimizing-roundoff.html">Minimizing Roundoff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="floating-point-special-numbers.html">Special Floating Point Quantities</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-datatypes.html">C++ Fundamental Datatypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-mixing-types.html">Mixing types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-sizes-limits.html">Datatype Sizes and Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point.html">Floating Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/numbers.html"><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cmath.html">Numerical Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/function-preview.html">Preview of Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/minimizing-roundoff.html">Minimizing Roundoff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/floating-point-special-numbers.html">Special Floating Point Quantities</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Review</span></p>
 <ul class="nav bd-sidenav">
@@ -216,35 +214,35 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Strings and I/O</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings.html">Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings-escape.html">Escape Sequences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings-math.html">String Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-strings-indexing.html">Indexing Strings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-reading.html">Reading Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-escape.html">Escape Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-math.html">String Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-strings-indexing.html">Indexing Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-format-library.html"><code class="docutils literal notranslate"><span class="pre">std::format</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-reading.html">Reading Input</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Advanced Types</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-vectors.html">Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vectors-loops.html">Looping Over Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-examples.html">Examples of Using <code class="docutils literal notranslate"><span class="pre">vector</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-arrays.html">Arrays</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-structs.html">Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-of-struct.html">Vector of Structs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="memory-stack-heap.html">Memory: Stack vs. Heap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-references.html">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors.html">Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-push.html">More <code class="docutils literal notranslate"><span class="pre">vector</span></code> functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vectors-loops.html">Looping Over Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-examples.html">Examples of Using <code class="docutils literal notranslate"><span class="pre">vector</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-arrays.html">Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-structs.html">Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-of-struct.html">Vector of Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/memory-stack-heap.html">Memory: Stack vs. Heap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-vector-modify-loop.html">Modifying <code class="docutils literal notranslate"><span class="pre">vector</span></code> Elements in Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../interactive_review/review-vecs.html">Practice Problems</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Flow Control</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-conditional.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-conditional-combine.html">And (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>) and Or (<code class="docutils literal notranslate"><span class="pre">||</span></code>)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-loops.html">Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-statements.html">Statement Blocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="conditional-loop-examples.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> + Looping Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-conditional.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> Statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-conditional-combine.html">And (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>) and Or (<code class="docutils literal notranslate"><span class="pre">||</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-statements.html">Statement Blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-continue-break.html"><code class="docutils literal notranslate"><span class="pre">continue</span></code> and <code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/conditional-loop-examples.html"><code class="docutils literal notranslate"><span class="pre">if</span></code> + Looping Examples</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C++ Functions</span></p>
 <ul class="nav bd-sidenav">
@@ -275,12 +273,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">File I/O</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-io.html">File I/O</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cxx-io-wc.html">I/O Example: <code class="docutils literal notranslate"><span class="pre">wc</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io.html">File I/O</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-io-wc.html">I/O Example: <code class="docutils literal notranslate"><span class="pre">wc</span></code></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Some SL Algorithms</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="cxx-pointers.html">Pointers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cxx-basics/cxx-pointers.html">Pointers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vector-iterators.html">Vector Iterators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/ranges.html">Ranges Library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../sl-algorithms/cxx-vectors-algorithms.html">Vector Algorithms</a></li>
@@ -325,9 +323,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../cxx-classes/contiguous_array.html">Example: Multidimensional Contiguous Array</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Templates</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../templates/templates-intro.html">Templates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../templates/templates-more.html">More On Templates</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="templates-more.html">More On Templates</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Crash Course</span></p>
 <ul class="nav bd-sidenav">
@@ -436,7 +434,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/cxx-basics/numbers.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/templates/templates-intro.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -453,7 +451,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/cxx-basics/numbers.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/templates/templates-intro.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -470,7 +468,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fcxx-basics/numbers.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Ftemplates/templates-intro.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -526,7 +524,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>std::numbers</h1>
+    <h1>Templates</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -540,42 +538,82 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="std-numbers">
-<h1><code class="docutils literal notranslate"><span class="pre">std::numbers</span></code><a class="headerlink" href="#std-numbers" title="Link to this heading">#</a></h1>
-<p>C++20 introduced <a class="reference external" href="https://en.cppreference.com/w/cpp/numeric/constants.html">mathematical constants</a> via the
-<code class="docutils literal notranslate"><span class="pre">&lt;numbers&gt;</span></code> header.</p>
-<p>For example, we can compute the area of a circle, using the value of <span class="math notranslate nohighlight">\(\pi\)</span> from
-this library:</p>
+  <section id="templates">
+<h1>Templates<a class="headerlink" href="#templates" title="Link to this heading">#</a></h1>
+<p>C++ templates are a form of <a class="reference external" href="https://en.wikipedia.org/wiki/Generic_programming">generic programming</a>.  They allow us
+to write functions that work on a variety of data types.</p>
+<p>The main advantage is that is saves on development time, since we don’t need to maintain
+specialized functions for each datatype that we may want to use.</p>
+<p>We’ve been using templates all throughout the semester— basically
+whenever you see the <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">&gt;</span></code>.  For example, <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> is a
+template-class and we tell it what type of vector we wish to create
+through the type parameter, e.g., <code class="docutils literal notranslate"><span class="pre">std::vector&lt;double&gt;</span></code></p>
+<p>Here’s a simple example of a function template:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="n">T</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">T</span></code> stands in for the data type that we will use when calling
+this function.  The compiler will determine which data types are used
+with <code class="docutils literal notranslate"><span class="pre">add</span></code> and it will create and compile a version of the function
+that works with each of the types.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We can use either <code class="docutils literal notranslate"><span class="pre">typename</span></code> or <code class="docutils literal notranslate"><span class="pre">class</span></code> for the template parameters.  Only
+in rare instances is the difference important.</p>
+<p><a class="reference external" href="https://stackoverflow.com/questions/2023977/difference-of-keywords-typename-and-class-in-templates">https://stackoverflow.com/questions/2023977/difference-of-keywords-typename-and-class-in-templates</a></p>
+</div>
+<p>We can call this with <code class="docutils literal notranslate"><span class="pre">double</span></code> as:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mi">3</span><span class="p">},</span><span class="w"> </span><span class="n">y</span><span class="p">{</span><span class="mi">4</span><span class="p">};</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>But in this case, the compiler can infer the type <code class="docutils literal notranslate"><span class="pre">T</span></code> from the
+inputs, so we don’t need to include <code class="docutils literal notranslate"><span class="pre">&lt;double&gt;</span></code>, and can instead simply do:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Here’s an example illustrating all of this:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 10 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">circle.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 134 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">simple_templates.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numbers&gt;</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="n">T</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">{</span><span class="mf">2.0</span><span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="c1">// we&#39;ll compute r**2 as r * r</span>
-<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="n">y</span><span class="p">{</span><span class="mi">2</span><span class="p">};</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;area = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mi">-2</span><span class="p">},</span><span class="w"> </span><span class="n">b</span><span class="p">{</span><span class="mi">4</span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">add</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>By default, the compilers we are using assume C++17 as the
-standard.  For access to the <code class="docutils literal notranslate"><span class="pre">&lt;numbers&gt;</span></code> library, we need to tell
-the compiler to use the C++20 standard.  We do this by adding
-<code class="docutils literal notranslate"><span class="pre">-std=c++20</span></code> to the compile line, e.g.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-o<span class="w"> </span>circle<span class="w"> </span>circle.cpp</span>
-</pre></div></div></div>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">try it…</p>
+<p>Make the function take two potentially different types,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">U</span><span class="o">&gt;</span>
+<span class="n">T</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">U</span><span class="o">&amp;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Notice that the return type is the same as the first argument.</p>
+<p>What happens if you call it with <code class="docutils literal notranslate"><span class="pre">int,</span> <span class="pre">double</span></code> compared to
+<code class="docutils literal notranslate"><span class="pre">double,</span> <span class="pre">int</span></code>—is it still commutative?</p>
+</div>
 </section>
 
 
@@ -590,20 +628,20 @@ span.prompt1:before {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="floating-point.html"
+       href="../cxx-classes/contiguous_array.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Floating Point</p>
+        <p class="prev-next-title">Example: Multidimensional Contiguous Array</p>
       </div>
     </a>
     <a class="right-next"
-       href="cmath.html"
+       href="templates-more.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Numerical Library</p>
+        <p class="prev-next-title">More On Templates</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
