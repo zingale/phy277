@@ -73,6 +73,12 @@ array is guaranteed to be contiguous in memory.
    it behaves like a pointer, and the size information is lost.
    This makes it less convenient to work with.
 
+.. caution::
+
+   ``std::array`` places its data on the stack (see :ref:`sec:memory-stack-heap`).
+   If the array is large, this can result in a *stack overflow* and the code crashing.
+   Try creating an array of size 1024 × 1024.
+
 Contiguous multi-dimensional array
 ==================================
 
@@ -156,6 +162,9 @@ Notice a few things:
 
 * When we try to index out of bounds, the ``assert`` statements catch
   this.
+
+``GNUmakefile``
+===============
 
 Here's a makefile that builds this test program + a few others that
 we'll compare with.
