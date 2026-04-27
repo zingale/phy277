@@ -539,6 +539,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-of-array-s"><code class="docutils literal notranslate"><span class="pre">array</span></code>-of-<code class="docutils literal notranslate"><span class="pre">array</span></code>’s</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contiguous-multi-dimensional-array">Contiguous multi-dimensional array</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gnumakefile"><code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -632,6 +633,12 @@ array is guaranteed to be contiguous in memory.</p>
 <p>but this should not be used.  When passing to a function,
 it behaves like a pointer, and the size information is lost.
 This makes it less convenient to work with.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p><code class="docutils literal notranslate"><span class="pre">std::array</span></code> places its data on the stack (see <a class="reference internal" href="../cxx-basics/memory-stack-heap.html#sec-memory-stack-heap"><span class="std std-ref">Memory: Stack vs. Heap</span></a>).
+If the array is large, this can result in a <em>stack overflow</em> and the code crashing.
+Try creating an array of size 1024 × 1024.</p>
 </div>
 </section>
 <section id="contiguous-multi-dimensional-array">
@@ -810,6 +817,9 @@ we are accessing this data directly.</p>
 <li><p>When we try to index out of bounds, the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements catch
 this.</p></li>
 </ul>
+</section>
+<section id="gnumakefile">
+<h2><code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code><a class="headerlink" href="#gnumakefile" title="Link to this heading">#</a></h2>
 <p>Here’s a makefile that builds this test program + a few others that
 we’ll compare with.</p>
 <div class="literal-block-wrapper docutils container" id="id6">
@@ -940,6 +950,7 @@ if we do not optimize.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-of-array-s"><code class="docutils literal notranslate"><span class="pre">array</span></code>-of-<code class="docutils literal notranslate"><span class="pre">array</span></code>’s</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contiguous-multi-dimensional-array">Contiguous multi-dimensional array</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gnumakefile"><code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></a></li>
 </ul>
   </nav></div>
 

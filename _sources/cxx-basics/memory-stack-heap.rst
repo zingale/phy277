@@ -1,3 +1,5 @@
+.. _sec:memory-stack-heap:
+
 **********************
 Memory: Stack vs. Heap
 **********************
