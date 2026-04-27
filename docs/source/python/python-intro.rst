@@ -1,12 +1,41 @@
-**************
-Python vs. C++
-**************
+*******************
+Python Introduction
+*******************
 
-Python and C++ have a number of similarities but also important differences that we will encounter
-when we apply our C++ knowledge to writing python programs.
 
-Similarities between python and C++
+Hello, World
+============
+
+Let's start by a simple "Hello, World" program.
+Put the following into a file ``hello.py``:
+
+.. code:: python
+
+   print("Hello, World")
+
+and then we can run it as:
+
+.. prompt:: bash
+
+   python hello.py
+
+This invokes the *python interpreter*, ``python``, which runs the code in our file.
+We can already see some similarities with C++:
+
+* ``print()`` is a function that takes arguments
+
+* ``"Hello, World"`` is a string.
+
+
+Comparing python and C++
 ===================================
+
+Python and C++ have a number of similarities but also important
+differences that we will encounter when we apply our C++ knowledge to
+writing python programs.
+
+Similarities
+------------
 
 * Both are object-oriented languages, and use the ``.`` operator as
   the member-access operator.  We will write classes and work with objects
@@ -23,8 +52,8 @@ Similarities between python and C++
   same IEEE standard and have single- and double-precision math.
 
 
-Differences between python and C++
-==================================
+Differences
+-----------
 
 .. list-table::
    :header-rows: 1
@@ -57,6 +86,10 @@ Differences between python and C++
 
           double x{2.5};
           int a{1};
+
+   * - python statements typically end at the newline
+
+     - C++ uses a semicolon, ``;``, to terminate a statement
 
    * - python uses whitespace to denote code blocks for ``if``, ``for``, functions, etc.
 
@@ -115,7 +148,7 @@ Differences between python and C++
        behind the scenes.
 
        An important way this comes up is in passing objects to functions.
-       In python, objects are passed by reference, not value.
+       In python, we can think of objects as passed by reference, not value (see `python data structures <https://en.wikipedia.org/wiki/Python_syntax_and_semantics#Data_structures>`_).
 
      - In C++, when we pass objects to a function, they are passed by
        value, unless we make the function argument a reference (add

@@ -275,7 +275,9 @@ the top of many pages.
    :hidden:
 
    python/python-intro
+   python/python-numbers
    python/python-lists
+   python/python-functions
 
 
 .. toctree::
