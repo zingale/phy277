@@ -27,6 +27,31 @@ We can already see some similarities with C++:
 * ``"Hello, World"`` is a string.
 
 
+Using python
+============
+
+There are several ways we can work with python:
+
+* Writing scripts / programs in files ending with ``.py``
+  For this we would use our editor to write the program
+  and then run it via the ``python`` command, as we did above.
+
+* Interactively, using the interpreter as a REPL, just
+  like we saw with Bash in our discussion :ref:`sec:the_shell_repl`.
+
+  * We can use the python, or `ipython <https://ipython.org/>`_
+    interpreter for this.  These support command recall via
+    the arrow keys and tab-completion.
+
+  * We can use `jupyter notebooks <https://jupyter.org/>`_,
+    which gives us a web-based environment for working with
+    python, and can include code, plain text, output, and plots
+    all in a single document (a notebook).
+
+We will mostly work with just ``python``, both interactively
+and for running scripts.
+
+
 Comparing python and C++
 ===================================
 
