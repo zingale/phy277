@@ -83,9 +83,29 @@ Average and standard deviation
 Let's revisit our :ref:`sec:homework4` problem on finding the average
 and standard deviation of a vector, now in python.
 
+.. literalinclude:: ../../../examples/python/mean_stddev.py
+   :language: python
+   :caption: ``mean_stddev.py``
 
+.. important::
 
-.. note::
+   Writing explicit loops over the elements of a list is inefficient
+   in python, because each iteration interacts with the interpreter.
+   There are more efficient ways we can do this.  For example,
+   we can use the built-in ``sum`` function:
+
+   .. code:: python
+
+      vsum = sum(values)
+
+   and we can use `list comprehensions <https://docs.python.org/3.14/tutorial/datastructures.html#list-comprehensions>`_ as well, e.g.,
+
+   .. code:: python
+
+      vsigma = sum((e - vavg)**2 for e in values)
+
+.. tip::
 
    When we cover the NumPy library later, we'll see that there are even
    easier ways to do this.
+
