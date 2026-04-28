@@ -47,7 +47,7 @@ There are several ways we can work with python:
      it automatically check our code as we write it (the same
      way we did with C++):
 
-    ::
+     ::
 
        (add-hook 'python-mode-hook 'flycheck-mode)
 

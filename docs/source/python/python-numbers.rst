@@ -66,6 +66,26 @@ Floating-point math works the same in python as in C++.  The core operators
 are ``+``, ``-``, ``*``, and ``/``, just like in C++,  and the
 operator precedence is the same as well.
 
+Just like in C++, when we do an operation involving an integer and a floating point
+number, the result is a floating point number.  E.g.,
+
+.. code:: python
+
+   1 + 2.0
+
+is a ``float``.
+
+Floating point limits
+---------------------
+
+The python equivalent of the C++ ``std::numeric_limits`` is ``sys.float_info``:
+
+.. code:: python
+
+   import sys
+   print(sys.float_info)
+
+
 ``**`` operator
 ---------------
 

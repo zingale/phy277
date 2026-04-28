@@ -12,6 +12,9 @@ In particular:
 
 * We use ``.append()`` in python they way we used ``.push_back`` in C++
 
+* We use ``[]`` and 0-based indexing to get an element of a list---just like in C++
+
+
 .. grid:: 2
 
    .. grid-item-card:: python
@@ -69,10 +72,13 @@ Let's revisit our :ref:`sec:vec-small-angle`, and rewrite it in python.
 
 Notice:
 
-* the format strings in the ``print`` statements are identical to the
+* The format strings in the ``print`` statements are identical to the
   ones in the C++ code, except now we use an f-string.
 
-* in python, we can use ``math.radians()`` to convert from degrees to
+* We don't need to put the loop conditions in ``( )``, in fact in python,
+  it is discouraged.
+
+* In python, we can use ``math.radians()`` to convert from degrees to
   radians.  The C++ standard library does not have a comparable
   function.
 
