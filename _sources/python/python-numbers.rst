@@ -86,3 +86,17 @@ we can also use ``math.radians`` to convert it for us:
    c = math.cos(math.radians(45))
 
 
+``help``
+========
+
+python has a ``help`` function that will provide a description of a
+function and the arguments that it takes.  For instance, we can do:
+
+.. code:: python
+
+   import math
+   help(math.cos)
+
+Built-in help is a core-feature of python.
+This works for any function / module in the python standard library,
+and for most functions / modules in other libraries that we will used.

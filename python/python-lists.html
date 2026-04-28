@@ -535,7 +535,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-angle-approximation">Small-angle approximation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-and-standard-deviation">Average and standard deviation</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -551,6 +555,12 @@
 <h1>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h1>
 <p>Python lists are very similar to C++ <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>.  They serve
 the same purpose.</p>
+<p>In particular:</p>
+<ul class="simple">
+<li><p>We can loop over elements of a list using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, very
+similar to the range-based loop we saw with C++.</p></li>
+<li><p>We use <code class="docutils literal notranslate"><span class="pre">.append()</span></code> in python they way we used <code class="docutils literal notranslate"><span class="pre">.push_back</span></code> in C++</p></li>
+</ul>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
 <div class="sd-col sd-d-flex-row docutils">
@@ -592,8 +602,19 @@ specify what type of data it carries.</p>
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Technically, python lists can hold a mix of different types, e.g., you can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>but this is rarely used in practice.  Usually we use them with a single
+type, much like with <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>.</p>
+</div>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<section id="small-angle-approximation">
+<h3>Small-angle approximation<a class="headerlink" href="#small-angle-approximation" title="Link to this heading">#</a></h3>
 <p>Let’s revisit our <a class="reference internal" href="../cxx-basics/cxx-vector-examples.html#sec-vec-small-angle"><span class="std std-ref">Small-angle approximation example</span></a>, and rewrite it in python.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-number">Listing 133 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">small_angle.py</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
@@ -621,6 +642,17 @@ ones in the C++ code, except now we use an f-string.</p></li>
 radians.  The C++ standard library does not have a comparable
 function.</p></li>
 </ul>
+</section>
+<section id="average-and-standard-deviation">
+<h3>Average and standard deviation<a class="headerlink" href="#average-and-standard-deviation" title="Link to this heading">#</a></h3>
+<p>Let’s revisit our <a class="reference internal" href="../homework/homework4.html#sec-homework4"><span class="std std-ref">Homework #4</span></a> problem on finding the average
+and standard deviation of a vector, now in python.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When we cover the NumPy library later, we’ll see that there are even
+easier ways to do this.</p>
+</div>
+</section>
 </section>
 </section>
 
@@ -671,7 +703,11 @@ function.</p></li>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-angle-approximation">Small-angle approximation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-and-standard-deviation">Average and standard deviation</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
