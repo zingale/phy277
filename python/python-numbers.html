@@ -50,6 +50,8 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'python/python-numbers';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -512,7 +514,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -528,6 +532,16 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integers">Integers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point">Floating point</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#math-module"><code class="docutils literal notranslate"><span class="pre">math</span></code> module</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -539,6 +553,65 @@
                   
   <section id="integers-floats-and-math">
 <h1>Integers, Floats, and Math<a class="headerlink" href="#integers-floats-and-math" title="Link to this heading">#</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>python is dynamically-typed, so we don’t need to give the datatype
+when creating a variable / object.  Instead the type is inferred
+from the object we are assigning a variable to.</p>
+</div>
+<section id="integers">
+<h2>Integers<a class="headerlink" href="#integers" title="Link to this heading">#</a></h2>
+<p>To create an integer in python, we simply assign a variable:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>Since we didn’t include a decimal point, this is treated as an integer.</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">type</span></code> function to ask python what datatype an object
+is holding:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>this returns <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>Integer division works differently in python than in C++:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This outputs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0.5 &lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+</section>
+<section id="floating-point">
+<h2>Floating point<a class="headerlink" href="#floating-point" title="Link to this heading">#</a></h2>
+<p>Floating-point math works the same in python as in C++, and the
+operator precedence is the same as well.</p>
+<p>For example</p>
+</section>
+<section id="math-module">
+<h2><code class="docutils literal notranslate"><span class="pre">math</span></code> module<a class="headerlink" href="#math-module" title="Link to this heading">#</a></h2>
+<p>The python <a class="reference external" href="https://docs.python.org/3/library/math.html">math module</a> provides much of the same
+functionality as the C++ standard library does when we include <code class="docutils literal notranslate"><span class="pre">&lt;cmath&gt;</span></code>.</p>
+<p>We first need to <em>import</em> it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</pre></div>
+</div>
+<p>then we can access all it’s functionality using the <code class="docutils literal notranslate"><span class="pre">.</span></code> operator (for instance, <code class="docutils literal notranslate"><span class="pre">math.cos()</span></code>.</p>
+<p>We can get the value of <span class="math notranslate nohighlight">\(\pi\)</span> as <code class="docutils literal notranslate"><span class="pre">math.pi</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Just like in C++, the trig function expect arguments in radians, so we can find <span class="math notranslate nohighlight">\(\cos(45^\circ)\)</span>
+as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">angle</span> <span class="o">=</span> <span class="mi">45</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>we can also use <code class="docutils literal notranslate"><span class="pre">math.radians</span></code> to convert it for us:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -576,6 +649,25 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integers">Integers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point">Floating point</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#math-module"><code class="docutils literal notranslate"><span class="pre">math</span></code> module</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
