@@ -50,6 +50,11 @@ operator precedence is the same as well.
 For example
 
 
+``**`` operator
+---------------
+
+Python has a power operator, ``**``, so we can do $x^(5/2)$ as ``x**2.5``.
+
 
 ``math`` module
 ===============

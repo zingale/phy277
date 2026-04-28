@@ -275,6 +275,7 @@ the top of many pages.
    :hidden:
 
    python/python-intro
+   python/python-cxx
    python/python-numbers
    python/python-lists
    python/python-functions

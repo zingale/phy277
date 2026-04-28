@@ -54,7 +54,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Integers, Floats, and Math" href="python-numbers.html" />
+    <link rel="next" title="Comparing python and C++" href="python-cxx.html" />
     <link rel="prev" title="More On Templates" href="../templates/templates-more.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -327,6 +327,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Crash Course</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-cxx.html">Comparing python and C++</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-numbers.html">Integers, Floats, and Math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-lists.html">Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-functions.html">Functions</a></li>
@@ -537,11 +538,7 @@
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-world">Hello, World</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-python">Using python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-python-and-c">Comparing python and C++</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similarities">Similarities</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differences">Differences</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-more">Learning more</a></li>
 </ul>
             </nav>
         </div>
@@ -598,124 +595,18 @@ all in a single document (a notebook).</p></li>
 <p>We will mostly work with just <code class="docutils literal notranslate"><span class="pre">python</span></code>, both interactively
 and for running scripts.</p>
 </section>
-<section id="comparing-python-and-c">
-<h2>Comparing python and C++<a class="headerlink" href="#comparing-python-and-c" title="Link to this heading">#</a></h2>
-<p>Python and C++ have a number of similarities but also important
-differences that we will encounter when we apply our C++ knowledge to
-writing python programs.</p>
-<section id="similarities">
-<h3>Similarities<a class="headerlink" href="#similarities" title="Link to this heading">#</a></h3>
+<section id="learning-more">
+<h2>Learning more<a class="headerlink" href="#learning-more" title="Link to this heading">#</a></h2>
+<p>There are lots of resources online for learning more about python:</p>
 <ul class="simple">
-<li><p>Both are object-oriented languages, and use the <code class="docutils literal notranslate"><span class="pre">.</span></code> operator as
-the member-access operator.  We will write classes and work with objects
-in the same way.</p></li>
-<li><p>Both have a robust standard library that provides many of the same
-features.  For example. the python equivalent of <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> is
-a list.</p></li>
-<li><p>The C++ <code class="docutils literal notranslate"><span class="pre">std::format</span></code> library was inspired by python, and the same
-formatting syntax works.</p></li>
-<li><p>Floating point math works the same way—both languages follow the
-same IEEE standard and have single- and double-precision math.</p></li>
+<li><p>Software carpentry offers 2 lessons on python, <a class="reference external" href="https://swcarpentry.github.io/python-novice-inflammation/">programming with python</a>
+and <a class="reference external" href="https://swcarpentry.github.io/python-novice-gapminder/">plotting and programming in python</a> which give excellent
+walk-troughs of using python on real datasets.</p></li>
+<li><p>The <a class="reference external" href="https://docs.python.org/3.14/tutorial/index.html">official python tutorial</a>
+is an excellent place to build off of the C++ knowledge we developed this semester.</p></li>
+<li><p>I have <a class="reference external" href="https://sbu-python-class.github.io/python-science/Introduction.html">python for scientific computing</a>
+course notes online.</p></li>
 </ul>
-</section>
-<section id="differences">
-<h3>Differences<a class="headerlink" href="#differences" title="Link to this heading">#</a></h3>
-<div class="pst-scrollable-table-container"><table class="table" style="width: 85%">
-<thead>
-<tr class="row-odd"><th class="head"><p>python</p></th>
-<th class="head"><p>C++</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>python is an <a class="reference external" href="https://en.wikipedia.org/wiki/Interpreter_(computing)">interpreted language</a></p>
-<p>We run a python program by doing <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">program.py</span></code></p>
-</td>
-<td><p>C++ requires using the compiler (e.g. <code class="docutils literal notranslate"><span class="pre">g++</span></code>) to translate the source
-into machine-specific instructions</p></td>
-</tr>
-<tr class="row-odd"><td><p>python is dynamically typed—we don’t need to specify ahead of time
-what type of data a variable/object refers to</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a floating point number</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mf">2.5</span>
-
-<span class="c1"># an integer</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
-</div>
-</td>
-<td><p>all objects in C++ must have their datatypes specified ahead of time</p>
-<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">2.5</span><span class="p">};</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">{</span><span class="mi">1</span><span class="p">};</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>python statements typically end at the newline</p></td>
-<td><p>C++ uses a semicolon, <code class="docutils literal notranslate"><span class="pre">;</span></code>, to terminate a statement</p></td>
-</tr>
-<tr class="row-odd"><td><p>python uses whitespace to denote code blocks for <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>, functions, etc.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is positive&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</td>
-<td><p>C++ uses curly braces, <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code></p>
-<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>integers behave differently in python, in 2 important ways</p>
-<ul class="simple">
-<li><p>integer division results in a float, i.e. <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">2</span></code> is <code class="docutils literal notranslate"><span class="pre">0.5</span></code>
-in python</p></li>
-<li><p>The size of an int (in bytes) expands as needed, so there is
-no overflow, i.e., we can store <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">123456789012345678901234567890</span></code></p></li>
-</ul>
-</td>
-<td><p>in C++, integer division results in an integer, so <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">2</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></td>
-</tr>
-<tr class="row-odd"><td><p>python can be slow.  Scientific libraries (like NumPy) and
-avoiding loops can help.</p></td>
-<td><p>C++ is generally fast if you use modern language features and
-compiler optimization.</p></td>
-</tr>
-<tr class="row-even"><td><p>python scope works differently than C++.  For example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="c1"># we can access y here</span>
-</pre></div>
-</div>
-</td>
-<td><p>in the C++ version:</p>
-<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mi">10</span><span class="p">};</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// we cannot access y here</span>
-</pre></div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>python doesn’t have references and pointers.  However, the standard
-python interpreter is written in C, so those concepts still exist
-behind the scenes.</p>
-<p>An important way this comes up is in passing objects to functions.
-In python, we can think of objects as passed by reference, not value (see <a class="reference external" href="https://en.wikipedia.org/wiki/Python_syntax_and_semantics#Data_structures">python data structures</a>).</p>
-</td>
-<td><p>In C++, when we pass objects to a function, they are passed by
-value, unless we make the function argument a reference (add
-the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>).</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 </section>
 </section>
 
@@ -740,11 +631,11 @@ the <code class="docutils literal notranslate"><span class="pre">&amp;</span></c
       </div>
     </a>
     <a class="right-next"
-       href="python-numbers.html"
+       href="python-cxx.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Integers, Floats, and Math</p>
+        <p class="prev-next-title">Comparing python and C++</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -768,11 +659,7 @@ the <code class="docutils literal notranslate"><span class="pre">&amp;</span></c
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-world">Hello, World</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-python">Using python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-python-and-c">Comparing python and C++</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similarities">Similarities</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differences">Differences</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-more">Learning more</a></li>
 </ul>
   </nav></div>
 

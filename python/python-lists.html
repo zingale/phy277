@@ -327,6 +327,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Crash Course</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python-intro.html">Python Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-cxx.html">Comparing python and C++</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-numbers.html">Integers, Floats, and Math</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-functions.html">Functions</a></li>
@@ -647,8 +648,45 @@ function.</p></li>
 <h3>Average and standard deviation<a class="headerlink" href="#average-and-standard-deviation" title="Link to this heading">#</a></h3>
 <p>Let’s revisit our <a class="reference internal" href="../homework/homework4.html#sec-homework4"><span class="std std-ref">Homework #4</span></a> problem on finding the average
 and standard deviation of a vector, now in python.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 134 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">mean_stddev.py</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">,</span> <span class="mf">21.3</span><span class="p">,</span> <span class="mf">25.4</span><span class="p">,</span> <span class="mf">6.6</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">]</span>
+
+<span class="n">vsum</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+    <span class="n">vsum</span> <span class="o">+=</span> <span class="n">e</span>
+
+<span class="n">vavg</span> <span class="o">=</span> <span class="n">vsum</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+
+<span class="n">vsigma</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+    <span class="n">vsigma</span> <span class="o">+=</span> <span class="p">(</span><span class="n">e</span> <span class="o">-</span> <span class="n">vavg</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">vsigma</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">vsigma</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;average = </span><span class="si">{</span><span class="n">vavg</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, sigma = </span><span class="si">{</span><span class="n">vsigma</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Writing explicit loops over the elements of a list is inefficient
+in python, because each iteration interacts with the interpreter.
+There are more efficient ways we can do this.  For example,
+we can use the built-in <code class="docutils literal notranslate"><span class="pre">sum</span></code> function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vsum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and we can use <a class="reference external" href="https://docs.python.org/3.14/tutorial/datastructures.html#list-comprehensions">list comprehensions</a> as well, e.g.,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vsigma</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">e</span> <span class="o">-</span> <span class="n">vavg</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>When we cover the NumPy library later, we’ll see that there are even
 easier ways to do this.</p>
 </div>
