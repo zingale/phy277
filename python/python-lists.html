@@ -563,6 +563,7 @@ the same purpose.</p>
 <li><p>We can loop over elements of a list using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, very
 similar to the range-based loop we saw with C++.</p></li>
 <li><p>We use <code class="docutils literal notranslate"><span class="pre">.append()</span></code> in python they way we used <code class="docutils literal notranslate"><span class="pre">.push_back</span></code> in C++</p></li>
+<li><p>We use <code class="docutils literal notranslate"><span class="pre">[]</span></code> and 0-based indexing to get an element of a list—just like in C++</p></li>
 </ul>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
@@ -639,9 +640,11 @@ type, much like with <code class="docutils literal notranslate"><span class="pre
 </div>
 <p>Notice:</p>
 <ul class="simple">
-<li><p>the format strings in the <code class="docutils literal notranslate"><span class="pre">print</span></code> statements are identical to the
+<li><p>The format strings in the <code class="docutils literal notranslate"><span class="pre">print</span></code> statements are identical to the
 ones in the C++ code, except now we use an f-string.</p></li>
-<li><p>in python, we can use <code class="docutils literal notranslate"><span class="pre">math.radians()</span></code> to convert from degrees to
+<li><p>We don’t need to put the loop conditions in <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>, in fact in python,
+it is discouraged.</p></li>
+<li><p>In python, we can use <code class="docutils literal notranslate"><span class="pre">math.radians()</span></code> to convert from degrees to
 radians.  The C++ standard library does not have a comparable
 function.</p></li>
 </ul>
