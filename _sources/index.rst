@@ -279,6 +279,7 @@ the top of many pages.
    python/python-numbers
    python/python-strings
    python/python-lists
+   python/python-conditionals
    python/python-functions
 
 
