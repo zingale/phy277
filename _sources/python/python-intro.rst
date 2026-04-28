@@ -51,6 +51,30 @@ There are several ways we can work with python:
 We will mostly work with just ``python``, both interactively
 and for running scripts.
 
+Using the MathLab computers
+===========================
+
+For most of what are a going to do, we can just use the python version that
+is the default on our computers (it is a bit old, but it's okay).  We can start
+the python interpreter just by doing:
+
+.. bash:: prompt
+
+   python
+
+When we need to install additionally libraries later, we can use the `pip command <https://pip.pypa.io/en/stable/>`_.
+
+Using your own computer
+=======================
+
+If you want to setup python on your own computer, I would recommend
+the Anaconda python distribution.  This will install the latest python
+version and all of the libraries we typically need for scientific
+computing.  You can download the installer at
+https://www.anaconda.com/download/success?reg=skipped
+
+Anaconda is available for Linux, Mac, and Windows, and is completely free.
+
 
 Learning more
 =============

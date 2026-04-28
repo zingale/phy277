@@ -277,6 +277,7 @@ the top of many pages.
    python/python-intro
    python/python-cxx
    python/python-numbers
+   python/python-strings
    python/python-lists
    python/python-functions
 
