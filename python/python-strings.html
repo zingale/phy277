@@ -571,6 +571,23 @@ for strings.  We can do:</p>
 </section>
 <section id="format-strings">
 <h2>Format strings<a class="headerlink" href="#format-strings" title="Link to this heading">#</a></h2>
+<p>C++’s <code class="docutils literal notranslate"><span class="pre">std::format</span></code> was inspired by python and uses the same formatting.  In python, we invoke
+the <code class="docutils literal notranslate"><span class="pre">format()</span></code> function on a string (it is a member function of the string class), so we can do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;string&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a = </span><span class="si">{:2}</span><span class="s2">, b = </span><span class="si">{:.3f}</span><span class="s2">, c = </span><span class="si">{:10}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>but python also has <a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">f-strings</a>
+which allow us to put the values directly into the <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code> in the format string.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a = </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">2</span><span class="si">}</span><span class="s2">, b = </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, c = </span><span class="si">{</span><span class="n">c</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>An f-string has the form: <code class="docutils literal notranslate"><span class="pre">f&quot;</span> <span class="pre">...</span> <span class="pre">&quot;</span></code> —with a leading <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p>
+</div>
 </section>
 <section id="print">
 <h2><code class="docutils literal notranslate"><span class="pre">print</span></code><a class="headerlink" href="#print" title="Link to this heading">#</a></h2>
