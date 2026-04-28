@@ -41,14 +41,30 @@ This outputs:
 
     0.5 <class 'float'>
 
+As noticed previously, in python the number of bits used to store an integer
+will grow as needed, preventing overflow.
+
+For example:
+
+.. code:: python
+
+   a = 123456789012345678901234567890
+   print(a.bit_length())
+
+shows that this number requires 97-bits.
+
+.. note::
+
+   Here we are seeing that python treats integers as objects of the ``int`` class,
+   and ``.bit_length()`` is a member-function (or a *method*, in python naming conventions).
+
+
 Floating point
 ==============
 
-Floating-point math works the same in python as in C++, and the
+Floating-point math works the same in python as in C++.  The core operators
+are ``+``, ``-``, ``*``, and ``/``, just like in C++,  and the
 operator precedence is the same as well.
-
-For example
-
 
 ``**`` operator
 ---------------
