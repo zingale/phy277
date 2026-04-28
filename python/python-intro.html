@@ -569,23 +569,37 @@ span.prompt1:before {
   content: "$ ";
 }
 </style><span class="prompt1">python<span class="w"> </span>hello.py</span>
-</pre></div></div><p>This invokes the <em>python interpreter</em>, <code class="docutils literal notranslate"><span class="pre">python</span></code>, which runs the code in our file.
-We can already see some similarities with C++:</p>
+</pre></div></div><p>This invokes the <em>python interpreter</em>, <code class="docutils literal notranslate"><span class="pre">python</span></code>, which runs the code in our file.</p>
+<p>We can already see some similarities with C++:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code> is a function that takes arguments</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World&quot;</span></code> is a string.</p></li>
 </ul>
+<p>but also some differences, perhaps the biggest of which is that <em>there is no ``main`` function</em>.</p>
 </section>
 <section id="using-python">
 <h2>Using python<a class="headerlink" href="#using-python" title="Link to this heading">#</a></h2>
+<p>Python is used not only for writing programs, but it is used interactively.</p>
 <p>There are several ways we can work with python:</p>
-<ul class="simple">
-<li><p>Writing scripts / programs in files ending with <code class="docutils literal notranslate"><span class="pre">.py</span></code>
+<ul>
+<li><p>Writing scripts / programs in files ending with <code class="docutils literal notranslate"><span class="pre">.py</span></code>.
 For this we would use our editor to write the program
-and then run it via the <code class="docutils literal notranslate"><span class="pre">python</span></code> command, as we did above.</p></li>
+and then run it via the <code class="docutils literal notranslate"><span class="pre">python</span></code> command, as we did above.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<blockquote>
+<div><p>We can add the following line to our <code class="docutils literal notranslate"><span class="pre">.emacs</span></code> to have
+it automatically check our code as we write it (the same
+way we did with C++):</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">add</span><span class="o">-</span><span class="n">hook</span> <span class="s1">&#39;python-mode-hook &#39;</span><span class="n">flycheck</span><span class="o">-</span><span class="n">mode</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</li>
 <li><p>Interactively, using the interpreter as a REPL, just
 like we saw with Bash in our discussion <a class="reference internal" href="../shell/shell.html#sec-the-shell-repl"><span class="std std-ref">The shell</span></a>.</p>
-<ul>
+<ul class="simple">
 <li><p>We can use the python, or <a class="reference external" href="https://ipython.org/">ipython</a>
 interpreter for this.  These support command recall via
 the arrow keys and tab-completion.</p></li>
@@ -598,6 +612,13 @@ all in a single document (a notebook).</p></li>
 </ul>
 <p>We will mostly work with just <code class="docutils literal notranslate"><span class="pre">python</span></code>, both interactively
 and for running scripts.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We can use python as a calculator just by doing typing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">python</span>
+</pre></div></div><p>in our shell, and then typing math expressions (using much the same syntax
+as in C++), e.g.,  <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">5</span></code></p>
+</div>
 </section>
 <section id="using-the-mathlab-computers">
 <h2>Using the MathLab computers<a class="headerlink" href="#using-the-mathlab-computers" title="Link to this heading">#</a></h2>
@@ -611,7 +632,8 @@ the python interpreter just by doing:</p>
 <p>If you want to setup python on your own computer, I would recommend
 the Anaconda python distribution.  This will install the latest python
 version and all of the libraries we typically need for scientific
-computing.  You can download the installer at
+computing.</p>
+<p>You can download the installer at
 <a class="reference external" href="https://www.anaconda.com/download/success?reg=skipped">https://www.anaconda.com/download/success?reg=skipped</a></p>
 <p>Anaconda is available for Linux, Mac, and Windows, and is completely free.</p>
 </section>

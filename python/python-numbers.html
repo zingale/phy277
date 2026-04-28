@@ -588,12 +588,25 @@ is holding:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0.5 &lt;class &#39;float&#39;&gt;
 </pre></div>
 </div>
+<p>As noticed previously, in python the number of bits used to store an integer
+will grow as needed, preventing overflow.</p>
+<p>For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">123456789012345678901234567890</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">bit_length</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>shows that this number requires 97-bits.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here we are seeing that python treats integers as objects of the <code class="docutils literal notranslate"><span class="pre">int</span></code> class,
+and <code class="docutils literal notranslate"><span class="pre">.bit_length()</span></code> is a member-function (or a <em>method</em>, in python naming conventions).</p>
+</div>
 </section>
 <section id="floating-point">
 <h2>Floating point<a class="headerlink" href="#floating-point" title="Link to this heading">#</a></h2>
-<p>Floating-point math works the same in python as in C++, and the
+<p>Floating-point math works the same in python as in C++.  The core operators
+are <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, and <code class="docutils literal notranslate"><span class="pre">/</span></code>, just like in C++,  and the
 operator precedence is the same as well.</p>
-<p>For example</p>
 <section id="operator">
 <h3><code class="docutils literal notranslate"><span class="pre">**</span></code> operator<a class="headerlink" href="#operator" title="Link to this heading">#</a></h3>
 <p>Python has a power operator, <code class="docutils literal notranslate"><span class="pre">**</span></code>, so we can do <span class="math notranslate nohighlight">\(x^(5/2)\)</span> as <code class="docutils literal notranslate"><span class="pre">x**2.5</span></code>.</p>

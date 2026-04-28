@@ -20,21 +20,36 @@ and then we can run it as:
    python hello.py
 
 This invokes the *python interpreter*, ``python``, which runs the code in our file.
+
 We can already see some similarities with C++:
 
 * ``print()`` is a function that takes arguments
 
 * ``"Hello, World"`` is a string.
 
+but also some differences, perhaps the biggest of which is that *there is no ``main`` function*.
+
 
 Using python
 ============
 
+Python is used not only for writing programs, but it is used interactively.
+
 There are several ways we can work with python:
 
-* Writing scripts / programs in files ending with ``.py``
+* Writing scripts / programs in files ending with ``.py``.
   For this we would use our editor to write the program
   and then run it via the ``python`` command, as we did above.
+
+  .. tip::
+
+     We can add the following line to our ``.emacs`` to have
+     it automatically check our code as we write it (the same
+     way we did with C++):
+
+    ::
+
+       (add-hook 'python-mode-hook 'flycheck-mode)
 
 * Interactively, using the interpreter as a REPL, just
   like we saw with Bash in our discussion :ref:`sec:the_shell_repl`.
@@ -50,6 +65,18 @@ There are several ways we can work with python:
 
 We will mostly work with just ``python``, both interactively
 and for running scripts.
+
+.. tip::
+
+   We can use python as a calculator just by doing typing
+
+   .. prompt:: bash
+
+      python
+
+   in our shell, and then typing math expressions (using much the same syntax
+   as in C++), e.g.,  ``1 + 2 * 5``
+
 
 Using the MathLab computers
 ===========================
@@ -70,7 +97,9 @@ Using your own computer
 If you want to setup python on your own computer, I would recommend
 the Anaconda python distribution.  This will install the latest python
 version and all of the libraries we typically need for scientific
-computing.  You can download the installer at
+computing.
+
+You can download the installer at
 https://www.anaconda.com/download/success?reg=skipped
 
 Anaconda is available for Linux, Mac, and Windows, and is completely free.
