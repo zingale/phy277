@@ -78,7 +78,7 @@ is a ``float``.
 Floating point limits
 ---------------------
 
-The python equivalent of the C++ ``std::numeric_limits`` is ``sys.float_info``:
+The python equivalent of the C++ ``std::numeric_limits`` is `sys.float_info <https://docs.python.org/3/library/sys.html#sys.float_info>`_:
 
 .. code:: python
 
