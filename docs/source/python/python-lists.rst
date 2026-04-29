@@ -14,6 +14,13 @@ In particular:
 
 * We use ``[]`` and 0-based indexing to get an element of a list---just like in C++
 
+  * If we use a negative index, then we access elements from the end, e.g.,
+    ``alist[-1]`` is the last element in a list ``alist``.  This is
+    similar to the C++ ``.back()`` function.
+
+* We can use the ``len()`` function to get the number of elements in a
+  list.  Unlike C++ ``.size()``, this is not a member of the list
+  class, so we would do ``len(alist)``.
 
 .. grid:: 2
 

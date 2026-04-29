@@ -271,7 +271,7 @@ the top of many pages.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Python Crash Course
+   :caption: Python
    :hidden:
 
    python/python-intro
@@ -281,7 +281,17 @@ the top of many pages.
    python/python-lists
    python/python-conditionals
    python/python-functions
+   python/python-classes
+   python/python-examples
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Scientific Python
+   :hidden:
+
+   python/python-numpy
+   python/python-matplotlib
+   python/calling-cxx-from-python
 
 .. toctree::
    :maxdepth: 1

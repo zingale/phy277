@@ -53,6 +53,8 @@ In the second example, function ``g``, we captured ``x`` by reference
 ``[&]``, so we can update it.
 
 
+.. _sec:lambda-sort:
+
 Sort Example
 ============
 

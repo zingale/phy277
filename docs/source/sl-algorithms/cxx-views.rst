@@ -5,6 +5,8 @@ Views
 Views are a special type of range---it does not own its own data,
 and it is *lazy*---it generates the data as needed.
 
+.. _sec:ranges-iota:
+
 ``iota``
 ========
 
