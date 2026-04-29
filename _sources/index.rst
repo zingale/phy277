@@ -271,7 +271,7 @@ the top of many pages.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Python Crash Course
+   :caption: Python
    :hidden:
 
    python/python-intro
