@@ -548,7 +548,10 @@
                 <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-arguments">Keyword arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-functions">Lambda functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-examples">Some examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-examples">Some examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trapezoid-rule-integration">Trapezoid rule integration</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -646,6 +649,68 @@ used for sorting (much like we saw in C++).</p>
 </section>
 <section id="some-examples">
 <h2>Some examples<a class="headerlink" href="#some-examples" title="Link to this heading">#</a></h2>
+<section id="trapezoid-rule-integration">
+<h3>Trapezoid rule integration<a class="headerlink" href="#trapezoid-rule-integration" title="Link to this heading">#</a></h3>
+<p>Let’s rewrite our <a class="reference internal" href="../algorithms/integration.html#sec-trapezoid-rule"><span class="std std-ref">Trapezoid rule</span></a> example in python.  We
+want a python function <code class="docutils literal notranslate"><span class="pre">trapezoid</span></code> that takes a range and a function
+to integrate.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 138 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">trapezoid.py</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">trapezoid</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Integrate function func(x) from a to b using N intervals of</span>
+<span class="sd">    the trapezoid rule.&quot;&quot;&quot;</span>
+
+    <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
+
+    <span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">xl</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">n</span>
+        <span class="n">xr</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">dx</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">fl</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">xl</span><span class="p">)</span>
+        <span class="n">fr</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">xr</span><span class="p">)</span>
+
+        <span class="n">I</span> <span class="o">+=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">*</span> <span class="p">(</span><span class="n">fl</span> <span class="o">+</span> <span class="n">fr</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">I</span>
+
+<span class="c1"># test out our trapezoid rule</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">1.5</span>
+
+<span class="n">I_exact</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">N</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">]:</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="n">trapezoid</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span>
+                  <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">x</span><span class="p">))</span>
+
+    <span class="n">err</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">I</span> <span class="o">-</span> <span class="n">I_exact</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">N</span><span class="si">:</span><span class="s2">3</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">I</span><span class="si">:</span><span class="s2">7.5f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">err</span><span class="si">:</span><span class="s2">9.6g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<p>Notice:</p>
+<ul>
+<li><p>In python, the function that we pass into <code class="docutils literal notranslate"><span class="pre">trapezoid()</span></code> is treated
+like any other object, and we don’t need to give it a special type
+or other specifier.</p></li>
+<li><p>We have a multi-line string just after the function definition (in
+python, multi-line strings use triple quotes, <cite>“””</cite>.  This is a
+<em>docstring</em>—this is what <code class="docutils literal notranslate"><span class="pre">help()</span></code> provides when we ask about a
+function.</p>
+<p>If we do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">trapezoid</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>you’ll see this help.</p>
+</li>
+<li><p>We use a lambda-function to pass in the integrand.</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -698,7 +763,10 @@ used for sorting (much like we saw in C++).</p>
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keyword-arguments">Keyword arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-functions">Lambda functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-examples">Some examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-examples">Some examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trapezoid-rule-integration">Trapezoid rule integration</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

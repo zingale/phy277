@@ -88,3 +88,38 @@ We can rewrite our C++ sorting example (see :ref:`sec:lambda-sort`) in python:
 
 Some examples
 =============
+
+Trapezoid rule integration
+--------------------------
+
+Let's rewrite our :ref:`sec:trapezoid-rule` example in python.  We
+want a python function ``trapezoid`` that takes a range and a function
+to integrate.
+
+.. literalinclude:: ../../../examples/python/trapezoid.py
+   :language: python
+   :caption: ``trapezoid.py``
+
+Notice:
+
+* In python, the function that we pass into ``trapezoid()`` is treated
+  like any other object, and we don't need to give it a special type
+  or other specifier.
+
+* We have a multi-line string just after the function definition (in
+  python, multi-line strings use triple quotes, `"""`.  This is a
+  *docstring*---this is what ``help()`` provides when we ask about a
+  function.
+
+  If we do:
+
+  .. code:: python
+
+     help(trapezoid)
+
+  you'll see this help.
+
+* We use a lambda-function to pass in the integrand.
+
+
+

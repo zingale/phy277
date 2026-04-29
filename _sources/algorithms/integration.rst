@@ -34,6 +34,8 @@ This is not very accurate, and the truncation error can be shown to be
 $\mathcal{O}(\Delta x)$---making the method first-order accurate.
 
 
+.. _sec:trapezoid-rule:
+
 Trapezoid rule
 ==============
 
