@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>if-tests and Loops &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Loops and if-tests &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -331,7 +331,7 @@
 <li class="toctree-l1"><a class="reference internal" href="python-numbers.html">Integers, Floats, and Math</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-strings.html">Strings and <code class="docutils literal notranslate"><span class="pre">print</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-lists.html">Lists</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">if</span></code>-tests and Loops</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Loops and <code class="docutils literal notranslate"><span class="pre">if</span></code>-tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-functions.html">Functions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">In-class Activities</span></p>
@@ -515,7 +515,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -526,11 +528,23 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>if-tests and Loops</h1>
+    <h1>Loops and if-tests</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">Loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-over-containers">Looping over containers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -540,9 +554,52 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="if-tests-and-loops">
-<h1><code class="docutils literal notranslate"><span class="pre">if</span></code>-tests and Loops<a class="headerlink" href="#if-tests-and-loops" title="Link to this heading">#</a></h1>
-<p>python has the same conditionals as C++, and the syntax and use is very similar.</p>
+  <section id="loops-and-if-tests">
+<h1>Loops and <code class="docutils literal notranslate"><span class="pre">if</span></code>-tests<a class="headerlink" href="#loops-and-if-tests" title="Link to this heading">#</a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>python uses whitespace to denote a code block in if-statements, loops, functions,
+and more.</p>
+</div>
+<section id="loops">
+<h2>Loops<a class="headerlink" href="#loops" title="Link to this heading">#</a></h2>
+<p>The python <code class="docutils literal notranslate"><span class="pre">while</span></code> loop behaves just like in C++:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Notice that the condition ends with a <code class="docutils literal notranslate"><span class="pre">:</span></code> and then the body of the
+loop is indented.</p>
+<p>For the loop above, we would usually use the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#range">range</a> function
+(this is analogous to C++ <code class="docutils literal notranslate"><span class="pre">std::ranges::iota</span></code> that we looked at):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="looping-over-containers">
+<h3>Looping over containers<a class="headerlink" href="#looping-over-containers" title="Link to this heading">#</a></h3>
+<p>We already saw that we can use <code class="docutils literal notranslate"><span class="pre">for</span></code> to loop over elements of a list.  This also
+works for characters in a string, and pretty much any other container in python.</p>
+</section>
+</section>
+<section id="conditionals">
+<h2>Conditionals<a class="headerlink" href="#conditionals" title="Link to this heading">#</a></h2>
+<p>python if-statements work the same as in C++.  The C++ combination
+<code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code> is contracted to <code class="docutils literal notranslate"><span class="pre">elif</span></code> in python, and whitespace is
+used to denote the block that is executed for each branch:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;negative&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;zero&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;positive&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -580,6 +637,27 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">Loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-over-containers">Looping over containers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
