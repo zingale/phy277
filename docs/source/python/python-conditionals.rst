@@ -24,7 +24,7 @@ loop is indented.
 
 For the loop above, we would usually use the `range
 <https://docs.python.org/3/library/stdtypes.html#range>`_ function
-(this is analogous to C++ ``std::ranges::iota`` that we looked at):
+(this is analogous to C++ ``std::ranges::iota`` that we looked at :ref:`sec:ranges-iota`):
 
 .. code:: python
 
