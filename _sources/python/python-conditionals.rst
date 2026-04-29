@@ -71,6 +71,7 @@ until $1 + \epsilon == 1$.  Let's rewrite that in python:
    :language: python
    :caption: ``epsilon.py``
 
+Notice how similar this code is to the C++ version.
 
 Fibonacci sequence
 ------------------
