@@ -50,6 +50,8 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'python/python-conditionals';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -543,6 +545,11 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-epsilon">Machine epsilon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci-sequence">Fibonacci sequence</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -600,6 +607,62 @@ used to denote the block that is executed for each branch:</p>
 </pre></div>
 </div>
 </section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<section id="machine-epsilon">
+<h3>Machine epsilon<a class="headerlink" href="#machine-epsilon" title="Link to this heading">#</a></h3>
+<p>In <a class="reference internal" href="../homework/homework5.html#sec-homework5"><span class="std std-ref">Homework #5</span></a>, we found machine <span class="math notranslate nohighlight">\(\epsilon\)</span> by looping
+until <span class="math notranslate nohighlight">\(1 + \epsilon == 1\)</span>.  Let’s rewrite that in python:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 135 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">epsilon.py</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">epsilon</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="k">while</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">epsilon</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">epsilon</span> <span class="o">/=</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;epsilon = </span><span class="si">{</span><span class="n">epsilon</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="fibonacci-sequence">
+<h3>Fibonacci sequence<a class="headerlink" href="#fibonacci-sequence" title="Link to this heading">#</a></h3>
+<p>Let’s rewrite our <a class="reference internal" href="../cxx-basics/conditional-loop-examples.html#sec-fibonacci"><span class="std std-ref">Fibonacci sequence</span></a> example in python:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 136 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">fibonacci.py</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+
+<span class="c1"># initialize a list with 2 elements</span>
+
+<span class="n">fib</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many terms of the Fibonacci sequence to compute? (N &gt; 2) &quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">N</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="c1"># we&#39;ve already got 2</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Error: must enter N &gt; 2&quot;</span><span class="p">)</span>
+
+<span class="c1"># add to the sequence</span>
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">:</span>
+    <span class="n">fib</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fib</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="c1"># now output -- we can just print the list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<p>A few notes:</p>
+<ul class="simple">
+<li><p>We use <code class="docutils literal notranslate"><span class="pre">input()</span></code> to read from the terminal.  This will return
+a string, so we cast it to an <code class="docutils literal notranslate"><span class="pre">int</span></code> using <code class="docutils literal notranslate"><span class="pre">int()</span></code>.</p></li>
+<li><p>We can easily access the last 2 elements of the list using
+<code class="docutils literal notranslate"><span class="pre">fib[-1]</span></code> and <code class="docutils literal notranslate"><span class="pre">fib[-2]</span></code>.</p></li>
+<li><p>Unlike the C++ version (which used <code class="docutils literal notranslate"><span class="pre">long</span></code>), we don’t overflow
+even if we ask for 100 terms, because python integers grow
+as needed.</p></li>
+</ul>
+</section>
+</section>
 </section>
 
 
@@ -654,6 +717,11 @@ used to denote the block that is executed for each branch:</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-epsilon">Machine epsilon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fibonacci-sequence">Fibonacci sequence</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

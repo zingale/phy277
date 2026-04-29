@@ -33,6 +33,7 @@ Some notes:
   a ``bool``, this is already a valid condition, and we don't need to do
   something like ``is_prime == true``.
 
+.. _sec:fibonacci:
 
 Fibonacci sequence
 ==================

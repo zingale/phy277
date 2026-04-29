@@ -56,3 +56,40 @@ used to denote the block that is executed for each branch:
        print("zero")
    else:
        print("positive")
+
+
+Examples
+========
+
+Machine epsilon
+---------------
+
+In :ref:`sec:homework5`, we found machine $\epsilon$ by looping
+until $1 + \epsilon == 1$.  Let's rewrite that in python:
+
+.. literalinclude:: ../../../examples/python/epsilon.py
+   :language: python
+   :caption: ``epsilon.py``
+
+
+Fibonacci sequence
+------------------
+
+Let's rewrite our :ref:`sec:fibonacci` example in python:
+
+.. literalinclude:: ../../../examples/python/fibonacci.py
+   :language: python
+   :caption: ``fibonacci.py``
+
+A few notes:
+
+* We use ``input()`` to read from the terminal.  This will return
+  a string, so we cast it to an ``int`` using ``int()``.
+
+* We can easily access the last 2 elements of the list using
+  ``fib[-1]`` and ``fib[-2]``.
+
+* Unlike the C++ version (which used ``long``), we don't overflow
+  even if we ask for 100 terms, because python integers grow
+  as needed.
+
