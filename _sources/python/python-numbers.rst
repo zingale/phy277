@@ -89,7 +89,7 @@ The python equivalent of the C++ ``std::numeric_limits`` is `sys.float_info <htt
 ``**`` operator
 ---------------
 
-Python has a power operator, ``**``, so we can do $x^(5/2)$ as ``x**2.5``.
+Python has a power operator, ``**``, so we can do $x^{5/2}$ as ``x**2.5``.
 
 
 ``math`` module
