@@ -578,11 +578,69 @@ argument type (<code class="docutils literal notranslate"><span class="pre">i</s
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>python functions always return a value.  If you do not include a
+<code class="docutils literal notranslate"><span class="pre">return</span></code> statement, then a special quantity, <code class="docutils literal notranslate"><span class="pre">None</span></code> will be
+returned.</p>
+</div>
 <section id="keyword-arguments">
 <h2>Keyword arguments<a class="headerlink" href="#keyword-arguments" title="Link to this heading">#</a></h2>
+<p>We can have <em>keyword arguments</em> to a function.  If we do not provide a
+value for these arguments when we call the function, then the default
+value is used.</p>
+<p>Here’s an example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_sin</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">in_degrees</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">in_degrees</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If we call this without specifying <code class="docutils literal notranslate"><span class="pre">in_degrees</span></code>, then the function will treat <code class="docutils literal notranslate"><span class="pre">theta</span></code> as in radians.
+If we set <code class="docutils literal notranslate"><span class="pre">in_degrees=True</span></code> when we call the function, then it will treat it as degrees.
+For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">my_sin</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="n">in_degrees</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 <section id="lambda-functions">
 <h2>Lambda functions<a class="headerlink" href="#lambda-functions" title="Link to this heading">#</a></h2>
+<p>Just like C++, python has lambda functions.  They are used in much the
+same way—sometimes we need a function once, as an argument to
+another function.</p>
+<p>The syntax of a lambda function is: <code class="samp docutils literal notranslate"><span class="pre">lambda</span> <em><span class="pre">args</span></em> <span class="pre">:</span> <em><span class="pre">statement</span></em></code>,
+where <code class="samp docutils literal notranslate"><em><span class="pre">args</span></em></code> are the arguments of the function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Python lambda functions are limited to a single statement in the function body.
+Furthermore, we do not use an explicit <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.</p>
+</div>
+<p>As an example, consider the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list.sort">sort</a>
+function on a list—it can take a <em>key</em> argument that provides a function
+used for sorting (much like we saw in C++).</p>
+<p>We can rewrite our C++ sorting example (see <a class="reference internal" href="../sl-algorithms/cxx-lambdas.html#sec-lambda-sort"><span class="std std-ref">Sort Example</span></a>) in python:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 137 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">sort_example.py</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a new hope&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;the empire strikes back&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;return of the jedi&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;the phantom menace&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;attack of the clones&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;revenge of the sith&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;the force awakens&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;the last jedi&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;the rise of skywalker&quot;</span><span class="p">]</span>
+
+<span class="c1"># sort by string length</span>
+<span class="n">titles</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">titles</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
 </section>
 <section id="some-examples">
 <h2>Some examples<a class="headerlink" href="#some-examples" title="Link to this heading">#</a></h2>
