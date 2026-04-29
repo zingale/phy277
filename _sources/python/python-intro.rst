@@ -85,14 +85,14 @@ For most of what are a going to do, we can just use the python version that
 is the default on our computers (it is a bit old, but it's okay).  We can start
 the python interpreter just by doing:
 
-.. bash:: prompt
+.. prompt:: bash
 
    python
 
 When we need to install additionally libraries later, we can use the `pip command <https://pip.pypa.io/en/stable/>`_.
 
 Using ``portal`` / ``portal2``
-=============================
+==============================
 
 The default version of python on ``portal`` / ``portal2`` is python 3.9, which is quite old.
 We can run python 3.12 by using the command:
