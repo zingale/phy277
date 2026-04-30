@@ -598,6 +598,17 @@ loop is indented.</p>
 <h3>Looping over containers<a class="headerlink" href="#looping-over-containers" title="Link to this heading">#</a></h3>
 <p>We already saw that we can use <code class="docutils literal notranslate"><span class="pre">for</span></code> to loop over elements of a list.  This also
 works for characters in a string, and pretty much any other container in python.</p>
+<p>For example, we can loop over characters in a string:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s2">&quot;the quick brown fox jumps over the lazy dog&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>but strings have lots of methods, and we can use the <code class="docutils literal notranslate"><span class="pre">.split()</span></code> method to
+split based on spaces and loop over words:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="s2">&quot;the quick brown fox jumps over the lazy dog&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="conditionals">

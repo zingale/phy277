@@ -29,3 +29,9 @@ We want to implement the functionality from :ref:`sec:cxx-class-solar-extend`.
 In particular, we want our ``Planet`` class to have methods for adding and getting
 a planet, and computing the period.
 
+
+Planetary orbit integrator
+==========================
+
+Let's review our :ref:`planetary_orbit` example in python.  As we do it, we
+can put all of the functions inside of a class.
