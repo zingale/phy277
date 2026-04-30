@@ -62,6 +62,26 @@ Here's a python module that implements our vector class:
    :language: python
    :caption: ``vector.py``
 
+Some comments:
+
+* We use ``isinstance`` to check if the type of ``other`` makes sense.  If not,
+  we raise an `exception <https://docs.python.org/3/library/exceptions.html>`_
+  that halts the execution.
+
+* In addition to ``__str__``, we also include ``__repr__`` which is the *representation*
+  of our object.  That is used when the ``Vector`` is displayed via means other than ``print``
+  see this `stackoverflow discussion on __repr__ vs __str__ <https://stackoverflow.com/questions/1436703/what-is-the-difference-between-str-and-repr>`_.
+
+* The ``/`` operator is called ``__truediv__`` in python.
+
+* We have a ``__matmul__`` operator, which is invoked by the ``@`` operator.
+  This is intended to be used for dot-products and matrix multiplication.
+
+* Just like in C++, we treat ``vec * a`` and ``a * vec`` differently
+  (where ``vec`` is a ``Vector``), since we cannot assume the objects
+  commute under multiplication.  We use ``__rmul__`` to express
+  right-multiplication.
+
 and here's an example of using it---note the ``import vector`` at the top.
 
 .. literalinclude:: ../../../examples/python/test_vector.py
