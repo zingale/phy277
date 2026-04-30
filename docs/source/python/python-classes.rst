@@ -28,4 +28,18 @@ Some notes:
   ``Planet``.  It returns a string that we would like ``print`` to
   display.
 
+* Our ``planets`` list contains ``Planet``, this is similar to C++
+  ``std::vector<Planet> planets``.
+
+Operator overloading
+====================
+
+We can overload ``+``, ``-``, ``*``, ``/``, ... in python just like in
+C++.  This is done by creating functions like ``__add__(self, x)__``
+for addition, etc.  There are many of these `special method names
+<https://docs.python.org/3/reference/datamodel.html#special-method-names>`_
+that we can implement (see in particular the `emulating numeric types
+<https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types>`_
+section).
+
 
