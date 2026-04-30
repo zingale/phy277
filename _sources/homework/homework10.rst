@@ -54,7 +54,7 @@ Homework #10
    Rewrite this example in python---your solution should include a
    python function named ``is_prime``.
 
-3. In class, we write a python version of :ref:`sec:python-trapzoid`.
+3. In class, we write a python version of :ref:`sec:python-trapezoid`.
    Modify this to implement Simpson's rule for integration (see our C++
    version at :ref:`sec:simpsons-rule`).
 
