@@ -523,7 +523,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -539,6 +541,14 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">Operator overloading</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -607,7 +617,17 @@ e.g., <code class="docutils literal notranslate"><span class="pre">self.name</sp
 output.  This is the function that is called when we <code class="docutils literal notranslate"><span class="pre">print()</span></code> a
 <code class="docutils literal notranslate"><span class="pre">Planet</span></code>.  It returns a string that we would like <code class="docutils literal notranslate"><span class="pre">print</span></code> to
 display.</p></li>
+<li><p>Our <code class="docutils literal notranslate"><span class="pre">planets</span></code> list contains <code class="docutils literal notranslate"><span class="pre">Planet</span></code>, this is similar to C++
+<code class="docutils literal notranslate"><span class="pre">std::vector&lt;Planet&gt;</span> <span class="pre">planets</span></code>.</p></li>
 </ul>
+<section id="operator-overloading">
+<h2>Operator overloading<a class="headerlink" href="#operator-overloading" title="Link to this heading">#</a></h2>
+<p>We can overload <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, … in python just like in
+C++.  This is done by creating functions like <code class="docutils literal notranslate"><span class="pre">__add__(self,</span> <span class="pre">x)__</span></code>
+for addition, etc.  There are many of these <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#special-method-names">special method names</a>
+that we can implement (see in particular the <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types">emulating numeric types</a>
+section).</p>
+</section>
 </section>
 
 
@@ -645,6 +665,23 @@ display.</p></li>
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">Operator overloading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
