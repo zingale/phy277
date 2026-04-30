@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>File Permissions &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Homework #10 &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -50,12 +50,14 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'shell/permissions';</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'homework/homework10';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Search Path" href="path.html" />
-    <link rel="prev" title="scp and Transferring Files" href="../getting_started/scp.html" />
+    <link rel="next" title="Midterm 1" href="../exam-solutions/midterm1.html" />
+    <link rel="prev" title="Homework #9" href="homework9.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -163,20 +165,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/ai.html">What About AI?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The UNIX Shell</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="why_command_line.html">Why Use the Command Line?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell.html">The Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sample-data.html">Some Sample Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="filesystem.html">Navigating the Filesystem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-history.html">Shell History</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-file-create.html">Create Files and Directories</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-copy-move.html">Copying, Moving, and Deleting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-wildcards.html">Wildcards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-redirection-pipes.html">Redirection and Pipes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="finding.html"><code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../shell/why_command_line.html">Why Use the Command Line?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell.html">The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/sample-data.html">Some Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/filesystem.html">Navigating the Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-history.html">Shell History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-file-create.html">Create Files and Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-copy-move.html">Copying, Moving, and Deleting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-wildcards.html">Wildcards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-redirection-pipes.html">Redirection and Pipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/finding.html"><code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/scp.html"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">File Permissions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="path.html">Search Path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/permissions.html">File Permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/path.html">Search Path</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Programming</span></p>
 <ul class="nav bd-sidenav">
@@ -353,17 +355,17 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Homework</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework1.html">Homework #1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework2.html">Homework #2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework3.html">Homework #3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework4.html">Homework #4</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework5.html">Homework #5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework6.html">Homework #6</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework7.html">Homework #7</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework8.html">Homework #8</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework9.html">Homework #9</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../homework/homework10.html">Homework #10</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="homework1.html">Homework #1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework2.html">Homework #2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework3.html">Homework #3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework4.html">Homework #4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework5.html">Homework #5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework6.html">Homework #6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework7.html">Homework #7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework8.html">Homework #8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework9.html">Homework #9</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Homework #10</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exams</span></p>
 <ul class="nav bd-sidenav">
@@ -445,7 +447,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/shell/permissions.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/homework/homework10.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -462,7 +464,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/shell/permissions.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/homework/homework10.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -479,7 +481,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fshell/permissions.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fhomework/homework10.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -524,9 +526,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -537,22 +537,11 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>File Permissions</h1>
+    <h1>Homework #10</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-permissions">Modifying permissions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#executable-scripts">Executable scripts</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -562,128 +551,83 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="file-permissions">
-<h1>File Permissions<a class="headerlink" href="#file-permissions" title="Link to this heading">#</a></h1>
-<p>Let’s look at the full directory listing in our <code class="docutils literal notranslate"><span class="pre">shell-lesson-data/</span></code> directory:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">ls<span class="w"> </span>-l</span>
-</pre></div></div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="mi">56</span>
-<span class="n">drwxrwxr</span><span class="o">-</span><span class="n">x</span> <span class="mi">2</span> <span class="n">mzingale</span> <span class="n">domain</span> <span class="n">users</span>  <span class="mi">4096</span> <span class="n">Jul</span> <span class="mi">30</span>  <span class="mi">2021</span> <span class="n">creatures</span>
-<span class="n">drwxrwxr</span><span class="o">-</span><span class="n">x</span> <span class="mi">5</span> <span class="n">mzingale</span> <span class="n">domain</span> <span class="n">users</span>  <span class="mi">4096</span> <span class="n">Jul</span> <span class="mi">30</span>  <span class="mi">2021</span> <span class="n">data</span>
-<span class="n">drwxrwxr</span><span class="o">-</span><span class="n">x</span> <span class="mi">2</span> <span class="n">mzingale</span> <span class="n">domain</span> <span class="n">users</span>  <span class="mi">4096</span> <span class="n">Jul</span> <span class="mi">30</span>  <span class="mi">2021</span> <span class="n">molecules</span>
-<span class="n">drwxrwxr</span><span class="o">-</span><span class="n">x</span> <span class="mi">3</span> <span class="n">mzingale</span> <span class="n">domain</span> <span class="n">users</span>  <span class="mi">4096</span> <span class="n">Jul</span> <span class="mi">30</span>  <span class="mi">2021</span> <span class="n">north</span><span class="o">-</span><span class="n">pacific</span><span class="o">-</span><span class="n">gyre</span>
-<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">mzingale</span> <span class="n">domain</span> <span class="n">users</span>    <span class="mi">86</span> <span class="n">Jul</span> <span class="mi">30</span>  <span class="mi">2021</span> <span class="n">notes</span><span class="o">.</span><span class="n">txt</span>
-<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">mzingale</span> <span class="n">domain</span> <span class="n">users</span>    <span class="mi">13</span> <span class="n">Aug</span>  <span class="mi">4</span>  <span class="mi">2021</span> <span class="n">numbers</span><span class="o">.</span><span class="n">txt</span>
-<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">mzingale</span> <span class="n">domain</span> <span class="n">users</span>    <span class="mi">32</span> <span class="n">Jul</span> <span class="mi">30</span>  <span class="mi">2021</span> <span class="n">pizza</span><span class="o">.</span><span class="n">cfg</span>
-<span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">mzingale</span> <span class="n">domain</span> <span class="n">users</span> <span class="mi">21583</span> <span class="n">Jul</span> <span class="mi">30</span>  <span class="mi">2021</span> <span class="n">solar</span><span class="o">.</span><span class="n">pdf</span>
-<span class="n">drwxrwxr</span><span class="o">-</span><span class="n">x</span> <span class="mi">5</span> <span class="n">mzingale</span> <span class="n">domain</span> <span class="n">users</span>  <span class="mi">4096</span> <span class="n">Jul</span> <span class="mi">30</span>  <span class="mi">2021</span> <span class="n">writing</span>
-</pre></div>
-</div>
-<p>Let’s talk about the fields / columns that we see the listing:</p>
-<ul class="simple">
-<li><p>The first field (e.g. <code class="docutils literal notranslate"><span class="pre">drwxrwxr-x</span></code>) are the permissions of the file / directory.  They
-control who can read, write, and execute the file.</p></li>
-<li><p>We’ll skip the second column—we rarely need to worry about this</p></li>
-<li><p>The third field, <code class="docutils literal notranslate"><span class="pre">mzingale</span></code> in my case, is the username of the owner of the file</p></li>
-<li><p>The fourth field, <code class="docutils literal notranslate"><span class="pre">domain</span> <span class="pre">users</span></code> here, is the group that the file
-belongs to.  Groups are a Unix way to group together a bunch of
-users to give them all permission to access a file.</p></li>
-</ul>
-<p>We already discussed the remaining fields.</p>
-<p>Let’s look at the file permission block.  It looks something like this:</p>
-<a class="reference internal image-reference" href="../_images/file_permissions.png"><img alt="../_images/file_permissions.png" class="align-center" src="../_images/file_permissions.png" style="width: 80%;" />
-</a>
-<ul class="simple">
-<li><p>The first character is either <code class="docutils literal notranslate"><span class="pre">-</span></code> for a regular file, <code class="docutils literal notranslate"><span class="pre">l</span></code> for a link, or <code class="docutils literal notranslate"><span class="pre">d</span></code> for a directory</p></li>
-<li><p>The next characters are grouped into 3 sets of 3 characters.  The sets are:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">u</span></code> (<em>owner</em> or <em>user</em>) : this tells you what you are allowed to do with the file</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">g</span></code> (<em>group</em>) : this tells you what anyone in the Unix group is allowed to do with the file</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">o</span></code> ( <em>other</em>) : this tells you what any user on the system that doesn’t
-fall into the first 2 categories can do with the file</p></li>
-</ul>
-</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you want to affect all 3 categories (user, group, and other), you can
-use the <code class="docutils literal notranslate"><span class="pre">a</span></code> character.</p>
-</div>
-<p>Within each set, the meanings are:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code> : read permission</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">w</span></code> : write permission</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> : execute permission</p></li>
-</ul>
-<p>In the image above, the owner has read, write, and execute
-permissions, while members of the same group and anyone else only have
-read permissions for the file.</p>
-<section id="modifying-permissions">
-<h2>Modifying permissions<a class="headerlink" href="#modifying-permissions" title="Link to this heading">#</a></h2>
-<p>We can use the <code class="docutils literal notranslate"><span class="pre">chmod</span></code> command to change permissions on a file.</p>
-<p>For example, to remove the group’s write permission on <code class="docutils literal notranslate"><span class="pre">solar.pdf</span></code>, we would do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chmod<span class="w"> </span>g-w<span class="w"> </span>solar.pdf</span>
-</pre></div></div><p>Here, <code class="docutils literal notranslate"><span class="pre">g</span></code> means “group”.  You could also do <code class="docutils literal notranslate"><span class="pre">u</span></code> for “user” or
-<code class="docutils literal notranslate"><span class="pre">o</span></code> for “other”.  The <code class="docutils literal notranslate"><span class="pre">-</span></code> means remove the permission (and a <code class="docutils literal notranslate"><span class="pre">+</span></code>
-would add the permission), then the letters after that are what
-permission you are altering, <code class="docutils literal notranslate"><span class="pre">r</span></code>, <code class="docutils literal notranslate"><span class="pre">w</span></code> or <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>To give everyone on the system read permissions to <code class="docutils literal notranslate"><span class="pre">solar.pdf</span></code>,
-you can do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chmod<span class="w"> </span>a+r<span class="w"> </span>solar.pdf</span>
-</pre></div></div></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>There is an equivalent numerical way to describe permissions that
-you can read about here in the Wikipedia <a class="reference external" href="https://en.wikipedia.org/wiki/File-system_permissions">File-system permissions</a> article.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In order to be allowed to <code class="docutils literal notranslate"><span class="pre">cd</span></code> into a directory, you need to have
-execute permission on that directory.</p>
-<p>For example, try:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chmod<span class="w"> </span>u-x<span class="w"> </span>creatures</span>
-<span class="prompt1"><span class="nb">cd</span><span class="w"> </span>creatures</span>
-</pre></div></div></div>
-<section id="executable-scripts">
-<span id="sec-executable-scripts"></span><h3>Executable scripts<a class="headerlink" href="#executable-scripts" title="Link to this heading">#</a></h3>
-<p>Let’s create a simple script that just does <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code> for us.  But
-we’ll look to see how to make it executable on its own.  Put the
-following into a file <code class="docutils literal notranslate"><span class="pre">myscript.sh</span></code> (the <code class="docutils literal notranslate"><span class="pre">.sh</span></code> extension isn’t
-required, but it can be useful as a prompt to the user).</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-
-ls<span class="w"> </span>-l
-</pre></div>
-</div>
-<p>The first line is new to us.  That is called a <a class="reference external" href="https://en.wikipedia.org/wiki/Shebang_(Unix)">shebang</a> and it tells the
-operating system what interpreter to use to execute the script.  In
-this case, we point to <code class="docutils literal notranslate"><span class="pre">bash</span></code>.</p>
-<p>The next thing we need to do is make the script executable:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">chmod<span class="w"> </span>u+x<span class="w"> </span>myscript.sh</span>
-</pre></div></div><p>We can then run the script simply as:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">./myscript.sh</span>
-</pre></div></div><div class="admonition important">
+  <section id="homework-10">
+<h1>Homework #10<a class="headerlink" href="#homework-10" title="Link to this heading">#</a></h1>
+<div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The leading <code class="docutils literal notranslate"><span class="pre">./</span></code> here tells bash the path to find the file.  In
-this case, you are saying that the script is in the current (<code class="docutils literal notranslate"><span class="pre">.</span></code>)
-directory.</p>
-<p>Depending on how your system is set up, bash might not search in
-your current directory for commands when you type them, e.g., if
-you just do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt2:before {
-  content: " ";
-}
-</style><span class="prompt2">myscript.sh</span>
-</pre></div></div><p>you might be met with <code class="docutils literal notranslate"><span class="pre">myscript.sh:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code>.</p>
+<p>The file submission requirements are different than previous homeworks.</p>
+<p>For the C++ problems below, you need to submit a header file (<code class="docutils literal notranslate"><span class="pre">.H</span></code>) implementing
+the class described in the problem and a source file (<code class="docutils literal notranslate"><span class="pre">.cpp</span></code>) containing
+the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function and any tests that the problem asks for.</p>
+<p>For the python problems below, you need to submit a python source file (<code class="docutils literal notranslate"><span class="pre">.py</span></code>).</p>
 </div>
-</section>
-</section>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>All work must be your own.</p>
+<p>You may not use generative AI / large-language models for any part
+of this assignment.</p>
+</div>
+<ol class="arabic">
+<li><p><em>Multi-dimensional array extensions</em> : Start with our
+<a class="reference internal" href="../cxx-classes/contiguous_array.html#sec-contiguous-array-here"><span class="std std-ref">Contiguous multi-dimensional array</span></a> implementation from class.  Add the
+following member functions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.sum()</span></code> : returns the sum of all the elements in the array.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.max()</span></code> : returns the maximum value in the array.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.min()</span></code> : returns the minimum value in the array.</p></li>
+</ul>
+<p>Write a test driver, and create an array representing the  following 5 by 4 matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left ( \begin{array}{ccccc}
+    -20.0 &amp; 4.5 &amp; 1.45 &amp; 7.9 \\
+    -1.2 &amp; -10.4 &amp; 8.9 &amp; 6.49 \\
+    12.7 &amp; 14.4 &amp; 6.5 &amp; -10.9 \\
+    -2.4 &amp; 2.15 &amp; 1.15 &amp; 20.4 \\
+    -22.5 &amp; 64.5 &amp; -1.8 &amp; -7.1
+\end{array} \right )\end{split}\]</div>
+</li>
+<li><p>In <a class="reference internal" href="../cxx-functions/function-practice.html#sec-function-practice"><span class="std std-ref">Function Practice</span></a>, we wrote a function <code class="docutils literal notranslate"><span class="pre">is_prime()</span></code>
+took an <code class="docutils literal notranslate"><span class="pre">int</span></code> and returned a <code class="docutils literal notranslate"><span class="pre">bool</span></code> indicating whether the
+number was prime.  Here’s the code we produced:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 162 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">primes.cpp</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
+
+<span class="kt">bool</span><span class="w"> </span><span class="nf">is_prime</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">prime</span><span class="p">{</span><span class="nb">true</span><span class="p">};</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">max_factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">));</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">max_factor</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">N</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">prime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">prime</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n_max</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; is prime!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Rewrite this example in python—your solution should include a
+python function named <code class="docutils literal notranslate"><span class="pre">is_prime</span></code>.</p>
+</li>
+</ol>
 </section>
 
 
@@ -698,20 +642,20 @@ span.prompt2:before {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../getting_started/scp.html"
+       href="homework9.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</p>
+        <p class="prev-next-title">Homework #9</p>
       </div>
     </a>
     <a class="right-next"
-       href="path.html"
+       href="../exam-solutions/midterm1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Search Path</p>
+        <p class="prev-next-title">Midterm 1</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -721,26 +665,6 @@ span.prompt2:before {
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-permissions">Modifying permissions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#executable-scripts">Executable scripts</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

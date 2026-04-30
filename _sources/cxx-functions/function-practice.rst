@@ -1,3 +1,5 @@
+.. _sec:function-practice:
+
 *****************
 Function Practice
 *****************
