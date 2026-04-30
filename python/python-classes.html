@@ -553,6 +553,45 @@
 <p>Python doesn’t make a distinction between a <code class="docutils literal notranslate"><span class="pre">struct</span></code> and a
 <code class="docutils literal notranslate"><span class="pre">class</span></code>—we always use the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword.  For example,
 we can create our <code class="docutils literal notranslate"><span class="pre">struct</span> <span class="pre">Planet</span></code> from <a class="reference internal" href="../cxx-basics/cxx-structs.html#sec-structplanet"><span class="std std-ref">Creating a struct</span></a> as:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 139 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet.py</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Planet</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a Planet</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name: str</span>
+<span class="sd">        The name of the planet</span>
+<span class="sd">    a : float</span>
+<span class="sd">        The semi-major axis</span>
+<span class="sd">    e : float</span>
+<span class="sd">        The eccentricity</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">e</span> <span class="o">=</span> <span class="n">e</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="si">:</span><span class="s2">5.3f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">e</span><span class="si">:</span><span class="s2">5.3f</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+<span class="n">planets</span> <span class="o">=</span> <span class="p">[</span><span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Mercury&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.3871</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.2056</span><span class="p">),</span>
+           <span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Venus&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.7233</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0068</span><span class="p">),</span>
+           <span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Earth&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">1.0000</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0167</span><span class="p">),</span>
+           <span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Mars&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">1.5237</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0934</span><span class="p">),</span>
+           <span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Jupiter&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">5.2029</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0484</span><span class="p">),</span>
+           <span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Saturn&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">9.5370</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0539</span><span class="p">),</span>
+           <span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Uranus&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">19.189</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0473</span><span class="p">),</span>
+           <span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Neptune&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">30.070</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0086</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">planets</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <p>Some notes:</p>
 <ul>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function is the constructor in python.  Unlike C++,
