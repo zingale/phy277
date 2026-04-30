@@ -43,3 +43,28 @@ that we can implement (see in particular the `emulating numeric types
 section).
 
 
+Mathematical vector example
+===========================
+
+Let's implement a python version of our C++ :ref:`sec:vector2d`.
+
+.. tip::
+
+   We can put the class definition in its own ``.py`` file, and as long
+   as that is in the same directory (or installed in a systemwide search path),
+   we can ``import`` it.
+
+   This works similar to creating a header file in C++.
+
+Here's a python module that implements our vector class:
+
+.. literalinclude:: ../../../examples/python/vector.py
+   :language: python
+   :caption: ``vector.py``
+
+and here's an example of using it---note the ``import vector`` at the top.
+
+.. literalinclude:: ../../../examples/python/test_vector.py
+   :language: python
+   :caption: ``test_vector.py``
+
