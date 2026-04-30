@@ -6,7 +6,7 @@ Python doesn't make a distinction between a ``struct`` and a
 ``class``---we always use the ``class`` keyword.  For example,
 we can create our ``struct Planet`` from :ref:`sec:structplanet` as:
 
-.. literalinclude:: ../../../examples/planet.py
+.. literalinclude:: ../../../examples/python/planet.py
    :language: python
    :caption: ``planet.py``
 
