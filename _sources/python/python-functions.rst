@@ -122,4 +122,7 @@ Notice:
 * We use a lambda-function to pass in the integrand.
 
 
+Root-finding
+------------
 
+Let's rewrite our :ref:`sec:root-bisection` root-finding method in python.
