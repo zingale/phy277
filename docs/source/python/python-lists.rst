@@ -64,6 +64,18 @@ In particular:
    but this is rarely used in practice.  Usually we use them with a single
    type, much like with ``std::vector``.
 
+Checking for membership
+=======================
+
+We can use the ``in`` operator to check if an item is in a list, for example:
+
+.. code:: python
+
+   names = ["Homer", "Marge", "List", "Bart", "Maggie"]
+   "Homer" in names
+
+
+
 
 Example
 =======

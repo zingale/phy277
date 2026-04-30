@@ -37,6 +37,21 @@ Looping over containers
 We already saw that we can use ``for`` to loop over elements of a list.  This also
 works for characters in a string, and pretty much any other container in python.
 
+For example, we can loop over characters in a string:
+
+.. code:: python
+
+   for c in "the quick brown fox jumps over the lazy dog":
+       print(c)
+
+but strings have lots of methods, and we can use the ``.split()`` method to
+split based on spaces and loop over words:
+
+.. code:: python
+
+   for w in "the quick brown fox jumps over the lazy dog".split():
+       print(c)
+
 
 Conditionals
 ============
