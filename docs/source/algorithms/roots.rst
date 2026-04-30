@@ -17,6 +17,8 @@ so often we will check that :math:`f(x_l) \cdot f(x_r) < 0`.
 
 There are a large number of `root finding algorithms <https://en.wikipedia.org/wiki/Root-finding_algorithms>`_.
 
+.. _sec:root-bisection:
+
 Bisection
 =========
 
