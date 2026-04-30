@@ -1,3 +1,5 @@
+.. _sec:cxx-class-solar-extend:
+
 ********************************
 Extending our Solar System Class
 ********************************

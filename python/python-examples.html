@@ -523,7 +523,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -539,6 +541,18 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-and-more">Counting and more</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate"><code class="docutils literal notranslate"><span class="pre">enumerate</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-solar-system-class">Extended solar system class</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -551,6 +565,24 @@
   <section id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h1>
 <p>Let’s rewrite some of our C++ codes in python to see how the language works.</p>
+<section id="counting-and-more">
+<h2>Counting and more<a class="headerlink" href="#counting-and-more" title="Link to this heading">#</a></h2>
+<p>Python lists have a <code class="docutils literal notranslate"><span class="pre">count</span></code> method.  Let’s implement our <a class="reference internal" href="../sl-algorithms/cxx-vectors-algorithms.html#sec-ranges-count"><span class="std std-ref">Counting repetitions</span></a>
+example.</p>
+<p>What about doing a <code class="docutils literal notranslate"><span class="pre">count_if</span></code>?</p>
+<p>The rough equivalent of <code class="docutils literal notranslate"><span class="pre">std::ranges::find</span></code> is the <code class="docutils literal notranslate"><span class="pre">index</span></code> method.</p>
+<section id="enumerate">
+<h3><code class="docutils literal notranslate"><span class="pre">enumerate</span></code><a class="headerlink" href="#enumerate" title="Link to this heading">#</a></h3>
+<p>If we want to find the indices for multiple matches, we can use <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>
+to loop over a list.</p>
+</section>
+</section>
+<section id="extended-solar-system-class">
+<h2>Extended solar system class<a class="headerlink" href="#extended-solar-system-class" title="Link to this heading">#</a></h2>
+<p>We want to implement the functionality from <a class="reference internal" href="../cxx-classes/cxx-classes-planet-2.html#sec-cxx-class-solar-extend"><span class="std std-ref">Extending our Solar System Class</span></a>.
+In particular, we want our <code class="docutils literal notranslate"><span class="pre">Planet</span></code> class to have methods for adding and getting
+a planet, and computing the period.</p>
+</section>
 </section>
 
 
@@ -588,6 +620,27 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-and-more">Counting and more</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enumerate"><code class="docutils literal notranslate"><span class="pre">enumerate</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-solar-system-class">Extended solar system class</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
