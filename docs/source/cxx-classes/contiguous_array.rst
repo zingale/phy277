@@ -79,6 +79,8 @@ array is guaranteed to be contiguous in memory.
    If the array is large, this can result in a *stack overflow* and the code crashing.
    Try creating an array of size 1024 × 1024.
 
+.. _sec:contiguous-array-here:
+
 Contiguous multi-dimensional array
 ==================================
 
