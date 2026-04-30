@@ -12,6 +12,13 @@ we can create our ``struct Planet`` from :ref:`sec:structplanet` as:
 
 Some notes:
 
+* In python, the constructor (``__init__``) returns an object, so
+  we create a ``Planet`` like:
+
+  .. code:: python
+
+     p = Planet("Earth")
+
 * The ``__init__`` function is the constructor in python.  Unlike C++,
   in python, there is only a single constructor.
 
