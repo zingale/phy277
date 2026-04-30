@@ -704,6 +704,22 @@ we can <code class="docutils literal notranslate"><span class="pre">import</span
 </pre></div>
 </div>
 </div>
+<p>Some comments:</p>
+<ul class="simple">
+<li><p>We use <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> to check if the type of <code class="docutils literal notranslate"><span class="pre">other</span></code> makes sense.  If not,
+we raise an <a class="reference external" href="https://docs.python.org/3/library/exceptions.html">exception</a>
+that halts the execution.</p></li>
+<li><p>In addition to <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, we also include <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> which is the <em>representation</em>
+of our object.  That is used when the <code class="docutils literal notranslate"><span class="pre">Vector</span></code> is displayed via means other than <code class="docutils literal notranslate"><span class="pre">print</span></code>
+see this <a class="reference external" href="https://stackoverflow.com/questions/1436703/what-is-the-difference-between-str-and-repr">stackoverflow discussion on __repr__ vs __str__</a>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">/</span></code> operator is called <code class="docutils literal notranslate"><span class="pre">__truediv__</span></code> in python.</p></li>
+<li><p>We have a <code class="docutils literal notranslate"><span class="pre">__matmul__</span></code> operator, which is invoked by the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator.
+This is intended to be used for dot-products and matrix multiplication.</p></li>
+<li><p>Just like in C++, we treat <code class="docutils literal notranslate"><span class="pre">vec</span> <span class="pre">*</span> <span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">vec</span></code> differently
+(where <code class="docutils literal notranslate"><span class="pre">vec</span></code> is a <code class="docutils literal notranslate"><span class="pre">Vector</span></code>), since we cannot assume the objects
+commute under multiplication.  We use <code class="docutils literal notranslate"><span class="pre">__rmul__</span></code> to express
+right-multiplication.</p></li>
+</ul>
 <p>and here’s an example of using it—note the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">vector</span></code> at the top.</p>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-number">Listing 141 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">test_vector.py</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
