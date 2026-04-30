@@ -1,3 +1,5 @@
+.. _sec:simpsons-rule:
+
 **************************************
 High-order Integration: Simpson's Rule
 **************************************
