@@ -18,29 +18,25 @@ class Vector:
         if isinstance(other, Vector):
             return Vector(self.x + other.x, self.y + other.y)
         # it doesn't make sense to add anything but two vectors
-        print(f"we don't know how to add a {type(other)} to a Vector")
-        raise NotImplementedError
+        raise NotImplementedError(f"adding {type(other)} to Vector not defined")
 
     def __sub__(self, other):
         if isinstance(other, Vector):
             return Vector(self.x - other.x, self.y - other.y)
         # it doesn't make sense to add anything but two vectors
-        print(f"we don't know how to add a {type(other)} to a Vector")
-        raise NotImplementedError
+        raise NotImplementedError(f"subtracting {type(other)} from Vector not defined")
 
     def __mul__(self, other):
         if isinstance(other, (int, float)):
             # scalar multiplication changes the magnitude
             return Vector(other*self.x, other*self.y)
-        print("we don't know how to multiply two Vectors")
-        raise NotImplementedError
+        raise NotImplementedError("multiplication not defined")
 
     def __matmul__(self, other):
         # a dot product
         if isinstance(other, Vector):
             return self.x*other.x + self.y*other.y
-        print("matrix multiplication not defined")
-        raise NotImplementedError
+        raise NotImplementedError("matrix multiplication not defined")
 
     def __rmul__(self, other):
         return self.__mul__(other)
@@ -49,8 +45,7 @@ class Vector:
         # we only know how to multiply by a scalar
         if isinstance(other, (int, float)):
             return Vector(self.x/other, self.y/other)
-        print("we don't know how to divide two Vectors")
-        raise NotImplementedError
+        raise NotImplementedError("we don't know how to divide two Vectors")
 
     def __abs__(self):
         return math.sqrt(self.x**2 + self.y**2)
@@ -59,6 +54,6 @@ class Vector:
         return Vector(-self.x, -self.y)
 
     def cross(self, other):
-        # a vector cross product -- we return the magnitude, since it will
-        # be in the z-direction, but we are only 2-d
+        """a vector cross product -- we return the magnitude, since it will
+        be in the z-direction, but we are only 2-d"""
         return abs(self.x*other.y - self.y*other.x)
