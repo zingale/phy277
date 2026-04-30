@@ -89,6 +89,8 @@ We can rewrite our C++ sorting example (see :ref:`sec:lambda-sort`) in python:
 Some examples
 =============
 
+.. _sec:python-trapezoid:
+
 Trapezoid rule integration
 --------------------------
 

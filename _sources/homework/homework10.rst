@@ -54,11 +54,19 @@ Homework #10
    Rewrite this example in python---your solution should include a
    python function named ``is_prime``.
 
-3. Write a python program that:
+3. In class, we write a python version of :ref:`sec:python-trapzoid`.
+   Modify this to implement Simpson's rule for integration (see our C++
+   version at :ref:`sec:simpsons-rule`).
+
+4. Write a *python* program that:
+
    * creates an empty list, ``angles``
-   * using a loop, adds the numbers $n \pi / 8$ for $n = 0, 1, \ldots
-     8$ to the ``angles``
+
+   * using a loop, adds the numbers $n \pi / 8$ for $n = 0, 1, \ldots 8$
+     to ``angles``
+
    * creates a new list ``sines``, and using a second loop,
      adds the sine of each angle in ``angles`` to our new list ``sines``.
+
    * finally, outputs the results as (angle, sine) pairs, one
      pair per line.
