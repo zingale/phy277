@@ -74,7 +74,16 @@ We can use the ``in`` operator to check if an item is in a list, for example:
    names = ["Homer", "Marge", "List", "Bart", "Maggie"]
    "Homer" in names
 
+List concatenation
+==================
 
+We can concatenate two lists using the ``+`` operator:
+
+.. code:: python
+
+   x = ["a", "b"]
+   y = ["c", "d"]
+   z = x + y
 
 
 Example
