@@ -526,7 +526,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -542,6 +544,17 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-figure">Anatomy of a figure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-plotting">Basic plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-2-d-arrays">Visualizing 2-d arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-plot-types">Other plot types</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -553,6 +566,34 @@
                   
   <section id="matplotlib">
 <h1>matplotlib<a class="headerlink" href="#matplotlib" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://matplotlib.org/">matplotlib</a> is the core visualization package in python.
+We import it as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+<p>This puts all of the main plotting functions / classes into the <code class="docutils literal notranslate"><span class="pre">plt</span></code> namespace.</p>
+<section id="anatomy-of-a-figure">
+<h2>Anatomy of a figure<a class="headerlink" href="#anatomy-of-a-figure" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/anatomy1.png"><img alt="a schematic showing a figure, set of axes, and various plot elements with their corresponding matplotlib name." src="../_images/anatomy1.png" style="width: 80%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">The main elements of a matplotlib figure (figure from <a class="reference external" href="http://matplotlib.org/faq/usage_faq.html#parts-of-a-figure">http://matplotlib.org/faq/usage_faq.html#parts-of-a-figure</a>)</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="basic-plotting">
+<h2>Basic plotting<a class="headerlink" href="#basic-plotting" title="Link to this heading">#</a></h2>
+</section>
+<section id="visualizing-2-d-arrays">
+<h2>Visualizing 2-d arrays<a class="headerlink" href="#visualizing-2-d-arrays" title="Link to this heading">#</a></h2>
+</section>
+<section id="other-plot-types">
+<h2>Other plot types<a class="headerlink" href="#other-plot-types" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://matplotlib.org/stable/gallery/index">matplotlib example gallery</a> has lots
+of examples of output together with the code used to produce the figure.  This is the
+best way to learn.</p>
+</section>
 </section>
 
 
@@ -590,6 +631,26 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-a-figure">Anatomy of a figure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-plotting">Basic plotting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-2-d-arrays">Visualizing 2-d arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-plot-types">Other plot types</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
