@@ -88,3 +88,15 @@ There are a few ways to create an array:
 
 Array properties
 ================
+
+
+Array operations
+================
+
+
+Universal functions
+===================
+
+
+Slicing
+=======

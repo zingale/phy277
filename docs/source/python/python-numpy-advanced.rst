@@ -40,3 +40,11 @@ Let's look at different ways to copy:
   this is a deep copy. A completely separate object will be created in
   memory, with a completely separate location in memory.
 
+
+Boolean indexing
+================
+
+
+Avoiding loops
+==============
+
