@@ -525,7 +525,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -541,6 +543,16 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing">Importing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-creation">Array creation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-properties">Array properties</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -552,6 +564,75 @@
                   
   <section id="numpy">
 <h1>Numpy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h1>
+<p>The <a class="reference external" href="https://numpy.org/">NumPy library</a> extends python with an N-dimensional array,
+and a large number of functions that operate on these arrays.</p>
+<p>NumPy arrays allow you to write fast (optimized) code that works on
+arrays of data. To do this, there are some restrictions on arrays:</p>
+<ul class="simple">
+<li><p>all elements are of the same data type (e.g. float)</p></li>
+<li><p>the size of the array is fixed in memory, and specified when you
+create the array (e.g., you cannot grow the array like you do with
+lists)</p></li>
+</ul>
+<p>The nice part is that arithmetic operations work on entire arrays—this
+means that you can avoid writing loops in python (which tend to be
+slow). Instead the “looping” is done in the underlying compiled code.</p>
+<section id="importing">
+<h2>Importing<a class="headerlink" href="#importing" title="Link to this heading">#</a></h2>
+<p>The standard way to import NumPy is to rename it as you load it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+<p>Then we can use the <code class="docutils literal notranslate"><span class="pre">np.</span></code> namespace to refer to all of its functions
+and classes.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If NumPy is not installed on your machine, you can install it via pip:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="array-creation">
+<h2>Array creation<a class="headerlink" href="#array-creation" title="Link to this heading">#</a></h2>
+<p>There are a few ways to create an array:</p>
+<ul>
+<li><p>as a sequence of integers:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>this produces:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+</li>
+<li><p>initialized with all zeros</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Here we specify the shape—3 rows and 5 columns.  This produces:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]])</span>
+</pre></div>
+</div>
+<p>analogous to this, there is <code class="docutils literal notranslate"><span class="pre">np.ones</span></code>.</p>
+</li>
+<li><p>as a evenly-spaced sequence between two limits:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>this produces:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.</span> <span class="p">])</span>
+</pre></div>
+</div>
+<p>analogous to this, there is <code class="docutils literal notranslate"><span class="pre">np.logspace</span></code> for log-spaced sequences.</p>
+</li>
+</ul>
+</section>
+<section id="array-properties">
+<h2>Array properties<a class="headerlink" href="#array-properties" title="Link to this heading">#</a></h2>
+</section>
 </section>
 
 
@@ -589,6 +670,25 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing">Importing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-creation">Array creation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-properties">Array properties</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
