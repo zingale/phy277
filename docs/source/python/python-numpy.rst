@@ -24,7 +24,7 @@ Importing
 
 The standard way to import NumPy is to rename it as you load it:
 
-.. code:: python
+.. code:: pycon
 
    import numpy as np
 
@@ -35,7 +35,7 @@ and classes.
 
    If NumPy is not installed on your machine, you can install it via pip:
 
-   .. code:: python
+   .. prompt:: bash
 
       pip install numpy
 
@@ -46,26 +46,18 @@ There are a few ways to create an array:
 
 * as a sequence of integers:
 
-  .. code:: python
+  .. code:: pycon
 
-     a = np.arange(9)
-
-  this produces:
-
-  ::
-
-      array([0, 1, 2, 3, 4, 5, 6, 7, 8])
+     >>> a = np.arange(9)
+     >>> a
+     array([0, 1, 2, 3, 4, 5, 6, 7, 8])
 
 * initialized with all zeros
 
-  .. code:: python
+  .. code:: pycon
 
-     a = np.zeros((3, 5))
-
-  Here we specify the shape---3 rows and 5 columns.  This produces:
-
-  ::
-
+     >>> a = np.zeros((3, 5))
+     >>> a
      array([[0., 0., 0., 0., 0.],
             [0., 0., 0., 0., 0.],
             [0., 0., 0., 0., 0.]])
@@ -74,26 +66,18 @@ There are a few ways to create an array:
 
 * from a list
 
-  .. code:: python
+  .. code:: pycon
 
-     a = np.array([1, 2, 4, 8, 16])
-
-  This produces:
-
-  ::
-
+     >>> a = np.array([1, 2, 4, 8, 16])
+     >>> a
      array([ 1,  2,  4,  8, 16])
 
 * as a evenly-spaced sequence between two limits:
 
-  .. code:: python
+  .. code:: pycon
 
-     a = np.linspace(0, 1, 11)
-
-  this produces:
-
-  ::
-
+     >>> a = np.linspace(0, 1, 11)
+     >>> a
      array([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])
 
   analogous to this, there is ``np.logspace`` for log-spaced sequences.
@@ -113,19 +97,15 @@ There are a large number of attributes that describe the array, including:
 
 Some of these properties can be modified.  For instance, we can do:
 
-.. code:: python
+.. code:: pycon
 
-   a = np.arange(12)
-   a = a.reshape(4, 3)
-
-This then makes ``a`` look as:
-
-::
-
-    array([[ 0,  1,  2],
-           [ 3,  4,  5],
-           [ 6,  7,  8],
-           [ 9, 10, 11]])
+   >>> a = np.arange(12)
+   >>> a = a.reshape(4, 3)
+   >>> a
+   array([[ 0,  1,  2],
+          [ 3,  4,  5],
+          [ 6,  7,  8],
+          [ 9, 10, 11]])
 
 
 Array operations
