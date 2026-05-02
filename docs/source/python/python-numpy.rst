@@ -72,6 +72,18 @@ There are a few ways to create an array:
 
   analogous to this, there is ``np.ones``.
 
+* from a list
+
+  .. code:: python
+
+     a = np.array([1, 2, 4, 8, 16])
+
+  This produces:
+
+  ::
+
+     array([ 1,  2,  4,  8, 16])
+
 * as a evenly-spaced sequence between two limits:
 
   .. code:: python
@@ -82,16 +94,47 @@ There are a few ways to create an array:
 
   ::
 
-    array([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])
+     array([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])
 
   analogous to this, there is ``np.logspace`` for log-spaced sequences.
+
 
 Array properties
 ================
 
+NumPy arrays are instances of the `numpy.ndarray <https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html>`_ class.
+There are a large number of attributes that describe the array, including:
+
+* ``.dim`` : the number of dimensions
+
+* ``.dtype`` : the data type
+
+* ``.shape`` : the shape of the array
+
+Some of these properties can be modified.  For instance, we can do:
+
+.. code:: python
+
+   a = np.arange(12)
+   a = a.reshape(4, 3)
+
+This then makes ``a`` look as:
+
+::
+
+    array([[ 0,  1,  2],
+           [ 3,  4,  5],
+           [ 6,  7,  8],
+           [ 9, 10, 11]])
+
 
 Array operations
 ================
+
+Basic math operations work element-by-element on arrays.
+
+
+Matrix multiplication uses the ``@`` operator.
 
 
 Universal functions

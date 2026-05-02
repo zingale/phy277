@@ -22,6 +22,11 @@ If we want to find the indices for multiple matches, we can use ``enumerate()``
 to loop over a list.
 
 
+Root-finding
+============
+
+Let's rewrite our :ref:`sec:root-bisection` root-finding method in python.
+
 Extended solar system class
 ===========================
 
