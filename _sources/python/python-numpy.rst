@@ -135,7 +135,7 @@ Basic math operations work element-by-element on arrays.  For example:
    array([0.1, 0.1, 0.1, 0.1])
 
 
-Matrix multiplication uses the ``@`` operator.  For example, using the 
+Matrix multiplication uses the ``@`` operator.  For example, using the
 same ``a`` and ``b`` as above, ``@`` will be a dot-product:
 
 .. code:: pycon
@@ -167,6 +167,29 @@ an example:
 Universal functions
 ===================
 
+All of the functions we saw in the ``math`` module are also available
+in the ``numpy`` module, and now the ``numpy`` versions can work on
+entire arrays, element-by-element.
+
+For example, let's create an array of angles (in radians) and take the
+cosine:
+
+.. code:: python
+
+   angles = np.linspace(0, np.pi, 9)
+   >>> angles
+   array([0.        , 0.39269908, 0.78539816, 1.17809725, 1.57079633,
+          1.96349541, 2.35619449, 2.74889357, 3.14159265])
+   >>> np.cos(angles)
+   array([ 1.00000000e+00,  9.23879533e-01,  7.07106781e-01,  3.82683432e-01,
+           6.12323400e-17, -3.82683432e-01, -7.07106781e-01, -9.23879533e-01,
+          -1.00000000e+00])
+
+.. important::
+
+   The ability to do whole-array math like using operators and
+   universal functions avoids the need for explicit loops.  This helps
+   NumPy get good performance.
 
 Slicing
 =======

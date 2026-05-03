@@ -750,6 +750,27 @@ an example:</p>
 </section>
 <section id="universal-functions">
 <h2>Universal functions<a class="headerlink" href="#universal-functions" title="Link to this heading">#</a></h2>
+<p>All of the functions we saw in the <code class="docutils literal notranslate"><span class="pre">math</span></code> module are also available
+in the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> module, and now the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> versions can work on
+entire arrays, element-by-element.</p>
+<p>For example, let’s create an array of angles (in radians) and take the
+cosine:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">angles</span>
+<span class="n">array</span><span class="p">([</span><span class="mf">0.</span>        <span class="p">,</span> <span class="mf">0.39269908</span><span class="p">,</span> <span class="mf">0.78539816</span><span class="p">,</span> <span class="mf">1.17809725</span><span class="p">,</span> <span class="mf">1.57079633</span><span class="p">,</span>
+       <span class="mf">1.96349541</span><span class="p">,</span> <span class="mf">2.35619449</span><span class="p">,</span> <span class="mf">2.74889357</span><span class="p">,</span> <span class="mf">3.14159265</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angles</span><span class="p">)</span>
+<span class="n">array</span><span class="p">([</span> <span class="mf">1.00000000e+00</span><span class="p">,</span>  <span class="mf">9.23879533e-01</span><span class="p">,</span>  <span class="mf">7.07106781e-01</span><span class="p">,</span>  <span class="mf">3.82683432e-01</span><span class="p">,</span>
+        <span class="mf">6.12323400e-17</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.82683432e-01</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.07106781e-01</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.23879533e-01</span><span class="p">,</span>
+       <span class="o">-</span><span class="mf">1.00000000e+00</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The ability to do whole-array math like using operators and
+universal functions avoids the need for explicit loops.  This helps
+NumPy get good performance.</p>
+</div>
 </section>
 <section id="slicing">
 <h2>Slicing<a class="headerlink" href="#slicing" title="Link to this heading">#</a></h2>

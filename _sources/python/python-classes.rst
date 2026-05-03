@@ -94,4 +94,3 @@ and here's an example of using it---note the ``import vector`` at the top.
 .. literalinclude:: ../../../examples/python/test_vector.py
    :language: python
    :caption: ``test_vector.py``
-
