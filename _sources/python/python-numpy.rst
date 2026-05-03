@@ -18,6 +18,17 @@ The nice part is that arithmetic operations work on entire arrays---this
 means that you can avoid writing loops in python (which tend to be
 slow). Instead the “looping” is done in the underlying compiled code.
 
+.. note::
+
+   In the short examples below, we will use the python interpreter
+   interactively, i.e., run at the command line:
+
+   .. prompt:: bash
+
+      python
+
+   then the prompt will appear as ``>>>``.
+
 
 Importing
 =========
@@ -106,15 +117,51 @@ Some of these properties can be modified.  For instance, we can do:
           [ 3,  4,  5],
           [ 6,  7,  8],
           [ 9, 10, 11]])
-
+   >>> a.shape
+   (4, 3)
 
 Array operations
 ================
 
-Basic math operations work element-by-element on arrays.
+Basic math operations work element-by-element on arrays.  For example:
+
+.. code:: pycon
+
+   >>> a = np.array([1, 2, 3, 4])
+   >>> b = np.array([10, 20, 30, 40])
+   >>> a + b
+   array([11, 22, 33, 44])
+   >>> a / b
+   array([0.1, 0.1, 0.1, 0.1])
 
 
-Matrix multiplication uses the ``@`` operator.
+Matrix multiplication uses the ``@`` operator.  For example, using the 
+same ``a`` and ``b`` as above, ``@`` will be a dot-product:
+
+.. code:: pycon
+
+   >>> a @ b
+   np.int64(300)
+
+For a two dimensional array, it would be the matrix multiplication operator.  Here's
+an example:
+
+.. code:: pycon
+
+   >>> a = np.arange(9).reshape(3,3)
+   >>> b = np.arange(12).reshape(3, 4)
+   >>> a
+   array([[0, 1, 2],
+          [3, 4, 5],
+          [6, 7, 8]])
+   >>> b
+   array([[ 0,  1,  2,  3],
+          [ 4,  5,  6,  7],
+          [ 8,  9, 10, 11]])
+   >>> a @ b
+   array([[ 20,  23,  26,  29],
+          [ 56,  68,  80,  92],
+          [ 92, 113, 134, 155]])
 
 
 Universal functions

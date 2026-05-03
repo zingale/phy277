@@ -627,6 +627,17 @@ lists)</p></li>
 <p>The nice part is that arithmetic operations work on entire arrays—this
 means that you can avoid writing loops in python (which tend to be
 slow). Instead the “looping” is done in the underlying compiled code.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the short examples below, we will use the python interpreter
+interactively, i.e., run at the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">python</span>
+</pre></div></div><p>then the prompt will appear as <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>.</p>
+</div>
 <section id="importing">
 <h2>Importing<a class="headerlink" href="#importing" title="Link to this heading">#</a></h2>
 <p>The standard way to import NumPy is to rename it as you load it:</p>
@@ -638,11 +649,7 @@ and classes.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If NumPy is not installed on your machine, you can install it via pip:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1">pip<span class="w"> </span>install<span class="w"> </span>numpy</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pip<span class="w"> </span>install<span class="w"> </span>numpy</span>
 </pre></div></div></div>
 </section>
 <section id="array-creation">
@@ -700,13 +707,46 @@ There are a large number of attributes that describe the array, including:</p>
 <span class="go">       [ 3,  4,  5],</span>
 <span class="go">       [ 6,  7,  8],</span>
 <span class="go">       [ 9, 10, 11]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(4, 3)</span>
 </pre></div>
 </div>
 </section>
 <section id="array-operations">
 <h2>Array operations<a class="headerlink" href="#array-operations" title="Link to this heading">#</a></h2>
-<p>Basic math operations work element-by-element on arrays.</p>
-<p>Matrix multiplication uses the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator.</p>
+<p>Basic math operations work element-by-element on arrays.  For example:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="go">array([11, 22, 33, 44])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+<span class="go">array([0.1, 0.1, 0.1, 0.1])</span>
+</pre></div>
+</div>
+<p>Matrix multiplication uses the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> operator.  For example, using the
+same <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> as above, <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> will be a dot-product:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">@</span> <span class="n">b</span>
+<span class="go">np.int64(300)</span>
+</pre></div>
+</div>
+<p>For a two dimensional array, it would be the matrix multiplication operator.  Here’s
+an example:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">array([[0, 1, 2],</span>
+<span class="go">       [3, 4, 5],</span>
+<span class="go">       [6, 7, 8]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>
+<span class="go">array([[ 0,  1,  2,  3],</span>
+<span class="go">       [ 4,  5,  6,  7],</span>
+<span class="go">       [ 8,  9, 10, 11]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">@</span> <span class="n">b</span>
+<span class="go">array([[ 20,  23,  26,  29],</span>
+<span class="go">       [ 56,  68,  80,  92],</span>
+<span class="go">       [ 92, 113, 134, 155]])</span>
+</pre></div>
+</div>
 </section>
 <section id="universal-functions">
 <h2>Universal functions<a class="headerlink" href="#universal-functions" title="Link to this heading">#</a></h2>

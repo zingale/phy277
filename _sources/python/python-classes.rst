@@ -30,7 +30,7 @@ Some notes:
   When we access data stored in the class, we do it through ``self``,
   e.g., ``self.name``.
 
-* The ``_str__`` method is python's version of overloading ``<<`` for
+* The ``__str__`` method is python's version of overloading ``<<`` for
   output.  This is the function that is called when we ``print()`` a
   ``Planet``.  It returns a string that we would like ``print`` to
   display.
