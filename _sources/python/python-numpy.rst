@@ -1,5 +1,5 @@
 *****
-Numpy
+NumPy
 *****
 
 The `NumPy library <https://numpy.org/>`_ extends python with an N-dimensional array,
