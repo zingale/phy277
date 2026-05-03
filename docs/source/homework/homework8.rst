@@ -26,22 +26,166 @@ Homework #8
    of this assignment.
 
 
-1. *Files* :
+1. *File I/O* : Update your projectile motion code from the previous homework
+   (:ref:`sec:homework7`) to write the output to a file.  Have your
+   ``main`` function do the integration for both $C=0$ and $C=0.3$,
+   writing each integration to a separate file.
 
-2. iota
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. literalinclude:: hw8_p1_projectile-rk-file.cpp
+         :language: c++
+         :caption: ``projectile-rk-file.cpp``
+
+      The only function that changed here is ``write_history``, which now
+      takes the drag coefficient, ``C``, as an additional argument.
+
+      In that function, the filename is constructed to include the drag coefficient,
+      like:
+
+      .. code:: c++
+
+         std::string filename = std::format("projectile-C{:.2f}.out"
+
+      .. note::
+
+         You could have also asked the user for the name of the
+         filename or constructed it in some other fashion, as long as
+         different values of ``C`` result in different files.
+
+2. *Lambda practice* : Consider the following code:
+
+   .. literalinclude:: count_if.cpp
+      :language: c++
+      :caption: ``count_if.cpp``
+
+   This counts how many elements in the vector ``vec`` are perfect squares,
+   using the `std::ranges::count_if <https://en.cppreference.com/w/cpp/algorithm/ranges/count>`_
+   algorithm.
+
+   Rewrite this code to using a lambda function (review :ref:`lambdafunctions`)
+   in the ``std::ranges::count_if`` call, in place of the ``is_perfect_square``
+   function above.
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. literalinclude:: hw8_p2_count_if_lambda.cpp
+         :language: c++
+         :caption: ``count_if_lambda.cpp``
+
+      In this case, our lambda function has two statements in the ``{
+      }``---that's fine.
+
+3. *Transforming* : `std::ranges::transform
+   <https://en.cppreference.com/w/cpp/algorithm/ranges/transform>`_
+   takes a range (vector for us), an output iterator (where to start
+   writing the result), and an operator (the function to apply to each
+   element).
+
+   For instance, given a vector ``v`` of ``double``, we could do:
+
+   .. code:: c++
+
+      std::ranges::transform(v, v.begin(), f)
+
+   where ``f`` is a function of the form ``double f(double e)``,
+   and the result would be to apply ``f(e)`` to each element, ``e``, of ``v``,
+   updating our vector in-place.
+
+   Let's use this to convert a vector of indices into $x$ values.
+
+   Start with:
+
+   .. code::
+
+      std::vector<double> is{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+   and define $x_\mathrm{min} = 1$, $x_\mathrm{max} = 2$, and
+   :math:`\Delta x = (x_\mathrm{max} - x_\mathrm{min}) / (N-1)`, where $N$
+   is the number of elements in the vector.
+
+   Now, apply the transformation: :math:`f(e) = x_\mathrm{min} + e \Delta x`
+   to the vector, using ``std::ranges::transform``.
+
+   .. note::
+
+      You can use either a standard C++ function or a lambda-function
+      for $f(e)$.
+
+   Finally, loop over the vector and output the updated elements.
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. literalinclude:: hw8_p3_transform.cpp
+         :language: c++
+         :caption: ``transform.cpp``
 
 
-3. *Ranges* :
+4. *Bounds* : An operation we often want to do is search through a
+   sorted list of numbers and find the interval that contains an
+   desired value.  This comes up in interpolation, for example.
 
-   contains is simpler than any_of
+   Consider the following vector:
 
-   count_if
+   .. code:: c++
 
-4. transform
+      std::vector<double> temp_vec{0.1, 0.2, 0.5, 1.0, 2.0, 3.0, 4.0, 5.0, 7.5, 10.0};
 
-   generate -- fill with random numbers
+   For a value ``T0``, we want to find the index into the vector,
+   ``i``, such that ``temp_vec[i-1] < T0 <= temp_vec[i]``.  We can get
+   an iterator to ``temp_vec[i]`` using `std::ranges::lower_bound
+   <https://en.cppreference.com/w/cpp/algorithm/ranges/lower_bound>`_.
 
-5. binary search using std::ranges::upper_bound()
+   .. note::
 
+      There is a similar function, ``std::ranges::upper_bound`` ---they
+      differ only in how they handle the case where we are searching for
+      a value that is in our vector:
+
+      * ``std::ranges::lower_bound`` returns an iterator to the first element $\ge$ ``T0``
+
+      * ``std::ranges::upper_bound`` returns an iterator to the first element $>$ ``T0``
+
+   Write a code that finds the *index* for:
+
+   * ``T0 = 1.2``
+   * ``T0 = 3.0`` ---note: this is one of the data points in the vector.
+
+   .. tip::
+
+      You'll want to use ``std::distance`` to convert the iterator into a
+      distance from the beginning of the container, just like we did in class.
+
+   Also check what happens in the case that our ``T0`` is out of the limits
+   of our ``temp_vec`` by finding the index for:
+
+   * ``T0 = 0.05``
+   * ``T0 = 20``
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. literalinclude:: hw8_p4_binary_search.cpp
+         :language: c++
+         :caption: ``binary_search.cpp``
+
+      Notice that for the case of ``0.05``, we get the index ``0``.
+      So when we seek a value smaller than any element in our vector,
+      we get the start of our vector.
+
+      And for the case of ``20.0``, we get an index of ``10`` which is
+      out of bounds for our vector.  So when we seek a value larger
+      than any element in our vector the iterator points to ``end()``.
 
 

@@ -1,0 +1,37 @@
+**************
+May 1 In-Class
+**************
+
+.. note::
+
+   There are no wrong answers.  This is for participation credit, and
+   is intended to let me know how well we understand the material at
+   this point.
+
+Access the form: https://forms.gle/CkKZ7abLS9Md5C9m8
+
+1. Consider the following:
+
+   .. code:: python
+
+      a = [1, 2, 3]
+      b = [10, 20, 30]
+      c = a + b
+
+   what would you expect ``c[4]`` to be?
+
+2. Consider this function:
+
+   .. code:: python
+
+      def update(a_list):
+           a_list.append(a_list[-1] + 2)
+
+   if you call it as:
+
+   .. code:: python
+
+      a = [1, 2]
+      update(a)
+
+   what do you expect ``a`` to be after the call?

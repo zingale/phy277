@@ -126,8 +126,8 @@ better seed:
 
 .. _sec:computing_pi:
 
-Example: computing :math:`\pi`
-==============================
+Example: computing π
+====================
 
 A fun way to compute :math:`\pi` is to pick pairs of random numbers in
 the range :math:`[0, 1)`---these will all fall inside a unit square,

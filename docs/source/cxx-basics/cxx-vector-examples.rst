@@ -2,6 +2,8 @@
 Examples of Using ``vector``
 ****************************
 
+.. _sec:vec-small-angle:
+
 Small-angle approximation example
 =================================
 

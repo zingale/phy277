@@ -6,6 +6,7 @@ Here we'll look at some of the standard library algorithms that
 don't modify the container.  We'll use ``std::vector`` for all
 these examples, but other containers in C++ work as well.
 
+.. _sec:ranges-count:
 
 Counting repetitions
 ====================

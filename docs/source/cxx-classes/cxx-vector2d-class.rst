@@ -55,6 +55,9 @@ We will make the data private (this is a form of `encapsulation
 <https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)>`_).
 So we will create *setters* that allow us to change these values.
 
+Implementation
+==============
+
 Here's an implementation:
 
 .. literalinclude:: ../../../examples/classes/vector/vector2d.H
@@ -96,7 +99,7 @@ Some notes:
   As an alternate to making this a ``friend``, we could have added *getter*
   functions to our class to get the private data.
 
-.. hint::
+.. important::
 
    In the operator-overload function
 
@@ -114,7 +117,7 @@ Some notes:
 
    See this `stackoverflow discussion <https://stackoverflow.com/questions/6921185/why-do-objects-of-the-same-class-have-access-to-each-others-private-data>`_
 
-.. hint::
+.. tip::
 
    When do we need to make something a ``friend``?
 
@@ -129,20 +132,29 @@ Some notes:
       double a{};
       Vector2d vec{};
 
-      auto new_vec = a + vec;   // our class is on the right -- this is not a member func
-      auto new2_vec = vec + a;  // our class is on the left -- this is a member func
+      auto new_vec = vec + a;  // our class is on the left -- member func
+      auto new_vec2 = a + vec;   // our class is on the right -- not a member func
 
-   When we write a member function, we don't include the object itself
-   in the argument list, so for the second case, ``vec + a``, we would
-   use the function signature:
+   * For ``vec + a``, our object is to the left of the operator, so
+     this is a member function of the clsas.  We don't need to include
+     our object itself in the argument list, so we use the function
+     signature:
 
-   .. code:: c++
+     .. code:: c++
 
-      Vector2d operator+ (const double& a);
+        Vector2d operator+ (const double a);
 
-   The current ``Vector2d`` object is implicitly part of the function,
-   and C++ provides a pointer called ``this`` that points to the
-   address of the object that we are working on.
+   * For ``a + vec``, something other than a ``Vector2d`` is to the
+     left of the operator, so this is not a member function.  We would
+     have to define this operator's function outside of the class with
+     the signature:
+
+     .. code::
+
+        Vector2d operator+ (const double, const Vector2d& vec);
+
+     and if our data is private in the class, then we would need to
+     make this function a ``friend``.
 
 .. tip::
 
@@ -150,6 +162,8 @@ Some notes:
 
    `What are the basic rules and idioms for operator overloading? <https://stackoverflow.com/questions/4421706/what-are-the-basic-rules-and-idioms-for-operator-overloading>`_
 
+Copying
+=======
 
 What happens when we do:
 
@@ -170,6 +184,9 @@ the copy constructor for us, and in most cases, it will work fine.  Only
 if we have complicated member data (like pointers) would we need to explicitly write
 the copy.
 
+Destructor
+==========
+
 There is another special function that we haven't talked about---the
 `destructor <https://en.cppreference.com/w/cpp/language/destructor>`_.
 This cleans up an objects resources when it goes out of scope, the
@@ -182,6 +199,10 @@ resources are just 2 doubles, which C++ can handle on its own.
    says that if you define any of: the *destructor*, *copy constructor*, or *copy assignment*,
    then you should define all three.
 
+
+Driver
+=======
+
 Now let's test this out.  Here's a test driver:
 
 .. literalinclude:: ../../../examples/classes/vector/test_vectors.cpp
@@ -190,27 +211,4 @@ Now let's test this out.  Here's a test driver:
 
 There are a wide range of other capabilities we could imagine adding
 to this class to make it easier to work with vectors.
-
-.. admonition:: try it...
-
-   Try overloading ``>>`` so we can read directly into a ``Vector2d`` object, e.g.,
-
-   .. code:: c++
-
-      Vector2d v;
-
-      cin >> v;
-
-   Your function should look like:
-
-   .. code:: c++
-
-      friend std::istream& operator>>(std::istream& is, Vector2d &v);
-
-   Notice that the ``Vector2d`` is not ``const``, since we will be modifying it.
-
-   You will want to read 2 pieces of data from the input stream and directly
-   set ``v.x`` and ``v.y``.
-
-
 

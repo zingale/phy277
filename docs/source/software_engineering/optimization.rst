@@ -28,6 +28,20 @@ algebraically equivalent but has different roundoff.
    You can see what the different optimization levels do by looking at
    ``man g++``.
 
+Example: computing $\pi$ revisited
+==================================
+
+Let's look at our Monte Carlo :ref:`sec:computing_pi` code again.
+
+We can time the execution with the Unix ``time`` command, e.g.:
+
+.. prompt:: bash
+
+   time pi
+
+Let's do this with the default optimization level and compare to
+``-O3``.
+
 ``NDEBUG``
 ==========
 

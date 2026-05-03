@@ -2,12 +2,11 @@
 #include <array>
 #include <format>
 
-using row_arr_t = std::array<double, 4>;
-using fixed_mat_t = std::array<row_arr_t, 3>;
-
 int main() {
 
-    fixed_mat_t M{0.0};
+    // create an array with 3 rows, each with
+    // 4 columns
+    std::array<std::array<double, 4>, 3> M{};
 
     double val{0.0};
     for (auto &r : M) {

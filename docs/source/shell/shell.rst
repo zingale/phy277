@@ -7,6 +7,8 @@ The Shell
    We will loosely follow the Software Carpentry lesson on `The Unix Shell <https://swcarpentry.github.io/shell-novice/>`_
 
 
+.. _sec:the_shell_repl:
+
 The shell
 =========
 

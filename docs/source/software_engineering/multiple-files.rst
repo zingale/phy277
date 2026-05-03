@@ -34,12 +34,16 @@ Generally speaking, we'll talk about two types of files:
   (the function definitions corresponding to the forward declarations),
   and of course the ``main()`` function.
 
+
+Splitting our planet sort example
+=================================
+
 Let's consider our example of :ref:`sorting planets <sec:sorting_planets>`.
 
 We'll start with a header file defining our ``struct`` and the operator
 declaration:
 
-.. literalinclude:: ../../../examples/multiple_files/planet.H
+.. literalinclude:: ../../../examples/multiple_files/planet-source/planet.H
    :language: c++
    :caption: ``planet.H``
 
@@ -64,30 +68,48 @@ A few things to note:
 
 Now we'll create a source file that implements the ``<<`` operator:
 
-.. literalinclude:: ../../../examples/multiple_files/planet.cpp
+.. literalinclude:: ../../../examples/multiple_files/planet-source/planet.cpp
    :language: c++
    :caption: ``planet.cpp``
 
-Here, note the following:
+We use ``"`` in the ``#include`` for ``planet.H``:
 
-* We use ``"`` in the ``#include`` for ``planets.H``:
+.. code:: c++
 
-  .. code:: c++
+   #include "planet.H"
 
-     #include "planets.H"
+This gives us the forward declaration we need for this function.
 
-  This gives us the forward declaration we need for this function.
+.. important::
 
-* For the standard C++ headers we use ``<>`` in the ``#include``.
+   The compiler treats
 
-  These are treated differently by the preprocessor.  For ``"``, the
-  compiler will first look in the local directory and a list of
-  include paths you provide, while with ``<>`` the compiler will look
-  in the default system locations for the headers.
+   .. code:: c++
+
+      #include <planet.H>
+
+   and
+
+   .. code:: c++
+
+      #include "planet.H"
+
+   differently.
+
+   When using quotes ``"..."``, the compiler will look
+   in the current directory for the header first, and then in the
+   system include paths.
+
+   When using ``< ..>``, it will look in the system include
+   paths, but not your current directory (unless you
+   explicitly force it to).
+
+   Additional paths to search can be specified using the ``-I``
+   flag to the compiler (we won't consider this).
 
 Finally, we'll put the ``main()`` in a third file:
 
-.. literalinclude:: ../../../examples/multiple_files/planet_sort_split.cpp
+.. literalinclude:: ../../../examples/multiple_files/planet-source/planet_sort_split.cpp
    :language: c++
    :caption: ``planet_sort_split.cpp``
 
@@ -103,6 +125,13 @@ and then link them all together.  Here are the steps:
    g++ -std=c++20 -c planet.cpp
    g++ -std=c++20 -c planet_sort_split.cpp
    g++ -o planet_sort_split planet.o planet_sort_split.o
+
+.. note::
+
+   We see a new compiler flag, ``-c``.  This tells the compiler to
+   compile the file, but not do the final linking step to make
+   the executable.  This results in an output file with the ``.o``
+   extension (for *object*).
 
 The first two commands are the compilation step.  The take the source file
 and produce an object file (e.g., ``planet.cpp`` → ``planet.o``).
@@ -128,5 +157,24 @@ An important concept when working with multiple files is the
 `One Definition Rule <https://en.wikipedia.org/wiki/One_Definition_Rule>`_
 (ODR).
 
-A consequence of the ODR is that if you put a function entirely in
-a header, then you need to make it `inline <https://en.cppreference.com/w/cpp/language/inline>`_.
+This means that we can only have a single definition of a function or
+type in our program.
+
+A consequence of the ODR is that if you put a function entirely in a
+header, then you need to make it `inline
+<https://en.cppreference.com/w/cpp/language/inline>`_.
+
+Here's an example of putting our ``operator<<`` function directly into the
+``planet.H`` header.  Now we add ``inline`` before the function, and we no
+longer need ``planet.cpp``
+
+.. literalinclude:: ../../../examples/multiple_files/planet-inline/planet.H
+   :language: c++
+   :caption: ``planet.H``
+
+We can compile the source now simply as:
+
+.. prompt:: bash
+
+   g++ -std=c++20 -o planet_source planet_sort_split.cpp
+

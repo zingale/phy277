@@ -58,7 +58,6 @@ The second will be a friend, and have the signature:
 Here's the version of the code split up into files (we did this in
 :ref:`orbit_split`)---we'll use this as the starting point:
 
-* :download:`orbit.H <../../examples/orbits/orbit_split/orbit.H>`
-* :download:`orbit_integrator.cpp <../../examples/orbits/orbit_split/orbit_integrator.cpp>`
-* :download:`test_orbit.cpp <../../examples/orbits/orbit_split/test_orbit.cpp>`
-* :download:`GNUmakefile <../../examples/orbits/orbit_split/GNUmakefile>`
+* :download:`orbit.H <../../../examples/orbits/orbit_split/orbit.H>`
+* :download:`test_orbit.cpp <../../../examples/orbits/orbit_split/test_orbit.cpp>`
+* :download:`GNUmakefile <../../../examples/orbits/orbit_split/GNUmakefile>`

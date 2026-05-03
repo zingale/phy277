@@ -231,8 +231,19 @@ the top of many pages.
    software_engineering/optimization
    software_engineering/multiple-files
    software_engineering/make
+   software_engineering/make2
    software_engineering/inclass-split-orbit
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Version Control
+   :hidden:
+
+   git/version-control
+   git/git
+   git/git-branches
+   git/github
+   git/pull-requests
 
 .. toctree::
    :maxdepth: 1
@@ -244,24 +255,44 @@ the top of many pages.
    cxx-classes/cxx-classes-planet-2
    cxx-classes/object-oriented
    cxx-classes/cxx-vector2d-class
-   cxx-classes/inclass-orbit-class
-   cxx-classes/inheritance-and-access
+   cxx-classes/inclass-more-vector2d
    cxx-classes/this-class
    cxx-classes/copy_and_assignment
    cxx-classes/compound-operators
-   cxx-classes/inclass-orbit-compound
+   cxx-classes/contiguous_array
 
 .. toctree::
    :maxdepth: 1
    :caption: Templates
    :hidden:
 
+   templates/templates-intro
+   templates/templates-more
+
 .. toctree::
    :maxdepth: 1
-   :caption: Python Crash Course
+   :caption: Python
    :hidden:
 
+   python/python-intro
+   python/python-cxx
+   python/python-numbers
+   python/python-strings
+   python/python-lists
+   python/python-conditionals
+   python/python-functions
+   python/python-classes
+   python/python-examples
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Scientific Python
+   :hidden:
+
+   python/python-numpy
+   python/python-numpy-advanced
+   python/python-matplotlib
+   python/calling-cxx-from-python
 
 .. toctree::
    :maxdepth: 1
@@ -282,6 +313,9 @@ the top of many pages.
    homework/homework5
    homework/homework6
    homework/homework7
+   homework/homework8
+   homework/homework9
+   homework/homework10
 
 .. toctree::
    :maxdepth: 1

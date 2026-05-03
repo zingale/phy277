@@ -33,6 +33,12 @@ surrounding scope:
 mixed types of capture are also possible, where you can capture some
 data by value and others by reference
 
+.. note::
+
+   There can be multiple statements in the ``{  }`` part of the lambda
+   function.  Each should be terminated with a ``;``, just like any
+   other C++ we write.
+
 Here's a simple example:
 
 .. literalinclude:: ../../../examples/functions/lambda_examples.cpp
@@ -46,6 +52,8 @@ captured from the surrounding scope and used in the function.
 In the second example, function ``g``, we captured ``x`` by reference
 ``[&]``, so we can update it.
 
+
+.. _sec:lambda-sort:
 
 Sort Example
 ============

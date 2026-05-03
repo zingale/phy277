@@ -1,5 +1,6 @@
+***********************
 Introduction to Classes
-=======================
+***********************
 
 .. admonition:: reading
 
@@ -37,6 +38,10 @@ Let's understand the syntax:
 
   calls our ``Circle(double r)`` function in our class ``Circle``.
 
+  .. important::
+
+     We *call* the constructor, so we are using ``()`` here instead of ``{}``.
+
 * We have two *member functions*:
 
   * ``circumference()`` will return the circumference of the circle
@@ -53,3 +58,22 @@ Let's understand the syntax:
 
   This is the power of classes---the functions work directly on the data that is
   a member of the class.
+
+``class`` vs. ``struct``
+========================
+
+.. admonition:: try it...
+
+   Change the keyword from ``struct`` to ``class`` ---what happens?
+
+Now the data and functions are private by default, so we fail to compile.
+We need to explicitly make public anything that we want the user to access.
+
+Let's keep the data (``radius``) private but make the functions
+(including the constructor) public.  We'll add a new function ``r()``
+to access the radius.
+
+.. literalinclude:: ../../../examples/classes/simple-class-private.cpp
+   :language: c++
+   :caption: ``simple-class-private.cpp``
+
