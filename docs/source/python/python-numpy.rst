@@ -193,3 +193,47 @@ cosine:
 
 Slicing
 =======
+
+We index arrays using ``[]``, and if we give a range (using a ``:``)
+we access a slice of the array.  For an array ``a``, then doing
+``a[begin:end]`` will give you the elements starting at index
+``begin`` and going up to, but not including ``end``.  This is similar
+in spirit to how C++ iterators worked on vectors.
+
+For example:
+
+.. code:: pycon
+
+   >>> a = np.arange(10)
+   >>> a
+   array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+   >>> a[2]
+   np.int64(2)
+   >>> a[2:5]
+   array([2, 3, 4])
+   >>> a[:]
+   array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+Here we see that doing ``a[:]`` gets you the entire array.
+
+For multidimensional arrays, we can slice in each dimension separately.
+
+For instance, to get a single row or column, we can do:
+
+.. code:: pycon
+
+   >>> a = np.arange(15).reshape(5, 3)
+   >>> a[0, :]
+   array([0, 1, 2])
+   >>> a[:, 0]
+   array([ 0,  3,  6,  9, 12])
+
+or to get a rectangular region, we can do:
+
+.. code:: pycon
+
+   >>> a[1:4, 1:3]
+   array([[ 4,  5],
+          [ 7,  8],
+          [10, 11]])
+
