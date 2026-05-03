@@ -94,3 +94,9 @@ and here's an example of using it---note the ``import vector`` at the top.
 .. literalinclude:: ../../../examples/python/test_vector.py
    :language: python
    :caption: ``test_vector.py``
+
+.. important::
+
+   When we do ``import vector`` we are importing the module named ``vector``.  We
+   need to use that module name as the namespace when accessing the contents of the
+   module, so we do ``vector.Vector()`` to create an instance of our ``Vector`` class.
