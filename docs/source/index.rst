@@ -290,6 +290,7 @@ the top of many pages.
    :hidden:
 
    python/python-numpy
+   python/python-numpy-advanced
    python/python-matplotlib
    python/calling-cxx-from-python
 
