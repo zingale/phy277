@@ -723,6 +723,40 @@ NumPy get good performance.</p>
 </section>
 <section id="slicing">
 <h2>Slicing<a class="headerlink" href="#slicing" title="Link to this heading">#</a></h2>
+<p>We index arrays using <code class="docutils literal notranslate"><span class="pre">[]</span></code>, and if we give a range (using a <code class="docutils literal notranslate"><span class="pre">:</span></code>)
+we access a slice of the array.  For an array <code class="docutils literal notranslate"><span class="pre">a</span></code>, then doing
+<code class="docutils literal notranslate"><span class="pre">a[begin:end]</span></code> will give you the elements starting at index
+<code class="docutils literal notranslate"><span class="pre">begin</span></code> and going up to, but not including <code class="docutils literal notranslate"><span class="pre">end</span></code>.  This is similar
+in spirit to how C++ iterators worked on vectors.</p>
+<p>For example:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">np.int64(2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="go">array([2, 3, 4])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[:]</span>
+<span class="go">array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span>
+</pre></div>
+</div>
+<p>Here we see that doing <code class="docutils literal notranslate"><span class="pre">a[:]</span></code> gets you the entire array.</p>
+<p>For multidimensional arrays, we can slice in each dimension separately.</p>
+<p>For instance, to get a single row or column, we can do:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>
+<span class="go">array([0, 1, 2])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="go">array([ 0,  3,  6,  9, 12])</span>
+</pre></div>
+</div>
+<p>or to get a rectangular region, we can do:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">array([[ 4,  5],</span>
+<span class="go">       [ 7,  8],</span>
+<span class="go">       [10, 11]])</span>
+</pre></div>
+</div>
 </section>
 </section>
 
