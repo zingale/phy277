@@ -65,8 +65,14 @@ Homework #9
          :language: c++
          :caption: ``rectangle.H``
 
-      Notice that since I used that ``class`` keyword, I need to explicitly make the
-      constructors and member functions ``public``.
+      Notice:
+
+      * I am using a member initialization-list to initialize the data
+        for the constructors.  You could instead initialize it in the
+        function body of the constructor.
+
+      * since I used that ``class`` keyword, I need to explicitly make the
+        constructors and member functions ``public``.
 
       Now the driver:
 
@@ -99,6 +105,21 @@ Homework #9
       :color: muted
       :icon: pencil
       :animate: fade-in-slide-down
+
+      First the header:
+
+      .. literalinclude:: vector3d.H
+         :language: c++
+         :caption: ``vector3d.H``
+
+      The extension to 3-D is straightforward---we just need to
+      include the new ``z`` component in all operations.
+
+      Now the driver:
+
+      .. literalinclude:: hw9_p2_test_vector3d.cpp
+         :language: c++
+         :caption: ``test_vector3d.cpp``
 
 3. *Temperature logger* : Let's write a class called
    ``TemperatureLog`` that stores measurements of temperature at
