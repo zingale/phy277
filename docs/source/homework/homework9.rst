@@ -100,6 +100,21 @@ Homework #9
       :icon: pencil
       :animate: fade-in-slide-down
 
+      First the header:
+
+      .. literalinclude:: vector3d.H
+         :language: c++
+         :caption: ``vector3d.H``
+
+      The extension to 3-D is straightforward---we just need to
+      include the new ``z`` component in all operations.
+
+      Now the driver:
+
+      .. literalinclude:: hw9_p2_test_vector3d.cpp
+         :language: c++
+         :caption: ``test_vector3d.cpp``
+
 3. *Temperature logger* : Let's write a class called
    ``TemperatureLog`` that stores measurements of temperature at
    different times.  Here's how you should construct it:
