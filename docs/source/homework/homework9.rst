@@ -54,6 +54,27 @@ Homework #9
    properties (perimeter,area, and the result of the test if it is
    square) to the terminal.
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      First the header:
+
+      .. literalinclude:: rectangle.H
+         :language: c++
+         :caption: ``rectangle.H``
+
+      Notice that since I used that ``class`` keyword, I need to explicitly make the
+      constructors and member functions ``public``.
+
+      Now the driver:
+
+      .. literalinclude:: hw9_p1_test_rectangle.cpp
+         :language: c++
+         :caption: ``test_rectangle.cpp``
+
+
 2. *3D vectors* : Starting with our ``vector2d.H`` implementation (:ref:`sec:vector2d`),
    extend it to three-dimensions (call your new implementation ``vector3d.H``).
 
@@ -73,6 +94,11 @@ Homework #9
 
    Now write a ``main()`` function that exercises each of these operators---use the
    driver we created for the 2D implementation as the starting point.
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
 3. *Temperature logger* : Let's write a class called
    ``TemperatureLog`` that stores measurements of temperature at
@@ -140,3 +166,38 @@ Homework #9
    * the average temperature
    * the maximum temperature
    * the time of the maximum temperature
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      First the header file.  Here's a version that uses the standard library
+      algorithms:
+
+      .. literalinclude:: temperature_logger.H
+         :language: c++
+         :caption: ``temperature_logger.H``
+
+      Some notes:
+
+      * I use ``std::accumulate`` and ``std::ranges::max_element`` here.  For
+        ``std::ranges::max_element``, we get an iterator, and need to dereference it
+        to get the value it points to.
+
+      * For the ``time_of_max`` function, I first call the ``max()`` function.  Then
+        I use ``std::ranges::find_if`` with a lambda function that looks for the element
+        whose temperature matches the max temperature.
+
+      If instead you wanted to explicitly loop over the elements of our log, here's
+      a version of the header that does that;
+
+      .. literalinclude:: temperature_logger_loops.H
+         :language: c++
+         :caption: ``temperature_logger_loops.H``
+
+      Now the driver:
+
+      .. literalinclude:: hw9_p3_test_temp_log.cpp
+         :language: c++
+         :caption: ``test_temp_log.cpp``
