@@ -591,7 +591,73 @@ create:</p>
 <p>and for each, output their
 properties (perimeter,area, and the result of the test if it is
 square) to the terminal.</p>
-</li>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header sd-bg-muted sd-bg-text-muted">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-pencil" viewBox="0 0 16 16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"></path></svg></span><span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">First the header:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 162 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">rectangle.H</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef RECTANGLE_H</span>
+<span class="cp">#define RECTANGLE_H</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Rectangle</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+
+<span class="w">    </span><span class="n">Rectangle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">_width</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">_height</span><span class="p">)</span>
+<span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="n">width</span><span class="p">(</span><span class="n">_width</span><span class="p">),</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="n">_height</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{}</span>
+
+<span class="w">    </span><span class="n">Rectangle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">_length</span><span class="p">)</span>
+<span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="n">width</span><span class="p">(</span><span class="n">_length</span><span class="p">),</span><span class="w"> </span><span class="n">height</span><span class="p">(</span><span class="n">_length</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{}</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">perimeter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_square</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</div>
+<p class="sd-card-text">Notice that since I used that <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword, I need to explicitly make the
+constructors and member functions <code class="docutils literal notranslate"><span class="pre">public</span></code>.</p>
+<p class="sd-card-text">Now the driver:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 163 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">test_rectangle.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;rectangle.H&quot;</span>
+
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">r</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;Rectangle: P = {}, A = {}, is_square = {}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">                             </span><span class="n">r</span><span class="p">.</span><span class="n">perimeter</span><span class="p">(),</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">area</span><span class="p">(),</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">is_square</span><span class="p">());</span>
+<span class="w">    </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">s</span><span class="p">(</span><span class="mf">3.0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;Square: P = {}, A = {}, is_square = {}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">                             </span><span class="n">s</span><span class="p">.</span><span class="n">perimeter</span><span class="p">(),</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">area</span><span class="p">(),</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">is_square</span><span class="p">());</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</details></li>
 <li><p><em>3D vectors</em> : Starting with our <code class="docutils literal notranslate"><span class="pre">vector2d.H</span></code> implementation (<a class="reference internal" href="../cxx-classes/cxx-vector2d-class.html#sec-vector2d"><span class="std std-ref">Example: Mathematical Vectors</span></a>),
 extend it to three-dimensions (call your new implementation <code class="docutils literal notranslate"><span class="pre">vector3d.H</span></code>).</p>
 <p>You should:</p>
@@ -606,7 +672,11 @@ operators to work for a 3D vector.</p></li>
 our original implementation linked above.</p>
 <p>Now write a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function that exercises each of these operators—use the
 driver we created for the 2D implementation as the starting point.</p>
-</li>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header sd-bg-muted sd-bg-text-muted">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-pencil" viewBox="0 0 16 16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"></path></svg></span><span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+</div>
+</details></li>
 <li><p><em>Temperature logger</em> : Let’s write a class called
 <code class="docutils literal notranslate"><span class="pre">TemperatureLog</span></code> that stores measurements of temperature at
 different times.  Here’s how you should construct it:</p>
@@ -688,7 +758,164 @@ and adds the following data:</p>
 <li><p>the maximum temperature</p></li>
 <li><p>the time of the maximum temperature</p></li>
 </ul>
-</li>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-fade-in-slide-down">
+<summary class="sd-summary-title sd-card-header sd-bg-muted sd-bg-text-muted">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-pencil" viewBox="0 0 16 16" aria-hidden="true"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"></path></svg></span><span class="sd-summary-text">solution</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">First the header file.  Here’s a version that uses the standard library
+algorithms:</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-number">Listing 164 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">temperature_logger.H</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef TEMPERATURE_LOGGER_H</span>
+<span class="cp">#define TEMPERATURE_LOGGER_H</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numeric&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">TemperatureReading</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">time</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">TemperatureLog</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TemperatureReading</span><span class="o">&gt;</span><span class="w"> </span><span class="n">log</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">TemperatureLog</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">add_data</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">temp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">TemperatureReading</span><span class="p">{.</span><span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">temp</span><span class="o">=</span><span class="n">temp</span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">mean</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">accumulate</span><span class="p">(</span><span class="n">log</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">log</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
+<span class="w">                            </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">                            </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">TemperatureReading</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="w">                                </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">temp</span><span class="p">;});</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">log</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">max_element</span><span class="p">(</span><span class="n">log</span><span class="p">,</span>
+<span class="w">                                     </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">TemperatureReading</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span>
+<span class="w">                                         </span><span class="k">const</span><span class="w"> </span><span class="n">TemperatureReading</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="w">                                         </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">temp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">temp</span><span class="p">;});</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">it</span><span class="p">).</span><span class="n">temp</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">time_of_max</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">max_temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">();</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">find_if</span><span class="p">(</span><span class="n">log</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">=</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">TemperatureReading</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">temp</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">max_temp</span><span class="p">;});</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">it</span><span class="p">).</span><span class="n">time</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">};</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</div>
+<p class="sd-card-text">Some notes:</p>
+<ul class="simple">
+<li><p class="sd-card-text">I use <code class="docutils literal notranslate"><span class="pre">std::accumulate</span></code> and <code class="docutils literal notranslate"><span class="pre">std::ranges::max_element</span></code> here.  For
+<code class="docutils literal notranslate"><span class="pre">std::ranges::max_element</span></code>, we get an iterator, and need to dereference it
+to get the value it points to.</p></li>
+<li><p class="sd-card-text">For the <code class="docutils literal notranslate"><span class="pre">time_of_max</span></code> function, I first call the <code class="docutils literal notranslate"><span class="pre">max()</span></code> function.  Then
+I use <code class="docutils literal notranslate"><span class="pre">std::ranges::find_if</span></code> with a lambda function that looks for the element
+whose temperature matches the max temperature.</p></li>
+</ul>
+<p class="sd-card-text">If instead you wanted to explicitly loop over the elements of our log, here’s
+a version of the header that does that;</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-number">Listing 165 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">temperature_logger_loops.H</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef TEMPERATURE_LOGGER_H</span>
+<span class="cp">#define TEMPERATURE_LOGGER_H</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;limits&gt;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">TemperatureReading</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">time</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">TemperatureLog</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TemperatureReading</span><span class="o">&gt;</span><span class="w"> </span><span class="n">log</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">TemperatureLog</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">add_data</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">temp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">TemperatureReading</span><span class="p">{.</span><span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">temp</span><span class="o">=</span><span class="n">temp</span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">mean</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">sum</span><span class="p">{};</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">tr</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">log</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">tr</span><span class="p">.</span><span class="n">temp</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">log</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">lowest</span><span class="p">()};</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">tr</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">log</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">max</span><span class="p">,</span><span class="w"> </span><span class="n">tr</span><span class="p">.</span><span class="n">temp</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">max</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">time_of_max</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">max_temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">();</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">time</span><span class="p">{};</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">tr</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">log</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tr</span><span class="p">.</span><span class="n">temp</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">max_temp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tr</span><span class="p">.</span><span class="n">time</span><span class="p">;</span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">time</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">};</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</div>
+<p class="sd-card-text">Now the driver:</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-number">Listing 166 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">test_temp_log.cpp</span></code></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;temperature_logger.H&quot;</span>
+
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">TemperatureLog</span><span class="w"> </span><span class="n">tlog</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">tlog</span><span class="p">.</span><span class="n">add_data</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">75</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tlog</span><span class="p">.</span><span class="n">add_data</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="mi">68</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tlog</span><span class="p">.</span><span class="n">add_data</span><span class="p">(</span><span class="mi">22</span><span class="p">,</span><span class="w"> </span><span class="mi">79</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tlog</span><span class="p">.</span><span class="n">add_data</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="w"> </span><span class="mi">85</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tlog</span><span class="p">.</span><span class="n">add_data</span><span class="p">(</span><span class="mi">49</span><span class="p">,</span><span class="w"> </span><span class="mi">96</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tlog</span><span class="p">.</span><span class="n">add_data</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span><span class="w"> </span><span class="mi">88</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tlog</span><span class="p">.</span><span class="n">add_data</span><span class="p">(</span><span class="mi">62</span><span class="p">,</span><span class="w"> </span><span class="mi">78</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tlog</span><span class="p">.</span><span class="n">add_data</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span><span class="w"> </span><span class="mi">71</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tlog</span><span class="p">.</span><span class="n">add_data</span><span class="p">(</span><span class="mi">76</span><span class="p">,</span><span class="w"> </span><span class="mi">62</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;mean temperature = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">tlog</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;max temperature = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">tlog</span><span class="p">.</span><span class="n">max</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;time of max temperature = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">tlog</span><span class="p">.</span><span class="n">time_of_max</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</details></li>
 </ol>
 </section>
 
