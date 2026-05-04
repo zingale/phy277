@@ -3,8 +3,8 @@ import vector
 u = vector.Vector(3, 5)
 v = vector.Vector(1, 2)
 
-print("u = {u}")
-print("v = {u}")
+print(f"u = {u}")
+print(f"v = {u}")
 print()
 
 # addition and subtraction
