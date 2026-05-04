@@ -138,8 +138,8 @@ set ``v.x`` and ``v.y``.
 
 
 
-Test driver
-===========
+Implementation
+==============
 
 Here's a test driver that exercises these new capabilities.  It uses
 assertions to ensure that we implemented them correctly.
@@ -148,3 +148,13 @@ assertions to ensure that we implemented them correctly.
    :language: c++
    :caption: ``test_vectors.cpp``
 
+Here's the implementation of the class:
+
+.. dropdown:: solution
+   :color: muted
+   :icon: pencil
+   :animate: fade-in-slide-down
+
+   .. literalinclude:: ../../../examples/classes/vector-improved/vector2d.H
+      :language: c++
+      :caption: ``vector2d.H``

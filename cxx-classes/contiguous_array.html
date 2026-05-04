@@ -604,7 +604,7 @@ and can be in very disparate positions in memory.</p>
 we need to know the size of the array ahead of time.  Here’s an example that creates
 a 3×4 array (3 rows by 4 columns):</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-number">Listing 128 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">multid_array.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 129 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">multid_array.cpp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;array&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
@@ -690,7 +690,7 @@ indexed as a two-dimensional array.</span><a class="headerlink" href="#id3" titl
 <h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h2>
 <p>We will implement the main <code class="docutils literal notranslate"><span class="pre">struct</span></code> in a header so we can reuse this</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-number">Listing 129 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">array.H</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 130 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">array.H</span></code></span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef ARRAY_H</span>
 <span class="cp">#define ARRAY_H</span>
 
@@ -777,7 +777,7 @@ case of a non-<code class="docutils literal notranslate"><span class="pre">const
 <p>Here’s a test program for the <code class="docutils literal notranslate"><span class="pre">Array</span></code> object.  Notice that we gain
 access to the <code class="docutils literal notranslate"><span class="pre">Array</span></code> class via <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;array.H&quot;</span></code>.</p>
 <div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-number">Listing 130 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">test_array.cpp</span></code></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 131 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">test_array.cpp</span></code></span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;array.H&quot;</span>
@@ -834,7 +834,7 @@ this.</p></li>
 <p>Here’s a makefile that builds this test program + a few others that
 we’ll compare with.</p>
 <div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-number">Listing 131 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 132 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code></span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
 <div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="c"># get all the sources and the headers</span>
 <span class="nv">HEADERS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">$(</span>wildcard<span class="w"> </span>*.H<span class="k">)</span>
 <span class="nv">SOURCE</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>test_array.cpp

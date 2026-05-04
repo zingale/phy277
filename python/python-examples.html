@@ -579,9 +579,13 @@ to loop over a list.</p>
 </section>
 <section id="root-finding">
 <h2>Root-finding<a class="headerlink" href="#root-finding" title="Link to this heading">#</a></h2>
-<p>Let’s rewrite our <a class="reference internal" href="../algorithms/roots.html#sec-root-bisection"><span class="std std-ref">Bisection</span></a> root-finding method in python.</p>
+<p>Let’s rewrite our <a class="reference internal" href="../algorithms/roots.html#sec-root-bisection"><span class="std std-ref">Bisection</span></a> root-finding method in python.
+This is almost a one-to-one translation.  The main thing we change is that
+<code class="docutils literal notranslate"><span class="pre">root</span></code> is now passed back as the return value, and it is set to <code class="docutils literal notranslate"><span class="pre">None</span></code>
+if the root could not be found.  We can do this in python because
+we don’t need to specify the types.  In C++ this is harder.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 142 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">bisection.py</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 143 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">bisection.py</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ATOL</span> <span class="o">=</span> <span class="mf">1.e-14</span>
 <span class="n">RTOL</span> <span class="o">=</span> <span class="mf">1.e-14</span>
 <span class="n">MAX_ITER</span> <span class="o">=</span> <span class="mi">100</span>
@@ -653,6 +657,21 @@ to loop over a list.</p>
 </pre></div>
 </div>
 </div>
+<p>Note that we end with a call to <code class="docutils literal notranslate"><span class="pre">main()</span></code>.  This is the part that will be executed
+if we run this as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">python<span class="w"> </span>bisection</span>
+</pre></div></div><p>We can make it such that we can either run this on the command line (as above) or import
+the module (i.e., <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">bisection</span></code>) by changing this to:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">__name__</span></code> is a built-in that will only be equal to <code class="docutils literal notranslate"><span class="pre">__main__</span></code> if we are
+running from the commandline.</p>
 </section>
 <section id="extended-solar-system-class">
 <h2>Extended solar system class<a class="headerlink" href="#extended-solar-system-class" title="Link to this heading">#</a></h2>
