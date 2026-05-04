@@ -580,6 +580,79 @@ to loop over a list.</p>
 <section id="root-finding">
 <h2>Root-finding<a class="headerlink" href="#root-finding" title="Link to this heading">#</a></h2>
 <p>Let’s rewrite our <a class="reference internal" href="../algorithms/roots.html#sec-root-bisection"><span class="std std-ref">Bisection</span></a> root-finding method in python.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 142 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">bisection.py</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ATOL</span> <span class="o">=</span> <span class="mf">1.e-14</span>
+<span class="n">RTOL</span> <span class="o">=</span> <span class="mf">1.e-14</span>
+<span class="n">MAX_ITER</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="c1"># Apply bisection to find a root of f(x) in the range [xleft, xright]</span>
+<span class="c1"># Return value is None if there was an error</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">bisection</span><span class="p">(</span><span class="n">xleft</span><span class="p">,</span> <span class="n">xright</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+
+    <span class="n">fleft</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">xleft</span><span class="p">)</span>
+    <span class="n">fright</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">xright</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">fleft</span> <span class="o">*</span> <span class="n">fright</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no root in interval [xleft, right]&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="n">fleft</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">fright</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;root is one of bounds&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">xmid</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">xleft</span> <span class="o">+</span> <span class="n">xright</span><span class="p">)</span>
+
+    <span class="nb">iter</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">while</span> <span class="nb">iter</span> <span class="o">&lt;</span> <span class="n">MAX_ITER</span><span class="p">:</span>
+        <span class="n">fmid</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">xmid</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">fleft</span> <span class="o">*</span> <span class="n">fmid</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+            <span class="c1"># root is in [xmid, xright]</span>
+            <span class="n">xleft</span> <span class="o">=</span> <span class="n">xmid</span>
+            <span class="n">fleft</span> <span class="o">=</span> <span class="n">fmid</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># root is in [xleft, xmid]</span>
+            <span class="n">xright</span> <span class="o">=</span> <span class="n">xmid</span>
+
+        <span class="n">err</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">xright</span> <span class="o">-</span> <span class="n">xleft</span><span class="p">)</span>
+        <span class="n">xmid</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">xleft</span> <span class="o">+</span> <span class="n">xright</span><span class="p">)</span>
+
+        <span class="c1"># check if we&#39;ve converged</span>
+        <span class="k">if</span> <span class="n">err</span> <span class="o">&lt;</span> <span class="n">RTOL</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">xmid</span><span class="p">)</span> <span class="o">+</span> <span class="n">ATOL</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">xmid</span>
+
+        <span class="nb">iter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># check to see if we took too many iterations</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;too many iterations&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+
+    <span class="c1"># bisection on f(x) = x^3 + x^2 - 1</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;trying bisection on f(x) = x^3 + x^2 - 1&quot;</span><span class="p">)</span>
+
+    <span class="n">root</span> <span class="o">=</span> <span class="n">bisection</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x_0 = </span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">; f(x_0) = </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">root</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;root not found&quot;</span><span class="p">)</span>
+
+<span class="n">main</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</div>
 </section>
 <section id="extended-solar-system-class">
 <h2>Extended solar system class<a class="headerlink" href="#extended-solar-system-class" title="Link to this heading">#</a></h2>

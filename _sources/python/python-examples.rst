@@ -27,6 +27,10 @@ Root-finding
 
 Let's rewrite our :ref:`sec:root-bisection` root-finding method in python.
 
+.. literalinclude:: ../../../examples/python/bisection.py
+   :language: python
+   :caption: ``bisection.py``
+
 Extended solar system class
 ===========================
 
