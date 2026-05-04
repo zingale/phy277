@@ -26,10 +26,33 @@ Root-finding
 ============
 
 Let's rewrite our :ref:`sec:root-bisection` root-finding method in python.
+This is almost a one-to-one translation.  The main thing we change is that
+``root`` is now passed back as the return value, and it is set to ``None``
+if the root could not be found.  We can do this in python because
+we don't need to specify the types.  In C++ this is harder.
+
 
 .. literalinclude:: ../../../examples/python/bisection.py
    :language: python
    :caption: ``bisection.py``
+
+Note that we end with a call to ``main()``.  This is the part that will be executed
+if we run this as:
+
+.. prompt:: bash
+
+   python bisection
+
+We can make it such that we can either run this on the command line (as above) or import
+the module (i.e., ``import bisection``) by changing this to:
+
+.. code:: python
+
+   if __name__ == "__main__":
+       main()
+
+Here, ``__name__`` is a built-in that will only be equal to ``__main__`` if we are
+running from the commandline.
 
 Extended solar system class
 ===========================
