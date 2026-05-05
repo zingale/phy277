@@ -544,7 +544,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-arrays">Copying arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-arrays">Copying arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#views">Views</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-indexing">Boolean indexing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoiding-loops">Avoiding loops</a></li>
 </ul>
@@ -583,7 +586,7 @@ in memory and share the same shape, etc. They are just two different
 labels for the same object in memory</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">=</span> <span class="pre">A[:]</span></code></p>
-<p>this is a view or shallow copy. The shape info for <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> are
+<p>this is a <em>view</em> or shallow copy. The shape info for <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> are
 stored independently, but both point to the same memory location for
 data</p>
 </li>
@@ -592,6 +595,35 @@ data</p>
 memory, with a completely separate location in memory.</p>
 </li>
 </ul>
+<section id="views">
+<h3>Views<a class="headerlink" href="#views" title="Link to this heading">#</a></h3>
+<p>Consider the following:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="gp">... </span>              <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="gp">... </span>              <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>              <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="gp">... </span>              <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">array([[4, 4, 4],</span>
+<span class="go">       [4, 4, 4],</span>
+<span class="go">       [4, 4, 4]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">array([[1, 2, 3, 2, 1],</span>
+<span class="go">       [2, 0, 0, 0, 2],</span>
+<span class="go">       [3, 0, 0, 0, 3],</span>
+<span class="go">       [2, 0, 0, 0, 2],</span>
+<span class="go">       [1, 2, 3, 2, 1]])</span>
+</pre></div>
+</div>
+<p>Here we create a view <code class="docutils literal notranslate"><span class="pre">a</span></code> into array <code class="docutils literal notranslate"><span class="pre">q</span></code> that just consists of the middle
+3×3 array of elements.</p>
+<p>But when we zero-out the elements of <code class="docutils literal notranslate"><span class="pre">a</span></code>, this change is reflected back into <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
+<p>A view shares the underlying data of the original array, but has
+separate metadata (size, shape, etc.).  Views in NumPy allow us to do efficient
+operations on portions of arrays.</p>
+</section>
 </section>
 <section id="boolean-indexing">
 <h2>Boolean indexing<a class="headerlink" href="#boolean-indexing" title="Link to this heading">#</a></h2>
@@ -648,7 +680,10 @@ memory, with a completely separate location in memory.</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-arrays">Copying arrays</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-arrays">Copying arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#views">Views</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-indexing">Boolean indexing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoiding-loops">Avoiding loops</a></li>
 </ul>
