@@ -335,6 +335,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python-numpy.html">NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-numpy-advanced.html">More NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-numpy-differencing.html">Finite-Differencing in NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-matplotlib.html">matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="calling-cxx-from-python.html">Calling C++ from Python</a></li>
 </ul>
@@ -788,6 +789,33 @@ a planet, and computing the period.</p>
 </pre></div>
 </div>
 </div>
+<p>Some comments:</p>
+<ul>
+<li><p>in <code class="docutils literal notranslate"><span class="pre">add_planet</span></code>, we do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">any</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>this if equivalent to:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+<p>this is an example of <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions">comprehension</a>.</p>
+</li>
+<li><p>in <code class="docutils literal notranslate"><span class="pre">get_planet</span></code> we get our <code class="docutils literal notranslate"><span class="pre">Planet</span></code> as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>this creates a list with the entries in <code class="docutils literal notranslate"><span class="pre">self.planets</span></code> that have
+the name <code class="docutils literal notranslate"><span class="pre">name</span></code>.  If there are no such <code class="docutils literal notranslate"><span class="pre">Planet</span></code> objects, then
+the list will be empty (so we change <code class="docutils literal notranslate"><span class="pre">len(p)</span></code>.</p>
+<p>Also note that <code class="docutils literal notranslate"><span class="pre">p</span></code> here is the same object as in <code class="docutils literal notranslate"><span class="pre">self.planets</span></code>,
+we can think about it as a reference.</p>
+</li>
+</ul>
 </section>
 </section>
 

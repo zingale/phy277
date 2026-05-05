@@ -104,3 +104,37 @@ a planet, and computing the period.
 .. literalinclude:: ../../../examples/python/solar_system.py
    :language: python
    :caption: `solar_system.py`
+
+Some comments:
+
+* in ``add_planet``, we do:
+
+  .. code:: python
+
+     any(p.name == name for p in self.planets)
+
+  this if equivalent to:
+
+  .. code:: python
+
+     found = False
+     for p in self.planets:
+         if p.name == name:
+             found = True
+             break
+
+  this is an example of `comprehension <https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions>`_.
+
+* in ``get_planet`` we get our ``Planet`` as:
+
+  .. code:: python
+
+     p = [p for p in self.planets if p.name == name]
+
+  this creates a list with the entries in ``self.planets`` that have
+  the name ``name``.  If there are no such ``Planet`` objects, then
+  the list will be empty (so we change ``len(p)``.
+
+  Also note that ``p`` here is the same object as in ``self.planets``,
+  we can think about it as a reference.
+
