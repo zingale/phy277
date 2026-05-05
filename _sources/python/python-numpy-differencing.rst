@@ -22,6 +22,6 @@ derivatives, because we need an extra point on each end.
 
 Here's the code:
 
-.. literalinclude:: ../../../example/python/derivative.py
+.. literalinclude:: ../../../examples/python/derivative.py
    :language: c++
    :caption: ``derivative.py``

@@ -563,6 +563,23 @@ as an array by simply using views that are shifted by one element.  In terms of 
 <p>Note that for an array with <span class="math notranslate nohighlight">\(N\)</span> elements, we’ll have <span class="math notranslate nohighlight">\(N-2\)</span>
 derivatives, because we need an extra point on each end.</p>
 <p>Here’s the code:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 145 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">derivative.py</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="n">numpy</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">np</span>
+
+<span class="cp"># create our sampled data, f(x) = sin(x)</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">)</span>
+<span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="cp"># now construct (f[i + 1] - f[i]) / (x[i+1] - x[i])</span>
+<span class="n">dfdx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="o">:</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="o">:</span><span class="mi">-2</span><span class="p">])</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="o">:</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="o">:</span><span class="mi">-2</span><span class="p">])</span>
+
+<span class="cp"># finally output, and compare to the exact result, cos(x)</span>
+<span class="k">for</span><span class="w"> </span><span class="n">xc</span><span class="p">,</span><span class="w"> </span><span class="n">fc</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">zip</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">-1</span><span class="p">],</span><span class="w"> </span><span class="n">dfdx</span><span class="p">)</span><span class="o">:</span>
+<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="n">f</span><span class="s">&quot;{xc:7.4f}  {fc:7.4f}  {np.cos(xc):7.4f}&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 
 
