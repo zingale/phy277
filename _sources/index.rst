@@ -291,7 +291,6 @@ the top of many pages.
 
    python/python-numpy
    python/python-numpy-advanced
-   python/python-numpy-differencing
    python/python-matplotlib
    python/calling-cxx-from-python
 
