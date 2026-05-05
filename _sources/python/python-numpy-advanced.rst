@@ -74,10 +74,47 @@ A view shares the underlying data of the original array, but has
 separate metadata (size, shape, etc.).  Views in NumPy allow us to do efficient
 operations on portions of arrays.
 
+.. admonition:: try it...
+
+   Create an array as:
+
+   .. code:: python
+
+      a = np.arange(15)
+
+   now create a view, by slicing the entire array:
+
+   .. code:: python
+
+      c = a[:]
+
+   If you reshape ``c`` to be 3×5, what happens to ``a``?
+
+
 Boolean indexing
 ================
 
+We can index arrays using expressions to avoid loops.  This create a
+mask of ``True`` and ``False`` that tells NumPy which elements to work
+on.
 
-Avoiding loops
-==============
+Consider the following---we'll zero out all the elements larger than 4:
+
+.. code:: pycon
+
+   >>> a = np.arange(12).reshape(3, 4)
+   >>> a
+   array([[ 0,  1,  2,  3],
+          [ 4,  5,  6,  7],
+          [ 8,  9, 10, 11]])
+   >>> a[a > 4] = 0
+   >>> a
+   array([[0, 1, 2, 3],
+          [4, 0, 0, 0],
+          [0, 0, 0, 0]])
+
+
+Notice how we indexed ``a`` with ``a > 0``.  We can print that
+expression itself out to see what it look like---this would be the
+mask used for indexing the array.
 

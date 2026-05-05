@@ -2,6 +2,8 @@
 Derivatives and Truncation
 **************************
 
+.. _sec:difference-first-derivative:
+
 Difference approximation to first derivative
 ============================================
 

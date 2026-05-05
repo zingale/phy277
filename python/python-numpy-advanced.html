@@ -53,7 +53,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'python/python-numpy-advanced';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="matplotlib" href="python-matplotlib.html" />
+    <link rel="next" title="Finite-Differencing in NumPy" href="python-numpy-differencing.html" />
     <link rel="prev" title="NumPy" href="python-numpy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -335,6 +335,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python-numpy.html">NumPy</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">More NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-numpy-differencing.html">Finite-Differencing in NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-matplotlib.html">matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="calling-cxx-from-python.html">Calling C++ from Python</a></li>
 </ul>
@@ -549,7 +550,6 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-indexing">Boolean indexing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoiding-loops">Avoiding loops</a></li>
 </ul>
             </nav>
         </div>
@@ -623,13 +623,41 @@ memory, with a completely separate location in memory.</p>
 <p>A view shares the underlying data of the original array, but has
 separate metadata (size, shape, etc.).  Views in NumPy allow us to do efficient
 operations on portions of arrays.</p>
+<div class="admonition-try-it admonition">
+<p class="admonition-title">try it…</p>
+<p>Create an array as:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>now create a view, by slicing the entire array:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span>
+</pre></div>
+</div>
+<p>If you reshape <code class="docutils literal notranslate"><span class="pre">c</span></code> to be 3×5, what happens to <code class="docutils literal notranslate"><span class="pre">a</span></code>?</p>
+</div>
 </section>
 </section>
 <section id="boolean-indexing">
 <h2>Boolean indexing<a class="headerlink" href="#boolean-indexing" title="Link to this heading">#</a></h2>
-</section>
-<section id="avoiding-loops">
-<h2>Avoiding loops<a class="headerlink" href="#avoiding-loops" title="Link to this heading">#</a></h2>
+<p>We can index arrays using expressions to avoid loops.  This create a
+mask of <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> that tells NumPy which elements to work
+on.</p>
+<p>Consider the following—we’ll zero out all the elements larger than 4:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">array([[ 0,  1,  2,  3],</span>
+<span class="go">       [ 4,  5,  6,  7],</span>
+<span class="go">       [ 8,  9, 10, 11]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">array([[0, 1, 2, 3],</span>
+<span class="go">       [4, 0, 0, 0],</span>
+<span class="go">       [0, 0, 0, 0]])</span>
+</pre></div>
+</div>
+<p>Notice how we indexed <code class="docutils literal notranslate"><span class="pre">a</span></code> with <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>.  We can print that
+expression itself out to see what it look like—this would be the
+mask used for indexing the array.</p>
 </section>
 </section>
 
@@ -654,11 +682,11 @@ operations on portions of arrays.</p>
       </div>
     </a>
     <a class="right-next"
-       href="python-matplotlib.html"
+       href="python-numpy-differencing.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">matplotlib</p>
+        <p class="prev-next-title">Finite-Differencing in NumPy</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -685,7 +713,6 @@ operations on portions of arrays.</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-indexing">Boolean indexing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avoiding-loops">Avoiding loops</a></li>
 </ul>
   </nav></div>
 

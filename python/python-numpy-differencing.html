@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Shell History &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Finite-Differencing in NumPy &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -50,11 +50,13 @@
     <script src="../_static/copybutton.js?v=eaa7b67c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'shell/shell-history';</script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'python/python-numpy-differencing';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Create Files and Directories" href="shell-file-create.html" />
-    <link rel="prev" title="Navigating the Filesystem" href="filesystem.html" />
+    <link rel="next" title="matplotlib" href="python-matplotlib.html" />
+    <link rel="prev" title="More NumPy" href="python-numpy-advanced.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -158,20 +160,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/ai.html">What About AI?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">The UNIX Shell</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="why_command_line.html">Why Use the Command Line?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell.html">The Shell</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sample-data.html">Some Sample Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="filesystem.html">Navigating the Filesystem</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Shell History</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-file-create.html">Create Files and Directories</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-copy-move.html">Copying, Moving, and Deleting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-wildcards.html">Wildcards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="shell-redirection-pipes.html">Redirection and Pipes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="finding.html"><code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../shell/why_command_line.html">Why Use the Command Line?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell.html">The Shell</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/sample-data.html">Some Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/filesystem.html">Navigating the Filesystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-history.html">Shell History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-file-create.html">Create Files and Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-copy-move.html">Copying, Moving, and Deleting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-wildcards.html">Wildcards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/shell-redirection-pipes.html">Redirection and Pipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/finding.html"><code class="docutils literal notranslate"><span class="pre">grep</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started/scp.html"><code class="docutils literal notranslate"><span class="pre">scp</span></code> and Transferring Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="permissions.html">File Permissions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="path.html">Search Path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/permissions.html">File Permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell/path.html">Search Path</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Programming</span></p>
 <ul class="nav bd-sidenav">
@@ -321,23 +323,23 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../python/python-intro.html">Python Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/python-cxx.html">Comparing python and C++</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/python-numbers.html">Integers, Floats, and Math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/python-strings.html">Strings and <code class="docutils literal notranslate"><span class="pre">print</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/python-lists.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/python-conditionals.html">Loops and <code class="docutils literal notranslate"><span class="pre">if</span></code>-tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/python-functions.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/python-classes.html">Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/python-examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-intro.html">Python Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-cxx.html">Comparing python and C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-numbers.html">Integers, Floats, and Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-strings.html">Strings and <code class="docutils literal notranslate"><span class="pre">print</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-lists.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-conditionals.html">Loops and <code class="docutils literal notranslate"><span class="pre">if</span></code>-tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-examples.html">Examples</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific Python</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../python/python-numpy.html">NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/python-numpy-advanced.html">More NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/python-numpy-differencing.html">Finite-Differencing in NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/python-matplotlib.html">matplotlib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/calling-cxx-from-python.html">Calling C++ from Python</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python-numpy.html">NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-numpy-advanced.html">More NumPy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Finite-Differencing in NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-matplotlib.html">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calling-cxx-from-python.html">Calling C++ from Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">In-class Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -443,7 +445,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/shell/shell-history.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/python/python-numpy-differencing.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -460,7 +462,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/shell/shell-history.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/python/python-numpy-differencing.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -477,7 +479,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fshell/shell-history.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fpython/python-numpy-differencing.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -522,9 +524,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -535,20 +535,11 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Shell History</h1>
+    <h1>Finite-Differencing in NumPy</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#history"><code class="docutils literal notranslate"><span class="pre">history</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrow-keys">Arrow keys</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -558,39 +549,20 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="shell-history">
-<h1>Shell History<a class="headerlink" href="#shell-history" title="Link to this heading">#</a></h1>
-<section id="history">
-<h2><code class="docutils literal notranslate"><span class="pre">history</span></code><a class="headerlink" href="#history" title="Link to this heading">#</a></h2>
-<p>You can do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: "$ ";
-}
-</style><span class="prompt1"><span class="nb">history</span></span>
-</pre></div></div><p>To see the history of commands that you’ve run since the start of your
-shell session (there is a limit, so very old commands may not show
-up).</p>
-<p>You can also easily repeat a command from your history by using the <code class="docutils literal notranslate"><span class="pre">!</span></code>
-operator:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">!</span></code> + the number next to a command in your history (e.g., <code class="docutils literal notranslate"><span class="pre">!100</span></code>)
-will rerun that command.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">!</span></code> + a character (or several characters) will run the most recent command
-in your history that starts with the same characters.  E.g., if you have
-<code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code> in your history as the most recent command starting with the letter “l”, then
-doing <code class="docutils literal notranslate"><span class="pre">!l</span></code> will rerun that command.</p></li>
-</ul>
-</section>
-<section id="arrow-keys">
-<h2>Arrow keys<a class="headerlink" href="#arrow-keys" title="Link to this heading">#</a></h2>
-<p>You can scroll through your shell history using the arrow keys.</p>
-<ul class="simple">
-<li><p><kbd class="kbd docutils literal notranslate">↑</kbd> will scroll backwards through your history</p></li>
-<li><p><kbd class="kbd docutils literal notranslate">↓</kbd> will scroll forwards through your history</p></li>
-</ul>
-<p>When you find a command you want to rerun, just hit <kbd class="kbd docutils literal notranslate">Enter</kbd>.</p>
-</section>
+  <section id="finite-differencing-in-numpy">
+<h1>Finite-Differencing in NumPy<a class="headerlink" href="#finite-differencing-in-numpy" title="Link to this heading">#</a></h1>
+<p>Recall from <a class="reference internal" href="../algorithms/truncation.html#sec-difference-first-derivative"><span class="std std-ref">Difference approximation to first derivative</span></a>, that
+a second-order accurate approximation to the second-derivative
+is:</p>
+<div class="math notranslate nohighlight">
+\[\left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0 - \Delta x)}{2\Delta x} + \mathcal{O}(\Delta x^2)\]</div>
+<p>We can compute the derivative of a function in NumPy that is sampled
+as an array by simply using views that are shifted by one element.  In terms of array indices, <span class="math notranslate nohighlight">\(i\)</span>, this would be</p>
+<div class="math notranslate nohighlight">
+\[\frac{dx}{dx} \sim \frac{f(x_{i+1}) - f(x_{i-1}))}{x_{i+1} - x_{i-1}}\]</div>
+<p>Note that for an array with <span class="math notranslate nohighlight">\(N\)</span> elements, we’ll have <span class="math notranslate nohighlight">\(N-2\)</span>
+derivatives, because we need an extra point on each end.</p>
+<p>Here’s the code:</p>
 </section>
 
 
@@ -605,20 +577,20 @@ doing <code class="docutils literal notranslate"><span class="pre">!l</span></co
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="filesystem.html"
+       href="python-numpy-advanced.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Navigating the Filesystem</p>
+        <p class="prev-next-title">More NumPy</p>
       </div>
     </a>
     <a class="right-next"
-       href="shell-file-create.html"
+       href="python-matplotlib.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Create Files and Directories</p>
+        <p class="prev-next-title">matplotlib</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -628,24 +600,6 @@ doing <code class="docutils literal notranslate"><span class="pre">!l</span></co
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#history"><code class="docutils literal notranslate"><span class="pre">history</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrow-keys">Arrow keys</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

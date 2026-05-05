@@ -337,6 +337,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../python/python-numpy.html">NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/python-numpy-advanced.html">More NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python-numpy-differencing.html">Finite-Differencing in NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/python-matplotlib.html">matplotlib</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python/calling-cxx-from-python.html">Calling C++ from Python</a></li>
 </ul>
@@ -562,7 +563,7 @@
   <section id="derivatives-and-truncation">
 <h1>Derivatives and Truncation<a class="headerlink" href="#derivatives-and-truncation" title="Link to this heading">#</a></h1>
 <section id="difference-approximation-to-first-derivative">
-<h2>Difference approximation to first derivative<a class="headerlink" href="#difference-approximation-to-first-derivative" title="Link to this heading">#</a></h2>
+<span id="sec-difference-first-derivative"></span><h2>Difference approximation to first derivative<a class="headerlink" href="#difference-approximation-to-first-derivative" title="Link to this heading">#</a></h2>
 <p>Consider the Taylor expansion of <span class="math notranslate nohighlight">\(f(x)\)</span> about some point <span class="math notranslate nohighlight">\(x_0\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[f(x) = f(x_0 + \Delta x) = f(x_0) + \left . \frac{df}{dx} \right |_{x_0} \Delta x + \mathcal{O}(\Delta x^2)\]</div>
