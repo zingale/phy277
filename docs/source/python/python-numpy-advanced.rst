@@ -29,16 +29,27 @@ Let's look at different ways to copy:
   in memory and share the same shape, etc. They are just two different
   labels for the same object in memory
 
+  This is essentially equivalent to the C++ behavior of:
+
+  .. code:: c++
+
+     std::vector<double> A;
+     auto& B = A;
+
 * ``B = A[:]``
 
-  this is a *view* or shallow copy. The shape info for ``A`` and ``B`` are
-  stored independently, but both point to the same memory location for
-  data
+  this is a *view* or shallow copy. The shape, stride, ... info for
+  ``A`` and ``B`` are stored independently, but both point to the same
+  memory location for data.
+
+  In some sense, you can think of ``B`` as containing a pointer to the
+  data in ``A``.
 
 * ``B = A.copy()``
 
   this is a deep copy. A completely separate object will be created in
-  memory, with a completely separate location in memory.
+  memory, with the elements from ``A`` copied into the ``B`` 's memory.  After
+  this, there is no connection between ``A`` and ``B``.
 
 Views
 -----
@@ -65,10 +76,14 @@ Consider the following:
           [2, 0, 0, 0, 2],
           [1, 2, 3, 2, 1]])
 
-Here we create a view ``a`` into array ``q`` that just consists of the middle
-3×3 array of elements.
+Here we:
 
-But when we zero-out the elements of ``a``, this change is reflected back into ``q``.
+* create a view ``a`` into array ``q`` that just consists of the middle
+  3×3 array of elements.
+
+* zero out the elements of ``a``
+
+* print out ``q`` and notice that the change we made to ``a`` is reflected in ``q``.
 
 A view shares the underlying data of the original array, but has
 separate metadata (size, shape, etc.).  Views in NumPy allow us to do efficient
@@ -113,8 +128,24 @@ Consider the following---we'll zero out all the elements larger than 4:
           [4, 0, 0, 0],
           [0, 0, 0, 0]])
 
-
 Notice how we indexed ``a`` with ``a > 0``.  We can print that
 expression itself out to see what it look like---this would be the
 mask used for indexing the array.
+
+.. code:: pycon
+
+   >>> a > 4
+   array([[False, False, False, False],
+          [False,  True,  True,  True],
+          [ True,  True,  True,  True]])
+
+Doing this explicitly with loops would involve something like:
+
+.. code:: python
+
+   for i in range(a.shape[0]):
+       for j in range(a.shape[1]):
+           if a[i, j] > 4:
+               a[i, j] = 0
+
 
