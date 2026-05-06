@@ -602,9 +602,43 @@ does <code class="docutils literal notranslate"><span class="pre">v.insert(pos,<
 </section>
 <section id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>What is the main difference between a <code class="docutils literal notranslate"><span class="pre">struct</span></code> and a <code class="docutils literal notranslate"><span class="pre">class</span></code> in C++?</p></li>
+<li><p>What is a constructor, and when is it called?  What name is given
+to the constructor function?</p></li>
+<li><p>What is an initialization list? In the code below, what member data is initialized?</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">SolarSystem</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">mass</span><span class="p">)</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">star_mass</span><span class="p">{</span><span class="n">mass</span><span class="p">}</span>
+<span class="p">{}</span>
+</pre></div>
+</div>
+</li>
+</ol>
 </section>
 <section id="python">
 <h2>Python<a class="headerlink" href="#python" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>What is the python equivalent of this C++ code</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">2.5</span><span class="p">};</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">{</span><span class="mf">1.2</span><span class="p">};</span>
+
+<span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p>What is the result of the following python code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">normalization</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">xi</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">if</span> <span class="n">normalization</span><span class="p">:</span>
+        <span class="n">xi</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">normalization</span>
+
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">func</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">normalization</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
 </section>
 </section>
 
