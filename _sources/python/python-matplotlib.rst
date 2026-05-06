@@ -61,6 +61,19 @@ Here's how we make the plot:
 Visualizing 2-d arrays
 ======================
 
+.. literalinclude:: ../../../examples/matplotlib/heatmap.py
+   :language: python
+   :caption: ``heatmap.py``
+
+here's the figure it produces:
+
+.. figure:: ../../../examples/matplotlib/heatmap.png
+   :align: center
+   :width: 90%
+
+   A "heatmap" style plot of an array.
+
+
 
 Other plot types
 ================
