@@ -607,6 +607,18 @@ an array of <span class="math notranslate nohighlight">\(x\)</span> values using
 <p><span class="caption-number">Fig. 14 </span><span class="caption-text">A plot of sin(x)</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<p>Here’s how we make the plot:</p>
+<ul class="simple">
+<li><p>We use the matplotlib <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html">subplots</a> function to create a <code class="docutils literal notranslate"><span class="pre">Figure</span></code> and <code class="docutils literal notranslate"><span class="pre">Axes</span></code> object.</p></li>
+<li><p>We use <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">plot</a> to make the plot, simply giving the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> arrays of data to plot.</p></li>
+<li><p>We set the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> labels using <cite>set_xlabel &lt;https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlabel.html&gt;</cite> and <code class="docutils literal notranslate"><span class="pre">set_ylabel</span></code> on the <code class="docutils literal notranslate"><span class="pre">Axes</span></code> object.</p></li>
+<li><p>We use <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.figure.Figure.savefig.html">savefig</a> on the <code class="docutils literal notranslate"><span class="pre">Figure</span></code> to save a PNG file.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>There is a lot of additional styling that can be done.  A good place to see what
+is possible is the <a class="reference external" href="https://matplotlib.org/stable/gallery/index.html">examples gallery</a>.</p>
+</div>
 </section>
 <section id="visualizing-2-d-arrays">
 <h2>Visualizing 2-d arrays<a class="headerlink" href="#visualizing-2-d-arrays" title="Link to this heading">#</a></h2>
