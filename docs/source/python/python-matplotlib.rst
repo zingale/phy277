@@ -25,6 +25,22 @@ Anatomy of a figure
 Basic plotting
 ==============
 
+Let's start with a simple example of plotting $\sin(x)$.  We'll first create
+an array of $x$ values using ``np.linspace``, and then make the plot:
+
+.. literalinclude:: ../../../examples/matplotlib/basic.py
+   :language: python
+   :caption: ``basic.py``
+
+here's the figure it produces:
+
+.. figure:: ../../../examples/matplotlib/basic.png
+   :align: center
+   :width: 90%
+
+   A plot of sin(x)
+
+
 
 Visualizing 2-d arrays
 ======================
