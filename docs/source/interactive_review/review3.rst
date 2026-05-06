@@ -39,6 +39,7 @@ Software Engineering
 ====================
 
 
+
 Version Control
 ===============
 
@@ -46,8 +47,41 @@ Version Control
 Classes
 =======
 
+#. What is the main difference between a ``struct`` and a ``class`` in C++?
+
+#. What is a constructor, and when is it called?  What name is given
+   to the constructor function?
+
+#. What is an initialization list? In the code below, what member data is initialized?
+
+   .. code:: c++
+
+      SolarSystem(double mass)
+          : star_mass{mass}
+      {}
 
 Python
 ======
 
+#. What is the python equivalent of this C++ code
+
+   .. code:: c++
+
+      double x{2.5};
+      double y{1.2};
+
+      double z = std::pow(x, y);
+
+#. What is the result of the following python code:
+
+   .. code:: python
+
+      def func(x, normalization=None):
+          xi = x
+          if normalization:
+              xi = x / normalization
+
+          return x**3 + x + 1
+
+      func(2, normalization=2)
 
