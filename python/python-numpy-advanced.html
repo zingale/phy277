@@ -584,15 +584,23 @@ object</p>
 <p>this is assignment. No copy is made. <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> point to the same data
 in memory and share the same shape, etc. They are just two different
 labels for the same object in memory</p>
+<p>This is essentially equivalent to the C++ behavior of:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">A</span><span class="p">;</span>
+<span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">;</span>
+</pre></div>
+</div>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">=</span> <span class="pre">A[:]</span></code></p>
-<p>this is a <em>view</em> or shallow copy. The shape info for <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> are
-stored independently, but both point to the same memory location for
-data</p>
+<p>this is a <em>view</em> or shallow copy. The shape, stride, … info for
+<code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> are stored independently, but both point to the same
+memory location for data.</p>
+<p>In some sense, you can think of <code class="docutils literal notranslate"><span class="pre">B</span></code> as containing a pointer to the
+data in <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">=</span> <span class="pre">A.copy()</span></code></p>
 <p>this is a deep copy. A completely separate object will be created in
-memory, with a completely separate location in memory.</p>
+memory, with the elements from <code class="docutils literal notranslate"><span class="pre">A</span></code> copied into the <code class="docutils literal notranslate"><span class="pre">B</span></code> ‘s memory.  After
+this, there is no connection between <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p>
 </li>
 </ul>
 <section id="views">
@@ -617,9 +625,13 @@ memory, with a completely separate location in memory.</p>
 <span class="go">       [1, 2, 3, 2, 1]])</span>
 </pre></div>
 </div>
-<p>Here we create a view <code class="docutils literal notranslate"><span class="pre">a</span></code> into array <code class="docutils literal notranslate"><span class="pre">q</span></code> that just consists of the middle
-3×3 array of elements.</p>
-<p>But when we zero-out the elements of <code class="docutils literal notranslate"><span class="pre">a</span></code>, this change is reflected back into <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
+<p>Here we:</p>
+<ul class="simple">
+<li><p>create a view <code class="docutils literal notranslate"><span class="pre">a</span></code> into array <code class="docutils literal notranslate"><span class="pre">q</span></code> that just consists of the middle
+3×3 array of elements.</p></li>
+<li><p>zero out the elements of <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
+<li><p>print out <code class="docutils literal notranslate"><span class="pre">q</span></code> and notice that the change we made to <code class="docutils literal notranslate"><span class="pre">a</span></code> is reflected in <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p></li>
+</ul>
 <p>A view shares the underlying data of the original array, but has
 separate metadata (size, shape, etc.).  Views in NumPy allow us to do efficient
 operations on portions of arrays.</p>
@@ -658,6 +670,19 @@ on.</p>
 <p>Notice how we indexed <code class="docutils literal notranslate"><span class="pre">a</span></code> with <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>.  We can print that
 expression itself out to see what it look like—this would be the
 mask used for indexing the array.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">4</span>
+<span class="go">array([[False, False, False, False],</span>
+<span class="go">       [False,  True,  True,  True],</span>
+<span class="go">       [ True,  True,  True,  True]])</span>
+</pre></div>
+</div>
+<p>Doing this explicitly with loops would involve something like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
 </section>
 </section>
 
