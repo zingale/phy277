@@ -3,7 +3,7 @@ Finite-Differencing in NumPy
 ****************************
 
 Recall from :ref:`sec:difference-first-derivative`, that
-a second-order accurate approximation to the second-derivative
+a second-order accurate approximation to the first-derivative
 is:
 
 .. math::
@@ -25,3 +25,12 @@ Here's the code:
 .. literalinclude:: ../../../examples/python/derivative.py
    :language: c++
    :caption: ``derivative.py``
+
+Notice:
+
+* We have 2 fewer elements in our ``dfdx2`` array than in our
+  ``f`` array, because of how the views work (they leave our 2 elements
+  either at the start or end)
+
+* We compute the difference two ways: the first ``dfdx`` uses
+  an explicit loop.  This will be slower if our array is the same.
