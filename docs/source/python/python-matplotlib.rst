@@ -42,11 +42,11 @@ here's the figure it produces:
 
 Here's how we make the plot:
 
-* We use the matplotlib `subplots <https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html>`_ function to create a ``Figure`` and ``Axes`` object.  
+* We use the matplotlib `subplots <https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html>`_ function to create a ``Figure`` and ``Axes`` object.
 
 * We use `plot <https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html>`_ to make the plot, simply giving the $x$ and $y$ arrays of data to plot.
 
-* We set the $x$ and $y$ labels using `set_xlabel <https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlabel.html>` and ``set_ylabel`` on the ``Axes`` object.
+* We set the $x$ and $y$ labels using `set_xlabel <https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set_xlabel.html>`_ and ``set_ylabel`` on the ``Axes`` object.
 
 * We use `savefig <https://matplotlib.org/stable/api/_as_gen/matplotlib.figure.Figure.savefig.html>`_ on the ``Figure`` to save a PNG file.
 
@@ -68,4 +68,3 @@ Other plot types
 The `matplotlib example gallery <https://matplotlib.org/stable/gallery/index>`_ has lots
 of examples of output together with the code used to produce the figure.  This is the
 best way to learn.
-
