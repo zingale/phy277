@@ -110,6 +110,34 @@ Classes
 Python
 ======
 
+#. What is the python version of a C++ ``std::vector`` that we focused
+   on in class?
+
+#. Given the following:
+
+   .. code:: python
+
+      a = [1, 2, 4, 8, 16]
+
+   write a loop (in python) that loops over the elements
+   and prints them out.
+
+#. Some times in class, I put an ``f`` in front of the ``"`` in a
+   string---what does this mean?
+
+#. How would I write this C++ if-test in python?
+
+   .. code:: c++
+
+      int sign;
+      if (x == 0) {
+          sign = 0;
+      } else if (x > 0) {
+          sign = 1;
+      } else {
+          sign = -1;
+      }
+
 #. What is the python equivalent of this C++ code
 
    .. code:: c++
