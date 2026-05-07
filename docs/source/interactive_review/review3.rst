@@ -56,8 +56,29 @@ Standard Library Algorithms
                         [] (const std::string& a, const std::string& b)
                            {return a.size() < b.size();});
 
+
 Software Engineering / Version Control
 ======================================
+
+#. These lines are in a ``GNUmakefile``:
+
+   .. code:: make
+
+      planet_sort_split.o: planet_sort_split.cpp planet.H
+           g++ -std=c++20 -c planet_sort_split.cpp
+
+   a. In the first line, what does the name to the left of the ``:`` mean?
+      and what are the files to the right of the ``:``?
+
+   b. What does the ``-c`` do in the ``g++`` command?
+
+#. If I compile a ``program.cpp`` as:
+
+   .. prompt:: bash
+
+      g++ -O3 -o program program.cpp
+
+   what is the meaning of ``-O3``?
 
 #. ``git status`` shows this---how do you put this file under git control?
 
@@ -195,4 +216,32 @@ Python
           return x**3 + x + 1
 
       func(2, normalization=2)
+
+#. This was the first class we wrote in C++:
+
+   .. code:: c++
+
+      struct Circle {
+
+          // member data
+          double radius{};
+
+          // constructor
+          Circle(double r) {
+              radius = r;
+          }
+
+          // member functions
+          double circumference() {
+              return 2.0 * std::numbers::pi * radius;
+          }
+
+          double area() {
+              return std::numbers::pi * radius * radius;
+          }
+
+      };
+
+      write a python version of it.
+
 
