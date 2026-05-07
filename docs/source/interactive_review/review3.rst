@@ -2,7 +2,13 @@
 Final Exam Review
 *****************
 
-The final exam will cover the topics since the previous exam.
+.. note::
+
+   The final exam will cover the topics since the previous exam.
+
+   Python will be part of the exam, however, there will not be
+   questions on NumPy and matplotlib, since we did not have enough
+   time to practice those.
 
 .. important::
 
@@ -13,6 +19,11 @@ The final exam will cover the topics since the previous exam.
 
 File I/O
 ========
+
+#. You create a file as:
+
+   How do you output a string to it?
+
 
 
 Standard Library Algorithms
@@ -35,19 +46,55 @@ Standard Library Algorithms
 #. Suppose an iterator ``pos`` points to the element 200 in a vector. What
    does ``v.insert(pos, 150)`` do?
 
-Software Engineering
-====================
 
+Software Engineering / Version Control
+======================================
 
+#. ``git status`` shows this---how do you put this file under git control?
 
-Version Control
-===============
+#. What does it mean for a variable to be *shadowing* another variable in C++?
+
+#. We have a header ``solver.H`` in our current directory.  This
+   header provides a function ``newton`` in it.  We want to use this
+   in our code.  How do we include this header so the compiler will
+   find it.
 
 
 Classes
 =======
 
 #. What is the main difference between a ``struct`` and a ``class`` in C++?
+
+#. Consider the following:
+
+   .. code:: c++
+
+      struct Circle {
+
+          // member data
+          double radius{};
+
+          // constructor
+          Circle(double r) {
+              radius = r;
+          }
+      };
+
+   How would you create a ``Circle`` with a radius of ``5``?
+
+#. In our ``Vector2d`` class, we had 2 different operators for
+   multiplying by a scalar:
+
+   .. code::
+
+      Vector2d operator*(double a) {
+          return Vector2d(x * a, y * a);
+      }
+
+      friend Vector2d operator*(double a, const Vector2d& v);
+
+   What is the difference between these?
+
 
 #. What is a constructor, and when is it called?  What name is given
    to the constructor function?
