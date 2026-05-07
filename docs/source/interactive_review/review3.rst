@@ -46,6 +46,15 @@ Standard Library Algorithms
 #. Suppose an iterator ``pos`` points to the element 200 in a vector. What
    does ``v.insert(pos, 150)`` do?
 
+#. In this example, we use a *lambda function*.  If we instead wanted
+   to use a traditional function, how would we rewrite this (show both
+   the new function and the updated ``sort`` call).
+
+   .. code:: c++
+
+      std::ranges::sort(titles,
+                        [] (const std::string& a, const std::string& b)
+                           {return a.size() < b.size();});
 
 Software Engineering / Version Control
 ======================================
@@ -117,7 +126,9 @@ Classes
 #. Write a class ``Timer`` with private member data ``seconds`` and a member function
    ``add_time(double dt)``.
 
-#. a. Create a class called ``Currency`` that holds a ``double`` and a
+#. Currency exchange.
+
+   a. Create a class called ``Currency`` that holds a ``double`` and a
       ``string``.  The ``double`` is the ``value`` and the ``string`` is the
       ``country`` of the currency (e.g., ``"US"``, ``"Euro"``, ...).  Give
       a constructor that takes both pieces of data.
