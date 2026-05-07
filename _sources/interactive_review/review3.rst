@@ -22,8 +22,17 @@ File I/O
 
 #. You create a file as:
 
-   How do you output a string to it?
+   .. code:: c++
 
+      std::ofstream of("file.txt");
+
+   a. How do you output a string to it?
+
+   b. If the file already exists, what happens to its existing
+      contents when you open it this way?
+
+   c. How would you change this line if you wanted to *read from*
+      ``file.txt``?
 
 
 Standard Library Algorithms
