@@ -114,10 +114,23 @@ Classes
 
    What is the difference between these?
 
-#.  Write a class ``Timer`` with private member data ``seconds`` and a member function
-    ``add_time(double dt)``.
+#. Write a class ``Timer`` with private member data ``seconds`` and a member function
+   ``add_time(double dt)``.
 
+#. a. Create a class called ``Currency`` that holds a ``double`` and a
+      ``string``.  The ``double`` is the ``value`` and the ``string`` is the
+      ``country`` of the currency (e.g., ``"US"``, ``"Euro"``, ...).  Give
+      a constructor that takes both pieces of data.
 
+   b. We want to be able to add two ``Currency`` objects.  The operator
+      function will look like:
+
+      .. code:: c++
+
+         Currency operator+ (const Currency& other)
+
+      Fill in the details---include a check that we are adding currencies from
+      the same country.
 
 Python
 ======

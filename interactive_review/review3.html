@@ -664,6 +664,21 @@ multiplying by a scalar:</p>
 </li>
 <li><p>Write a class <code class="docutils literal notranslate"><span class="pre">Timer</span></code> with private member data <code class="docutils literal notranslate"><span class="pre">seconds</span></code> and a member function
 <code class="docutils literal notranslate"><span class="pre">add_time(double</span> <span class="pre">dt)</span></code>.</p></li>
+<li><ol class="loweralpha">
+<li><p>Create a class called <code class="docutils literal notranslate"><span class="pre">Currency</span></code> that holds a <code class="docutils literal notranslate"><span class="pre">double</span></code> and a
+<code class="docutils literal notranslate"><span class="pre">string</span></code>.  The <code class="docutils literal notranslate"><span class="pre">double</span></code> is the <code class="docutils literal notranslate"><span class="pre">value</span></code> and the <code class="docutils literal notranslate"><span class="pre">string</span></code> is the
+<code class="docutils literal notranslate"><span class="pre">country</span></code> of the currency (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;US&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Euro&quot;</span></code>, …).  Give
+a constructor that takes both pieces of data.</p></li>
+<li><p>We want to be able to add two <code class="docutils literal notranslate"><span class="pre">Currency</span></code> objects.  The operator
+function will look like:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Currency</span><span class="w"> </span><span class="k">operator</span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Currency</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Fill in the details—include a check that we are adding currencies from
+the same country.</p>
+</li>
+</ol>
+</li>
 </ol>
 </section>
 <section id="python">
