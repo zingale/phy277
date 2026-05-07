@@ -89,7 +89,8 @@ Software Engineering / Version Control
 
    what is the meaning of ``-O3``?
 
-#. ``git status`` shows this---how do you put this file under git control?
+#. ``git status`` shows ``newton.cpp`` under ``Untracked files``---how
+   do you put this file under git control?
 
 #. What does it mean for a variable to be *shadowing* another variable in C++?
 
@@ -251,6 +252,6 @@ Python
 
       };
 
-      write a python version of it.
+    write a python version of it.
 
 
