@@ -551,8 +551,7 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-i-o">File I/O</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-library-algorithms">Standard Library Algorithms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-engineering">Software Engineering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-engineering-version-control">Software Engineering / Version Control</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
 </ul>
@@ -568,7 +567,13 @@
                   
   <section id="final-exam-review">
 <h1>Final Exam Review<a class="headerlink" href="#final-exam-review" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The final exam will cover the topics since the previous exam.</p>
+<p>Python will be part of the exam, however, there will not be
+questions on NumPy and matplotlib, since we did not have enough
+time to practice those.</p>
+</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>This set of examples is not exhaustive, so you should go back and
@@ -577,6 +582,11 @@ homework solutions.</p>
 </div>
 <section id="file-i-o">
 <h2>File I/O<a class="headerlink" href="#file-i-o" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>You create a file as:</p>
+<p>How do you output a string to it?</p>
+</li>
+</ol>
 </section>
 <section id="standard-library-algorithms">
 <h2>Standard Library Algorithms<a class="headerlink" href="#standard-library-algorithms" title="Link to this heading">#</a></h2>
@@ -594,16 +604,47 @@ before dereferencing the returned iterator?</p></li>
 does <code class="docutils literal notranslate"><span class="pre">v.insert(pos,</span> <span class="pre">150)</span></code> do?</p></li>
 </ol>
 </section>
-<section id="software-engineering">
-<h2>Software Engineering<a class="headerlink" href="#software-engineering" title="Link to this heading">#</a></h2>
-</section>
-<section id="version-control">
-<h2>Version Control<a class="headerlink" href="#version-control" title="Link to this heading">#</a></h2>
+<section id="software-engineering-version-control">
+<h2>Software Engineering / Version Control<a class="headerlink" href="#software-engineering-version-control" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> shows this—how do you put this file under git control?</p></li>
+<li><p>What does it mean for a variable to be <em>shadowing</em> another variable in C++?</p></li>
+<li><p>We have a header <code class="docutils literal notranslate"><span class="pre">solver.H</span></code> in our current directory.  This
+header provides a function <code class="docutils literal notranslate"><span class="pre">newton</span></code> in it.  We want to use this
+in our code.  How do we include this header so the compiler will
+find it.</p></li>
+</ol>
 </section>
 <section id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>What is the main difference between a <code class="docutils literal notranslate"><span class="pre">struct</span></code> and a <code class="docutils literal notranslate"><span class="pre">class</span></code> in C++?</p></li>
+<li><p>Consider the following:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">Circle</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// member data</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">{};</span>
+
+<span class="w">    </span><span class="c1">// constructor</span>
+<span class="w">    </span><span class="n">Circle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>How would you create a <code class="docutils literal notranslate"><span class="pre">Circle</span></code> with a radius of <code class="docutils literal notranslate"><span class="pre">5</span></code>?</p>
+</li>
+<li><p>In our <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code> class, we had 2 different operators for
+multiplying by a scalar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Vector2d</span> <span class="n">operator</span><span class="o">*</span><span class="p">(</span><span class="n">double</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">Vector2d</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">friend</span> <span class="n">Vector2d</span> <span class="n">operator</span><span class="o">*</span><span class="p">(</span><span class="n">double</span> <span class="n">a</span><span class="p">,</span> <span class="n">const</span> <span class="n">Vector2d</span><span class="o">&amp;</span> <span class="n">v</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>What is the difference between these?</p>
+</li>
 <li><p>What is a constructor, and when is it called?  What name is given
 to the constructor function?</p></li>
 <li><p>What is an initialization list? In the code below, what member data is initialized?</p>
@@ -691,8 +732,7 @@ to the constructor function?</p></li>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-i-o">File I/O</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-library-algorithms">Standard Library Algorithms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-engineering">Software Engineering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software-engineering-version-control">Software Engineering / Version Control</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
 </ul>
