@@ -590,7 +590,7 @@ homework solutions.</p>
 </section>
 <section id="standard-library-algorithms">
 <h2>Standard Library Algorithms<a class="headerlink" href="#standard-library-algorithms" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Given a <code class="docutils literal notranslate"><span class="pre">std::vector&lt;int&gt;</span> <span class="pre">v{2,</span> <span class="pre">5,</span> <span class="pre">8,</span> <span class="pre">5,</span> <span class="pre">10};</span></code>, write one line using
 <code class="docutils literal notranslate"><span class="pre">std::ranges::count</span></code> to count how many times 5 appears.</p></li>
 <li><p>What does <code class="docutils literal notranslate"><span class="pre">v.end()</span></code> point to? Why should an iterator loop usually stop at it
@@ -602,6 +602,15 @@ before dereferencing the returned iterator?</p></li>
 <li><p>For <code class="docutils literal notranslate"><span class="pre">std::views::iota(3,</span> <span class="pre">8)</span></code>, what values are produced?</p></li>
 <li><p>Suppose an iterator <code class="docutils literal notranslate"><span class="pre">pos</span></code> points to the element 200 in a vector. What
 does <code class="docutils literal notranslate"><span class="pre">v.insert(pos,</span> <span class="pre">150)</span></code> do?</p></li>
+<li><p>In this example, we use a <em>lambda function</em>.  If we instead wanted
+to use a traditional function, how would we rewrite this (show both
+the new function and the updated <code class="docutils literal notranslate"><span class="pre">sort</span></code> call).</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">titles</span><span class="p">,</span>
+<span class="w">                  </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<span class="w">                     </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">size</span><span class="p">();});</span>
+</pre></div>
+</div>
+</li>
 </ol>
 </section>
 <section id="software-engineering-version-control">
@@ -664,7 +673,8 @@ multiplying by a scalar:</p>
 </li>
 <li><p>Write a class <code class="docutils literal notranslate"><span class="pre">Timer</span></code> with private member data <code class="docutils literal notranslate"><span class="pre">seconds</span></code> and a member function
 <code class="docutils literal notranslate"><span class="pre">add_time(double</span> <span class="pre">dt)</span></code>.</p></li>
-<li><ol class="loweralpha">
+<li><p>Currency exchange.</p>
+<ol class="loweralpha">
 <li><p>Create a class called <code class="docutils literal notranslate"><span class="pre">Currency</span></code> that holds a <code class="docutils literal notranslate"><span class="pre">double</span></code> and a
 <code class="docutils literal notranslate"><span class="pre">string</span></code>.  The <code class="docutils literal notranslate"><span class="pre">double</span></code> is the <code class="docutils literal notranslate"><span class="pre">value</span></code> and the <code class="docutils literal notranslate"><span class="pre">string</span></code> is the
 <code class="docutils literal notranslate"><span class="pre">country</span></code> of the currency (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;US&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Euro&quot;</span></code>, …).  Give
