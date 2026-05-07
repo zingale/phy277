@@ -65,6 +65,17 @@ Classes
 
 #. What is the main difference between a ``struct`` and a ``class`` in C++?
 
+#. What is a constructor, and when is it called?  What name is given
+   to the constructor function?
+
+#. What is an initialization list? In the code below, what member data is initialized?
+
+   .. code:: c++
+
+      SolarSystem(double mass)
+          : star_mass{mass}
+      {}
+
 #. Consider the following:
 
    .. code:: c++
@@ -80,7 +91,15 @@ Classes
           }
       };
 
-   How would you create a ``Circle`` with a radius of ``5``?
+   a. How would you create a ``Circle`` with a radius of ``5``?
+
+   b. Rewrite this to make the member data private
+      and add a *getter* function that returns the radius.
+
+      Show how you would call this function given a ``Circle`` object ``c``.
+
+   c. How would you add another constructor that takes no arguments
+      and sets the radius to ``1`` by default?
 
 #. In our ``Vector2d`` class, we had 2 different operators for
    multiplying by a scalar:
@@ -95,17 +114,10 @@ Classes
 
    What is the difference between these?
 
+#.  Write a class ``Timer`` with private member data ``seconds`` and a member function
+    ``add_time(double dt)``.
 
-#. What is a constructor, and when is it called?  What name is given
-   to the constructor function?
 
-#. What is an initialization list? In the code below, what member data is initialized?
-
-   .. code:: c++
-
-      SolarSystem(double mass)
-          : star_mass{mass}
-      {}
 
 Python
 ======
