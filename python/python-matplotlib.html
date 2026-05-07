@@ -651,7 +651,30 @@ is possible is the <a class="reference external" href="https://matplotlib.org/st
 </pre></div>
 </div>
 </div>
-<p>here’s the figure it produces:</p>
+<p>Here we use <a class="reference external" href="https://numpy.org/doc/2.2/reference/generated/numpy.meshgrid.html">np.meshgrid</a> which takes two 1D arrays
+and makes two 2D arrays with the elements repeated in the appropriate dimension.  For example:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x2d</span><span class="p">,</span> <span class="n">y2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x2d</span>
+<span class="go">array([[0.  , 0.25, 0.5 , 0.75, 1.  ],</span>
+<span class="go">       [0.  , 0.25, 0.5 , 0.75, 1.  ],</span>
+<span class="go">       [0.  , 0.25, 0.5 , 0.75, 1.  ],</span>
+<span class="go">       [0.  , 0.25, 0.5 , 0.75, 1.  ],</span>
+<span class="go">       [0.  , 0.25, 0.5 , 0.75, 1.  ],</span>
+<span class="go">       [0.  , 0.25, 0.5 , 0.75, 1.  ]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y2d</span>
+<span class="go">array([[0. , 0. , 0. , 0. , 0. ],</span>
+<span class="go">       [0.3, 0.3, 0.3, 0.3, 0.3],</span>
+<span class="go">       [0.6, 0.6, 0.6, 0.6, 0.6],</span>
+<span class="go">       [0.9, 0.9, 0.9, 0.9, 0.9],</span>
+<span class="go">       [1.2, 1.2, 1.2, 1.2, 1.2],</span>
+<span class="go">       [1.5, 1.5, 1.5, 1.5, 1.5]])</span>
+</pre></div>
+</div>
+<p>This allows us to call a function, <code class="docutils literal notranslate"><span class="pre">g(x,</span> <span class="pre">y)</span></code>, and get its value
+at all points.</p>
+<p>Here’s the figure it produces:</p>
 <figure class="align-center" id="id6">
 <a class="reference internal image-reference" href="../_images/heatmap.png"><img alt="../_images/heatmap.png" src="../_images/heatmap.png" style="width: 90%;" />
 </a>

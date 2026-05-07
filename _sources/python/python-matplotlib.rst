@@ -65,7 +65,33 @@ Visualizing 2-d arrays
    :language: python
    :caption: ``heatmap.py``
 
-here's the figure it produces:
+Here we use `np.meshgrid <https://numpy.org/doc/2.2/reference/generated/numpy.meshgrid.html>`_ which takes two 1D arrays
+and makes two 2D arrays with the elements repeated in the appropriate dimension.  For example:
+
+.. code:: pycon
+
+   >>> x = np.linspace(0, 1, 5)
+   >>> y = np.linspace(0, 1.5, 6)
+   >>> x2d, y2d = np.meshgrid(x, y)
+   >>> x2d
+   array([[0.  , 0.25, 0.5 , 0.75, 1.  ],
+          [0.  , 0.25, 0.5 , 0.75, 1.  ],
+          [0.  , 0.25, 0.5 , 0.75, 1.  ],
+          [0.  , 0.25, 0.5 , 0.75, 1.  ],
+          [0.  , 0.25, 0.5 , 0.75, 1.  ],
+          [0.  , 0.25, 0.5 , 0.75, 1.  ]])
+   >>> y2d
+   array([[0. , 0. , 0. , 0. , 0. ],
+          [0.3, 0.3, 0.3, 0.3, 0.3],
+          [0.6, 0.6, 0.6, 0.6, 0.6],
+          [0.9, 0.9, 0.9, 0.9, 0.9],
+          [1.2, 1.2, 1.2, 1.2, 1.2],
+          [1.5, 1.5, 1.5, 1.5, 1.5]])
+
+This allows us to call a function, ``g(x, y)``, and get its value
+at all points.
+
+Here's the figure it produces:
 
 .. figure:: ../../../examples/matplotlib/heatmap.png
    :align: center
