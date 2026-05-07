@@ -615,7 +615,26 @@ the new function and the updated <code class="docutils literal notranslate"><spa
 </section>
 <section id="software-engineering-version-control">
 <h2>Software Engineering / Version Control<a class="headerlink" href="#software-engineering-version-control" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
+<ol class="arabic">
+<li><p>These lines are in a <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>:</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="nf">planet_sort_split.o</span><span class="o">:</span><span class="w"> </span><span class="n">planet_sort_split</span>.<span class="n">cpp</span> <span class="n">planet</span>.<span class="n">H</span>
+<span class="w">     </span>g++<span class="w"> </span>-std<span class="o">=</span>c++20<span class="w"> </span>-c<span class="w"> </span>planet_sort_split.cpp
+</pre></div>
+</div>
+<ol class="loweralpha simple">
+<li><p>In the first line, what does the name to the left of the <code class="docutils literal notranslate"><span class="pre">:</span></code> mean?
+and what are the files to the right of the <code class="docutils literal notranslate"><span class="pre">:</span></code>?</p></li>
+<li><p>What does the <code class="docutils literal notranslate"><span class="pre">-c</span></code> do in the <code class="docutils literal notranslate"><span class="pre">g++</span></code> command?</p></li>
+</ol>
+</li>
+<li><p>If I compile a <code class="docutils literal notranslate"><span class="pre">program.cpp</span></code> as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">g++<span class="w"> </span>-O3<span class="w"> </span>-o<span class="w"> </span>program<span class="w"> </span>program.cpp</span>
+</pre></div></div><p>what is the meaning of <code class="docutils literal notranslate"><span class="pre">-O3</span></code>?</p>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> shows this—how do you put this file under git control?</p></li>
 <li><p>What does it mean for a variable to be <em>shadowing</em> another variable in C++?</p></li>
 <li><p>We have a header <code class="docutils literal notranslate"><span class="pre">solver.H</span></code> in our current directory.  This
@@ -734,6 +753,32 @@ string—what does this mean?</p></li>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 
 <span class="n">func</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">normalization</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>This was the first class we wrote in C++:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">Circle</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="c1">// member data</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">{};</span>
+
+<span class="w">    </span><span class="c1">// constructor</span>
+<span class="w">    </span><span class="n">Circle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// member functions</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">circumference</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">};</span>
+
+<span class="n">write</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">python</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">it</span><span class="p">.</span>
 </pre></div>
 </div>
 </li>
