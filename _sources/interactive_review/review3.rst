@@ -114,12 +114,28 @@ Standard Library Algorithms
       :icon: pencil
       :animate: fade-in-slide-down
 
+      Assuming our vector is called ``v``, we can do:
+
+      .. code:: c++
+
+         auto num = std::ranges::count_if(v, [] (int e) {return e % 2 == 1;});
+
+      The lambda-function here, ``[] (int e) {return e % 2 == 1;}``, captures
+      nothing from the surrounding scope (``[]``), takes a single int ``e`` as
+      the argument, and then checks the modulus of ``e`` with 2 to determine
+      if it is odd.  The return value here is ``bool``, which C++ can determine
+      automatically.
+
 #. For ``std::views::iota(3, 8)``, what values are produced?
 
    .. dropdown:: solution
       :color: muted
       :icon: pencil
       :animate: fade-in-slide-down
+
+      This produces the sequence of integers that starts at ``3`` and goes up
+      to, but not including ``8``, so it would result in ``3, 4, 5, 6, 7``.
+      This behavior is identical to python's ``range()`` function.
 
 #. Suppose an iterator ``pos`` points to the element 200 in a vector. What
    does ``v.insert(pos, 150)`` do?
