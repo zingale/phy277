@@ -428,12 +428,34 @@ Classes
       right of the operator, i.e., ``a * v``.
 
 #. Write a class ``Timer`` with private member data ``seconds`` and a member function
-   ``add_time(double dt)``.
+   ``add_time(double dt)`` that adds ``dt`` to the stored ``seconds``, and another
+   member function, ``get_time()`` that returns the stored time.
 
    .. dropdown:: solution
       :color: muted
       :icon: pencil
       :animate: fade-in-slide-down
+
+      .. code:: c++
+
+         class Timer {
+
+             double seconds;
+
+         public:
+
+             Timer()
+                 : seconds{}
+             {}
+
+             void add_time(double dt) {
+                 seconds += dt;
+             }
+
+             double get_time() {
+                 return seconds;
+             }
+         };
 
 #. Currency exchange.
 
@@ -446,6 +468,20 @@ Classes
          :color: muted
          :icon: pencil
          :animate: fade-in-slide-down
+
+         .. code:: c++
+
+            class Currency {
+
+                double value;
+                std::string country;
+
+            public:
+
+                Currency(double v, std::string c)
+                    : value(v), country(c)
+                {}
+            };
 
    b. We want to be able to add two ``Currency`` objects.  The operator
       function will look like:
@@ -461,6 +497,18 @@ Classes
          :color: muted
          :icon: pencil
          :animate: fade-in-slide-down
+
+         The operator function would look like:
+
+         .. code:: c++
+
+            Currency operator+ (const Currency& other) {
+            if (country != other.country) {
+                std::cout << "Error: countries do not match" << std::endl;
+                std::exit(1);
+            }
+            return Currency(value + other.value, country);
+
 
 Python
 ======
