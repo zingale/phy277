@@ -28,12 +28,38 @@ File I/O
 
    a. How do you output a string to it?
 
+      .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
+
+         You simply use the output stream operator, ``<<``:
+
+         .. code:: c++
+
+            std::string s{"hello"};
+            of << s;
+
    b. If the file already exists, what happens to its existing
       contents when you open it this way?
+
+      .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
+
+         The contents are overwritten.  To append to the file,
+         see the discussion at the end of :ref:`sec:cxx-io`.
 
    c. How would you change this line if you wanted to *read from*
       ``file.txt``?
 
+      .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
+
+         You would need to create a ``std::ifstream``---this is the input stream.
 
 Standard Library Algorithms
 ===========================
@@ -41,16 +67,59 @@ Standard Library Algorithms
 #. Given a ``std::vector<int> v{2, 5, 8, 5, 10};``, write one line using
    ``std::ranges::count`` to count how many times 5 appears.
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      .. code:: c++
+
+         auto num = std::ranges::count(v, 5);
+
+      This will look over the entire vector and count how many ``5`` it contains.
+
 #. What does ``v.end()`` point to? Why should an iterator loop usually stop at it
    ``< v.end()`` or it ``!= v.end()`` instead of including ``v.end()``?
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      ``v.end()`` points to *one-past* the end of the vector.
 
 #. Use ``std::ranges::find`` to search for 8 in a vector. What should you check
    before dereferencing the returned iterator?
 
-#.  Write a lambda that returns true if an integer is odd. Then use it with
-    ``std::ranges::count_if``.
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      We should check if it is pointing to ``v.end()``, like:
+
+      .. code:: c++
+
+         bool found{}
+         auto it = std::ranges::find(v, 8);
+         if (it != v.end()) {
+              found = true;
+         }
+
+#. Write a lambda that returns true if an integer is odd. Then use it with
+   ``std::ranges::count_if``.
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
 #. For ``std::views::iota(3, 8)``, what values are produced?
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
 #. Suppose an iterator ``pos`` points to the element 200 in a vector. What
    does ``v.insert(pos, 150)`` do?
@@ -253,5 +322,3 @@ Python
       };
 
    write a python version of it.
-
-
