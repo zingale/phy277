@@ -100,7 +100,7 @@ Standard Library Algorithms
 
       .. code:: c++
 
-         bool found{}
+         bool found{};
          auto it = std::ranges::find(v, 8);
          if (it != v.end()) {
               found = true;
@@ -118,9 +118,9 @@ Standard Library Algorithms
 
       .. code:: c++
 
-         auto num = std::ranges::count_if(v, [] (int e) {return e % 2 == 1;});
+         auto num = std::ranges::count_if(v, [] (int e) {return e % 2 != 0;});
 
-      The lambda-function here, ``[] (int e) {return e % 2 == 1;}``, captures
+      The lambda-function here, ``[] (int e) {return e % 2 != 0;}``, captures
       nothing from the surrounding scope (``[]``), takes a single int ``e`` as
       the argument, and then checks the modulus of ``e`` with 2 to determine
       if it is odd.  The return value here is ``bool``, which C++ can determine
@@ -305,7 +305,7 @@ Classes
    .. code:: c++
 
       SolarSystem(double mass)
-          : star_mass{mass}
+          : star_mass(mass)
       {}
 
    .. dropdown:: solution
@@ -503,12 +503,12 @@ Classes
          .. code:: c++
 
             Currency operator+ (const Currency& other) {
-            if (country != other.country) {
-                std::cout << "Error: countries do not match" << std::endl;
-                std::exit(1);
+                if (country != other.country) {
+                    std::cout << "Error: countries do not match" << std::endl;
+                    std::exit(1);
+                }
+                return Currency(value + other.value, country);
             }
-            return Currency(value + other.value, country);
-
 
 Python
 ======
@@ -615,7 +615,7 @@ Python
           if normalization:
               xi = x / normalization
 
-          return x**3 + x + 1
+          return xi**3 + xi + 1
 
       func(2, normalization=2)
 
