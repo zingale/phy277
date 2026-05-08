@@ -140,6 +140,14 @@ Standard Library Algorithms
 #. Suppose an iterator ``pos`` points to the element 200 in a vector. What
    does ``v.insert(pos, 150)`` do?
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      This will insert the number ``150`` into the vector just before
+      the element ``200`.
+
 #. In this example, we use a *lambda function*.  If we instead wanted
    to use a traditional function, how would we rewrite this (show both
    the new function and the updated ``sort`` call).
@@ -150,6 +158,24 @@ Standard Library Algorithms
                         [] (const std::string& a, const std::string& b)
                            {return a.size() < b.size();});
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      We would first write a function that returns a ``bool``, like:
+
+      .. code:: c++
+
+         bool compare(const std::string& a, const std::string& b) {
+             return a.size() < b.size()
+         }
+
+      and then our call would look like:
+
+      .. code:: c++
+
+         std::ranges::sort(titles, compare);
 
 Software Engineering / Version Control
 ======================================
