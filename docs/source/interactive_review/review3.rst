@@ -521,6 +521,8 @@ Python
       :icon: pencil
       :animate: fade-in-slide-down
 
+       A list.  In python we create a list using ``[]``.
+
 #. Given the following:
 
    .. code:: python
@@ -535,6 +537,11 @@ Python
       :icon: pencil
       :animate: fade-in-slide-down
 
+      .. code:: python
+
+         for e in a:
+             print(e)
+
 #. Some times in class, I put an ``f`` in front of the ``"`` in a
    string---what does this mean?
 
@@ -542,6 +549,10 @@ Python
       :color: muted
       :icon: pencil
       :animate: fade-in-slide-down
+
+      This is a f-string or format-string.  It uses similar formatting codes
+      as C++ ``std::format``, but also allows us to put the object we are outputting
+      inside that ``{}``, before the ``:``.
 
 #. How would I write this C++ if-test in python?
 
@@ -561,6 +572,18 @@ Python
       :icon: pencil
       :animate: fade-in-slide-down
 
+      .. code:: python
+
+         if x == 0:
+             sign = 0
+         elif x > 0:
+             sign = 1
+         else:
+             sign = -1
+
+      Notice that in python we don't need to declare our ``sign`` outside of the
+      if-block---scoping works differently in python.
+
 #. What is the python equivalent of this C++ code
 
    .. code:: c++
@@ -574,6 +597,14 @@ Python
       :color: muted
       :icon: pencil
       :animate: fade-in-slide-down
+
+      We can use the ``**`` operator, so we can do:
+
+      .. code:: python
+
+         x = 2.5
+         y = 1.2
+         z = x**y
 
 #. What is the result of the following python code:
 
@@ -592,6 +623,11 @@ Python
       :color: muted
       :icon: pencil
       :animate: fade-in-slide-down
+
+      We are using the keyword argument ``normalization``, so inside
+      the function, ``normalization`` will have the value ``2``.  So
+      ``xi`` will be ``1`` in the function (``2 / 2``), and we get
+      ``3`` as the result.
 
 #. This was the first class we wrote in C++:
 
@@ -624,3 +660,15 @@ Python
       :color: muted
       :icon: pencil
       :animate: fade-in-slide-down
+
+       .. code:: python
+
+          class Circle:
+              def __init__(self, r):
+                  self.radius = r
+
+              def circumference(self):
+                  return 2.0 * math.pi * self.radius
+
+              def area(self):
+                  return math.pi * self.radius**2
