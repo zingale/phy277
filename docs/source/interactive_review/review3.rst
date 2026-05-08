@@ -248,7 +248,13 @@ Software Engineering / Version Control
    .. dropdown:: solution
       :color: muted
       :icon: pencil
-      :animate: fade-in-slide-down   
+      :animate: fade-in-slide-down
+
+      This means that we created a object with the same name as one in
+      the surrounding scope.  This may not be a problem, but if we
+      think that we are actually working on the version of the object
+      in the outer scope, then our local copy will *shadow* that and
+      any changes we make to it will not be reflected in the outer scope.
 
 #. We have a header ``solver.H`` in our current directory.  This
    header provides a function ``newton`` in it.  We want to use this
@@ -260,7 +266,11 @@ Software Engineering / Version Control
       :icon: pencil
       :animate: fade-in-slide-down
    
+      You need to use ``"`` in the ``#include``, like:
 
+      .. code:: c++
+
+         #include "solver.H"
 
 Classes
 =======
