@@ -272,13 +272,33 @@ Software Engineering / Version Control
 
          #include "solver.H"
 
+      See :ref:`sec:multiplefiles`.
+
 Classes
 =======
 
 #. What is the main difference between a ``struct`` and a ``class`` in C++?
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      The default accessibility of member data and functions.  With ``class``, everything
+      is private by default, so we need to explicitly make it ``public``.  With ``struct``,
+      everything is public by default.
+
 #. What is a constructor, and when is it called?  What name is given
    to the constructor function?
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      The constructor is the special member function that is called when we create
+      an object / instance of our class.  The constructor function has the same
+      name as the class.
 
 #. What is an initialization list? In the code below, what member data is initialized?
 
@@ -287,6 +307,17 @@ Classes
       SolarSystem(double mass)
           : star_mass{mass}
       {}
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      Here, the initialization list is the `: star_mass(mass)` following the constructor
+      function's arguments.  It initializes member data as the object is created, and
+      before the body of the constructor function is executed.
+
+      In this example, we are initializing the member data ``star_mass``.
 
 #. Consider the following:
 
@@ -305,13 +336,60 @@ Classes
 
    a. How would you create a ``Circle`` with a radius of ``5``?
 
+      .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
+
+          .. code:: c++
+
+             Circle c(5);
+
    b. Rewrite this to make the member data private
       and add a *getter* function that returns the radius.
 
       Show how you would call this function given a ``Circle`` object ``c``.
 
+      .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
+
+         .. code::
+
+            struct Circle {
+
+            private:
+
+                // member data
+                double radius{};
+
+            public:
+
+                // constructor
+                Circle(double r) {
+                    radius = r;
+                }
+
+                // getter
+                double r() {
+                    return radius;
+                }
+            };
+
+         We would call this as:
+
+         .. code::
+
+            auto radius = c.r();
+
    c. How would you add another constructor that takes no arguments
       and sets the radius to ``1`` by default?
+
+      .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
 #. In our ``Vector2d`` class, we had 2 different operators for
    multiplying by a scalar:
@@ -326,8 +404,18 @@ Classes
 
    What is the difference between these?
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
 #. Write a class ``Timer`` with private member data ``seconds`` and a member function
    ``add_time(double dt)``.
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
 #. Currency exchange.
 
@@ -335,6 +423,11 @@ Classes
       ``string``.  The ``double`` is the ``value`` and the ``string`` is the
       ``country`` of the currency (e.g., ``"US"``, ``"Euro"``, ...).  Give
       a constructor that takes both pieces of data.
+
+      .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
 
    b. We want to be able to add two ``Currency`` objects.  The operator
       function will look like:
@@ -346,11 +439,21 @@ Classes
       Fill in the details---include a check that we are adding currencies from
       the same country.
 
+      .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
+
 Python
 ======
 
 #. What is the python version of a C++ ``std::vector`` that we focused
    on in class?
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
 #. Given the following:
 
@@ -361,8 +464,18 @@ Python
    write a loop (in python) that loops over the elements
    and prints them out.
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
 #. Some times in class, I put an ``f`` in front of the ``"`` in a
    string---what does this mean?
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
 #. How would I write this C++ if-test in python?
 
@@ -377,6 +490,11 @@ Python
           sign = -1;
       }
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
 #. What is the python equivalent of this C++ code
 
    .. code:: c++
@@ -385,6 +503,11 @@ Python
       double y{1.2};
 
       double z = std::pow(x, y);
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
 #. What is the result of the following python code:
 
@@ -398,6 +521,11 @@ Python
           return x**3 + x + 1
 
       func(2, normalization=2)
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
 
 #. This was the first class we wrote in C++:
 
@@ -425,3 +553,8 @@ Python
       };
 
    write a python version of it.
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
