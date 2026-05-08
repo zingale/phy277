@@ -145,8 +145,8 @@ Standard Library Algorithms
       :icon: pencil
       :animate: fade-in-slide-down
 
-      This will insert the number ``150`` into the vector just before
-      the element ``200`.
+      This will insert the number ``150`` into the vector ``v`` just before
+      the element ``200``.
 
 #. In this example, we use a *lambda function*.  If we instead wanted
    to use a traditional function, how would we rewrite this (show both
@@ -168,7 +168,7 @@ Standard Library Algorithms
       .. code:: c++
 
          bool compare(const std::string& a, const std::string& b) {
-             return a.size() < b.size()
+             return a.size() < b.size();
          }
 
       and then our call would look like:
