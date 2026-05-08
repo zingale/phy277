@@ -672,3 +672,7 @@ Python
 
               def area(self):
                   return math.pi * self.radius**2
+
+       In python, the constructor is ``__init__`` and all member
+       functions (or methods in python lingo) have ``self`` as the
+       first argument.
