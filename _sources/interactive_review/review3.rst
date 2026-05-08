@@ -190,7 +190,28 @@ Software Engineering / Version Control
    a. In the first line, what does the name to the left of the ``:`` mean?
       and what are the files to the right of the ``:``?
 
+      .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
+
+         The name before the ``:`` is the *target*---it is what we want to produce.
+         The list of files after the ``:`` are the dependencies---those are the
+         files we need in order to make the target.
+
    b. What does the ``-c`` do in the ``g++`` command?
+
+      .. dropdown:: solution
+         :color: muted
+         :icon: pencil
+         :animate: fade-in-slide-down
+
+         This simply compiles the file without linking it to make an executable.  It
+         produces an object file (``planet_sort_split.o`` in this case).
+
+         In general, we do this on files that don't contain a ``main`` function,
+         and then once all the object files are created, we *link* them together
+         to make the executable.
 
 #. If I compile a ``program.cpp`` as:
 
@@ -200,15 +221,45 @@ Software Engineering / Version Control
 
    what is the meaning of ``-O3``?
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+   
+      This enables optimization (and in this case, a high-level of optimization).  The
+      resulting code can run much faster than unoptimized code.
+
 #. ``git status`` shows ``newton.cpp`` under ``Untracked files``---how
    do you put this file under git control?
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+   
+      We need to *add* it to our git repository, by doing:
+
+      .. prompt:: bash
+
+         git add newton.cpp
+
 #. What does it mean for a variable to be *shadowing* another variable in C++?
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down   
 
 #. We have a header ``solver.H`` in our current directory.  This
    header provides a function ``newton`` in it.  We want to use this
    in our code.  How do we include this header so the compiler will
    find it.
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+   
 
 
 Classes
