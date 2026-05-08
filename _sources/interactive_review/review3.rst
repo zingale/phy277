@@ -357,7 +357,7 @@ Classes
 
          .. code::
 
-            struct Circle {
+            class Circle {
 
             private:
 
@@ -391,6 +391,16 @@ Classes
          :icon: pencil
          :animate: fade-in-slide-down
 
+         The second constructor would have the same name, but a different
+         argument list (so C++ can tell them apart).  In this case, it would
+         take no arguments:
+
+         .. code:: c++
+
+            Circle() {
+                radius = 1;
+            }
+
 #. In our ``Vector2d`` class, we had 2 different operators for
    multiplying by a scalar:
 
@@ -408,6 +418,14 @@ Classes
       :color: muted
       :icon: pencil
       :animate: fade-in-slide-down
+
+      The first is a member function, and for a ``Vector2d`` named ``v`` and
+      a scalar ``a``, it would be invoked when our ``Vector2d`` is to the left
+      of the multiplication operator, i.e. ``v * a``.
+
+      The second is a friend.  The function itself is outside of the class, so
+      it is not a member function.  This is involved when our class is to the 
+      right of the operator, i.e., ``a * v``.
 
 #. Write a class ``Timer`` with private member data ``seconds`` and a member function
    ``add_time(double dt)``.
