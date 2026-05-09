@@ -71,7 +71,7 @@ We can use the ``in`` operator to check if an item is in a list, for example:
 
 .. code:: python
 
-   names = ["Homer", "Marge", "List", "Bart", "Maggie"]
+   names = ["Homer", "Marge", "Lisa", "Bart", "Maggie"]
    "Homer" in names
 
 List concatenation
