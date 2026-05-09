@@ -42,6 +42,72 @@ Homework #10
           -22.5 & 64.5 & -1.8 & -7.1
       \end{array} \right )
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      First the updated header:
+
+      .. literalinclude:: array.H
+         :language: c++
+         :caption: ``array.H``
+
+      Here I chose to use the ranges and iterator algorithms, but you
+      could have also written the loop (or loops) out explicitly.
+
+      Now the driver.
+
+      .. literalinclude:: hw10_p1_test_array.cpp
+         :language: c++
+         :caption: ``test_array.cpp``
+
+      There are a few ways to initialize the array.  Here I create
+      a vector (and just use newlines to make it look 2D) and then
+      copy in.  You could also just manually write out
+
+      .. code:: c++
+
+         a(0, 0) = -20;
+         a(0, 1) = 4.5;
+         ...
+
+      .. tip::
+
+         An alternate way to do the initialization, is to create
+         another constructor that takes a `std::initializer_list <https://en.cppreference.com/cpp/utility/initializer_list>`_ and then
+         copy from that.
+
+         The constructor would look like:
+
+         .. code:: c++
+
+            Array(std::initializer_list<std::initializer_list<double>> values)
+                : _rows(values.size()),
+                  _cols(values.begin()->size()),
+                  _data()
+            {
+                assert(_rows > 0);
+                for (const auto& row : values) {
+                    // Ensure all rows have the same number of columns
+                    assert(static_cast<int>(row.size()) == _cols);
+                    _data.insert(_data.end(), row.begin(), row.end());
+                }
+            }
+
+         and the initialization would look like:
+
+         .. code:: c++
+
+            Array a{{-20.0, 4.5, 1.45, 7.9},
+                    {-1.2, -10.4, 8.9, 6.49},
+                    {12.7, 14.4, 6.5, -10.9},
+                    {-2.4, 2.15, 1.15, 20.4},
+                    {-22.5, 64.5, -1.8, -7.1}};
+
+          However, this is beyond what we covered in class.
+
+
 2. In :ref:`sec:function-practice`, we wrote a function ``is_prime()``
    took an ``int`` and returned a ``bool`` indicating whether the
    number was prime.  Here's the code we produced:
