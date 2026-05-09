@@ -225,7 +225,7 @@ Software Engineering / Version Control
       :color: muted
       :icon: pencil
       :animate: fade-in-slide-down
-   
+
       This enables optimization (and in this case, a high-level of optimization).  The
       resulting code can run much faster than unoptimized code.
 
@@ -236,7 +236,7 @@ Software Engineering / Version Control
       :color: muted
       :icon: pencil
       :animate: fade-in-slide-down
-   
+
       We need to *add* it to our git repository, by doing:
 
       .. prompt:: bash
@@ -265,7 +265,7 @@ Software Engineering / Version Control
       :color: muted
       :icon: pencil
       :animate: fade-in-slide-down
-   
+
       You need to use ``"`` in the ``#include``, like:
 
       .. code:: c++
@@ -424,7 +424,7 @@ Classes
       of the multiplication operator, i.e. ``v * a``.
 
       The second is a friend.  The function itself is outside of the class, so
-      it is not a member function.  This is involved when our class is to the 
+      it is not a member function.  This is involved when our class is to the
       right of the operator, i.e., ``a * v``.
 
 #. Write a class ``Timer`` with private member data ``seconds`` and a member function
