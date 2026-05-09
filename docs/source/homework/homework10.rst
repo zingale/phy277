@@ -120,6 +120,18 @@ Homework #10
    Rewrite this example in python---your solution should include a
    python function named ``is_prime``.
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      Here's the python version---it is pretty much a line-for-line
+      conversion.
+
+      .. literalinclude:: primes.py
+         :language: python
+         :caption: ``primes.py``
+
 3. In class, we write a python version of :ref:`sec:python-trapezoid`.
    Modify this to implement Simpson's rule for integration (see our C++
    version at :ref:`sec:simpsons-rule`).
