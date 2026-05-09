@@ -136,6 +136,19 @@ Homework #10
    Modify this to implement Simpson's rule for integration (see our C++
    version at :ref:`sec:simpsons-rule`).
 
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      Here's the python version.  Notice when we use ``range`` we
+      use a stride of ``2``.
+
+      .. literalinclude:: simpsons.py
+         :language: python
+         :caption: ``simpsons.py``
+
+
 4. Write a *python* program that:
 
    * creates an empty list, ``angles``
@@ -148,3 +161,22 @@ Homework #10
 
    * finally, outputs the results as (angle, sine) pairs, one
      pair per line.
+
+   .. dropdown:: solution
+      :color: muted
+      :icon: pencil
+      :animate: fade-in-slide-down
+
+      Here's the code:
+
+      .. literalinclude:: angles.py
+         :language: python
+         :caption: ``angles.py
+
+      Notice that I use ``zip()`` to loop over the two lists
+      together (pairing like elements from each list in each
+      loop iteration).
+
+      You could also just loop with a ``range`` and index the
+      two lists manually.
+
