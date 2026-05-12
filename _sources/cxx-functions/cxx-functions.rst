@@ -49,7 +49,7 @@ Some things to note here:
 
   .. note::
 
-     There is an newer, alternate way to declare a function with a
+     There is a newer, alternate way to declare a function with a
      `trailing return type <https://en.wikipedia.org/wiki/Trailing_return_type>`_.
      We won't use that here.
 
@@ -114,5 +114,4 @@ an example:
    void hello() {
         std::cout << "hello" << std::endl;
    }
-
 

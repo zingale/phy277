@@ -24,7 +24,7 @@ For instance, for our function:
 
 The *function type* is ``double(double, double)`` ---it takes 2
 ``double`` as arguments and returns a ``double``.  So we would use
-``std::function<double(double, double)> f`` as a argument to define
+``std::function<double(double, double)> f`` as an argument to define
 the function ``f``, e.g.,
 
 .. code:: c++
@@ -46,9 +46,8 @@ Example
 
 Here's a concrete example---let's write a function called ``fill``
 that takes a vector ``x`` and a function ``f`` and returns a new
-vector creating by calling the function ``f`` on each value in ``x``:
+vector created by calling the function ``f`` on each value in ``x``:
 
 .. literalinclude:: ../../../examples/functions/vector_fill.cpp
    :language: c++
    :caption: ``vector_fill.cpp``
-

@@ -22,14 +22,14 @@ whether we have access to the value held by an object.
    A general rule is that we can access objects that are defined
    outside of our current scope.
 
-Let's back at our sine example:
+Let's look back at our sine example:
 
 .. literalinclude:: ../../../examples/vectors/sine_loop.cpp
    :language: c++
    :caption: ``sine_loop.cpp``
 
 Inside of the ``main()`` function, we create a ``vector`` called
-``angles_deg`` and an double precision number ``pi``.  Both of these
+``angles_deg`` and a double precision number ``pi``.  Both of these
 are in scope inside of ``main``---that means that we can use them and
 access them as needed.
 
@@ -112,4 +112,3 @@ However, someone reading the code might not realize this.
 
    g++ can warn you about shadowing if you include the ``-Wshadow``
    option to the compiler.
-

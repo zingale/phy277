@@ -4,8 +4,8 @@ Using your own computer
 
 If you want to use your own laptop, then you have a few options:
 
-* Use your laptop as a terminal to connect to the remove machines
-  setup for this class (``portal`` and ``portal2``).
+* Use your laptop as a terminal to connect to the remote machines
+  set up for this class (``portal`` and ``portal2``).
 
 * Install the Bash shell and compilers on your laptop and develop on
   your machine directly.
@@ -131,7 +131,7 @@ ChromeOS
 ChromeOS has the option of using a Linux virtual machine called crustini.  To enable
 this, follow these `instructions on setting up crustini <https://chromeos.dev/en/linux/setup>`_.
 
-Once setup, you can install the necessary compilers via the package manager:
+Once set up, you can install the necessary compilers via the package manager:
 
 .. prompt::
 
@@ -143,7 +143,7 @@ Using a Linux Live Distribution
 A "live" distribution of Linux runs directly from a USB stick, without having to install anything locally.
 It can be a little slow, but should provide all the tools you need.
 
-One recommendation is the Fedora Linux.  You can find instructions on how to write the image to a USB stick
+One recommendation is Fedora Linux.  You can find instructions on how to write the image to a USB stick
 and boot into a live Fedora session here:
 https://docs.fedoraproject.org/en-US/fedora/latest/preparing-boot-media/
 
@@ -152,6 +152,5 @@ For C++ programming, you will need to install the compiler *each time you start 
 .. prompt:: bash
 
    dnf install gcc-c++
-
 
 

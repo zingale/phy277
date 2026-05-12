@@ -149,6 +149,5 @@ The key part of this is that the ``plot`` command comes at the very end.
 .. tip::
 
    If you could not get the X Window forwarding to work, then adapting
-   the script above it the easiest approach.  You can then ``scp`` the
+   the script above is the easiest approach.  You can then ``scp`` the
    plot (``diff.png`` in this case) to your local machine.
-

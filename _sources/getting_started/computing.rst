@@ -53,13 +53,13 @@ examples:
 
     Examples include: C, C++, and Fortran
 
-  * An interpreted language is processed a runtime, by running the
+  * An interpreted language is processed at runtime, by running the
     program through an `interpreter <https://en.wikipedia.org/wiki/Interpreter_(computing)>`_.
 
-    Examples include: python, ruby, mathlab
+    Examples include: python, ruby, MATLAB
 
 Generally speaking, compiled languages generate faster code, but
-interpreted language can be easier to program in.
+interpreted languages can be easier to program in.
 
 * Dynamic vs. static typing
 

@@ -59,13 +59,12 @@ also pull a file from ``portal`` to our local machine.
 .. important::
 
    In order to be able to ``ssh`` into a machine or ``scp`` a file to a remote machine,
-   that remote machine needs to be setup to run an SSH server.  This is often not
+   that remote machine needs to be set up to run an SSH server.  This is often not
    the case by default.
 
    This means that for this class, you should push to ``portal`` / ``portal2`` and pull
    from there, instead of initiating the ``scp`` on ``portal`` / ``portal2`` and trying
    to push to your laptop.
-
 
 
 

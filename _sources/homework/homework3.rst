@@ -53,7 +53,7 @@ Homework #3
    from the subtraction will dominate the answer.  We want
    to see if we can get a better result.
 
-   By by multiplying and dividing $f(x)$ by
+   By multiplying and dividing $f(x)$ by
    $\sqrt{x^3 + 1} + 1$, you get an analytically
    equivalent expression without any subtractions.
    Call this new expression $g(x)$.
@@ -172,6 +172,5 @@ Homework #3
          x is now: -32768
 
       Because a ``short int`` is signed, when we overflow by exceeding
-      the maximum integer it can represent we can the smallest (most
+      the maximum integer it can represent we get the smallest (most
       negative) integer.
-
