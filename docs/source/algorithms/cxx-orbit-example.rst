@@ -172,7 +172,7 @@ Some notes:
 Running
 =======
 
-This is setup for Earth (the semi-major axis is 1 AU), and to
+This is set up for Earth (the semi-major axis is 1 AU), and to
 integrate for 1 year.  After this time, the Earth should be right back
 where it started.  Any difference in the final position from the initial
 position is integration error.
@@ -252,5 +252,4 @@ error is dominating.
 .. admonition:: try it...
 
    Let's see how the solution behaves as we cut the timestep.
-
 

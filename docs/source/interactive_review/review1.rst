@@ -167,7 +167,7 @@ Bash shell
 
          This will recursively delete the directory, by first deleting all the files
          in it, and then removing the directory.  This can be dangerous if you did
-         not setup the ``alias`` for ``rm`` to always be ``rm -i`` (prompt you before deleting).
+         not set up the ``alias`` for ``rm`` to always be ``rm -i`` (prompt you before deleting).
 
          Another way would be:
 

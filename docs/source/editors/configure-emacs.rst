@@ -27,7 +27,7 @@ You can add this at the very end of the file (on its own line).
 
 
 On ``portal`` or ``portal2``, you can add the following ``.emacs`` file to your home directory
-to setup some C++ support:
+to set up some C++ support:
 
 :download:`.emacs <./.emacs>`
 

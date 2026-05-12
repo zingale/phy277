@@ -10,7 +10,7 @@ In particular:
 * We can loop over elements of a list using a ``for`` loop, very
   similar to the range-based loop we saw with C++.
 
-* We use ``.append()`` in python they way we used ``.push_back`` in C++
+* We use ``.append()`` in python the way we used ``.push_back`` in C++
 
 * We use ``[]`` and 0-based indexing to get an element of a list---just like in C++
 
@@ -142,4 +142,3 @@ and standard deviation of a vector, now in python.
 
    When we cover the NumPy library later, we'll see that there are even
    easier ways to do this.
-

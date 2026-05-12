@@ -250,7 +250,7 @@ Software Engineering / Version Control
       :icon: pencil
       :animate: fade-in-slide-down
 
-      This means that we created a object with the same name as one in
+      This means that we created an object with the same name as one in
       the surrounding scope.  This may not be a problem, but if we
       think that we are actually working on the version of the object
       in the outer scope, then our local copy will *shadow* that and

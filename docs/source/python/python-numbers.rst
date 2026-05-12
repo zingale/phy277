@@ -104,7 +104,7 @@ We first need to *import* it:
 
    import math
 
-then we can access all it's functionality using the ``.`` operator (for instance, ``math.cos()``.
+then we can access all its functionality using the ``.`` operator (for instance, ``math.cos()``).
 
 We can get the value of $\pi$ as ``math.pi``:
 

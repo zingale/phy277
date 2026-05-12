@@ -14,7 +14,7 @@ are more general but also more error-prone.  Some differences,
 following `differences between references and pointers
 <https://en.wikipedia.org/wiki/Reference_(C%2B%2B)#Relationship_to_pointers>`_:
 
-* A pointer is an object.  It has it's own memory where the address of
+* A pointer is an object.  It has its own memory where the address of
   what it is pointing to is stored.  A reference is just an alias---another
   name for something.
 
@@ -100,4 +100,3 @@ Here's an example showing how to access data via a reference or a pointer.
       if (p) {
           // do stuff
       }
-

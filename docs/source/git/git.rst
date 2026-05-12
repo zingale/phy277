@@ -6,7 +6,7 @@ We'll do a walkthrough on git---you can use ``portal`` / ``portal2``.
 
 .. tip::
 
-   You should can also install `git` on your laptop to follow along.
+   You can also install `git` on your laptop to follow along.
 
    For:
 

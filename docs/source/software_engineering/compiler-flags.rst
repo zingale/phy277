@@ -17,14 +17,14 @@ we may have written.  A useful set of options is:
 
    g++ -Wall -Wextra -Wshadow -Wpedantic
 
-These have the follow effects:
+These have the following effects:
 
 * ``-Wall`` : this turns on options that warn about things most users deem problematic.
 
-* ``-Wextra`` : enabled additional warnings that most people think are good to check
+* ``-Wextra`` : enables additional warnings that most people think are good to check
   for.
 
-* ``-Wshadow`` : this checks if we redefine an variable / object that exists in the
+* ``-Wshadow`` : this checks if we redefine a variable / object that exists in the
   surrounding scope.
 
 * ``-Wpedantic`` : makes sure that you conform to the language standard and not rely
@@ -116,4 +116,3 @@ when we build with ``-Wshadow``, we see:
     shadow.cpp:6:12: note: shadowed declaration is here
         6 |     double x{1.0};
           |            ^
-

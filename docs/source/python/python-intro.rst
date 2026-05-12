@@ -118,7 +118,7 @@ the ipython interpreter for python 3.12 will start up.
 Using your own computer
 =======================
 
-If you want to setup python on your own computer, I would recommend
+If you want to set up python on your own computer, I would recommend
 the Anaconda python distribution.  This will install the latest python
 version and all of the libraries we typically need for scientific
 computing.
@@ -136,13 +136,11 @@ There are lots of resources online for learning more about python:
 
 * Software carpentry offers 2 lessons on python, `programming with python <https://swcarpentry.github.io/python-novice-inflammation/>`_
   and `plotting and programming in python <https://swcarpentry.github.io/python-novice-gapminder/>`_ which give excellent
-  walk-troughs of using python on real datasets.
+  walkthroughs of using python on real datasets.
 
 * The `official python tutorial <https://docs.python.org/3.14/tutorial/index.html>`_
   is an excellent place to build off of the C++ knowledge we developed this semester.
 
 * I have `python for scientific computing <https://sbu-python-class.github.io/python-science/Introduction.html>`_
   course notes online.
-
-
 

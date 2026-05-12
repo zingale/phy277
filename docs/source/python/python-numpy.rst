@@ -83,7 +83,7 @@ There are a few ways to create an array:
      >>> a
      array([ 1,  2,  4,  8, 16])
 
-* as a evenly-spaced sequence between two limits:
+* as an evenly-spaced sequence between two limits:
 
   .. code:: pycon
 
@@ -236,4 +236,3 @@ or to get a rectangular region, we can do:
    array([[ 4,  5],
           [ 7,  8],
           [10, 11]])
-
