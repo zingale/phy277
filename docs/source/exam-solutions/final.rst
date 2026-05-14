@@ -65,7 +65,7 @@ C++
               y = _y;
           }
       };
-    
+
    a. Both the class and a function inside the class are named
       ``Thing``---what special name do we give that function in
       the context of object-oriented programming?
@@ -182,7 +182,7 @@ C++
 
       .. admonition:: solution
 
-         They are not interchangable.  You need to do ``#include
+         They are not interchangeable.  You need to do ``#include
          "myheader"``---the version with quotes will first look in the
          current directory for the header file.
 
@@ -256,4 +256,3 @@ Everything
 ==========
 
 10. Tell me something that you learned in class that you enjoyed.
-
