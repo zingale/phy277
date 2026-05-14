@@ -332,3 +332,5 @@ the top of many pages.
 
    exam-solutions/midterm1
    exam-solutions/midterm2
+   exam-solutions/final
+
