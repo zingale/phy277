@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Finite-Differencing in NumPy &#8212; PHY 277 Spring 2026 documentation</title>
+    <title>Final &#8212; PHY 277 Spring 2026 documentation</title>
   
   
   
@@ -52,11 +52,10 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "macros": {"kth": "{{k_\\mathrm{th}}}", "gcc": "{\\mathrm{g~cm^{-3}}}", "cms": "{\\mathrm{cm~s^{-1}}}", "presunit": "{\\mathrm{dyn~cm^{-2}}}", "accelunit": "{\\mathrm{cm~s^{-2}}}", "ergg": "{\\mathrm{erg~g^{-1}}}", "Ab": "{{\\bf A}}", "eb": "{{\\bf e}}", "Fb": "{{\\bf F}}", "gb": "{{\\bf g}}", "Hb": "{{\\bf H}}", "ib": "{{\\bf i}}", "Ib": "{{\\bf I}}", "Kb": "{{\\bf K}}", "lb": "{{\\bf l}}", "Lb": "{{\\bf L}}", "nb": "{{\\bf n}}", "Pb": "{{\\bf P}}", "Qb": "{{\\bf Q}}", "rb": "{{\\bf r}}", "Rb": "{{\\bf R}}", "Sb": "{{\\bf S}}", "ub": "{{\\bf u}}", "Ub": "{{\\bf U}}", "xb": "{{\\bf x}}", "dt": "{\\Delta t}", "omegadot": "{\\dot\\omega}", "inp": "{{\\rm in}}", "outp": "{{\\rm out}}", "sync": "{{\\rm sync}}", "half": "{\\frac{1}{2}}", "myhalf": "{\\half}", "nph": "{{n+\\myhalf}}", "kpp": "{\\ensuremath{\\kappa_{\\mathrm{P}}}}", "kpr": "{\\ensuremath{\\kappa_{\\mathrm{R}}}}", "kpf": "{\\ensuremath{\\kappa_{\\mathrm{F}}}}", "vb": "{\\boldsymbol{v}}", "vbt": "{\\widetilde{\\vb}}", "rbt": "{\\widetilde{\\rb}}", "ob": "{\\boldsymbol{\\omega}}", "nablab": "{\\boldsymbol{\\nabla}}", "avg": ["{{\\left \\langle #1 \\right \\rangle}}", 1]}}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'python/python-numpy-differencing';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exam-solutions/final';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="matplotlib" href="python-matplotlib.html" />
-    <link rel="prev" title="More NumPy" href="python-numpy-advanced.html" />
+    <link rel="prev" title="Midterm 2" href="midterm2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="Spring 2026" />
@@ -323,23 +322,23 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python-intro.html">Python Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-cxx.html">Comparing python and C++</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-numbers.html">Integers, Floats, and Math</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-strings.html">Strings and <code class="docutils literal notranslate"><span class="pre">print</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-lists.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-conditionals.html">Loops and <code class="docutils literal notranslate"><span class="pre">if</span></code>-tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-functions.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-classes.html">Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python-intro.html">Python Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python-cxx.html">Comparing python and C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python-numbers.html">Integers, Floats, and Math</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python-strings.html">Strings and <code class="docutils literal notranslate"><span class="pre">print</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python-lists.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python-conditionals.html">Loops and <code class="docutils literal notranslate"><span class="pre">if</span></code>-tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python-classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python-examples.html">Examples</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific Python</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python-numpy.html">NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-numpy-advanced.html">More NumPy</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Finite-Differencing in NumPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-matplotlib.html">matplotlib</a></li>
-<li class="toctree-l1"><a class="reference internal" href="calling-cxx-from-python.html">Calling C++ from Python</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/python-numpy.html">NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python-numpy-advanced.html">More NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python-numpy-differencing.html">Finite-Differencing in NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/python-matplotlib.html">matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/calling-cxx-from-python.html">Calling C++ from Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Review</span></p>
 <ul class="nav bd-sidenav">
@@ -371,10 +370,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../homework/homework10.html">Homework #10</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exams</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../exam-solutions/midterm1.html">Midterm 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exam-solutions/midterm2.html">Midterm 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../exam-solutions/final.html">Final</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="midterm1.html">Midterm 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="midterm2.html">Midterm 2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Final</a></li>
 </ul>
 
     </div>
@@ -451,7 +450,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/python/python-numpy-differencing.rst?plain=1" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/blob/main/docs/source/exam-solutions/final.rst?plain=1" target="_blank"
    class="btn btn-sm btn-source-file-button dropdown-item"
    title="Show source"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -468,7 +467,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/python/python-numpy-differencing.rst" target="_blank"
+      <li><a href="https://github.com/zingale/phy277/edit/main/docs/source/exam-solutions/final.rst" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -485,7 +484,7 @@
       
       
       
-      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fpython/python-numpy-differencing.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/zingale/phy277/issues/new?title=Issue%20on%20page%20%2Fexam-solutions/final.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -530,7 +529,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -541,11 +542,21 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Finite-Differencing in NumPy</h1>
+    <h1>Final</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c">C++</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everything">Everything</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -555,51 +566,265 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="finite-differencing-in-numpy">
-<h1>Finite-Differencing in NumPy<a class="headerlink" href="#finite-differencing-in-numpy" title="Link to this heading">#</a></h1>
-<p>Recall from <a class="reference internal" href="../algorithms/truncation.html#sec-difference-first-derivative"><span class="std std-ref">Difference approximation to first derivative</span></a>, that
-a second-order accurate approximation to the first-derivative
-is:</p>
-<div class="math notranslate nohighlight">
-\[\left . \frac{df}{dx} \right |_{x_0} = \frac{f(x_0 + \Delta x) - f(x_0 - \Delta x)}{2\Delta x} + \mathcal{O}(\Delta x^2)\]</div>
-<p>We can compute the derivative of a function in NumPy that is sampled
-as an array by simply using views that are shifted by one element.  In terms of array indices, <span class="math notranslate nohighlight">\(i\)</span>, this would be</p>
-<div class="math notranslate nohighlight">
-\[\frac{dx}{dx} \sim \frac{f(x_{i+1}) - f(x_{i-1}))}{x_{i+1} - x_{i-1}}\]</div>
-<p>Note that for an array with <span class="math notranslate nohighlight">\(N\)</span> elements, we’ll have <span class="math notranslate nohighlight">\(N-2\)</span>
-derivatives, because we need an extra point on each end.</p>
-<p>Here’s the code:</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-number">Listing 145 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">derivative.py</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="n">numpy</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">np</span>
+  <section id="final">
+<h1>Final<a class="headerlink" href="#final" title="Link to this heading">#</a></h1>
+<section id="c">
+<h2>C++<a class="headerlink" href="#c" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><em>Ranges and iterators.</em></p>
+<p>For these questions, you have a `` std::vector`` named <code class="docutils literal notranslate"><span class="pre">vec</span></code>:</p>
+<ol class="loweralpha">
+<li><p><code class="docutils literal notranslate"><span class="pre">vec.begin()</span></code> points to the first element of the vector.  What
+does <code class="docutils literal notranslate"><span class="pre">vec.end()</span></code> point to?</p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<p><code class="docutils literal notranslate"><span class="pre">vec.end()</span></code> points to one-past the last element in <code class="docutils literal notranslate"><span class="pre">vec</span></code>.</p>
+</div>
+</li>
+<li><p>Consider the line: <code class="docutils literal notranslate"><span class="pre">auto</span> <span class="pre">it</span> <span class="pre">=</span> <span class="pre">std::ranges::max_element(vec);</span></code></p>
+<ol class="lowerroman">
+<li><p>What name did we use for the concept that <code class="docutils literal notranslate"><span class="pre">it</span></code> represents?</p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<p>We called it an <em>iterator</em></p>
+</div>
+</li>
+<li><p>How do I get the value of the maximum element from <code class="docutils literal notranslate"><span class="pre">it</span></code>?</p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<p>You need to dereference it, i.e., <code class="docutils literal notranslate"><span class="pre">*it</span></code>.</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p><em>Lambda-functions.</em> This line tests if any element in a
+<code class="docutils literal notranslate"><span class="pre">std::vector&lt;int&gt;</span></code> named <code class="docutils literal notranslate"><span class="pre">vec</span></code> is even:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">any_of</span><span class="p">(</span><span class="n">vec</span><span class="p">,</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;});</span>
+</pre></div>
+</div>
+<p>Here we provide the function that tests each element as a <em>lambda
+function</em>.  Rewrite this by writing a separate function to do this
+test, <em>and</em> show how the <code class="docutils literal notranslate"><span class="pre">std::ranges::any_of()</span></code> call is
+modified to call your function.</p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="nf">is_even</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="cp"># create our sampled data, f(x) = sin(x)</span>
-<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">)</span>
-<span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="cp"># let&#39;s do it manually first</span>
-<span class="n">dfdx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="mi">-1</span><span class="p">)</span><span class="o">:</span>
-<span class="w">    </span><span class="n">dfdx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">])</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">])</span>
-
-<span class="cp"># now construct (f[i + 1] - f[i-1]) / (x[i+1] - x[i-1])</span>
-<span class="cp"># using views</span>
-<span class="n">dfdx2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="o">:</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="o">:</span><span class="mi">-2</span><span class="p">])</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="o">:</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="o">:</span><span class="mi">-2</span><span class="p">])</span>
-
-<span class="cp"># finally output, and compare to the exact result, cos(x)</span>
-<span class="k">for</span><span class="w"> </span><span class="n">xc</span><span class="p">,</span><span class="w"> </span><span class="n">fc</span><span class="p">,</span><span class="w"> </span><span class="n">fc2</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">zip</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">-1</span><span class="p">],</span><span class="w"> </span><span class="n">dfdx</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">-1</span><span class="p">],</span><span class="w"> </span><span class="n">dfdx2</span><span class="p">)</span><span class="o">:</span>
-<span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="n">f</span><span class="s">&quot;{xc:7.4f}  {fc:7.4f}  {fc2:7.4f}  {np.cos(xc):7.4f}&quot;</span><span class="p">)</span>
+<span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">any_of</span><span class="p">(</span><span class="n">vec</span><span class="p">,</span><span class="w"> </span><span class="n">is_even</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<p>Notice:</p>
-<ul class="simple">
-<li><p>We have 2 fewer elements in our <code class="docutils literal notranslate"><span class="pre">dfdx2</span></code> array than in our
-<code class="docutils literal notranslate"><span class="pre">f</span></code> array, because of how the views work (they leave our 2 elements
-either at the start or end)</p></li>
-<li><p>We compute the difference two ways: the first <code class="docutils literal notranslate"><span class="pre">dfdx</span></code> uses
-an explicit loop.  This will be slower if our array is the same.</p></li>
-</ul>
+</li>
+<li><p><em>Classes.</em> Consider the following class:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Thing</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">Thing</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">_x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">_y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_y</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<ol class="loweralpha">
+<li><p>Both the class and a function inside the class are named
+<code class="docutils literal notranslate"><span class="pre">Thing</span></code>—what special name do we give that function in
+the context of object-oriented programming?</p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<p>We called it the <em>constructor</em></p>
+</div>
+</li>
+<li><p>If you do <code class="docutils literal notranslate"><span class="pre">Thing</span> <span class="pre">t(1,</span> <span class="pre">2);</span></code> in your <code class="docutils literal notranslate"><span class="pre">main</span></code> function, you get
+the compilation error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>error: ‘Thing::Thing(double, double)’ is private within this context
+</pre></div>
+</div>
+<p>How can you fix this? (there are a few ways, be specific about
+what change you are suggesting).</p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<p>You can either add <code class="docutils literal notranslate"><span class="pre">public:</span></code> to the body of the class (just before the constructor),
+or you can change <code class="docutils literal notranslate"><span class="pre">class</span></code> to <code class="docutils literal notranslate"><span class="pre">struct</span></code>.</p>
+</div>
+</li>
+</ol>
+</li>
+<li><p><em>Operators.</em> In our <em>mathematical vectors</em> <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code> class, we
+had the following two operators for <span class="math notranslate nohighlight">\(-\)</span>:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Vector2d</span><span class="w"> </span><span class="k">operator</span><span class="o">-</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vector2d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">vec</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Vector2d</span><span class="w"> </span><span class="k">operator</span><span class="o">-</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Vector2d</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>What is the difference between these?  Given two <code class="docutils literal notranslate"><span class="pre">Vector2d</span></code>
+objects, <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code>, give an example of operations that would
+call each of these <code class="docutils literal notranslate"><span class="pre">-</span></code> operators.</p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<p>The first is subtraction and the other is the unary minus
+(negation).</p>
+<p>Doing <code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">-</span> <span class="pre">v</span></code> will call the first and doing <code class="docutils literal notranslate"><span class="pre">-u</span></code> will call
+the second.</p>
+</div>
+</li>
+<li><p>Consider the following class <code class="docutils literal notranslate"><span class="pre">Roster</span></code> that represents a classroom
+of students:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">Student</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">{};</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">grade</span><span class="p">{};</span>
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Roster</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Student</span><span class="o">&gt;</span><span class="w"> </span><span class="n">students</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">Roster</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">    </span><span class="c1">// add your functions here</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<ol class="loweralpha">
+<li><p>Write a member function for <code class="docutils literal notranslate"><span class="pre">Roster</span></code> named <code class="docutils literal notranslate"><span class="pre">add_student</span></code>
+that takes a name, id, and grade (of the types defined in
+<code class="docutils literal notranslate"><span class="pre">Student</span></code>) and adds the student to the <code class="docutils literal notranslate"><span class="pre">students</span></code> vector.</p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">add_student</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">grade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Student</span><span class="w"> </span><span class="n">s</span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">grade</span><span class="o">=</span><span class="n">grade</span><span class="p">};</span>
+<span class="w">    </span><span class="n">students</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p>Write a member function for <code class="docutils literal notranslate"><span class="pre">Roster</span></code> that returns the number
+of students.</p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">num_students</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">students</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+</li>
+<li><p><em>Software engineering.</em></p>
+<ol class="loweralpha">
+<li><p>You have a directory with multiple <code class="docutils literal notranslate"><span class="pre">.cpp</span></code> files and
+headers, and there is a <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>.  What <em>single
+command</em> could you type to compile and link all the sources?</p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<p><code class="docutils literal notranslate"><span class="pre">make</span></code></p>
+</div>
+</li>
+<li><p>What tool did we cover in class that allows you to keep track of
+changes to a software project?</p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<p>git</p>
+</div>
+</li>
+<li><p>I have a header file <code class="docutils literal notranslate"><span class="pre">myheader.H</span></code> in my directory.  For the
+<code class="docutils literal notranslate"><span class="pre">.cpp</span></code> file in the same directory, can I use <code class="docutils literal notranslate"><span class="pre">#include</span>
+<span class="pre">&lt;myheader.H&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&quot;myheader.H&quot;</span></code> interchangeably?
+Why or why not?</p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<p>They are not interchangable.  You need to do <code class="docutils literal notranslate"><span class="pre">#include</span>
+<span class="pre">&quot;myheader&quot;</span></code>—the version with quotes will first look in the
+current directory for the header file.</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Link to this heading">#</a></h2>
+<ol class="arabic" start="6">
+<li><p>How would you rewrite this C++ code in python using an f-string?</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">{</span><span class="mf">2.65</span><span class="p">};</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">{</span><span class="mf">1.2e-16</span><span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;x = {:5.3f}, y = {:9.4g}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">2.65</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">1.2e-16</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="p">:</span><span class="mf">5.3</span><span class="n">f</span><span class="p">},</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">y</span><span class="p">:</span><span class="mf">9.4</span><span class="n">g</span><span class="p">}</span><span class="s2">&quot;)</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p>Rewrite this C++ code in python:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">-2</span><span class="p">,</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">divisible</span><span class="p">{};</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">vec</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">divisible</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vec</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+<span class="n">divisible</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">vec</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">e</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">divisible</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p>What is the python equivalent of:</p>
+<ol class="loweralpha">
+<li><p><code class="docutils literal notranslate"><span class="pre">auto</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">std::pow(x,</span> <span class="pre">4);</span></code></p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">auto</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">std::sin(std::numbers::pi</span> <span class="pre">*</span> <span class="pre">x</span> <span class="pre">/</span> <span class="pre">180);</span></code></p>
+<div class="admonition-solution admonition">
+<p class="admonition-title">solution</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">180</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="everything">
+<h2>Everything<a class="headerlink" href="#everything" title="Link to this heading">#</a></h2>
+<ol class="arabic simple" start="10">
+<li><p>Tell me something that you learned in class that you enjoyed.</p></li>
+</ol>
+</section>
 </section>
 
 
@@ -614,22 +839,13 @@ an explicit loop.  This will be slower if our array is the same.</p></li>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="python-numpy-advanced.html"
+       href="midterm2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">More NumPy</p>
+        <p class="prev-next-title">Midterm 2</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="python-matplotlib.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">matplotlib</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -637,6 +853,25 @@ an explicit loop.  This will be slower if our array is the same.</p></li>
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c">C++</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everything">Everything</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

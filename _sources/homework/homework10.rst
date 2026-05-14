@@ -171,7 +171,7 @@ Homework #10
 
       .. literalinclude:: angles.py
          :language: python
-         :caption: ``angles.py
+         :caption: ``angles.py``
 
       Notice that I use ``zip()`` to loop over the two lists
       together (pairing like elements from each list in each
