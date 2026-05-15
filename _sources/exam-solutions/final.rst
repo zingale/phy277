@@ -189,7 +189,7 @@ C++
 Python
 ======
 
-6. How would you rewrite this C++ code in python using an f-string?
+7. How would you rewrite this C++ code in python using an f-string?
 
    .. code:: c++
 
