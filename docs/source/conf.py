@@ -152,8 +152,8 @@ html_theme_options = {
     "logo": {
         "text": "PHY 277",
     },
-    "use_download_button": False
-}
+    "use_download_button": False,
+    "navbar_persistent": []}
 
 html_context = {
     "license_name": "CC BY-NC-SA 4.0",
