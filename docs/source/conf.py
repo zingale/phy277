@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Castro documentation build configuration file, created by
+# PHY 277 documentation build configuration file, created by
 # sphinx-quickstart on Mon Dec 25 18:42:54 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -74,8 +74,6 @@ project = 'PHY 277'
 copyright = '2025-2026, Michael Zingale; License: CC BY-NC-SA 4.0'
 author = 'Michael Zingale'
 
-#html_logo = "castro_logo_hot_200.png"
-
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
@@ -107,24 +105,24 @@ todo_include_todos = False
 # -- Options for MathJax
 # -- Options for MathJax
 # for sphinx-math-dollar
-mathjax3_config = {}
+mathjax4_config = {}
 
-mathjax3_config["tex"] = {
+mathjax4_config["tex"] = {
     "inlineMath": [['\\(', '\\)']],
     "displayMath": [["\\[", "\\]"]],
   }
 
-mathjax3_config["tex"]["macros"] = {}
+mathjax4_config["tex"]["macros"] = {}
 
 with open('mathsymbols.tex', 'r') as f:
     for line in f:
         macros = re.findall(r'\\newcommand{\\(.*?)}(\[(\d)\])?{(.+)}', line)
         for macro in macros:
             if len(macro[1]) == 0:
-                mathjax3_config['tex']['macros'][macro[0]
+                mathjax4_config['tex']['macros'][macro[0]
                                                 ] = "{" + macro[3] + "}"
             else:
-                mathjax3_config['tex']['macros'][macro[0]] = [
+                mathjax4_config['tex']['macros'][macro[0]] = [
                     "{" + macro[3] + "}", int(macro[2])]
 
 
