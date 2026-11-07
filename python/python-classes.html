@@ -586,7 +586,7 @@ we can create our <code class="docutils literal notranslate"><span class="pre">s
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-number">Listing 140 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">planet.py</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Planet</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a Planet</span>
+<span class="w">    </span><span class="sd">"""Create a Planet</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -597,7 +597,7 @@ we can create our <code class="docutils literal notranslate"><span class="pre">s
 <span class="sd">    e : float</span>
 <span class="sd">        The eccentricity</span>
 
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
@@ -605,17 +605,17 @@ we can create our <code class="docutils literal notranslate"><span class="pre">s
         <span class="bp">self</span><span class="o">.</span><span class="n">e</span> <span class="o">=</span> <span class="n">e</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="si">:</span><span class="s2">5.3f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">e</span><span class="si">:</span><span class="s2">5.3f</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="si">:</span><span class="s2">5.3f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">e</span><span class="si">:</span><span class="s2">5.3f</span><span class="si">}</span><span class="s2">"</span>
 
 
-<span class="n">planets</span> <span class="o">=</span> <span class="p">[</span><span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Mercury&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.3871</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.2056</span><span class="p">),</span>
-           <span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Venus&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.7233</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0068</span><span class="p">),</span>
-           <span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Earth&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">1.0000</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0167</span><span class="p">),</span>
-           <span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Mars&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">1.5237</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0934</span><span class="p">),</span>
-           <span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Jupiter&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">5.2029</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0484</span><span class="p">),</span>
-           <span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Saturn&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">9.5370</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0539</span><span class="p">),</span>
-           <span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Uranus&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">19.189</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0473</span><span class="p">),</span>
-           <span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Neptune&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">30.070</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0086</span><span class="p">)]</span>
+<span class="n">planets</span> <span class="o">=</span> <span class="p">[</span><span class="n">Planet</span><span class="p">(</span><span class="s2">"Mercury"</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.3871</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.2056</span><span class="p">),</span>
+           <span class="n">Planet</span><span class="p">(</span><span class="s2">"Venus"</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">0.7233</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0068</span><span class="p">),</span>
+           <span class="n">Planet</span><span class="p">(</span><span class="s2">"Earth"</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">1.0000</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0167</span><span class="p">),</span>
+           <span class="n">Planet</span><span class="p">(</span><span class="s2">"Mars"</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">1.5237</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0934</span><span class="p">),</span>
+           <span class="n">Planet</span><span class="p">(</span><span class="s2">"Jupiter"</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">5.2029</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0484</span><span class="p">),</span>
+           <span class="n">Planet</span><span class="p">(</span><span class="s2">"Saturn"</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">9.5370</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0539</span><span class="p">),</span>
+           <span class="n">Planet</span><span class="p">(</span><span class="s2">"Uranus"</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">19.189</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0473</span><span class="p">),</span>
+           <span class="n">Planet</span><span class="p">(</span><span class="s2">"Neptune"</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mf">30.070</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0086</span><span class="p">)]</span>
 
 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">planets</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
@@ -626,7 +626,7 @@ we can create our <code class="docutils literal notranslate"><span class="pre">s
 <ul>
 <li><p>In python, the constructor (<code class="docutils literal notranslate"><span class="pre">__init__</span></code>) returns an object, so
 we create a <code class="docutils literal notranslate"><span class="pre">Planet</span></code> like:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Planet</span><span class="p">(</span><span class="s2">&quot;Earth&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Planet</span><span class="p">(</span><span class="s2">"Earth"</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -671,41 +671,41 @@ we can <code class="docutils literal notranslate"><span class="pre">import</span
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">Vector</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; a general two-dimensional vector &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">""" a general two-dimensional vector """</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2"> î + </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2"> ĵ)&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2"> î + </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2"> ĵ)"</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Vector(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Vector(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)"</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Vector</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-        <span class="c1"># it doesn&#39;t make sense to add anything but two vectors</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;adding </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2"> to Vector not defined&quot;</span><span class="p">)</span>
+        <span class="c1"># it doesn't make sense to add anything but two vectors</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"adding </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2"> to Vector not defined"</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Vector</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-        <span class="c1"># it doesn&#39;t make sense to add anything but two vectors</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;subtracting </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2"> from Vector not defined&quot;</span><span class="p">)</span>
+        <span class="c1"># it doesn't make sense to add anything but two vectors</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"subtracting </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2"> from Vector not defined"</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
             <span class="c1"># scalar multiplication changes the magnitude</span>
             <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="n">other</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">other</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;multiplication not defined&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">"multiplication not defined"</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__matmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="c1"># a dot product</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Vector</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">other</span><span class="o">.</span><span class="n">y</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;matrix multiplication not defined&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">"matrix multiplication not defined"</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__rmul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__mul__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
@@ -714,7 +714,7 @@ we can <code class="docutils literal notranslate"><span class="pre">import</span
         <span class="c1"># we only know how to multiply by a scalar</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
             <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">/</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">/</span><span class="n">other</span><span class="p">)</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;we don&#39;t know how to divide two Vectors&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">"we don't know how to divide two Vectors"</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__abs__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
@@ -723,8 +723,8 @@ we can <code class="docutils literal notranslate"><span class="pre">import</span
         <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">cross</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;a vector cross product -- we return the magnitude, since it will</span>
-<span class="sd">        be in the z-direction, but we are only 2-d&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""a vector cross product -- we return the magnitude, since it will</span>
+<span class="sd">        be in the z-direction, but we are only 2-d"""</span>
         <span class="k">return</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="n">other</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -753,24 +753,24 @@ right-multiplication.</p></li>
 <span class="n">u</span> <span class="o">=</span> <span class="n">vector</span><span class="o">.</span><span class="n">Vector</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">v</span> <span class="o">=</span> <span class="n">vector</span><span class="o">.</span><span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;u = </span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;v = </span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"u = </span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"v = </span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
 
 <span class="c1"># addition and subtraction</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">u</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">u</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">u</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">u</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">v</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
 
 <span class="c1"># multiplication and division</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;2 * </span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">u</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2"> * 2 = </span><span class="si">{</span><span class="n">u</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2"> / 3 = </span><span class="si">{</span><span class="n">u</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"2 * </span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">u</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2"> * 2 = </span><span class="si">{</span><span class="n">u</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">u</span><span class="si">}</span><span class="s2"> / 3 = </span><span class="si">{</span><span class="n">u</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># abs, dot, and cross</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;abs(u) = </span><span class="si">{</span><span class="nb">abs</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;u . v = </span><span class="si">{</span><span class="n">u</span><span class="w"> </span><span class="o">@</span><span class="w"> </span><span class="n">v</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;u x v = </span><span class="si">{</span><span class="n">u</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"abs(u) = </span><span class="si">{</span><span class="nb">abs</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"u . v = </span><span class="si">{</span><span class="n">u</span><span class="w"> </span><span class="o">@</span><span class="w"> </span><span class="n">v</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"u x v = </span><span class="si">{</span><span class="n">u</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

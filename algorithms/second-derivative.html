@@ -627,10 +627,10 @@ second derivative, we have:</p>
 <span class="w">    </span><span class="c1">// the analytic second derivative at x0</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">df2dx2_true</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df2dx2</span><span class="p">(</span><span class="n">x0</span><span class="p">);</span>
 
-<span class="w">    </span><span class="c1">// output a header -- note the use of &quot;^&quot; to center these headings</span>
+<span class="w">    </span><span class="c1">// output a header -- note the use of "^" to center these headings</span>
 <span class="w">    </span><span class="c1">// in the column</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:^12} {:^12} {:^12}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
-<span class="w">                             </span><span class="s">&quot;dx&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;d2f/dx2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;error&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:^12} {:^12} {:^12}</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
+<span class="w">                             </span><span class="s">"dx"</span><span class="p">,</span><span class="w"> </span><span class="s">"d2f/dx2"</span><span class="p">,</span><span class="w"> </span><span class="s">"error"</span><span class="p">);</span>
 
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">dx</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w"> </span><span class="mf">0.025</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0125</span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
 
@@ -641,7 +641,7 @@ second derivative, we have:</p>
 <span class="w">        </span><span class="c1">// the absolute error</span>
 <span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">abs</span><span class="p">(</span><span class="n">df2dx2_true</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">df2dx2_approx</span><span class="p">);</span>
 
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:12.6g} {:12.6g} {:12.6g}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:12.6g} {:12.6g} {:12.6g}</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
 <span class="w">                                 </span><span class="n">dx</span><span class="p">,</span><span class="w"> </span><span class="n">df2dx2_approx</span><span class="p">,</span><span class="w"> </span><span class="n">err</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 

@@ -633,7 +633,7 @@ should be close to the actual value.</p>
 <span class="w">        </span><span class="n">epsilon</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;epsilon ~ &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">epsilon</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"epsilon ~ "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">epsilon</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
 <span class="p">}</span>
 </pre></div>
@@ -714,7 +714,7 @@ in columns.</p></li>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">vmag</span><span class="p">{};</span>
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="p">{};</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;# Enter angle (degrees), velocity (m/s), and time interval (s): &quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"# Enter angle (degrees), velocity (m/s), and time interval (s): "</span><span class="p">;</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">angle</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">vmag</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
@@ -739,7 +739,7 @@ in columns.</p></li>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">trajectory</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:7.4f} {:8.5f} {:8.5f}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:7.4f} {:8.5f} {:8.5f}</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
 <span class="w">                                 </span><span class="n">e</span><span class="p">.</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 
@@ -791,14 +791,14 @@ and the timestep to 0.1 s.</p>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-number">Listing 157 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">projectile.gp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-gnuplot notranslate"><div class="highlight"><pre><span></span><span class="k">set</span><span class="w"> </span><span class="nb">term</span><span class="w"> </span><span class="n">png</span><span class="w"> </span><span class="n">enhanced</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">output</span><span class="w"> </span><span class="s">&quot;projectile.png&quot;</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">output</span><span class="w"> </span><span class="s">"projectile.png"</span>
 
-<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">&quot;x&quot;</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">&quot;y&quot;</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">"x"</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">"y"</span>
 
 <span class="k">set</span><span class="w"> </span><span class="nb">grid</span>
 
-<span class="k">plot</span><span class="w"> </span><span class="s">&quot;out&quot;</span><span class="w"> </span><span class="nb">using</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="mi">3</span><span class="w"> </span><span class="nb">notitle</span>
+<span class="k">plot</span><span class="w"> </span><span class="s">"out"</span><span class="w"> </span><span class="nb">using</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="mi">3</span><span class="w"> </span><span class="nb">notitle</span>
 </pre></div>
 </div>
 </div>

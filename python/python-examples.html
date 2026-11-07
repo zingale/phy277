@@ -652,11 +652,11 @@ we don’t need to specify the types.  In C++ this is harder.</p>
     <span class="n">fright</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">xright</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">fleft</span> <span class="o">*</span> <span class="n">fright</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no root in interval [xleft, right]&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"no root in interval [xleft, right]"</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">None</span>
 
     <span class="k">if</span> <span class="n">fleft</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">fright</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;root is one of bounds&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"root is one of bounds"</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">None</span>
 
     <span class="n">xmid</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">xleft</span> <span class="o">+</span> <span class="n">xright</span><span class="p">)</span>
@@ -677,14 +677,14 @@ we don’t need to specify the types.  In C++ this is harder.</p>
         <span class="n">err</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">xright</span> <span class="o">-</span> <span class="n">xleft</span><span class="p">)</span>
         <span class="n">xmid</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">xleft</span> <span class="o">+</span> <span class="n">xright</span><span class="p">)</span>
 
-        <span class="c1"># check if we&#39;ve converged</span>
+        <span class="c1"># check if we've converged</span>
         <span class="k">if</span> <span class="n">err</span> <span class="o">&lt;</span> <span class="n">RTOL</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">xmid</span><span class="p">)</span> <span class="o">+</span> <span class="n">ATOL</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">xmid</span>
 
         <span class="nb">iter</span> <span class="o">+=</span> <span class="mi">1</span>
 
     <span class="c1"># check to see if we took too many iterations</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;too many iterations&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"too many iterations"</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">None</span>
 
 
@@ -696,14 +696,14 @@ we don’t need to specify the types.  In C++ this is harder.</p>
 
     <span class="c1"># bisection on f(x) = x^3 + x^2 - 1</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;trying bisection on f(x) = x^3 + x^2 - 1&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"trying bisection on f(x) = x^3 + x^2 - 1"</span><span class="p">)</span>
 
     <span class="n">root</span> <span class="o">=</span> <span class="n">bisection</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">root</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x_0 = </span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">; f(x_0) = </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">root</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"x_0 = </span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">; f(x_0) = </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">root</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;root not found&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"root not found"</span><span class="p">)</span>
 
 <span class="n">main</span><span class="p">()</span>
 
@@ -719,7 +719,7 @@ span.prompt1:before {
 </style><span class="prompt1">python<span class="w"> </span>bisection</span>
 </pre></div></div><p>We can make it such that we can either run this on the command line (as above) or import
 the module (i.e., <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">bisection</span></code>) by changing this to:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -742,7 +742,7 @@ a planet, and computing the period.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">e</span> <span class="o">=</span> <span class="n">e</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="si">:</span><span class="s2">5.3f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">e</span><span class="si">:</span><span class="s2">5.3f</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">a</span><span class="si">:</span><span class="s2">5.3f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">e</span><span class="si">:</span><span class="s2">5.3f</span><span class="si">}</span><span class="s2">"</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">SolarSystem</span><span class="p">:</span>
@@ -754,7 +754,7 @@ a planet, and computing the period.</p>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">add_planet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;planet already exists&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"planet already exists"</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">planets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Planet</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span>
 
@@ -766,7 +766,7 @@ a planet, and computing the period.</p>
         <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">planets</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">]</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;planet </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> does not exist&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"planet </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> does not exist"</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="kc">None</span>
 
@@ -776,34 +776,34 @@ a planet, and computing the period.</p>
             <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">a</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">star_mass</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">None</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
 
     <span class="n">ss</span> <span class="o">=</span> <span class="n">SolarSystem</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
 
-    <span class="n">ss</span><span class="o">.</span><span class="n">add_planet</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
-    <span class="n">ss</span><span class="o">.</span><span class="n">add_planet</span><span class="p">(</span><span class="s2">&quot;beta&quot;</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">ss</span><span class="o">.</span><span class="n">add_planet</span><span class="p">(</span><span class="s2">&quot;gamma&quot;</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">0.24</span><span class="p">)</span>
+    <span class="n">ss</span><span class="o">.</span><span class="n">add_planet</span><span class="p">(</span><span class="s2">"alpha"</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">ss</span><span class="o">.</span><span class="n">add_planet</span><span class="p">(</span><span class="s2">"beta"</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">ss</span><span class="o">.</span><span class="n">add_planet</span><span class="p">(</span><span class="s2">"gamma"</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">0.24</span><span class="p">)</span>
 
     <span class="n">ss</span><span class="o">.</span><span class="n">print_planets</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;period of alpha = </span><span class="si">{</span><span class="n">ss</span><span class="o">.</span><span class="n">get_period</span><span class="p">(</span><span class="s1">&#39;alpha&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"period of alpha = </span><span class="si">{</span><span class="n">ss</span><span class="o">.</span><span class="n">get_period</span><span class="p">(</span><span class="s1">'alpha'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
     <span class="c1"># note that get_planet returns a reference to the Planet in our</span>
     <span class="c1"># solar system, so if we update it, we the change is reflected</span>
 
     <span class="nb">print</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;changing eccentricity of beta&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"changing eccentricity of beta"</span><span class="p">)</span>
 
-    <span class="n">p</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">get_planet</span><span class="p">(</span><span class="s2">&quot;beta&quot;</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">get_planet</span><span class="p">(</span><span class="s2">"beta"</span><span class="p">)</span>
     <span class="n">p</span><span class="o">.</span><span class="n">e</span> <span class="o">=</span> <span class="mf">0.9</span>
 
     <span class="n">ss</span><span class="o">.</span><span class="n">print_planets</span><span class="p">()</span>
 
-    <span class="c1"># and what happens if we try to get a planet that doesn&#39;t exist?</span>
+    <span class="c1"># and what happens if we try to get a planet that doesn't exist?</span>
 
     <span class="nb">print</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;accessing a planet that doesn&#39;t exist&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"accessing a planet that doesn't exist"</span><span class="p">)</span>
 
-    <span class="n">p2</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">get_planet</span><span class="p">(</span><span class="s2">&quot;earth&quot;</span><span class="p">)</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">ss</span><span class="o">.</span><span class="n">get_planet</span><span class="p">(</span><span class="s2">"earth"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 
 </pre></div>

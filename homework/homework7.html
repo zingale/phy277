@@ -642,7 +642,7 @@ can plot both of them together in gnuplot as:</p>
 span.prompt1:before {
   content: "gnuplot> ";
 }
-</style><span class="prompt1">plot &#39;file1.txt&#39; using 1:2 title &quot;no drag&quot;, &#39;file2.txt&#39; using 1:2 title &quot;drag&quot;</span>
+</style><span class="prompt1">plot 'file1.txt' using 1:2 title "no drag", 'file2.txt' using 1:2 title "drag"</span>
 </pre></div></div><p>This will plot column 2 vs. column 1 from each file as separate
 lines and label them in the plot.</p>
 </div>
@@ -712,7 +712,7 @@ lines and label them in the plot.</p>
 
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">history</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span>
-<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:11.8f} {:11.8f} {:11.8f} {:11.8f} {:11.8f}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:11.8f} {:11.8f} {:11.8f} {:11.8f} {:11.8f}</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
 <span class="w">                           </span><span class="n">o</span><span class="p">.</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">vx</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">vy</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
@@ -756,7 +756,7 @@ lines and label them in the plot.</p>
 <span class="w">    </span><span class="n">OrbitState</span><span class="w"> </span><span class="n">state0</span><span class="p">{};</span>
 
 <span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">C</span><span class="p">{};</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;# Enter the drag coefficient C: &quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"# Enter the drag coefficient C: "</span><span class="p">;</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">C</span><span class="p">;</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 
@@ -807,17 +807,17 @@ GNUplot script:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-number">Listing 162 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">projectile-drag.gp</span></code></span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-gnuplot notranslate"><div class="highlight"><pre><span></span><span class="k">set</span><span class="w"> </span><span class="nb">term</span><span class="w"> </span><span class="n">png</span><span class="w"> </span><span class="n">enhanced</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="mi">800</span><span class="o">,</span><span class="mi">600</span>
-<span class="k">set</span><span class="w"> </span><span class="nb">output</span><span class="w"> </span><span class="s">&quot;projectile-drag.png&quot;</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">output</span><span class="w"> </span><span class="s">"projectile-drag.png"</span>
 
-<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">&quot;x&quot;</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">xlabel</span><span class="w"> </span><span class="s">"x"</span>
 
-<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">&quot;y&quot;</span>
+<span class="k">set</span><span class="w"> </span><span class="nb">ylabel</span><span class="w"> </span><span class="s">"y"</span>
 <span class="k">set</span><span class="w"> </span><span class="nb">yrange</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="o">:</span><span class="p">]</span>
 
 <span class="k">set</span><span class="w"> </span><span class="nb">grid</span>
 
-<span class="k">plot</span><span class="w"> </span><span class="s">&#39;proj-nodrag.txt&#39;</span><span class="w"> </span><span class="nb">using</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">&quot;no drag&quot;</span><span class="o">,</span><span class="w"> </span>\
-<span class="w">     </span><span class="s">&#39;proj-drag0.3.txt&#39;</span><span class="w"> </span><span class="nb">using</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">&quot;C = 0.3&quot;</span>
+<span class="k">plot</span><span class="w"> </span><span class="s">'proj-nodrag.txt'</span><span class="w"> </span><span class="nb">using</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">"no drag"</span><span class="o">,</span><span class="w"> </span>\
+<span class="w">     </span><span class="s">'proj-drag0.3.txt'</span><span class="w"> </span><span class="nb">using</span><span class="w"> </span><span class="mi">2</span><span class="o">:</span><span class="mi">3</span><span class="w"> </span><span class="nb">title</span><span class="w"> </span><span class="s">"C = 0.3"</span>
 </pre></div>
 </div>
 </div>

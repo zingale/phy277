@@ -647,7 +647,7 @@ specify what type of data it carries.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Technically, python lists can hold a mix of different types, e.g., you can do:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s2">"string"</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>but this is rarely used in practice.  Usually we use them with a single
@@ -656,16 +656,16 @@ type, much like with <code class="docutils literal notranslate"><span class="pre
 <section id="checking-for-membership">
 <h2>Checking for membership<a class="headerlink" href="#checking-for-membership" title="Link to this heading">#</a></h2>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator to check if an item is in a list, for example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Homer&quot;</span><span class="p">,</span> <span class="s2">&quot;Marge&quot;</span><span class="p">,</span> <span class="s2">&quot;Lisa&quot;</span><span class="p">,</span> <span class="s2">&quot;Bart&quot;</span><span class="p">,</span> <span class="s2">&quot;Maggie&quot;</span><span class="p">]</span>
-<span class="s2">&quot;Homer&quot;</span> <span class="ow">in</span> <span class="n">names</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Homer"</span><span class="p">,</span> <span class="s2">"Marge"</span><span class="p">,</span> <span class="s2">"Lisa"</span><span class="p">,</span> <span class="s2">"Bart"</span><span class="p">,</span> <span class="s2">"Maggie"</span><span class="p">]</span>
+<span class="s2">"Homer"</span> <span class="ow">in</span> <span class="n">names</span>
 </pre></div>
 </div>
 </section>
 <section id="list-concatenation">
 <h2>List concatenation<a class="headerlink" href="#list-concatenation" title="Link to this heading">#</a></h2>
 <p>We can concatenate two lists using the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"c"</span><span class="p">,</span> <span class="s2">"d"</span><span class="p">]</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 </pre></div>
 </div>
@@ -681,7 +681,7 @@ type, much like with <code class="docutils literal notranslate"><span class="pre
 
 <span class="n">angles_deg</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">40.0</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;angle (d)&#39;</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="s1">&#39;angle (r)&#39;</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;sine&#39;</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;err&#39;</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">'angle (d)'</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="s1">'angle (r)'</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">'sine'</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">'err'</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">angles_deg</span><span class="p">:</span>
 
@@ -689,7 +689,7 @@ type, much like with <code class="docutils literal notranslate"><span class="pre
     <span class="n">sine</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle_rad</span><span class="p">)</span>
     <span class="n">err</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sine</span> <span class="o">-</span> <span class="n">angle_rad</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">10.2f</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">angle_rad</span><span class="si">:</span><span class="s2">10.3f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">sine</span><span class="si">:</span><span class="s2">10.5f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">err</span><span class="si">:</span><span class="s2">10.5g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">10.2f</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">angle_rad</span><span class="si">:</span><span class="s2">10.3f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">sine</span><span class="si">:</span><span class="s2">10.5f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">err</span><span class="si">:</span><span class="s2">10.5g</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -726,7 +726,7 @@ and standard deviation of a vector, now in python.</p>
 
 <span class="n">vsigma</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">vsigma</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;average = </span><span class="si">{</span><span class="n">vavg</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, sigma = </span><span class="si">{</span><span class="n">vsigma</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"average = </span><span class="si">{</span><span class="n">vavg</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, sigma = </span><span class="si">{</span><span class="n">vsigma</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 </pre></div>
 </div>

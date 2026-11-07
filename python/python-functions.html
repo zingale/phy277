@@ -646,15 +646,15 @@ used for sorting (much like we saw in C++).</p>
 <p>We can rewrite our C++ sorting example (see <a class="reference internal" href="../sl-algorithms/cxx-lambdas.html#sec-lambda-sort"><span class="std std-ref">Sort Example</span></a>) in python:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-number">Listing 138 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">sort_example.py</span></code></span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a new hope&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;the empire strikes back&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;return of the jedi&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;the phantom menace&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;attack of the clones&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;revenge of the sith&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;the force awakens&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;the last jedi&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;the rise of skywalker&quot;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"a new hope"</span><span class="p">,</span>
+          <span class="s2">"the empire strikes back"</span><span class="p">,</span>
+          <span class="s2">"return of the jedi"</span><span class="p">,</span>
+          <span class="s2">"the phantom menace"</span><span class="p">,</span>
+          <span class="s2">"attack of the clones"</span><span class="p">,</span>
+          <span class="s2">"revenge of the sith"</span><span class="p">,</span>
+          <span class="s2">"the force awakens"</span><span class="p">,</span>
+          <span class="s2">"the last jedi"</span><span class="p">,</span>
+          <span class="s2">"the rise of skywalker"</span><span class="p">]</span>
 
 <span class="c1"># sort by string length</span>
 <span class="n">titles</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
@@ -678,8 +678,8 @@ to integrate.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">trapezoid</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Integrate function func(x) from a to b using N intervals of</span>
-<span class="sd">    the trapezoid rule.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Integrate function func(x) from a to b using N intervals of</span>
+<span class="sd">    the trapezoid rule."""</span>
 
     <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">N</span>
 
@@ -707,7 +707,7 @@ to integrate.</p>
 
     <span class="n">err</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">I</span> <span class="o">-</span> <span class="n">I_exact</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">N</span><span class="si">:</span><span class="s2">3</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">I</span><span class="si">:</span><span class="s2">7.5f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">err</span><span class="si">:</span><span class="s2">9.6g</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">N</span><span class="si">:</span><span class="s2">3</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">I</span><span class="si">:</span><span class="s2">7.5f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">err</span><span class="si">:</span><span class="s2">9.6g</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 </pre></div>
 </div>

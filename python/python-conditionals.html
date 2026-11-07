@@ -617,13 +617,13 @@ loop is indented.</p>
 <p>We already saw that we can use <code class="docutils literal notranslate"><span class="pre">for</span></code> to loop over elements of a list.  This also
 works for characters in a string, and pretty much any other container in python.</p>
 <p>For example, we can loop over characters in a string:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s2">&quot;the quick brown fox jumps over the lazy dog&quot;</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s2">"the quick brown fox jumps over the lazy dog"</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>but strings have lots of methods, and we can use the <code class="docutils literal notranslate"><span class="pre">.split()</span></code> method to
 split based on spaces and loop over words:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="s2">&quot;the quick brown fox jumps over the lazy dog&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="s2">"the quick brown fox jumps over the lazy dog"</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -637,11 +637,11 @@ used to denote the block that is executed for each branch:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;negative&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"negative"</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;zero&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"zero"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;positive&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"positive"</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -657,7 +657,7 @@ until <span class="math notranslate nohighlight">\(1 + \epsilon == 1\)</span>.  
 <span class="k">while</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">epsilon</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
     <span class="n">epsilon</span> <span class="o">/=</span> <span class="mi">2</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;epsilon = </span><span class="si">{</span><span class="n">epsilon</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"epsilon = </span><span class="si">{</span><span class="n">epsilon</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -674,11 +674,11 @@ until <span class="math notranslate nohighlight">\(1 + \epsilon == 1\)</span>.  
 
 <span class="n">fib</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 
-<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many terms of the Fibonacci sequence to compute? (N &gt; 2) &quot;</span><span class="p">))</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How many terms of the Fibonacci sequence to compute? (N &gt; 2) "</span><span class="p">))</span>
 
 <span class="k">if</span> <span class="n">N</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="c1"># we&#39;ve already got 2</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">&quot;Error: must enter N &gt; 2&quot;</span><span class="p">)</span>
+    <span class="c1"># we've already got 2</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s2">"Error: must enter N &gt; 2"</span><span class="p">)</span>
 
 <span class="c1"># add to the sequence</span>
 <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">:</span>

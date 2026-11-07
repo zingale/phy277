@@ -614,9 +614,9 @@ username that is professional and meaningful.</p>
 <section id="setting-up-git">
 <h2>Setting up git<a class="headerlink" href="#setting-up-git" title="Link to this heading">#</a></h2>
 <p>Let’s start by setting up our git environment:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;name&quot;</span></span>
-<span class="prompt1">git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;email&quot;</span></span>
-<span class="prompt1">git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span><span class="s2">&quot;nano -w&quot;</span></span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"name"</span></span>
+<span class="prompt1">git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"email"</span></span>
+<span class="prompt1">git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span><span class="s2">"nano -w"</span></span>
 </pre></div></div><p>Replace <code class="docutils literal notranslate"><span class="pre">name</span></code> with your name and <code class="docutils literal notranslate"><span class="pre">email</span></code> with your email.  This sets <code class="docutils literal notranslate"><span class="pre">nano</span></code>
 as our default editor, but you can choose something else that you are comfortable
 with (see <a class="reference external" href="https://swcarpentry.github.io/git-novice/02-setup.html">https://swcarpentry.github.io/git-novice/02-setup.html</a>).</p>
@@ -631,7 +631,7 @@ project.</p>
 <li><p>First create a project directory with some basic content:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">mkdir<span class="w"> </span>project</span>
 <span class="prompt1"><span class="nb">cd</span><span class="w"> </span>project</span>
-<span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;this is the start of my awesome new project&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>README</span>
+<span class="prompt1"><span class="nb">echo</span><span class="w"> </span><span class="s2">"this is the start of my awesome new project"</span><span class="w"> </span>&gt;<span class="w"> </span>README</span>
 </pre></div></div></li>
 <li><p>Now let’s tell git that we want to track this directory.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git<span class="w"> </span>init</span>
@@ -683,12 +683,12 @@ this<span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span
 </pre></div></div><p>you should see something like:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>On<span class="w"> </span>branch<span class="w"> </span>main
 Changes<span class="w"> </span>not<span class="w"> </span>staged<span class="w"> </span><span class="k">for</span><span class="w"> </span>commit:
-<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git add &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>update<span class="w"> </span>what<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>committed<span class="o">)</span>
-<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>discard<span class="w"> </span>changes<span class="w"> </span><span class="k">in</span><span class="w"> </span>working<span class="w"> </span>directory<span class="o">)</span>
+<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">"git add &lt;file&gt;..."</span><span class="w"> </span>to<span class="w"> </span>update<span class="w"> </span>what<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>committed<span class="o">)</span>
+<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">"git checkout -- &lt;file&gt;..."</span><span class="w"> </span>to<span class="w"> </span>discard<span class="w"> </span>changes<span class="w"> </span><span class="k">in</span><span class="w"> </span>working<span class="w"> </span>directory<span class="o">)</span>
 
 <span class="w">        </span>modified:<span class="w">   </span>README
 
-no<span class="w"> </span>changes<span class="w"> </span>added<span class="w"> </span>to<span class="w"> </span>commit<span class="w"> </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git add&quot;</span><span class="w"> </span>and/or<span class="w"> </span><span class="s2">&quot;git commit -a&quot;</span><span class="o">)</span>
+no<span class="w"> </span>changes<span class="w"> </span>added<span class="w"> </span>to<span class="w"> </span>commit<span class="w"> </span><span class="o">(</span>use<span class="w"> </span><span class="s2">"git add"</span><span class="w"> </span>and/or<span class="w"> </span><span class="s2">"git commit -a"</span><span class="o">)</span>
 </pre></div>
 </div>
 <p>This is telling you that you have local changes but you haven’t yet
@@ -698,7 +698,7 @@ told git to care about them.</p>
 </pre></div></div><p>and now <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> will show something like:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>On<span class="w"> </span>branch<span class="w"> </span>main
 Changes<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>committed:
-<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">&quot;git reset HEAD &lt;file&gt;...&quot;</span><span class="w"> </span>to<span class="w"> </span>unstage<span class="o">)</span>
+<span class="w">  </span><span class="o">(</span>use<span class="w"> </span><span class="s2">"git reset HEAD &lt;file&gt;..."</span><span class="w"> </span>to<span class="w"> </span>unstage<span class="o">)</span>
 
 <span class="w">        </span>modified:<span class="w">   </span>README
 </pre></div>

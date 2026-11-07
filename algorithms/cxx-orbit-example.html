@@ -724,7 +724,7 @@ see that it has a large influence on the quality of our solution.</p>
 
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">history</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span>
-<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:11.8f} {:11.8f} {:11.8f} {:11.8f} {:11.8f}</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:11.8f} {:11.8f} {:11.8f} {:11.8f} {:11.8f}</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
 <span class="w">                           </span><span class="n">o</span><span class="p">.</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">vx</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">vy</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
@@ -843,9 +843,9 @@ span.prompt2:before {
   content: "gnuplot> ";
 }
 </style><span class="prompt2">set size ratio -1</span>
-<span class="prompt2">set xlabel &quot;x&quot;</span>
-<span class="prompt2">set ylabel &quot;y&quot;</span>
-<span class="prompt2">plot &#39;orbit.dat&#39; using 2:3 notitle w l</span>
+<span class="prompt2">set xlabel "x"</span>
+<span class="prompt2">set ylabel "y"</span>
+<span class="prompt2">plot 'orbit.dat' using 2:3 notitle w l</span>
 </pre></div></div><p>This will make something like:</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="../_images/orbit.png"><img alt="the GNUplot output window showing the orbit (plotting y vs x).  It should be a circle, but instead it really moves far from the center as it orbits." src="../_images/orbit.png" style="width: 80%;" />
@@ -860,7 +860,7 @@ span.prompt2:before {
 </div>
 <p>You can save the plot as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt2">set term png enhanced</span>
-<span class="prompt2">set output &quot;orbit.png&quot;</span>
+<span class="prompt2">set output "orbit.png"</span>
 <span class="prompt2">replot</span>
 </pre></div></div><p>Look how bad this is!!!</p>
 <p>We should have a nice circular orbit, but it goes way off a circle and

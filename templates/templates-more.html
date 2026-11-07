@@ -592,7 +592,7 @@ Then we can create an array of <code class="docutils literal notranslate"><span 
 <h2><code class="docutils literal notranslate"><span class="pre">static_assert</span></code><a class="headerlink" href="#static-assert" title="Link to this heading">#</a></h2>
 <p>Notice that we can create an <code class="docutils literal notranslate"><span class="pre">Array&lt;std::string&gt;</span></code>—but that’s really not our intent,
 and we are likely going to do things that only make sense with numbers.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s">"x"</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>We can add a <code class="docutils literal notranslate"><span class="pre">static_assert</span></code> to disallow this—a static assert is evaluated at compile time.

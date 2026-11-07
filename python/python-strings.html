@@ -585,8 +585,8 @@
 <h2>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h2>
 <p>Python allows both single- and double-quotes to be used with strings.  It does not distinguish
 between a string and a character (like C++ does).  For example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;this is a string&quot;</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;this is also a string&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">"this is a string"</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s1">'this is also a string'</span>
 </pre></div>
 </div>
 <p>If we look at the type, <code class="docutils literal notranslate"><span class="pre">type(s1)</span></code>, we would see that it is a <code class="docutils literal notranslate"><span class="pre">str</span></code> object.</p>
@@ -603,13 +603,13 @@ for strings.  We can do:</p>
 the <code class="docutils literal notranslate"><span class="pre">format()</span></code> function on a string (it is a member function of the string class), so we can do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mf">2.5</span>
-<span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;string&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a = </span><span class="si">{:2}</span><span class="s2">, b = </span><span class="si">{:.3f}</span><span class="s2">, c = </span><span class="si">{:10}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="s2">"string"</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"a = </span><span class="si">{:2}</span><span class="s2">, b = </span><span class="si">{:.3f}</span><span class="s2">, c = </span><span class="si">{:10}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>but python also has <a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">f-strings</a>
 which allow us to put the values directly into the <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code> in the format string.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a = </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">2</span><span class="si">}</span><span class="s2">, b = </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, c = </span><span class="si">{</span><span class="n">c</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"a = </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">2</span><span class="si">}</span><span class="s2">, b = </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, c = </span><span class="si">{</span><span class="n">c</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -622,7 +622,7 @@ which allow us to put the values directly into the <code class="docutils literal
 <p>python doesn’t have a stream operator like C++’s <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>.  Instead we use <code class="docutils literal notranslate"><span class="pre">print</span></code>.  By
 default <code class="docutils literal notranslate"><span class="pre">print</span></code> adds a newline, but we can suppress this by passing the <code class="docutils literal notranslate"><span class="pre">end=&quot;&quot;</span></code> argument
 to print, e.g.:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;this is print without a newline&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"this is print without a newline"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>see <code class="docutils literal notranslate"><span class="pre">help(print)</span></code> for more information.</p>

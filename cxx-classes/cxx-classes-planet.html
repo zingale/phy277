@@ -599,7 +599,7 @@ constructor:</p>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;planet.H&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"planet.H"</span>
 
 <span class="k">struct</span><span class="w"> </span><span class="nc">SolarSystem</span><span class="w"> </span><span class="p">{</span>
 
@@ -615,12 +615,12 @@ constructor:</p>
 <span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">add_planet</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span>
 <span class="w">                    </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">e</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">        </span><span class="c1">// make sure a planet with that name doesn&#39;t already exist</span>
+<span class="w">        </span><span class="c1">// make sure a planet with that name doesn't already exist</span>
 <span class="w">        </span><span class="c1">// if the pointer returned here is not null, then the planet exists</span>
 
 <span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">planets</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;planet already exists&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">                </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"planet already exists"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="w">                </span><span class="k">return</span><span class="p">;</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
@@ -696,7 +696,7 @@ already exists.</p></li>
 <span class="p">};</span>
 
 <span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="n">os</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Planet</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">os</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:12} : ({:6.3f}, {:6.3f})&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">os</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:12} : ({:6.3f}, {:6.3f})"</span><span class="p">,</span>
 <span class="w">                      </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">e</span><span class="p">);</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">os</span><span class="p">;</span>
 <span class="p">}</span>
@@ -717,19 +717,19 @@ already exists.</p></li>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-number">Listing 115 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">test_solar_system.cpp</span></code></span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;solar_system.H&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;planet.H&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"solar_system.H"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"planet.H"</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="n">SolarSystem</span><span class="w"> </span><span class="n">ss</span><span class="p">(</span><span class="mf">2.0</span><span class="p">);</span>
 
-<span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">add_planet</span><span class="p">(</span><span class="s">&quot;alpha&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
-<span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">add_planet</span><span class="p">(</span><span class="s">&quot;beta&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
-<span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">add_planet</span><span class="p">(</span><span class="s">&quot;gamma&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.24</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">add_planet</span><span class="p">(</span><span class="s">"alpha"</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">add_planet</span><span class="p">(</span><span class="s">"beta"</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">add_planet</span><span class="p">(</span><span class="s">"gamma"</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.24</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// this generates an error</span>
-<span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">add_planet</span><span class="p">(</span><span class="s">&quot;alpha&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">add_planet</span><span class="p">(</span><span class="s">"alpha"</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span>
 
 <span class="w">    </span><span class="n">ss</span><span class="p">.</span><span class="n">print_planets</span><span class="p">();</span>
 
@@ -799,7 +799,7 @@ span.prompt1:before {
 <h2>Data hiding<a class="headerlink" href="#data-hiding" title="Link to this heading">#</a></h2>
 <p>Note that nothing in our class is private, so we can directly access
 the <code class="docutils literal notranslate"><span class="pre">planets</span></code> vector.  This means that we can still add a planet like this:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ss</span><span class="p">.</span><span class="n">planets</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">Planet</span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;delta&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">10.0</span><span class="p">});</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ss</span><span class="p">.</span><span class="n">planets</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">Planet</span><span class="p">{.</span><span class="n">name</span><span class="o">=</span><span class="s">"delta"</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mf">10.0</span><span class="p">});</span>
 </pre></div>
 </div>
 <p>Usually we would want to prevent this, and force a user of the class

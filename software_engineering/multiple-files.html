@@ -655,17 +655,17 @@ throughout this course.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;format&gt;</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;planet.H&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"planet.H"</span>
 
 <span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="n">os</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Planet</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">os</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:12} : ({:8}, {:8}))&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">e</span><span class="p">);</span>
+<span class="w">    </span><span class="n">os</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:12} : ({:8}, {:8}))"</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">e</span><span class="p">);</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">os</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <p>We use <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> in the <code class="docutils literal notranslate"><span class="pre">#include</span></code> for <code class="docutils literal notranslate"><span class="pre">planet.H</span></code>:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;planet.H&quot;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">"planet.H"</span>
 </pre></div>
 </div>
 <p>This gives us the forward declaration we need for this function.</p>
@@ -676,7 +676,7 @@ throughout this course.</p>
 </pre></div>
 </div>
 <p>and</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;planet.H&quot;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">"planet.H"</span>
 </pre></div>
 </div>
 <p>differently.</p>
@@ -696,18 +696,18 @@ flag to the compiler (we won’t consider this).</p>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;planet.H&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"planet.H"</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Planet</span><span class="o">&gt;</span><span class="w"> </span><span class="n">planets</span><span class="w"> </span><span class="p">{{</span><span class="s">&quot;Mercury&quot;</span><span class="p">,</span><span class="w">  </span><span class="mf">0.3871</span><span class="p">,</span><span class="w"> </span><span class="mf">0.2056</span><span class="p">},</span>
-<span class="w">                                 </span><span class="p">{</span><span class="s">&quot;Venus&quot;</span><span class="p">,</span><span class="w">    </span><span class="mf">0.7233</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0068</span><span class="p">},</span>
-<span class="w">                                 </span><span class="p">{</span><span class="s">&quot;Earth&quot;</span><span class="p">,</span><span class="w">    </span><span class="mf">1.0000</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0167</span><span class="p">},</span>
-<span class="w">                                 </span><span class="p">{</span><span class="s">&quot;Mars&quot;</span><span class="p">,</span><span class="w">     </span><span class="mf">1.5237</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0934</span><span class="p">},</span>
-<span class="w">                                 </span><span class="p">{</span><span class="s">&quot;Jupiter&quot;</span><span class="p">,</span><span class="w">  </span><span class="mf">5.2029</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0484</span><span class="p">},</span>
-<span class="w">                                 </span><span class="p">{</span><span class="s">&quot;Saturn&quot;</span><span class="p">,</span><span class="w">   </span><span class="mf">9.5370</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0539</span><span class="p">},</span>
-<span class="w">                                 </span><span class="p">{</span><span class="s">&quot;Uranus&quot;</span><span class="p">,</span><span class="w">  </span><span class="mf">19.189</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0473</span><span class="p">},</span>
-<span class="w">                                 </span><span class="p">{</span><span class="s">&quot;Neptune&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">30.070</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0086</span><span class="p">}};</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Planet</span><span class="o">&gt;</span><span class="w"> </span><span class="n">planets</span><span class="w"> </span><span class="p">{{</span><span class="s">"Mercury"</span><span class="p">,</span><span class="w">  </span><span class="mf">0.3871</span><span class="p">,</span><span class="w"> </span><span class="mf">0.2056</span><span class="p">},</span>
+<span class="w">                                 </span><span class="p">{</span><span class="s">"Venus"</span><span class="p">,</span><span class="w">    </span><span class="mf">0.7233</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0068</span><span class="p">},</span>
+<span class="w">                                 </span><span class="p">{</span><span class="s">"Earth"</span><span class="p">,</span><span class="w">    </span><span class="mf">1.0000</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0167</span><span class="p">},</span>
+<span class="w">                                 </span><span class="p">{</span><span class="s">"Mars"</span><span class="p">,</span><span class="w">     </span><span class="mf">1.5237</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0934</span><span class="p">},</span>
+<span class="w">                                 </span><span class="p">{</span><span class="s">"Jupiter"</span><span class="p">,</span><span class="w">  </span><span class="mf">5.2029</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0484</span><span class="p">},</span>
+<span class="w">                                 </span><span class="p">{</span><span class="s">"Saturn"</span><span class="p">,</span><span class="w">   </span><span class="mf">9.5370</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0539</span><span class="p">},</span>
+<span class="w">                                 </span><span class="p">{</span><span class="s">"Uranus"</span><span class="p">,</span><span class="w">  </span><span class="mf">19.189</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0473</span><span class="p">},</span>
+<span class="w">                                 </span><span class="p">{</span><span class="s">"Neptune"</span><span class="p">,</span><span class="w"> </span><span class="mf">30.070</span><span class="p">,</span><span class="w">  </span><span class="mf">0.0086</span><span class="p">}};</span>
 
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">ranges</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">planets</span><span class="p">,</span>
 <span class="w">                      </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Planet</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Planet</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">e</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">e</span><span class="p">;});</span>
@@ -783,7 +783,7 @@ longer need <code class="docutils literal notranslate"><span class="pre">planet.
 
 <span class="kr">inline</span>
 <span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="n">os</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Planet</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">os</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;{:12} : ({:8}, {:8}))&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">e</span><span class="p">);</span>
+<span class="w">    </span><span class="n">os</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">format</span><span class="p">(</span><span class="s">"{:12} : ({:8}, {:8}))"</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">e</span><span class="p">);</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">os</span><span class="p">;</span>
 <span class="p">}</span>
 
